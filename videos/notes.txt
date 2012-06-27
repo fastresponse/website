@@ -1,0 +1,14 @@
+Windows does not like filenames that begin with a .
+
+htaccess and htpasswd must be renamed on the server to:
+".htaccess" and ".htpasswd" respectively.
+
+Contents of .htpasswd is a list of username:password lines.
+The password is just an MD5 hash.
+
+The .htaccess file must have the full path to the .htpasswd file,
+as it appears on the server. As of this writing the web root is:
+/services/webpages/f/a/fastresponse.org/public/
+
+This website can generate both files if needed:
+http://www.tools.dynamicdrive.com/password/

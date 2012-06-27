@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+		
+<horizontal_image_accordion_menu>
+
+	<settings>
+		
+		<totalWidth>550</totalWidth>
+		<totalHeight>296</totalHeight>
+		
+		<bgStrokeSize>1</bgStrokeSize>
+		
+		<openWidth>350</openWidth>
+		
+		<!-- saturation will take values from -1 to 1 -->
+		<!-- color transform will take values from -255 to 255 -->
+		<defaultSaturation>0.6</defaultSaturation>
+		<defaultColorTransform>-50</defaultColorTransform>
+		<defaultBlurXAmount>4</defaultBlurXAmount>
+		<defaultBlurYAmount>4</defaultBlurYAmount>
+		<defaultBlurQuality>1</defaultBlurQuality>
+		
+		<closedSaturation>0.6</closedSaturation>
+		<closedColorTransform>-50</closedColorTransform>
+		<closedBlurXAmount>4</closedBlurXAmount>
+		<closedBlurYAmount>4</closedBlurYAmount>
+		<closedBlurQuality>1</closedBlurQuality>
+		
+
+		<titleXPosCorrection>0</titleXPosCorrection>
+			
+		<animationTime>0.4</animationTime>
+		
+		<animationType>easeOutQuad</animationType>
+		
+		<autoplayTimer>0</autoplayTimer>
+		
+		<comeBackToDefault>1</comeBackToDefault>
+		
+	</settings>
+	
+	
+	<content>
+
+		<item>
+			<url>http://fastresponse.org/school/career_services/about_career_services</url>
+			<target>_self</target>
+			<image>accordion/student_img/01.jpg</image>
+			<smallImagePos>left</smallImagePos>
+			<title><![CDATA[<font color="#ffffff" size="20">About Career Services </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">About Career Services</font><br/>]]></description>
+		</item>
+		
+		<item>
+			<url>http://fastresponse.org/school/career_services/industry_outlook</url>
+			<target>_self</target>
+			<image>accordion/student_img/02.jpg</image>
+			<smallImagePos>left</smallImagePos>
+			<title><![CDATA[<font color="#ffffff" size="20">Industry Outlooks </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Industry Outlooks</font><br/>]]></description>
+		</item>
+		
+		<item>
+			<url>http://fastresponse.org/school/career_services/employers</url>
+			<target>_self</target>
+			<image>accordion/student_img/03.jpg</image>
+			<smallImagePos>centert</smallImagePos>
+			<title><![CDATA[<font color="#ffffff" size="20">Employers </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Employers</font><br/>]]></description>
+		</item>
+		
+		<item>
+			<url>http://fastresponse.org/school/career_services/success_stories</url>
+			<target>_self</target>
+			<image>accordion/student_img/04.jpg</image>
+			<smallImagePos>centert</smallImagePos>
+			<title><![CDATA[<font color="#ffffff" size="20">Success Stories </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Success Stories</font><br/>]]></description>
+		</item>
+		
+		<item>
+			<url>http://fastresponse.org/school/career_services/students_graduates</url>
+			<target>_self</target>
+			<image>accordion/student_img/05.jpg</image>
+			<smallImagePos>centert</smallImagePos>
+			<title><![CDATA[<font color="#ffffff" size="20">Students/Graduates </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Students/Graduates</font><br/>]]></description>
+		</item>
+		
+	
+
+		
+	</content>
+	
+
+</horizontal_image_accordion_menu>
+

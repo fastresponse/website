@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+pictureWidth="140"
+pictureHeight="133"
+mouseOverZoomSize="20"
+imageSpacing="5"
+mouseOverZoomSpeed="20"
+mouseOverZoomInfluence="200"
+Mouseover_y="0"
+maxScrollSpeed="0"
+minScrollX="-100"
+maxScrollX="100"
+startPos="0"
+enRefl="on"
+reflSize="70"
+reflAlpha="26"
+reflDist="0"
+brighten="10"
+enTt="off"
+tooltipType="black"
+tooltipPosition="follow"
+tooltipOffset_y="-5"
+strokeSize="0"
+strokeColour="0xb9deea"
+rollStrokeSize="0"
+rollStrokeColour="0x85b8c9"
+selStrokeSize="0"
+selStrokeColour="0x4691aa"
+></menu>
+<pictures>
+	<picture thumb="buttons/01.png" description="About Us" name="xml/about.xml" param="action"></picture>
+	<picture thumb="buttons/02.png" description="About Us" name="xml/career.xml" param="action"></picture>
+	<picture thumb="buttons/03.png" description="About Us" name="xml/continuing.xml" param="action"></picture>
+	<picture thumb="buttons/04.png" description="About Us" name="xml/community.xml" param="action"></picture>
+	<picture thumb="buttons/05.png" description="About Us" name="xml/student.xml" param="action"></picture>
+<picture thumb="buttons/06.png"></picture>
+	
+	<!--<picture thumb="buttons/06.png" description="About Us" name="xml/info.xml" param="action"></picture>	-->
+	
+</pictures>

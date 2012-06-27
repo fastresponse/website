@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>		
+<horizontal_image_accordion_menu>
+	<settings>
+		<totalWidth>550</totalWidth>
+		<totalHeight>296</totalHeight>
+		<bgStrokeSize>0</bgStrokeSize>
+		<openWidth>350</openWidth>
+		<!-- saturation will take values from -1 to 1 -->
+		<!-- color transform will take values from -255 to 255 -->
+		<defaultSaturation>0.6</defaultSaturation>
+		<defaultColorTransform>-50</defaultColorTransform>
+		<defaultBlurXAmount>4</defaultBlurXAmount>
+		<defaultBlurYAmount>4</defaultBlurYAmount>
+		<defaultBlurQuality>1</defaultBlurQuality>
+		<closedSaturation>0.6</closedSaturation>
+		<closedColorTransform>-50</closedColorTransform>
+		<closedBlurXAmount>4</closedBlurXAmount>
+		<closedBlurYAmount>4</closedBlurYAmount>
+		<closedBlurQuality>1</closedBlurQuality>
+		<titleXPosCorrection>0</titleXPosCorrection>	
+		<animationTime>0.4</animationTime>
+		<animationType>easeOutQuad</animationType>
+		<autoplayTimer>0</autoplayTimer>
+		<comeBackToDefault>1</comeBackToDefault>
+	</settings>
+	<content>
+		<item>
+			<url>../../../school/about</url>
+			<target>_self</target>
+			<image>accordion/about_img/01.jpg</image>
+			<smallImagePos>center</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="20">About Us</font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">About Us</font><br/>]]></description>
+		</item>
+		<item>
+			<url>../../../school/our_mission</url>
+			<target>_self</target>
+			<image>accordion/about_img/02.jpg</image>
+			<smallImagePos>left</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="20">Mission Statement </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Our Mission</font><br/>]]></description>
+		</item>
+		<item>
+			<url>../../../school/map_parking_and_directions</url>
+			<target>_self</target>
+			<image>accordion/about_img/03.jpg</image>
+			<smallImagePos>centert</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="18">Map, parking and directions </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Map, parking and directions</font><br/>]]></description>
+		</item>
+		<item>
+			<url>../../../school/out_of_town_accommodations</url>
+		<target>_self</target>
+			<image>accordion/about_img/04.jpg</image>
+			<smallImagePos>left</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="17">Out of town accommodations </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Out of town accommodations</font><br/>]]></description>
+		</item>
+		<item>
+			<url>../../../school/virtual_tour</url>
+		<target>_self</target>
+			<image>accordion/about_img/05.jpg</image>
+			<smallImagePos>center</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="20">Virtual Tour </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Virtual Tour</font>]]></description>
+		</item>
+		<item>
+			<url>../../../school/contact_us</url>
+		<target>_self</target>
+			<image>accordion/about_img/06.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="20">Contact Information </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Contact us</font>]]></description>
+		</item>
+		<item>
+			<url>../../../school/frequently_asked_questions</url>
+		<target>_self</target>
+			<image>accordion/about_img/07.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[ <font color="#ffffff" size="20">FAQ </font>]]></title>
+			<description><![CDATA[ <font color="#ffffff" size="30">Frequently Asked Questions</font>]]></description>
+		</item>
+	</content>
+</horizontal_image_accordion_menu>
+
