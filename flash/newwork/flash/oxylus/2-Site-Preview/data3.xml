@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+		
+<horizontal_image_accordion_menu>
+
+	<settings>
+		
+		<totalWidth>590</totalWidth>
+		<totalHeight>300</totalHeight>
+		
+		<bgStrokeSize>0</bgStrokeSize>
+		
+		<openWidth>420</openWidth>
+		
+		<!-- saturation will take values from -1 to 1 -->
+		<!-- color transform will take values from -255 to 255 -->
+		<defaultSaturation>0</defaultSaturation>
+		<defaultColorTransform>-80</defaultColorTransform>
+		<defaultBlurXAmount>2</defaultBlurXAmount>
+		<defaultBlurYAmount>2</defaultBlurYAmount>
+		<defaultBlurQuality>1</defaultBlurQuality>
+		
+		<closedSaturation>0</closedSaturation>
+		<closedColorTransform>-80</closedColorTransform>
+		<closedBlurXAmount>2</closedBlurXAmount>
+		<closedBlurYAmount>2</closedBlurYAmount>
+		<closedBlurQuality>1</closedBlurQuality>
+		
+
+		<titleXPosCorrection>-1</titleXPosCorrection>
+			
+		<animationTime>0.6</animationTime>
+		
+		<animationType>easeOutQuad</animationType>
+		
+		<autoplayTimer>3</autoplayTimer>
+		
+		<comeBackToDefault>0</comeBackToDefault>
+		
+	</settings>
+	
+	
+	<content>
+
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/01.jpg</image>
+			<smallImagePos>left</smallImagePos>
+			<title><![CDATA[Autoplay Feature]]></title>
+			<description><![CDATA[ <font color="#93cbff" size="29">Autoplay Feature</font><br/><br/> The autoplay feature on this accordion is great and can be used as a banner ad rotator something similar. Keep in mind users can still browse manually.<br/><br/> The amount of time spent on each picture is customizable in the XML.<br/><br/>The autoplay will remember the last item, even if the user browsed through them manually.]]></description>
+		</item>
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/02.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[Completely resizable]]></title>
+			<description><![CDATA[ Simply use the XML height and width settings to resize it and you are ready.<br /><br /> You can also set the stroke size and most importantly the width at which the images will open. This will make the closed items smaller or larger.]]></description>
+		</item>
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/03.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[No position animation]]></title>
+			<description><![CDATA[ Each item will have a "small image position" setting. Through this setting you can obtain animations like the two next items.<br /><br /> Also keep in mind that the description text is not mandatory - the next item doesn't have any.]]></description>
+		</item>
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/04.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[Position animation center]]></title>
+			<description><![CDATA[]]></description>
+		</item>
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/05.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[Position animation right]]></title>
+			<description><![CDATA[ <font color="#ffe199" size="29">HTML Formatted Description</font><br/><br/>All descriptions can be formatted acording to your preferences of color, style, size, bold etc. using html tags. You could even add images if you wanted to.<br/><br/> Text shadow can be disabled or customized in the source.]]></description>
+		</item>
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<pan>1</pan>
+			<image>images/pan_image.jpg</image>
+			<speed>5</speed>
+	
+			<smallImagePos>center</smallImagePos>
+			<title><![CDATA[Panning large images]]></title>
+			<description><![CDATA[ This is an awesome feature !<br/><br/> You can enable/disable image panning for each image, which means you can use huge images and the users will still be able to see all their details.]]></description>
+		</item>
+		
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/07.jpg</image>
+			<smallImagePos>right</smallImagePos>
+			<title><![CDATA[<font color="#ff7e00" size="18">Title</font><font color="#ffeb9b" size="18"> HTML Tags</font> Support]]></title>
+			<description><![CDATA[ <br /><br /><br /><br /><br /><br /><br /><font color="#fff7cf" size="18">Just like the description, the title of each item can be formatted using html tags so you can change color, size, bold etc. Also notice the position of this description.</font>]]></description>
+		</item>
+		
+		<item>
+			<url>http://www.google.com/</url>
+			<target>_blank</target>
+			<image>images/test.swf</image>
+			<smallImagePos>center</smallImagePos>
+			<title><![CDATA[Supports .SWF Files]]></title>
+			<description><![CDATA[ This Accordion Image Menu supports .swf animated flash files and most importantly it will apply any effects you set.<br/>
+			For instance this one in the normal state is <b>desaturated</b> and <b>blurred</b>.]]></description>
+		</item>
+		
+
+		
+	</content>
+	
+
+</horizontal_image_accordion_menu>
+

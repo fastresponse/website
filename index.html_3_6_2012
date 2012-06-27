@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>Fast Response</title>
+ 
+<link rel="shortcut icon" href="/misc/favicon.ico" type="image/x-icon" />
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="googlebot" content="INDEX, FOLLOW">
+
+<!-- to see all of the commented out styles/scripts /sites/all/themes/fastresponse/css/old_styles.txt -->
+
+<link type="text/css" rel="stylesheet" media="all" title="mtyle" href="sites/all/themes/fastresponse/css/style.css" />
+<link type="text/css" rel="stylesheet" media="print" href="sites/all/themes/fastresponse/css/print.css?C" /> 
+    <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+        
+        
+ <script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18170901-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+
+<style type="text/css" media="screen">
+object { outline:none; }
+</style>
+<script type = "text/javascript"
+src = "js/jquery.js"></script>
+
+<script type = "text/javascript">
+$(document).ready(function() {
+
+$("#menu").load("menu/menu.html");
+
+} );
+</script>
+
+
+
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+if (swfobject.hasFlashPlayerVersion("7.0.0")) {
+// User has flash so do nothing
+} else {
+// User does not have flash, so redirect them
+window.location="http://www.fastresponse.org/mobi.html";
+}
+
+//]]>
+</script>
+
+
+<!--
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+var flashvars = {};
+var params = {};
+
+var attributes = {};
+
+if(swfobject.hasFlashPlayerVersion("8.0.0")){} else {
+
+window.location = "http://www.fastresponse.org/mobi.html";
+
+} 
+-->
+
+
+
+  </head>
+  <!-- class="front not-logged-in page-node node-type-page no-sidebars with-navigation" -->
+ 
+  <body>
+  
+  <!-- FINISH BELOW -->
+    
+    <div id="skip"><a href="#content">Skip to Content</a> <a href="#navigation">Skip to Navigation</a></div>  
+    <div id="page" width="1000" height="50000">
+
+ 
+    <!-- ______________________ HEADER _______________________ -->
+ 
+    <div id="header">
+	
+	<!-- floating banner over slideshow; somewhat hacked together :-) -->
+	<div style="position: absolute; float: left; z-index: 1000; margin-top: 20.5em; margin-left: 34em;">
+		<img src="Paramedic-Program-Announcement-001-10-2011.png" />
+	</div>
+	
+	
+      <div id="logo-title">
+	
+ 
+              <div id="header-region">
+          <div id="block-nice_menus-1" class="block block-nice_menus block-header block-id-33 clearfix odd">
+  <div class="block-inner">
+ 
+    
+    <div class="content">
+
+
+  <div id = "menu">
+</div>
+
+
+
+    </div>
+ 
+    
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->        </div>
+      
+      
+    </div> <!-- /header -->
+
+ 
+    <!-- ______________________ MAIN _______________________ -->
+<!--wrapper -->
+<div style="height: 575px; width: 1000px;">
+ 
+    <div id="main" class="clearfix">
+   
+      <div id="content">        <div id="content-inner" class="inner column center" >
+			
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="500" id="swf12738767971">
+<param name="movie" value="sites/default/files/home.swf" />
+<param name="allowScriptAccess" value="always" />
+<param name="bgcolor"           value="#FFFFFF" />
+<param name="scale"             value="showall" />
+<param name="quality"           value="medium" />
+<param name="align"             value="l" />
+<param name="allowfullscreen"   value="true" />
+
+<param name="base"              value="sites/default/files/" />
+<param name="play"              value="true" />
+<param name="menu"              value="false" />
+<param name="loop"              value="false" />
+<param name="wmode" value="transparent" />
+
+<!--[if gte IE 7]>-->
+<object type="application/x-shockwave-flash" data="sites/default/files/home.swf" width="1000" height="500">
+<param name="allowScriptAccess" value="always" />
+<param name="bgcolor"           value="#FFFFFF" />
+<param name="scale"             value="showall" />
+<param name="quality"           value="medium" />
+<param name="align"             value="l" />
+<param name="allowfullscreen"   value="true" />
+<param name="base"              value="sites/default/files/" />
+<param name="play"              value="true" />
+<param name="menu"              value="false" />
+<param name="loop"              value="false" />
+<param name="wmode" value="transparent" />
+
+
+<!--<![else]-->
+
+
+<p style="position:absolute; top: 450px; left: 275px; width: 500px; font-size:16px"><b>OOPS! There is a problem with your browser! <br /><br />You are missing some Flash content that should appear here! Perhaps your browser cannot display it, or maybe it did not initialize correctly. Please navigate using the menus above or below or <a href='http://www.google.com/gwt/x?u=http%3A%2F%2Ffastresponse.org%2Findex_mobi.html&btnGo=Go&source=wax&ie=UTF-8&oe=UTF-8'><i>CLICK HERE</i></a> for a simple text version of our site.</b></p>
+<!--<![endif]-->
+
+
+<!--[if gte IE 7]>-->
+</object>
+<!--<![endif]-->
+</object>
+
+</div>
+
+
+
+	          
+                      <div id="content-header">
+ 
+              <!---->
+ 
+              <!--                <h1 class="title">Home</h1>
+              -->
+ 
+                              <div id="mission"><p><b>Fast Response offers the Bay Area&rsquo;s most comprehensive education and resources for Emergency Medical Training including courses, conferences,&nbsp; and certifications.</b>&nbsp;<strong>&nbsp;</strong></p>
+
+<p><img src="/sites/default/files/fckuploads/image/Website-Click-Here-002.png" alt="" width="310" height="121" style="margin-top: 15px;"/></p>
+<p>&nbsp;</p></div>
+              
+              
+               
+ 
+              
+            </div> <!-- /#content-header -->
+          
+          <div id="content-area">
+            <div class="node node clearfix node-type-page" id="node-1">
+  <div class="node-inner">
+ 
+    
+    
+    <div class="content">
+  
+    
+          </div>
+          
+          
+
+ 
+    
+    
+  </div> <!-- /node-inner -->
+</div> <!-- /node-->          </div> <!-- /#content-area -->
+ 
+          
+          
+          </div>
+        </div> <!-- /content-inner /content -->
+ 
+        <!--          <div id="navigation" class="menu with-main-menu">
+            <ul id="primary" class="links main-menu"><li class="menu-111 active-trail first active"><a href="/testsite3/home" title="Home" class="active">HOME</a></li>
+<li class="menu-120"><a href="/testsite3/courses" title="Courses">COURSES</a></li>
+<li class="menu-251"><a href="/testsite3/nolink" title="">CALENDAR</a></li>
+<li class="menu-222"><a href="/testsite3/location" title="Location">LOCATION</a></li>
+<li class="menu-223"><a href="/testsite3/parking" title="Parking">PARKING</a></li>
+<li class="menu-198 last"><a href="/testsite3/contact" title="Contact Us">CONTACT US</a></li>
+</ul>                      </div> 
+        -->
+ 
+         <!-- /sidebar-left -->
+ 
+         <!-- /sidebar-second -->
+
+ 
+      </div> <!-- /main -->
+		<div id="classlinks">
+        
+       <center>
+         <blockquote>Fast Response School of Health Care Education, located in Berkeley, California, has over 22 years of experience as the San Francisco Bay Area’s premier community and professional medical training center. We offer certification and classes in:</blockquote></center>
+       <br />
+							<div class="view view-course-links view-id-course_links view-display-id-default view-dom-id-1">
+        <div class="view-header">
+      <p><u><b>Career Courses</b></u></p>
+    </div>
+  
+  
+  
+      <div class="view-content">
+      <table class="views-view-grid">
+
+  <tbody>
+                <tr class="row-1 row-first">
+                  <td class="col-1">
+              
+<span class="field-content"><a href="http://www.fastresponse.org/classes/career_courses/emt" title="EMT">Emergency Medical Technician (EMT)</a>
+  </span>
+          </td>
+                  <td class="col-2">
+
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/career_courses/sterile_processing_tech" title="Sterile Processing Tech">Sterile Processing Technician</a></span>
+  </span>
+          </td>
+                  <td class="col-3">
+              
+  <span class="views-field-title">
+                      <span class="field-content"><a href="http://www.fastresponse.org/classes/career_courses/phlebotomy" title="Phlebotomy">Phlebotomy Technician</a></span>
+  </span>
+  </span>
+
+          </td>
+                  <td class="col-4">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/career_courses/ward_clerk/" title="Ward Clerk">Ward Clerk/Health Unit Coordinator</a></span>
+  </span>
+          </td>
+          
+             <td class="col-5">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/career_courses/medical_assistant" title="Medical Assistant">Clinical Medical Assistant (CMA)</a></span>
+  </span>
+  
+  <td class="col-6">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://fastresponse.org/classes/career_courses/paramedic/" title="Paramedic">Paramedic (Now taking applications!)</a></span>
+  </span>
+          </td>
+  
+  
+          </td>
+              </tr>
+</table></div>
+<br /><br />
+
+<p><u><b>Continuing Education Courses</b></u></p> 
+
+ <div class="view-content">
+      <table class="views-view-grid">
+
+  <tbody>
+
+                <tr class="row-2">
+
+
+
+                  <td class="col-1">
+
+             
+
+
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/pals" title="PALS">Pediatric Advanced Life Support (PALS)</a></span>
+  </span>
+          </td>
+                  <td class="col-2">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/nrp" title="NRP">Neonatal Resuscitation Program (NRP)</a></span>
+
+  </span>
+          </td>
+                  <td class="col-3">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/ekg_basic" title="EKG/ECG Basic">EKG Basic</a></span>
+  </span>
+          </td>
+                  <td class="col-4">
+
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/community_courses/community_first_aid/" title="First Aid">ASHI Community First Aid</a></span>
+  </span>
+          </td>
+           <td>
+
+<br /><br />  <br />            
+
+          </td>
+              
+
+                <tr class="row-3 row-last">
+                  <td height="21" class="col-1">
+
+
+              
+  <span class="views-field-title">
+
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/12_lead_ekg/" title="12-Lead">EKG/ECG 12-Lead</a></span>
+  </span>
+          </td>
+                  <td class="col-2">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/itls/" title="ITLS">International Trauma Life Support (ITLS)</a></span>
+  </span>
+          </td>
+           <td class="col-3">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/acls/" title="ACLS">Advanced Cardiac Life Support (ACLS)</a></span>
+  </span>
+          </td>
+          
+           <td class="col-4">
+              
+  <span class="views-field-title">
+                
+<span class="field-content"><a href="http://www.fastresponse.org/classes/continuing_education/cpr/" title="CPR">Healthcare Provider CPR (BLS)</a></span>
+
+
+
+
+  </span>
+          </td>
+            <td class="col-5">
+              
+  <span class="views-field-title">
+                <span class="field-content"><a href="http://fastresponse.org/classes/continuing_education/emt_r/" title="EMT-R">EMT Refresher</a></span>
+  </span>
+          </td>
+
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> 			</div>
+			<div id="footerlinks">
+        
+        <ul class="links" style="padding-top: 10px; padding-bottom: 10px;">
+        <li class="menu-111 active-trail first active" style="float: left;"><a href="http://www.fastresponse.org" title="home" class="active">home</a></li>
+
+<li class="menu-120" style="float: left;"><a href="http://www.fastresponse.org/classes" title="courses">courses</a></li>
+<li class="menu-251" style="float: left;"><a href="https://fastresponse.securegw.com/cgi-bin/er/calendar_month.cgi" title="calendar">calendar</a></li>
+<li class="menu-222" style="float: left;"><a href="http://www.fastresponse.org/school/map_parking_and_directions" title="location">location</a></li>
+<li class="menu-223" style="float: left;"><a href="http://www.fastresponse.org/school/parking" title="parking">parking</a></li>
+<li class="menu-198 last" style="float: left;"><a href="http://www.fastresponse.org/school/contact_us" title="contact us">contact us</a></li>
+<li class="menu-198 last" style="float: left;"><a href="http://www.facebook.com/FastResponseSchool" title="visit us">Visit Us on FaceBook</a></li>
+
+</ul>
+</div>
+<a href="http://www.facebook.com/FastResponseSchool" title="visit us"><img src="buttons/PG_facebook_button.png" alt="" width="28" height="28" style="float: left; border: none;"/></a>
+<span style="float:right; padding-top: 10px;">&copy; 2009-2011 Fast Response. All Rights Reserved</span>                </div> <!-- /footer -->
+
+
+      
+    </div> <!-- /page -->
+      </body>
+</html>

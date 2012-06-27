@@ -1,0 +1,35 @@
+a:link {color: #c02608; text-decoration: none; }
+a:visited {text-decoration: none; color: #999999; }
+a:hover {text-decoration: none; }
+a:active {text-decoration: none; color: c02608; }
+
+.adspecial {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #FFFFFF; background-color: #D6D3CE}
+.ambu {color: #55447B; font-family: Georgia, "Times New Roman", Times, serif; font-size: 15px; font-style: italic; }
+b {  color: #003366; font-weight: bold; font-family: Arial, Helvetica, sans-serif}
+body {min-width: 750px; background-color:#FFFFFF; text-align: center; }
+
+.heading {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #55447B; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-weight: bold; text-transform: none}
+.headingw { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #999999; font-weight: normal}
+
+.mainpargraph {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px}
+.mainpargraphSmall { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #000000; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px }
+.mainparanew {width: 600px; position: relative; top: 50px; margin: auto auto; clear: both;}
+
+.pagehead {  font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-style: normal; font-weight: bold; text-transform: capitalize; color: #990000}
+
+p.strong {font-weight: bold;}
+
+.redtext {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: italic; color: #990000}
+.smalltext {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #003366}
+.smalltextOpen { font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #003366 ; line-height: 14px; padding-bottom: 24px}
+
+.special { width: 600px; position: absolute; top: 458px; tect-align: center; margin: auto auto; background-color:#FFFFCC; border-style: double; border-color: #000066; left: 86px; font-weight: bolder; }
+
+.strong {font-weight: bold;}
+.subhead { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #003366; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-weight: bold}
+.whitetext {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF}
+
+#wrapper {width: 750px; text-align: center; margin-left: 0; margin-right: auto; background-color:#FFFFFF}
+
+
+	

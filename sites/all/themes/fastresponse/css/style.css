@@ -1,0 +1,924 @@
+
+/** Font styles 
+---------------------------------*/
+
+body {
+  margin: 0;
+  /*
+   * Setting up font size, leading and font family
+   * http://www.markboulton.co.uk/journal/comments/five-simple-steps-to-better-typography
+   */
+  
+  letter-spacing:0.03em;
+	font-size:14px;
+	color:#fff;
+	background:#27396d url(images/bg.png);
+	background-repeat:repeat-x;
+}
+
+#page{
+	background:#1f2e57 url(images/pagebg.png);
+	background-repeat:repeat-x;
+}
+
+#menu {
+  float: right;
+  margin-right: 50px;
+  display: block;
+  line-height: normal;
+  text-align: left;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#content-header, #content-area, #footer{
+  padding:5px 50px
+}
+
+/* Links */
+
+a:link, a:visited {
+  color: #fff;
+  text-decoration: underline; 
+}
+
+a:hover, a:active {
+  color: #865566;
+  text-decoration: none;
+}
+
+
+#tablelink a:link, a:visited {color: #fff;
+  text-decoration: none; 
+  border-style: none;
+
+}
+
+#classes   {
+	margin-left:40;
+	
+}
+
+/* Titles  */
+
+h1, h2, h3, h4, h5, h6 {line-height:1.3em;}
+
+h1 {
+	font-size: 24px;
+	font-weight:300;
+	padding: 0 0 0.5em;
+	margin: 0;
+}
+
+h2 {font-size:20px;font-weight:300;margin-bottom:0.75em;}
+h3 {font-size:18px;margin-bottom:1em;}
+h4 {font-size:16px;margin-bottom:0.8em;}
+h5 {font-size:15px;font-weight:600;margin-bottom:0;}
+h6 {font-size:14px;font-weight:bold;}
+
+/* Paragraph Styles */
+
+p {
+  margin:0 0 1em 0;
+}
+
+/* List Styles  */
+
+ul, ol {
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+/* Table Styles  */
+
+table {
+	width: 99%;
+}
+tr.even td, tr.odd td {
+	padding: 10px 5px;
+}
+tr.odd {
+
+}
+tr.even, tr.odd {
+background-color:transparent;
+}
+/* Code */
+
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+
+pre {
+	background-color: transparent;
+	display: block;
+	padding: 5px;
+	margin: 5px 0;
+	border: 1px solid #aaa;
+}
+
+/* List Styles */
+
+ul          { list-style-type: disc; }
+ul ul       { list-style-type: circle; }
+ul ul ul    { list-style-type: square; }
+ul ul ul ul { list-style-type: circle; }
+ol          { list-style-type: decimal; }
+ol ol       { list-style-type: lower-alpha; }
+ol ol ol    { list-style-type: decimal; }
+ul li		{padding-bottom:1em;}
+/* Abbreviation */
+
+abbr {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+  white-space: nowrap;
+}
+
+/* UI improvments  */
+
+#mainslideshow {
+  float: right;
+  z-index: 1;
+}
+
+#edit-title{
+	font-size: 24px;
+}
+#system-themes-form img{
+	width:100px;
+}
+.form-item .description{
+	font-style:italic;
+	line-height:1.2em;
+	font-size:0.8em;
+	margin-top:5px;
+	color:#777;
+}
+#edit-delete{
+	color:#c00;
+}
+
+
+/** Top Menu **/
+#header-region .content{
+	text-align:right;
+}
+
+#page #main{
+	/* changed pdding-bottom from 150 and commented out the margin rules */
+  /*
+        padding-bottom: 80px;
+	margin-bottom: 80px;
+	background:url(images/phonenumber.png); 
+	background-repeat:no-repeat;
+	background-position:bottom center;
+*/	
+}
+#page_ma #main_ma{
+	/* changed pdding-bottom from 150 and commented out the margin rules */
+	padding-bottom:0px;
+	margin-bottom:0px; 
+
+	background-repeat:no-repeat;
+	background-position:bottom center;
+	
+}
+
+
+#page1 #main1{
+	/* changed pdding-bottom from 150 and commented out the margin rules */
+	padding-bottom:45px;
+	margin-bottom:-15px; 
+background:url(images/phonenumber.png); 
+	background-repeat:no-repeat;
+	background-position:bottom center;
+	
+}
+
+/**
+Quick Links
+**/
+
+div.field-field-quicklinks{
+	display:block;
+	float:right;
+	clear:right;
+	width:200px;
+
+	border: 1px solid #fff;
+	padding: 10px;
+	margin:0 0 20px 20px;
+} 
+div.field-field-quicklinks .field-label{
+	padding-bottom:10px;
+}
+
+/* for emt page */
+div.quicklinks2{
+	display:block;
+	float:right;
+	clear:right;
+	width:100px;
+
+	
+	padding-right: 20px;
+	margin:0 0 0px 00px;
+} 
+div.field-label2{
+	padding-bottom:5px;
+}
+
+/* for MA page */
+div.quicklinks3{
+	display:block;
+	float:right;
+	clear:right;
+	width:100px;
+
+	
+	padding-right: 40px;
+	margin:0 0 0px 0px;
+} 
+div.field-label3{
+	padding-bottom:5px;
+}
+
+/* for PHLEB page */
+div.quicklinks4{
+	display:block;
+	float:right;
+	clear:right;
+	width:100px;
+border: 1px solid #fff;
+	
+	padding-right: 30px;
+	padding-left: 0px;
+	margin-left: 20px;
+} 
+div.field-label4{
+	padding-bottom:10px;
+}
+
+
+/** Content Images --not used????--**/
+
+div.field-field-leftimage{
+	display:block;
+	float:left;
+	margin:0 20px 20px 0;
+}
+div.field-field-rightimage{
+	display:block;
+	float:right;
+	margin:0 0 20px 20px;
+	clear:right;
+}
+
+/**
+FOOTER
+**/
+
+#footer{
+	height:20px;
+	padding-top:10px;
+	text-align:right;
+	font-size:12px;
+	background:url(images/thinline.png);
+	background-repeat:no-repeat;
+	background-position:top center;
+}
+#footerlinks {float:left;text-transform:capitalize; padding-left: 0px;}
+#footerlinks a{font-size:12px;color:#fff;text-decoration:underline;}
+#footerlinks a:hover {color: #865566;}
+#footerlinks, #footerlinks ul{display:block;}
+
+
+/** SYSTEM OVERRIDES **/
+
+ul.menu li, ul.menu, li.leaf {
+list-style-type:none;
+list-style-image:none;
+margin:0;
+padding:0;
+}
+
+td.block{
+	color:#000;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+
+/* $Id: system-menus.css,v 1.1 2007/10/05 14:50:25 goba Exp $ */
+
+ul.menu {
+  list-style: none;
+  border: none;
+  text-align:left; /* LTR */
+}
+ul.menu li {
+  margin: 0 0 0 0.5em; /* LTR */
+}
+l
+li a.active {
+  color: #000;
+}
+td.menu-disabled {
+  background: #ccc;
+}
+ul.links {
+  margin: 0;
+  padding: 0;
+}
+ul.links.inline {
+  display: inline;
+}
+ul.links li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 0.5em;
+}
+.block ul {
+  margin: 0;
+  padding: 0 0 0.25em 1em; /* LTR */
+}
+/*----------------------------------------------------------------------------------------------*/
+
+/** ABOUT DEFAULT STYLES
+---------------------------------
+*  default.css is used to establish general rules, browser reset, or Admin User interface Styles
+
+   BROWSER RESET
+---------------------------------
+*  For a more complete reset, go to http://developer.yahoo.com/yui/reset/
+*/
+
+* { margin: 0; padding: 0; }
+
+/** Clear Floats Without Structural Markup: 
+---------------------------------
+*  http://www.positioniseverything.net/easyclearing.html
+*/
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix { display: inline-block; }
+
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
+
+/* clear classes */
+
+.clearleft, .clearl, .cleft { clear: left; }
+.clearright, .clearr, .cright { clear: right; }
+.clear, .clearboth, .clearall{ clear: both; }
+
+/* Float classes */
+
+.floatleft, .fleft, .floatl { float: left; margin: 0 10px 5px 0; }
+.floatright, .fright, .floatr { float: right; margin: 0 0 5px 10px; }
+
+/** "Skip to Main Content" link
+---------------------------------
+*  This link useful for both visually impaired people and those with mobility impairments
+*  who cannot use a mouse. http://www.webaim.org/techniques/css/invisiblecontent/
+*/
+
+#skip a, #skip a:hover, #skip a:visited {
+  position: absolute;
+  left:-10000px;
+  top:auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#skip a:active, #skip a:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* bug fix with views 2 edit links */
+
+div.view div.views-admin-links {
+	width:auto;
+}
+
+/** Rollover edit links for blocks */
+
+div.block {
+  position: relative;
+}
+div.block .edit {
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: -5px;
+  z-index: 40;
+  padding: 3px 8px 0;
+  font-size: 10px;
+  line-height:16px;
+  background-color: #fff;
+  border:1px solid #ccc;
+
+}
+div.block .edit a {
+  display:block;
+  border:0;
+  padding:0;
+  margin:0;
+}
+div.block:hover .edit {
+  display: block;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+
+/** Layout
+---------------------------------
+*  Using a negative margin technique, adapted from ZEN. The page is loaded by this order:
+*  
+*  1. Header
+*  2. Content
+*  3. Navigation menus
+*  4. Sidebar Left
+*  5. Sideabr Right
+*	
+*/
+
+#page {
+	width: 1000px; /* edit to change the width of the page */
+	margin: 0 auto; /* remove 'auto' and the width to switch to a fluid width */
+}
+
+/** LAYOUT RULES
+---------------------------------
+*  do not change if you're not sure you know what you're doing
+*/
+#mission{
+	width:360px;
+	position:absolute;
+	top:170px;
+	margin-left:10px;
+	font-size:14px;
+	
+	font-style: italic;
+}
+
+#content {
+  float: left;
+  width: 100%;
+  height: 300px;
+  margin-right: -100%;
+  padding: 0;
+}
+.sidebar {
+  float: left;
+}
+#sidebar-second {
+  float: right;
+}
+#footer {
+  float: none;
+  clear: both;
+}
+.gmap-right{
+	margin-left:20px;
+	margin-bottom:20px;
+}
+
+#classlinks{
+	padding:10px 50px 60px;
+}
+/* Layout Helpers */
+
+#header, #footer, .mission, .breadcrumb, .node {
+  clear: both;
+}
+
+/** Sidebars width
+---------------------------------
+*  Changing the width of the sidebars is dead easy, just change the
+*  values below corresponding to the sidebar you want to modify.
+*  Make sure you keep negative values as negative values.
+*  For example, if I want to increase the width of the left sidebar
+*  to 300px, I would have to change each '190' to '300'.
+*/
+
+.two-sidebars .center,
+.sidebar-left .center {
+  margin-left: 190px;     /* LEFT value */
+}
+#sidebar-first {
+  width: 190px;           /* LEFT value */
+	margin-right: -190px;    /* negative LEFT value */
+}
+.two-sidebars .center,
+.sidebar-right .center {
+  margin-right: 200px;    /* RIGHT value */
+}
+#sidebar-second {
+  width: 200px;           /* RIGHT value */
+}
+
+/** Columns inner
+---------------------------------
+*  You can change the padding inside the columns without changing the
+*  width of them by just usinbg the INNER div of each column
+*/
+
+.inner {
+	padding: 0px;
+}
+
+/** Navigation styles
+---------------------------------
+*  The navigation is loaded after the content, so we need to make space
+*  for it, equal to its height, so if you change the height of the navigation,
+*  remember to adapt the margin top of the content and sidebars.
+*/
+
+#navigation {
+  float: left;
+  margin-left: 0;
+  margin-right: -100%;
+  padding: 0;
+  width: 100%;
+}
+.with-navigation .sidebar {
+  margin-top: 40px;        /* Navigation Height */
+}
+#navigation {
+  height: 40px;            /* Navigation Height */
+}
+
+#header ul.menu{
+	padding:25px 50px 15px 0;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+/* $Id: nice_menus.css,v 1.27.2.1 2008/07/11 16:05:10 add1sun Exp $ */
+
+/* this is from sites/all/modules/nice_menus/ and is required to keep page from exploding */
+/*
+  This file contains the basic logic for nice menus, and should not be
+  edited.  To customize the menus, it's recommended to create a custom CSS
+  file using nice_menus_default.css as a template, then configure the module
+  to use your custom CSS file (this is done in the global settings tab of
+  the theme administration.)
+*/
+
+/* Below should fix menu being a few pixels away in some themes, and menus disappearing behind other stuff. */
+.block-nice_menus {
+  line-height: normal;
+  z-index: 10;
+}
+
+ul.nice-menu,
+ul.nice-menu ul {
+  z-index: 5;
+  position: relative;
+}
+
+ul.nice-menu li {
+  position: relative;
+}
+
+ul.nice-menu a {
+  display: block;
+}
+
+ul.nice-menu ul,
+/* For Garland header. */
+#header-region ul.nice-menu ul {
+  position: absolute;
+  visibility: hidden;
+}
+
+ul.nice-menu li.over ul {
+  visibility: visible;
+}
+
+ul.nice-menu ul li {
+  display: block;
+}
+
+ul.nice-menu:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* spacing adjustment for top-level menu */
+
+ul.nice-menu li ul{
+	margin-top: -.2em;
+}
+
+
+/* Show submenus when over their parents. */
+ul.nice-menu li:hover ul,
+ul.nice-menu li.menuparent li:hover ul,
+ul.nice-menu li.menuparent li.menuparent li:hover ul,
+ul.nice-menu li.menuparent li.menuparent li.menuparent li:hover ul,
+ul.nice-menu li.over ul,
+ul.nice-menu li.menuparent li.over ul,
+ul.nice-menu li.menuparent li.menuparent li.over ul,
+ul.nice-menu li.menuparent li.menuparent li.menuparent li.over ul,
+/* Repeat all this stuff just for Garland headers. */
+#header-region ul.nice-menu li:hover ul,
+#header-region ul.nice-menu li.menuparent li:hover ul,
+#header-region ul.nice-menu li.menuparent li.menuparent li:hover ul,
+#header-region ul.nice-menu li.over ul,
+#header-region ul.nice-menu li.menuparent li.over ul,
+#header-region ul.nice-menu li.menuparent li.menuparent li.over ul {
+  visibility: visible;
+}
+
+/* Hide sub-menus initially. */
+ul.nice-menu li:hover ul ul,
+ul.nice-menu li:hover ul ul ul,
+ul.nice-menu li:hover li:hover ul ul,
+ul.nice-menu li:hover li:hover ul ul ul,
+ul.nice-menu li:hover li:hover li:hover ul ul,
+ul.nice-menu li:hover li:hover li:hover ul ul ul,
+ul.nice-menu li.over ul ul,
+ul.nice-menu li.over ul ul ul,
+ul.nice-menu li.over li.over ul ul,
+ul.nice-menu li.over li.over ul ul ul,
+ul.nice-menu li.over li.over li.over ul ul,
+ul.nice-menu li.over li.over li.over ul ul ul,
+/* Repeat all this stuff just for Garland headers. */
+#header-region ul.nice-menu li:hover ul ul,
+#header-region ul.nice-menu li:hover ul ul ul,
+#header-region ul.nice-menu li:hover li:hover ul ul,
+#header-region ul.nice-menu li:hover li:hover ul ul ul,
+#header-region ul.nice-menu li:hover li:hover li:hover ul ul,
+#header-region ul.nice-menu li:hover li:hover li:hover ul ul ul,
+#header-region ul.nice-menu li.over ul ul,
+#header-region ul.nice-menu li.over ul ul ul,
+#header-region ul.nice-menu li.over li.over ul ul,
+#header-region ul.nice-menu li.over li.over ul ul ul,
+#header-region ul.nice-menu li.over li.over li.over ul ul,
+#header-region ul.nice-menu li.over li.over li.over ul ul ul {
+  visibility: hidden;
+}
+
+/***************
+ IE 6 Fixes
+***************/
+
+/* Iframe to fix z-index bug when menu hovers over <select> fields. */
+ul.nice-menu li.menuparent ul,
+/* For Garland header. */
+#header-region ul.nice-menu li.menuparent ul {
+	overflow: visible !important;
+	/* overflow: hidden; */
+}
+
+
+ul.nice-menu li.menuparent ul iframe,
+/* For Garland header. */
+#header-region ul.nice-menu li.menuparent ul iframe {
+	display: none;
+	display/**/: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	
+	width: 20px;
+	height: 20px;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+/* this is from themes/fastresponse/css is is required */
+
+/* $Id: nice_menus_default.css,v 1.6 2007/10/29 16:38:28 add1sun Exp $ */
+/*
+  This is the default layout template for nice menus, and will provide
+  a starting point for the look of your menus. To customize, it's
+  recommended to create a custom CSS file using this file as a template,
+  then configure the module to use your custom CSS file
+  (this is done in the global settings tab of the theme administration.)
+
+  To help understand the CSS, the HTML looks like this, where
+    x is a number;
+    TYPE is down/left/right;
+    PATH is the menu path such as node/343;
+    MID is the menu id such as 33):
+  <ul id='nice-menu-x' class='nice-menu nice-menu-TYPE'>
+    <li id='menu-MID' class='menu-path-PATH'><a href='#'>This is a menu item</a></li>
+    <li class='menuparent menu-path-PATH'><a href='#'>A submenu</a>
+      <ul...><li...>...</li>
+      </ul>
+    </li>
+    ...
+  </ul>
+
+  If you have more than one nice-menu and want to target a particular one,
+  use its id (e.g. ul#nice-menu-2).
+
+  See README.txt and the handbook page (http://drupal.org/node/185543)
+  for some CSS customization examples.
+*/
+
+/******************************
+ Global CSS for ALL menu types
+******************************/
+
+ul.nice-menu,
+ul.nice-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #010a17;
+}
+
+ul.nice-menu li {
+  border: 1px solid #010a17;
+  border-top: 0;
+  float: left;
+  background-color: #010a17;
+  /* Additional overrides to deal with Garland theme. */
+  margin: 0;
+  padding-left: 0;
+  background-image: none;
+}
+
+/* Overrides for Garland header. */
+#header-region ul.nice-menu li {
+  margin: 0;
+  /* Padding rules are needed to deal with Garland's header line-height. */
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  background: #010a17;
+}
+
+ul.nice-menu a {
+  padding: 0.3em 5px 0.3em 5px;
+}
+
+ul.nice-menu ul,
+/* Repeat for Garland header. */
+#header-region ul.nice-menu ul {
+  top: 1.8em;
+  left: -1px;
+  border: 0;
+  border-top: 1px solid #010a17;
+  margin-right: 0;
+}
+
+/* Override for Garland header. */
+#header-region ul.nice-menu ul {
+  top: 1.7em;
+}
+
+ul.nice-menu ul li {
+  width: 12.5em;
+}
+
+/******************************
+ VERTICAL (left/right) menus
+******************************/
+
+/* This is the default width of all vertical menus. */
+ul.nice-menu-right, ul.nice-menu-left,
+ul.nice-menu-right li, ul.nice-menu-left li {
+  width: 12.5em;
+}
+
+/* VERTICAL menus where submenus pop RIGHT (default). */
+ul.nice-menu-right ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: -1px;
+}
+
+ul.nice-menu-right ul ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: -1px;
+}
+
+
+/* VERTICAL menus where submenus pop LEFT. */
+ul.nice-menu-left li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: -1px;
+}
+
+ul.nice-menu-left li ul li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: -1px;
+}
+
+
+
+
+ul.nice-menu-left a, ul.nice-menu-left ul a {
+  padding-left: 14px;
+}
+ 
+/******************************
+ HORIZONTAL (down) menus
+******************************/
+
+ul.nice-menu-down {
+  float: left;
+  border: 0;
+}
+
+ul.nice-menu-down li {
+  border-top: 1px solid #010a17;
+}
+
+ul.nice-menu-down li li {
+  border-top: 0;
+}
+
+ul.nice-menu-down ul {
+  left: 0;
+}
+
+ul.nice-menu-down ul li {
+  clear: both;
+}
+
+ul.nice-menu-down li ul li ul,
+/* Repeat for Garland header. */
+#header-region ul.nice-menu-down li ul li ul {
+  left: 12.5em;
+  top: -1px;
+}
+
+ul.nice-menu-down .menuparent a {
+  padding-right: 15px;
+}
+
+
+
+
+/*Mine
+*/
+#nice-menu-1{
+	float:right;
+	margin-right:50px;
+}
+#header-region ul.nice-menu{
+	display:block;
+	text-align:left;
+}
+#header-region ul.nice-menu li{
+	display:inline;
+	margin-left:25px;
+	background:#000;
+	border:none;
+}
+#header-region ul.nice-menu li a{
+	text-decoration:none;
+}
+#header-region ul.nice-menu li a.active{
+	text-decoration:none;
+	color:#5b69a5;
+}
+
+
+
+ul.nice-menu span {
+padding:0.3em 5px;
+display:block;
+}
+
+#header-region ul.nice-menu ul {
+top:2em;
+}
+ul.nice-menu-down li li.menuparent,ul.nice-menu-down li li.menuparent:hover, #header-region ul.nice-menu-down li li.menuparent,#header-region ul.nice-menu li ul li,ul.nice-menu ul {
+	background:#010a17;
+	margin-left:0;
+}
+
+
+#header-region  ul.nice-menu li ul, ul.nice-menu li{
+	background:#010a17;	
+}

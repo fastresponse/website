@@ -1,0 +1,3 @@
+
+ErrorDocument 403 http://fastresponse.org/index.html
+ErrorDocument 404 http://fastresponse.org/index.html

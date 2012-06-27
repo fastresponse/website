@@ -1,0 +1,495 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  letter-spacing: 0.03em;
+  font-size: small;
+  color: rgb(255, 255,255);
+  background: url("images/bg.png") repeat-x scroll 0% 0% rgb(39, 57, 109);
+}
+
+a:link, a:visited {
+  color: white;
+}
+
+#page {
+  /*width: 1000px;*/
+  width: 100%;
+  background: url("images/pagebg.png") repeat-x scroll 0% 0% rgb(31, 46, 87);
+}
+
+#skip a, #skip a:hover, #skip a:visited {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#menu {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+}
+
+#menu a:hover {
+  color: #865566;
+}
+
+#main {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+#head {
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+.headerimg {
+  display: block;
+}
+
+#logo-mission {
+  float: left;
+  width: 40%;
+  height: 100%;
+  /* top: 170px; */
+  margin-left: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+#logo {
+  display: block;
+  width: 100%;
+}
+
+#mission {
+  display: block;
+  width: 90%;
+  height: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-style: italic;
+}
+
+#phone {
+  display: inline-block;
+  position: relative;
+  width: 25em;
+  height: 3em;
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+#phone a {
+  text-decoration: none;
+}
+
+#phone div {
+  position: absolute;
+  width: 25em;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+#phone img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 0;
+}
+
+#contact {
+  display: inline-block;
+  position: relative;
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  font-size: 125%;
+  height: 4em;
+  width: 19em;
+  text-shadow: 2px 3px 8px #350010;
+  left: 3em;
+}
+
+#contact a {
+  color: #FFA3A3;
+  text-decoration: none;
+}
+
+#contact img {
+  position: absolute;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#contact div {
+  white-space: nowrap;
+  /* don't set font-size here, set it in #contact */
+  position: absolute;
+  height: 4em;
+  width: 19em;
+  line-height: 4em;
+  text-align: center;
+  z-index: 1;
+}
+
+#slideshow-banner {
+  position: relative;
+}
+
+#mainslideshow {
+  float: right;
+  z-index: 0;
+  display: inline;
+  width: 550px;
+  height: 298px;
+}
+
+#banner {
+  height: 80px;
+  /* width depends on width of slideshow
+   * which is 550px right now
+   */
+  width: 480px;
+  position: absolute;
+  display: block;
+  z-index: 5;
+  top: 260px;
+  right: 25px;
+  border: 0;
+}
+
+#main blockquote {
+  margin: 2%;
+}
+
+#middle {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: 90%;
+  position: relative;
+  text-align: center;
+}
+
+#classlist {
+  clear: both;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+#classlist h2 {
+  margin-top: 4%;
+  letter-spacing: 0.1em;
+  font-family: Century Gothic, sans-serif;
+  font-size: 150%;
+  font-weight: bold;
+  text-shadow: 2px 3px 8px #350010;
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+#classlist table {
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+
+#classlist th {
+  letter-spacing: 0.1em;
+  font-family: Century Gothic, sans-serif;
+  font-size: 150%;
+  font-weight: bold;
+  text-shadow: 2px 3px 8px #350010;
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+.cols-6 td {
+  width: 16%;
+}
+.cols-5 td {
+  width: 19%;
+}
+.cols-4 td {
+  width: 24%;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  width: 15em;
+  height: 7em;
+  margin: 0;
+  padding: 0;
+}
+.button div {
+  position: absolute;
+  width: 15em;
+  z-index: 1;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1em;
+}
+.lines-2 div {
+  top: 2.25em;
+}
+.lines-1 div {
+  top: 2.75em;
+}
+.button img {
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  z-index: 0;
+  border: 0;
+  left: -5%;
+}
+.buttontext {
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  font-size: 95%;
+  text-decoration: none;
+}
+
+#footer {
+  text-align: left;
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  clear: both;
+  width: 100%;
+}
+
+#footer ul {
+  display: inline;
+  float: left;
+  padding: 0px;
+  margin: 6px;
+}
+
+#footer ul li {
+  float: left;
+  display: inline;
+  list-style-type: none;
+  padding: 0pt 0.5em;
+}
+
+#footer ul li a {
+  text-decoration: underline;
+  font-size: 90%;
+  color: rgb(255, 255, 255);
+}
+
+#footer ul li a:hover {
+  color: #865566;
+}
+
+#footer ul li a img {
+  text-decoration: none;
+  display: inline;
+  width: 28px;
+  height: 28px;
+  float: right;
+  border: none;
+}
+
+#copyright {
+  display: inline;
+  float: right;
+  left: auto;
+  text-align: right;
+  font-size: 110%;
+  margin: 6px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.courseinfo {
+  width: 84%;
+  height: 100%;
+}
+
+.quicklinks {
+  float: right;
+  width: 16%;
+  height: 100%;
+}
+.quicklinks dl {
+  margin: 1em;
+}
+.quicklinks dt {
+  width: 100%;
+  text-align: center;
+}
+.quicklinks dd {
+  margin-bottom: 2.25em;
+  margin-left: 0;
+  text-align: center;
+}
+.quicklinks img {
+  display: inline;
+  border: 0;
+}
+
+.coursebody {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: 100%;
+  position: relative;
+  font-size: 110%;
+}
+
+.coursebody h1 {
+  font-size: 170%;
+  margin-bottom: 2em;
+}
+
+.coursebody h3 {
+  font-size: 125%;
+}
+
+.coursebody h4 {
+  font-size: 105%;
+}
+
+.coursebody p {
+}
+
+.bullets {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+.bullets li {
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+
+.listbox {
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  font-size: small;
+  margin: 0;
+  padding: 1em;
+  padding-left: 2.75em;
+  border: 1px solid white;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  background-color: #1e2c54;
+}
+
+.listbox li {
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  font-size: small;
+  margin-bottom: 0.25em;
+}
+
+.checkmark {
+  list-style: none outside url(images/checkmark_sm.png);
+}
+
+.testimonials {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.photos {
+  width: 100%;
+  margin: 4em 0;
+}
+
+.photos a {
+  display: block;
+  width: 100%;
+}
+
+.photos p {
+  text-align: center;
+}
+
+.photos img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.phone {
+  display: block;
+  position: relative;
+  width: 20.25em;
+  height: 2.25em;
+  font-family: Century Gothic, sans-serif;
+  font-size: 220%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.phone a {
+  text-decoration: none;
+}
+
+.phone div {
+  position: absolute;
+  width: 20.25em;
+  height: 2.25em;
+  line-height: 2.25em;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.phone img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 0;
+}
+
+.bodywrapper {
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 100%;
+}
+

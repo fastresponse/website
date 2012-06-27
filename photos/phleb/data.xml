@@ -1,0 +1,54 @@
+<icons>
+
+<!-- Change main settings here -->
+<icon tooltipXPos = "370"  tooltipYPos = "70" windowMode = "_blank" bgColor = "0x000000"/>
+
+
+<!-- Change individual settings for each picture here -->
+
+<!--<icon thumbnail="thumbnails/1.jpg" image="images/1.jpg" toolTip="Info for Image 1" url = "http://flashden.net/user/LGLab" mainYPos="70"/> -->
+
+<icon thumbnail="thumbnails/PHLEB001THUMB.jpg" image="images/PHLEB001FULL.jpg" toolTip="See yourself working as a Phlebotomist!" url = "D:\new_website\flash\3d-carousel-photo-gallery-source\new\carouselGalleryUpdate2\index.html" mainYPos="70"/>
+
+<icon thumbnail="thumbnails/PHLEB002THUMB.jpg" image="images/PHLEB002FULL.jpg" toolTip="Skilled instructors."  url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB003THUMB.jpg" image="images/PHLEB003FULL.jpg" toolTip="Hands-on training." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="70"/>
+
+<icon thumbnail="thumbnails/PHLEB004THUMB.jpg" image="images/PHLEB004FULL.jpg" toolTip="Engaging lectures." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB005THUMB.jpg" image="images/PHLEB005FULL.jpg" toolTip="All phlebotomy procedures covered." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB006THUMB.jpg" image="images/PHLEB006FULL.jpg" toolTip="Work with your fellow students." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB007THUMB.jpg" image="images/PHLEB007FULL.jpg" toolTip="Gain the confidence you need." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/PHLEB008THUMB.jpg" image="images/PHLEB008FULL.jpg" toolTip="Learn the necessary skills." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB009THUMB.jpg" image="images/PHLEB009FULL.jpg" toolTip="Safe laboratory environment." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/PHLEB010THUMB.jpg" image="images/PHLEB010FULL.jpg" toolTip="Butterfly needle stick." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB011THUMB.jpg" image="images/PHLEB011FULL.jpg" toolTip="Friendly lab classroom." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB012THUMB.jpg" image="images/PHLEB012FULL.jpg" toolTip="Learn from each other!" url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB013THUMB.jpg" image="images/PHLEB013FULL.jpg" toolTip="Tourniquet used to find the vein." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/PHLEB014THUMB.jpg" image="images/PHLEB014FULL.jpg" toolTip="Needle stick practice." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB015THUMB.jpg" image="images/PHLEB015FULL.jpg" toolTip="Personal guided instruction." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/PHLEB016THUMB.jpg" image="images/PHLEB016FULL.jpg" toolTip="Fingerstick blood collection." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/> 
+
+<icon thumbnail="thumbnails/PHLEB017THUMB.jpg" image="images/PHLEB017FULL.jpg" toolTip="Learn the skills firsthand." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB018THUMB.jpg" image="images/PHLEB018FULL.jpg" toolTip="Standard precautions always used." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/PHLEB019THUMB.jpg" image="images/PHLEB019FULL.jpg" toolTip="Lively engaging laboratory practice." url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/PHLEB020THUMB.jpg" image="images/PHLEB020FULL.jpg" toolTip="Success is waiting for YOU!" url = "http://www.fastresponse.org/classes/career_courses/emt/" mainYPos="60"/>
+
+</icons>
+
+
+

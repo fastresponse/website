@@ -1,0 +1,43 @@
+<icons>
+
+<!-- Change main settings here -->
+<icon tooltipXPos = "370"  tooltipYPos = "70" windowMode = "_blank" bgColor = "0x000000"/>
+
+
+<!-- Change individual settings for each picture here -->
+
+<icon thumbnail="thumbnails/1.jpg" image="images/1.jpg" toolTip="Info for Image 1" url = "http://flashden.net/user/LGLab" mainYPos="70"/>
+
+<icon thumbnail="thumbnails/2.jpg" image="images/2.jpg" toolTip="Info for Image 2"  url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/3.jpg" image="images/3.jpg" toolTip="Info for Image 3" url = "http://flashden.net/user/LGLab" mainYPos="70"/>
+
+<icon thumbnail="thumbnails/4.jpg" image="images/4.jpg" toolTip="Info for Image 4" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/5.jpg" image="images/5.jpg" toolTip="Info for Image 5" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/6.jpg" image="images/6.jpg" toolTip="Info for Image 6" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/7.jpg" image="images/7.jpg" toolTip="Info for Image 7" url = "http://flashden.net/user/LGLab" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/8.jpg" image="images/8.jpg" toolTip="Info for Image 8" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/9.jpg" image="images/9.jpg" toolTip="Info for Image 9" url = "http://flashden.net/user/LGLab" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/10.jpg" image="images/10.jpg" toolTip="Info for Image 10" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<!-- Here is an example of what you would need to do if you wanted to add 5 more pictures -->
+
+<!-- <icon thumbnail="thumbnails/11.jpg" image="images/11.jpg" toolTip="Info for Image 11" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/12.jpg" image="images/12.jpg" toolTip="Info for Image 12" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/13.jpg" image="images/13.jpg" toolTip="Info for Image 13" url = "http://flashden.net/user/LGLab" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/14.jpg" image="images/14.jpg" toolTip="Info for Image 14" url = "http://flashden.net/user/LGLab" mainYPos="50"/>
+
+<icon thumbnail="thumbnails/15.jpg" image="images/15.jpg" toolTip="Info for Image 15" url = "http://flashden.net/user/LGLab" mainYPos="60"/>
+
+<icon thumbnail="thumbnails/16.jpg" image="images/16.jpg" toolTip="Info for Image 16" url = "http://flashden.net/user/LGLab" mainYPos="50"/> -->
+
+</icons>

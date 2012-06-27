@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /gui
+Disallow: /sites
+Disallow: /cgi-bin
+Disallow: /newsletter
+Disallow: /photos
+Disallow: /menu
+Allow: /
+Disallow: /flash
+Disallow: /public/formmail
+
