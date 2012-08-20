@@ -186,6 +186,9 @@ h3 {
 .cols-4 td {
   width: 24%;
 }
+.cols-2 td {
+  width: 49%;
+}
 
 /* end structural */
 
@@ -397,3 +400,40 @@ h3 {
 }
 
 /* end photos */
+
+/*
+ * for <ul> lists meant to be clickable nav links
+ * layout:
+ * <ul class="listnav">
+ *   <li onClick="jsFunc()";>Text</li>
+ *   ...
+ * </ul>
+ *
+ */
+#listnav {
+  margin: 0;
+  padding: 0;
+}
+
+#listnav li {
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0.5em;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#listnav li:hover {
+  text-decoration: underline;
+  color: #DD0033;
+}
+
+#listnav-init {
+  color: #DD0033;
+}
+
+#listnav .odd {
+}
+
+/* end listnav */
+
