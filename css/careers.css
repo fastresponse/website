@@ -1,0 +1,85 @@
+
+/* styles for the careers pages */
+
+.jobsearch, .joblist {
+  width: 100%;
+  min-height: 25em;
+  text-align: center;
+}
+
+.jobsearch table, .joblist table {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.jobsearch td {
+  width: 30%;
+}
+
+.joblist {
+}
+
+.joblist table {
+  border-spacing: 30px;
+}
+
+.joblist .top {
+  display: inline-block;
+  font-size: 80%;
+  width: 24%;
+  padding-bottom: 10px;
+}
+
+.joblist .bottom {
+  font-size: 115%;
+  width: 96%;
+  /* 2% for left and right - so width = 100 - 2 - 2 = 96% */
+  padding: 10px 2%;
+  border-top: solid 1px brown;
+  max-height: 5em;
+  overflow: hidden;
+}
+
+.joblist td:hover {
+  color: black;
+  background-color: #DFEDFB;
+  background-color: #D1D1FA;
+  background-color: #FAFAD1;
+  background-color: #EAEAD1;
+  background-color: #D9D9AF;
+  background-color: #E2E2C1;
+}
+
+.joblist td:hover a {
+  color: black;
+}
+
+.joblist td {
+  width: 24%;
+  border: 1px solid red;
+  border-radius: 1em;
+  padding: 10px;
+}
+
+/*
+.joblist td.topleft {
+  border-top-left-radius: 1em;
+}
+
+.joblist td.topright {
+  border-top-right-radius: 1em;
+}
+
+.joblist td.bottomleft {
+  border-bottom-left-radius: 1em;
+}
+
+.joblist td.bottomright {
+  border-bottom-right-radius: 1em;
+}
+*/
+
+.joberror {
+}
+

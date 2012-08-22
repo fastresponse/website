@@ -7,7 +7,7 @@ function handleit($ex) {
 }
 set_exception_handler('handleit');
 
-function db_query($query, $params, $single = 0) {
+function db_connect() {
   $local_testing = 1;
 
   if ($local_testing) {
@@ -23,7 +23,18 @@ function db_query($query, $params, $single = 0) {
     $dbname = 'career_services_' . $user;
   }
 
-  $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+  try {
+    $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+  }
+  catch(PDOException $e) {
+    $dbh = null;
+  }
+
+  return $dbh;
+}
+
+function db_query($dbh, $query, $params, $single = 0) {
+  if ($dbh == null) return;
 
   $sth = $dbh->prepare($query, array() );
   $sth->execute($params);
@@ -35,13 +46,10 @@ function db_query($query, $params, $single = 0) {
     $data = $sth->fetch();
   }
 
-  // close db connection
-  $dbh = null;
-
   return $data;
 }
 
-function query_source_list() {
+function query_source_list($dbh) {
   $q_list =
     "SELECT name
     FROM sources"
@@ -49,10 +57,10 @@ function query_source_list() {
 
   $params = array();
 
-  return db_query($q_list, $params);
+  return db_query($dbh, $q_list, $params);
 }
 
-function query_source($name) {
+function query_source($dbh, $name) {
   $q_src =
     "SELECT website, directions, courses
     FROM sources
@@ -62,10 +70,10 @@ function query_source($name) {
     ':name' => $name,
   );
 
-  return db_query($q_src, $params, 1);
+  return db_query($dbh, $q_src, $params, 1);
 }
 
-function query_jobpostings($firstdate, $lastdate, $course, $source) {
+function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
   $q_jobpost =
     "SELECT DATE_FORMAT(postdate, '%m-%d-%Y') AS showdate, courses, source, text
      FROM jobpostings
@@ -88,7 +96,7 @@ function query_jobpostings($firstdate, $lastdate, $course, $source) {
 
   $q_jobpost .= " ORDER BY postdate";
 
-  return db_query($q_jobpost, $params);
+  return db_query($dbh, $q_jobpost, $params);
 }
 
 ?>

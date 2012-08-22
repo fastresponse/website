@@ -4,9 +4,15 @@ include_once('./dbconn.php');
 
 $self = $_SERVER['PHP_SELF'];
 
-$source_list = query_source_list();
-foreach ($source_list as &$entry) {
-  $entry = "<option>$entry</option>\n";
+$source_list = "";
+
+$handle = db_connect();
+
+if ($handle != null) {
+  $all_sources = query_source_list($handle);
+  foreach ($all_sources as $src) {
+     $source_list .= "<option>{$src['name']}</option>\n";
+  }
 }
 
 $defhtml = <<<DEFHTML
@@ -53,7 +59,7 @@ $defhtml = <<<DEFHTML
     </tr>
     <tr>
       <td colspan="3">
-        <input type="text" name="text" />
+	<textarea rows="10" cols="50" name="text"></textarea>
       </td>
     </tr>
     </tbody></table>
@@ -71,10 +77,10 @@ $text = null;
 if (array_key_exists('date', $_POST))
   $date = $_POST['date'];
 
-if ($date == null)
+if ($date == null) {
   $out = $defhtml;
 }
-else {
+else if ($handle != null) {
   $ret = "";
   // make $ret
   $out = <<<QUERYHTML
@@ -87,7 +93,12 @@ $ret
 </div>
 QUERYHTML;
 }
+else {
+  $out = '<h2>There was an error accessing the database.</h2>';
+}
 
 echo $out;
+
+$handle = null;
 
 ?>

@@ -4,54 +4,62 @@ include_once('./dbconn.php');
 
 $self = $_SERVER['PHP_SELF'];
 
+$source_list = "";
+
+$handle = db_connect();
+
+if ($handle != null) {
+  $all_sources = query_source_list($handle);
+  foreach ($all_sources as $src) {
+     $source_list .= "<option>{$src['name']}</option>\n";
+  }
+}
+
 $defhtml = <<<DEFHTML
-<h2 style="text-align: center;">Career Services</h2>
-<div style="width: 70%; margin: 0 auto; padding-bottom: 3em;">
+<div class="jobsearch">
+<h2>Career Services</h2>
 <form action="$self" method="post">
-  <div style="width: 100%; text-align: center;">
-    <table border="0" style="margin: 2em auto; text-align: left;">
-    <tbody>
-    <tr>
-      <td>
-	<label style="margin-right: 3em;">Date range:</label>
-      </td>
-      <td>
-	<label>Applicable course:</label>
-      </td>
-      <td>
-	<label>Source of job:</label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-	<select name="daterange" style="margin-right: 4em;">
-	  <option>Any</option>
-	  <option>Last week</option>
-	  <option>Last month</option>
-	  <option>Last two months</option>
-	</select>
-      </td>
-      <td>
-	<select name="course">
-	  <option>Any</option>
-	  <option>EMT</option>
-	  <option>CPT</option>
-	  <option>SPT</option>
-	  <option>CMA</option>
-	  <option>Paramedic</option>
-	</select>
-      </td>
-      <td>
-	<select name="source">
-	  <option>Any</option>
-	  <option>Kaiser Permanente</option>
-	  <option>Sutter Health</option>
-	</select>
-      </td>
-    </tr>
-    </tbody></table>
-    <input type="submit" value="Find jobs" />
-  </div>
+  <table>
+  <tbody>
+  <tr>
+    <td>
+      <label>Date range:</label>
+    </td>
+    <td>
+      <label>Applicable course:</label>
+    </td>
+    <td>
+      <label>Source of job:</label>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <select name="daterange" style="margin-right: 4em;">
+	<option>Any</option>
+	<option>Last week</option>
+	<option>Last month</option>
+	<option>Last two months</option>
+      </select>
+    </td>
+    <td>
+      <select name="course">
+	<option>Any</option>
+	<option>EMT</option>
+	<option>CPT</option>
+	<option>SPT</option>
+	<option>CMA</option>
+	<option>Paramedic</option>
+      </select>
+    </td>
+    <td>
+      <select name="source">
+	<option>Any</option>
+        $source_list
+      </select>
+    </td>
+  </tr>
+  </tbody></table>
+  <input type="submit" value="Find jobs" />
 </form>
 </div>
 DEFHTML;
@@ -66,8 +74,7 @@ if (array_key_exists('daterange', $_POST))
 if ($daterange == null) {
   $out = $defhtml;
 }
-else {
-
+else if ($handle != null) {
   if (array_key_exists('course', $_POST))
     $course = $_POST['course'];
   if (array_key_exists('source', $_POST))
@@ -105,13 +112,13 @@ else {
     $source = null;
 
   $data = query_jobpostings(
-    $start, $now, $course, $source
+    $handle, $start, $now, $course, $source
   );
 
   $ret = "";
 
   foreach ($data as $entry) {
-    $source_data = query_source($entry['source'], 'website,directions');
+    $source_data = query_source($handle, $entry['source']);
 
     if ($source_data == null)
       $source_data = array();
@@ -129,27 +136,44 @@ else {
       $source_data['website'] = $entry['source'];
     }
 
-    $ret .= "<tr style=\"font-size: 80%;\">\n";
-    $ret .= "<td>{$entry['showdate']}</td>\n";
+    $ret .= "<tr><td class=\"topleft topright bottomleft bottomright\">\n";
+    $ret .= "<div class=\"top\">{$entry['showdate']}</div>\n";
+    $ret .= "<div class=\"top\">" . $source_data['website'] . "</div>\n";
+    $ret .= "<div class=\"top\"><img src=\"/images/buttons/directions_btn.png\" alt=\"Directions\" title=\"{$source_data['directions']}\" /></div>\n";
+    $ret .= "<div class=\"top\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
+    $ret .= "<div class=\"bottom\">" . str_replace("\n", "<br />", $entry['text']) . "</div>\n";
+    $ret .= "</td></tr>\n";
+
+    /*
+    $ret .= "<tr class=\"top\">\n";
+    $ret .= "<td class=\"topleft\">{$entry['showdate']}</td>\n";
     $ret .= "<td>" . $source_data['website'] . "</td>\n";
     $ret .= "<td><img src=\"/images/buttons/directions_btn.png\" alt=\"Directions\" title=\"{$source_data['directions']}\" /></td>\n";
-    $ret .= "<td>" . str_replace(",", ", ", $entry['courses']) . "</td>\n";
-    $ret .= "</tr><tr>\n";
-    $ret .= "<td colspan=\"4\" style=\"border-bottom: solid 2px red; font-size: 115%;\">\n";
+    $ret .= "<td class=\"topright\">" . str_replace(",", ", ", $entry['courses']) . "</td>\n";
+    $ret .= "</tr><tr class=\"bottom\">\n";
+    $ret .= "<td class=\"bottomleft bottomright\" colspan=\"4\">\n";
     $ret .= "{$entry['text']}\n</td>\n</tr>\n";
+    */
   }
 
   $out = <<<QUERYHTML
-<h2 style="text-align: center;">Job Listings</h2>
-<div style="width: 70%; margin: 0 auto; padding-bottom: 3em;">
-<table border="0" style="margin: 2em auto; text-align: left;">
+<div class="joblist">
+<h2>Job Listings</h2>
+<table>
 <tbody>
 $ret
 </tbody></table>
 </div>
 QUERYHTML;
+
+}
+else {
+  $out = '<h2 class="joberror">There was an error accessing the database.</h2>';
 }
 
 echo $out;
+
+// close the db handle
+$handle = null;
 
 ?>

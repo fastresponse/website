@@ -18,6 +18,7 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/careers.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
@@ -46,6 +47,11 @@
     $(document).ready(function() {
       $("#footer").load("/menu/footer.html");
     } );
+  </script>
+
+  <script type="text/javascript">
+    function addDotDotDots() {
+    }
   </script>
 
 </head>
