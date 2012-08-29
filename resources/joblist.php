@@ -58,8 +58,14 @@ $defhtml = <<<DEFHTML
       </select>
     </td>
   </tr>
+  <tr>
+    <td></td>
+    <td>
+      <input type="submit" value="Find jobs" />
+    </td>
+    <td></td>
+  </tr>
   </tbody></table>
-  <input type="submit" value="Find jobs" />
 </form>
 </div>
 DEFHTML;
@@ -136,24 +142,17 @@ else if ($handle != null) {
       $source_data['website'] = $entry['source'];
     }
 
-    $ret .= "<tr><td class=\"topleft topright bottomleft bottomright\">\n";
+    $ret .= "<tr><td class=\"topleft topright bottomleft bottomright\" " .
+            "onClick=\"toggleShow(this);\">\n";
     $ret .= "<div class=\"top\">{$entry['showdate']}</div>\n";
     $ret .= "<div class=\"top\">" . $source_data['website'] . "</div>\n";
     $ret .= "<div class=\"top\"><img src=\"/images/buttons/directions_btn.png\" alt=\"Directions\" title=\"{$source_data['directions']}\" /></div>\n";
     $ret .= "<div class=\"top\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
-    $ret .= "<div class=\"bottom\">" . str_replace("\n", "<br />", $entry['text']) . "</div>\n";
+    $ret .= "<div class=\"bottom\">" . nl2br($entry['text']);
+    $ret .= "\n<img src=\"/images/buttons/more.png\" alt=\"More\" class=\"morebutton\" />";
+    $ret .= "\n</div>\n";
     $ret .= "</td></tr>\n";
 
-    /*
-    $ret .= "<tr class=\"top\">\n";
-    $ret .= "<td class=\"topleft\">{$entry['showdate']}</td>\n";
-    $ret .= "<td>" . $source_data['website'] . "</td>\n";
-    $ret .= "<td><img src=\"/images/buttons/directions_btn.png\" alt=\"Directions\" title=\"{$source_data['directions']}\" /></td>\n";
-    $ret .= "<td class=\"topright\">" . str_replace(",", ", ", $entry['courses']) . "</td>\n";
-    $ret .= "</tr><tr class=\"bottom\">\n";
-    $ret .= "<td class=\"bottomleft bottomright\" colspan=\"4\">\n";
-    $ret .= "{$entry['text']}\n</td>\n</tr>\n";
-    */
   }
 
   $out = <<<QUERYHTML

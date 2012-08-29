@@ -42,17 +42,8 @@
 }
 
 .joblist td:hover {
-  color: black;
-  background-color: #DFEDFB;
-  background-color: #D1D1FA;
-  background-color: #FAFAD1;
-  background-color: #EAEAD1;
-  background-color: #D9D9AF;
-  background-color: #E2E2C1;
-}
-
-.joblist td:hover a {
-  color: black;
+  background-color: #000022;
+  border: 1px solid yellow;
 }
 
 .joblist td {
@@ -62,24 +53,8 @@
   padding: 10px;
 }
 
-/*
-.joblist td.topleft {
-  border-top-left-radius: 1em;
-}
-
-.joblist td.topright {
-  border-top-right-radius: 1em;
-}
-
-.joblist td.bottomleft {
-  border-bottom-left-radius: 1em;
-}
-
-.joblist td.bottomright {
-  border-bottom-right-radius: 1em;
-}
-*/
-
 .joberror {
 }
 
+.morebutton {
+}

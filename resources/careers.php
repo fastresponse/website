@@ -49,10 +49,7 @@
     } );
   </script>
 
-  <script type="text/javascript">
-    function addDotDotDots() {
-    }
-  </script>
+  <script type="text/javascript" src="/resources/joblist.js" defer="defer"></script>
 
 </head>
 
