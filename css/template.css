@@ -312,6 +312,26 @@ h3 {
   border: 0;
   width: 100%;
 }
+.quicklinks a {
+  text-decoration: underline;
+}
+.quicklinks span {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 1em;
+}
+.quicklinks .big {
+  font-size: 120%;
+}
+.quicklinks .box {
+  width: 90%;
+  border: solid 1px white;
+  padding: 1.25em 1.25em 0.5em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
 
 /* end quicklinks */
 
