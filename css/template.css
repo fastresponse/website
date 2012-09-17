@@ -36,6 +36,7 @@ h3 {
   width: 100%;
   min-height: 28px;
   font-size: small;
+  z-index: 100;
 }
 
 #menu a:hover {
@@ -186,8 +187,14 @@ h3 {
 .cols-4 td {
   width: 24%;
 }
+.cols-3 td {
+  width: 32%;
+}
 .cols-2 td {
   width: 49%;
+}
+.cols-1 td {
+  width: 98%;
 }
 
 /* end structural */
