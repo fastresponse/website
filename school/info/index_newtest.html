@@ -2,336 +2,443 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Contact info | Fast Response</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+  <title>Contact Info | Fast Response</title>
 
-    <link rel="shortcut icon" href="http://www.fastresponse.org/misc/favicon.ico" type="image/x-icon" />
+  <base href="/" />
 
-    <link type="text/css" rel="stylesheet" media="all" title="mtyle" href="style.css" />
-    <link type="text/css" rel="stylesheet" media="print" href="http://www.fastresponse.org/sites/all/themes/fastresponse/css/print.css?C" /> 
-    <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
-    <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="INDEX, FOLLOW">
+  <meta name="googlebot" content="INDEX, FOLLOW">
 
+  <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-18170901-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-
-     </script>
+  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
+  <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
+  <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
 
 
-     <style type="text/css" media="screen">
-       object { outline:none; }
-     </style>
+  <script type="text/javascript">
 
-     <script type = "text/javascript"
-       src = "../../../js/jquery.js"></script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18170901-1']);
+    _gaq.push(['_trackPageview']);
 
-     <script type = "text/javascript">
-       $(document).ready(function() {
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
 
-	   $("#menu").load("../../../menu/menu.html");
+  </script>
 
+  <script type="text/javascript" src="/js/jquery.js"></script>
 
-	   } );
-	 </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#menu").load("/menu/menu.html");
+    } );
+    $(document).ready(function() {
+      $("#footer").load("/menu/footer.html");
+    } );
+  </script>
 
-	 <!-- Code for new formmail/autoreply -->
+  <!-- Code for new formmail/autoreply -->
 
-	 <!-- JQuery -->
-	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <!-- JQuery -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 
-
-
-
-
-	 <script type="text/javascript">  
-	   /* <![CDATA[ */    
-$(document).ready(function()
-    {
+  <script type="text/javascript">  
+  /* <![CDATA[ */    
+  $(document).ready(function() {
     var close_note = $("#note");
     close_note.click(function () {
       jQuery("#note").slideUp(500, function () {
 	jQuery(this).hide();
-	});
       });
+    });
 
     $("#ajax-contact-form").submit(function() {
-      $('#load').append('<center><img src="images/ajax-loader.gif" alt="Currently Loading" id="loading" /></center>');
+      $('#load').append('<center><img src="/school/info/images/ajax-loader.gif" alt="Currently Loading" id="loading" /></center>');
 
       var fem = $(this).serialize(),
       note = $('#note');
 
       $.ajax({
-type: "POST",
-url: "newcontact.php",
-data: fem,
-success: function(msg) {
-if ( note.height() ) {			
-note.slideUp(500, function() {
-  $(this).hide();
+	type: "POST",
+	url: "newcontact.php",
+	data: fem,
+	success: function(msg) {
+	  if ( note.height() ) {
+	    note.slideUp(500, function() {
+	      $(this).hide();
+	    });
+	  } 
+	  else note.hide();
+
+	  $('#loading').fadeOut(300, function() {
+	    $(this).remove();
+	    if (msg === 'OK') {
+	      $('input').val("");
+	      $('textarea').val("");
+	    }
+	    // Message Sent? Show the 'Thank You' message and hide the form
+	    result = (msg === 'OK') ? '<div class="success">Your message has been sent. Thank you!</div>' : msg;
+
+	    var i = setInterval(function() {
+	      if ( !note.is(':visible') ) {
+		note.html(result).slideDown(500);
+		clearInterval(i);
+	      }
+	    }, 40);    
+	  }); // end loading image fadeOut
+	}
+      });
+
+      return false;
+    });
   });
-} 
-else note.hide();
+  /* ]]> */
+  </script>  
+  <!-- End form code -->
 
-$('#loading').fadeOut(300, function() {
-  $(this).remove();
-  if(msg === 'OK') {   $('input').val(""); $('textarea').val(""); }	
-  // Message Sent? Show the 'Thank You' message and hide the form
-  result = (msg === 'OK') ? '<div class="success">Your message has been sent. Thank you!</div>' : msg;
+  <style type="text/css">
 
-  var i = setInterval(function() {
-    if ( !note.is(':visible') ) {
-    note.html(result).slideDown(500);
-    clearInterval(i);
+    /* For new formmail/autoreply */
+
+    #contactform { width: 100%; font: normal 11px/18px Verdana,Tahoma, Sans-serif; }
+    #contactform form { width: 100%; margin: 0; padding: 10px; margin-top: 20px; }
+
+    #contactform fieldset {
+      width: 100%;
+      padding: 10px 0; margin: 15px 0; border: 1px solid white; border-radius: 5px
     }
-    }, 40);    
-  }); // end loading image fadeOut
-}
-});
+    #contactform fieldset legend {
+      font: normal bold 18px/26px "Trebuchet MS",Verdana,Tahoma; padding: 3px 25px;
+      margin-left: 30px; text-transform: uppercase; border: 0px solid #ddd;
+    }
+    #contactform fieldset legend span {
+      font: normal 10px/18px Arial,Verdana,Tahoma; text-transform: uppercase; display: block;
+    }
 
-return false;
-});
-});
-/* ]]> */
-</script>  
+    #contactform form label {
+      display: block; float: left; padding: 6px 10px 0 0;
+      margin: 0px; text-align: right; width: 15%;
+    }
 
-<!-- End new code -->
+    #contactform input.inpt, 
+    #contactform input.mailaddr, 
+    #contactform textarea, 
+    #contactform select {
+      margin-bottom: 9px !important; border: 1px solid; background-color: #f5f5f5;
+      border-color: #ccc #ddd #ddd #ccc; width: 80%; padding: 4px;
+    }
 
+    #contactform input.inpt, 
+    #contactform input.mailaddr, 
+    #contactform textarea, 
+    #contactform select { border-radius: 4px; }
 
+    #contactform input.inpt:focus,
+    #contactform input.mailaddr:focus,
+    #contactform select:focus,
+    #contactform textarea:focus	{ background: #fff; }
 
-  </head>
+    #contactform br { clear: left;}
+    #contactform input.required {
+      background: #f5f5f5 url('/school/info/images/required.gif') 99% 50% no-repeat;
+    }
 
-  <body class="front not-logged-in page-node node-type-page no-sidebars with-navigation">
+    #contactform input.mailaddr { width: 30%; }
 
-    <!-- FINISH BELOW -->
+    #contactform input.btn { background: none; border: none;}
 
-    <div id="skip"><a href="#content">Skip to Content</a> <a href="#navigation">Skip to Navigation</a></div>  
-    <div id="page">
+    #contactform #note { width: 90%; margin: 0 auto; }
 
+    /* Error / Success / Notice ----------------------------------------------------------- */
 
-      <!-- ______________________ HEADER _______________________ -->
+    #contactform .notes { background: #f0f0f0; border: 1px solid #b8b8b8; }
+    #contactform .success { background: #ccfcd1; border: 1px solid #60a400; }
+    #contactform .error { background: #f9e3e3; border: 1px solid #e79e9e; }
+    #contactform .notice { background: #fcf0cc; border: 1px solid #ecc735; }
 
-      <div id="header">
+    #contactform .notes,
+    #contactform .notice,
+    #contactform .success,
+    #contactform .error { padding: 10px; font-size: 10px; color: #000;}
 
-	<div id="logo-title">
+    #contactform .notes span,
+    #contactform .notice span,
+    #contactform .success span,
+    #contactform .error span { font-weight: bold; font-size: 1.2em;}
 
+    #contactform .notes p,
+    #contactform .success p,
+    #contactform .error p,
+    #contactform .notice p { margin: 0px; padding: 0px; }
 
-	  <div id="header-region">
-	    <div id="block-nice_menus-1" class="block block-nice_menus block-header block-id-33 clearfix odd">
-	      <div class="block-inner">
+    hr {
+      width: 100%;
+      margin: 1em 0;
+      padding: 0;
+      position: relative;
+      /* needed to counteract the padding on the form */
+      left: -10px;
+    }
 
+    p {
+      width: 55%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      font-family: serif;
+      font-size: large;
+      line-height: 1.25em;
+    }
 
-		<div class="content">
-		  <div id = "menu">
-		  </div>
+    .quicklinks dd {
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .quicklinks dt {
+      color: #FF2020;
+      text-decoration: underline;
+      font-size: 110%;
+      margin-top: 1em;
+      text-align: left;
+    }
+    .quicklinks .title {
+      color: #FF2020;
+      text-decoration: underline;
+      font-size: 120%;
+      text-align: center;
+    }
+    .quicklinks dd dl {
+      display: inline;
+      margin: 0;
+    }
+    .quicklinks dd dl dt {
+      display: inline;
+      margin: 0;
+      text-decoration: none;
+      color: #FF6600;
+    }
+    .quicklinks dd dl dd {
+      display: inline;
+      margin: 0;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="page">
+
+    <div id="menu">
+      <!-- filled in by javascript -->
+    </div>
+
+    <div id="head">
+      <img src="/images/headers/header_main_left.jpg" class="headerimgleft" alt="Fast Response School of Health Care Education" />
+      <img src="/images/headers/header_contact_right.png" class="headerimgright" alt="" />
+      <div class="clearfix"></div>
+    </div>
+
+    <div id="main">
+
+      <div class="section">
+
+	<div class="rightsidebar" style="width: 28%;">
+	  <div class="quicklinks">
+	    <dl style="border: solid 1px white; border-radius: 5px; padding: 4%;">
+	      <div class="title">Contact Information:</div>
+
+	      <dt>Admissions</dt>
+	      <dd><dl>
+		<dt>Hours:</dt> <dd>9-5, M-F</dd> <br />
+		<dt>Phone:</dt> <dd>1-510-809-3654</dd> <br />
+		<dt>Toll Free:</dt> <dd>1-800-637-7387</dd> <br />
+		<dt>Fax:</dt> <dd>1-866-572-3363</dd> <br />
+		<dt>Email:</dt> <dd><a href="mailto: admissions@fastresponse.org">admissions@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
+	      <dt>Front Desk and General Inquiries</dt>
+	      <dd><dl>
+		<dt>Hours:</dt> <dd>9-5, M-F</dd> <br />
+		<dt>Phone:</dt> <dd>1-510-849-4009</dd> <br />
+		<dt>Fax:</dt> <dd>1-866-290-2739</dd> <br />
+		<dt>Email:</dt> <dd><a href="mailto: info@fastresponse.org">info@fastresponse.org</a></dd> <br />
+		<dt>Mailing address:</dt> <br />
+		<!-- this needs to be block so the margin applies to every line -->
+		<dd style="display: block; margin-left: 0.5em;">
+		Fast Response School of<br />
+		Health Care Education<br />
+		PO Box 1283<br />
+		Berkeley, CA 94701<br />
+		</dd>
+              </dl></dd>
+
+	      <dt>EMT Program</dt>
+	      <dd><dl>
+		<dt>Email:</dt> <dd><a href="mailto: emt@fastresponse.org">emt@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
+	      <dt>Sterile Processing Program</dt>
+	      <dd><dl>
+		<dt>Email:</dt> <dd><a href="mailto: spt@fastresponse.org">spt@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
+	      <dt>Medical Assistant Program</dt>
+	      <dd><dl>
+		<dt>Email:</dt> <dd><a href="mailto: ma@fastresponse.org">ma@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
+	      <dt>Phlebotomy Program</dt>
+	      <dd><dl>
+		<dt>Email:</dt> <dd><a href="mailto: phlebotomy@fastresponse.org">phlebotomy@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
+	      <dt>Employment Inquiries</dt>
+	      <dd><dl>
+		<dt>Email:</dt> <dd><a href="mailto: applications@fastresponse.org">applications@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
+	    </dl>
+	  </div>
+	</div>
+
+	<div class="leftcontent" style="margin: 2em 0; width: 72%;">
+
+	  <div id="contactform">
+	    <fieldset>
+	      <legend>Contact Us For More Information</legend>
+
+	      <p>
+		At Fast Response we strive to provide the highest quality education possible.
+	      </p>
+	      <p>
+		Please contact us using the admissions numbers listed to the right, or fill out this form and one of our friendly and knowledgeable staff members will contact you soon!
+	      </p>
+
+	      <!--
+	      <div class="bgimg fontsans" style="width: 20.25em; height: 2.25em; font-size: 220%;">
+		<div style="width: 20.25em; height: 2.25em; line-height: 2.25em;">
+		  Call <a href="tel://1-800-637-7387">(800) 637-7387</a> or
+		  <a href="tel://1-510-809-3654">(510) 809-3654</a>
 		</div>
+		<img src="/images/cloudbg.png" alt="phone number" />
+	      </div>
+	      -->
 
+	      <form id="ajax-contact-form" method="post" action="newcontact.php">
 
-	      </div> <!-- /block-inner -->
-	  </div> <!-- /block -->        </div>
+		<label>Full Name</label><input class="required inpt" type="text" name="name" value="" /><br />
+		<label>E-Mail</label><input class="required inpt" type="text" name="email" value="" /><br />
+		<label>Phone Number (xxx-xxx-xxxx)</label><input class="required inpt" type="text" name="phone" value="" /><br />
+		<label>Course of Interest </label>
+		<select name="subject" id="subject" class="select" >
+		  <option value="">Select your course</option>
+		  <option value="EMT">EMT</option>
+		  <option value="Sterile Processing">Sterile Processing</option>
+		  <option value="Clinical Medical Assistant">Clinical Medical Assistant</option>
+		  <option value="Phlebotomy">Phlebotomy</option>
+		  <option value="Paramedic">Paramedic</option>
+		  <!-- <option value="Ward Clerk">Ward Clerk</option> -->
+		  <option value="Other Courses">Other Course(s)</option>
+		</select>
+		<br />
 
+		<label>How did you hear about us?</label>
+		<select name="reference" id="reference" class="select">
+		  <option value="">Select Source</option>
+		  <option value="Google">Google</option>
+		  <option value="Bing">Bing</option>
+		  <option value="Yahoo">Yahoo</option>
+		  <option value="Facebook">Facebook</option>
+		  <option value="Internet-Other">Internet-Other</option>
+		  <option value="Friend/Relative">Friend/Relative</option>
+		  <option value="Coworker">Coworker</option>
+		  <option value="Former student">Former student</option>
+		  <option value="CalWorks">CalWorks</option>
+		  <option value="DHS/EMSA">DHS/EMSA</option>
+		  <option value="Employer">Employer</option>
+		  <option value="walk/drive">Walk-In/Drive-By</option>
+		  <option value="Flier">Flyer/Brochure</option>
+		  <option value="career">Career Fair</option>
+		  <option value="Youth Bridges">Youth Bridges</option>
+		  <option value="Other">Other/Not specified</option>
+		</select>
+		<br />
 
-	</div> <!-- /header -->
-	<!-- ______________________ MAIN _______________________ -->
+		<hr />
 
-	<div id="main" class="clearfix">
+		<label>When would you like us to contact you?</label>
+		<select name="whenreachme">
+		  <option value="Any Day">Any Day</option>
+		  <option value="Weekdays">Weekdays</option>
+		  <option value="Weekends">Weekends</option>
+		</select>
+		<br />
 
-	  <div id="content">
-	    <div id="content-inner" class="inner column center">
-	      <img src="http://fastresponse.org/sites/default/files/imagecache/size_header/headers/header_contact_0.jpg" alt="Fast Response" title="Fast Response"  class="imagecache imagecache-size_header imagecache-default imagecache-size_header_default" width="1000" height="156" />          
-	      <div id="content-header">
+		<label>Select Time Frame</label>
+		<select name="time">
+		  <option value="anytime">Anytime</option>
+		  <option value="9a-10a">9am-10am</option>
+		  <option value="10a-11a">10am-11am</option>
+		  <option value="11a-12p">11am-12pm</option>
+		  <option value="12p-1p">12pm-1pm</option>
+		  <option value="1p-2p">1pm-2pm</option>
+		  <option value="2p-3p">2pm-3pm</option>
+		  <option value="3p-4p">3pm-4pm</option>
+		  <option value="4p-5p">4pm-5pm</option>
+		  <option value="5p-6p">5pm-6pm</option>
+		  <option value="6p">6pm or later</option>
+		</select>
+		<br />
 
-		<!--<div class="breadcrumb"><a href="/newsite/fastresponse/">Home</a></div>-->
+		<hr />
 
-		<!--                <h1 class="title">Contact info</h1>
+		<label>Mailing Address:</label>
+		<input type="text" name="streetaddress1" class="mailaddr" /> Street Address<br />
+		<label>&nbsp;</label>
+		<input type="text" name="streetaddress2" class="mailaddr" /> Street Address (Cont.)<br /> 
+		<label>&nbsp;</label>
+		<input type="text" name="streetaddress3" class="mailaddr" /> City, State, Zip Code<br />	
+
+		<br />
+
+		<label>Please enter any comments or questions</label>
+		<textarea class="textbox" name="message" rows="6" cols="30"></textarea><br />
+
+		<div id="note"></div>
+
+		<label id="load"></label>
+		<!--
+		<input name="submit" type="image" class="btn" src="/school/info/images/submit.gif" value="Send" />
 		-->
+		<input name="submit" type="image" value="Send" src="/images/submitbutton.png" style="border: none; color: white; cursor: pointer; width: 200px; height: 85px;" />
 
-
-
-
-
-
-	      </div> <!-- /#content-header -->
-
-	      <div id="content-area">
-		<div class="node node clearfix node-type-page" id="node-26">
-		  <div class="node-inner">
-
-
-
-		    <div class="content">
-
-
-		      <!-- start new content -->
-
-		      <div id="contactform">
-			<fieldset><legend>Contact Us For More Information</legend>
-
-
-			  <!--begin:notice message block-->
-
-			  <!--begin:notice message block-->
-			  <span><center>
-			      At Fast Response we strive to provide the highest quality education possible. <br /><br />
-
-			      Please fill out the below information. We will have one of our friendly and knowledgable staff members contact you soon! </center></span>
-			  <form id="ajax-contact-form" method="post" action="newcontact.php">
-
-			    <label>Full Name</label><input class="required inpt" type="text" name="name" value="" /><br />
-			    <label>E-Mail</label><input class="required inpt" type="text" name="email" value="" /><br />
-			    <label>Phone Number (xxx-xxx-xxxx)</label><input class="required inpt" type="text" name="phone" value="" /><br />
-			    <label>Course of Interest </label>
-			    <select name="subject" id="subject" class="select" >
-			      <option value="">Select your course</option>
-			      <option value="EMT">EMT</option>
-			      <option value="Sterile Processing">Sterile Processing</option>
-			      <option value="Clinical Medical Assistant">Clinical Medical Assistant</option>
-			      <option value="Phlebotomy">Phlebotomy</option>
-			      <option value="Paramedic">Paramedic</option>
-			      <!-- <option value="Ward Clerk">Ward Clerk</option> -->
-			      <option value="Other Courses">Other Course(s)</option>
-			    </select>
-
-			    <label>How did you hear about us?</label>
-			    <select name="reference" id="reference" class="select">
-			      <option value="">Select Source</option>
-			      <option value="Google">Google</option>
-			      <option value="Bing">Bing</option>
-			      <option value="Yahoo">Yahoo</option>
-			      <option value="Facebook">Facebook</option>
-			      <option value="Internet-Other">Internet-Other</option>
-			      <option value="Friend/Relative">Friend/Relative</option>
-			      <option value="Coworker">Coworker</option>
-			      <option value="Former student">Former student</option>
-			      <option value="CalWorks">CalWorks</option>
-			      <option value="DHS/EMSA">DHS/EMSA</option>
-			      <option value="Employer">Employer</option>
-			      <option value="walk/drive">Walk-In/Drive-By</option>
-			      <option value="Flier">Flyer/Brochure</option>
-			      <option value="career">Career Fair</option>
-			      <option value="Youth Bridges">Youth Bridges</option>
-			      <option value="Other">Other/Not specified</option>
-
-			    </select>
-
-			    <br /><br />
-			    <hr />
-			    <br />
-			    <label>When would you like us to contact you?</label>
-
-			    <select name="whenreachme">
-			      <option value="Any Day">Any Day</option>
-			      <option value="Weekdays">Weekdays</option>
-			      <option value="Weekends">Weekends</option>
-
-			    </select>
-			    <br />
-
-			    <label>Select Time Frame</label>
-			    <select name="time">
-			      <option value="anytime">Anytime</option>
-			      <option value="9a-10a">9am-10am</option>
-			      <option value="10a-11a">10am-11am</option>
-			      <option value="11a-12p">11am-12pm</option>
-			      <option value="12p-1p">12pm-1pm</option>
-			      <option value="1p-2p">1pm-2pm</option>
-			      <option value="2p-3p">2pm-3pm</option>
-			      <option value="3p-4p">3pm-4pm</option>
-			      <option value="4p-5p">4pm-5pm</option>
-			      <option value="5p-6p">5pm-6pm</option>
-			      <option value="6p">6pm or later</option>
-			    </select><br /><hr />
-
-			    <br />
-
-
-			    <label>Mailing Address:</label>
-
-
-			    <input type="text" name="streetaddress1" /> Street Address<br />
-			    <label> &nbsp;</label><input type="text" name="streetaddress2" /> Street Address (Cont.)<br /> 
-			    <label></label><input type="text" name="streetaddress3" /> City, State, Zip Code<br />	
-
-			    <!--  <input class="required inpt" type="text" name="subject" value="" /> --><br />
-			    <label>Please Enter Any Comments or Questions</label><textarea class="textbox" name="message" rows="6" cols="30"></textarea><br />
-			    <div id="note"></div>
-			    <!--<label>Captcha 3+1 = </label><input class="required inpt" type="text" name="answer" value="" /> --><br />
-			    <label id="load"></label><input name="submit" type="image" class="btn" src="images/submit.gif" value="Send" />
-
-			  </form>
-			</fieldset>
-			<!--copy the code from here-->
-		      </div>
-
-		    </div>
-
-
-
-
-		  </div>
-
-
-
-		</div> <!-- /node-inner -->
-
-	    </div> <!-- /node-->          </div> <!-- /#content-area -->
-
-	    <!-- space the phone number down -->   <br /><br />
-
+	      </form>
+	    </fieldset>
 	  </div>
-	</div> <!-- /content-inner /content -->
+	
+	</div> <!-- /leftcontent -->
 
-	<!--          <div id="navigation" class="menu with-main-menu">
-	  <ul id="primary" class="links main-menu"><li class="menu-111 active-trail first"><a href="/newsite/fastresponse/home" title="Home">HOME</a></li>
-	    <li class="menu-120"><a href="/newsite/fastresponse/courses" title="Courses">COURSES</a></li>
-	    <li class="menu-251"><a href="/newsite/fastresponse/nolink" title="">CALENDAR</a></li>
-	    <li class="menu-222"><a href="/newsite/fastresponse/location" title="Location">LOCATION</a></li>
-	    <li class="menu-223"><a href="/newsite/fastresponse/parking" title="Parking">PARKING</a></li>
-	    <li class="menu-198 last"><a href="/newsite/fastresponse/contact" title="Contact Us">CONTACT US</a></li>
-	</ul>                      </div> 
-	-->
+      </div> <!-- /section -->
 
-	<!-- /sidebar-left -->
+      <div class="clearfix" style="min-height: 1em;"></div>
 
-	<!-- /sidebar-second -->
+    </div> <!-- /main -->
 
-      </div> <!-- /main -->
+    <div id="footer">
+    </div> <!-- /footer -->
 
-      <div id="classlinks">
-	<!-- ______________________ FOOTER _______________________ -->
+  </div> <!-- /page -->
 
-	<div id="footer">
-	  <div id="footerlinks">
-
-
-	    <ul class="links" style="padding-top: 10px; padding-bottom: 10px;">
-	      <li class="menu-111 active-trail first active" style="float: left;"><a href="http://www.fastresponse.org" title="home" class="active">home</a></li>
-
-	      <li class="menu-120" style="float: left;"><a href="http://www.fastresponse.org/classes" title="courses">courses</a></li>
-	      <li class="menu-251" style="float: left;"><a href="https://fastresponse.securegw.com/cgi-bin/er/calendar_month.cgi" title="calendar">calendar</a></li>
-	      <li class="menu-222" style="float: left;"><a href="http://www.fastresponse.org/school/map_parking_and_directions" title="location">location</a></li>
-	      <li class="menu-223" style="float: left;"><a href="http://www.fastresponse.org/school/parking" title="parking">parking</a></li>
-	      <li class="menu-198 last" style="float: left;"><a href="http://www.fastresponse.org/school/contact_us" title="contact us">contact us</a></li>
-	      <li class="menu-198 last" style="float: left;"><a href="http://www.facebook.com/FastResponseSchool" title="visit us">Visit Us on FaceBook</a></li>
-
-	    </ul>
-	  </div>
-	  <a href="http://www.facebook.com/FastResponseSchool" title="visit us"><img src="buttons/PG_facebook_button.png" alt="" width="28" height="28" style="float: left; border: none;"/></a>
-	  <span style="float:right; padding-top: 10px;">&copy; 2009-2011 Fast Response. All Rights Reserved</span> <!-- /footer -->
-
-
-	</div> <!-- /page -->
-
-      </body>
-    </html>
+</body>
+</html>
