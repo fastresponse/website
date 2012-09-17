@@ -69,7 +69,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "newcontact.php",
+	url: "/school/info/newcontact.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {
@@ -179,6 +179,13 @@
     #contactform .success p,
     #contactform .error p,
     #contactform .notice p { margin: 0px; padding: 0px; }
+
+    #contactform .success,
+    #contactform .error {
+      margin: 1em auto;
+      font-size: 110%;
+      font-weight: bold;
+    }
 
     hr {
       width: 100%;
@@ -335,7 +342,7 @@
 	      </div>
 	      -->
 
-	      <form id="ajax-contact-form" method="post" action="newcontact.php">
+	      <form id="ajax-contact-form" method="post" action="/school/info/newcontact.php">
 
 		<label>Full Name</label><input class="required inpt" type="text" name="name" value="" /><br />
 		<label>E-Mail</label><input class="required inpt" type="text" name="email" value="" /><br />

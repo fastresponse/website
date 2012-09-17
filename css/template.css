@@ -448,6 +448,7 @@ h3 {
   padding: 0.5em;
   font-family: Arial, sans-serif;
   text-align: center;
+  cursor: pointer;
 }
 
 #listnav li:hover {
