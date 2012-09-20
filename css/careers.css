@@ -41,6 +41,11 @@
   overflow: hidden;
 }
 
+.joblist .showfull {
+  max-height: none;
+  overflow: visible;
+}
+
 .joblist td:hover {
   background-color: #000022;
   border: 1px solid yellow;
@@ -57,4 +62,12 @@
 }
 
 .morebutton {
+  z-index: 5;
+  float: right;
+  border: 1px solid red;
+  margin: 3px;
+}
+
+.showfull .morebutton {
+  visibility: hidden;
 }

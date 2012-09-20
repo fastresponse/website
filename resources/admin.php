@@ -59,7 +59,7 @@
     </div>
 
     <div id="head">
-      <img src="/images/headers/header_main_left.jpg" class="headerimgleft" alt="Fast Response School of Health Care Education" />
+      <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
       <img src="/images/headers/header_career_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
