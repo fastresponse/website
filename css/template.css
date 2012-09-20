@@ -31,16 +31,17 @@ h3 {
   font-size: 115%;
 }
 
+/* all css for changing how menu is displayed
+ * is in nicemenus.css
+ * the following is only what is absolutely necessary to
+ * preserve the basic page layout
+ * min-height must be changed if font-size is changed in nicemenus.css
+ */
 #menu {
   display: block;
   width: 100%;
-  min-height: 28px;
-  font-size: small;
   z-index: 100;
-}
-
-#menu a:hover {
-  color: #865566;
+  min-height: 2.25em;
 }
 
 #head {

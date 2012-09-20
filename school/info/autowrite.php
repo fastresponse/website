@@ -13,11 +13,11 @@ $automessage="
 <tr><td>
 
 <p>
-Thanks for contacting Fast Response School of Health Care Education. Our Admissions Representatives are available Monday through Friday 9:00 am. to 6:30 pm. and Saturday from 10:00 am. to 2:00 pm. We value your business and want to assist you in finding a new career in health care. We will contact you on the next working day at the time you indicated would be best for you.
+Thanks for contacting Fast Response School of Health Care Education. Our Admissions Representatives are available Monday through Friday 9:00 am. to 5:00 pm. We value your business and want to assist you in finding a new career in health care.
 </p>
 
 <p>
-While you are waiting for our Admissions Representative to contact please take a look at the linked information available in this email. 
+An admissions representative will be in contact with you to provide more information.
 </p>
 
 <p>
@@ -26,13 +26,16 @@ Did you see our exciting photo galleries?
 
 <ul>
 <li>
-EMT Photos: http://www.fastresponse.org/photos/emt/index.html#emt
+<a href='http://www.fastresponse.org/photos/emt/index.html#emt'>EMT Course Photos</a>
 </li>
 <li>
-Phlebotomy Gallery: http://www.fastresponse.org/photos/phleb/index.html#phleb
+<a href='http://www.fastresponse.org/photos/phleb/index.html#phleb'>Phlebotomy Course Photos</a>
 </li>
 <li>
-Sterile Processing Course Pictures: http://www.fastresponse.org/photos/spt/index.html#spt
+a href='http://www.fastresponse.org/photos/spt/index.html#spt'>Sterile Processing Course Photos</a>
+</li>
+<li>
+<a href='http://www.fastresponse.org/photos/ma/index.html#medicalassistant'>Medical Assistant Course Photos</a>
 </li>
 </ul>
 

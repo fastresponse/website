@@ -260,10 +260,17 @@ ul.nice-menu-down .menuparent a {
 /* site changes */
 
 #nice-menu-1 {
-  float:right;
-  margin-right: 30px;
-  font-size: 115%;
+  float: left;
   border: none;
+  font-size: 135%;
+  width: 100%;
+  /*
+  font-size: 115%;
+  */
+}
+
+#nice-menu-1 a:hover {
+  color: #865566;
 }
 
 #nice-menu-1 a {
@@ -280,9 +287,17 @@ ul.nice-menu-down .menuparent a {
   margin-left: 25px;
 }
 
-#nice-menu-1 ul {
+#nice-menu-1>li {
   margin-left: 0;
-  top: 1.7em;
+  width: 24%;
+  text-align: center;
+}
+
+#nice-menu-1 ul {
+  text-align: left;
+  width: 100%;
+  margin-left: 30%;
+  top: 1.6em;
   /* changed from top: 1.8em so IE did not have
    * empty space between top menu and first submenu
    */
@@ -290,6 +305,7 @@ ul.nice-menu-down .menuparent a {
 
 #nice-menu-1 ul ul {
   top: 0;
+  margin-left: 0;
 }
 
 #nice-menu-1 li li {
