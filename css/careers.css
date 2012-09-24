@@ -49,11 +49,13 @@
 .joblist td:hover {
   background-color: #000022;
   border: 1px solid yellow;
+  border-color: red;
 }
 
 .joblist td {
   width: 24%;
   border: 1px solid red;
+  border-color: #88AADD;
   border-radius: 1em;
   padding: 10px;
 }

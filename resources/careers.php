@@ -2,7 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
-<?php include_once('./dbconn.php'); ?>
+<?php
+
+include_once('./dbconn.php'); 
+
+$self = $_SERVER['PHP_SELF'];
+
+$handle = db_connect();
+
+?>
 
 <head>
   <title>Career Resources | Fast Response</title>
@@ -51,6 +59,12 @@
 
   <script type="text/javascript" src="/resources/joblist.js" defer="defer"></script>
 
+  <style>
+    .emph {
+      font-style: italic;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -73,7 +87,9 @@
 
 	<div class="rightsidebar">
 <?php
+  include_once('./search-side.php');
 ?>
+          <!--
 	  <div class="quicklinks">
 	    <dl>
 	      <a href="/resources/volunteer.php">
@@ -82,11 +98,12 @@
 	      </a>
 	    </dl>
 	  </div>
+          -->
 	</div>
 
 	<div class="leftcontent">
 <?php
-  include('./joblist.php');
+  include('./search-main.php');
 ?>
 	</div> <!-- /leftcontent -->
 
@@ -100,4 +117,9 @@
   </div> <!-- /page -->
 
 </body>
+
+<?php
+  $handle = null;
+?>
+
 </html>
