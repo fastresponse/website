@@ -26,21 +26,21 @@ function removeClass(obj, name) {
   obj.className = newarr.join(' ');
 }  
 
+function findPos(obj) {
+  var curtop = 0;
+  if (obj.offsetParent) {
+    do {
+      curtop += obj.offsetTop;
+    } while (obj = obj.offsetParent);
+  }
+  return curtop;
+}
+  
 function toggleShow(obj) {
   var chs = obj.children;
   for (var i = 0; i < chs.length; i++) {
     el = chs[i];
-    if (el.tagName.toLowerCase() == "div" && hasClass(el, "bottom")) {
-      /*
-      if (el.style.overflow == "hidden") {
-	el.style.overflow = "visible";
-	el.style.maxHeight = "none";
-      }
-      else {
-	el.style.overflow = "hidden";
-	el.style.maxHeight = "5em";
-      }
-      */
+    if (hasClass(el, "bottom")) {
       if (!hasClass(el, "showfull")) {
 	addClass(el, "showfull");
       }
@@ -49,4 +49,6 @@ function toggleShow(obj) {
       }
     }
   }
+  window.scroll(0, findPos(obj) - 10);
 }
+

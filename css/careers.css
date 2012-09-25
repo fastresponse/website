@@ -3,8 +3,11 @@
 
 .jobsearch, .joblist {
   width: 100%;
-  min-height: 25em;
   text-align: center;
+}
+
+.jobsearch {
+  margin-bottom: 1em;
 }
 
 .jobsearch table, .joblist table {
@@ -24,6 +27,13 @@
   border-spacing: 30px;
 }
 
+.joblist caption {
+  font-size: 95%;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  color: #FFFF99;
+}
+
 .joblist .top {
   display: inline-block;
   font-size: 80%;
@@ -32,18 +42,22 @@
 }
 
 .joblist .bottom {
+  display: inline-block;
   font-size: 115%;
   width: 96%;
   /* 2% for left and right - so width = 100 - 2 - 2 = 96% */
-  padding: 10px 2%;
+  padding: 10px 2% 0;
   border-top: solid 1px brown;
+  /* 5em max / 1.25em per line = 4 lines max */
+  line-height: 1.25em;
   max-height: 5em;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-line;
 }
 
 .joblist .showfull {
   max-height: none;
-  overflow: visible;
 }
 
 .joblist td:hover {
@@ -58,18 +72,22 @@
   border-color: #88AADD;
   border-radius: 1em;
   padding: 10px;
+  overflow: hidden;
 }
 
 .joberror {
 }
 
 .morebutton {
+  display: inline-block;
   z-index: 5;
   float: right;
   border: 1px solid red;
   margin: 3px;
+  max-height: 1.4em;
 }
 
+.hideme,
 .showfull .morebutton {
   visibility: hidden;
 }

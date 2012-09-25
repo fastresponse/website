@@ -86,19 +86,24 @@ $handle = db_connect();
       <div class="section">
 
 	<div class="rightsidebar">
+	  <div class="quicklinks">
+            <div class="box">
+              <span>Quick Links:</span>
+
+	      <span>
+		<a href="/resources/questionnaire.html">
+		Register for Career Services Workshop
+              </a></span>
+
+	      <span>
+		<a href="/resources/volunteer.php">
+		Volunteer Opportunities
+              </a></span>
 <?php
   include_once('./search-side.php');
 ?>
-          <!--
-	  <div class="quicklinks">
-	    <dl>
-	      <a href="/resources/volunteer.php">
-	        <dt><img src="/images/volunteer.png" alt="" /></dt>
-		<dd>Volunteer Opportunities</dd>
-	      </a>
-	    </dl>
+	    </div>
 	  </div>
-          -->
 	</div>
 
 	<div class="leftcontent">
@@ -108,6 +113,8 @@ $handle = db_connect();
 	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
+
+      <div class="clearfix" style="min-height: 0.1em;"></div>
 
     </div> <!-- /main -->
 

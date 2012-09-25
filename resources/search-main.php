@@ -79,9 +79,10 @@ else if ($handle != null) {
     $ret .= "<div class=\"top\"><img src=\"/images/buttons/directions_btn.png\" alt=\"Directions\" title=\"{$source_data['directions']}\" /></div>\n";
     $ret .= "<div class=\"top\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
     $ret .= "<div class=\"bottom\">";
-    $ret .= "<img src=\"/images/buttons/more.png\" alt=\"More\" class=\"morebutton\" /> ";
-    $ret .= nl2br($entry['text']);
-    $ret .= "\n</div>\n";
+    //$ret .= "<img src=\"/images/buttons/more.png\" alt=\"More\" class=\"morebutton\" />\n";
+    //$ret .= nl2br($entry['text'], true) . "\n";
+    $ret .= $entry['text'];
+    $ret .= "</div>\n";
     $ret .= "</td></tr>\n";
 
   }
@@ -90,6 +91,7 @@ else if ($handle != null) {
 <div class="joblist">
 <h2>Job Listings</h2>
 <table>
+<caption>Click on an entry to expand it</caption>
 <tbody>
 $ret
 </tbody></table>

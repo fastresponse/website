@@ -11,7 +11,7 @@ if ($handle != null) {
 
 $out = <<<SENDME
 <div class="jobsearch">
-<h2>Job Search</h2>
+<h3>Job Search</h3>
 <form action="$self" method="post">
   <table>
   <tbody>
@@ -69,6 +69,14 @@ $out = <<<SENDME
 </form>
 </div>
 SENDME;
+
+if (array_key_exists('daterange', $_POST)) {
+  $out .= <<<ADD
+<div style="margin-bottom: 1em;">
+  <a href="/resources/careers.php">Return to Careers Page</a>
+</div>
+ADD;
+}
 
 echo $out;
 
