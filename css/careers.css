@@ -1,30 +1,48 @@
 
 /* styles for the careers pages */
 
-.jobsearch, .joblist {
-  width: 100%;
-  text-align: center;
-}
+
+/* jobsearch is for the searching interface */
 
 .jobsearch {
   margin-bottom: 1em;
 }
 
-.jobsearch table, .joblist table {
-  width: 80%;
-  margin: 0 auto;
+.jobsearch table {
+  padding: 0;
+  margin: 1em 0 0;
   text-align: left;
 }
 
-.jobsearch td {
-  width: 30%;
+.jobsearch caption {
+  font-size: 120%;
 }
 
+.jobsearch,
+.jobsearch table,
+.jobsearch caption,
+.jobsearch tbody,
+.jobsearch tr,
+.jobsearch td,
+.jobsearch form,
+.jobsearch label,
+.jobsearch select {
+  width: 100%;
+}
+
+
+/* joblist is for displaying search results */
+
 .joblist {
+  width: 100%;
+  text-align: center;
 }
 
 .joblist table {
   border-spacing: 30px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .joblist caption {
@@ -91,3 +109,73 @@
 .showfull .morebutton {
   visibility: hidden;
 }
+
+
+/* jobadmin is for the admin page */
+
+.jobadmin {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.jobadmin form {
+  margin: 2em 0;
+}
+
+.jobadmin fieldset {
+  overflow: hidden;
+}
+
+.jobadmin legend button {
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.jobadmin .pop {
+  overflow: hidden;
+  max-height: none;
+  max-width: none;
+}
+
+.jobadmin .closed {
+  max-height: 0;
+  max-width: 0;
+}
+
+.jobadmin .noborder {
+  border: 0;
+}
+
+.jobadmin label {
+  display: block;
+  float: left;
+  text-align: right;
+  width: 13%;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+
+.jobadmin input,
+.jobadmin textarea,
+.jobadmin select {
+  width: 20%;
+}
+
+.jobadmin [type=submit],
+.jobadmin [type=button] {
+  width: auto;
+}
+
+.jobadmin textarea {
+  width: 80%;
+}
+
+.jobadmin input,
+.jobadmin select,
+.jobadmin textarea {
+  margin: 0.5em 0;
+}
+
+.jobadmin br {
+  clear: left;
+}
+

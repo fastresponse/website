@@ -85,7 +85,7 @@ $handle = db_connect();
 
       <div class="section">
 
-	<div class="rightsidebar">
+	<div class="rightsidebar" style="width: 20%;">
 	  <div class="quicklinks">
             <div class="box">
               <span>Quick Links:</span>
@@ -106,7 +106,7 @@ $handle = db_connect();
 	  </div>
 	</div>
 
-	<div class="leftcontent">
+	<div class="leftcontent" style="width: 80%;">
 <?php
   include('./search-main.php');
 ?>

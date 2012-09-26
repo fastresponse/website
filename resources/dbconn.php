@@ -99,4 +99,34 @@ function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
   return db_query($dbh, $q_jobpost, $params);
 }
 
+// this is almost certainly wrong
+function insert_source($dbh, $name, $courses) {
+  $i_src =
+    "INSERT :name, :courses
+    INTO sources"
+  ;
+  $params = array(
+    ':name' => $name,
+    ':courses' => $courses,
+  );
+
+  return db_query($dbh, $i_src, $params);
+}
+
+// this too
+function insert_jobposting($dbh, $date, $courses, $source, $text) {
+  $i_jobpost =
+    "INSERT :postdate, :courses, :source, :text
+    INTO jobpostings"
+  ;
+  $params = array(
+    ':postdate' => $date,
+    ':courses' => $courses,
+    ':source' => $source,
+    ':text' => $text,
+  );
+
+  return db_query($dbh, $i_jobpost, $params);
+}
+
 ?>

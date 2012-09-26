@@ -17,6 +17,7 @@
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/careers.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
@@ -38,6 +39,10 @@
   </script>
 
   <script type="text/javascript" src="/js/jquery.js"></script>
+
+  <script type="text/javascript" src="/js/datetimepicker.js"></script>
+
+  <script type="text/javascript" src="/resources/joblist.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {
@@ -80,6 +85,8 @@
 	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
+
+      <div class="clearfix" style="min-height: 0.1em;"></div>
 
     </div> <!-- /main -->
 

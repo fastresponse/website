@@ -166,8 +166,8 @@ $messages.= "Email: $email\n";
 $messages.= "Phone: $phone\n";
 $messages.= "Graduation Date: $graddate\n";
 $messages.= "Preferred Workshop Date: $workshopdate\n";
-$messages.= "Short term Goals: shortterm$\n";
-$messages.= "Long term Goals: longterm$\n";
+$messages.= "Short term Goals: $shortterm\n";
+$messages.= "Long term Goals: $longterm\n";
 
 /*
 $messages.= "WhentoReach: $whenreachme\n";

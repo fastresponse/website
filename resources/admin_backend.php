@@ -16,56 +16,84 @@ if ($handle != null) {
 }
 
 $defhtml = <<<DEFHTML
-<h2 style="text-align: center;">Career Services Administration</h2>
-<div style="width: 70%; margin: 0 auto; padding-bottom: 3em;">
-<form action="$self" method="post">
-  <div style="width: 100%; text-align: center;">
-    <table border="0" style="margin: 2em auto; text-align: left;">
-    <tbody>
-    <tr>
-      <td>
-	<label style="margin-right: 3em;">Date:</label>
-      </td>
-      <td>
-	<label>Courses:</label>
-      </td>
-      <td>
-	<label>Source of job:</label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="date" />
-      </td>
-      <td>
-	<select name="course" multiple="multiple" size="5">
-	  <option>EMT</option>
-	  <option>CPT</option>
-	  <option>SPT</option>
-	  <option>CMA</option>
-	  <option>Paramedic</option>
-	</select>
-      </td>
-      <td>
-	<select name="source">
-          $source_list
-	</select>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-	<label>Full text of job posting:</label>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-	<textarea rows="10" cols="50" name="text"></textarea>
-      </td>
-    </tr>
-    </tbody></table>
+<div class="jobadmin">
+<h2>Career Services Administration</h2>
+
+<form id="addjob" action="$self" method="post">
+
+  <fieldset id="addjobfieldset" class="noborder">
+  <legend>
+    <button type="button" onClick="toggleClass('addjobdiv', 'closed'); toggleClass('addjobfieldset', 'noborder');">
+    Add a Job Listing
+    </button>
+  </legend>
+
+  <div id="addjobdiv" class="pop closed">
+    <label>Date:</label>
+    <input id="cal" type="text" name="date" readonly="readonly" value="Choose a date"/>
+    <a href="javascript:NewCal('cal', 'ddmmmyyyy');">
+      <img src="/images/cal.gif" alt="Pick a date" />
+    </a>
+
+    <br />
+
+    <label>Courses:</label>
+    <select name="course" multiple="multiple" size="5">
+      <option>EMT</option>
+      <option>CPT</option>
+      <option>SPT</option>
+      <option>CMA</option>
+      <option>Paramedic</option>
+    </select>
+
+    <br />
+
+    <label>Source of job:</label>
+    <select name="source">
+      $source_list
+    </select>
+
+    <br />
+
+    <label>Full text of job posting:</label>
+    <textarea rows="10" cols="100" name="text"></textarea>
+
+    <br />
+
+    <label></label>
     <input type="submit" value="Add new job posting" />
   </div>
+
+  </fieldset>
 </form>
+
+<form id="addsource" action="$self" method="post">
+
+  <fieldset id="addsourcefieldset" class="noborder">
+  <legend>
+    <button type="button" onClick="toggleClass('addsourcediv', 'closed'); toggleClass('addsourcefieldset', 'noborder');">
+    Add an Employer
+    </button>
+  </legend>
+
+  <div id="addsourcediv" class="pop closed">
+
+    <label>Existing Employers:</label>
+    <select id="sourcelist" name="sourcelist" size="20">
+      $source_list
+    </select>
+
+    <br />
+
+    <label>
+      <input type="button" value="Add" onClick="addSource('addsourceinput', 'sourcelist');" style="margin: 0;"/>
+    </label>
+    <input type="text" id="addsourceinput" placeholder="Name of employer" />
+  </div>
+
+  </fieldset>
+</form>
+
 </div>
 DEFHTML;
 
@@ -85,7 +113,7 @@ else if ($handle != null) {
   // make $ret
   $out = <<<QUERYHTML
 <h2 style="text-align: center;">Career Services Administration</h2>
-<div style="width: 70%; margin: 0 auto; padding-bottom: 3em;">
+<div style="width: 90%; margin: 0 auto; padding-bottom: 3em;">
 <table border="0" style="margin: 2em auto; text-align: left;">
 <tbody>
 $ret

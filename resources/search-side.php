@@ -11,9 +11,9 @@ if ($handle != null) {
 
 $out = <<<SENDME
 <div class="jobsearch">
-<h3>Job Search</h3>
 <form action="$self" method="post">
   <table>
+  <caption>Job Search</caption>
   <tbody>
   <tr>
     <td>
@@ -22,7 +22,7 @@ $out = <<<SENDME
   </tr>
   <tr>
     <td>
-      <select name="daterange" style="margin-right: 4em;">
+      <select name="daterange">
 	<option>Any</option>
 	<option>Last week</option>
 	<option>Last month</option>
