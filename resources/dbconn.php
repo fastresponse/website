@@ -7,8 +7,17 @@ function handleit($ex) {
 }
 set_exception_handler('handleit');
 
+// translates a php array into a mysql set
+function arr_to_set($data_arr) {
+  $data_set = implode(',', $data_arr);
+  $data_set = "'$data_set'";
+  return $data_set;
+}
+
 function db_connect() {
-  $local_testing = 1;
+  $local_testing = 0;
+  if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' && gethostname() == 'animal')
+    $local_testing = 1;
 
   if ($local_testing) {
     $host = 'localhost';
@@ -73,6 +82,16 @@ function query_source($dbh, $name) {
   return db_query($dbh, $q_src, $params, 1);
 }
 
+function query_source_full($dbh) {
+  $q_src =
+    "SELECT name, website, directions, courses
+    FROM sources"
+  ;
+  $params = array();
+
+  return db_query($dbh, $q_src, $params);
+}
+
 function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
   $q_jobpost =
     "SELECT DATE_FORMAT(postdate, '%m-%d-%Y') AS showdate, courses, source, text
@@ -99,26 +118,34 @@ function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
   return db_query($dbh, $q_jobpost, $params);
 }
 
-// this is almost certainly wrong
-function insert_source($dbh, $name, $courses) {
+function insert_source($dbh, $name, $website, $directions, $courses) {
   $i_src =
-    "INSERT :name, :courses
-    INTO sources"
+    "INSERT INTO sources (name, website, directions, courses)
+    VALUES (:name, :website, :directions, :courses)"
   ;
+
+  if (is_array($courses))
+    $courses = arr_to_set($courses);
+
   $params = array(
     ':name' => $name,
+    ':website' => $website,
+    ':directions' => $directions,
     ':courses' => $courses,
   );
 
   return db_query($dbh, $i_src, $params);
 }
 
-// this too
 function insert_jobposting($dbh, $date, $courses, $source, $text) {
   $i_jobpost =
-    "INSERT :postdate, :courses, :source, :text
-    INTO jobpostings"
+    "INSERT INTO jobpostings (postdate, courses, source, text)
+    VALUES (:postdate, :courses, :source, :text)"
   ;
+
+  if (is_array($courses))
+    $courses = arr_to_set($courses);
+
   $params = array(
     ':postdate' => $date,
     ':courses' => $courses,
@@ -127,6 +154,12 @@ function insert_jobposting($dbh, $date, $courses, $source, $text) {
   );
 
   return db_query($dbh, $i_jobpost, $params);
+}
+
+// not db related: sanitize a string to use as an html div id
+function sanitize_id($in) {
+  $out = str_replace(" ", "_", $in);
+  return $out;
 }
 
 ?>

@@ -81,12 +81,15 @@ function addSource(name, srclistname) {
 
   obj = document.getElementById(name);
   list = document.getElementById(srclistname);
+
+  // make sure the source isn't already in the list
   for (var i = 0; i < list.length; i++) {
     if (list.options[i].text.toLowerCase() == obj.value.toLowerCase()) {
       flag = 1;
       break;
     }
   }
+
   if (!flag) {
     var option = document.createElement("option");
     option.text = obj.value;
@@ -98,5 +101,11 @@ function addSource(name, srclistname) {
       list.add(option, null);
     }
   }
+
+  // remove the text that was entered in the text input box
   obj.value = obj.defaultValue;
+}
+
+function displaySourceData(selectobj) {
+  sourcename = selectobj.options[selectobj.selectedIndex].text;
 }

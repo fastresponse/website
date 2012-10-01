@@ -5,13 +5,18 @@ include_once('./dbconn.php');
 $self = $_SERVER['PHP_SELF'];
 
 $source_list = "";
+$hidden_data = "";
+$all_source_data = null;
 
 $handle = db_connect();
 
 if ($handle != null) {
-  $all_sources = query_source_list($handle);
-  foreach ($all_sources as $src) {
-     $source_list .= "<option>{$src['name']}</option>\n";
+  $all_source_data = query_source_full($handle);
+  foreach ($all_source_data as $src) {
+    $source_list .= "<option>{$src['name']}</option>\n";
+    $hidden_data .= "<div id='data_" . sanitize_id($src['name']) . "'>\n";
+    $hidden_data .= "<input type='hidden' value='{$src['website']}' />\n";
+    $hidden_data .= "</div>\n";
   }
 }
 
@@ -79,9 +84,17 @@ $defhtml = <<<DEFHTML
   <div id="addsourcediv" class="pop closed">
 
     <label>Existing Employers:</label>
-    <select id="sourcelist" name="sourcelist" size="20">
+    <select id="sourcelist" name="sourcelist" size="10" onFocus="displaySourceData(this);">
       $source_list
     </select>
+    <div class="sourcedata">
+      <input type="text" id="sourcewebsite" readonly="readonly" />
+      <br />
+      <input type="text" id="sourcedirections" readonly="readonly" />
+      <br />
+      <select id="sourcecourses" readonly="readonly" size="5">
+      </select>
+    </div>
 
     <br />
 
@@ -89,6 +102,9 @@ $defhtml = <<<DEFHTML
       <input type="button" value="Add" onClick="addSource('addsourceinput', 'sourcelist');" style="margin: 0;"/>
     </label>
     <input type="text" id="addsourceinput" placeholder="Name of employer" />
+
+    $hidden_data
+
   </div>
 
   </fieldset>

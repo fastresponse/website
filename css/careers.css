@@ -127,7 +127,7 @@
 }
 
 .jobadmin legend button {
-  font-size: 140%;
+  font-size: 120%;
   font-weight: bold;
 }
 
@@ -158,6 +158,17 @@
 .jobadmin textarea,
 .jobadmin select {
   width: 20%;
+  margin: 0.5em 0;
+}
+
+.jobadmin .sourcedata {
+  display: inline-block;
+  width: 40%;
+}
+
+.jobadmin .sourcedata input,
+.jobadmin .sourcedata select {
+  width: 100%;
 }
 
 .jobadmin [type=submit],
@@ -167,12 +178,6 @@
 
 .jobadmin textarea {
   width: 80%;
-}
-
-.jobadmin input,
-.jobadmin select,
-.jobadmin textarea {
-  margin: 0.5em 0;
 }
 
 .jobadmin br {
