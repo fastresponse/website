@@ -7,10 +7,7 @@ $source = null;
 if (array_key_exists('daterange', $_POST))
   $daterange = $_POST['daterange'];
 
-if ($daterange == null) {
-  $out = file_get_contents('./careers.html');
-}
-else if ($handle != null) {
+if ($handle != null && $daterange != null) {
   if (array_key_exists('course', $_POST))
     $course = $_POST['course'];
   if (array_key_exists('source', $_POST))

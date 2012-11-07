@@ -9,19 +9,14 @@ html, body {
 }
 
 body {
-  color: rgb(255, 255, 255);
-  background: url("images/bg.png")
-    repeat-x scroll 0% 0% rgb(39, 57, 109);
+  color: black;
+  background: scroll no-repeat center center white;
   font-size: small;
   letter-spacing: 0.03em;
-  /* set a default font?
-  font-family: Verdana, sans-serif;
-  font-family: Arial, sans-serif;
-  */
 }
 
 a:link, a:visited {
-  color: white;
+  color: black;
 }
 
 h3 {
@@ -30,8 +25,6 @@ h3 {
 
 #page {
   width: 100%;
-  background: url("images/pagebg.png")
-    repeat-x scroll 0% 0% rgb(31, 46, 87);
   font-size: 115%;
 }
 
@@ -49,8 +42,8 @@ h3 {
 }
 
 #head {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   position: relative;
   background-color: black;
 }
@@ -85,40 +78,11 @@ h3 {
 }
 
 /* a horizontal, rectangular section of content */
-.row,
 .section {
   margin: 1.5em 0 0 0;
   width: 100%;
 }
 
-/* a vertical section of content */
-.column,
-.column.col2,
-.vsection,
-.vsection.col2 {
-  display: inline-block;
-  margin: 0 2% 0;
-  /* 2% + 2% + 45% = 49% wide */
-  width: 45%;
-  vertical-align: top;
-}
-
-.column.col3,
-.vsection.col3 {
-  margin: 0 1.5% 0;
-  width: 29.5%;
-}
-
-.column.col4,
-.vsection.col4 {
-  margin: 0 0.9% 0;
-  width: 22.5%;
-}
-
-.column *,
-.vsection * {
-  /*display: inline-block;*/
-}
 
 /* a sidebar along the right side of the page */
 .rightsidebar {
@@ -150,7 +114,7 @@ h3 {
   display: block;
   clear: both;
   float: left;
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   text-align: left;
   height: 28px;
   min-height: 28px;
@@ -176,7 +140,7 @@ h3 {
 #footer ul li a {
   text-decoration: underline;
   font-size: small;
-  color: rgb(255, 255, 255);
+  color: black;
 }
 
 #footer ul li a:hover {
@@ -205,21 +169,13 @@ h3 {
   clear: both;
 }
 
-.vspacer {
-  min-height: 0.1em;
-}
-
 .center {
   margin-right: auto;
   margin-left: auto;
 }
 
 .fontsans {
-  font-family: "Century Gothic", sans-serif;
-}
-
-.verdana {
-  font-family: Verdana, sans-serif;
+  font-family: Century Gothic, sans-serif;
 }
 
 .cols-6 td {
@@ -255,9 +211,6 @@ h3 {
 }
 .green {
   color: #339966;
-}
-.underline {
-  text-decoration: underline;
 }
 
 /* end colors */
@@ -428,20 +381,21 @@ h3 {
 
 .listbox ul {
   /* set font size first - size of "em" depends on it */
-  font-family: Verdana, sans-serif;
+  font-family: Century Gothic, sans-serif;
   font-weight: bold;
   font-size: small;
   margin: 0;
   padding: 1em;
   padding-left: 2.75em;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 15px;
-  -moz-border-radius: 15px;
-  background-color: #1e2c54;
+  background-color: rgb(66, 66, 66);
+  background-color: rgba(66, 66, 66, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F666666, endColorstr=#7F666666);
 }
 
 .listbox li {
-  font-family: Verdana, sans-serif;
+  font-family: Century Gothic, sans-serif;
   font-weight: bold;
   font-size: small;
   margin-bottom: 0.25em;
@@ -530,148 +484,4 @@ h3 {
 }
 
 /* end listnav */
-
-
-/*
- * announcement box to sit at top right of pages
- * (but to the left of the sidebar)
- * typically used for course start dates
- * layout:
- * <div class="announcement">
- * </div>
- *
- */
-.announcement {
-  display: inline-block;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border: 2px solid #2211CC;
-  border-radius: 1em;
-  padding: 1em;
-  font-weight: bold;
-  width: 100%;
-  text-align: left;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-}
-.announcement h3 {
-  font-size: 130%;
-  font-size: large;
-  margin-top: 0;
-}
-.announcement span,
-.announcement div {
-  font-size: 110%;
-  font-size: medium;
-}
-
-/* end announcement */
-
-.photostrip {
-  text-align: center;
-}
-
-.photostrip a {
-  text-decoration: none;
-}
-
-.photostrip img,
-.photostrip div {
-  display: inline-block;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin: 0;
-  vertical-align: top;
-  border: none;
-}
-
-.photostrip.border img,
-.photostrip.border div {
-  border: solid 10px #FFFF99;
-}
-
-.photostrip img {
-  /*background-color: #1e2c54;*/
-}
-
-.photostrip div {
-  min-height: 100px;
-}
-
-.pics-2 img,
-.pics-2 div {
-  width: 46%;
-  margin-right: 2%;
-} 
-
-.pics-3 img,
-.pics-3 div {
-  width: 31%;
-  margin-right: 2%;
-}
-
-.pics-4 img,
-.pics-4 div {
-  width: 23%;
-  margin-right: 2%;
-}
-
-/* stupid IE8 doesn't support :last-child */
-.photostrip img.last,
-.photostrip div.last {
-  margin-right: 0;
-}
-
-.quotepic {
-  clear: left;
-  margin-top: 2em;
-}
-
-.quotepic.first {
-  margin-top: 0;
-}
-.quotepic img {
-  height: 6em;
-  width: 6em;
-  margin-right: 1em;
-  vertical-align: middle;
-  float: left;
-  margin-bottom: 2em;
-  background-color: #1e2c54;
-  /*
-  border: 1px solid white;
-  border-radius: 15px;
-  -moz-border-radius: 15px;
-  */
-}
-
-.quotepic.last img {
-  margin-bottom: 0;
-}
-
-.quotepic div {
-  display: inline-block;
-  display: inline;
-  vertical-align: middle;
-  margin-top: 2em;
-}
-
-.hidden {
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
-}
-
-.hidden.section {
-  margin-top: 0;
-}
-
-.collapsebox {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
 

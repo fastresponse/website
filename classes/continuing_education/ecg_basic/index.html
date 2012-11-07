@@ -2,27 +2,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
-<?php
-
-include_once('./dbconn.php');
-
-$self = $_SERVER['PHP_SELF'];
-
-$handle = db_connect();
-
-$whichpage = "";
-
-if (array_key_exists('whichpage', $_POST))
-  $whichpage = $_POST['whichpage'];
-
-?>
-
 <head>
-  <title>Career Resources Administration | Fast Response</title>
+  <title>ECG Basic | Fast Response</title>
 
   <base href="/" />
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
@@ -30,7 +14,6 @@ if (array_key_exists('whichpage', $_POST))
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/careers.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
@@ -53,10 +36,6 @@ if (array_key_exists('whichpage', $_POST))
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript" src="/js/datetimepicker.js"></script>
-
-  <script type="text/javascript" src="/resources/joblist.js"></script>
-
   <script type="text/javascript">
     $(document).ready(function() {
       $("#menu").load("/menu/menu.html");
@@ -78,7 +57,7 @@ if (array_key_exists('whichpage', $_POST))
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_career_right.jpg" class="headerimgright" alt="" />
+      <img src="/images/headers/header_ecg_basic_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
 
@@ -87,27 +66,67 @@ if (array_key_exists('whichpage', $_POST))
       <div class="section">
 
 	<div class="rightsidebar">
-          <div class="quicklinks">
+	  <div class="quicklinks">
 	    <div class="box">
-<?php
-  include('./search-side.php');
-?>
+
+	      <span>Quick Links:</span>
+
+	      <span>
+		<a href="https://fastresponse.securegw.com/cgi-bin/er/calendar_month.cgi">
+		View Calendar
+	      </a></span>
+
+	      <span>
+		<a href="https://fastresponse.securegw.com/cgi-bin/er/info.cgi?info=21">
+		Register for this course
+	      </a></span>
+
+
+	      <span>
+		<a href="/pdfs/ECG_Basic_Study_Guide_8-3-09.pdf" style="font-size: 130%;">
+		<span style="display: inline; text-decoration: underline;" class="red">Download<br />Study Guide</span>
+	      </a></span>
+
 	    </div>
 	  </div>
 	</div>
 
 	<div class="leftcontent">
-<?php
-if ($whichpage == 'jobsearch') {
-  include('./search-main.php');
-}
-else {
-  include('./admin_backend.php');
-}
-?>
+
+	  <h1>ECG Recognition</h1>
+
+	  <img width="202" height="242" alt="" src="/images/ecg.png" style="float: left; margin-right: 1em; margin-bottom: 2em;" />
+
+	  <h2>ECG BASIC ARRHYTHMIA</h2>
+
+	  <h4>3-Lead ECG:</h4>
+
+	  <p>Our 2-day course of basic 3-lead ECG interpretation is taught by instructors who work in some of the same clinical settings where you will be working. This class can serve as a refresher course or as an introduction to arrhythmia recognition for medical professionals. We highly recommend taking this course in preparation for ACLS certification.</p>
+
+	  <p>Starting with a review of anatomy and physiology of the heart, the course quickly moves into a review of EKG waveforms and sinus cardiac rhythms. With this basic knowledge in place, an in-depth study of dysrhythmias and their origins are covered. Each member of the class practices measuring, analyzing, and identifying rhythms using static ECG strips.</p>
+
+	  <div style="clear: left;">
+	    <ul class="bullets">
+	      <li>Provides 12 CEUs.</li>
+	      <li>Refresher or intro course.</li>
+	      <li>No prerequisite necessary.</li>
+	      <li>Great course for laypeople.</li>
+	    </ul>
+	  </div>
+
 	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
+
+      <div class="section">
+	<div class="bgimg fontsans" style="width: 20.25em; height: 2.25em; font-size: 220%;">
+	  <div style="width: 20.25em; height: 2.25em; line-height: 2.25em;">
+	    Call <a href="tel://1-800-637-7387">(800) 637-7387</a> or
+	    <a href="tel://1-510-849-4009">(510) 849-4009</a>
+	  </div>
+	  <img src="/images/cloudbg.png" alt="phone number" />
+	</div>
+      </div>
 
       <div class="clearfix" style="min-height: 0.1em;"></div>
 

@@ -62,6 +62,7 @@ $out = <<<SENDME
   </tr>
   <tr>
     <td>
+      <input type="hidden" name="whichpage" value="jobsearch" />
       <input type="submit" value="Find jobs" />
     </td>
   </tr>
@@ -73,7 +74,7 @@ SENDME;
 if (array_key_exists('daterange', $_POST)) {
   $out .= <<<ADD
 <div style="margin-bottom: 1em;">
-  <a href="/resources/careers.php">Return to Careers Page</a>
+  <a href="$self">Return to Admin Page</a>
 </div>
 ADD;
 }

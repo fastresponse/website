@@ -2,21 +2,20 @@
 
 include_once('./dbconn.php');
 
-$self = $_SERVER['PHP_SELF'];
-
 $source_list = "";
 $hidden_data = "";
 $all_source_data = null;
 
-$handle = db_connect();
-
 if ($handle != null) {
   $all_source_data = query_source_full($handle);
   foreach ($all_source_data as $src) {
+    $id = sanitize_id($src['name']);
     $source_list .= "<option>{$src['name']}</option>\n";
-    $hidden_data .= "<div id='data_" . sanitize_id($src['name']) . "'>\n";
-    $hidden_data .= "<input type='hidden' value='{$src['website']}' />\n";
-    $hidden_data .= "</div>\n";
+    $hidden_data .= "<input type='hidden' name='website_$id' value='{$src['website']}' />\n";
+    /*
+    $hidden_data .= "<input type='hidden' name='directions_$id' value='{$src['directions']}' />\n";
+    $hidden_data .= "<input type='hidden' name='courses_$id' value='{$src['courses']}' />\n";
+    */
   }
 }
 
