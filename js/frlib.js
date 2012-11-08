@@ -4,10 +4,15 @@
  */
 
 function hasClass(obj, name) {
+  obj = findObj(obj);
+  if (!obj) return 0;
   return (' ' + obj.className + ' ').indexOf(' ' + name + ' ') > -1;
 }
 
 function addClass(obj, name) {
+  obj = findObj(obj);
+  if (!obj) return;
+  if (hasClass(obj, name)) return;
   obj.className += (obj.className ? ' ' : '') + name;
 }
 
@@ -16,7 +21,10 @@ function addClass(obj, name) {
  * not the name we're removing
  */
 function removeClass(obj, name) {
+  obj = findObj(obj);
+  if (!obj) return;
   if (!obj.className) return;
+  if (!hasClass(obj, name)) return;
   var temparr = obj.className.split(' ');
   var newarr = new Array;
   for (var i = 0; i < temparr.length; i++) {
@@ -58,5 +66,11 @@ function findPos(obj) {
     } while (obj = obj.offsetParent);
   }
   return curtop;
+}
+
+function checkRadio(obj) {
+  obj = findObj(obj);
+  if (!obj) return;
+  obj.checked = true;
 }
 
