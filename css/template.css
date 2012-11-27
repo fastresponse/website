@@ -120,6 +120,20 @@ h3 {
   /*display: inline-block;*/
 }
 
+.column.smallauto {
+  min-width: 15%;
+  max-width: 20%;
+  width: auto;
+  float: right;
+  margin: 0 1% 0;
+}
+
+.column.largeauto {
+  max-width: 78%;
+  width: auto;
+  margin: 0;
+}
+
 /* a sidebar along the right side of the page */
 .rightsidebar {
   width: 14%;
@@ -258,6 +272,9 @@ h3 {
 }
 .underline {
   text-decoration: underline;
+}
+.bold {
+  font-weight: bold;
 }
 
 /* end colors */
@@ -664,6 +681,11 @@ h3 {
   margin-top: 2em;
 }
 
+.testimonial {
+  height: 6em;
+  margin-bottom: 2em;
+}
+
 .hidden {
   max-height: 0;
   max-width: 0;
@@ -680,3 +702,9 @@ h3 {
   -webkit-box-sizing: border-box;
 }
 
+.clicktitle {
+  letter-spacing: 0.08em;
+  color: orange;
+  cursor: pointer;
+  text-decoration: underline;
+}
