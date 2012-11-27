@@ -601,6 +601,11 @@ h3 {
   min-height: 100px;
 }
 
+.pics-1 img,
+.pics-1 div {
+  width: 90%;
+}
+
 .pics-2 img,
 .pics-2 div {
   width: 46%;
