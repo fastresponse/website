@@ -175,6 +175,7 @@ h3 {
 
 #footer ul {
   display: inline;
+  display: inline-block;
   float: left;
   padding: 0px;
   margin: 6px;
@@ -182,12 +183,19 @@ h3 {
 
 #footer ul li {
   display: inline;
+  display: inline-block;
   float: left;
   list-style-type: none;
   padding: 0pt 0.5em;
 }
 
+#footer ul li div {
+  display: inline-block;
+  text-decoration: underline;
+}
+
 #footer ul li a {
+  display: inline-block;
   text-decoration: underline;
   font-size: small;
   color: rgb(255, 255, 255);
@@ -200,6 +208,7 @@ h3 {
 #footer ul li a img {
   text-decoration: none;
   display: inline;
+  display: inline-block;
   width: 28px;
   height: 28px;
   float: right;
@@ -583,6 +592,13 @@ h3 {
   font-size: 110%;
   font-size: medium;
 }
+.announcement span {
+  white-space: nowrap;
+}
+.announcement div.times {
+  font-weight: normal;
+  font-size: 100%;
+}
 
 /* end announcement */
 
@@ -647,21 +663,39 @@ h3 {
   margin-right: 0;
 }
 
-.quotepic {
+.testimonial {
   clear: left;
-  margin-top: 2em;
+  height: 6.5em;
+  margin-bottom: 2.5em;
 }
 
-.quotepic.first {
-  margin-top: 0;
+.testimonial div {
+  display: block;
 }
-.quotepic img {
-  height: 6em;
-  width: 6em;
+
+.testimonial cite,
+.testimonial q {
+  display: block;
+  margin-left: 7em;
+}
+
+.testimonial.nopic cite,
+.testimonial.nopic q {
+  display: block;
+  margin-left: 0;
+}
+
+.testimonial q {
+  margin-bottom: 0.5em;
+}
+
+.testimonial img {
+  height: 6.5em;
+  width: 6.5em;
   margin-right: 1em;
   vertical-align: middle;
   float: left;
-  margin-bottom: 2em;
+  margin-bottom: 2.3em;
   background-color: #1e2c54;
   /*
   border: 1px solid white;
@@ -670,20 +704,9 @@ h3 {
   */
 }
 
-.quotepic.last img {
+.testimonial.last,
+.testimonial.last img {
   margin-bottom: 0;
-}
-
-.quotepic div {
-  display: inline-block;
-  display: inline;
-  vertical-align: middle;
-  margin-top: 2em;
-}
-
-.testimonial {
-  height: 6em;
-  margin-bottom: 2em;
 }
 
 .hidden {

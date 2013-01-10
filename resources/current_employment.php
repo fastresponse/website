@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <?php
+  error_reporting(E_ERROR);
+
   $emailaddr = $_GET['emailaddr'];
   if (!$emailaddr)
     $emailaddr = 'anonymous@fastresponse.org';
@@ -178,6 +180,9 @@
     #contactform input[type=radio] {
       vertical-align: text-bottom;
     }
+    #contactform input[type=checkbox] {
+      vertical-align: middle;
+    }
 
     #contactform #note { width: 90%; margin: 0 auto; }
 
@@ -338,10 +343,21 @@
 		<div id="relno" class="hidden">
 		  <hr style="margin: 1em 0;" />
 		  <label class="wide">I would like additional assistance</label>
-		  <input type="radio" name="wantassistance" value="yes" checked="checked" />Yes
+		  <input type="radio" name="wantassistance" value="yes" onClick="removeClass('assistanceopts', 'hidden');" />Yes
 		  <div style="display: inline-block; min-width: 1em;"></div>
-		  <input type="radio" name="wantassistance" value="no" />No
+		  <input type="radio" name="wantassistance" value="no" checked="checked" onClick="addClass('assistanceopts', 'hidden');" />No
 		  <br />
+		  <div id="assistanceopts" class="hidden">
+		    <div style="min-height: 0.2em;"></div>
+		    <label class="wide">with:</label>
+		    <input type="checkbox" name="assistancetypes" value="resume" />Resume PUT THIS TEXT IN A SPAN WITH WIDTH=4EM
+		    <input type="checkbox" name="assistancetypes" value="coverletter" />Cover Letter
+		    <br />
+		    <label class="wide">&nbsp;</label>
+		    <input type="checkbox" name="assistancetypes" value="interview" />Interview Skills
+		    <input type="checkbox" name="assistancetypes" value="opportunities" />Finding Job Opportunities
+		    <br />
+		  </div>
 		  <label class="wide">I am willing to travel outside the Bay Area</label>
 		  <input type="radio" name="traveloutofbay" value="yes" />Yes
 		  <div style="display: inline-block; min-width: 1em;"></div>

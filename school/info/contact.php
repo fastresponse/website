@@ -154,6 +154,7 @@ $messages = "From: $email\n";
 $messages.= "Name: $name\n";
 $messages.= "Email: $email\n";
 $messages.= "Phone: $phone\n";
+$messages.= "Newsletter: $newsletter\n";
 $messages.= "Reference: $reference\n";
 $messages.= "WhentoReach: $whenreachme\n";
 $messages.= "WhatTime: $time\n";
