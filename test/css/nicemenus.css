@@ -262,7 +262,6 @@ ul.nice-menu-down .menuparent a {
 #nice-menu-1 {
   float: left;
   border: none;
-  font-size: 135%;
   width: 100%;
   /*
   font-size: 115%;
@@ -285,18 +284,25 @@ ul.nice-menu-down .menuparent a {
 
 #nice-menu-1 li {
   margin-left: 25px;
+  font-size: medium;
+  font-weight: bold;
 }
 
 #nice-menu-1>li {
+  /* 20% for 5 menu entries, 25% for 4, 33.3% for 3, etc */
+  width: 20%;
+  font-size: large;
+  font-weight: normal;
   margin-left: 0;
-  width: 24%;
-  text-align: center;
+  text-transform: uppercase;
+  /*width: 19%;
+  text-align: center;*/
 }
 
 #nice-menu-1 ul {
   text-align: left;
   width: 100%;
-  margin-left: 30%;
+  /*margin-left: 30%;*/
   top: 1.6em;
   /* changed from top: 1.8em so IE did not have
    * empty space between top menu and first submenu
@@ -308,11 +314,28 @@ ul.nice-menu-down .menuparent a {
   margin-left: 0;
 }
 
+#nice-menu-1 ul li {
+  width: 100%;
+}
+#nice-menu-1 li ul li ul {
+  left: 100%;
+}
+
 #nice-menu-1 li li {
+  margin-left: 0;
+  background-color: #010a17;
+  background-color: rgba(01, 10, 23, 0.9);
+  /*
   background-color: rgb(66, 66, 66);
   background-color: rgba(66, 66, 66, 0.9);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F666666, endColorstr=#E5666666);
-  margin-left: 0;
+  */
+}
+
+#nice-menu-1 li li li,
+#nice-menu-1 li li:hover {
+  background-color: #051825;
+  background-color: rgba(05, 24, 37, 0.9);
 }
 
 #nice-menu-1 li li.menuparent,

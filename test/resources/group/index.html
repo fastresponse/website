@@ -4,8 +4,6 @@
 <head>
   <title>Contact Info | Fast Response</title>
 
-  <base href="/" />
-
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -69,7 +67,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "/school/info/contact.php",
+	url: "request_mailer.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {
@@ -253,7 +251,7 @@
 		For continuing education courses, please contact our Front Desk. We will be happy to answer all of your questions.
 	      </p>
 
-	      <form id="ajax-contact-form" method="post" action="/school/info/contact.php">
+	      <form id="ajax-contact-form" method="post" action="request_mailer.php">
 
 		<label>Full Name</label><input class="required inpt" type="text" name="name" value="" /><br />
 		<label>E-Mail</label><input class="required inpt" type="text" name="email" value="" /><br />

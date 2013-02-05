@@ -74,3 +74,81 @@ function checkRadio(obj) {
   obj.checked = true;
 }
 
+var sectiondir = '';
+function setSectionLocation(dir) {
+  sectiondir = dir;
+}
+
+var sectionparents = {};
+function setSectionParents(parentarr) {
+  sectionparents = parentarr;
+}
+
+function deactivateChildren(obj) {
+  obj = findObj(obj)
+  var chs = obj.children;
+  for (var i = 0; i < chs.length; i++) {
+    chs[i].style.color = '#FFFFFF';
+  }
+}
+
+function activateMe(obj) {
+  obj = findObj(obj)
+  obj.style.color = '#DD0033';
+}
+
+var myids = {};
+function setIDs(ids) {
+  myids = ids;
+}
+
+function showID(id) {
+  for (var i = 0; i < myids.length; i++) {
+    if (myids[i] == id) {
+      removeClass(myids[i], "hidden");
+    }
+    else {
+      addClass(myids[i], "hidden");
+    }
+  }
+}
+
+function activateOne(obj) {
+  for (var j = 0; j < sectionparents.length; j++) {
+    deactivateChildren(sectionparents[j]);
+  }
+  activateMe(obj);
+}
+
+function showSection(obj, file) {
+  var display = document.getElementById("section-display");
+  display.src = sectiondir + file + '.html';
+  for (var j = 0; j < sectionparents.length; j++) {
+    deactivateChildren(sectionparents[j]);
+  }
+  activateMe(obj);
+}
+
+function showSectionDiv(obj, file) {
+  var display = document.getElementById("section-display");
+  display.innerHTML =
+    '<iframe src="' + sectiondir + file + '.html" ' +
+    'frameborder="0" scrolling="no" allowtransparency="true" ' +
+    'seamless="seamless" ' +
+    'style="display: inline-block; width: 100%;" ' +
+    'onLoad="resizeIframe(this);" ' +
+    '>' +
+    '<p>Your browser does not support the use of IFrames, ' +
+    'which are required to view this content.</p>' +
+    '<p>Please try again using a modern desktop web browser.</p>' +
+    '</iframe>'
+  ;
+  for (var j = 0; j < sectionparents.length; j++) {
+    deactivateChildren(sectionparents[j]);
+  }
+  activateMe(obj);
+}
+
+function resizeIframe(obj) {
+  obj.height = obj.contentWindow.document.body.scrollHeight + "px";
+}

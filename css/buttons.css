@@ -1,0 +1,293 @@
+.btn2 {
+  display: inline-block;
+  position: relative;
+  width: 85%;
+}
+
+/* note: border-radius cannot be set to "inherit", so we have to
+ * repeat it a lot here */
+
+.btn2 img {
+  display: inline-block;
+  position: absolute;
+  height: 70%;
+  top: 25%;
+  width: 80%;
+  left: 10%;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  box-shadow: 3px 3px 5px 1px rgba(200, 200, 220, 0.5),
+              3px -3px 5px 1px rgba(200, 200, 220, 0.5),
+              -3px 3px 5px 1px rgba(200, 200, 220, 0.5),
+              -3px -3px 5px 1px rgba(200, 200, 220, 0.5) inset;
+  -moz-box-shadow: 3px 3px 5px 1px rgba(200, 200, 220, 0.5),
+              3px -3px 5px 1px rgba(200, 200, 220, 0.5),
+              -3px 3px 5px 1px rgba(200, 200, 220, 0.5),
+              -3px -3px 5px 1px rgba(200, 200, 220, 0.5) inset;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(200, 200, 220, 0.5),
+              3px -3px 5px 1px rgba(200, 200, 220, 0.5),
+              -3px 3px 5px 1px rgba(200, 200, 220, 0.5),
+              -3px -3px 5px 1px rgba(200, 200, 220, 0.5) inset;
+  z-index: 2;
+}
+
+/* this forces the height to be a percentage of the width.
+ * use 100% for square buttons */
+.btn2 div:nth-of-type(1) {
+  padding-top: 55%;
+  padding-top: 100%;
+}
+
+/* this div creates the "button" visual style:
+ * it's forced to stretch to the edges of its container,
+ * has rounded edges, a gradient background,
+ * and a "glow" around the outside via box-shadow */
+.btn2 div:nth-of-type(2), .btn2:visited div:nth-of-type(2) {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  -moz-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  border: 3px solid rgba(0,0,0,0.50);
+  border-top: none;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  background: #103068;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  z-index: 0;
+}
+
+/*
+.btn2 div:nth-of-type(4), .btn2:visited div:nth-of-type(4) {
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 15%;
+  left: 10%;
+  background-color: #093069;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  z-index: 3;
+}
+*/
+
+/* this div contains the text displayed on the button
+ * font-size, line-height, top, left, and padding are important here */
+.btn2 div:nth-of-type(3), .btn2:visited div:nth-of-type(3) {
+  color: #330044;  !important;
+  font-size: 18px;
+  font-style: italic;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-decoration: none !important;
+  text-shadow: 1px -1px 3px rgba(255,240,255,0.5),
+              -1px 1px 3px rgba(15, 0, 15, 0.5);
+  position: absolute;
+  display: block;
+  width: 94%;
+  height: 94%;
+  left: 3.5%;
+  top: 3.5%;
+  z-index: 5;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0.3em;
+}
+
+.btn, .btn:visited {
+  /*
+  background: #888 url(button-images/grd.png) repeat-x 0 0;
+  font-size: 11px;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  */
+  background: #103068 url(button-images/grd.png) repeat-x 0 0;
+  display: inline-block;
+  color: #fff  !important;
+  text-decoration: none !important;
+  line-height: 1.5em;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border: 3px solid rgba(0,0,0,0.50);
+  border-top: none;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  padding: 1em;
+  min-width: 150px;
+}
+
+.btn2.lines-1 div:nth-of-type(3),
+.btn2.lines-2 div:nth-of-type(3) {
+  line-height: 1em;
+  padding: 0.3em;
+}
+
+.btn.lines-1 {
+  line-height: 1.5em;
+  padding: 1em;
+}
+.btn.lines-2 {
+  line-height: 1em;
+  padding: 0.75em 1em;
+}
+
+.btn:hover {
+  background: #082570 url(button-images/grd.png) repeat-x 0 -50px;
+}
+
+.btn2:hover div:nth-of-type(2),
+.btn2:hover:visited div:nth-of-type(2) {
+  background-color: #062070;
+}
+.btn2:hover div:nth-of-type(3),
+.btn2:hover:visited div:nth-of-type(3) {
+  text-shadow: 1px -1px 5px rgba(255,255,255,0.8),
+              -1px 1px 5px rgba(30, 20, 20, 0.8);
+}
+
+/* this gives a glossy effect at the top of the button */
+.btn span,
+.btn2 span {
+  position: absolute;
+  display: block;
+  width: 94%;
+  left: 3.5%;
+  top: 0px;
+  height: 50%;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+
+  background-color: rgba(255,255,255,0.05);
+
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  z-index: 4;
+} 
+
+/*
+.btn.inverse {
+  background-position:0 -50px; 
+}
+
+.btn.round {
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  border-bottom-left-radius: 18px 18px;
+  border-bottom-right-radius: 18px 18px;
+  border-top-left-radius: 18px 18px;
+  border-top-right-radius: 18px 18px;
+  padding: 6px 15px 8px;
+}
+
+.btn.inverse:hover {
+  background-position:0 0; 
+}
+
+
+.btn.stripe {
+  background: #888 url(button-images/grd2.png) repeat-x 0 0;
+}
+
+.btn.stripe.inverse {
+  background-position:0 -50px; 
+}
+
+.btn.stripe:hover {
+  background: #888 url(button-images/grd2.png) repeat-x 0 -50px;
+}
+
+.btn.stripe.inverse:hover {
+  background-position:0 0; 
+}
+
+.btn img {
+  margin:0;
+  padding:0 5px;
+  border:none;
+  display:inline;
+  vertical-align:middle;
+}
+
+.btn.img { 
+  padding: 4px 12px 2px 8px;
+}
+
+.btn.medium {
+  font-size: 13px;
+  padding: 8px 14px 9px;
+}
+.btn.medium.img { padding: 8px 14px 6px 9px; }
+
+.btn.large {
+  font-size: 15px;
+  padding: 11px 20px;
+}
+.btn.large.img { padding: 11px 20px 11px 15px; }
+
+.btn.blue,.btn.blue:hover { background-color:#11d; }
+.btn.red,.btn.red:hover { background-color:#a00; }
+.btn.orange,.btn.orange:hover { background-color:#FF491C; }
+.btn.yellow,.btn.yellow:hover { background-color:#F8EA46; }
+.btn.babyblue,.btn.babyblue:hover { background-color:#82D5FF; }
+.btn.lime,.btn.lime:hover { background-color:#ACE53E; }
+.btn.purple,.btn.purple:hover { background-color:#B54BEB; }
+.btn.white,.btn.white:hover { background-color:#eeeeee; }
+.btn.green,.btn.green:hover { background-color:#280; }
+.btn.brown,.btn.brown:hover { background-color:#a60; }
+.btn.navy,.btn.navy:hover { background-color:#369; }
+.btn.pink,.btn.pink:hover { background-color:#FF3AFB; }
+.btn.blacktext { color:#000 !important; }
+*/
