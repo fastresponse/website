@@ -39,8 +39,9 @@
 }
 
 .joblist table {
-  border-spacing: 30px;
-  width: 80%;
+  /* border-spacing is empty space between rows and cells */
+  border-spacing: 20px;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
 }
@@ -52,11 +53,59 @@
   color: #FFFF99;
 }
 
+.joblist .container {
+  border: 1px solid #88AADD;
+  padding: 10px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+}
+
+.joblist .container:hover {
+  background-color: #000022;
+  border: 1px solid red;
+}
+
+.joblist .container:hover .top.jobtitle {
+  color: #FFFF99;
+}
+
+.joblist td {
+  width: 50%;
+  vertical-align: top;
+}
+
+.joblist td:hover {
+}
+
+.joblist td:hover .top.jobtitle {
+}
+
 .joblist .top {
   display: inline-block;
   font-size: 80%;
-  width: 24%;
-  padding-bottom: 10px;
+  margin-right: 2%;
+}
+
+.joblist .top.date {
+  width: auto;
+}
+
+.joblist .top.jobtitle {
+  color: #DD0033;
+  font-size: 110%;
+  width: auto;
+}
+
+.joblist .top.courses,
+.joblist .top.website {
+  width: 23%;
+  float: right;
 }
 
 .joblist .bottom {
@@ -68,29 +117,90 @@
   border-top: solid 1px brown;
   /* 5em max / 1.25em per line = 4 lines max */
   line-height: 1.25em;
-  max-height: 5em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: pre-line;
+  /*max-height: 5em;*/
+  margin-top: 10px;
+}
+
+.joblist .bottom.hidden {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.joblist .bottom .reqs {
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(72, 81, 109);
+  background-color: rgba(136, 170, 221, 0.1);
+  /*
+  border-right: solid 1px rgba(136, 170, 221, 0.3);
+  border-left: solid 1px rgba(136, 170, 221, 0.3);
+  */
+  color: #FFFF99;
+  padding: 10px 20px;
+  font-size: 80%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-top-left-radius: 1em;
+  -moz-border-top-left-radius: 1em;
+  -webkit-border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  -moz-border-top-right-radius: 1em;
+  -webkit-border-top-right-radius: 1em;
+}
+
+.joblist .bottom .reqs ul {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style-position: inside;
+}
+.joblist .bottom .reqs li {
+  margin-left: 0;
+  padding-left: 0;
+  /* this forces it into two columns */
+  width: 49%;
+  float: left;
+}
+
+.joblist .bottom .text {
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(61, 73, 109);
+  background-color: rgba(136, 170, 221, 0.2);
+  min-height: 5px;
+  font-size: 80%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.joblist .bottom .contact {
+  clear: both;
+  width: 100%;
+  min-height: 5px;
+  background-color: rgb(50, 65, 109);
+  background-color: rgba(136, 170, 221, 0.3);
+  font-size: 80%;
+  padding: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.joblist .bottom .apply {
+  width: 100%;
+  min-height: 5px;
+  background-color: rgb(39, 57, 109);
+  background-color: rgba(136, 170, 221, 0.4);
+  font-size: 80%;
+  padding: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .joblist .showfull {
   max-height: none;
-}
-
-.joblist td:hover {
-  background-color: #000022;
-  border: 1px solid yellow;
-  border-color: red;
-}
-
-.joblist td {
-  width: 24%;
-  border: 1px solid red;
-  border-color: #88AADD;
-  border-radius: 1em;
-  padding: 10px;
-  overflow: hidden;
 }
 
 .joberror {

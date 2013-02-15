@@ -85,7 +85,7 @@ function setSectionParents(parentarr) {
 }
 
 function deactivateChildren(obj) {
-  obj = findObj(obj)
+  obj = findObj(obj);
   var chs = obj.children;
   for (var i = 0; i < chs.length; i++) {
     chs[i].style.color = '#FFFFFF';
@@ -93,22 +93,23 @@ function deactivateChildren(obj) {
 }
 
 function activateMe(obj) {
-  obj = findObj(obj)
+  obj = findObj(obj);
   obj.style.color = '#DD0033';
 }
 
-var myids = {};
-function setIDs(ids) {
-  myids = ids;
+var sectionarr = {};
+function setSection(theparent, subsects) {
+  sectionarr[theparent] = subsects;
 }
 
-function showID(id) {
-  for (var i = 0; i < myids.length; i++) {
-    if (myids[i] == id) {
-      removeClass(myids[i], "hidden");
+function showSubSection(theparent, id) {
+  subs = sectionarr[theparent];
+  for (var i = 0; i < subs.length; i++) {
+    if (subs[i] == id) {
+      removeClass(subs[i], "hidden");
     }
     else {
-      addClass(myids[i], "hidden");
+      addClass(subs[i], "hidden");
     }
   }
 }

@@ -1,11 +1,11 @@
 <?php
 
-$source_list = "";
+$company_list = "";
 
 if ($handle != null) {
-  $all_sources = query_source_list($handle);
-  foreach ($all_sources as $src) {
-     $source_list .= "<option>{$src['name']}</option>\n";
+  $all_companies = query_company_list($handle);
+  foreach ($all_companies as $src) {
+     $company_list .= "<option>{$src['name']}</option>\n";
   }
 }
 
@@ -54,9 +54,9 @@ $out = <<<SENDME
   </tr>
   <tr>
     <td>
-      <select name="source">
+      <select name="company">
 	<option>Any</option>
-        $source_list
+        $company_list
       </select>
     </td>
   </tr>

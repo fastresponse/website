@@ -3,6 +3,40 @@
   white-space: nowrap;
 }
 
+.banner .btn,
+.banner .btn:hover {
+  border: 3px double rgb(30, 70, 150);
+}
+
+.btn2, .btn2:hover {
+  border: 3px double rgb(150, 150, 220);
+  width: 98%;
+  padding: 2px 1% 5px;
+  height: 2.5em;
+  vertical-align: middle;
+}
+
+.btn2 {
+  background: #103068 url(button-images/grd.png) repeat-x 0 0;
+}
+
+.btn2:hover {
+  background: #062070 url(button-images/grd.png) repeat-x 0 0;
+}
+
+.btn2 div {
+  top: 0; bottom: 0;
+}
+
+.btn2 img {
+  background: none !important;
+  z-index: 0;
+  height: 0; width: 0; top: 0; left: 0;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
 /* IE6 only */
 * html .btn {
   font-size: 11px;
@@ -29,6 +63,35 @@
 }
 * html .btn.large.img { padding: 11px 20px 11px 15px !important; }
 
+/*
+* html .btn2 div {
+  display: inline-block;
+  position: static;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: transparent;
+}
+
+* html .btn2 div.txt {
+  display: inline-block;
+  font-size: 15px;
+  font-style: italic;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-decoration: none;
+  line-height: 1em;
+  text-transform: uppercase;
+  background: #103068;
+  padding-top: 2em;
+  z-index: 1;
+}
+  
+* html .btn2:hover div.txt {
+  background: #062070;
+}
+*/
 
 /* IE7 only */
 *:first-child+html {}

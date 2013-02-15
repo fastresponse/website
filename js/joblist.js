@@ -1,7 +1,4 @@
-/* extra functions for working with html/css classes
- * why doesn't js have built-in functions to do this,
- * this is stupid
- */
+/*
 
 function hasClass(obj, name) {
   return (' ' + obj.className + ' ').indexOf(' ' + name + ' ') > -1;
@@ -11,10 +8,6 @@ function addClass(obj, name) {
   obj.className += (obj.className ? ' ' : '') + name;
 }
 
-/* split the space-separated string into an array,
- * then make a new array with every element that's
- * not the name we're removing
- */
 function removeClass(obj, name) {
   if (!obj.className) return;
   var temparr = obj.className.split(' ');
@@ -59,13 +52,14 @@ function findPos(obj) {
   }
   return curtop;
 }
+*/
 
 function toggleShow(obj) {
   var chs = obj.children;
   for (var i = 0; i < chs.length; i++) {
     el = chs[i];
     if (hasClass(el, "bottom")) {
-      toggleClass(el, "showfull");
+      toggleClass(el, "hidden");
     }
   }
   window.scroll(0, findPos(obj) - 10);
@@ -107,5 +101,5 @@ function addSource(name, srclistname) {
 }
 
 function displaySourceData(selectobj) {
-  sourcename = selectobj.options[selectobj.selectedIndex].text;
+  sourcename = selectobj.selectedOptions[0].text;
 }

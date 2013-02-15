@@ -1,18 +1,13 @@
 <?php
 
+require_once('frlib.php');
+
 /* all functions related to database connections and queries */
 
 function handleit($ex) {
   // do nothing
 }
 set_exception_handler('handleit');
-
-// translates a php array into a mysql set
-function arr_to_set($data_arr) {
-  $data_set = implode(',', $data_arr);
-  $data_set = "'$data_set'";
-  return $data_set;
-}
 
 function db_connect() {
   $local_testing = 0;
@@ -58,10 +53,10 @@ function db_query($dbh, $query, $params, $single = 0) {
   return $data;
 }
 
-function query_source_list($dbh) {
+function query_company_list($dbh) {
   $q_list =
     "SELECT name
-    FROM sources"
+    FROM companies"
   ;
 
   $params = array();
@@ -69,10 +64,10 @@ function query_source_list($dbh) {
   return db_query($dbh, $q_list, $params);
 }
 
-function query_source($dbh, $name) {
+function query_company($dbh, $name) {
   $q_src =
-    "SELECT website, directions, courses
-    FROM sources
+    "SELECT website, apply, courses, streetaddr, city, state, phone, contact
+    FROM companies
     WHERE name = :name"
   ;
   $params = array(
@@ -82,19 +77,20 @@ function query_source($dbh, $name) {
   return db_query($dbh, $q_src, $params, 1);
 }
 
-function query_source_full($dbh) {
+function query_company_full($dbh) {
   $q_src =
-    "SELECT name, website, directions, courses
-    FROM sources"
+    "SELECT name, website, apply, courses, streetaddr, city, state, phone, contact
+    FROM companies"
   ;
   $params = array();
 
   return db_query($dbh, $q_src, $params);
 }
 
-function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
+function query_jobpostings($dbh, $firstdate, $lastdate, $course, $company) {
   $q_jobpost =
-    "SELECT DATE_FORMAT(postdate, '%m-%d-%Y') AS showdate, courses, source, text
+    "SELECT DATE_FORMAT(postdate, '%m-%d-%Y') AS showdate,
+     courses, company, jobtitle, requirements, contact, apply, text
      FROM jobpostings
      WHERE postdate BETWEEN :firstdate AND :lastdate"
   ;
@@ -108,9 +104,9 @@ function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
     $params[':course'] = $course;
   }
 
-  if ($source) {
-    $q_jobpost .= " AND source = :source";
-    $params[':source'] = $source;
+  if ($company) {
+    $q_jobpost .= " AND company = :company";
+    $params[':company'] = $company;
   }
 
   $q_jobpost .= " ORDER BY postdate";
@@ -118,10 +114,13 @@ function query_jobpostings($dbh, $firstdate, $lastdate, $course, $source) {
   return db_query($dbh, $q_jobpost, $params);
 }
 
-function insert_source($dbh, $name, $website, $directions, $courses) {
+function insert_company($dbh, $name, $website, $apply, $courses,
+$streetaddr, $city, $state, $phone, $contact) {
   $i_src =
-    "INSERT INTO sources (name, website, directions, courses)
-    VALUES (:name, :website, :directions, :courses)"
+    "INSERT INTO companies
+    (name, website, apply, courses, streetaddr, city, state, phone, contact)
+    VALUES
+    (:name, :website, :apply, :courses, :streetaddr, :city, :state, :phone, :contact)"
   ;
 
   if (is_array($courses))
@@ -130,17 +129,25 @@ function insert_source($dbh, $name, $website, $directions, $courses) {
   $params = array(
     ':name' => $name,
     ':website' => $website,
-    ':directions' => $directions,
+    ':apply' => $apply,
     ':courses' => $courses,
+    ':streetaddr' => $streetaddr,
+    ':city' => $city,
+    ':state' => $state,
+    ':phone' => $phone,
+    ':contact' => $contact,
   );
 
   return db_query($dbh, $i_src, $params);
 }
 
-function insert_jobposting($dbh, $date, $courses, $source, $text) {
+function insert_jobposting($dbh, $date, $courses, $company, $jobtitle,
+$requirements, $contact, $apply, $text) {
   $i_jobpost =
-    "INSERT INTO jobpostings (postdate, courses, source, text)
-    VALUES (:postdate, :courses, :source, :text)"
+    "INSERT INTO jobpostings
+    (postdate, courses, company, jobtitle, requirements, contact, apply, text)
+    VALUES
+    (:postdate, :courses, :company, :jobtitle, :requirements, :contact, :apply, :text)"
   ;
 
   if (is_array($courses))
@@ -149,17 +156,15 @@ function insert_jobposting($dbh, $date, $courses, $source, $text) {
   $params = array(
     ':postdate' => $date,
     ':courses' => $courses,
-    ':source' => $source,
+    ':company' => $company,
+    ':jobtitle' => $jobtitle,
+    ':requirements' => $requirements,
+    ':contact' => $contact,
+    ':apply' => $apply,
     ':text' => $text,
   );
 
   return db_query($dbh, $i_jobpost, $params);
-}
-
-// not db related: sanitize a string to use as an html div id
-function sanitize_id($in) {
-  $out = str_replace(" ", "_", $in);
-  return $out;
 }
 
 ?>

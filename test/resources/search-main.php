@@ -2,7 +2,7 @@
 
 $daterange = null;
 $course = null;
-$source = null;
+$company = null;
 
 if (array_key_exists('daterange', $_POST))
   $daterange = $_POST['daterange'];
@@ -10,8 +10,8 @@ if (array_key_exists('daterange', $_POST))
 if ($handle != null && $daterange != null) {
   if (array_key_exists('course', $_POST))
     $course = $_POST['course'];
-  if (array_key_exists('source', $_POST))
-    $source = $_POST['source'];
+  if (array_key_exists('company', $_POST))
+    $company = $_POST['company'];
 
   $now = date('Y-m-d');
 
@@ -41,45 +41,58 @@ if ($handle != null && $daterange != null) {
   if ($course == 'Any')
     $course = null;
 
-  if ($source == 'Any')
-    $source = null;
+  if ($company == 'Any')
+    $company = null;
 
   $data = query_jobpostings(
-    $handle, $start, $now, $course, $source
+    $handle, $start, $now, $course, $company
   );
 
   $ret = "";
 
   foreach ($data as $entry) {
-    $source_data = query_source($handle, $entry['source']);
+    $company_data = query_company($handle, $entry['company']);
 
-    if ($source_data == null)
-      $source_data = array();
+    if ($company_data == null)
+      $company_data = array();
 
-    if (!array_key_exists('directions', $source_data))
-      $source_data['directions'] = '';
+    if (!array_key_exists('apply', $company_data))
+      $company_data['apply'] = '';
 
     // if website exists, wrap the name in a link, else just use the name
-    if (array_key_exists('website', $source_data)) {
-      $source_data['website'] =
-        "<a href=\"{$source_data['website']}\">{$entry['source']}</a>\n"
+    if (array_key_exists('website', $company_data)) {
+      $company_data['website'] =
+        "<a href=\"{$company_data['website']}\">{$entry['company']}</a>\n"
       ;
     }
     else {
-      $source_data['website'] = $entry['source'];
+      $company_data['website'] = $entry['company'];
     }
 
-    $ret .= "<tr><td class=\"topleft topright bottomleft bottomright\" " .
-            "onClick=\"toggleShow(this);\">\n";
+    $ret .= "<tr><td onClick=\"toggleShow(this);\">\n";
     $ret .= "<div class=\"top\">{$entry['showdate']}</div>\n";
-    $ret .= "<div class=\"top\">" . $source_data['website'] . "</div>\n";
-    $ret .= "<div class=\"top\"><img src=\"/images/buttons/directions_btn.png\" alt=\"Directions\" title=\"{$source_data['directions']}\" /></div>\n";
+    $ret .= "<div class=\"top jobtitle\">" . $entry['jobtitle'] . "</div>\n";
     $ret .= "<div class=\"top\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
-    $ret .= "<div class=\"bottom\">";
-    //$ret .= "<img src=\"/images/buttons/more.png\" alt=\"More\" class=\"morebutton\" />\n";
-    //$ret .= nl2br($entry['text'], true) . "\n";
-    $ret .= $entry['text'];
+    $ret .= "<div class=\"top\">" . $company_data['website'] . "</div>\n";
+
+    $ret .= "<div class=\"bottom hidden\">\n";
+    $ret .= "  <div class=\"contain\">\n";
+    $ret .= "    <div class=\"reqs\">\n";
+    $ret .= "      Requirements:<br />\n";
+    $ret .= "      <ul>\n" . listify($entry['requirements']) . "</ul>\n";
+    $ret .= "    </div>\n";
+    $ret .= "    <div class=\"text\">\n";
+    $ret .= "      " . $entry['text'] . "\n";
+    $ret .= "    </div>\n";
+    $ret .= "  </div>\n";
+    $ret .= "  <div class=\"contact\">\n";
+    $ret .= "    " . $entry['contact'] . "\n";
+    $ret .= "  </div>\n";
+    $ret .= "  <div class=\"apply\">\n";
+    $ret .= "    " . $entry['apply'] . "\n";
+    $ret .= "  </div>\n";
     $ret .= "</div>\n";
+
     $ret .= "</td></tr>\n";
 
   }

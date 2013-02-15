@@ -54,8 +54,8 @@ if (array_key_exists('whichpage', $_POST))
   <script type="text/javascript" src="/js/jquery.js"></script>
 
   <script type="text/javascript" src="/js/datetimepicker.js"></script>
-
-  <script type="text/javascript" src="/resources/joblist.js"></script>
+  <script type="text/javascript" src="/js/joblist.js"></script>
+  <script type="text/javascript" src="/js/frlib.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {

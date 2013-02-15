@@ -139,6 +139,36 @@ h3 {
   margin: 0;
 }
 
+/* new-style sidebars of fixed size */
+.rightsidebar2 {
+  float: right;
+  width: 180px;
+}
+
+.leftcontent2 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  padding-right: 180px;
+}
+
+.leftsidebar2 {
+  float: left;
+  width: 180px;
+}
+
+.rightcontent2 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  padding-left: 180px;
+}
+
+/* end new style sidebars */
+
+
 /* a sidebar along the right side of the page */
 .rightsidebar {
   width: 14%;
@@ -409,8 +439,7 @@ h3 {
 .quicklinks2 {
   height: 100%;
 }
-.quicklinks dl,
-.quicklinks2 dl {
+.quicklinks dl {
   margin: 1em;
 }
 .quicklinks dt,
@@ -429,8 +458,7 @@ h3 {
   border: 0;
   width: 100%;
 }
-.quicklinks a,
-.quicklinks2 a {
+.quicklinks a {
   text-decoration: underline;
 }
 .quicklinks span {
@@ -453,13 +481,25 @@ h3 {
   margin-bottom: 1em;
 }
 
-.quicklinks2 dt {
+.quicklinks2,
+.quicklinks2 dl,
+.quicklinks2 dt,
+.quicklinks2 a {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  padding: 15px;
+  text-align: center;
+  width: 100%;
 }
 
+.quicklinks2 a,
+.quicklinks2 dd {
+  margin-bottom: 3.5em;
+}
+
+.quicklinks2 {
+  padding: 0 20%;
+}
 /* end quicklinks */
 
 
@@ -737,24 +777,23 @@ h3 {
   margin-bottom: 0;
 }
 
-.hidden {
+/* when I say hidden, I mean *really* hidden */
+.hidden, .hidden * {
+  display: none;
+  visibility: hidden;
   max-height: 0;
   max-width: 0;
   overflow: hidden;
   margin: 0;
   border: none;
+  padding: 0;
 }
 
 .hidden.section {
   margin-top: 0;
 }
 
-.hidden * {
-  margin: 0;
-  border: none;
-}
-
-.collapsebox {
+.collapsebox, .borderbox {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
