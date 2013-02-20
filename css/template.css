@@ -817,3 +817,17 @@ div#section-display {
   border: solid 1px white;
 }
 
+.policy h1 {
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 2em;
+}
+.policy h2 {
+  text-decoration: underline;
+}
+.policy p {
+  margin-left: 1.5em;
+}
+.policy hr {
+  margin: 3em 0;
+}
