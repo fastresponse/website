@@ -1,6 +1,6 @@
 <?php
 
-require_once('dbconn.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 
 function joblist($handle = null, $daterange = '2 weeks', $course = null, $company = null) {
 

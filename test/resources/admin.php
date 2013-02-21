@@ -4,16 +4,9 @@
 
 <?php
 
-include_once('./dbconn.php');
-
-$self = $_SERVER['PHP_SELF'];
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 
 $handle = db_connect();
-
-$whichpage = "";
-
-if (array_key_exists('whichpage', $_POST))
-  $whichpage = $_POST['whichpage'];
 
 ?>
 
@@ -54,8 +47,8 @@ if (array_key_exists('whichpage', $_POST))
   <script type="text/javascript" src="/js/jquery.js"></script>
 
   <script type="text/javascript" src="/js/datetimepicker.js"></script>
-  <script type="text/javascript" src="/js/joblist.js"></script>
   <script type="text/javascript" src="/js/frlib.js"></script>
+  <script type="text/javascript" src="/js/joblist.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {
@@ -86,26 +79,24 @@ if (array_key_exists('whichpage', $_POST))
 
       <div class="section">
 
+<!--
 	<div class="rightsidebar">
           <div class="quicklinks">
 	    <div class="box">
 <?php
-  include('./search-side.php');
+  //include('search-side.php');
 ?>
 	    </div>
 	  </div>
 	</div>
 
 	<div class="leftcontent">
+-->
+
 <?php
-if ($whichpage == 'jobsearch') {
-  include('./search-main.php');
-}
-else {
-  include('./admin_backend.php');
-}
+  include_once('./admin_backend.php');
 ?>
-	</div> <!-- /leftcontent -->
+	<!-- </div> --> <!-- /leftcontent -->
 
       </div> <!-- /section -->
 

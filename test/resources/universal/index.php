@@ -1,5 +1,6 @@
 <?php
   $self = $_SERVER['PHP_SELF'];
+  $root = $_SERVER['DOCUMENT_ROOT'];
   $dir = dirname($self);
 
   // this is the name of the immediate parent dir
@@ -22,7 +23,7 @@
 
 <head>
 
-<?php echo "<title>$course_title Resources | Fast Response</title>\n" ?>
+  <title><?= $course_title ?> Resources | Fast Response</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -84,7 +85,7 @@
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <?php echo "<img src='/images/headers/$header_img' class='headerimgright' alt='' />\n" ?>
+      <img src='/images/headers/<?= $header_img ?>' class='headerimgright' alt='' />
       <div class="clearfix"></div>
     </div>
 
@@ -97,7 +98,7 @@
 
 	    <a href="#" class="btn2 buttontext" onClick="showSubSection('main', 'course_info');">
 	      <div></div><div></div><div></div><div></div>
-	      <?php echo "<div>$course_title Forms</div>\n" ?>
+	      <div><?= $course_title ?> Forms</div>
 	      <img src="/images/buttons/testenvelope.png" alt="" />
 	    </a>
 
@@ -124,11 +125,10 @@
 
 	<div class="leftcontent2">
 
+          <!-- show by default (because it doesn't have the "hidden" class -->
 	  <div id="course_info">
-	    <?php
-              echo "<h2>$course_title Forms</h2>\n";
-	      include_once("../$course/info.php")
-	    ?>
+            <h1><?= $course_title ?> Forms</h1>
+	    <?php include_once("../$course/info.php") ?>
 	  </div>
 
 	  <div id="career_services" class="hidden">
@@ -155,23 +155,53 @@
               </div>
 	    </div>
 	    <div class="leftcontent2">
-	      <?php echo "<h2>$course_title Career Services</h2>\n"; ?>
+	      <h1><?= $course_title ?> Career Services</h1>
 
 	      <div id="resumes">
-		<h3>Resumes</h3>
-		<p>Your resume is an extension of yourself. It's very important to keep it up to date.</p>
+		<h2>Resumes</h2>
+                <h3>General resumes:</h3>
+		<ul>
+		  <li onClick="">General Resume 1</li>
+		</ul>
+		<h3><?= $course_title ?> specific resumes:</h3>
+		<ul>
+		  <li onClick="">EMT Resume 1</li>
+		</ul>
 	      </div>
 
 	      <div id="interviews" class="hidden">
-		<h3>Interviews</h3>
+		<h2>Interview Guidelines</h2>
+		<h3>Before the Interview:</h3>
+		<ul>
+		  <li>Prepare by learning as much as you can about the organization via their website.</li>
+		  <li>Practice writing and verbalizing your answers to questions related to the job opening.</li>
+		  <li>Prepare to answer behavioral interview questions. Give specific examples of when you demonstrated particular behaviors or skills. The STAR answer technique includes stating the: Situation or Task, Action you took, and Results you achieved.</li>
+		  <li>Know the date, time, address, directions, and name of the interviewer. Plan to arrive 15 -30 minutes early in case of unexpected delays.</li>
+		</ul>
+
+		<h3>During the Interview:</h3>
+		<ul>
+		  <li>Offer to shake hands at the beginning and end of the interview.  Do not sit until the interviewer offers you a chair or seats himself first.</li>
+		  <li>Dress professionally for the interview. Conservative clothing like dark pants, a solid colored pressed shirt, and close - toe shoes, is a good choice for the health care field. Pay careful attention to grooming details including nails and hair. Jewelry should be very minimal and small.</li>
+		  <li>Pay careful attention to the interviewer's questions. If clarification is needed, state what you think the interviewer asked or ask for more information before responding.</li>
+		  <li>Show enthusiasm, sincerity, tact and courtesy. Address the interviewer as Mr. Smith, Ms. Lopez, or Dr. Khan, unless they tell you otherwise.</li>
+		  <li>Salary and benefits should be left to the interviewer to bring up. Generally, the interviewer will not want to discuss salary until she has formed a favorable impression of the interviewee. It is helpful to find out what the position pays when you are researching the organization prior to your interview.</li>
+		  <li>Bring a pen and pocket notebook to write information down that may be given to you and to make notes to yourself after the interview, <span style="white-space: nowrap;">self-improvement and follow-up.</span></li>
+		</ul>
+
+		<h3>After the Interview:</h3>
+		<ul>
+		  <li>Send a thank you email or letter to the interviewer(s) within 24 hours.</li>
+		  <li>It is a good idea to obtain business cards of the interviews, before leaving the interview.</li>
+		</ul>
 	      </div>
 
 	      <div id="jobsearch" class="hidden">
-		<h3>Job Search</h3>
+		<h2>Job Search</h2>
 		<?php
-		  require_once('dbconn.php');
+		  require_once($root . '/php/dbconn.php');
 		  $handle = db_connect();
-		  require_once('joblist.php');
+		  require_once($root . '/php/joblist.php');
 		  echo joblist($handle, 'Any', $course);
 		?>
 	      </div>
@@ -180,7 +210,8 @@
 	  </div>
 
 	  <div id="class_materials" class="hidden">
-            <?php echo "<h2>$course_title Class Materials</h2>\n"; ?>
+	    <h1><?= $course_title ?> Class Materials</h1>
+	    <?php include_once("../$course/materials.php") ?>
 	  </div>
 
 	</div> <!-- /leftcontent -->

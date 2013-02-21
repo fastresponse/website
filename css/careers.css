@@ -236,39 +236,22 @@
   overflow: hidden;
 }
 
-.jobadmin legend button {
+.jobadmin legend {
   font-size: 120%;
   font-weight: bold;
-}
-
-.jobadmin .pop {
-  overflow: hidden;
-  max-height: none;
-  max-width: none;
-}
-
-.jobadmin .closed {
-  max-height: 0;
-  max-width: 0;
-}
-
-.jobadmin .noborder {
-  border: 0;
 }
 
 .jobadmin label {
   display: block;
   float: left;
   text-align: right;
-  width: 13%;
-  margin: 0.5em 0.5em 0.5em 0;
-}
-
-.jobadmin input,
-.jobadmin textarea,
-.jobadmin select {
-  width: 20%;
-  margin: 0.5em 0;
+  width: 95px;
+  min-height: 1em;
+  /*margin: 0.5em 0.5em 0.5em 0;*/
+  padding: 3px 7px 3px 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .jobadmin .sourcedata {
@@ -286,11 +269,57 @@
   width: auto;
 }
 
+.jobadmin [type=text],
 .jobadmin textarea {
-  width: 80%;
+  min-width: 75%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.jobadmin [name=city] {
+  min-width: 65%;
+}
+
+.jobadmin [name=state] {
+  max-width: 9%;
+  min-width: 0;
+  text-align: center;
+}
+
+.jobadmin #cal {
+  width: 200px;
+  min-width: 0;
+}
+.jobadmin #calimg {
+  height: 1.5em;
+}
+
+.jobadmin input {
+  vertical-align: middle;
 }
 
 .jobadmin br {
   clear: left;
 }
 
+.jobadmin .hspace {
+  display: inline-block;
+  height: 1em;
+  width: 5em;
+}
+
+.jobadmin .column {
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.jobadmin .col2 {
+  width: 49%;
+}
+
+.jobadmin .section {
+  margin-top: 0.5em;
+}

@@ -1,6 +1,6 @@
 <?php
 
-require_once('frlib.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 
 /* all functions related to database connections and queries */
 

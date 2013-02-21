@@ -65,6 +65,16 @@ function toggleShow(obj) {
   window.scroll(0, findPos(obj) - 10);
 }
 
+function toggleCompany() {
+  toggleClass('legendjob', 'hidden');
+  toggleClass('legendcompany', 'hidden');
+  toggleClass('leftcol', 'hidden');
+  toggleClass('leftcolspacer', 'hidden');
+  toggleClass('companyname', 'hidden');
+  toggleClass('companylist', 'hidden');
+  toggleClass('companydata', 'hidden');
+}
+
 function addSource(name, srclistname) {
   var flag = 0;
   var obj;
