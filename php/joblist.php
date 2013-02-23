@@ -9,7 +9,7 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
 
   $now = date('Y-m-d');
 
-  if ($daterange == 'Any') {
+  if ($daterange == 'Any' || $daterange == 'All') {
     $start = '2012-01-01';
   }
   else {
@@ -100,7 +100,7 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
   }
 
   $out = <<<QUERYHTML
-<div class="joblist">
+<div class="joblist" id="joblist">
 <table>
 <tbody>
 $ret

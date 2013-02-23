@@ -62,10 +62,62 @@ function toggleShow(obj) {
       toggleClass(el, "hidden");
     }
   }
-  window.scroll(0, findPos(obj) - 10);
+  //window.scroll(0, findPos(obj) - 10);
+}
+
+function clearCompanyInfo() {
+  document.getElementsByName('streetaddr')[0].value = "";
+  document.getElementsByName('city')[0].value = "";
+  document.getElementsByName('state')[0].value = "CA";
+  document.getElementsByName('phone')[0].value = "";
+  document.getElementsByName('contact')[0].value = "";
+  document.getElementsByName('website')[0].value = "";
+  document.getElementsByName('apply')[0].value = "";
+  var coursedisp = document.getElementsByName('courses[]');
+  for (var i = 0; i < coursedisp.length; i++) {
+    coursedisp[i].checked = false;
+  }
+}
+
+// id is a sanitized version of company name, suitable for element ids
+// must pass it in this way because it's sanitized in php
+function showCompanyInfo(id) {
+  var obj;
+
+  clearCompanyInfo();
+
+  if (!id) {
+    obj = document.getElementsByName('company')[0].selectedOptions[0];
+    id = obj.id;
+  }
+
+  document.getElementsByName('streetaddr')[0].value =
+    document.getElementById(id+'_streetaddr').value;
+  document.getElementsByName('city')[0].value =
+    document.getElementById(id+'_city').value;
+  document.getElementsByName('state')[0].value =
+    document.getElementById(id+'_state').value;
+  document.getElementsByName('phone')[0].value =
+    document.getElementById(id+'_phone').value;
+  document.getElementsByName('contact')[0].value =
+    document.getElementById(id+'_contact').value;
+  document.getElementsByName('website')[0].value =
+    document.getElementById(id+'_website').value;
+  document.getElementsByName('apply')[0].value =
+    document.getElementById(id+'_apply').value;
+
+  var courses = document.getElementById(id+'_courses').value;
+  courses = courses.split(',');
+  var coursedisp = document.getElementsByName('courses[]');
+  for (var i = 0; i < coursedisp.length; i++) {
+    if (courses.indexOf(coursedisp[i].value) != -1) {
+      coursedisp[i].checked = true;
+    }
+  }
 }
 
 function toggleCompany() {
+  clearCompanyInfo();
   toggleClass('legendjob', 'hidden');
   toggleClass('legendcompany', 'hidden');
   toggleClass('leftcol', 'hidden');
@@ -73,41 +125,6 @@ function toggleCompany() {
   toggleClass('companyname', 'hidden');
   toggleClass('companylist', 'hidden');
   toggleClass('companydata', 'hidden');
-}
-
-function addSource(name, srclistname) {
-  var flag = 0;
-  var obj;
-  var list;
-
-  if (!name || !srclistname)
-    return;
-
-  obj = document.getElementById(name);
-  list = document.getElementById(srclistname);
-
-  // make sure the source isn't already in the list
-  for (var i = 0; i < list.length; i++) {
-    if (list.options[i].text.toLowerCase() == obj.value.toLowerCase()) {
-      flag = 1;
-      break;
-    }
-  }
-
-  if (!flag) {
-    var option = document.createElement("option");
-    option.text = obj.value;
-    // stupid IE hack (for pre-8.0)
-    try {
-      list.add(option, list.options[null]);
-    }
-    catch (e) {
-      list.add(option, null);
-    }
-  }
-
-  // remove the text that was entered in the text input box
-  obj.value = obj.defaultValue;
 }
 
 function displaySourceData(selectobj) {

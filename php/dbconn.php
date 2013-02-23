@@ -4,8 +4,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 
 /* all functions related to database connections and queries */
 
-function handleit($ex) {
-  // do nothing
+function handleit($e) {
+  echo '<pre>';
+  print_r($e->getMessage());
+  echo "\n";
+  print_r($e->getTrace());
+  echo "\n";
+  echo '</pre>';
 }
 set_exception_handler('handleit');
 
@@ -29,9 +34,11 @@ function db_connect() {
 
   try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
   catch(PDOException $e) {
     $dbh = null;
+    handleit($e);
   }
 
   return $dbh;
@@ -51,6 +58,15 @@ function db_query($dbh, $query, $params, $single = 0) {
   }
 
   return $data;
+}
+
+function db_insert($dbh, $statement, $params) {
+  if ($dbh == null) return;
+
+  $sth = $dbh->prepare($statement, array() );
+  $success = $sth->execute($params);
+
+  return $success;
 }
 
 function query_company_list($dbh) {
@@ -89,7 +105,7 @@ function query_company_full($dbh) {
 
 function query_jobpostings($dbh, $firstdate, $lastdate, $course, $company) {
   $q_jobpost =
-    "SELECT DATE_FORMAT(postdate, '%m-%d-%Y') AS showdate,
+    "SELECT DATE_FORMAT(postdate, '%d-%b-%Y') AS showdate,
      courses, company, jobtitle, requirements, contact, apply, text
      FROM jobpostings
      WHERE postdate BETWEEN :firstdate AND :lastdate"
@@ -126,6 +142,8 @@ $streetaddr, $city, $state, $phone, $contact) {
   if (is_array($courses))
     $courses = arr_to_set($courses);
 
+  $phone = phone_strip($phone);
+
   $params = array(
     ':name' => $name,
     ':website' => $website,
@@ -138,7 +156,7 @@ $streetaddr, $city, $state, $phone, $contact) {
     ':contact' => $contact,
   );
 
-  return db_query($dbh, $i_src, $params);
+  return db_insert($dbh, $i_src, $params);
 }
 
 function insert_jobposting($dbh, $date, $courses, $company, $jobtitle,
@@ -149,6 +167,9 @@ $requirements, $contact, $apply, $text) {
     VALUES
     (:postdate, :courses, :company, :jobtitle, :requirements, :contact, :apply, :text)"
   ;
+
+  // mysql REQUIRES YYYY-MM-DD date format, so convert whatever we get
+  $date = date('Y-m-d', strtotime($date));
 
   if (is_array($courses))
     $courses = arr_to_set($courses);
@@ -164,7 +185,7 @@ $requirements, $contact, $apply, $text) {
     ':text' => $text,
   );
 
-  return db_query($dbh, $i_jobpost, $params);
+  return db_insert($dbh, $i_jobpost, $params);
 }
 
 ?>

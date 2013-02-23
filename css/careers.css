@@ -203,9 +203,6 @@
   max-height: none;
 }
 
-.joberror {
-}
-
 .morebutton {
   display: inline-block;
   z-index: 5;
@@ -323,3 +320,19 @@
 .jobadmin .section {
   margin-top: 0.5em;
 }
+
+
+.joberrmsg {
+  border: solid 2px red;
+  color: red;
+  font-size: 150%;
+  padding: 0.5em;
+}
+
+.jobinfomsg {
+  border: solid 2px orange;
+  color: orange;
+  font-size: 150%;
+  padding: 0.5em;
+}
+

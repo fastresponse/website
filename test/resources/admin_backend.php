@@ -12,22 +12,12 @@ $date = null;
 $courses = null;
 $company = null;
 $text = null;
-$todaydate = "";
+$showdate = date('d-M-Y');
 $toplegend = "";
 $ret = null;
-
-if ($handle != null) {
-  $all_company_data = query_company_full($handle);
-  foreach ($all_company_data as $src) {
-    $id = sanitize_id($src['name']);
-    $company_list .= "<option>{$src['name']}</option>\n";
-    $hidden_data .= "<input type='hidden' name='website_$id' value='{$src['website']}' />\n";
-    /*
-    $hidden_data .= "<input type='hidden' name='directions_$id' value='{$src['directions']}' />\n";
-    $hidden_data .= "<input type='hidden' name='courses_$id' value='{$src['courses']}' />\n";
-    */
-  }
-}
+$showjoblist = 0;
+$infomsg = null;
+$errmsg = null;
 
 if (array_key_exists('submit', $_POST))
   $submitted = $_POST['submit'];
@@ -35,61 +25,116 @@ if (array_key_exists('submit', $_POST))
 if (array_key_exists('date', $_POST))
   $date = $_POST['date'];
 
+if (!array_key_exists('courses', $_POST))
+  $_POST['courses'] = array();
+
 switch ($submitted) {
   case "View Job Listings":
-    // pull in the search page here
+    $showjoblist = 1;
   break;
 
   case "Post Job":
     if ($handle == null) {
-      $toplegend = "Error: Failed Database Connection";
+      $errmsg = "Error: Failed Database Connection";
       break;
     }
-    /* need to process several of these
+    if (!post_set('jobtitle')) {
+      $errmsg = "Error: Job title must be specified";
+      break;
+    }
+    if (!post_set('requirements')) {
+      $errmsg = "Error: Job requirements must be specified";
+      break;
+    }
     $ret = insert_jobposting(
       $handle, $_POST['date'], $_POST['courses'], $_POST['company'],
       $_POST['jobtitle'], $_POST['requirements'], $_POST['contact'],
       $_POST['apply'], $_POST['text']
     );
-    */
-    $toplegend = "Job Posted";
+    if ($ret == false) { // error
+      $errmsg = "An error occurred. Job not posted.";
+    }
+    else {
+      $infomsg = "Job Posted";
+    }
   break;
 
   case "Add Company":
     if ($handle == null) {
-      $toplegend = "Error: Failed Database Connection";
+      $errmsg = "Error: Failed to connect to database";
       break;
     }
-    /* probably need to process these too
+    if (!post_set('name')) {
+      $errmsg = "Error: Company name must be specified";
+      break;
+    }
     $ret = insert_company(
       $handle, $_POST['name'], $_POST['website'], $_POST['apply'],
       $_POST['courses'], $_POST['streetaddr'], $_POST['city'],
       $_POST['state'], $_POST['phone'], $_POST['contact']
     );
-     */
-    $toplegend = "Company Added";
+    if ($ret == false) {
+      $errmsg = "An error occurred. Company not added.";
+    }
+    else {
+      $infomsg = "Company Added";
+    }
   break;
 
   default:
     // nothing was submitted yet
-    $toplegend = "Career Services Administration";
 }
 
-/* figure out $todaydate in dd-mmm-yyyy format */
+if ($handle != null) {
+  $all_company_data = query_company_full($handle);
+  foreach ($all_company_data as $src) {
+    $id = sanitize_id($src['name']);
+    $company_list .= "<option id='${id}'>{$src['name']}</option>\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_streetaddr' value='{$src['streetaddr']}' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_city' value='{$src['city']}' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_state' value='{$src['state']}' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_phone' value='" .
+                    phone_format($src['phone']) . "' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_contact' value='{$src['contact']}' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_website' value='{$src['website']}' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_courses' value='{$src['courses']}' />\n";
+    $hidden_data .= "<input type='hidden' id='{$id}_apply' value='{$src['apply']}' />\n";
+  }
+}
 
 ?>
 
 <div class="jobadmin">
+<h2>Job Search Administration</h2>
+
+<?php if ($infomsg): ?>
+  <div class="jobinfomsg">
+    <?= $infomsg ?>
+  </div>
+<?php elseif ($errmsg): ?>
+  <div class="joberrmsg">
+    <?= $errmsg ?>
+  </div>
+<?php endif; ?>
 
 <form id="viewjobs" action="<?= $self ?>" method="post">
   <fieldset>
-    <legend>
-      <?= $toplegend ?>
+    <legend style="">
+      Current Job Listings
     </legend>
 
     <div class="section">
       <input type="submit" name="submit" value="View Job Listings" />
+      <!--<input type="button" name="hidejobs" id="hidejobs" onClick="toggleClass('joblist', 'hidden');" value="Hide Jobs" />-->
     </div>
+
+    <?php
+      if ($showjoblist) {
+	include_once($_SERVER['DOCUMENT_ROOT'] . '/php/joblist.php');
+	echo joblist($handle, 'Any');
+      }
+    ?>
+
   </fieldset>
 </form>
 
@@ -107,7 +152,7 @@ switch ($submitted) {
 	<div class="section">
 	  <label>Date:</label>
 	  <a href="javascript:NewCal('cal', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" style="vertical-align: middle;" id="calimg" /></a>
-	  <input id="cal" type="text" name="date" readonly="readonly" value="<?= $todaydate ?>" />
+	  <input id="cal" type="text" name="date" readonly="readonly" value="<?= $showdate ?>" />
 	</div>
 
 	<div class="section">
@@ -144,7 +189,7 @@ switch ($submitted) {
 
 	<div class="section" id="companylist">
 	  <label>Company:</label>
-	  <select name="company">
+	  <select name="company" onChange="showCompanyInfo();">
 	    <?= $company_list ?>
 	  </select>
 	  <input type="button" value="Add New Company" style="width: auto;" onClick="toggleCompany();" />
@@ -152,13 +197,13 @@ switch ($submitted) {
 
 	<div class="section">
 	  <label>Courses:</label>
-	  <input type="checkbox" name="course" value="EMT"><div class="hspace">EMT</div>
-	  <input type="checkbox" name="course" value="CPT"><div class="hspace">CPT</div>
-	  <input type="checkbox" name="course" value="SPT"><div class="hspace">SPT</div>
+	  <input type="checkbox" name="courses[]" value="EMT"/><div class="hspace">EMT</div>
+	  <input type="checkbox" name="courses[]" value="CPT"/><div class="hspace">CPT</div>
+	  <input type="checkbox" name="courses[]" value="SPT"/><div class="hspace">SPT</div>
 	  <br />
 	  <label></label>
-	  <input type="checkbox" name="course" value="CMA"><div class="hspace">CMA</div>
-	  <input type="checkbox" name="course" value="Paramedic"><div class="hspace">Paramedic</div>
+	  <input type="checkbox" name="courses[]" value="CMA"/><div class="hspace">CMA</div>
+	  <input type="checkbox" name="courses[]" value="Paramedic"/><div class="hspace">Paramedic</div>
 	</div>
 
 	<div class="section">
@@ -197,12 +242,14 @@ switch ($submitted) {
 	  <div class="section">
 	    <label></label>
 	    <input type="submit" name="submit" value="Add Company" />
-	    <input type="button" value="Cancel" onClick="toggleCompany();" />
+	    <input type="button" value="Cancel" onClick="toggleCompany(); showCompanyInfo();" />
 	  </div>
 
         </div>
       </div>
     </div>
+
+  <?= $hidden_data ?>
 
   </fieldset>
 </form>

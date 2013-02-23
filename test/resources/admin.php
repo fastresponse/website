@@ -61,7 +61,7 @@ $handle = db_connect();
 
 </head>
 
-<body>
+<body onLoad="showCompanyInfo();">
 
   <div id="page">
 
