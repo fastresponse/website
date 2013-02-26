@@ -57,6 +57,8 @@ function db_query($dbh, $query, $params, $single = 0) {
     $data = $sth->fetch();
   }
 
+  $data = htmlsafe($data);
+
   return $data;
 }
 

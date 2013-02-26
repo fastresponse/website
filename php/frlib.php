@@ -11,8 +11,20 @@ function post_set($index) {
 // sanitize a string to use as an html div id
 function sanitize_id($in) {
   // quick-n-dirty. look for a builtin func later
-  $out = str_replace(" ", "_", $in);
+  //$out = str_replace(" ", "_", $in);
+  // replace anything that's not a letter with underscores
+  $out = preg_replace('/[[:^alpha:]]/', '_', $in);
   return $out;
+}
+
+// html-ize any output
+function htmlsafe($data) {
+  $func = function(&$item, $key) {
+    $item = htmlentities($item);
+  };
+  if (is_array($data))
+    array_walk_recursive($data, $func);
+  return $data;
 }
 
 // turn a string into a set of html <li></li> items

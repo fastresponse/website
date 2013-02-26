@@ -8,6 +8,24 @@
   border: 3px double rgb(30, 70, 150);
 }
 
+.btn3 {
+  border: 3px double rgb(150, 150, 220);
+  background: #103068 url(button-images/grd.png) repeat-x 0 0;
+  vertical-align: middle;
+}
+
+.btn3:hover {
+  background: #062070 url(button-images/grd.png) repeat-x 0 0;
+}
+
+.btn3.lines-1 {
+  line-height: 3.5em;
+}
+
+.btn3.lines-2 {
+  line-height: 1.75em;
+}
+
 .btn2, .btn2:hover {
   border: 3px double rgb(150, 150, 220);
   width: 98%;

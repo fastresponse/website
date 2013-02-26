@@ -1,0 +1,192 @@
+
+/* note: border-radius cannot be set to "inherit", so we have to
+ * repeat it a lot here */
+
+.btn3 {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+/* this div contains the text displayed on the button
+ * font-size, line-height, top, left, and padding are important here */
+.btn3 div:nth-of-type(1) {
+  /*
+  color: #281050 !important;
+  color: #150520 !important;
+  font-size: 15px;
+  font-style: italic;
+  text-shadow: 1px -1px 3px rgba(255, 240, 255, 0.5),
+              -1px 1px 3px rgba(15, 0, 15, 0.5);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  */
+  color: #F0F0F0;
+  font-size: 14px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-decoration: none !important;
+  text-shadow: 1px -1px 3px rgba(15, 0, 15, 0.7),
+              -1px 1px 3px rgba(15, 0, 15, 0.7);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  position: absolute;
+  display: block;
+  width: 94%;
+  height: 94%;
+  left: 3%;
+  top: 3%;
+  z-index: 5;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding-top: 0.25em;
+}
+
+.btn3.lines-1 div:nth-of-type(1) {
+  line-height: 3.5em;
+}
+
+.btn3.lines-2 div:nth-of-type(1) {
+  line-height: 1.65em;
+  padding-top: 0.45em;
+}
+
+/* change text-shadow colors on mouseover */
+.btn3:hover div:nth-of-type(1) {
+  /*
+  text-shadow: 1px -1px 5px rgba(255,255,255,0.8),
+              -1px 1px 5px rgba(30, 20, 20, 0.8);
+  */
+  text-shadow: 1px -1px 5px rgba(30, 20, 20, 0.8),
+              -1px 1px 5px rgba(30, 20, 20, 0.8);
+}
+
+/* this forces the height to be a percentage of the width.
+ * use 100% for square buttons */
+.btn3 div:nth-of-type(2) {
+  padding-top: 50%;
+}
+
+/* this div creates the "button" visual style:
+ * it's forced to stretch to the edges of its container,
+ * has rounded edges, a gradient background,
+ * and a "glow" around the outside via box-shadow */
+.btn3 div:nth-of-type(3) {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  -moz-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  border: 3px solid rgba(0,0,0,0.50);
+  border-top: none;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  background: #103068;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  z-index: 0;
+}
+
+/* change background color of main button on mouseover */
+.btn3:hover div:nth-of-type(3) {
+  background-color: #062070;
+}
+
+/* glossy gradient over button */
+.btn3 div:nth-of-type(4) {
+  position: absolute;
+  display: block;
+  width: 94%;
+  left: 3.5%;
+  top: 1%;
+  height: 98%;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+
+  background-image: -webkit-gradient(
+    linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), color-stop(0.7, rgba(255,255,255,0))
+  );
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+
+  z-index: 4;
+} 
+
+/* this is the inset glow inside the button */
+.btn3 div:nth-of-type(5) {
+  display: inline-block;
+  position: absolute;
+  height: 92%;
+  top: 4%;
+  width: 96%;
+  left: 2%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border: solid 1px rgba(160, 195, 230, 0.5);
+  box-shadow: 1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              -1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset;
+  -moz-box-shadow: 1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              -1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset;
+  -webkit-box-shadow: 1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+              -1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset;
+  z-index: 3;
+}
+
+/* a small image to place on the button, should have transparent bg */
+/*
+.btn3 img {
+  display: inline-block;
+  position: absolute;
+  height: 70%;
+  top: 25%;
+  width: 74%;
+  left: 13%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  padding: 1em 0.75em;
+  background: #001C63;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  z-index: 2;
+}
+*/

@@ -32,7 +32,7 @@
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons3.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/careers.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
@@ -96,28 +96,24 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
-	    <a href="#" class="btn2 buttontext" onClick="showSubSection('main', 'course_info');">
-	      <div></div><div></div><div></div><div></div>
+	    <a href="#" class="btn3 lines-1 buttontext" onClick="showSubSection('main', 'course_info');">
 	      <div><?= $course_title ?> Forms</div>
-	      <img src="/images/buttons/testenvelope.png" alt="" />
+	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" class="btn2 buttontext" onClick="showSubSection('main', 'career_services');">
+	    <a href="#" class="btn3 lines-2 buttontext" onClick="showSubSection('main', 'career_services');">
+	      <div>Career<br />Services</div>
 	      <div></div><div></div><div></div><div></div>
-	      <div>Career Services</div>
-	      <img src="/images/buttons/testenvelope.png" alt="" />
 	    </a>
 
-	    <a href="#" class="btn2 buttontext" onClick="showSubSection('main', 'class_materials');">
+	    <a href="#" class="btn3 lines-2 buttontext" onClick="showSubSection('main', 'class_materials');">
+	      <div>Class<br />Materials</div>
 	      <div></div><div></div><div></div><div></div>
-	      <div>Class Materials</div>
-	      <img src="/images/buttons/testenvelope.png" alt="" />
 	    </a>
 
-	    <a href="../../school/info" class="btn2 buttontext">
-	      <div></div><div></div><div></div><div></div>
+	    <a href="../../school/info" class="btn3 lines-1 buttontext">
 	      <div>Contact Us</div>
-	      <img src="/images/buttons/testenvelope.png" alt="" />
+	      <div></div><div></div><div></div><div></div>
 	    </a>
 
           </div>
@@ -134,22 +130,19 @@
 	  <div id="career_services" class="hidden">
 	    <div class="rightsidebar2">
 	      <div class="quicklinks2">
-		<a href="#" class="btn2 buttontext" onClick="showSubSection('career_services', 'resumes');">
-		  <div></div><div></div><div></div><div></div>
+		<a href="#" class="btn3 lines-1 buttontext" onClick="showSubSection('career_services', 'resumes');">
 		  <div>Resumes</div>
-		  <img src="/images/buttons/testenvelope.png" alt="" />
+		  <div></div><div></div><div></div><div></div>
 		</a>
 
-		<a href="#" class="btn2 buttontext" onClick="showSubSection('career_services', 'interviews');">
+		<a href="#" class="btn3 lines-2 buttontext" onClick="showSubSection('career_services', 'interviews');">
+		  <div>Interview<br />Skills</div>
 		  <div></div><div></div><div></div><div></div>
-		  <div>Interview Skills</div>
-		  <img src="/images/buttons/testenvelope.png" alt="" />
 		</a>
 
-		<a href="#" class="btn2 buttontext" onClick="showSubSection('career_services', 'jobsearch');">
-		  <div></div><div></div><div></div><div></div>
+		<a href="#" class="btn3 lines-1 buttontext" onClick="showSubSection('career_services', 'jobsearch');">
 		  <div>Job Search</div>
-		  <img src="/images/buttons/testenvelope.png" alt="" />
+		  <div></div><div></div><div></div><div></div>
 		</a>
 
               </div>
