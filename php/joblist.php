@@ -47,13 +47,25 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
 
     // if website exists, wrap the name in a link, else just use the name
     if (array_key_exists('website', $company_data)) {
-      $company_data['website'] =
+      $company_data['weblink'] =
 	"<a href=\"{$company_data['website']}\">{$entry['company']}</a>\n"
       ;
     }
     else {
-      $company_data['website'] = $entry['company'];
+      $company_data['weblink'] = $entry['company'];
     }
+
+    $company_data['full_contact_info'] = $entry['company'];
+    if (array_key_exists('website', $company_data) && strlen($company_data['website']))
+      $company_data['full_contact_info'] .= "\n" . $company_data['website'];
+    if (array_key_exists('phone', $company_data) && strlen($company_data['phone']))
+      $company_data['full_contact_info'] .= "\n" . phone_format($company_data['phone']);
+    if (array_key_exists('streetaddr', $company_data) && strlen($company_data['streetaddr']))
+      $company_data['full_contact_info'] .= "\n" . $company_data['streetaddr'];
+    if (array_key_exists('city', $company_data) && strlen($company_data['city']))
+      $company_data['full_contact_info'] .= "\n" . $company_data['city'];
+    if (array_key_exists('state', $company_data) && strlen($company_data['state']))
+      $company_data['full_contact_info'] .= "\n" . $company_data['state'];
 
     if ($start_row)
       $ret .= "<tr>\n";
@@ -64,7 +76,7 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
     $ret .= "<div class=\"top date\">{$entry['showdate']}</div>\n";
     $ret .= "<div class=\"top jobtitle\">" . $entry['jobtitle'] . "</div>\n";
     $ret .= "<div class=\"top courses\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
-    $ret .= "<div class=\"top website\">" . $company_data['website'] . "</div>\n";
+    $ret .= "<div class=\"top website\" title=\"{$company_data['full_contact_info']}\">" . $company_data['weblink'] . "</div>\n";
 
     $ret .= "<div class=\"bottom hidden\">\n";
     $ret .= "  <div class=\"reqs\">\n";

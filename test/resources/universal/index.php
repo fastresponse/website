@@ -12,9 +12,13 @@
   $query_args = array();
   parse_str($_SERVER['QUERY_STRING'], $query_args);
 
+  if (!$button_lines)
+    $button_lines = 1;
+
   // each course's index.php sets the following variables:
   // $course_title - properly capitalized name of course
   // $header_img - name of header file (without path)
+  // $button_lines - number of lines of text for buttons containing $course in their text, either 1 or 2
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -96,8 +100,8 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
-	    <a href="#" class="btn3 lines-1 buttontext" onClick="showSubSection('main', 'course_info');">
-	      <div><?= $course_title ?> Forms</div>
+	    <a href="#" class="btn3 lines-<?= $button_lines ?> buttontext" onClick="showSubSection('main', 'course_info');">
+	      <div><?= $course ?> Forms</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
@@ -156,10 +160,7 @@
 		<ul>
 		  <li onClick="">General Resume 1</li>
 		</ul>
-		<h3><?= $course_title ?> specific resumes:</h3>
-		<ul>
-		  <li onClick="">EMT Resume 1</li>
-		</ul>
+                <?php include_once("../$course/resumes.php") ?>
 	      </div>
 
 	      <div id="interviews" class="hidden">

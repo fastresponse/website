@@ -127,7 +127,7 @@ function query_jobpostings($dbh, $firstdate, $lastdate, $course, $company) {
     $params[':company'] = $company;
   }
 
-  $q_jobpost .= " ORDER BY postdate";
+  $q_jobpost .= " ORDER BY postdate DESC";
 
   return db_query($dbh, $q_jobpost, $params);
 }
