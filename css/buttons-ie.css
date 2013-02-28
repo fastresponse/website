@@ -26,15 +26,9 @@
   line-height: 1.75em;
 }
 
-.btn2, .btn2:hover {
-  border: 3px double rgb(150, 150, 220);
-  width: 98%;
-  padding: 2px 1% 5px;
-  height: 2.5em;
-  vertical-align: middle;
-}
-
 .btn2 {
+  border: 3px double rgb(150, 150, 220);
+  vertical-align: middle;
   background: #103068 url(button-images/grd.png) repeat-x 0 0;
 }
 
@@ -42,6 +36,19 @@
   background: #062070 url(button-images/grd.png) repeat-x 0 0;
 }
 
+.btn2.lines-1 {
+  line-height: 3.5em;
+}
+
+.btn2.lines-2 {
+  line-height: 1.75em;
+}
+
+.btn2 img {
+  visibility: hidden;
+}
+
+/*
 .btn2 div {
   top: 0; bottom: 0;
 }
@@ -54,6 +61,7 @@
   border: 0;
   margin: 0;
 }
+*/
 
 /* IE6 only */
 * html .btn {
