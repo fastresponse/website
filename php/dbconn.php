@@ -1,36 +1,25 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbsettings.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 
 /* all functions related to database connections and queries */
 
 function handleit($e) {
+  /* this is debug stuff
   echo '<pre>';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
+  */
 }
 set_exception_handler('handleit');
 
 function db_connect() {
-  $local_testing = 0;
-  if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' && gethostname() == 'animal')
-    $local_testing = 1;
 
-  if ($local_testing) {
-    $host = 'localhost';
-    $user = 'careersvcs';
-    $pass = 'F4stR3sponse';
-    $dbname = 'career_services';
-  }
-  else {
-    $host = 'sql5c40a.carrierzone.com';
-    $user = 'fstrspnssi400738';
-    $pass = 'F4stR3sponse';
-    $dbname = 'career_services_' . $user;
-  }
+  list($local_testing, $host, $user, $pass, $dbname) = dbsettings();
 
   try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
