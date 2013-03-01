@@ -75,9 +75,13 @@
   <script type="text/javascript">
     // this "main" does not refer to an element ID, it's just a group name
     setSection( "main", ["course_info", "career_services", "class_materials"] );
+    setSection( "materials", ["syllabus", "videos", "skillsheets"] );
     setSection( "career_services", ["resumes", "interviews", "jobsearch"] );
-    setSection( "sidebar", ["sidebar_all", "sidebar_career_services"] );
     setSection( "sidebar_cs", ["sidebar_cs_main", "sidebar_cs_sub"] );
+    setSection( "resumes", [
+      "resume1", "resume2", "resume3", "resume4", "resume5", "resume6", "resume7", "resume8", "resume9", "resume10",
+      "cover1", "cover2", "cover3", "cover4", "cover5", "cover6", "cover7", "cover8", "cover9", "cover10"
+    ] );
   </script>
 
 </head>
@@ -101,7 +105,7 @@
       <div class="section">
 
 	<div class="rightsidebar2">
-          <div class="quicklinks2" id="sidebar_all">
+          <div class="quicklinks2">
 
 	    <a href="#" class="btn3 lines-<?= $button_lines ?>" onClick="showSubSection('main', 'course_info'); showSubSection('sidebar_cs', 'sidebar_cs_main');">
 	      <div><?= $course ?> Forms</div>
@@ -119,17 +123,17 @@
 	    </a>
 
             <div class="hidden" id="sidebar_cs_sub">
-	      <a href="#" class="btn3 lines-1" onClick="showSubSection('career_services', 'resumes');">
+	      <a href="#" class="btn3 glow-yellow lines-1" onClick="showSubSection('career_services', 'resumes');">
 		<div>Resumes</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
 
-	      <a href="#" class="btn3 lines-2" onClick="showSubSection('career_services', 'interviews');">
+	      <a href="#" class="btn3 glow-yellow lines-2" onClick="showSubSection('career_services', 'interviews');">
 		<div>Interview<br />Skills</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
 
-	      <a href="#" class="btn3 lines-1" onClick="showSubSection('career_services', 'jobsearch');">
+	      <a href="#" class="btn3 glow-yellow lines-1" onClick="showSubSection('career_services', 'jobsearch');">
 		<div>Job Search</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
@@ -142,30 +146,6 @@
 	    </a>
 
           </div>
-
-	  <div class="quicklinks2 hidden" id="sidebar_career_services">
-
-	    <a href="#" class="btn3 lines-2" onClick="showSubSection('sidebar', 'sidebar_all'); showSubSection('main', 'course_info');">
-	      <div>Return to<br />Course Info</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-
-	    <a href="#" class="btn3 lines-1" onClick="showSubSection('career_services', 'resumes');">
-	      <div>Resumes</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-
-	    <a href="#" class="btn3 lines-2" onClick="showSubSection('career_services', 'interviews');">
-	      <div>Interview<br />Skills</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-
-	    <a href="#" class="btn3 lines-1" onClick="showSubSection('career_services', 'jobsearch');">
-	      <div>Job Search</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-
-	  </div>
 	</div>
 
 	<div class="leftcontent2">
@@ -176,16 +156,42 @@
 	    <?php include_once("../$course/info.php") ?>
 	  </div>
 
-	<div id="career_services" class="hidden">
+	  <div id="class_materials" class="hidden">
+	    <h1><?= $course_title ?> Class Materials</h1>
+	    <?php include_once("../$course/materials.php") ?>
+	  </div>
+
+	  <div id="career_services" class="hidden">
 	    <h1><?= $course_title ?> Career Services</h1>
 
 	    <div id="resumes">
-	      <h2>Resumes</h2>
-	      <h3>General resumes:</h3>
-	      <ul>
-		<li onClick="">General Resume 1</li>
-	      </ul>
-	      <?php include_once("../$course/resumes.php") ?>
+	      <div class="column" style="min-width: 20%; max-width: 25%; width: auto; float: left;">
+		<h2>Cover Letter Templates</h2>
+		<ul class="underline pointer">
+		  <li><span onClick="showSubSection('resumes', 'cover1');">Cover Letter 1</span></li>
+		</ul>
+
+		<h2>Resume Templates</h2>
+		<ul class="underline pointer">
+		  <li><span onClick="showSubSection('resumes', 'resume1');">Resume 1</span></li>
+		  <li><span onClick="showSubSection('resumes', 'resume2');">Resume 2</span></li>
+		</ul>
+
+		<?php include_once("../$course/resumes.php") ?>
+	      </div>
+
+	      <div class="column" style="max-width: 70%; width: auto; margin: 0 1% 0 3%;">
+	        <div id="cover1" class="hidden">
+		  Show cover letter 1 here.
+		</div>
+	        <div id="resume1" class="hidden">
+		  Show resume 1 here.
+		</div>
+	        <div id="resume2" class="hidden">
+		  Show resume 2 here. Or maybe do a file include.
+		</div>
+	      </div>
+
 	    </div>
 
 	    <div id="interviews" class="hidden">
@@ -213,6 +219,8 @@
 		<li>Send a thank you email or letter to the interviewer(s) within 24 hours.</li>
 		<li>It is a good idea to obtain business cards of the interviews, before leaving the interview.</li>
 	      </ul>
+
+	      <?php include_once("../$course/interview.php"); ?>
 	    </div>
 
 	    <div id="jobsearch" class="hidden">
@@ -225,11 +233,6 @@
 	      ?>
 	    </div>
 
-	  </div>
-
-	  <div id="class_materials" class="hidden">
-	    <h1><?= $course_title ?> Class Materials</h1>
-	    <?php include_once("../$course/materials.php") ?>
 	  </div>
 
 	</div> <!-- /leftcontent -->

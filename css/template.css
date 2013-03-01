@@ -320,6 +320,9 @@ h3 {
 .bold {
   font-weight: bold;
 }
+.pointer li span {
+  cursor: pointer;
+}
 
 /* end colors */
 

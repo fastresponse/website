@@ -75,6 +75,7 @@
   -webkit-box-sizing: border-box;
   display: inline-block;
   cursor: pointer;
+  /* lightblue glow default */
   box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
               3px -3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
@@ -410,66 +411,6 @@
               -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
 }
 
-.btn.glow-red {
-  box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
-              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
-              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
-              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
-  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
-              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
-              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
-              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
-  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
-              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
-              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
-              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
-}
-
-.btn.glow-yellow {
-  box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
-	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
-	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
-	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
-  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
-	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
-	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
-	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
-  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
-	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
-	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
-	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
-}  
-
-.btn.glow-orange {
-  box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
-	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
-  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
-	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
-  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
-	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
-}
-
-.btn.glow-blue {
-  box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
-              3px -3px 15px 2px rgba(30, 60, 130, 0.5),
-              -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
-              -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
-  -moz-box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
-              3px -3px 15px 2px rgba(30, 60, 130, 0.5),
-              -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
-              -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
-  -webkit-box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
-              3px -3px 15px 2px rgba(30, 60, 130, 0.5),
-              -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
-              -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
-}
-
 .btn.lines-1 {
   line-height: 1.5em;
   padding: 1em;
@@ -540,6 +481,99 @@
   background: rgba(0, 20, 70, 1.0) url(button-images/grd.png) repeat-x 0 0;
   */
 }
+
+
+
+/* different outside glow colors */
+
+.btn.glow-red,
+.btn2.glow-red div:nth-of-type(3),
+.btn3.glow-red div:nth-of-type(3) {
+  box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              3px -3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
+              -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+}
+
+.btn.glow-yellow,
+.btn2.glow-yellow div:nth-of-type(3),
+.btn3.glow-yellow div:nth-of-type(3) {
+  box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+}  
+
+.btn.glow-orange,
+.btn2.glow-orange div:nth-of-type(3),
+.btn3.glow-orange div:nth-of-type(3) {
+  box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
+  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
+}
+
+.btn.glow-blue,
+.btn2.glow-blue div:nth-of-type(3),
+.btn3.glow-blue div:nth-of-type(3) {
+  box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
+              3px -3px 15px 2px rgba(30, 60, 130, 0.5),
+              -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
+              -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
+  -moz-box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
+              3px -3px 15px 2px rgba(30, 60, 130, 0.5),
+              -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
+              -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
+              3px -3px 15px 2px rgba(30, 60, 130, 0.5),
+              -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
+              -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
+}
+
+.btn.glow-lightblue,
+.btn2.glow-lightblue div:nth-of-type(3),
+.btn3.glow-lightblue div:nth-of-type(3) {
+  box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  -moz-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+}
+
+/* end of glow colors */
+
+
 
 
 /*
