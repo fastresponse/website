@@ -314,12 +314,22 @@ h3 {
 .green {
   color: #339966;
 }
+a.yellow {
+  color: #FFFF99;
+}
+a.red {
+  color: #DD0033;
+}
+a.green {
+  color: #339966;
+}
 .underline {
   text-decoration: underline;
 }
 .bold {
   font-weight: bold;
 }
+span.pointer,
 .pointer li span {
   cursor: pointer;
 }

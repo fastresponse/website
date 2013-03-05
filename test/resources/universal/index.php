@@ -19,6 +19,17 @@
   // $course_title - properly capitalized name of course
   // $header_img - name of header file (without path)
   // $button_lines - number of lines of text for buttons containing $course in their text, either 1 or 2
+
+  $cover_dir = "../$course/covers/";
+  $resume_dir = "../$course/resumes/";
+
+  $cover_files = array();
+  $resume_files = array();
+
+  if (is_dir($cover_dir))
+    $cover_files = scandir($cover_dir);
+  if (is_dir($resume_dir))
+    $resume_files = scandir($resume_dir);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -79,9 +90,15 @@
     setSection( "career_services", ["resumes", "interviews", "jobsearch"] );
     setSection( "sidebar_cs", ["sidebar_cs_main", "sidebar_cs_sub"] );
     setSection( "resumes", [
+      "resumeguidelines", "coverguidelines",
       "resume1", "resume2", "resume3", "resume4", "resume5", "resume6", "resume7", "resume8", "resume9", "resume10",
-      "cover1", "cover2", "cover3", "cover4", "cover5", "cover6", "cover7", "cover8", "cover9", "cover10"
+      "cover1", "cover2", "cover3", "cover4", "cover5", "cover6", "cover7", "cover8", "cover9", "cover10",
+      "courseresume1", "courseresume2", "courseresume3", "courseresume4", "courseresume5",
+      "courseresume6", "courseresume7", "courseresume8", "courseresume9", "courseresume10",
+      "coursecover1", "coursecover2", "coursecover3", "coursecover4", "coursecover5",
+      "coursecover6", "coursecover7", "coursecover8", "coursecover9", "coursecover10"
     ] );
+    setSection( "interview", ["interviewguidelines", "interviewquestions"] );
   </script>
 
 </head>
@@ -165,126 +182,130 @@
 	    <h1><?= $course_title ?> Career Services</h1>
 
 	    <div id="resumes">
-	      <div class="column" style="min-width: 20%; max-width: 25%; width: auto; float: left;">
+	      <div class="column" style="width: 70%; float: left;">
 
-		<h2>Cover Letter Guidelines</h2>
-		<p>First impressions count in the job search, and that’s why a dynamite cover letter can mean the difference between success and failure in your healthcare job search. But what makes a winning healthcare cover letter?</p>
+		<div id="resumeguidelines">
+                  <?php include_once("../universal/resume_guidelines.php") ?>
+		</div>
 
-		<h3>Get to the Point</h3>
-		<p>State the purpose of your letter in the first paragraph. Small talk is generally a waste of space. Three paragraphs is a good length.</p>
+                <div id="coverguidelines" class="hidden">
+                  <?php include_once("../universal/cover_guidelines.php") ?>
+		</div>
 
-		<h3>Tailor Your Letter to the Reader</h3>
-		<p>Focus on the needs of the specific healthcare organization, not on your own requirements as a job seeker. Visityour potential employer’s website and read their mission statement to learn more about the organization. Then use your cover letter to demonstrate how your skills and experience can benefit the organization.</p>
+	        <div id="cover1" class="hidden">
+                  <?php include("../universal/covers/referred.php") ?>
+		</div>
 
-		<h3>Maintain the Right Tone</h3>
-		<p>A cover letter should be businesslike, friendly and enthusiastic.Health professionals have the opportunity to reveal their passion through a cover letter, but the document shouldn’t become too syrupy, or it loses its objectivity and professionalism.</p>
-
-		<h3>Make It Memorable</h3>
-		<p>New graduates can make their cover letters stand out by personalizing their stories. If you decided to model your career after an Emergency Medical Technician who helped a family member, tell that story rather than making the generic claim that you’ve always wanted to help people. If your story is unique, its no longer like everyone else.</p>
-
-		<h3>Highlight Your Biggest Successes</h3>
-		<p>Your cover letter shouldn’t just summarize your career or repeat the same information from your resume. You want it to highlight the successes and achievements or &quot;triples and home runs&quot; of your career that are most related to the types of positions for which you are applying.</p>
-
-		<h3>Use Power Phrases</h3>
-		<p>Use strong action words to convey your experiences and illustrate your qualifications with phrases like &quot;I have decreased costs by...&quot; or &quot;I have increased productivity by...&quot; Don’t be shy about selling yourself, since that’s the purpose of a cover letter.</p>
-
-		<h3>Show Your Team Spirit</h3>
-		<p>If you have room for a few extra sentences in your cover letter, emphasize your teamwork and communication skills. Today teamwork and communication are vitally important in almost every healthcare position.</p>
-
-		<h3>Spice Up Your Writing</h3>
-		<p>A poor example to begin a cover letter is &quot;I am writing in response to your advertisement for a Phlebotomy Technician and have enclosed my resume for your review.&quot; The better opener could be &quot;Your ad on Monster for a Phlebotomy Technician captured my attention and motivated me to learn more about this employment opportunity.&quot; Then describe how your qualifications match the employer’s needs.</p>
-
-		<h3>Follow Up</h3>
-		<p>An unforgivable error some job seekers make is failing to follow up after sending their cover letter and resume. If the name of a hiring manager or current employee is available, follow-up, as soon as possible after submitting your application materials.</p>
-
-		<h3>Avoid</h3>
-		<ul>
-		  <li>Addressing a letter recipient by anything other than his name. Avoid &quot;Dear Hiring Manager&quot; at all costs.</li>
-		  <li>Writing a canned, generic letter that looks like it was copied from a book.</li>
-		  <li>Starting the first paragraph and too many other sentences with &quot;I.&quot;</li>
-		  <li>Making spelling errors and typos.</li>
-		  <li>Handwriting a cover letter.</li>
-		  <li>Using printer paper or paper that is different from your resume paper. Instead utilize resume paper.</li>
-		  <li>Including irrelevant personal information or job experience.</li>
-		  <li>Overstating your accomplishments or contradicting your resume.</li>
-		</ul>
-
+	        <div id="cover2" class="hidden">
+                  <?php include("../universal/covers/not_referred.php") ?>
+		</div>
 <?php
+  $i = 1;
+  foreach ($cover_files as $file) {
+    if ($file == "." || $file == "..") continue;
+?>
+    <div id="coursecover<?= $i ?>" class="hidden">
+    <?php include($cover_dir . $file); ?>
+    </div>
+<?php
+    $i++;
+  }
+?>
+	        <div id="resume1" class="hidden">
+		  Show universal resume 1 here.
+		</div>
+	        <div id="resume2" class="hidden">
+		  Show universal resume 2 here. Or maybe do a file include.
+		</div>
+<?php
+  $i = 1;
+  foreach ($resume_files as $file) {
+    if ($file == "." || $file == "..") continue;
+?>
+    <div id="courseresume<?= $i ?>" class="hidden">
+    <?php include($resume_dir . $file); ?>
+    </div>
+<?php
+    $i++;
+  }
+?>
+<?php
+  /*
   $resume_dir = "../$course/resumes/";
   $resume_files = scandir($resume_dir);
   $i = 1;
   foreach ($resume_files as $file) {
     if ($file == "." || $file == "..") continue;
-    $cover_list[] =
-      "<li><span onClick=\"showSubSection('covers', 'coursecover$i');\">" .
-      "$course_abbr Resume $i</span></li>\n";
-    $cover_divs[] = "<div id=\"coursecover$i\" class=\"hidden\">\n" .
-      read_file() . "\n" .
-      "</div>\n";
     $resume_list[] =
       "<li><span onClick=\"showSubSection('resumes', 'courseresume$i');\">" .
       "$course_abbr Resume $i</span></li>\n";
     $resume_divs[] = "<div id=\"courseresume$i\" class=\"hidden\">\n" .
       read_file() . "\n" .
       "</div>\n";
+    $i++;
   }
+   */
 ?>
 
-		<h2>Cover Letter Examples</h2>
-		<ul class="underline pointer">
-		  <li><span onClick="showSubSection('resumes', 'cover1');">Cover Letter 1</span></li>
-		</ul>
+	      </div>
+
+	      <div class="column" style="width: 20%; margin: 0 1% 0 3%;">
+
+                <h2><span class="underline pointer" onClick="showSubSection('resumes', 'resumeguidelines');">Resume Guidelines</span></h2>
 
 		<h2>Resume Examples</h2>
 		<ul class="underline pointer">
 		  <li><span onClick="showSubSection('resumes', 'resume1');">Resume 1</span></li>
 		  <li><span onClick="showSubSection('resumes', 'resume2');">Resume 2</span></li>
+<?php
+  $i = 1;
+  foreach ($resume_files as $file) {
+    if ($file == "." || $file == "..") continue;
+?>
+    <li><span onClick="showSubSection('resumes', 'courseresume<?= $i ?>');"><?= $course_abbr ?> Resume <?= $i ?></span></li>
+<?php
+    $i++;
+  }
+?>
 		</ul>
 
-		<?php include_once("../$course/resumes.php") ?>
-	      </div>
+                <div style="min-height: 1em;"></div>
 
-	      <div class="column" style="max-width: 70%; width: auto; margin: 0 1% 0 3%;">
-	        <div id="cover1" class="hidden">
-		  Show cover 1 here.
-		</div>
-	        <div id="resume1" class="hidden">
-		  Show resume 1 here.
-		</div>
-	        <div id="resume2" class="hidden">
-		  Show resume 2 here. Or maybe do a file include.
-		</div>
+                <h2><span class="underline pointer" onClick="showSubSection('resumes', 'coverguidelines');">Cover Letter Guidelines</span></h2>
+
+		<h2>Cover Letter Examples</h2>
+		<ul class="underline pointer">
+		  <li><span onClick="showSubSection('resumes', 'cover1');">Cover Letter (referred)</span></li>
+		  <li><span onClick="showSubSection('resumes', 'cover2');">Cover Letter (not referred)</span></li>
+<?php
+  $i = 1;
+  foreach ($cover_files as $file) {
+    if ($file == "." || $file == "..") continue;
+?>
+    <li><span onClick="showSubSection('resumes', 'coursecover<?= $i ?>');"><?= $course_abbr ?> Cover Letter <?= $i ?></span></li>
+<?php
+    $i++;
+  }
+?>
+		</ul>
+
 	      </div>
 
 	    </div>
 
 	    <div id="interviews" class="hidden">
-	      <h2>Interview Guidelines</h2>
-	      <h3>Before the Interview:</h3>
-	      <ul>
-		<li>Prepare by learning as much as you can about the organization via their website.</li>
-		<li>Practice writing and verbalizing your answers to questions related to the job opening.</li>
-		<li>Prepare to answer behavioral interview questions. Give specific examples of when you demonstrated particular behaviors or skills. The STAR answer technique includes stating the: Situation or Task, Action you took, and Results you achieved.</li>
-		<li>Know the date, time, address, directions, and name of the interviewer. Plan to arrive 15 -30 minutes early in case of unexpected delays.</li>
-	      </ul>
-
-	      <h3>During the Interview:</h3>
-	      <ul>
-		<li>Offer to shake hands at the beginning and end of the interview.  Do not sit until the interviewer offers you a chair or seats himself first.</li>
-		<li>Dress professionally for the interview. Conservative clothing like dark pants, a solid colored pressed shirt, and close - toe shoes, is a good choice for the health care field. Pay careful attention to grooming details including nails and hair. Jewelry should be very minimal and small.</li>
-		<li>Pay careful attention to the interviewer's questions. If clarification is needed, state what you think the interviewer asked or ask for more information before responding.</li>
-		<li>Show enthusiasm, sincerity, tact and courtesy. Address the interviewer as Mr. Smith, Ms. Lopez, or Dr. Khan, unless they tell you otherwise.</li>
-		<li>Salary and benefits should be left to the interviewer to bring up. Generally, the interviewer will not want to discuss salary until she has formed a favorable impression of the interviewee. It is helpful to find out what the position pays when you are researching the organization prior to your interview.</li>
-		<li>Bring a pen and pocket notebook to write information down that may be given to you and to make notes to yourself after the interview, <span style="white-space: nowrap;">self-improvement and follow-up.</span></li>
-	      </ul>
-
-	      <h3>After the Interview:</h3>
-	      <ul>
-		<li>Send a thank you email or letter to the interviewer(s) within 24 hours.</li>
-		<li>It is a good idea to obtain business cards of the interviews, before leaving the interview.</li>
-	      </ul>
-
-	      <?php include_once("../$course/interview.php"); ?>
+	      <div class="column" style="width: 70%; float: left;">
+                <div id="interviewguidelines">
+		  <?php include_once("../universal/interview_guidelines.php"); ?>
+                </div>
+		<div id="interviewquestions" class="hidden">
+                  <?php include_once("../$course/interview_questions.php"); ?>
+		</div>
+	      </div>
+	      <div class="column" style="width: 20%; margin: 0 1% 0 3%;">
+                <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewguidelines');">Interview Guidelines</span></h2>
+                <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewquestions');">Interview Question Examples</span></h2>
+              </div>
 	    </div>
 
 	    <div id="jobsearch" class="hidden">
