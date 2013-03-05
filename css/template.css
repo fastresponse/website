@@ -314,6 +314,9 @@ h3 {
 .green {
   color: #339966;
 }
+.orange {
+  color: #DC3300;
+}
 a.yellow {
   color: #FFFF99;
 }
@@ -322,6 +325,9 @@ a.red {
 }
 a.green {
   color: #339966;
+}
+a.orange {
+  color: #DC3300;
 }
 .underline {
   text-decoration: underline;
@@ -507,7 +513,7 @@ span.pointer,
 
 .quicklinks2 a,
 .quicklinks2 dd {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .quicklinks2 {

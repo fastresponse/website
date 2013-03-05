@@ -97,22 +97,46 @@ function activateMe(obj) {
   obj.style.color = '#DD0033';
 }
 
+
+
+/* these functions let us turn a class OFF on only one of
+ * an arbitrary group of elements while turning it ON on
+ * the others, or vice-versa
+ */
 var sectionarr = {};
 function setSection(theparent, subsects) {
   sectionarr[theparent] = subsects;
 }
 
-function showSubSection(theparent, id) {
+function classOnSubSection(theparent, id, classname) {
   subs = sectionarr[theparent];
   for (var i = 0; i < subs.length; i++) {
     if (subs[i] == id) {
-      removeClass(subs[i], "hidden");
+      addClass(subs[i], classname);
     }
     else {
-      addClass(subs[i], "hidden");
+      removeClass(subs[i], classname);
     }
   }
 }
+function classOffSubSection(theparent, id, classname) {
+  subs = sectionarr[theparent];
+  for (var i = 0; i < subs.length; i++) {
+    if (subs[i] == id) {
+      removeClass(subs[i], classname);
+    }
+    else {
+      addClass(subs[i], classname);
+    }
+  }
+}
+
+/* example: unhide one element, hide all the rest */
+function showSubSection(theparent, id) {
+  classOffSubSection(theparent, id, 'hidden');
+}
+
+
 
 function activateOne(obj) {
   for (var j = 0; j < sectionparents.length; j++) {

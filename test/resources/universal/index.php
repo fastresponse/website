@@ -87,19 +87,42 @@
     // this "main" does not refer to an element ID, it's just a group name
     setSection( "main", ["course_info", "career_services", "class_materials"] );
     setSection( "materials", ["syllabus", "videos", "skillsheets"] );
-    setSection( "career_services", ["resumes", "interviews", "jobsearch"] );
-    setSection( "sidebar_cs", ["sidebar_cs_main", "sidebar_cs_sub"] );
+    setSection( "career_services", ["cs_general", "resumes", "interviews", "jobsearch"] );
     setSection( "resumes", [
-      "resumeguidelines", "coverguidelines",
-      "resume1", "resume2", "resume3", "resume4", "resume5", "resume6", "resume7", "resume8", "resume9", "resume10",
-      "cover1", "cover2", "cover3", "cover4", "cover5", "cover6", "cover7", "cover8", "cover9", "cover10",
+      "resumeguidelines", "coverguidelines", "resumekeywords",
+      "resume1", "resume2", "resume3", "resume4", "resume5",
+      "resume6", "resume7", "resume8", "resume9", "resume10",
+      "cover1", "cover2", "cover3", "cover4", "cover5",
+      "cover6", "cover7", "cover8", "cover9", "cover10",
       "courseresume1", "courseresume2", "courseresume3", "courseresume4", "courseresume5",
       "courseresume6", "courseresume7", "courseresume8", "courseresume9", "courseresume10",
       "coursecover1", "coursecover2", "coursecover3", "coursecover4", "coursecover5",
       "coursecover6", "coursecover7", "coursecover8", "coursecover9", "coursecover10"
     ] );
-    setSection( "interview", ["interviewguidelines", "interviewquestions"] );
+    setSection( "interview", ["interviewguidelines", "interviewquestions", "interviewthankyou"] );
+    setSection( "sidebar_buttons", [
+      "sidebar_btn_forms", "sidebar_btn_materials", "sidebar_btn_cs",
+      "sidebar_btn_resumes", "sidebar_btn_interviews", "sidebar_btn_jobsearch"
+    ] );
+    setSection( "sidebar_sub_buttons", [
+      "sidebar_sub_forms", "sidebar_sub_materials", "sidebar_sub_cs"
+    ] );
   </script>
+
+  <style type="text/css">
+    #cs_general h4 {
+      margin-bottom: 0;
+      text-decoration: underline;
+    }
+    #cs_general ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: none;
+    }
+    #cs_general ul ul {
+      list-style-type: disc;
+    }
+  </style>
 
 </head>
 
@@ -124,33 +147,33 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
-	    <a href="#" class="btn3 lines-<?= $button_lines ?>" onClick="showSubSection('main', 'course_info'); showSubSection('sidebar_cs', 'sidebar_cs_main');">
+	    <a href="#" id="sidebar_btn_forms" class="btn3 glow-yellow lines-<?= $button_lines ?>" onClick="showSubSection('main', 'course_info'); showSubSection('sidebar_sub_buttons', 'sidebar_sub_forms'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
 	      <div><?= $course ?> Forms</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" class="btn3 lines-2" onClick="showSubSection('main', 'class_materials'); showSubSection('sidebar_cs', 'sidebar_cs_main');">
+	    <a href="#" id="sidebar_btn_materials" class="btn3 lines-2" onClick="showSubSection('main', 'class_materials'); showSubSection('sidebar_sub_buttons', 'sidebar_sub_materials'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>Class<br />Materials</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" class="btn3 lines-2" id="sidebar_cs_main" onClick="showSubSection('main', 'career_services'); showSubSection('sidebar_cs', 'sidebar_cs_sub');">
+	    <a href="#" id="sidebar_btn_cs" class="btn3 lines-2" onClick="showSubSection('main', 'career_services'); showSubSection('career_services', 'cs_general'); showSubSection('sidebar_sub_buttons', 'sidebar_sub_cs'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>Career<br />Services</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-            <div class="hidden" id="sidebar_cs_sub">
-	      <a href="#" class="btn3 glow-yellow lines-1" onClick="showSubSection('career_services', 'resumes');">
+            <div class="hidden" id="sidebar_sub_cs">
+	      <a href="#" id="sidebar_btn_resumes" class="btn3 lines-1" onClick="showSubSection('career_services', 'resumes'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
 		<div>Resumes</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
 
-	      <a href="#" class="btn3 glow-yellow lines-2" onClick="showSubSection('career_services', 'interviews');">
+	      <a href="#" id="sidebar_btn_interviews" class="btn3 lines-2" onClick="showSubSection('career_services', 'interviews'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
 		<div>Interview<br />Skills</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
 
-	      <a href="#" class="btn3 glow-yellow lines-1" onClick="showSubSection('career_services', 'jobsearch');">
+	      <a href="#" id="sidebar_btn_jobsearch" class="btn3 lines-1" onClick="showSubSection('career_services', 'jobsearch'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
 		<div>Job Search</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
@@ -181,11 +204,24 @@
 	  <div id="career_services" class="hidden">
 	    <h1><?= $course_title ?> Career Services</h1>
 
-	    <div id="resumes">
+            <div id="cs_general">
+              <div class="column borderbox" style="width: 47%; margin-right: 0; padding-right: 6%;">
+		<?php include_once("../universal/job_seeking_skills.php") ?>
+	      </div>
+	      <div class="column borderbox" style="width: 47%; margin-left: 0; padding-left: 6%; border-left: dotted 1px rgba(150,150,150,0.5); margin-bottom: 1em;">
+                <?php include_once("../universal/job_search_sites.php") ?>
+              </div>
+            </div>
+
+	    <div id="resumes" class="hidden">
 	      <div class="column" style="width: 70%; float: left;">
 
 		<div id="resumeguidelines">
                   <?php include_once("../universal/resume_guidelines.php") ?>
+		</div>
+
+		<div id="resumekeywords" class="hidden">
+                  <?php include_once("../universal/resume_keywords.php") ?>
 		</div>
 
                 <div id="coverguidelines" class="hidden">
@@ -229,29 +265,13 @@
     $i++;
   }
 ?>
-<?php
-  /*
-  $resume_dir = "../$course/resumes/";
-  $resume_files = scandir($resume_dir);
-  $i = 1;
-  foreach ($resume_files as $file) {
-    if ($file == "." || $file == "..") continue;
-    $resume_list[] =
-      "<li><span onClick=\"showSubSection('resumes', 'courseresume$i');\">" .
-      "$course_abbr Resume $i</span></li>\n";
-    $resume_divs[] = "<div id=\"courseresume$i\" class=\"hidden\">\n" .
-      read_file() . "\n" .
-      "</div>\n";
-    $i++;
-  }
-   */
-?>
-
 	      </div>
 
 	      <div class="column" style="width: 20%; margin: 0 1% 0 3%;">
 
                 <h2><span class="underline pointer" onClick="showSubSection('resumes', 'resumeguidelines');">Resume Guidelines</span></h2>
+
+                <h2><span class="underline pointer" onClick="showSubSection('resumes', 'resumekeywords');">Resume Keywords</span></h2>
 
 		<h2>Resume Examples</h2>
 		<ul class="underline pointer">
@@ -301,10 +321,14 @@
 		<div id="interviewquestions" class="hidden">
                   <?php include_once("../$course/interview_questions.php"); ?>
 		</div>
+                <div id="interviewthankyou" class="hidden">
+                  <?php include_once("../universal/interview_thankyou.php"); ?>
+                </div>
 	      </div>
 	      <div class="column" style="width: 20%; margin: 0 1% 0 3%;">
                 <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewguidelines');">Interview Guidelines</span></h2>
                 <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewquestions');">Interview Question Examples</span></h2>
+                <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewthankyou');">Thank You Letter Example</span></h2>
               </div>
 	    </div>
 
