@@ -16,7 +16,6 @@ $handle = db_connect();
   <base href="/" />
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
 

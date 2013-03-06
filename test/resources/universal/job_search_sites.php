@@ -2,70 +2,42 @@
 
 <h4>Search Engines</h4>
 <ul>
-  <li>Career Builder - www.careerbuilder.com</li>
-  <li>Craigslist - www.craigslist.com</li>
-  <li>Indeed - www.indeed.com </li>
-  <li>Linkedin - www.linkedin.com</li>
-  <li>Monster - www.monster.com</li>
-  <li>Opportunity Knocks - www.opportunityknocks.org</li>
-  <li>Phlebotomy - www.getphlebotomyjobs.com</li>
-  <li>Simply Hired - www.simplyhired.com</li>
-  <li>Snag A Job - www.snagajob.com</li>
+  <li>Career Builder - <a href="http://www.careerbuilder.com">www.careerbuilder.com</a></li>
+  <li>Craigslist - <a href="http://www.craigslist.com">www.craigslist.com</a></li>
+  <li>Indeed - <a href="http://www.indeed.com">www.indeed.com</a> </li>
+  <li>Linkedin - <a href="http://www.linkedin.com">www.linkedin.com</a></li>
+  <li>Monster - <a href="http://www.monster.com">www.monster.com</a></li>
+  <li>Opportunity Knocks - <a href="http://www.opportunityknocks.org">www.opportunityknocks.org</a></li>
+  <li>Phlebotomy - <a href="http://www.getphlebotomyjobs.com">www.getphlebotomyjobs.com</a></li>
+  <li>Simply Hired - <a href="http://www.simplyhired.com">www.simplyhired.com</a></li>
+  <li>Snag A Job - <a href="http://www.snagajob.com">www.snagajob.com</a></li>
 </ul>
 
 <h4>Resume, Cover Letter, Interview Assistance</h4>
 <ul>
-  <li>www.caljobs.ca.gov - select &quot;Tips for Success&quot;</li>
-  <li>www.livecareer.com</li>
-  <li>www.susanireland.com</li>
+  <li><a href="http://www.caljobs.ca.gov">www.caljobs.ca.gov</a> - select &quot;Tips for Success&quot;</li>
+  <li><a href="http://www.livecareer.com">www.livecareer.com</a></li>
+  <li><a href="http://www.susanireland.com">www.susanireland.com</a></li>
 </ul>
 
 <h4>Hospitals</h4>
 <ul>
-  <li>Alameda Hospital - www.alamedahospital.org</li>
-  <li>John Muir - www.johnmuirhealth.com</li>
-  <li>Kaiser Permanente - www.kp.org</li>
-  <li>Sutter Health - www.sutterhealth.org</li>
-  <li>UCSF - www.ucsfhealth.org</li>
+  <li>Alameda Hospital - <a href="http://www.alamedahospital.org">www.alamedahospital.org</a></li>
+  <li>John Muir - <a href="http://www.johnmuirhealth.com">www.johnmuirhealth.com</a></li>
+  <li>Kaiser Permanente - <a href="http://www.kp.org">www.kp.org</a></li>
+  <li>Sutter Health - <a href="http://www.sutterhealth.org">www.sutterhealth.org</a></li>
+  <li>UCSF - <a href="http://www.ucsfhealth.org">www.ucsfhealth.org</a></li>
 </ul>
 
 <h4>Salary Information</h4>
 <ul>
-  <li>www.indeed.com</li>
-  <li>www.monster.salary.com - select &quot;salary wizard&quot;</li>
+  <li><a href="http://www.indeed.com">www.indeed.com</a></li>
+  <li><a href="http://www.monster.salary.com">www.monster.salary.com</a> - select &quot;salary wizard&quot;</li>
 </ul>
 
 <h4>Job Placement Agencies</h4>
 <ul>
-  <li>Aerotek - www.aerotek.com</li>
+  <li>Aerotek - <a href="http://www.aerotek.com">www.aerotek.com</a></li>
 </ul>
 
-<h4>EMT</h4>
-<ul>
-  <li>Oakland Fire Department</li>
-  <ul>
-    <li>call Personnel Department at (510) 238-3112 or Job Hotline (510) 238-3111</li>
-  </ul>
-  <li>San Francisco Fire Department</li>
-  <ul>
-    <li>www.sf-fire.org, &quot;How do I Find?&quot;, go to &quot;get a job with SFFD&quot;</li>
-  </ul>
-  <li>Paramedics Plus - www.paramedicsplus.com</li>
-  <li>Royal Ambulance: Careers - royalambulance.com/careers/</li>
-  <li>AMR/American Medical Response - www.amr.net</li>
-</ul>
-
-<h4>PHL</h4>
-<ul>
-  <li>Labcorp - www.labcorp.com</li>
-  <li>Quest Diagnostics - www.questdiagnostics.com</li>
-  <li>Kaiser Permeanente - www.kp.org - Position title - Lab I or Lab II</li>
-  <li>Health Exams Inc. - healthexamsinc.com</li>
-</ul>
-
-<h4>MA</h4>
-<ul>
-  <li>Health Exams Inc. - healthexamsinc.com</li>
-  <li>Nurse Finders - www.nursefinders.com</li>
-  <li>Clinica de la Raza - www.laclinica.org</li>
-</ul>
+<?php include_once("../$course/job_search_sites.php") ?>

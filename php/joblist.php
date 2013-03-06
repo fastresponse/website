@@ -83,15 +83,28 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
     $ret .= "    Requirements:<br />\n";
     $ret .= "    <ul>\n" . listify($entry['requirements']) . "</ul>\n";
     $ret .= "  </div>\n";
-    $ret .= "  <div class=\"text\">\n";
-    $ret .= "    " . $entry['text'] . "\n";
-    $ret .= "  </div>\n";
-    $ret .= "  <div class=\"contact\">\n";
-    $ret .= "    " . $entry['contact'] . "\n";
-    $ret .= "  </div>\n";
-    $ret .= "  <div class=\"apply\">\n";
-    $ret .= "    " . $entry['apply'] . "\n";
-    $ret .= "  </div>\n";
+
+    $line = 1;
+
+    if (strlen($entry['text'])) {
+      $ret .= "  <div class=\"line{$line}\">\n";
+      $ret .= "    " . $entry['text'] . "\n";
+      $ret .= "  </div>\n";
+      $line++;
+    }
+    if (strlen($entry['contact'])) {
+      $ret .= "  <div class=\"line{$line}\">\n";
+      $ret .= "    " . $entry['contact'] . "\n";
+      $ret .= "  </div>\n";
+      $line++;
+    }
+    if (strlen($entry['apply'])) {
+      $ret .= "  <div class=\"line{$line}\">\n";
+      $ret .= "    " . $entry['apply'] . "\n";
+      $ret .= "  </div>\n";
+      $line++;
+    }
+
     $ret .= "</div>\n";
 
     $ret .= "</div>\n";

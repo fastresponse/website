@@ -164,7 +164,7 @@
   float: left;
 }
 
-.joblist .bottom .text {
+.joblist .bottom .line1 {
   width: 100%;
   padding: 5px;
   background-color: rgb(61, 73, 109);
@@ -175,7 +175,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.joblist .bottom .contact {
+.joblist .bottom .line2 {
   clear: both;
   width: 100%;
   min-height: 5px;
@@ -187,7 +187,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.joblist .bottom .apply {
+.joblist .bottom .line3 {
   width: 100%;
   min-height: 5px;
   background-color: rgb(39, 57, 109);
