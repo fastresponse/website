@@ -198,7 +198,7 @@
 
 	  <div id="class_materials" class="hidden">
 	    <h1><?= $course_title ?> Class Materials</h1>
-	    <?php include_once("../$course/materials.php") ?>
+	    <?php include_once("../universal/class_materials.php") ?>
 	  </div>
 
 	  <div id="career_services" class="hidden">

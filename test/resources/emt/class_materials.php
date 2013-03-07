@@ -1,3 +1,9 @@
+<?php
+$file_titles = array(
+  // 'Filename' : 'Title'
+  'Blood Pressure.pdf' : 'Blood Pressure',
+);
+?>
 <script type="text/javascript">
   // use encodeURIComponent(text)
   files = {
