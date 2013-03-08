@@ -177,3 +177,16 @@ function showSectionDiv(obj, file) {
 function resizeIframe(obj) {
   obj.height = obj.contentWindow.document.body.scrollHeight + "px";
 }
+
+function setSource(obj, loc, replace) {
+  obj = findObj(obj);
+  if (!obj) return;
+  if (!replace && (obj.src || obj.src != "")) return;
+  obj.src = loc;
+}
+
+function googleViewer(loc) {
+  var url = "http://docs.google.com/viewer?embedded=true&url=";
+  url = url + encodeURIComponent(loc);
+  return url;
+}

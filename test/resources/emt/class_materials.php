@@ -1,7 +1,7 @@
 <?php
 $file_titles = array(
-  // 'Filename' : 'Title'
-  'Blood Pressure.pdf' : 'Blood Pressure',
+  // 'Subdir/Filename' : 'Title'
+  'Skill Sheets/Blood Pressure.pdf' : 'Blood Pressure',
 );
 ?>
 <script type="text/javascript">

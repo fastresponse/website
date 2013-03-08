@@ -17,6 +17,7 @@
 
   // each course's index.php sets the following variables:
   // $course_title - properly capitalized name of course
+  // $course_abbr - abbreviation for course
   // $header_img - name of header file (without path)
   // $button_lines - number of lines of text for buttons containing $course in their text, either 1 or 2
 
@@ -122,6 +123,18 @@
     #cs_general ul ul {
       list-style-type: disc;
     }
+    iframe {
+      /*
+      width: 500px;
+      height: 1000px;
+      box-sizing: border-box;
+      padding: 2%;
+      border: 0;
+      */
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
   </style>
 
 </head>
@@ -142,7 +155,7 @@
 
     <div id="main">
 
-      <div class="section">
+      <div class="section" style="position: relative;">
 
 	<div class="rightsidebar2">
           <div class="quicklinks2">
@@ -188,7 +201,7 @@
           </div>
 	</div>
 
-	<div class="leftcontent2">
+	<div class="leftcontent2" style="position: relative;">
 
           <!-- show by default (because it doesn't have the "hidden" class -->
 	  <div id="course_info">
@@ -196,7 +209,7 @@
 	    <?php include_once("../$course/info.php") ?>
 	  </div>
 
-	  <div id="class_materials" class="hidden">
+	  <div id="class_materials" class="hidden" style="position: relative;">
 	    <h1><?= $course_title ?> Class Materials</h1>
 	    <?php include_once("../universal/class_materials.php") ?>
 	  </div>

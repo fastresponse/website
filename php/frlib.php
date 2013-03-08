@@ -10,8 +10,6 @@ function post_set($index) {
 
 // sanitize a string to use as an html div id
 function sanitize_id($in) {
-  // quick-n-dirty. look for a builtin func later
-  //$out = str_replace(" ", "_", $in);
   // replace anything that's not a letter with underscores
   $out = preg_replace('/[[:^alpha:]]/', '_', $in);
   return $out;
@@ -33,6 +31,7 @@ function listify($in) {
   if (!$in || !strlen($in)) return "";
   $lines = explode("\n", $in);
   $func = function($val) {
+    if (!strlen($val)) return "";
     return "<li>" . $val . "</li>";
   };
   $out = implode("\n", array_map($func, $lines));
