@@ -5,17 +5,49 @@
 
 <h3>Basic Resume Formatting</h3>
 <p>Use a resume header with your current contact information. Include your first and last name, telephone number, address and e-mail. Be sure to use a professional e-mail for employers to contact you.</p>
-<p>What to include</p>
-<ul>
-  <li><b>Objective (optional)</b> What do you want to do? If you include this section, it should be a sentence or two about your employment goals. A customized objective that describes why you are the perfect candidate for the job can help your resume stand out from the competition.</li>
-  <li><b>Career Summary or Summary of Qualifications (optional)</b> A customized section of your resume that lists key achievements, skills, traits, and experiences can serve a dual purpose. You experience which are relevant to the position lets the prospective employer know that you have taken the time to create a resume that shows how you are qualified for the job.</li>
-  <li><b>Certifications</b> List all certifications relevant to the job you are applying for. This Include your certification and license information. Be sure to include expiration dates.</li>
-  <li><b>Externships (optional)</b> If you do not have work experience or have few jobs to list under Employment history/Experience, it is helpful to fill your resume by including your externships completed. </li>
-  <li><b>Employment History or Experience</b> Include your work history. List the companies you worked for, dates of employment, the positions you held and a bulleted list of responsibilities and achievements. Make sure what you are listing is relevant to the job you are applying for. </li>
-  <li><b>Education List</b> the schools you attended, the degrees you attained, and any special awards and honors you earned. Include Fast Response School of Health Care Education.</li>
-  <li><b>References</b> There is no need to include references on your resume. If you mention that references are available, be sure to have them on hand to furnish upon request.</li>
-  <li><b>Community Involvement</b> List any relevant volunteer work. Be sure to include the dates and names of the organizations. </li>
+<p>What to include:</p>
+<ul class="bold red bullets">
+  <li>
+  <div>Objective (optional)</div>
+  <div class="textdefault">What do you want to do? If you include this section, it should be a sentence or two about your employment goals. A customized objective that describes why you are the perfect candidate for the job can help your resume stand out from the competition.</div>
+  </li>
+
+  <li>
+  <div>Career Summary or Summary of Qualifications (optional)</div>
+  <div class="textdefault">A customized section of your resume that lists key achievements, skills, traits, and experiences can serve a dual purpose. You experience which are relevant to the position lets the prospective employer know that you have taken the time to create a resume that shows how you are qualified for the job.</div>
+  </li>
+
+  <li>
+  <div>Certifications</div>
+  <div class="textdefault">List all certifications relevant to the job you are applying for. This Include your certification and license information. Be sure to include expiration dates.</div>
+  </li>
+
+  <li>
+  <div>Externships (optional)</div>
+  <div class="textdefault">If you do not have work experience or have few jobs to list under Employment history/Experience, it is helpful to fill your resume by including your externships completed.</div>
+  </li>
+
+  <li>
+  <div>Employment History or Experience</div>
+  <div class="textdefault">Include your work history. List the companies you worked for, dates of employment, the positions you held and a bulleted list of responsibilities and achievements. Make sure what you are listing is relevant to the job you are applying for.</div>
+  </li>
+
+  <li>
+  <div>Education</div>
+  <div class="textdefault">List the schools you attended, the degrees you attained, and any special awards and honors you earned. Include Fast Response School of Health Care Education.</div>
+  </li>
+
+  <li>
+  <div>References</div>
+  <div class="textdefault">There is no need to include references on your resume. If you mention that references are available, be sure to have them on hand to furnish upon request.</div>
+  </li>
+
+  <li>
+  <div>Community Involvement</div>
+  <div class="textdefault">List any relevant volunteer work. Be sure to include the dates and names of the organizations.</div>
+  </li>
 </ul>
+
 <p>Use a common font like Times New Roman.</p>
 <p>Use the same font and size throughout. You may enlarge your name so it stands out. </p>
 <p>Keep resume to 1 page. </p>

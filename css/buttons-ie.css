@@ -8,6 +8,11 @@
   border: 3px double rgb(30, 70, 150);
 }
 
+.btn2.glow-yellow,
+.btn3.glow-yellow {
+  border: 3px solid rgb(140, 140, 30);
+}
+
 .btn3 {
   border: 3px double rgb(150, 150, 220);
   background: #103068 url(button-images/grd.png) repeat-x 0 0;

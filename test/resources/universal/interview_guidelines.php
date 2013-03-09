@@ -8,6 +8,7 @@
 </ul>
 
 <h3>During the Interview:</h3>
+<img src="/images/interview-01.png" alt="" style="float: right;" />
 <ul>
   <li>Offer to shake hands at the beginning and end of the interview.  Do not sit until the interviewer offers you a chair or seats himself first.</li>
   <li>Dress professionally for the interview. Conservative clothing like dark pants, a solid colored pressed shirt, and close - toed shoes, is a good choice for the health care field. Pay careful attention to grooming details including nails and hair. Jewelry should be very minimal and small. No low-cut blouses.</li>

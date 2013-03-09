@@ -8,6 +8,16 @@ function post_set($index) {
   ;
 }
 
+// taken straight from the PHP.net man page for include
+function get_include_contents($filename) {
+  if (is_file($filename)) {
+    ob_start();
+    include $filename;
+    return ob_get_clean();
+  }
+  return false;
+}
+
 // sanitize a string to use as an html div id
 function sanitize_id($in) {
   // replace anything that's not a letter with underscores

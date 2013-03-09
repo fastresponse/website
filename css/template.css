@@ -272,6 +272,15 @@ h3 {
   margin-left: auto;
 }
 
+.textcenter {
+  text-align: center;
+}
+
+.textdefault {
+  font-weight: normal;
+  color: white;
+}
+
 .fontsans {
   font-family: "Century Gothic", sans-serif;
 }
@@ -578,6 +587,14 @@ span.pointer,
 .bullets li {
   margin-top: 0;
   margin-bottom: 0.8em;
+}
+
+.bullets ul {
+  margin-bottom: 1.6em;
+}
+
+.bullets ul li:first-of-type {
+  margin-top: 0.8em;
 }
 /* end nice looking bullets */
 

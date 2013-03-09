@@ -11,6 +11,7 @@
   display: inline-block;
   position: relative;
   width: 100%;
+  z-index: 6;
 }
 .btn3.hidden {
   display: none;

@@ -1,7 +1,7 @@
-<h2 style="text-align: center;">John L. Doe</h2>
+<h2>John L. Doe</h2>
 <div style="text-align: center;">7676 Fairview Dr., Berkeley, CA 94704 510-849-7658, johndoe@gmail.com</div>
 
-<h3 style="margin-bottom: 0;">SUMMARY OF QUALIFICATIONS</h3>
+<h3>SUMMARY OF QUALIFICATIONS</h3>
 <hr />
 <ul>
   <li>4 years managerial experience, scheduling employees, instructing students, and collaborating with staff to lead outdoor wilderness trips</li>
@@ -10,9 +10,9 @@
   <li>Training in Wilderness Safety and Survival Skills</li>
 </ul>
 
-<h3 style="margin-bottom: 0;">CERTIFICATIONS</h3>
+<h3>CERTIFICATIONS</h3>
 <hr />
-<div style="float: right; text-align: right;">
+<div class="right">
   12/2012<br />
   <br />
   1/2011<br />
