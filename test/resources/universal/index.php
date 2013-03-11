@@ -12,6 +12,17 @@
   $query_args = array();
   parse_str($_SERVER['QUERY_STRING'], $query_args);
 
+  $allowed_sections = array(
+    'carsvcs', 'resumes', 'interviews', 'jobsearch', 'extcert', 'videos'
+  );
+  if (!array_key_exists('section', $query_args) ||
+      !in_array($query_args['section'], $allowed_sections)) {
+	$section = 'carsvcs';
+  }
+  else {
+    $section = $query_args['section'];
+  }
+
   if (!$button_lines)
     $button_lines = 1;
 
@@ -157,7 +168,7 @@
 
 </head>
 
-<body>
+<body onLoad="showSubSection('main', '<?= $section ?>'); classOnSubSection('sidebar_buttons', 'sidebar_btn_<?= $section ?>', 'glow-yellow');">
 
   <div id="page">
 
