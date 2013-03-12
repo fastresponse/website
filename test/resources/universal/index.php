@@ -42,6 +42,10 @@
     $cover_files = scandir($cover_dir);
   if (is_dir($resume_dir))
     $resume_files = scandir($resume_dir);
+
+  require_once($root . '/php/dbconn.php');
+  $handle = db_connect();
+  require_once($root . '/php/joblist.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -84,16 +88,6 @@
   </script>
 
   <script type="text/javascript" src="/js/jquery.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
   <script type="text/javascript" src="/js/joblist.js"></script>
   <script type="text/javascript" src="/js/frlib.js"></script>
   <script type="text/javascript" src="/js/vidchooser.js"></script>
@@ -111,14 +105,8 @@
 
     setSection( "resumes", [
       "resumeguidelines", "coverguidelines", "resumekeywords",
-      "resume1", "resume2", "resume3", "resume4", "resume5",
-      "resume6", "resume7", "resume8", "resume9", "resume10",
-      "cover1", "cover2", "cover3", "cover4", "cover5",
-      "cover6", "cover7", "cover8", "cover9", "cover10",
-      "courseresume1", "courseresume2", "courseresume3", "courseresume4", "courseresume5",
-      "courseresume6", "courseresume7", "courseresume8", "courseresume9", "courseresume10",
-      "coursecover1", "coursecover2", "coursecover3", "coursecover4", "coursecover5",
-      "coursecover6", "coursecover7", "coursecover8", "coursecover9", "coursecover10"
+      "cover1", "cover2",
+      "courseresume",
     ] );
     setSection( "interview", ["interviewguidelines", "interviewquestions", "interviewthankyou"] );
   </script>
@@ -164,6 +152,31 @@
       float: right;
       text-align: right;
     }
+    .companypages {
+      color: #CCCCEE;
+      border-color: #335588;
+      margin: 2em auto;
+      padding: 5px;
+      width: 90%;
+    }
+    .companypages:hover {
+      border-color: red;
+      background-color: #000022;
+    }
+    .companypages div {
+      min-height: 1.5em;
+      line-height: 1.5em;
+    }
+    .companypages h5 {
+      margin: 0;
+      letter-spacing: 0.1em;
+    }
+    .companypages:hover h5 {
+      color: #FFFF99;
+    }
+    .companypages div a {
+      color: #CCCCEE;
+    }
   </style>
 
 </head>
@@ -173,7 +186,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -215,8 +228,8 @@
 	    </a>
 
             <?php if (file_exists("../$course/videos.php")): ?>
-	      <a href="#" id="sidebar_btn_videos" class="btn3 lines-2" onClick="showSubSection('main', 'videos'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
-		<div>SKILLS<br />VIDEOS</div>
+	      <a href="#" id="sidebar_btn_videos" class="btn3 lines-1" onClick="showSubSection('main', 'videos'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+		<div>SKILLS VIDEOS</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
             <?php endif; ?>
@@ -241,28 +254,55 @@
 	  </div>
 
 	  <div id="resumes" class="hidden">
-	    <div class="column" style="width: 70%; float: left;">
 
-	      <div id="resumeguidelines">
-		<?php include_once("../universal/resume_guidelines.php") ?>
+	    <div class="smallnavbar" style="margin-bottom: 2em;">
+	      <div class="column col6 underline pointer" onClick="showSubSection('resumes', 'resumeguidelines');">
+		Resume<br />Guidelines
 	      </div>
+	      <div class="column col6 underline pointer" onClick="showSubSection('resumes', 'resumekeywords');">
+		Resume<br />Keywords
+	      </div>
+	      <div class="column col6 underline pointer" onClick="showSubSection('resumes', 'courseresume');">
+		Sample<br />Resume
+	      </div>
+	      <div class="column col6 underline pointer" onClick="showSubSection('resumes', 'coverguidelines');">
+		Cover Letter<br />Guidelines
+	      </div>
+	      <div class="column col6 underline pointer" onClick="showSubSection('resumes', 'cover1');">
+		Sample Cover -<br />Referred
+	      </div>
+	      <div class="column col6 underline pointer" onClick="showSubSection('resumes', 'cover2');">
+		Sample Cover -<br />Not Referred
+	      </div>
+	    </div>
 
-	      <div id="resumekeywords" class="hidden">
-		<?php include_once("../universal/resume_keywords.php") ?>
-	      </div>
+	    <div id="resumeguidelines">
+	      <?php include_once("../universal/resume_guidelines.php") ?>
+	    </div>
 
-	      <div id="coverguidelines" class="hidden">
-		<?php include_once("../universal/cover_guidelines.php") ?>
-	      </div>
+	    <div id="resumekeywords" class="hidden">
+	      <?php include_once("../universal/resume_keywords.php") ?>
+	    </div>
 
-	      <div id="cover1" class="hidden paper">
-		<?php include("../universal/covers/referred.php") ?>
-	      </div>
+	    <div id="coverguidelines" class="hidden">
+	      <?php include_once("../universal/cover_guidelines.php") ?>
+	    </div>
 
-	      <div id="cover2" class="hidden paper">
-		<?php include("../universal/covers/not_referred.php") ?>
-	      </div>
+	    <div id="cover1" class="hidden paper">
+	      <?php include("../universal/covers/referred.php") ?>
+	    </div>
+
+	    <div id="cover2" class="hidden paper">
+	      <?php include("../universal/covers/not_referred.php") ?>
+	    </div>
+
+	    <div id="courseresume" class="hidden paper">
+	    <?php include($resume_dir . 'resume1.php'); ?>
+	    </div>
+              
 <?php
+  // disabling this because there are no course specific cover letters
+  if (0) {
   $i = 1;
   foreach ($cover_files as $file) {
     if ($file == "." || $file == "..") continue;
@@ -273,14 +313,12 @@
 <?php
     $i++;
   }
+  }
 ?>
-	      <div id="resume1" class="hidden paper">
-		Show universal resume 1 here.
-	      </div>
-	      <div id="resume2" class="hidden paper">
-		Show universal resume 2 here. Or maybe do a file include.
-	      </div>
+
 <?php
+  // disabling this because there is only one course specific resume
+  if (0) {
   $i = 1;
   foreach ($resume_files as $file) {
     if ($file == "." || $file == "..") continue;
@@ -291,20 +329,11 @@
 <?php
     $i++;
   }
+  }
 ?>
-	    </div>
 
-	    <div class="column" style="width: 20%; margin: 0 1% 0 3%;">
-
-	      <h2><span class="underline pointer" onClick="showSubSection('resumes', 'resumeguidelines');">Resume Guidelines</span></h2>
-
-	      <h2><span class="underline pointer" onClick="showSubSection('resumes', 'resumekeywords');">Resume Keywords</span></h2>
-
-	      <h2>Resume Examples</h2>
-	      <ul class="underline pointer">
-		<li><span onClick="showSubSection('resumes', 'resume1');">Resume 1</span></li>
-		<li><span onClick="showSubSection('resumes', 'resume2');">Resume 2</span></li>
 <?php
+  if (0) {
   $i = 1;
   foreach ($resume_files as $file) {
     if ($file == "." || $file == "..") continue;
@@ -313,18 +342,11 @@
 <?php
     $i++;
   }
+  }
 ?>
-	      </ul>
 
-	      <div style="min-height: 1em;"></div>
-
-	      <h2><span class="underline pointer" onClick="showSubSection('resumes', 'coverguidelines');">Cover Letter Guidelines</span></h2>
-
-	      <h2>Cover Letter Examples</h2>
-	      <ul class="underline pointer">
-		<li><span onClick="showSubSection('resumes', 'cover1');">Cover Letter (referred)</span></li>
-		<li><span onClick="showSubSection('resumes', 'cover2');">Cover Letter (not referred)</span></li>
 <?php
+  if (0) {
   $i = 1;
   foreach ($cover_files as $file) {
     if ($file == "." || $file == "..") continue;
@@ -333,44 +355,119 @@
 <?php
     $i++;
   }
+  }
 ?>
-	      </ul>
-
-	    </div>
-
 	  </div>
 
 	  <div id="interviews" class="hidden">
-	    <div class="column" style="width: 70%; float: left;">
-	      <div id="interviewguidelines">
-		<?php include_once("../universal/interview_guidelines.php"); ?>
+
+	    <div class="smallnavbar" style="margin-bottom: 2em;">
+	      <div class="column col3 underline pointer" onClick="showSubSection('interview', 'interviewguidelines');">
+		Interview<br />Guidelines
 	      </div>
-	      <div id="interviewquestions" class="hidden">
-		<?php include_once("../$course/interview_questions.php"); ?>
+	      <div class="column col3 underline pointer" onClick="showSubSection('interview', 'interviewquestions');">
+		Sample Interview<br />Questions
 	      </div>
-	      <div id="interviewthankyou" class="hidden paper">
-		<?php include_once("../universal/interview_thankyou.php"); ?>
+	      <div class="column col3 underline pointer" onClick="showSubSection('interview', 'interviewthankyou');">
+		Sample Thank You<br />Letters
 	      </div>
 	    </div>
-	    <div class="column" style="width: 20%; margin: 0 1% 0 3%;">
-	      <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewguidelines');">Interview Guidelines</span></h2>
-	      <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewquestions');">Interview Question Examples</span></h2>
-	      <h2><span class="underline pointer" onClick="showSubSection('interview', 'interviewthankyou');">Thank You Letter Example</span></h2>
+
+	    <div id="interviewguidelines">
+	      <?php include_once("../universal/interview_guidelines.php"); ?>
 	    </div>
+	    <div id="interviewquestions" class="hidden">
+	      <?php include_once("../$course/interview_questions.php"); ?>
+	    </div>
+	    <div id="interviewthankyou" class="hidden paper">
+	      <?php include_once("../universal/interview_thankyou.php"); ?>
+	    </div>
+
 	  </div>
 
 	  <div id="jobsearch" class="hidden">
-	    <h2>Job Search</h2>
+	    <h2 class="textcenter">Job Search</h2>
+	    <h4 class="textcenter">Click an entry to expand</h4>
 
-	    <div class="column col4">Health</div>
-	    <div class="column col4">Careers</div>
-	    <div class="column col4">Webpage</div>
-	    <div class="column col4">Listings</div>
+<?php
+  $all_companies = query_companies_name_web($handle);
+  $current = 0;
+  if ((count($all_companies) % 5) == 0)
+    $per_line = 5;
+  elseif ((count($all_companies) % 3) == 0)
+    $per_line = 3;
+  elseif ((count($all_companies) % 6) == 0)
+    $per_line = 6;
+  else
+    $per_line = 4;
+  foreach ($all_companies as $c) {
+    $weblink = formatweblink($c);
+    $current++;
+    $company_ids[] = "'company" . $current . "'";
+    $company_weblinks[] =
+      "<div id=\"company{$current}\" class=\"column col{$per_line} hidden\">\n" .
+      "  $weblink\n" .
+      "</div>\n"
+    ;
+  }
+  // round out the line
+  while ($current % $per_line != 0) {
+    $current++;
+    $company_ids[] = "'company" . $current . "'";
+    $company_weblinks[] =
+      "<div id=\"company{$current}\" class=\"column col{$per_line} hidden\">\n" .
+      "</div>\n"
+    ;
+  }
+?>
+	    <div class="companypages borderbox radius1em pointer textcenter"
+	      onClick="toggleClassArr(['companytitle', <?= implode($company_ids, ', '); ?>], 'hidden');"
+	    >
+	      <h5 id="companytitle">EMS Employers list</h5>
+
+              <?= implode($company_weblinks, "\n"); ?>
+
+	      <!--
+	      <div id="company1" class="column col4 hidden">
+	        <a href="#">Kaiser Permanente</a>
+	      </div>
+	      <div id="company2" class="column col4 hidden">
+	        <a href="#">Company 2</a>
+	      </div>
+	      <div id="company3" class="column col4 hidden">
+	        <a href="#">Company 3</a>
+	      </div>
+	      <div id="company4" class="column col4 hidden">
+	        <a href="#">Company 4</a>
+	      </div>
+	      <div id="company5" class="column col4 hidden">
+	        <a href="#">Company 5</a>
+	      </div>
+	      <div id="company6" class="column col4 hidden">
+	        <a href="#">Company 6</a>
+	      </div>
+	      <div id="company7" class="column col4 hidden">
+	        <a href="#">Company 7</a>
+	      </div>
+	      <div id="company8" class="column col4 hidden">
+	        <a href="#">Company 8</a>
+	      </div>
+	      <div id="company9" class="column col4 hidden">
+	        <a href="#">Company 9</a>
+	      </div>
+	      <div id="company10" class="column col4 hidden">
+	        <a href="#">Company 10</a>
+	      </div>
+	      <div id="company11" class="column col4 hidden">
+	        <a href="#">Company 11</a>
+	      </div>
+	      <div id="company12" class="column col4 hidden">
+	        <a href="#">Company 12</a>
+	      </div>
+	      -->
+	    </div>
 
 	    <?php
-	      require_once($root . '/php/dbconn.php');
-	      $handle = db_connect();
-	      require_once($root . '/php/joblist.php');
 	      echo joblist($handle, 'Any', $course);
 	    ?>
 	  </div>
@@ -398,6 +495,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

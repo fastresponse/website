@@ -82,15 +82,6 @@
 
   <script type = "text/javascript" src="/js/jquery.js"></script>
 
-  <script type = "text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("menu/footer.html");
-    } );
-  </script>
-
   <style type="text/css">
     table {
       width: 100%;
@@ -134,12 +125,12 @@
 
 </head>
 
-<body style="font-family: Arial, sans-serif;">
+<body>
 
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include('./menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -383,6 +374,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include('./menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

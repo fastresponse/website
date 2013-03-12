@@ -71,6 +71,16 @@ function query_company_list($dbh) {
   return db_query($dbh, $q_list, $params);
 }
 
+function query_companies_name_web($dbh) {
+  $q_list =
+    "SELECT name, website
+    FROM companies"
+  ;
+  $params = array();
+
+  return db_query($dbh, $q_list, $params);
+}
+
 function query_company($dbh, $name) {
   $q_src =
     "SELECT website, apply, courses, streetaddr, city, state, phone, contact

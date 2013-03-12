@@ -2,7 +2,57 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 
-function joblist($handle = null, $daterange = '2 weeks', $course = null, $company = null) {
+function formatweblink($company_data = null) {
+  if ($company_data == null)
+    $company_data = array();
+
+  if (!array_key_exists('name', $company_data))
+    $company_data['name'] = 'No name';
+
+  // if website exists, wrap the name in a link, else just use the name
+  if (array_key_exists('website', $company_data)) {
+    $company_data['weblink'] =
+      "<a href=\"{$company_data['website']}\">{$company_data['name']}</a>\n"
+    ;
+  }
+  else {
+    $company_data['weblink'] = $company_data['name'];
+  }
+
+  return $company_data['weblink'];
+}
+
+function fullcompanyinfo($handle = null, $company_name = null) {
+  if ($company_name != null)
+    $company_data = query_company($handle, $company_name);
+  else
+    $company_data = null;
+
+  if ($company_data == null)
+    $company_data = array();
+
+  if (!array_key_exists('apply', $company_data))
+    $company_data['apply'] = '';
+
+  $company_data['name'] = $company_name;
+  $company_data['weblink'] = formatweblink($company_data);
+
+  $company_data['full_contact_info'] = $company_name;
+  if (array_key_exists('website', $company_data) && strlen($company_data['website']))
+    $company_data['full_contact_info'] .= "\n" . $company_data['website'];
+  if (array_key_exists('phone', $company_data) && strlen($company_data['phone']))
+    $company_data['full_contact_info'] .= "\n" . phone_format($company_data['phone']);
+  if (array_key_exists('streetaddr', $company_data) && strlen($company_data['streetaddr']))
+    $company_data['full_contact_info'] .= "\n" . $company_data['streetaddr'];
+  if (array_key_exists('city', $company_data) && strlen($company_data['city']))
+    $company_data['full_contact_info'] .= "\n" . $company_data['city'];
+  if (array_key_exists('state', $company_data) && strlen($company_data['state']))
+    $company_data['full_contact_info'] .= "\n" . $company_data['state'];
+
+  return $company_data;
+}
+
+function joblist($handle = null, $daterange = '2 weeks', $course = null, $company = null, $cells_per_row = 2) {
 
   if ($handle == null)
     return '<h2 class="joberror">There was an error accessing the database.</h2>';
@@ -26,7 +76,6 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
 
   $ret = "";
   $current_cell = 0;
-  $cells_per_row = 2;
   $start_row = true;
   $end_row = false;
 
@@ -37,6 +86,9 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
     $start_row = ($calc == 0);
     $end_row = ($calc == $cells_per_row - 1);
 
+    $company_data = fullcompanyinfo($handle, $entry['company']);
+
+    /*
     $company_data = query_company($handle, $entry['company']);
 
     if ($company_data == null)
@@ -66,6 +118,7 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
       $company_data['full_contact_info'] .= "\n" . $company_data['city'];
     if (array_key_exists('state', $company_data) && strlen($company_data['state']))
       $company_data['full_contact_info'] .= "\n" . $company_data['state'];
+    */
 
     if ($start_row)
       $ret .= "<tr>\n";

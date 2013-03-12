@@ -58,6 +58,15 @@ function toggleClass(arg, classname) {
   }
 }
 
+// there is no easy, reliable way to test if a variable is an array
+// (really javascript? how do you get away with sucking so much?)
+// so just make a new function
+function toggleClassArr(args, classname) {
+  for (var i = 0; i < args.length; i++) {
+    toggleClass(args[i], classname);
+  }
+}
+
 function findPos(obj) {
   var curtop = 0;
   if (obj.offsetParent) {
