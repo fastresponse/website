@@ -50,11 +50,11 @@ function choosevid(obj, vidname) {
   else {
     var re = new RegExp("VIDNUM", "g");
     str = str.replace(re, num);
-    obj.style.color = '#DD0033';
+    toggleClass(obj, 'video-selected');
     header = vidname;
   }
 
   document.getElementById("videobox").innerHTML =
-    '<h3 id="vidtitle">' + header + '</h3>' + "\n" + str;
+    '<h3 id="vidtitle" class="video-title">' + header + '</h3>' + "\n" + str;
 }
 

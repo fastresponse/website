@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "EMT Skills Videos"
+AuthUserFile /services/webpages/f/a/fastresponse.org/.htpasswd
+require valid-user

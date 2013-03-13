@@ -1,0 +1,7 @@
+AuthName "EMT Skills Videos" 
+AuthType Basic 
+AuthUserFile /services/webpages/f/a/fastresponse.org/.htpasswd 
+AuthGroupFile /dev/null 
+<Files videos_skills.php>
+require valid-user
+</Files>

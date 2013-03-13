@@ -93,22 +93,26 @@
 }
 
 .joblist .top.date {
-  width: auto;
+  float: left;
 }
 
 .joblist .top.jobtitle {
   color: #DD0033;
   font-size: 110%;
-  width: auto;
+  float: left;
+  clear: both;
 }
 
-.joblist .top.courses,
+.joblist .top.courses {
+  float: right;
+}
+
 .joblist .top.website {
-  width: 23%;
   float: right;
 }
 
 .joblist .bottom {
+  clear: both;
   display: inline-block;
   font-size: 115%;
   width: 96%;

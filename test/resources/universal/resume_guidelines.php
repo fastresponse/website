@@ -1,6 +1,4 @@
-<?php
-?>
-<h2>Resume Guidelines</h2>
+<h2 class="textcenter">Resume Guidelines</h2>
 <p>Writing a good resume is a key part to beginning your job search. There is no set standard resume style or format. These will help you with the essentials you need to begin.
 
 <h3>Basic Resume Formatting</h3>

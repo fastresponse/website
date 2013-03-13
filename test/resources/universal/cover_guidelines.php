@@ -1,4 +1,4 @@
-<h2>Cover Letter Guidelines</h2>
+<h2 class="textcenter">Cover Letter Guidelines</h2>
 <p>First impressions count in the job search, and that's why a dynamite cover letter can mean the difference between success and failure in your healthcare job search. But what makes a winning healthcare cover letter?</p>
 
 <h3>Get to the Point</h3>

@@ -1,5 +1,5 @@
 <h3><?= $course_title ?> Certifications to Include</h3>
-<ul>
+<ul class="bullets">
   <li>California State Certified Phlebotomy Technician, CPT-1, (Certificate Number: CPT87645), Expiration date</li>
   <li>BLS - American Heart Association, Expiration date</li>
   <li>Basic First Aid, Expiration date</li>

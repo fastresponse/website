@@ -1,8 +1,10 @@
-<h2 style="text-align: center;">Keywords</h2>
+<h2 class="textcenter">Resume Keywords</h2>
 
 <p>In today's job market, your resume will probably go through at least one keyword search before it lands on an employer's desk. In order to pass that search, you need to have the right list of keywords for your resume and you need to know how and where to put those keywords on your resume.</p>
 
 <p>Each list of keywords is determined and entered into the engine do the resume search by the recruiter or hiring manager who's looking for a job seeker to fill a job opening. She or he makes that list based on the job requirements. Be sure to read the job listing thoroughly and customize your resume accordingly.</p>
+
+<img src="/images/Keywords-01.png" alt="Keywords" style="float: right; margin-right: 5%;" />
 
 <h3>What are resume &amp; cover letter keywords?</h3>
 <ul>

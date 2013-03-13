@@ -190,7 +190,7 @@ function resizeIframe(obj) {
 function setSource(obj, loc, replace) {
   obj = findObj(obj);
   if (!obj) return;
-  if (!replace && (obj.src || obj.src != "")) return;
+  if (!replace && obj.src && obj.src != "") return;
   obj.src = loc;
 }
 

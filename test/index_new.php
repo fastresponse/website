@@ -341,6 +341,7 @@
 	      </td>
 	    </tr>
 
+            <!--
 	    <tr>
 	      <td>
 		<a href="resources/paramedic/" class="btn buttontext lines-2">
@@ -349,6 +350,7 @@
 		</a>
               </td>
 	    </tr>
+            -->
 
 	    <tr>
 	      <td>

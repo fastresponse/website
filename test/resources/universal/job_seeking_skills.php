@@ -1,10 +1,10 @@
-<h2 style="text-align: center;">Job Seeking Skills</h2>
+<h2 class="textcenter">Job Seeking Skills</h2>
 
 <p>Finding a job is a job within itself! A new career is not going to come to you without effort. An effective job search requires that you actively pursue leads from a variety of sources.</p>
 
 <p>Each day, make it your goal to accomplish at least one of the following action items:</p>
 
-<img src="/images/interview-01.png" alt="" style="float: right;" />
+<img src="/images/Resume Magnifying Glass-01.png" alt="" style="float: right;" />
 
 <ol class="bullets bold red">
 

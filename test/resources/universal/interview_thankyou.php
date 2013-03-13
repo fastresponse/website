@@ -1,5 +1,6 @@
-<h2 style="text-align: center;">Sample Email - Thank You Letter</h2>
+<h2 class="textcenter">Sample Email - Thank You Letter</h2>
 
+<div class="paper">
 <p>
 To:  Joan.smith@company.com<br />
 Subject: Thank You - Position<br />
@@ -21,3 +22,4 @@ mikespringer@gmail.com<br />
 (555) 555-5555<br />
 LinkedIn: linkedin.com/in/mikespringer<br />
 </p>
+</div>

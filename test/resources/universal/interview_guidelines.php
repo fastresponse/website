@@ -1,4 +1,4 @@
-<h2>Interview Guidelines</h2>
+<h2 class="textcenter">Interview Guidelines</h2>
 <h3>Before the Interview:</h3>
 <ul>
   <li>Prepare by learning as much as you can about the organization via their website.</li>

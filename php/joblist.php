@@ -12,7 +12,8 @@ function formatweblink($company_data = null) {
   // if website exists, wrap the name in a link, else just use the name
   if (array_key_exists('website', $company_data)) {
     $company_data['weblink'] =
-      "<a href=\"{$company_data['website']}\">{$company_data['name']}</a>\n"
+      "<a href=\"{$company_data['website']}\" target=\"_blank\">" .
+      $company_data['name'] . "</a>\n"
     ;
   }
   else {
@@ -127,8 +128,8 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
     $ret .= "<div class=\"container\" onClick=\"toggleShow(this);\">\n";
 
     $ret .= "<div class=\"top date\">{$entry['showdate']}</div>\n";
-    $ret .= "<div class=\"top jobtitle\">" . $entry['jobtitle'] . "</div>\n";
     $ret .= "<div class=\"top courses\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
+    $ret .= "<div class=\"top jobtitle\">" . $entry['jobtitle'] . "</div>\n";
     $ret .= "<div class=\"top website\" title=\"{$company_data['full_contact_info']}\">" . $company_data['weblink'] . "</div>\n";
 
     $ret .= "<div class=\"bottom hidden\">\n";

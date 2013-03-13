@@ -1,3 +1,6 @@
+<h2 class="textcenter">Sample Cover Letter - When Referred</h2>
+
+<div class="paper">
 <p>
 [Your Name]<br />
 [Street Address]<br />
@@ -33,3 +36,4 @@ Sincerely,<br />
 [Your Name]<br />
 Enclosure<br />
 </p>
+</div>

@@ -5,10 +5,14 @@ htaccess and htpasswd must be renamed on the server to:
 
 Contents of .htpasswd is a list of username:password lines.
 The password is just an MD5 hash.
+This file should not be placed in any web-accessible directory,
+put it one folder up.
 
 The .htaccess file must have the full path to the .htpasswd file,
 as it appears on the server. As of this writing the web root is:
 /services/webpages/f/a/fastresponse.org/public/
+So .htpasswrd should go in:
+/services/webpages/f/a/fastresponse.org/
 
 This website can generate both files if needed:
 http://www.tools.dynamicdrive.com/password/

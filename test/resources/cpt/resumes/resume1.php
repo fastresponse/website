@@ -1,3 +1,8 @@
+<h2 class="textcenter" style="margin-bottom: 0;">Sample <?= $course_title ?> Resume</h2>
+<h4 class="textcenter" style="margin-top: 0;">(<a href="<?= "{$dir}/resumes/{$course_abbr} Resume.doc" ?>">download</a>)</h4>
+
+
+<div class="paper">
 <h2 style="text-align: center;">Karen L. Smith</h2>
 <div style="text-align: center;">9251 Oak Drive, Berkeley, CA 94704 (510) 849-8792, karenlsmith@gmail.com</div>
 
@@ -58,4 +63,4 @@ American Red Cross, Oakland, CA<br />
 Volunteer - 60 hours<br />
 
 <h4 style="text-align: center;">References Available upon Request</h4>
-
+</div>
