@@ -1,5 +1,5 @@
 <h2 class="textcenter" style="margin-bottom: 0;">Sample <?= $course_title ?> Resume</h2>
-<h4 class="textcenter" style="margin-top: 0;">(<a href="<?= "{$dir}/resumes/{$course_abbr} Resume.doc" ?>">download</a>)</h4>
+<h4 class="textcenter" style="margin-top: 0;">(<a href="<?= "{$dir}/resumes/{$course_abbr} Sample Resume.doc" ?>">download</a>)</h4>
 
 <div class="paper">
 <h2 style="text-align: center;">Rick M. Kantor</h2>

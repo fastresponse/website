@@ -22,10 +22,66 @@ var vidnumbers = {
   'EMT Sager Traction Splint' : 1004507,
   'EMT Skin Assessment' : 1003688,
   'EMT Suctioning' : 1004509,
+  'Sample Interview' : 1004509,
 };
 
+// this function will remove the padding-bottom css on the container it fills
+// if the container starts with 0 height
+function insertVideo(container, vidname, replace, width, height) {
+  container = findObj(container);
+  if (!container) return;
+  if (!replace && container.getElementsByClassName('video-content').length > 0) return;
+
+  var num = vidnumbers[vidname];
+  var str = '';
+
+  // default values
+  if (typeof(width) === 'undefined') width = "448";
+  if (typeof(height) === 'undefined') height = "306";
+
+  if (width == "max") width = container.clientWidth;
+  if (height == "max") {
+    height = container.clientHeight;
+    if (height == "0") {
+      // default height/width ratio
+      container.style.paddingBottom = "60%";
+      height = container.clientHeight;
+      container.style.paddingBottom = "0";
+    }
+  }
+
+  if (!num) {
+    header = 'There was a problem finding your video.';
+    header += '<br />';
+    header += 'Please try again later.';
+  }
+  else {
+    header = vidname;
+    /* JS doesn't have a <<<heredoc syntax, sorry... */
+    str = '\
+<div class="video-content">\
+  <object data="http://view.vzaar.com/' + num + '/flashplayer" class="video-object" type="application/x-shockwave-flash" \
+    height=' + height + ' width=' + width + '>\
+    <param name="allowFullScreen" value="true" />\
+    <param name="allowScriptAccess" value="always" />\
+    <param name="wmode" value="transparent" />\
+    <param name="movie" value="http://view.vzaar.com/' + num + '/flashplayer" />\
+    <param name="flashvars" value="border=none&amp;colourSet=blue&amp;showplaybutton=true" />\
+    <video controls class="video-element" onclick="this.play();" poster="http://view.vzaar.com/' + num + '/image" \
+      preload="none" src="http://view.vzaar.com/' + num + '/video" \
+      height=' + height + ' width=' + width + '></video>\
+  </object>\
+</div>\
+';
+  }
+
+  container.innerHTML =
+    '<div class="video-title">' + header + '</div>' + "\n" + str;
+}
+
 function choosevid(obj, vidname) {
-  /* JS doesn't have a <<<heredoc syntax, sorry... */
+  insertVideo('videobox', vidname, true);
+  /*
   var str = '\
 <div class="vzaar_media_player">\
   <object data="http://view.vzaar.com/VIDNUM/flashplayer" id="video" type="application/x-shockwave-flash" height="306" width="448">\
@@ -56,5 +112,6 @@ function choosevid(obj, vidname) {
 
   document.getElementById("videobox").innerHTML =
     '<h3 id="vidtitle" class="video-title">' + header + '</h3>' + "\n" + str;
+  */
 }
 

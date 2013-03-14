@@ -146,6 +146,13 @@ function showSubSection(theparent, id) {
 }
 
 
+var navigated = false;
+function navigateToSection(section, id, navsection, navid, navclass) {
+  showSubSection(section, id);
+  classOnSubSection(navsection, navid, navclass);
+  navigated = true;
+}
+
 
 function activateOne(obj) {
   for (var j = 0; j < sectionparents.length; j++) {

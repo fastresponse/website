@@ -1,4 +1,5 @@
-<h2 class="textcenter">Sample Cover Letter - When Not Referred</h2>
+<h2 class="textcenter" style="margin-bottom: 0;">Sample Cover Letter - When Not Referred</h2>
+<h4 class="textcenter" style="margin-top: 0;">(<a href="../universal/covers/Cover Letter - Not Referred.doc">download</a>)</h4>
 
 <div class="paper">
 <p>

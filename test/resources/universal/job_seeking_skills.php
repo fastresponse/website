@@ -4,8 +4,6 @@
 
 <p>Each day, make it your goal to accomplish at least one of the following action items:</p>
 
-<img src="/images/Resume Magnifying Glass-01.png" alt="" style="float: right;" />
-
 <ol class="bullets bold red">
 
   <li>

@@ -29,7 +29,7 @@
 <p>An unforgivable error some job seekers make is failing to follow up after sending their cover letter and resume. If the name of a hiring manager or current employee is available, follow-up, as soon as possible after submitting your application materials.</p>
 
 <h3>Avoid</h3>
-<ul>
+<ul class="bullets">
   <li>Addressing a letter recipient by anything other than his name. Avoid &quot;Dear Hiring Manager&quot; at all costs.</li>
   <li>Writing a canned, generic letter that looks like it was copied from a book.</li>
   <li>Starting the first paragraph and too many other sentences with &quot;I.&quot;</li>

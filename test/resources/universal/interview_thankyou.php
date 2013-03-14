@@ -1,4 +1,6 @@
-<h2 class="textcenter">Sample Email - Thank You Letter</h2>
+<h2 class="textcenter" style="margin-bottom: 0;">Sample Email - Thank You Letter</h2>
+<h4 class="textcenter" style="margin-top: 0;">(<a href="../universal/Sample Email Thank You Letter.doc">download</a>)</h4>
+
 
 <div class="paper">
 <p>

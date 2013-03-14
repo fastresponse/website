@@ -71,12 +71,17 @@ function query_company_list($dbh) {
   return db_query($dbh, $q_list, $params);
 }
 
-function query_companies_name_web($dbh) {
+function query_companies_web_by_course($dbh, $course = null) {
   $q_list =
     "SELECT name, website
     FROM companies"
   ;
   $params = array();
+
+  if ($course) {
+    $q_list .= " WHERE FIND_IN_SET(:course, courses) > 0";
+    $params[':course'] = $course;
+  }
 
   return db_query($dbh, $q_list, $params);
 }
@@ -148,13 +153,13 @@ $streetaddr, $city, $state, $phone, $contact) {
   $params = array(
     ':name' => $name,
     ':website' => $website,
-    ':apply' => $apply,
+    ':apply' => stripslashes($apply),
     ':courses' => $courses,
     ':streetaddr' => $streetaddr,
     ':city' => $city,
     ':state' => $state,
     ':phone' => $phone,
-    ':contact' => $contact,
+    ':contact' => stripslashes($contact),
   );
 
   return db_insert($dbh, $i_src, $params);
@@ -179,11 +184,11 @@ $requirements, $contact, $apply, $text) {
     ':postdate' => $date,
     ':courses' => $courses,
     ':company' => $company,
-    ':jobtitle' => $jobtitle,
-    ':requirements' => $requirements,
-    ':contact' => $contact,
-    ':apply' => $apply,
-    ':text' => $text,
+    ':jobtitle' => stripslashes($jobtitle),
+    ':requirements' => stripslashes($requirements),
+    ':contact' => stripslashes($contact),
+    ':apply' => stripslashes($apply),
+    ':text' => stripslashes($text),
   );
 
   return db_insert($dbh, $i_jobpost, $params);

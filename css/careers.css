@@ -155,16 +155,16 @@
 }
 
 .joblist .bottom .reqs ul {
-  padding-left: 0;
+  padding-left: 1em;
   margin-left: 0;
   margin-bottom: 0;
-  list-style-position: inside;
+  /*list-style-position: inside;*/
 }
 .joblist .bottom .reqs li {
   margin-left: 0;
   padding-left: 0;
   /* this forces it into two columns */
-  width: 49%;
+  width: 100%;
   float: left;
 }
 

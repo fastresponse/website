@@ -46,6 +46,8 @@
   </li>
 </ul>
 
+<img src="/images/Resume Magnifying Glass-01.png" alt="" style="float: right;" />
+
 <p>Use a common font like Times New Roman.</p>
 <p>Use the same font and size throughout. You may enlarge your name so it stands out. </p>
 <p>Keep resume to 1 page. </p>

@@ -126,6 +126,20 @@
       height: 100%;
       position: relative;
     }
+    #interviewvideo {
+      text-align: center;
+    }
+    #interviewvideo .video-title {
+      color: white;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      font-weight: bold;
+      font-size: 1.5em;
+      margin: 0.83em 0;
+    }
+    #interviewvideo .video-content {
+      margin: 0 auto;
+    }
     .paper {
       color: black;
       background-color: rgb(220, 220, 220);
@@ -178,7 +192,7 @@
 
 </head>
 
-<body onLoad="showSubSection('main', '<?= $section ?>'); classOnSubSection('sidebar_buttons', 'sidebar_btn_<?= $section ?>', 'glow-yellow');">
+<body onLoad="if (!navigated) navigateToSection('main', '<?= $section ?>', 'sidebar_buttons', 'sidebar_btn_<?= $section ?>', 'glow-yellow');">
 
   <div id="page">
 
@@ -199,33 +213,33 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
-	    <a href="#" id="sidebar_btn_carsvcs" class="btn3 lines-2 glow-yellow" onClick="showSubSection('main', 'carsvcs'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+	    <a href="#" id="sidebar_btn_carsvcs" class="btn3 lines-2 glow-yellow" onClick="navigateToSection('main', 'carsvcs', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>CAREER<br />SERVICES</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" id="sidebar_btn_resumes" class="btn3 lines-1" onClick="showSubSection('main', 'resumes'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+	    <a href="#" id="sidebar_btn_resumes" class="btn3 lines-1" onClick="navigateToSection('main', 'resumes', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>RESUMES</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" id="sidebar_btn_interviews" class="btn3 lines-2" onClick="showSubSection('main', 'interviews'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+	    <a href="#" id="sidebar_btn_interviews" class="btn3 lines-2" onClick="navigateToSection('main', 'interviews', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>INTERVIEW<br />SKILLS</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" id="sidebar_btn_jobsearch" class="btn3 lines-1" onClick="showSubSection('main', 'jobsearch'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+	    <a href="#" id="sidebar_btn_jobsearch" class="btn3 lines-1" onClick="navigateToSection('main', 'jobsearch', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>JOB SEARCH</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" id="sidebar_btn_extcert" class="btn3 lines-2" onClick="showSubSection('main', 'extcert'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+	    <a href="#" id="sidebar_btn_extcert" class="btn3 lines-2" onClick="navigateToSection('main', 'extcert', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>EXTERNSHIP &amp;<br />CERTIFICATION</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
             <?php if (file_exists("../$course/videos.php")): ?>
-	      <a href="#" id="sidebar_btn_videos" class="btn3 lines-1" onClick="showSubSection('main', 'videos'); classOnSubSection('sidebar_buttons', this.id, 'glow-yellow');">
+	      <a href="#" id="sidebar_btn_videos" class="btn3 lines-1" onClick="navigateToSection('main', 'videos', 'sidebar_buttons', this.id, 'glow-yellow');">
 		<div>VIDEOS</div>
 		<div></div><div></div><div></div><div></div>
 	      </a>
@@ -245,22 +259,22 @@
 	  <div id="resumes" class="hidden">
 
 	    <div class="smallnavbar" style="margin-bottom: 2em;">
-	      <div id="resumeguidelines_nav" class="column col6 underline pointer highlight" onClick="showSubSection('resumes', 'resumeguidelines'); classOnSubSection('resume_nav', this.id, 'highlight');">
+	      <div id="resumeguidelines_nav" class="column col6 underline pointer highlight" onClick="navigateToSection('resumes', 'resumeguidelines', 'resume_nav', this.id, 'highlight');">
 		Resume<br />Guidelines
 	      </div>
-	      <div id="resumekeywords_nav" class="column col6 underline pointer" onClick="showSubSection('resumes', 'resumekeywords'); classOnSubSection('resume_nav', this.id, 'highlight');">
+	      <div id="resumekeywords_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'resumekeywords', 'resume_nav', this.id, 'highlight');">
 		Resume<br />Keywords
 	      </div>
-	      <div id="courseresume_nav" class="column col6 underline pointer" onClick="showSubSection('resumes', 'courseresume'); classOnSubSection('resume_nav', this.id, 'highlight');">
+	      <div id="courseresume_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'courseresume', 'resume_nav', this.id, 'highlight');">
 		Sample<br />Resume
 	      </div>
-	      <div id="coverguidelines_nav" class="column col6 underline pointer" onClick="showSubSection('resumes', 'coverguidelines'); classOnSubSection('resume_nav', this.id, 'highlight');">
+	      <div id="coverguidelines_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'coverguidelines', 'resume_nav', this.id, 'highlight');">
 		Cover Letter<br />Guidelines
 	      </div>
-	      <div id="cover1_nav" class="column col6 underline pointer" onClick="showSubSection('resumes', 'cover1'); classOnSubSection('resume_nav', this.id, 'highlight');">
+	      <div id="cover1_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'cover1', 'resume_nav', this.id, 'highlight');">
 		Sample Cover -<br />Referred
 	      </div>
-	      <div id="cover2_nav" class="column col6 underline pointer" onClick="showSubSection('resumes', 'cover2'); classOnSubSection('resume_nav', this.id, 'highlight');">
+	      <div id="cover2_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'cover2', 'resume_nav', this.id, 'highlight');">
 		Sample Cover -<br />Not Referred
 	      </div>
 	    </div>
@@ -294,17 +308,17 @@
 	  <div id="interviews" class="hidden">
 
 	    <div class="smallnavbar" style="margin-bottom: 2em;">
-	      <div id="interviewguidelines_nav" class="column col4 underline pointer highlight" onClick="showSubSection('interview', 'interviewguidelines'); classOnSubSection('interview_nav', this.id, 'highlight');">
+	      <div id="interviewguidelines_nav" class="column col4 underline pointer highlight" onClick="navigateToSection('interview', 'interviewguidelines', 'interview_nav', this.id, 'highlight');">
 		Interview<br />Guidelines
 	      </div>
-	      <div id="interviewquestions_nav" class="column col4 underline pointer" onClick="showSubSection('interview', 'interviewquestions'); classOnSubSection('interview_nav', this.id, 'highlight');">
+	      <div id="interviewquestions_nav" class="column col4 underline pointer" onClick="navigateToSection('interview', 'interviewquestions', 'interview_nav', this.id, 'highlight');">
 		Sample Interview<br />Questions
 	      </div>
-	      <div id="interviewtvideo_nav" class="column col4 underline pointer" onClick="showSubSection('interview', 'interviewvideo'); classOnSubSection('interview_nav', this.id, 'highlight');">
+	      <div id="interviewvideo_nav" class="column col4 underline pointer" onClick="navigateToSection('interview', 'interviewvideo', 'interview_nav', this.id, 'highlight'); insertVideo('interviewvideo', 'Sample Interview', false, '600', '400');">
 		Sample Interview<br />Video
 	      </div>
-	      <div id="interviewthankyou_nav" class="column col4 underline pointer" onClick="showSubSection('interview', 'interviewthankyou'); classOnSubSection('interview_nav', this.id, 'highlight');">
-		Sample Thank You<br />Letters
+	      <div id="interviewthankyou_nav" class="column col4 underline pointer" onClick="navigateToSection('interview', 'interviewthankyou', 'interview_nav', this.id, 'highlight');">
+		Sample Thank You<br />Letter
 	      </div>
 	    </div>
 
@@ -318,7 +332,6 @@
 	      <?php include_once("../universal/interview_thankyou.php"); ?>
 	    </div>
 	    <div id="interviewvideo" class="hidden">
-	      <?php include_once("../universal/interview_video.php"); ?>
 	    </div>
 
 	  </div>
@@ -328,16 +341,11 @@
 	    <h4 class="textcenter">Click an entry to expand</h4>
 
 <?php
-  $all_companies = query_companies_name_web($handle);
+  $all_companies = query_companies_web_by_course($handle, $course_abbr);
   $current = 0;
   // keeping it at an even number so that when you click the middle of
   // the box, your cursor won't then be directly on a company name
-  if ((count($all_companies) % 6) == 0 ||
-      (count($all_companies) % 4) == 1) {
-	$per_line = 6;
-  }
-  else
-    $per_line = 4;
+  $per_line = 4;
   foreach ($all_companies as $c) {
     $weblink = formatweblink($c);
     $current++;
