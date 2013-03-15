@@ -334,7 +334,7 @@
 
 	    <tr>
 	      <td>
-		<a href="resources/ma/" class="btn buttontext lines-1">
+		<a href="resources/cma/" class="btn buttontext lines-1">
 		  CMA Resources
 		  <span></span>
 		</a>

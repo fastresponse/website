@@ -375,7 +375,7 @@
 	    </div>
 
 	    <?php
-	      echo joblist($handle, 'Any', $course);
+	      echo joblist($handle, '1 month', $course);
 	    ?>
 	  </div>
 

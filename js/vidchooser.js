@@ -22,7 +22,7 @@ var vidnumbers = {
   'EMT Sager Traction Splint' : 1004507,
   'EMT Skin Assessment' : 1003688,
   'EMT Suctioning' : 1004509,
-  'Sample Interview' : 1004509,
+  'Sample Interview' : 1203780,
 };
 
 // this function will remove the padding-bottom css on the container it fills
