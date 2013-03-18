@@ -369,7 +369,7 @@
 	    <div class="companypages borderbox radius1em pointer textcenter"
 	      onClick="toggleClassArr(['companytitle', <?= implode($company_ids, ', '); ?>], 'hidden');"
 	    >
-	      <h5 id="companytitle">EMS Employers list</h5>
+	    <h5 id="companytitle"><?= $course_title ?> Employers list</h5>
 
               <?= implode($company_weblinks, "\n"); ?>
 	    </div>

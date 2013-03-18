@@ -7,7 +7,7 @@
 </script>
 
 <div class="leftsidebar2" style="width: 200px;">
-  <h3 class="video-category" onClick="toggleClass('videos-skills', 'hidden');">
+  <h3 class="video-category" onClick="return; toggleClass('videos-skills', 'hidden');">
     EMT Skills Videos
   </h3>
   <ul id="videos-skills" class="video-list">
