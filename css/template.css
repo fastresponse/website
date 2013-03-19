@@ -700,6 +700,8 @@ div.pointer,
   -webkit-box-sizing: border-box;
   border: 2px solid #2211CC;
   border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
   padding: 1em;
   font-weight: bold;
   width: 100%;
@@ -724,6 +726,55 @@ div.pointer,
 .announcement div.times {
   font-weight: normal;
   font-size: 100%;
+}
+
+.announcement.banner {
+  width: auto;
+  border: 3px solid #FFFF99;
+  background: rgb(0,0,0);
+
+  box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+  -moz-box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+  -webkit-box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
+	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+
+  background: -webkit-gradient(linear, left top, right top,
+                               color-stop(0%,rgba(0,0,0,0.15)),
+			       color-stop(100%,rgba(0,0,0,0))),
+              -webkit-gradient(radial, center center, 0px, center center, 100%,
+	                       color-stop(10%,rgba(0,0,0,1)),
+			       color-stop(100%,rgba(17,17,102,1)));
+
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%),
+              -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 10%, rgba(17,17,102,1) 100%);
+
+  background: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%),
+              -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 10%, rgba(17,17,102,1) 100%);
+
+  background: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%),
+              -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 10%, rgba(17,17,102,1) 100%);
+
+  background: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%),
+              -o-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 10%, rgba(17,17,102,1) 100%);
+
+  background: linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%),
+              radial-gradient(ellipse at center, rgba(0,0,0,1) 10%, rgba(17,17,102,1) 100%);
+  
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#552211CC',GradientType=1 );
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#552211CC',GradientType=1 )";
+  
+}
+.announcement.banner h3 {
+  margin: 0;
+  font-size: 140%;
 }
 
 /* end announcement */
