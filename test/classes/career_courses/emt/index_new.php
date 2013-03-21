@@ -37,6 +37,79 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
+  <style type="text/css">
+    .boxlist {
+      background-color: #1e2c54;
+      width: 95%;
+      padding: 1%;
+      margin: 0 auto;
+      font-size: small;
+      font-weight: bold;
+      font-family: Verdana, sans-serif;
+      border: solid 1px white;
+      border-radius: 15px;
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    .boxlist ul {
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+      padding-left: 2em;
+      margin-left: 0;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    .boxlist h2,
+    .boxlist h3 {
+      letter-spacing: 0.1em;
+      word-spacing: 0.1em;
+    }
+    .boxlist h2 {
+      margin-left: 22%;
+    }
+    .boxlist h3 {
+      margin-left: 24%;
+    }
+
+    .testimonials img {
+      height: 6.5em;
+      width: 6.5em;
+      float: left;
+    }
+    .testimonials table {
+      width: 98%;
+      margin: 0 auto;
+      border-spacing: 30px 20px;
+    }
+    .testimonials td {
+      vertical-align: top;
+      padding: 1% 1%;
+      width: 50%;
+    }
+    .testimonials .head td {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+    .testimonials q {
+      display: block;
+      margin-bottom: 1%;
+      padding-left: 7em;
+    }
+    .testimonials cite {
+      display: block;
+      padding-left: 7em;
+    }
+    .testimonials .nopic q,
+    .testimonials .nopic cite {
+      padding-left: 0;
+    }
+  </style>
+
 </head>
 
 <body style="font-family: Arial, sans-serif;">
@@ -127,69 +200,75 @@
 	        Our students' pass rate for the NREMT surpasses the national average!
               </p>
 	      
-	      <!--
-	      <p>
-		Emergency Medical Technicians (EMTs) are trained medical workers who respond to medical emergencies for the injured and ill. They often work in ambulances, hospital emergency departments, and fire departments. Our extensive five-week EMT course provides the most effective and expedient platform for our graduates to succeed in the EMT field.
-	      </p>
-
-	      <p>
-	        From day one, students will get hands-on experience practicing their skills in realistic scenarios in the classroom and the Fast Response scenario based Simulation Lab. The Simulation Lab has a High-Fidelity ALS manikin, an ambulance simulator and authentic medical equipment for students to gain experience and confidence. After the completion of the class, there is a guaranteed 18-hour externship that gives all of our students the experience of working in an ambulance with local EMS agencies and in an Emergency Department at a local hospital.
-	      </p>
-
-	      <p>
-		The EMT course is structured to help students pass the national examination that is required for state certification, the NREMT (National Registry of Emergency Medical Technicians). <span style="font-weight: bold;" class="yellow">Our students' pass rate for the NREMT surpasses the national average!</span>
-	      </p>
-	      -->
+	      <div class="section">
+		<div class="boxlist">
+		  <h3>Our programs provide:</h3><br />
+		  <ul class="checkmark">
+		    <li>Free tutoring</li>
+		    <li>NREMT test preparation</li>
+		    <li>CPR certification included</li>
+		    <li>Flexible payment options</li>
+		  </ul>
+		  <ul class="checkmark">
+		    <li>Job opening notifications (unlimited)</li>
+		    <li>Career services assistance</li>
+		    <li>Maximum Student to Instructor skills ratio of 10:1</li>
+		  </ul>
+		</div>
+	      </div>
 
 	    </div>
 
 	  </div>
 
-	  <div class="section">
-	    <div class="collapsebox" style="font-size: small; font-weight: bold; font-family: Verdana, sans-serif; border: solid 1px white; border-radius: 15px; -moz-border-radius: 15px; background-color: #1e2c54; width: 65%; margin-left: 3%; margin-right: auto; padding: 1% 1%; 1% 3%">
-	      <!--
-	      <h3 style="margin: 0 auto 0.5em 33%;">Our programs provide:</h3>
-	      -->
-	      <h3 style="display: inline-block; text-align: center; margin-left: 29%;">Our programs provide:</h3><br />
-	      <ul class="checkmark collapsebox" style="display: inline-block; width: 43%;">
-		<li>Free tutoring</li>
-		<li>NREMT test preparation</li>
-		<li>CPR certification included</li>
-		<li>Flexible payment options</li>
-	      </ul>
-	      <div style="display: inline-block; min-width: 9%; max-width: 15%;"></div>
-	      <ul class="checkmark collapsebox" style="display: inline-block; min-width: 39%; max-width: 45%; vertical-align: top;">
-		<li>Job opening notifications (unlimited)</li>
-		<li>Career services assistance</li>
-		<li style="line-height: 1.65em;">Maximum Student to Instructor skills ratio of 10:1</li>
-	      </ul>
-	    </div>
+	  <div class="section testimonials">
+	    <table>
+	    <tbody>
+	    <!-- using thead and th here had a lot of extra spacing in it -->
+	    <tr class="head">
+	      <td>Messages from our Instructors:</td>
+	      <td>Student Testimonials:</td>
+	    </tr>
+	    <tr>
+	      <td>
+		<img src="/images/instructors/Reyes, Anthony EMT-01.png" alt="" />
+		<q>Fast Response will teach you the knowledge and skills you will need to become a proficient EMT.</q>
+		<cite>-Anthony Reyes, Paramedic</cite>
+		<cite>EMT Instructor</cite>
+	      </td>
+	      <td class="nopic">
+		<q>Fast Response gives you all the tools you need to be a professional in the medical field. The instructors prepare students and give them confidence needed as an EMT. I didn't know what to expect going into the program, yet I came out feeling as if I were born for this. Thank you Fast Response!</q>
+		<cite>-Shane N.</cite>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+		<img src="/images/instructors/Barney, Christopher EMT-01.png" alt="" />
+		<q>I promised Brian an awesome quote sometime soon.</q>
+		<cite>-Chris Barney, Paramedic</cite>
+		<cite>EMT Instructor</cite>
+	      </td>
+	      <td class="nopic">
+		<q>My experience at Fast Response was highly exceptional. The classes worked well with my work schedule, not to mention how flexible the teachers were. They were very helpful and knowledgeable about the material. Upon my completion of the program, I felt very prepared for the work force.</q>
+		<cite>-Jaylin B.</cite>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+		<img src="/images/instructors/McGovern, Monique EMT-01.png" alt="" />
+		<q>Our EMT course provides innovative new techniques to provide excellent hands-on training for all of our students. This enables our students to gain experience, which will help them to land a job in the EMT field quickly.</q>
+		<cite>-Monique McGovern</cite>
+		<cite>EMT Program Administrative Assistant</cite>
+	      </td>
+	      <td class="nopic">
+		<q>If you are searching for an EMT program that will set you up for success, Fast Response is your place! The Fast Response program is highly in-depth and provides a fast-paced and challenging environment that is well worth the investment. Though the program is accelerated, it provides plenty of classroom time to cover the full spectrum of EMT curriculum.  The testing bay (including four areas ranging from residential to back-of-ambulance) provide real-life learning scenarios for effective skills testing.  These areas, coupled with the valuable knowledge of the instructors provides the ideal opportunity for anyone to get the information they need to pass the NREMT and become a well-trained and fully prepared EMT.</q>
+		<cite>-Shane W.</cite>
+	      </td>
+	    </tr>
+	    </tbody>
+	    </table>
 	  </div>
-
-	  <!--
-	  <div class="section">
-	    <div class="column listbox">
-	      <ul class="checkmark">
-		<h3 style="margin-top: 0;">Included in the program:</h3>
-		<li>Comprehensive, accelerated courses</li>
-		<li>CPR Certification the first day of class</li>
-		<li>Maximum Student to Instructor ratio of 10:1 during skills training</li>
-		<li>Simulation lab offers authentic medical scenarios; crucial prepping for real-life medical emergencies</li>
-		<li>Guaranteed 18-hour externship with both Ambulance and Emergency Room experience</li>
-	      </ul>
-	    </div>
-	    <div class="column" style="padding-top: 4%; padding-top: 2%;">
-	      <ul class="bullets">
-		<li>Flexible payment options</li>
-		<li>Convenient location next to Berkeley BART</li>
-		<li>Career services upon graduation including resume building, professional interview skills and job searching</li>
-		<li>Affiliated with California Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
-		<li>Opportunity to participate in community events such as MCI and MOTCO training</li>
-	      </ul>
-	    </div>
-	  </div>
-	  -->
-
+<!--
 	  <div class="section">
 	    <div class="column">
 	      <h3>Messages from our Instructors:</h3>
@@ -241,6 +320,7 @@
 		  <cite>-Shane W.</cite>
 		</div>
 	      </div>
+-->
 
 	      <!--
 	      <div class="testimonial nopic">
