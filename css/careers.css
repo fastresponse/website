@@ -107,7 +107,8 @@
   float: right;
 }
 
-.joblist .top.website {
+.joblist .top.website,
+.joblist .top.companyname {
   float: right;
 }
 

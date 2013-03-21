@@ -92,26 +92,32 @@
       margin-bottom 30px;
       border-collapse: collapse;
     }
-    thead, tbody, tfoot, th, tr, td {
+    thead, tbody, tfoot, tr {
       width: 100%;
     }
     th {
       letter-spacing: 0.1em;
       font-family: Century Gothic, sans-serif;
-      font-size: 150%;
+      font-size: 125%;
       font-weight: bold;
       text-shadow: 2px 3px 8px #350010;
       text-align: center;
-      border-bottom: 1px solid white;
-      padding-bottom: 10px;
+      vertical-align: top;
     }
-    th div {
+    th>div {
       text-shadow: 2px 3px 8px #650010;
-      min-height: 2em;
+      height: 2.5em;
+      width: 90%;
+      margin: 0 auto;
+      padding-bottom: 0.25em;
+      border-bottom: 1px solid white;
+    }
+    th div div.sub {
+      font-size: 0.65em;
     }
     td {
       text-align: center;
-      padding-top: 3.5em;
+      padding-top: 3em;
     }
     tr:first-child td {
       padding-top: 2em;
@@ -119,6 +125,51 @@
 
     table .btn {
       width: 45%;
+    }
+
+    .logotext {
+      float: left;
+      width: 45%;
+    }
+    .logotext img {
+      display: block;
+      width: 60%;
+    }
+    .logotext p {
+      font-weight: bold;
+      font-style: italic;
+      width: 90%;
+      margin: 0 auto;
+    }
+    #mainslideshow {
+      float: right;
+      max-width: 50%;
+      margin-right: 3%;
+      z-index: 0;
+    }
+    #banners .section {
+      width: 100%;
+      border-bottom: 1px solid white;
+      border-bottom: none;
+      margin: 0 0 3em;
+    }
+    #banners .banner {
+      margin: 1.2em 2em;
+      margin-top: 0;
+    }
+    #banners .banner.left {
+      float: left;
+    }
+    #banners .banner.right {
+      float: right;
+    }
+    #banners .banner .btn {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    #banners .banner .btn>div {
+      width: 100%;
+      text-align: center;
     }
 
   </style>
@@ -133,115 +184,62 @@
       <?php include('./menu/menu.php'); ?>
     </div>
 
-    <div id="head">
-
-      <div style="float: left; width: 40%; height: 100%; margin-left: 10px; position: absolute; z-index: 1;">
-	<img style="display: block;" src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" />
-	<p style="display: block; width: 90%; height: 20%; margin: 0 auto; padding-bottom: 0; font-style: italic; font-weight: bold; margin-top: -18px;">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</p>
-
-	<div style="margin-left: 5%; position: absolute; top: 193px; z-index: 5;">
-	  <a href="/school/info/" class="button buttontext" style="font-size: 120%; width: 26em; height: 4em; vertical-align: bottom;">
-	    <div style="color: #FFA3A3; text-shadow: 4px 6px 9px #000000; width: 26em; margin-left: 0.20em; top: 1.25em;">Contact an Admissions Representative now!</div>
-	    <img src="/images/Button For Info 001 05-2012-01.png" alt="" style="left: 0; width: 26em;" />
-	  </a>
-	</div>
-
+    <div id="head" style="border-bottom: none;">
+      <div class="logotext">
+	<img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" />
+	<p>Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</p>
       </div>
 
-      <div style="position: relative;">
+      <div id="mainslideshow">
+	<!-- filled in by javascript -->
+      </div>
 
-	<div id="mainslideshow" style="float: right; z-index: 0; display: inline; width: 412px; height: 225px; margin-right: 58px;">
-	  <!-- filled in by javascript -->
+      <div class="clearfix"></div>
+    </div> <!-- /head -->
+
+    <div id="banners">
+      <div class="section">
+	<div class="banner left" style="max-width: 46%;">
+	  <a href="school/info/" class="btn buttontext lines-1">
+	    <div style="font-size: 120%; font-family: Georgia, serif; font-style: italic; text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);">
+	      Contact an Admissions Representative Now!
+	    </div>
+	    <span></span>
+	  </a>
 	</div>
-
-	<!-- banner area -->
-	<div style="height: 38px; width: 450px; position: absolute; display: block; z-index: 5; top: 206px; right: 40px; border: 0;" class="banner">
+	<div class="banner right" style="max-width: 50%; width: 412px; margin-right: 3%;">
 	  <a href="classes/continuing_education/cpr/" class="btn buttontext lines-1" style="width: 100%;">
-	    <div style="width: 100%; text-align: center; font-size: 150%; letter-spacing: 0.15em; word-spacing: 0.35em; font-family: Georgia, serif; font-style: italic;">
+	    <div style="font-size: 150%; letter-spacing: 0.15em; word-spacing: 0.35em; font-family: Georgia, serif; font-style: italic;">
 	      <div style="display: inline; font-weight: bold; text-transform: uppercase; font-style: italic; text-shadow: -1px 1px 1px rgba(0,0,0,0.5), 1px -1px 1px rgba(0,0,0,0.5);" class="red">New</div> Low BLS Prices
 	    </div>
 	    <span></span>
 	  </a>
 	</div>
-
+	
+	<div class="clearfix"></div>
       </div>
-      <div class="clearfix"></div>
-
-    </div> <!-- /head -->
+    </div>
 
     <div id="main">
-
-      <div class="section" style="margin-top: 4em;">
-
-	<div class="column col4">
-	<table class="cols-1" cellspacing="0" cellpadding="0">
+      <div class="section">
+	<table>
+	  <colgroup span="4" style="width: 25%;">
+	  </colgroup>
 	  <thead>
-	    <tr><th colspan="2">
-	      <div>Career Courses</div>
-	    </th></tr>
+	    <tr style="background-color: #444455;">
+	      <th colspan="1"><div>Career Courses</div></th>
+	      <th colspan="2"><div>Continuing Education<div class="sub">(EMS &amp; Hospital Personnel)</div></div></th>
+	      <th colspan="1"><div>Student Resources</div></th>
+	    </tr>
 	  </thead>
 	  <tbody>
-
 	    <tr>
 	      <td>
-		<a href="classes/career_courses/emt/" class="btn buttontext lines-2">
+	        <a href="classes/career_courses/emt/" class="btn buttontext lines-2">
 		  <div>Emergency Medical<br />Technician</div>
 		  <span></span>
 		</a>
 	      </td>
-	    </tr>
-            <tr>
-	      <td>
-		<a href="classes/career_courses/phlebotomy/" class="btn buttontext lines-2">
-		  <div>Phlebotomy<br />Technician</div>
-		  <span></span>
-		</a>
-              </td>
-	    </tr>
-	    <tr>
-	      <td>
-		<a href="classes/career_courses/medical_assistant/" class="btn buttontext lines-2">
-		  <div>Clinical Medical<br />Assistant</div>
-		  <span></span>
-		</a>
-	      </td>
-	    </tr>
-            <tr>
-	      <td>
-		<a href="classes/career_courses/paramedic/" class="btn buttontext lines-1">
-		  <div>Paramedic</div>
-		  <span></span>
-		</a>
-              </td>
-	    </tr>
-	    <tr>
-	      <td>
-		<a href="classes/career_courses/sterile_processing_tech/" class="btn buttontext lines-2">
-		  <div>Sterile Processing<br />Technician</div>
-		  <span></span>
-		</a>
-              </td>
-	    </tr>
-
-	  </tbody>
-	</table>
-	</div>
-
-	<div class="column col2">
-	<table class="cols-2" cellspacing="0" cellpadding="0">
-	  <thead>
-	    <tr><th colspan="2">
-	      <div>Continuing Education Courses<br />
-		<div style="font-size: 0.65em; min-height: 0;">
-		  (EMS &amp; Hospital Personnel)
-		</div>
-	      </div>
-	    </th></tr>
-	  </thead>
-
-	  <tbody>
-
-	    <tr>
 	      <td>
 		<a href="classes/continuing_education/cpr" class="btn buttontext lines-2">
 		  <div>Healthcare Provider<br />CPR (BLS)</div>
@@ -253,125 +251,112 @@
 		  <div>Advanced Cardiac<br />Life Support (ACLS)</div>
 		  <span></span>
 		</a>
-              </td>
+	      </td>
+	      <td>
+		<a href="resources/emt/" class="btn buttontext lines-1">
+		  <div>EMT Resources</div>
+		  <span></span>
+		</a>
+	      </td>
 	    </tr>
-
-            <tr>
+	    <tr>
+	      <td>
+		<a href="classes/career_courses/phlebotomy/" class="btn buttontext lines-2">
+		  <div>Phlebotomy<br />Technician</div>
+		  <span></span>
+		</a>
+	      </td>
 	      <td>
 		<a href="classes/continuing_education/pals" class="btn buttontext lines-2">
 		  <div>Pediatric Advanced<br />Life Support (PALS)</div>
 		  <span></span>
 		</a>
-              </td>
+	      </td>
 	      <td>
 		<a href="classes/continuing_education/emt_r" class="btn buttontext lines-1">
 		  <div>EMT Refresher</div>
 		  <span></span>
 		</a>
 	      </td>
+	      <td>
+		<a href="resources/cpt/" class="btn buttontext lines-1">
+		  <div>CPT Resources</div>
+		  <span></span>
+		</a>
+	      </td>
 	    </tr>
-
-            <tr>
+	    <tr>
+	      <td>
+		<a href="classes/career_courses/medical_assistant/" class="btn buttontext lines-2">
+		  <div>Clinical Medical<br />Assistant</div>
+		  <span></span>
+		</a>
+	      </td>
 	      <td>
 		<a href="classes/continuing_education/ecg_basic" class="btn buttontext lines-1">
 		  <div>ECG Basic</div>
 		  <span></span>
 		</a>
-              </td>
+	      </td>
 	      <td>
 		<a href="classes/continuing_education/12_lead_ecg" class="btn buttontext lines-1">
 		  <div>ECG 12-Lead</div>
 		  <span></span>
 		</a>
 	      </td>
+	      <td>
+		<a href="resources/cma/" class="btn buttontext lines-1">
+		  <div>CMA Resources</div>
+		  <span></span>
+		</a>
+	      </td>
 	    </tr>
-
-            <tr>
+	    <tr>
+	      <td>
+		<a href="classes/career_courses/paramedic/" class="btn buttontext lines-1">
+		  <div>Paramedic</div>
+		  <span></span>
+		</a>
+	      </td>
 	      <td>
 		<a href="classes/continuing_education/ecg_tech" class="btn buttontext lines-1">
 		  <div>ECG Technician</div>
 		  <span></span>
 		</a>
-              </td>
+	      </td>
 	      <td>
 		<a href="classes/continuing_education/itls" class="btn buttontext lines-2">
 		  <div>International Trauma<br />Life Support (ITLS)</div>
 		  <span></span>
 		</a>
 	      </td>
-	    </tr>
-
-	  </tbody>
-	</table>
-	</div>
-
-	<div class="column col4">
-	<table class="cols-1" cellspacing="0" cellpadding="0">
-	  <thead>
-	    <tr><th colspan="1">
-	      <div>Student Resources</div>
-	    </th></tr>
-	  </thead>
-	  <tbody>
-
-	    <tr>
-	      <td>
-		<a href="resources/emt/" class="btn buttontext lines-1">
-		  EMT Resources
-		  <span></span>
-		</a>
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td>
-		<a href="resources/cpt/" class="btn buttontext lines-1">
-		  CPT Resources
-		  <span></span>
-		</a>
-              </td>
-	    </tr>
-
-	    <tr>
-	      <td>
-		<a href="resources/cma/" class="btn buttontext lines-1">
-		  CMA Resources
-		  <span></span>
-		</a>
-	      </td>
-	    </tr>
-
-            <!--
-	    <tr>
-	      <td>
-		<a href="resources/paramedic/" class="btn buttontext lines-2">
-		  Paramedic<br />Resources
-		  <span></span>
-		</a>
-              </td>
-	    </tr>
-            -->
-
-	    <tr>
 	      <td>
 		<a href="resources/spt/" class="btn buttontext lines-1">
-		  SPT Resources
+		  <div>SPT Resources</div>
 		  <span></span>
 		</a>
-              </td>
+	      </td>
 	    </tr>
-
+	    <tr>
+	      <td>
+		<a href="classes/career_courses/sterile_processing_tech/" class="btn buttontext lines-2">
+		  <div>Sterile Processing<br />Technician</div>
+		  <span></span>
+		</a>
+	      </td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
 	  </tbody>
 	</table>
-	</div>
-
-      </div> <!-- /section -->
+      </div>
 
       <div class="section">
 	<h4 style="text-align: center; max-width: 75%; margin: 1em auto 1em; letter-spacing: 0.12em;">This school has been approved by the <a style="white-space: nowrap;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and Postsecondary Education.</a></h4>
       </div>
 
-      <div class="clearfix" style="min-height: 0.1em;"></div>
+      <div class="clearfix vspacer"></div>
 
     </div> <!-- /main -->
 

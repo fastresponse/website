@@ -807,38 +807,24 @@ div.pointer,
   /*background-color: #1e2c54;*/
 }
 
-.photostrip div {
-  min-height: 100px;
+.photostrip div img {
+  width: 70%;
+  margin: 0 auto;
 }
 
-.pics-1 img,
 .pics-1 div {
   width: 90%;
 }
-
-.pics-2 img,
 .pics-2 div {
-  width: 46%;
-  margin-right: 2%;
+  width: 48%;
 } 
-
-.pics-3 img,
 .pics-3 div {
-  width: 31%;
-  margin-right: 2%;
+  width: 33%;
 }
-
-.pics-4 img,
 .pics-4 div {
-  width: 23%;
-  margin-right: 2%;
+  width: 24%;
 }
 
-/* stupid IE8 doesn't support :last-child */
-.photostrip img.last,
-.photostrip div.last {
-  margin-right: 0;
-}
 
 .testimonial {
   clear: left;

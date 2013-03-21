@@ -1,64 +1,13 @@
-/*
-
-function hasClass(obj, name) {
-  return (' ' + obj.className + ' ').indexOf(' ' + name + ' ') > -1;
-}
-
-function addClass(obj, name) {
-  obj.className += (obj.className ? ' ' : '') + name;
-}
-
-function removeClass(obj, name) {
-  if (!obj.className) return;
-  var temparr = obj.className.split(' ');
-  var newarr = new Array;
-  for (var i = 0; i < temparr.length; i++) {
-    if (temparr[i] != name)
-      newarr.push(temparr[i]);
-  }
-  obj.className = newarr.join(' ');
-}  
-
-function findObj(arg) {
-  var obj;
-
-  if (typeof(arg) == "string")
-    obj = document.getElementById(arg);
-  else
-    obj = arg;
-
-  return obj;
-}
-
-function toggleClass(arg, classname) {
-  var obj = findObj(arg);
-  if (!obj)
-    return;
-
-  if (hasClass(obj, classname)) {
-    removeClass(obj, classname);
-  }
-  else {
-    addClass(obj, classname);
-  }
-}
-
-function findPos(obj) {
-  var curtop = 0;
-  if (obj.offsetParent) {
-    do {
-      curtop += obj.offsetTop;
-    } while (obj = obj.offsetParent);
-  }
-  return curtop;
-}
-*/
 
 function toggleShow(obj) {
   var chs = obj.children;
   for (var i = 0; i < chs.length; i++) {
     el = chs[i];
-    if (hasClass(el, "bottom")) {
+    if (
+      hasClass(el, "bottom") ||
+      hasClass(el, "website") ||
+      hasClass(el, "companyname")
+    ) {
       toggleClass(el, "hidden");
     }
   }

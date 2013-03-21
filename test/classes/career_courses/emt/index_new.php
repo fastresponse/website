@@ -108,6 +108,13 @@
     .testimonials .nopic cite {
       padding-left: 0;
     }
+    .pics-3 div {
+      width: 32%;
+    }
+    .pics-3 img {
+      width: 150px;
+      margin: 0 auto;
+    }
   </style>
 
 </head>
@@ -364,12 +371,16 @@
 	  </div>
 	  -->
 
-	  <div class="section photostrip pics-3" style="text-align: center;">
-	    <a href="/photos/emt/index.html#emt">
+	  <div class="section photostrip pics-3">
+	    <div><a href="/photos/emt/index.html#emt">
 	      <img src="/images/EMT Patient Gurney Woman Man FRAME 001-01 scaled.png" alt="" />
+	    </a></div>
+	    <div><a href="/photos/emt/index.html#emt">
 	      <img src="/images/Ambulance EMT Firefighter 003-01 scaled.png" alt="" />
+	    </a></div>
+	    <div><a href="/photos/emt/index.html#emt">
 	      <img src="/images/Sim-Man 002-01 scaled.png" alt="" class="last" />
-	    </a>
+	    </a></div>
 	  </div>
 
 	  <div class="section">

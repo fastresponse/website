@@ -233,10 +233,12 @@
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 
-	    <a href="#" id="sidebar_btn_extcert" class="btn3 lines-2" onClick="navigateToSection('main', 'extcert', 'sidebar_buttons', this.id, 'glow-yellow');">
-	      <div>EXTERNSHIP &amp;<br />CERTIFICATION</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+            <?php if (file_exists("../$course/externship_certification.php")): ?>
+	      <a href="#" id="sidebar_btn_extcert" class="btn3 lines-2" onClick="navigateToSection('main', 'extcert', 'sidebar_buttons', this.id, 'glow-yellow');">
+		<div>EXTERNSHIP &amp;<br />CERTIFICATION</div>
+		<div></div><div></div><div></div><div></div>
+	      </a>
+            <?php endif; ?>
 
             <?php if (file_exists("../$course/videos.php")): ?>
 	      <a href="#" id="sidebar_btn_videos" class="btn3 lines-1" onClick="navigateToSection('main', 'videos', 'sidebar_buttons', this.id, 'glow-yellow');">
@@ -379,9 +381,11 @@
 	    ?>
 	  </div>
 
-	  <div id="extcert" class="hidden">
-	    <?php include_once("../$course/externship_certification.php") ?>
-	  </div>
+	  <?php if (file_exists("../$course/externship_certification.php")): ?>
+	    <div id="extcert" class="hidden">
+	      <?php include_once("../$course/externship_certification.php") ?>
+	    </div>
+	  <?php endif; ?>
 
 	  <?php if (file_exists("../$course/videos.php")): ?>
 	    <div id="videos" class="hidden" style="position: relative;">

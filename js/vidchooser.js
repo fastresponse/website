@@ -22,7 +22,7 @@ var vidnumbers = {
   'EMT Sager Traction Splint' : 1004507,
   'EMT Skin Assessment' : 1003688,
   'EMT Suctioning' : 1004509,
-  'Sample Interview' : 1203780,
+  'Sample Interview' : 1203780
 };
 
 // this function will remove the padding-bottom css on the container it fills
@@ -30,7 +30,11 @@ var vidnumbers = {
 function insertVideo(container, vidname, replace, width, height) {
   container = findObj(container);
   if (!container) return;
-  if (!replace && container.getElementsByClassName('video-content').length > 0) return;
+
+  var hascontent = false;
+  if (container.getAttribute('data-videocontent')) hascontent = true;
+
+  if (!replace && hascontent) return;
 
   var num = vidnumbers[vidname];
   var str = '';
@@ -56,6 +60,7 @@ function insertVideo(container, vidname, replace, width, height) {
     header += 'Please try again later.';
   }
   else {
+    container.setAttribute('data-videocontent', 1);
     header = vidname;
     /* JS doesn't have a <<<heredoc syntax, sorry... */
     str = '\
