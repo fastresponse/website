@@ -452,8 +452,7 @@
 
 /* separate settings for banners */
 .banner .btn,
-.banner .btn:visited,
-.banner .btn:hover {
+.banner .btn:visited {
   padding: 0.5em;
 
   box-sizing: border-box;

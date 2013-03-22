@@ -84,7 +84,7 @@
 
   <style type="text/css">
     table {
-      width: 100%;
+      width: 99%;
       vertical-align: top;
       text-align: center;
       margin-left: auto;
@@ -100,17 +100,38 @@
       font-family: Century Gothic, sans-serif;
       font-size: 125%;
       font-weight: bold;
-      text-shadow: 2px 3px 8px #350010;
       text-align: center;
       vertical-align: top;
+      background-color: rgb(10, 30, 60);
+      background-color: rgba(10, 30, 70, 0.75);
+      padding: 0.5em 0;
+    }
+    th:first-child {
+      border-top-left-radius: 6em;
+      border-bottom-left-radius: 6em;
+    }
+    th:last-child {
+      border-top-right-radius: 6em;
+      border-bottom-right-radius: 6em;
     }
     th>div {
-      text-shadow: 2px 3px 8px #650010;
+      text-shadow: 2px 2px 5px rgb(0, 0, 0);
       height: 2.5em;
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
-      padding-bottom: 0.25em;
-      border-bottom: 1px solid white;
+      padding-top: 0.25em;
+      border: 2px solid rgb(200, 200, 200);
+      border-radius: 1em;
+      -moz-border-radius: 1em;
+      -webkit-border-radius: 1em;
+      box-shadow: 0px 1px 1px 1px #111111;
+      -moz-box-shadow: 0px 1px 1px 1px #111111;
+      -webkit-box-shadow: 0px 1px 1px 1px #111111;
+      /*
+      background-color: rgb(0, 15, 35);
+      background-color: rgba(0, 0, 0, 0.3);
+      */
+      overflow: hidden;
     }
     th div div.sub {
       font-size: 0.65em;
@@ -149,19 +170,22 @@
     }
     #banners .section {
       width: 100%;
-      border-bottom: 1px solid white;
-      border-bottom: none;
-      margin: 0 0 3em;
+      margin: 0 0 2em;
     }
     #banners .banner {
-      margin: 1.2em 2em;
-      margin-top: 0;
+      margin: 0 2em 1.2em;
+      display: inline-block;
+      /* right up against the head section
+         use padding on elements inside head to space them */
     }
     #banners .banner.left {
       float: left;
     }
     #banners .banner.right {
       float: right;
+    }
+    #banners .banner.center {
+      margin: 0 auto 1.2em;
     }
     #banners .banner .btn {
       padding-left: 1em;
@@ -198,7 +222,7 @@
     </div> <!-- /head -->
 
     <div id="banners">
-      <div class="section">
+      <div class="section" style="text-align: center;">
 	<div class="banner left" style="max-width: 46%;">
 	  <a href="school/info/" class="btn buttontext lines-1">
 	    <div style="font-size: 120%; font-family: Georgia, serif; font-style: italic; text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);">
@@ -215,21 +239,29 @@
 	    <span></span>
 	  </a>
 	</div>
+	<div class="banner center" style="max-width: 50%;">
+	  <a href="classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
+	    <div style="font-size: 120%; font-family: Georgia, serif; font-style: italic; text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);">
+	      Paramedic Academy Begins July 1st, 2013
+	    </div>
+	    <span></span>
+	  </a>
+	</div>
 	
 	<div class="clearfix"></div>
       </div>
     </div>
 
     <div id="main">
-      <div class="section">
+      <div class="section" style="margin-top: 0;">
 	<table>
 	  <colgroup span="4" style="width: 25%;">
 	  </colgroup>
 	  <thead>
-	    <tr style="background-color: #444455;">
-	      <th colspan="1"><div>Career Courses</div></th>
-	      <th colspan="2"><div>Continuing Education<div class="sub">(EMS &amp; Hospital Personnel)</div></div></th>
-	      <th colspan="1"><div>Student Resources</div></th>
+	    <tr>
+	      <th colspan="1"><div>Career Courses<div class="sub">For Everyone</div></div></th>
+	      <th colspan="2"><div>Continuing Education<div class="sub">EMS &amp; Hospital Personnel</div></div></th>
+	      <th colspan="1"><div>Student Resources<div class="sub">Current &amp; Past Students</div></th>
 	    </tr>
 	  </thead>
 	  <tbody>

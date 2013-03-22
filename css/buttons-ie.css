@@ -1,11 +1,14 @@
-.btn, .btn:hover {
+.btn {
   border: 3px double rgb(140, 0, 30);
   white-space: nowrap;
 }
 
-.banner .btn,
-.banner .btn:hover {
+.banner .btn {
   border: 3px double rgb(30, 70, 150);
+}
+
+.banner .btn.glow-red {
+  border: 3px double rgb(140, 0, 30);
 }
 
 .btn2.glow-yellow,
