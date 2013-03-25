@@ -279,8 +279,8 @@
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/acls" class="btn buttontext lines-2">
-		  <div>Advanced Cardiac<br />Life Support (ACLS)</div>
+		<a href="classes/continuing_education/ecg_basic" class="btn buttontext lines-1">
+		  <div>ECG Basic</div>
 		  <span></span>
 		</a>
 	      </td>
@@ -299,14 +299,14 @@
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/pals" class="btn buttontext lines-2">
-		  <div>Pediatric Advanced<br />Life Support (PALS)</div>
+		<a href="classes/continuing_education/acls" class="btn buttontext lines-2">
+		  <div>Advanced Cardiac<br />Life Support (ACLS)</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/emt_r" class="btn buttontext lines-1">
-		  <div>EMT Refresher</div>
+		<a href="classes/continuing_education/12_lead_ecg" class="btn buttontext lines-1">
+		  <div>ECG 12-Lead</div>
 		  <span></span>
 		</a>
 	      </td>
@@ -325,14 +325,14 @@
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/ecg_basic" class="btn buttontext lines-1">
-		  <div>ECG Basic</div>
+		<a href="classes/continuing_education/pals" class="btn buttontext lines-2">
+		  <div>Pediatric Advanced<br />Life Support (PALS)</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/12_lead_ecg" class="btn buttontext lines-1">
-		  <div>ECG 12-Lead</div>
+		<a href="classes/continuing_education/ecg_tech" class="btn buttontext lines-1">
+		  <div>ECG Technician</div>
 		  <span></span>
 		</a>
 	      </td>
@@ -351,8 +351,8 @@
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/ecg_tech" class="btn buttontext lines-1">
-		  <div>ECG Technician</div>
+		<a href="classes/continuing_education/acls_prep" class="btn buttontext lines-1">
+		  <div>ACLS Preparation</div>
 		  <span></span>
 		</a>
 	      </td>
@@ -376,15 +376,25 @@
 		  <span></span>
 		</a>
 	      </td>
-	      <td></td>
-	      <td></td>
+	      <td>
+		<a href="classes/continuing_education/emt_r" class="btn buttontext lines-1">
+		  <div>EMT Refresher</div>
+		  <span></span>
+		</a>
+	      </td>
+	      <td>
+		<a href="classes/continuing_education/nremt" class="btn buttontext lines-1">
+		  <div>NREMT</div>
+		  <span></span>
+		</a>
+	      </td>
 	      <td></td>
 	    </tr>
 	  </tbody>
 	</table>
       </div>
 
-      <div class="section">
+      <div class="section" style="padding-top: 1em;">
 	<h4 style="text-align: center; max-width: 75%; margin: 1em auto 1em; letter-spacing: 0.12em;">This school has been approved by the <a style="white-space: nowrap;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and Postsecondary Education.</a></h4>
       </div>
 

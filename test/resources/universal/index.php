@@ -377,7 +377,11 @@
 	    </div>
 
 	    <?php
-	      echo joblist($handle, '1 month', $course);
+	      $joblist_tmp = joblist($handle, '1 month', $course);
+	      if (strlen($joblist_tmp))
+		echo $joblist_tmp;
+	      else
+		echo "<h3 class=\"textcenter\">No entries found.</h3>\n";
 	    ?>
 	  </div>
 

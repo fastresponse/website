@@ -62,19 +62,19 @@
       </li>
 
       <li>
-      <a href="/classes/career_courses/paramedic">Paramedic</a>
-      </li> 
-
-      <li>
       <a href="/classes/career_courses/phlebotomy">Phlebotomy</a>
       </li>
 
       <li>
-      <a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a>
+      <a href="/classes/career_courses/medical_assistant">Medical Assistant</a>
       </li>
 
       <li>
-      <a href="/classes/career_courses/medical_assistant">Medical Assistant</a>
+      <a href="/classes/career_courses/paramedic">Paramedic</a>
+      </li> 
+
+      <li>
+      <a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a>
       </li>
     </ul>
     </li>
@@ -84,10 +84,6 @@
     <ul>
       <li>
       <a href="/classes/continuing_education/cpr">CPR</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/acls_prep">ACLS Preparation</a>
       </li>
 
       <li>
@@ -103,7 +99,7 @@
       </li>
 
       <li>
-      <a href="/classes/continuing_education/12_lead_ecg">12 Lead ECG</a>
+      <a href="/classes/continuing_education/12_lead_ecg">ECG 12-Lead</a>
       </li>
 
       <li>
@@ -111,7 +107,11 @@
       </li>
 
       <li>
-      <a href="/classes/continuing_education/itls"> ITLS</a>
+      <a href="/classes/continuing_education/acls_prep">ACLS Preparation</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/itls">ITLS</a>
       </li>
 
       <li>

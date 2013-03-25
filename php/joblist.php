@@ -61,7 +61,7 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
   $now = date('Y-m-d');
 
   if ($daterange == 'Any' || $daterange == 'All') {
-    $start = '2012-01-01';
+    $start = '2013-03-01';
   }
   else {
     $dateob = new DateTime();
@@ -140,12 +140,15 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
   }
 
   // round out the last row with empty cells
-  if (!$end_row) {
+  if (strlen($ret) && !$end_row) {
     for ($i = $current_cell; $i < $cells_per_row; $i++) {
       $ret .= "<td></td>\n";
     }
     $ret .= "</tr>\n";
   }
+
+  if (!strlen($ret))
+    return "";
 
   $out = <<<QUERYHTML
 <div class="joblist" id="joblist">
