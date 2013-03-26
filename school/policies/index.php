@@ -2,18 +2,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
-<?php
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
-
-$handle = db_connect();
-
-?>
-
 <head>
-  <title>Career Resources Administration | Fast Response</title>
-
-  <base href="/" />
+  <title>Policies | Fast Response</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -22,11 +12,12 @@ $handle = db_connect();
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/careers.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
 
 
   <script type="text/javascript">
@@ -45,32 +36,19 @@ $handle = db_connect();
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript" src="/js/datetimepicker.js"></script>
-  <script type="text/javascript" src="/js/frlib.js"></script>
-  <script type="text/javascript" src="/js/joblist.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
 </head>
 
-<body onLoad="showCompanyInfo();">
+<body>
 
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_career_right.jpg" class="headerimgright" alt="" />
+      <img src="/images/headers/header_main_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
 
@@ -78,32 +56,46 @@ $handle = db_connect();
 
       <div class="section">
 
-<!--
-	<div class="rightsidebar">
-          <div class="quicklinks">
-	    <div class="box">
-<?php
-  //include('search-side.php');
-?>
-	    </div>
+	<div class="rightsidebar2">
+	  <div class="quicklinks">
+	    <dl>
+
+	      <a href="./info/">
+		<dt><img src="/images/buttons/contact.png" alt="" /></dt>
+		<dd>Contact Us</dd>
+	      </a>
+
+	    </dl>
 	  </div>
 	</div>
 
-	<div class="leftcontent">
--->
+	<div class="leftcontent2 policy">
 
-<?php
-  include_once('./admin_backend.php');
-?>
-	<!-- </div> --> <!-- /leftcontent -->
+	  <h1 style="text-decoration: underline; text-align: center; margin-bottom: 2em;">Fast Response Policies</h1>
+
+	  <h2>Continuing Education Class Policies</h2>
+          <?php include('./ceu.html'); ?>
+
+	  <hr />
+
+	  <h2>Fast Response Privacy Policy</h2>
+          <?php include('./privacy.html'); ?>
+
+	  <hr />
+
+	  <h2>Website Terms And Conditions</h2>
+          <?php include('./terms.html'); ?>
+
+	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 0.1em;"></div>
+      <div class="clearfix" style="min-height: 2em;"></div>
 
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

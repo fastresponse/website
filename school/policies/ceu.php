@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>Sitemap | Fast Response</title>
+  <title>Continuing Education Policies | Fast Response</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -12,10 +12,12 @@
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
 
 
   <script type="text/javascript">
@@ -34,56 +36,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    function reloadStylesheets() {
-      var queryString = '?reload=' + new Date().getTime();
-      $('link[rel="stylesheet"]').each(function () {
-	this.href = this.href.replace(/\?.*|$/, queryString);
-      });
-    }
-  
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-
-      $("#sitemap").load("../menu/menu.html", function() {
-	/* load the menu list for use as the sitemap
-	   change the ID so it's different and remove the menu css
-	*/
-	$("#sitemap > ul").attr("id", "sitemap-menu");
-	$("#sitemap *").removeClass();
-	reloadStylesheets();
-      } );
-
-      $("#footer").load("/menu/footer.html");
-
-    } );
-  </script>
-
-  <style type="text/css">
-    #sitemap-menu {
-      display: inline-block;
-      width: 100%;
-      padding-left: 0;
-      margin-left: 0;
-    }
-    #sitemap-menu>li {
-      margin-bottom: 2em;
-      font-size: 140%;
-      display: inline-block;
-      width: 19%;
-      vertical-align: top;
-    }
-    #sitemap-menu>li>ul>li {
-      margin-top: 0.5em;
-      /* 85% of 140% = 119% */
-      font-size: 85%;
-    }
-    #sitemap-menu>li>ul>li>ul>li {
-      /* 84% of 119% = 100% */
-      font-size: 84%;
-    }
-  </style>
-
 </head>
 
 <body>
@@ -91,12 +43,12 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_main_right.jpg" class="headerimgright" alt="" />
+      <img src="/images/headers/header_cpr_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
 
@@ -104,17 +56,35 @@
 
       <div class="section">
 
-	<div id="sitemap">
-	  <!-- filled in by javascript -->
+	<div class="rightsidebar2">
+	  <div class="quicklinks">
+	    <dl>
+
+	      <a href="./info/">
+		<dt><img src="/images/buttons/contact.png" alt="" /></dt>
+		<dd>Contact Us</dd>
+	      </a>
+
+	    </dl>
+	  </div>
 	</div>
+
+	<div class="leftcontent2 policy">
+
+	  <h1>Continuing Education Class Policies</h1>
+
+	  <?php include('./ceu.html'); ?>
+
+	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 0.1em;"></div>
+      <div class="clearfix" style="min-height: 2em;"></div>
 
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

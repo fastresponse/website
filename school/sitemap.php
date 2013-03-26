@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>Simulation Lab | Fast Response</title>
+  <title>Sitemap | Fast Response</title>
 
-  <base href="/" />
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
 
@@ -36,26 +35,65 @@
   <script type="text/javascript" src="/js/jquery.js"></script>
 
   <script type="text/javascript">
+    function reloadStylesheets() {
+      var queryString = '?reload=' + new Date().getTime();
+      $('link[rel="stylesheet"]').each(function () {
+	this.href = this.href.replace(/\?.*|$/, queryString);
+      });
+    }
+  
     $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
+
+      $("#sitemap").load("../menu/menu.html", function() {
+	/* load the menu list for use as the sitemap
+	   change the ID so it's different and remove the menu css
+	*/
+	$("#sitemap > ul").attr("id", "sitemap-menu");
+	$("#sitemap *").removeClass();
+	reloadStylesheets();
+      } );
+
     } );
   </script>
 
+  <style type="text/css">
+    #sitemap-menu {
+      display: inline-block;
+      width: 100%;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    #sitemap-menu>li {
+      margin-bottom: 2em;
+      font-size: 140%;
+      display: inline-block;
+      width: 19%;
+      vertical-align: top;
+    }
+    #sitemap-menu>li>ul>li {
+      margin-top: 0.5em;
+      /* 85% of 140% = 119% */
+      font-size: 85%;
+    }
+    #sitemap-menu>li>ul>li>ul>li {
+      /* 84% of 119% = 100% */
+      font-size: 84%;
+    }
+  </style>
+
 </head>
 
-<body style="font-family: Arial, sans-serif;">
+<body>
+
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_simlab_right.jpg" class="headerimgright" alt="" />
+      <img src="/images/headers/header_main_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
 
@@ -63,19 +101,18 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
+	<div id="sitemap">
+	  <!-- filled in by javascript -->
 	</div>
-
-	<div class="leftcontent">
-	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 0.1em;"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

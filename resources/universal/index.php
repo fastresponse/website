@@ -70,7 +70,7 @@
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
-  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -400,10 +400,11 @@
 	  </div>
 
 	</div> <!-- /leftcontent -->
+	<div class="clearfix"></div>
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 0.1em;"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 

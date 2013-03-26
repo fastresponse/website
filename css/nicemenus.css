@@ -148,11 +148,11 @@ ul.nice-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-top: 1px solid #010a17;
+  border-top: 1px solid gray;
 }
 
 ul.nice-menu li {
-  border: 1px solid #010a17;
+  border: 1px solid gray;
   border-top: 0;
   float: left;
   /* Additional overrides to deal with Garland theme. */
@@ -169,7 +169,7 @@ ul.nice-menu ul {
   top: 1.8em;
   left: -1px;
   border: 0;
-  border-top: 1px solid #010a17;
+  border-top: 1px solid gray;
   margin-right: 0;
 }
 
@@ -231,7 +231,7 @@ ul.nice-menu-down {
 }
 
 ul.nice-menu-down li {
-  border-top: 1px solid #010a17;
+  border-top: 1px solid gray;
 }
 
 ul.nice-menu-down li li {
@@ -262,14 +262,15 @@ ul.nice-menu-down .menuparent a {
 #nice-menu-1 {
   float: left;
   border: none;
-  font-size: 135%;
   width: 100%;
+  height: 2em;
   /*
   font-size: 115%;
   */
 }
 
-#nice-menu-1 a:hover {
+#nice-menu-1 a:hover,
+#nice-menu-1 li:hover>a {
   color: #865566;
 }
 
@@ -285,22 +286,33 @@ ul.nice-menu-down .menuparent a {
 
 #nice-menu-1 li {
   margin-left: 25px;
+  font-weight: bold;
+}
+
+#nice-menu-1 li li {
+  font-size: 90%;
+}
+#nice-menu-1 li li li,
+#nice-menu-1 li li li li {
+  font-size: 100%;
 }
 
 #nice-menu-1>li {
+  /* 20% for 5 menu entries, 25% for 4, 33.3% for 3, etc */
+  width: 20%;
+  font-size: medium;
+  font-weight: bold;
   margin-left: 0;
-  width: 24%;
-  text-align: center;
+  text-transform: uppercase;
+  /*width: 19%;
+  text-align: center;*/
 }
 
 #nice-menu-1 ul {
   text-align: left;
   width: 100%;
-  margin-left: 30%;
-  top: 1.6em;
-  /* changed from top: 1.8em so IE did not have
-   * empty space between top menu and first submenu
-   */
+  /*margin-left: 30%;*/
+  top: 1.8em;
 }
 
 #nice-menu-1 ul ul {
@@ -308,9 +320,27 @@ ul.nice-menu-down .menuparent a {
   margin-left: 0;
 }
 
+#nice-menu-1 ul li {
+  width: 100%;
+}
+#nice-menu-1 li ul li ul {
+  left: 100%;
+}
+
 #nice-menu-1 li li {
-  background: #010a17;	
   margin-left: 0;
+  background-color: #010a17;
+  background-color: rgba(01, 10, 23, 0.9);
+  /*
+  background-color: rgb(66, 66, 66);
+  background-color: rgba(66, 66, 66, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F666666, endColorstr=#E5666666);
+  */
+}
+
+#nice-menu-1 li:hover {
+  background-color: #051825;
+  background-color: rgba(05, 24, 37, 0.9);
 }
 
 #nice-menu-1 li li.menuparent,

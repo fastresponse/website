@@ -35,15 +35,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
 </head>
 
 <body>
@@ -51,7 +42,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -73,13 +64,13 @@
 	    </a>
 
 	    <!--
-	    <a href="./faqs.html" class="btn3 lines-1">
+	    <a href="./faqs.php" class="btn3 lines-1">
 	      <div>FAQs</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 	    -->
 
-	    <a href="./sitemap.html" class="btn3 lines-1">
+	    <a href="./sitemap.php" class="btn3 lines-1">
 	      <div>Sitemap</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
@@ -137,6 +128,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

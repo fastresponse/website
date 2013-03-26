@@ -14,14 +14,10 @@ html, body {
 
 body {
   color: rgb(255, 255, 255);
-  background: url("images/bg.png")
-    repeat-x scroll 0% 0% rgb(39, 57, 109);
+  background-color: rgb(39, 57, 109);
   font-size: small;
   letter-spacing: 0.03em;
-  /* set a default font?
-  font-family: Verdana, sans-serif;
   font-family: Arial, sans-serif;
-  */
 }
 
 a:link, a:visited {
@@ -34,8 +30,7 @@ h3 {
 
 #page {
   width: 100%;
-  background: url("images/pagebg.png")
-    repeat-x scroll 0% 0% rgb(31, 46, 87);
+  background-color: black;
   font-size: 115%;
 }
 
@@ -49,7 +44,8 @@ h3 {
   display: block;
   width: 100%;
   z-index: 100;
-  min-height: 2.25em;
+  min-height: 2em;
+  background-color: black
 }
 
 #head {
@@ -83,9 +79,23 @@ h3 {
  */
 #main {
   position: relative;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 98%;
+  padding: 0 1% 1%;
+
+  /* fallback */
+  background: url("images/pagebg.png") repeat-x scroll 0% 0% rgb(31, 46, 87);
+
+  /* various browser-specific gradient syntaxes */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), color-stop(0.4, #27396C), to(#27396C));
+  background: -webkit-linear-gradient(top, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
+  background: -moz-linear-gradient(top, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
+  background: -ms-linear-gradient(top, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
+  background: -o-linear-gradient(top, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#27396C');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#27396C')"; 
+
+  /* standard background gradient syntax */
+  background: linear-gradient(to bottom, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
 }
 
 /* a horizontal, rectangular section of content */
@@ -222,6 +232,8 @@ h3 {
   max-height: 28px;
   line-height: 28px;
   width: 100%;
+  padding-bottom: 15px;
+  background-color: rgb(39, 57, 109);
 }
 
 #footer ul {
@@ -812,15 +824,19 @@ div.pointer,
   margin: 0 auto;
 }
 
+.pics-1 img,
 .pics-1 div {
   width: 90%;
 }
+.pics-2 img,
 .pics-2 div {
   width: 48%;
 } 
+.pics-3 img,
 .pics-3 div {
   width: 33%;
 }
+.pics-4 img,
 .pics-4 div {
   width: 24%;
 }

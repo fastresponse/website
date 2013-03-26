@@ -79,7 +79,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "/resources/current_employment_mailer.php",
+	url: "current_employment_mailer.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {
@@ -304,7 +304,7 @@
 	        If you would be willing to provide the following information about your current employment status it would be very helpful to us in finding new ways to assist past, present, and future students. All of your information is extremely confidential and will not be released to any third party. Your participation is greatly appreciated and will be a tremendous help.
 	      </p>
 
-	      <form id="ajax-contact-form" method="post" action="/resources/current_employment_mailer.php">
+	      <form id="ajax-contact-form" method="post" action="current_employment_mailer.php">
 
 		<?php
 		  echo "<input type='hidden' name='emailaddr' value='$emailaddr' /><br />";

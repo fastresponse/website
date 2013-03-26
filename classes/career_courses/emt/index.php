@@ -16,9 +16,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -37,15 +39,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
 </head>
 
 <body>
@@ -53,7 +46,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -68,38 +61,33 @@
 
 	<div class="rightsidebar2">
 
-	  <div class="quicklinks">
-	    <dl>
-	      <a href="/pdfs/0138 EMT Course Info 001-004 03-2013.pdf" target="_blank">
-		<dt><img src="/images/buttons/more_info.png" alt="More Info" /></dt>
-		<dd>More Info (pdf)</dd>
-	      </a>
-	      <!--
-	      <a href="/pdfs/Catalog-2013.pdf" target="_blank">
-		<dt><img src="/images/buttons/catalog.png" alt="Catalog" /></dt>
-		<dd>School Catalog</dd>
-	      </a>
-	      -->
-	      <a href="/videos/emt.html">
-		<dt><img src="/images/buttons/video.png" alt="Videos" /></dt>
-		<dd>
-		  Skills Videos<br />
-		  <div style="font-size: 0.9em;">(password required)</div>
-		</dd>
-	      </a>
-	      <a href="/photos/emt/index.html#emt">
-		<dt><img src="/images/buttons/photos.png" alt="Photos" /></dt>
-		<dd>Photo Gallery</dd>
-	      </a>
-	      <a href="/school/info/">
-		<dt><img src="/images/buttons/contact.png" alt="Contact Us" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-	      <a href="http://www.facebook.com/FastResponseSchool">
-		<dt><img src="/images/buttons/facebook.png" alt="Visit Us On Facebook" /></dt>
-		<dd>Visit Us On Facebook</dd>
-	      </a>
-	    </dl>
+	  <div class="quicklinks2">
+	    <a href="/pdfs/0138 EMT Course Info 001-004 03-2013.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Course Info<br />Packet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/pdfs/EMT - Performance Fact Sheet 2012.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Performance<br />Fact Sheet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/resources/emt/?section=videos" class="btn3 lines-1">
+	      <div>Skills Videos</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/photos/emt/index.html#emt" class="btn3 lines-1">
+	      <div>Photo Gallery</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div> <!-- /quicklinks -->
 
 	</div> <!-- /rightsidebar -->
@@ -201,6 +189,7 @@
       </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

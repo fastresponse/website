@@ -222,7 +222,7 @@
     <div id="banners">
       <div class="section" style="text-align: center;">
 	<div class="banner left" style="max-width: 46%;">
-	  <a href="school/info/" class="btn buttontext lines-1">
+	  <a href="/school/info/" class="btn buttontext lines-1">
 	    <div style="font-size: 120%; font-family: Georgia, serif; font-style: italic; text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);">
 	      Contact an Admissions Representative Now!
 	    </div>
@@ -230,7 +230,7 @@
 	  </a>
 	</div>
 	<div class="banner right" style="max-width: 50%; width: 412px; margin-right: 3%;">
-	  <a href="classes/continuing_education/cpr/" class="btn buttontext lines-1" style="width: 100%;">
+	  <a href="/classes/continuing_education/cpr/" class="btn buttontext lines-1" style="width: 100%;">
 	    <div style="font-size: 150%; letter-spacing: 0.15em; word-spacing: 0.35em; font-family: Georgia, serif; font-style: italic;">
 	      <div style="display: inline; font-weight: bold; text-transform: uppercase; font-style: italic; text-shadow: -1px 1px 1px rgba(0,0,0,0.5), 1px -1px 1px rgba(0,0,0,0.5);" class="red">New</div> Low BLS Prices
 	    </div>
@@ -238,7 +238,7 @@
 	  </a>
 	</div>
 	<div class="banner center" style="max-width: 50%;">
-	  <a href="classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
+	  <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
 	    <div style="font-size: 120%; font-family: Georgia, serif; font-style: italic; text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);">
 	      Paramedic Academy Begins July 1st, 2013
 	    </div>
@@ -265,25 +265,25 @@
 	  <tbody>
 	    <tr>
 	      <td>
-	        <a href="classes/career_courses/emt/" class="btn buttontext lines-2">
+	        <a href="/classes/career_courses/emt/" class="btn buttontext lines-2">
 		  <div>Emergency Medical<br />Technician</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/cpr" class="btn buttontext lines-2">
+		<a href="/classes/continuing_education/cpr" class="btn buttontext lines-2">
 		  <div>Healthcare Provider<br />CPR (BLS)</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/ecg_basic" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/ecg_basic" class="btn buttontext lines-1">
 		  <div>ECG Basic</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="resources/emt/" class="btn buttontext lines-1">
+		<a href="/resources/emt/" class="btn buttontext lines-1">
 		  <div>EMT Resources</div>
 		  <span></span>
 		</a>
@@ -291,25 +291,25 @@
 	    </tr>
 	    <tr>
 	      <td>
-		<a href="classes/career_courses/phlebotomy/" class="btn buttontext lines-2">
+		<a href="/classes/career_courses/phlebotomy/" class="btn buttontext lines-2">
 		  <div>Phlebotomy<br />Technician</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/acls" class="btn buttontext lines-2">
+		<a href="/classes/continuing_education/acls" class="btn buttontext lines-2">
 		  <div>Advanced Cardiac<br />Life Support (ACLS)</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/12_lead_ecg" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/12_lead_ecg" class="btn buttontext lines-1">
 		  <div>ECG 12-Lead</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="resources/cpt/" class="btn buttontext lines-1">
+		<a href="/resources/cpt/" class="btn buttontext lines-1">
 		  <div>CPT Resources</div>
 		  <span></span>
 		</a>
@@ -317,25 +317,25 @@
 	    </tr>
 	    <tr>
 	      <td>
-		<a href="classes/career_courses/medical_assistant/" class="btn buttontext lines-2">
+		<a href="/classes/career_courses/medical_assistant/" class="btn buttontext lines-2">
 		  <div>Clinical Medical<br />Assistant</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/pals" class="btn buttontext lines-2">
+		<a href="/classes/continuing_education/pals" class="btn buttontext lines-2">
 		  <div>Pediatric Advanced<br />Life Support (PALS)</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/ecg_tech" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/ecg_tech" class="btn buttontext lines-1">
 		  <div>ECG Technician</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="resources/cma/" class="btn buttontext lines-1">
+		<a href="/resources/cma/" class="btn buttontext lines-1">
 		  <div>CMA Resources</div>
 		  <span></span>
 		</a>
@@ -343,25 +343,25 @@
 	    </tr>
 	    <tr>
 	      <td>
-		<a href="classes/career_courses/paramedic/" class="btn buttontext lines-1">
+		<a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1">
 		  <div>Paramedic</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/acls_prep" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/acls_prep" class="btn buttontext lines-1">
 		  <div>ACLS Preparation</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/itls" class="btn buttontext lines-2">
+		<a href="/classes/continuing_education/itls" class="btn buttontext lines-2">
 		  <div>International Trauma<br />Life Support (ITLS)</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="resources/spt/" class="btn buttontext lines-1">
+		<a href="/resources/spt/" class="btn buttontext lines-1">
 		  <div>SPT Resources</div>
 		  <span></span>
 		</a>
@@ -369,19 +369,19 @@
 	    </tr>
 	    <tr>
 	      <td>
-		<a href="classes/career_courses/sterile_processing_tech/" class="btn buttontext lines-2">
+		<a href="/classes/career_courses/sterile_processing_tech/" class="btn buttontext lines-2">
 		  <div>Sterile Processing<br />Technician</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/emt_r" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/emt_r" class="btn buttontext lines-1">
 		  <div>EMT Refresher</div>
 		  <span></span>
 		</a>
 	      </td>
 	      <td>
-		<a href="classes/continuing_education/nremt" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/nremt" class="btn buttontext lines-1">
 		  <div>NREMT</div>
 		  <span></span>
 		</a>
