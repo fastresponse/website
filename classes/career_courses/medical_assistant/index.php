@@ -36,15 +36,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
 </head>
 
 <body>
@@ -52,7 +43,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -68,7 +59,7 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
+	<div class="rightsidebar2">
 	  <div class="quicklinks">
 	    <dl>
 
@@ -91,7 +82,7 @@
 	  </div>
 	</div>
 
-	<div class="leftcontent">
+	<div class="leftcontent2">
 
 	  <h1>Clinical Medical Assistant</h1>
 
@@ -137,6 +128,7 @@
 	  </div>
 
 	</div> <!-- /leftcontent -->
+        <div class="clearfix"></div>
 
       </div> <!-- /section -->
 
@@ -164,6 +156,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
