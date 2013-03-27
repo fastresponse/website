@@ -37,15 +37,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
   <script type="text/javascript" src="/js/frlib.js"></script>
 
 </head>
@@ -55,7 +46,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -68,7 +59,7 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
+	<div class="rightsidebar2">
 	  <div class="quicklinks">
 	    <dl>
 	      <!--
@@ -93,7 +84,7 @@
 	  </div>
 	</div>
 
-	<div class="leftcontent">
+	<div class="leftcontent2">
 	  <div class="section">
 
 	    <div style="width: auto; min-width: 15%; max-width: 25%; float: right; margin: 0 1% 1% 1%;">
@@ -221,16 +212,9 @@
 
 	  <div class="section photostrip pics-3" style="text-align: center;">
 	    <a href="/photos/emt/index.html#emt">
-	      <!--
-	      <img alt="" src="/images/.png" />
-	      <img alt="" src="/images/.png" />
-	      <img alt="" src="/images/.png" class="last" />
-	      -->
-	      <!--<img alt="" src="/images/Paramedic 01 Overturned Car 11-2012-01.png" />-->
 	      <img alt="" src="/images/Paramedic 01 iPads 11-2012-01.png" />
 	      <img alt="" src="/images/Paramedic 01 Car Extrication 11-2012-01.png" />
 	      <img alt="" src="/images/Paramedic 01 Sim Lab 11-2012-01.png" class="last" />
-	      <!--<img alt="" src="/images/auto.jpg" />-->
 	    </a>
 	  </div>
 
@@ -249,6 +233,7 @@
 	  </div>
 
 	</div> <!-- /leftcontent -->
+	<div class="clearfix"></div>
 
       </div> <!-- /section -->
 
@@ -257,6 +242,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

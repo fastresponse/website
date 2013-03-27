@@ -36,15 +36,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
 </head>
 
 <body>
@@ -52,7 +43,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -65,7 +56,7 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
+	<div class="rightsidebar2">
 	  <div class="quicklinks">
 	    <dl>
 	      <a href="/pdfs/0138 SPT Course Info 001-004 07-2012.pdf" target="_blank">
@@ -88,7 +79,7 @@
 	  </div>
 	</div>
 
-	<div class="leftcontent">
+	<div class="leftcontent2">
 
 	  <h1>Sterile Processing Technician</h1>
 
@@ -123,11 +114,12 @@
 	  </div>
 
 	</div> <!-- /leftcontent -->
+        <div class="clearfix"></div>
 
       </div> <!-- /section -->
 
       <div class="photos">
-	<a target="_self" href="/photos/emt/index.html#emt">
+	<a target="_self" href="/photos/spt/index.html#spt">
 	  <img alt="" width="880" height="250" src="/sites/default/files/fckuploads/image/EMT-3_images.jpg" />
 	</a>
 	<p><a target="_self" href="/photos/emt/index.html#emt">
@@ -151,6 +143,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

@@ -37,15 +37,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
   <style type="text/css">
     .offerbanner {
       float: right;
@@ -73,7 +64,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -217,6 +208,7 @@
 	  </div>
 
 	</div> <!-- /leftcontent -->
+	<div class="clearfix"></div>
 
       </div> <!-- /section -->
 
@@ -246,6 +238,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
