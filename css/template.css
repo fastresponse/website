@@ -718,9 +718,7 @@ div.pointer,
   font-weight: bold;
   width: 100%;
   text-align: left;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 1em;
 }
 .announcement h3 {
   font-size: 130%;
@@ -830,15 +828,15 @@ div.pointer,
 }
 .pics-2 img,
 .pics-2 div {
-  width: 48%;
+  width: 46%;
 } 
 .pics-3 img,
 .pics-3 div {
-  width: 33%;
+  width: 31%;
 }
 .pics-4 img,
 .pics-4 div {
-  width: 24%;
+  width: 22%;
 }
 
 

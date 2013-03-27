@@ -16,9 +16,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -35,7 +37,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
   <style type="text/css">
     .offerbanner {
@@ -78,28 +80,34 @@
       <div class="section">
 
 	<div class="rightsidebar2">
-
-	  <div class="quicklinks">
-	    <dl>
-	      <a href="/pdfs/0138 CPT Course Info 001-004 02-2013.pdf" target="_blank">
-		<dt><img src="/images/buttons/more_info.png" alt="More Info" /></dt>
-		<dd>More Info (pdf)</dd>
-	      </a>
-	      <a href="/photos/phleb/index.html#phleb">
-		<dt><img src="/images/buttons/photos.png" alt="Photos" /></dt>
-		<dd>Photo Gallery</dd>
-	      </a>
-	      <a href="/school/info/">
-		<dt><img src="/images/buttons/contact.png" alt="Contact Us" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-	      <a href="http://www.facebook.com/FastResponseSchool">
-		<dt><img src="/images/buttons/facebook.png" alt="Visit Us On Facebook" /></dt>
-		<dd>Visit Us On Facebook</dd>
-	      </a>
-	    </dl>
+	  <div class="quicklinks2">
+	    <a href="/pdfs/CPT - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Course Info<br />Packet</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/pdfs/CPT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Performance<br />Fact Sheet</div>
+	      <div></div><div></div><div></div><div></div>
+            </a>
+	    <a href="/resources/cpt/" class="btn3 lines-2">
+	      <div>Student<br />Resources</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/photos/phleb/index.html#phleb" class="btn3 lines-1">
+	      <div>Photo Gallery</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
-
 	</div>
 
 	<div class="leftcontent2">

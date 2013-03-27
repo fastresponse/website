@@ -15,9 +15,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -34,7 +36,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
 </head>
 
@@ -47,9 +49,6 @@
     </div>
 
     <div id="head">
-      <!--
-      <img src="/images/headers/header_main.jpg" class="headerimg" alt="Fast Response School of Health Care Education" />
-      -->
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
       <img src="/images/headers/header_ma_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
@@ -60,25 +59,33 @@
       <div class="section">
 
 	<div class="rightsidebar2">
-	  <div class="quicklinks">
-	    <dl>
-
-	      <a href="/pdfs/0138 MA Course Info 001-004 02-2013.pdf" target="_blank">
-		<dt><img src="/images/buttons/more_info.png" alt="" /></dt>
-		<dd>More Info (pdf)</dd>
-	      </a>
-
-	      <a href="/photos/ma/index.html#medicalassistant">
-		<dt><img src="/images/buttons/photos.png" alt="" /></dt>
-		<dd>Photo Gallery</dd>
-	      </a>
-
-	      <a href="/school/info/">
-		<dt><img src="/images/buttons/contact.png" alt="" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-
-	    </dl>
+	  <div class="quicklinks2">
+	    <a href="/pdfs/CMA - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Course Info<br />Packet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/pdfs/CMA - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Performance<br />Fact Sheet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+            <a href="/resources/cma/" class="btn3 lines-2">
+              <div>Student<br />Resources</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/photos/ma/index.html#medicalassistant" class="btn3 lines-1">
+	      <div>Photo Gallery</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 
@@ -88,8 +95,6 @@
 
 	  <div>
 	    <img alt="Medical Assistant" align="right" width="230" height="120" src="/images/now_including.png" />
-
-	    <!--<p>American Medical Technologists define the Medical Assistant as an integral member of the health care delivery team, qualified by education and experience to work in the administrative office, the examining room, and the physician office laboratory. The Medical Assistant is also a liaison between the doctor and the patient and is of vital importance to the success of the medical practice. Medical Assistants enjoy <u>exciting and multifaceted careers</u> as duties vary greatly and can include taking and recording vital signs and medical histories, rooming patients and preparing them for exams, administering injections, drawing blood and performing commonly ordered lab tests.</p>-->
 
 	    <p>The Medical Assistant is a liaison between the doctor and the patient and is <span style="font-style: italic;">vital to the success</span> of the medical practice. Medical Assistants enjoy <span style="text-decoration: underline;">exciting and multi-faceted careers</span> as duties vary greatly and can include taking and recording vital signs and medical histories, rooming patients and preparing them for exams, administering injections, drawing blood and performing commonly ordered lab tests.</p>
 

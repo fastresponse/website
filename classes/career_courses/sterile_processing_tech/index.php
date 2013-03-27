@@ -15,9 +15,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -34,7 +36,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
 </head>
 
@@ -57,25 +59,33 @@
       <div class="section">
 
 	<div class="rightsidebar2">
-	  <div class="quicklinks">
-	    <dl>
-	      <a href="/pdfs/0138 SPT Course Info 001-004 07-2012.pdf" target="_blank">
-		<dt><img src="/images/buttons/more_info.png" alt="" /></dt>
-		<dd>More Info (pdf)</dd>
-	      </a>
-	      <a href="/photos/spt/index.html#spt">
-		<dt><img src="/images/buttons/photos.png" alt="" /></dt>
-		<dd>Photo Gallery</dd>
-	      </a>
-	      <a href="/school/info">
-		<dt><img src="/images/buttons/contact.png" alt="" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-	      <a href="http://www.facebook.com/FastResponseSchool">
-		<dt><img src="/images/buttons/facebook.png" alt="" /></dt>
-		<dd>Visit Us on Facebook</dd>
-	      </a>
-	    </dl>
+	  <div class="quicklinks2">
+	    <a href="/pdfs/SPT - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Course Info<br />Packet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/pdfs/SPT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	      <div>Performance<br />Fact Sheet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/resources/spt/" class="btn3 lines-2">
+	      <div>Student<br />Resources</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/photos/spt/index.html#spt" class="btn3 lines-1">
+	      <div>Photo Gallery</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 
@@ -122,7 +132,7 @@
 	<a target="_self" href="/photos/spt/index.html#spt">
 	  <img alt="" width="880" height="250" src="/sites/default/files/fckuploads/image/EMT-3_images.jpg" />
 	</a>
-	<p><a target="_self" href="/photos/emt/index.html#emt">
+	<p><a target="_self" href="/photos/spt/index.html#spt">
 	  Actual Photo From Class - Click Here to View Gallery
 	</a></p>
       </div>

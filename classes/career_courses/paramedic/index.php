@@ -16,9 +16,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -35,7 +37,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
   <script type="text/javascript" src="/js/frlib.js"></script>
 
@@ -60,27 +62,31 @@
       <div class="section">
 
 	<div class="rightsidebar2">
-	  <div class="quicklinks">
-	    <dl>
-	      <!--
-	      <a href="https://spreadsheets.google.com/viewform?formkey=dFdxVVppNHJLT1dpNTBOeTNwNk9fNFE6MQ">
-		<dt><img src="/images/buttons/paramedic_interest_card.png" alt="Interest Card" /></dt>
-		<dd>Paramedic Academy<br />Interest Card</dd>
-	      </a>
-	      -->
-	      <a href="/photos/emt/index.html#emt">
-		<dt><img src="/images/buttons/photos.png" alt="Photos" /></dt>
-		<dd>Photo Gallery</dd>
-	      </a>
-	      <a href="/school/info/">
-		<dt><img src="/images/buttons/contact.png" alt="Contact Us" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-	      <a href="http://www.facebook.com/FastResponseSchool">
-		<dt><img src="/images/buttons/facebook.png" alt="Facebook" /></dt>
-	        <dd>Visit Us On Facebook</dd>
-	      </a>
-	    </dl>
+	  <div class="quicklinks2">
+	    <!--
+	    <a href="https://spreadsheets.google.com/viewform?formkey=dFdxVVppNHJLT1dpNTBOeTNwNk9fNFE6MQ" target="_blank" class="btn3 lines-2">
+	      <div>Paramedic Academy<br />Interest Card</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    -->
+	    <a href="/pdfs/PAR - Performance Fact Sheet.pdf" class="btn3 lines-2" target="_blank">
+	      <div>Performance<br />Fact Sheet</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/photos/emt/index.html#emt" class="btn3 lines-1">
+	      <div>Photo Gallery</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 

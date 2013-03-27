@@ -37,7 +37,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
 </head>
 
@@ -62,12 +62,16 @@
 	<div class="rightsidebar2">
 
 	  <div class="quicklinks2">
-	    <a href="/pdfs/0138 EMT Course Info 001-004 03-2013.pdf" target="_blank" class="btn3 lines-2">
+	    <a href="/pdfs/EMT - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Course Info<br />Packet</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/pdfs/EMT - Performance Fact Sheet 2012.pdf" target="_blank" class="btn3 lines-2">
+	    <a href="/pdfs/EMT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Performance<br />Fact Sheet</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/resources/emt/" class="btn3 lines-2">
+	      <div>Student<br />Resources</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/resources/emt/?section=videos" class="btn3 lines-1">
