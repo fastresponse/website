@@ -1,9 +1,8 @@
 <?php
 
-// This script receives POST data from a basic form, emails the data to us,
-// then creates and sends an autoreply email to the user
+// This script receives POST data and emails it to us
 
-require("phpmailer/class.phpmailer.php");
+require("../php/phpmailer/class.phpmailer.php");
 
 error_reporting (E_ERROR);
 
@@ -11,21 +10,23 @@ if (empty($_POST)) {
   return;
 }
 
-$subject = stripslashes($_POST['subject']);
 $name = stripslashes($_POST['name']);
 $email = trim($_POST['email']);
-$message = stripslashes($_POST['message']);
 $phone = stripslashes($_POST['phone']);
-
+$subject = stripslashes($_POST['subject']);
+$graddate = stripslashes($_POST['graddate']);
+$workshopdate = stripslashes($_POST['workshopdate']);
+$shortterm = stripslashes($_POST['shortterm']);
+$longterm = stripslashes($_POST['longterm']);
 
 //--- settings ---//
 
-$autorespond = 1;
-$autofrom = 'info@fastresponse.org';
-$autosubject = 'Welcome to Fast Response';
-$autoname = 'Fast Response School';
+$autorespond = 0;
+$autofrom = 'career.services@fastresponse.org';
+$autosubject = 'Career Services Workshop Registration';
+$autoname = 'Fast Response Career Services';
 
-$replydir = 'email_replies/';
+$replydir = './';
 
 $usesmtp = 0;
 
@@ -38,36 +39,29 @@ $smtppassword = 'yourpassword';
 // ----- //
 
 $courses = array(
-  // this one is a generic page to use for all emails temporarily
-  'Generic' => array(
-    'email' => 'autoreply@fastresponse.org',
-    'page' => 'generic.html',
-  ),
   'EMT' => array(
-    // which of OUR email addresses should receive the user's request
-    'email' => 'autoreply@fastresponse.org',
-    // the webpage (in $replydir) to email to the user
-    'page' => 'emt.html',
+    'email' => 'career.services@fastresponse.org',
+    'page' => 'reply.html',
   ),
   'Sterile Processing' => array(
-    'email' => 'autoreply@fastresponse.org',
-    'page' => 'spt.html',
+    'email' => 'career.services@fastresponse.org',
+    'page' => 'reply.html',
   ),
   'Clinical Medical Assistant' => array(
-    'email' => 'autoreply@fastresponse.org',
-    'page' => 'cma.html',
+    'email' => 'career.services@fastresponse.org',
+    'page' => 'reply.html',
   ),
   'Phlebotomy' => array(
-    'email' => 'autoreply@fastresponse.org',
-    'page' => 'phl.html',
+    'email' => 'career.services@fastresponse.org',
+    'page' => 'reply.html',
   ),
   'Paramedic' => array(
-    'email' => 'autoreply@fastresponse.org',
-    'page' => 'para.html',
+    'email' => 'career.services@fastresponse.org',
+    'page' => 'reply.html',
   ),
   'Other Courses' => array(
-    'email' => 'autoreply@fastresponse.org',
-    'page' => 'other.html',
+    'email' => 'career.services@fastresponse.org',
+    'page' => 'reply.html',
   ),
 );
 
@@ -138,6 +132,22 @@ if ($subject && !$courses[$subject]) {
   $error .= "Please select a valid course.\n";
 }
 
+if (!$graddate) {
+  $error .= "Please enter your graduation date.\n";
+}
+
+if (!$workshopdate) {
+  $error .= "Please enter your preferred workshop date.\n";
+}
+
+if (!$shortterm) {
+  $error .= "Please fill out your short-term goals.\n";
+}
+
+if (!$longterm) {
+  $error .= "Please fill out your long-term goals.\n";
+}
+
 if ($error) {
   echo '<div class="error">'.nl2br($error).'</div>';
   return;
@@ -153,24 +163,24 @@ $messages = "From: $email\n";
 $messages.= "Name: $name\n";
 $messages.= "Email: $email\n";
 $messages.= "Phone: $phone\n";
-$messages.= "Newsletter: $newsletter\n";
-$messages.= "Reference: $reference\n";
+$messages.= "Graduation Date: $graddate\n";
+$messages.= "Preferred Workshop Date: $workshopdate\n";
+$messages.= "Short term Goals: $shortterm\n";
+$messages.= "Long term Goals: $longterm\n";
+
+/*
 $messages.= "WhentoReach: $whenreachme\n";
 $messages.= "WhatTime: $time\n";
-$messages.= "StreetAddress1: $streetaddress1\n";
-$messages.= "StreetAddress2: $streetaddress2\n";
-$messages.= "StreetAddress3: $streetaddress3\n";
-$messages.= "Message: $message\n";
+*/
 
-//$to = $courses[$subject]['email'];
-$to = $courses['Generic']['email'];
+$to = $courses[$subject]['email'];
 
 $mail = new PHPMailer(); 
 
 $mail->SetFrom($email);
 $mail->AddReplyTo($email, $name);
 $mail->AddAddress($to, $name);
-$mail->Subject = $subject;
+$mail->Subject = "Career Services Registration - $subject";
 $mail->Body = $messages;
 
 if ($usesmtp) {
@@ -203,8 +213,7 @@ if (!$sentok || !$autorespond) {
 }
 
 $messages = file_get_contents(
-  //$replydir . $courses[$subject]['page']
-  $replydir . $courses['Generic']['page']
+  $replydir . $courses[$subject]['page']
 );
 
 $mail = new PHPMailer(); 

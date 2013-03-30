@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>Career Courses Policies | Fast Response</title>
+  <title> | Fast Response</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -17,7 +17,7 @@
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
-  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -48,7 +48,7 @@
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_emt_right.jpg" class="headerimgright" alt="" />
+      <img src="/images/headers/header_main_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
 
@@ -66,12 +66,7 @@
 	  </div>
 	</div>
 
-	<div class="leftcontent2 policy">
-
-	  <h1>Career Course Class Policies</h1>
-
-          <?php include('./career.html'); ?>
-
+	<div class="leftcontent2">
 	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->

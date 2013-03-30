@@ -99,7 +99,7 @@
 		<div class="yellow underline">Application Deadline</div>
 		<div>June 1st, 2013</div>
 		<div class="yellow underline">Paramedic A&amp;P Class </div>
-		<div>TBA</div>
+		<div>Online</div>
 		<div class="yellow underline">Academy Start</div>
 		<div>July 1st, 2013</div>
 	      </div>

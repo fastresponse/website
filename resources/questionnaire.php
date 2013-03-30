@@ -1,247 +1,366 @@
-<?php
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
-// This script receives the POST data from /resources/questionnaire.html,
-// and emails the data to us
+<head>
+  <title>Career Services Questionnaire | Fast Response</title>
 
-require("../php/phpmailer/class.phpmailer.php");
+  <base href="/" />
 
-error_reporting (E_ERROR);
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="INDEX, FOLLOW">
+  <meta name="googlebot" content="INDEX, FOLLOW">
 
-if (empty($_POST)) {
-  return;
-}
+  <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
-$name = stripslashes($_POST['name']);
-$email = trim($_POST['email']);
-$phone = stripslashes($_POST['phone']);
-$subject = stripslashes($_POST['subject']);
-$graddate = stripslashes($_POST['graddate']);
-$workshopdate = stripslashes($_POST['workshopdate']);
-$shortterm = stripslashes($_POST['shortterm']);
-$longterm = stripslashes($_POST['longterm']);
-
-//--- settings ---//
-
-$autorespond = 0;
-$autofrom = 'career.services@fastresponse.org';
-$autosubject = 'Career Services Workshop Registration';
-$autoname = 'Fast Response Career Services';
-
-$replydir = './';
-
-$usesmtp = 0;
-
-// ----- //
-// these settings are only used if usesmtp=1
-$smtphost = 'ssl://smtp.domain.com';
-$smtpport = 465;
-$smtpusername = 'yourname@domain.com';
-$smtppassword = 'yourpassword';
-// ----- //
-
-$courses = array(
-  'EMT' => array(
-    'email' => 'career.services@fastresponse.org',
-    'page' => 'reply.html',
-  ),
-  'Sterile Processing' => array(
-    'email' => 'career.services@fastresponse.org',
-    'page' => 'reply.html',
-  ),
-  'Clinical Medical Assistant' => array(
-    'email' => 'career.services@fastresponse.org',
-    'page' => 'reply.html',
-  ),
-  'Phlebotomy' => array(
-    'email' => 'career.services@fastresponse.org',
-    'page' => 'reply.html',
-  ),
-  'Paramedic' => array(
-    'email' => 'career.services@fastresponse.org',
-    'page' => 'reply.html',
-  ),
-  'Other Courses' => array(
-    'email' => 'career.services@fastresponse.org',
-    'page' => 'reply.html',
-  ),
-);
-
-//--- end settings ---//
+  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
+  <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
+  <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
 
 
+  <script type="text/javascript">
 
-//--- validation of input ---//
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18170901-1']);
+    _gaq.push(['_trackPageview']);
 
-function ValidateEmail($email) {
-  // Email validation filter sometimes allows "blah@blah" since that is
-  // technically valid. This checks for "blah@blah.com" in addition.
-  /*
-  $options = array("options" => array("regexp" =>
-    "^.+@.+\..+$"
-  ) );
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
 
-  return (
-    FALSE !== filter_var($email, FILTER_VALIDATE_EMAIL) &&
-    FALSE !== filter_var($email, FILTER_VALIDATE_REGEXP, options)
-  );
-  */
+  </script>
 
-  return (
-    FALSE !== filter_var($email, FILTER_VALIDATE_EMAIL)
-  );
-}
+  <script type="text/javascript" src="/js/jquery.js"></script>
 
-function ValidatePhone($phone) {
-  // replace extra chars common in phone numbers with spaces
-  $test = strtr($phone, "()-+", "    ");
-  // strip all spaces
-  $test = str_replace(" ", "", $test);
-  // now validate: string of at least 10 numbers
-  return (
-    strlen($test) >= 10 &&
-    FALSE !== filter_var((int)$test, FILTER_VALIDATE_INT)
-  );
-}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#menu").load("/menu/menu.html");
+    } );
+    $(document).ready(function() {
+      $("#footer").load("/menu/footer.html");
+    } );
+  </script>
 
-$error = '';
+  <!-- Code for new formmail/autoreply -->
 
-if (!$name) {
-  $error .= "Please enter your name.\n";
-}
+  <!-- JQuery -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 
-if (!$email) {
-  $error .= "Please enter an e-mail address.\n";
-}
+  <script type="text/javascript">  
+  /* <![CDATA[ */    
+  $(document).ready(function() {
+    var close_note = $("#note");
+    close_note.click(function () {
+      jQuery("#note").slideUp(500, function () {
+	jQuery(this).hide();
+      });
+    });
 
-if ($email && !ValidateEmail($email)) {
-  $error .= "Please enter a valid e-mail address.\n";
-}
+    $("#ajax-contact-form").submit(function() {
+      $('#load').append('<center><img src="/images/ajax-loader.gif" alt="Currently Loading" id="loading" /></center>');
 
-if (!$phone) {
-  $error .= "Please enter a phone number.\n";
-}
+      var fem = $(this).serialize(),
+      note = $('#note');
 
-if ($phone && !ValidatePhone($phone)) {
-  $error .= "Please enter a valid phone number with area code.\n";
-}
+      $.ajax({
+	type: "POST",
+	url: "/resources/questionnaire_mailer.php",
+	data: fem,
+	success: function(msg) {
+	  if ( note.height() ) {
+	    note.slideUp(500, function() {
+	      $(this).hide();
+	    });
+	  } 
+	  else note.hide();
 
-if (!$subject) {
-  $error .= "Please select your course of interest.\n";
-}
+	  $('#loading').fadeOut(300, function() {
+	    $(this).remove();
+	    if (msg === 'OK') {
+	      $('input').val("");
+	      $('textarea').val("");
+	    }
+	    // Message Sent? Show the 'Thank You' message and hide the form
+	    result = (msg === 'OK') ? '<div class="success">Your message has been sent. Thank you!</div>' : msg;
 
-if ($subject && !$courses[$subject]) {
-  $error .= "Please select a valid course.\n";
-}
+	    var i = setInterval(function() {
+	      if ( !note.is(':visible') ) {
+		note.html(result).slideDown(500);
+		clearInterval(i);
+	      }
+	    }, 40);    
+	  }); // end loading image fadeOut
+	}
+      });
 
-if (!$graddate) {
-  $error .= "Please enter your graduation date.\n";
-}
+      return false;
+    });
+  });
+  /* ]]> */
+  </script>  
+  <!-- End form code -->
 
-if (!$workshopdate) {
-  $error .= "Please enter your preferred workshop date.\n";
-}
+  <style type="text/css">
 
-if (!$shortterm) {
-  $error .= "Please fill out your short-term goals.\n";
-}
+    /* For new formmail/autoreply */
 
-if (!$longterm) {
-  $error .= "Please fill out your long-term goals.\n";
-}
+    #contactform { width: 100%; font: normal 11px/18px Verdana,Tahoma, Sans-serif; }
+    #contactform form { width: 100%; margin: 0; padding: 10px; margin-top: 20px; }
 
-if ($error) {
-  echo '<div class="error">'.nl2br($error).'</div>';
-  return;
-}
+    #contactform fieldset {
+      width: 100%;
+      padding: 10px 0; margin: 15px 0; border: 1px solid white; border-radius: 5px
+    }
+    #contactform fieldset legend {
+      font: normal bold 18px/26px "Trebuchet MS",Verdana,Tahoma; padding: 3px 25px;
+      margin-left: 30px; text-transform: uppercase; border: 0px solid #ddd;
+    }
+    #contactform fieldset legend span {
+      font: normal 10px/18px Arial,Verdana,Tahoma; text-transform: uppercase; display: block;
+    }
 
-//--- end of validation of input ---//
+    #contactform form label {
+      display: block; float: left; padding: 6px 10px 0 0;
+      margin: 0px; text-align: right; width: 15%;
+    }
 
+    #contactform input.inpt, 
+    #contactform input.mailaddr, 
+    #contactform input.date, 
+    #contactform textarea, 
+    #contactform select {
+      margin-bottom: 9px !important; border: 1px solid; background-color: #f5f5f5;
+      border-color: #ccc #ddd #ddd #ccc; width: 80%; padding: 4px;
+    }
 
+    #contactform input.inpt, 
+    #contactform input.mailaddr, 
+    #contactform input.date, 
+    #contactform textarea, 
+    #contactform select { border-radius: 4px; }
 
-//--- create and send email to us from user ---//
+    #contactform input.inpt:focus,
+    #contactform input.mailaddr:focus,
+    #contactform input.date:focus,
+    #contactform select:focus,
+    #contactform textarea:focus	{ background: #fff; }
 
-$messages = "From: $email\n";
-$messages.= "Name: $name\n";
-$messages.= "Email: $email\n";
-$messages.= "Phone: $phone\n";
-$messages.= "Graduation Date: $graddate\n";
-$messages.= "Preferred Workshop Date: $workshopdate\n";
-$messages.= "Short term Goals: $shortterm\n";
-$messages.= "Long term Goals: $longterm\n";
+    #contactform br { clear: left;}
+    #contactform input.required {
+      background: #f5f5f5 url('/school/info/images/required.gif') 99% 50% no-repeat;
+    }
 
-/*
-$messages.= "WhentoReach: $whenreachme\n";
-$messages.= "WhatTime: $time\n";
-*/
+    #contactform input.mailaddr,
+    #contactform input.date {
+      width: 30%;
+    }
 
-$to = $courses[$subject]['email'];
+    #contactform input.btn { background: none; border: none;}
 
-$mail = new PHPMailer(); 
+    #contactform #note { width: 90%; margin: 0 auto; }
 
-$mail->SetFrom($email);
-$mail->AddReplyTo($email, $name);
-$mail->AddAddress($to, $name);
-$mail->Subject = "Career Services Registration - $subject";
-$mail->Body = $messages;
+    /* Error / Success / Notice ----------------------------------------------------------- */
 
-if ($usesmtp) {
-  $mail->IsSMTP();
-  $mail->SMTPAuth = true;
-  $mail->Host = $smtphost;
-  $mail->Port = $smtpport;
-  $mail->Username = $smtpusername;
-  $mail->Password = $smtppassword;
-}
-else {
-  $mail->IsMail();
-}
+    #contactform .notes { background: #f0f0f0; border: 1px solid #b8b8b8; }
+    #contactform .success { background: #ccfcd1; border: 1px solid #60a400; }
+    #contactform .error { background: #f9e3e3; border: 1px solid #e79e9e; }
+    #contactform .notice { background: #fcf0cc; border: 1px solid #ecc735; }
 
-$sentok = $mail->Send();
+    #contactform .notes,
+    #contactform .notice,
+    #contactform .success,
+    #contactform .error { padding: 10px; font-size: 10px; color: #000;}
 
-if ($sentok) {
-  echo 'OK';
-}
+    #contactform .notes span,
+    #contactform .notice span,
+    #contactform .success span,
+    #contactform .error span { font-weight: bold; font-size: 1.2em;}
 
-//--- end send email to us from user ---//
+    #contactform .notes p,
+    #contactform .success p,
+    #contactform .error p,
+    #contactform .notice p { margin: 0px; padding: 0px; }
 
+    #contactform .success,
+    #contactform .error {
+      margin: 1em auto;
+      font-size: 110%;
+      font-weight: bold;
+    }
 
+    hr {
+      width: 100%;
+      margin: 1em 0;
+      padding: 0;
+      position: relative;
+      /* needed to counteract the padding on the form */
+      left: -10px;
+    }
 
-//--- send html autoreply email to user ---//
+    p {
+      width: 65%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      font-family: serif;
+      font-size: large;
+      line-height: 1.25em;
+    }
 
-// only send if the email to us succeeded and autorespond is on
-if (!$sentok || !$autorespond) {
-  return;
-}
+    ol {
+      width: 65%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-$messages = file_get_contents(
-  $replydir . $courses[$subject]['page']
-);
+    .quicklinks dd {
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .quicklinks dt {
+      color: #FF2020;
+      text-decoration: underline;
+      font-size: 110%;
+      margin-top: 1em;
+      text-align: left;
+    }
+    .quicklinks .title {
+      color: #FF2020;
+      text-decoration: underline;
+      font-size: 120%;
+      text-align: center;
+    }
+    .quicklinks dd dl {
+      display: inline;
+      margin: 0;
+    }
+    .quicklinks dd dl dt {
+      display: inline;
+      margin: 0;
+      text-decoration: none;
+      color: #FF6600;
+    }
+    .quicklinks dd dl dd {
+      display: inline;
+      margin: 0;
+    }
 
-$mail = new PHPMailer(); 
+  </style>
 
-$mail->SetFrom($autofrom, $autoname);
-$mail->AddReplyTo($autofrom, $autoname);
-$mail->AddAddress($email, $name);
-$mail->Subject = $autosubject;
-$mail->MsgHTML($messages);
-$mail->AltBody = strip_tags($messages);
+</head>
 
-if ($usesmtp) {
-  $mail->IsSMTP();
-  $mail->SMTPAuth = true;
-  $mail->Host = $smtphost;
-  $mail->Port = $smtpport;
-  $mail->Username = $smtpusername;
-  $mail->Password = $smtppassword;
-}
-else {
-  $mail->IsMail();
-}
+<body>
 
-$sentok = $mail->Send();
+  <div id="page">
 
-if ($sentok) {
-  // we don't actually do anything here
-}
+    <div id="menu">
+      <!-- filled in by javascript -->
+    </div>
 
-?>
+    <div id="head">
+      <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
+      <img src="/images/headers/header_career_right.jpg" class="headerimgright" alt="" />
+      <div class="clearfix"></div>
+    </div>
+
+    <div id="main">
+
+      <div class="section">
+
+	<div>
+
+	  <div id="contactform">
+	    <fieldset>
+	      <legend>Career Services Workshop Questionnaire - Registration</legend>
+
+	      <p>
+		In order to register for our Career Services workshop, please fill out this form and submit it.
+	      </p>
+	      <p>
+		A Career Services Representative will contact you to arrange a meeting time.
+	      </p>
+
+	      <!--
+              <p style="font-size: small; line-height: 1em; text-align: right; width: 95%;">
+		<q>Setting goals is the first step in turning the invisible into the visible.</q>
+		<cite>-Tony Robbins</cite>
+		<br /><br />
+		<q>People with clear, written goals, accomplish far more in a shorter period of time than people without them could ever imagine.</q>
+		<cite>-Brian Tracy</cite>
+	      </p>
+	      -->
+
+	      <form id="ajax-contact-form" method="post" action="/resources/questionnaire_mailer.php">
+
+		<label>Full Name</label><input class="required inpt" type="text" name="name" value="" /><br />
+		<label>E-Mail</label><input class="required inpt" type="text" name="email" value="" /><br />
+		<label>Phone Number (xxx-xxx-xxxx)</label><input class="required inpt" type="text" name="phone" value="" /><br />
+		<label>Course Title</label>
+		<select name="subject" id="subject" class="select" style="width: 30.7%;">
+		  <option value="">Select your course</option>
+		  <option value="EMT">EMT</option>
+		  <option value="Sterile Processing">Sterile Processing</option>
+		  <option value="Clinical Medical Assistant">Clinical Medical Assistant</option>
+		  <option value="Phlebotomy">Phlebotomy</option>
+		  <option value="Paramedic">Paramedic</option>
+		  <!-- <option value="Ward Clerk">Ward Clerk</option> -->
+		  <option value="Other Courses">Other Course(s)</option>
+		</select>
+		<br />
+
+		<label>Graduation Date</label><input class="date" type="text" name="graddate" value="" /><br />
+		<label>
+		  Preferred Workshop Date<br />
+		  <span style="font-size: 80%;">(Every 1<sup>st</sup> and 3<sup>rd</sup> Thursday)</span>
+		</label><input class="date" type="text" name="workshopdate" value="" /><br />
+		
+
+		<hr />
+
+		<p>Consider your answers to these questions and write your <u>specific</u> career goals.</p>
+		<ol>
+		  <li>What do I want to do with my new career training?</li>
+		  <li>What geographical location or setting do I want to be employed in?</li>
+		  <li>Will I need more continuing education units or training?</li>
+		  <li>How long do I need for the goal, e.g. 2 months or 1 year?</li>
+		</ol>
+		<br />
+
+		<label>Short Term (0-12 months):<br />1-3 Goals</label>
+		<textarea class="textbox" name="shortterm" rows="6" cols="30"></textarea>
+
+		<label>Long Term (1-5 years):<br />1-3 Goals</label>
+		<textarea class="textbox" name="longterm" rows="6" cols="30"></textarea>
+
+		<div id="note"></div>
+
+		<label id="load"></label>
+		<!--
+		<input name="submit" type="image" class="btn" src="/school/info/images/submit.gif" value="Send" />
+		-->
+		<input name="submit" type="image" value="Send" class="buttontext" src="/images/submitbutton.png" style="border: none; color: white; cursor: pointer; width: 200px; height: 85px;" />
+
+	      </form>
+	    </fieldset>
+	  </div>
+	
+	</div> <!-- /leftcontent -->
+
+      </div> <!-- /section -->
+
+      <div class="clearfix" style="min-height: 1em;"></div>
+
+    </div> <!-- /main -->
+
+    <div id="footer">
+    </div> <!-- /footer -->
+
+  </div> <!-- /page -->
+
+</body>
+</html>

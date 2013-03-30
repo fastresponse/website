@@ -1,7 +1,6 @@
 <?php
 
-// This script receives the POST data from /resources/current_employment.php,
-// and emails the data to us
+// This script receives POST data and emails it to us
 
 require("../php/phpmailer/class.phpmailer.php");
 
@@ -116,7 +115,13 @@ if ($relevantjob == "yes") {
   $messages.= "Hours per week: $hoursperweek\n";
 }
 else {
-  $messages.= "Additional assistance: " . ucfirst($wantassistance) . "\n";
+  $messages.= "Additional assistance: " . ucfirst($wantassistance);
+  if ($assistancetypes) {
+    $messages.= " (";
+    $messages.= implode($assistancetypes, ", ");
+    $messages.= ")";
+  }
+  $messages.= "\n";
   $messages.= "Travel out of Bay Area: " . ucfirst($traveloutofbay) . "\n";
   $messages.= "Travel out of State: " . ucfirst($traveloutofstate) . "\n";
 }

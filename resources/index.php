@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>Career Courses Policies | Fast Response</title>
+  <title>Student Resources | Fast Response</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -17,7 +17,7 @@
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
-  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -36,6 +36,35 @@
 
   <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
+  <style type="text/css">
+    .resourcebox {
+      width: 95%;
+      border: 1px solid white;
+      border-radius: 1em;
+      -moz-border-radius: 1em;
+      -webkit-border-radius: 1em;
+      margin: 0 auto;
+      padding: 2%;
+    }
+    .resourcebox p {
+      font-size: 170%;
+      margin: 2em auto;
+    }
+    .resourcebox p:first-child {
+      margin-top: 0;
+    }
+    .resourcebox p:last-child {
+      margin-bottom: 0;
+    }
+    .resourcebox p img {
+      height: 54px;
+      width: 100px;
+      vertical-align: middle;
+      margin-right: 1em;
+      border: none;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -48,7 +77,7 @@
 
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_emt_right.jpg" class="headerimgright" alt="" />
+      <img src="/images/headers/header_main_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
 
@@ -63,15 +92,23 @@
 	      <div>Contact Us</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 
-	<div class="leftcontent2 policy">
+	<div class="leftcontent2">
+	  <h1 style="text-align: center; text-shadow: 2px 3px 8px #650010;">Student Resources And Career Services</h1>
 
-	  <h1>Career Course Class Policies</h1>
-
-          <?php include('./career.html'); ?>
-
+	  <div class="resourcebox">
+	    <p><a href="/resources/emt/"><img src="/images/headers/header_emt_right.jpg" alt="" />Emergency Medical Technician</a></p>
+	    <p><a href="/resources/cpt/"><img src="/images/headers/header_phlebotomy_right.jpg" alt="" />Certified Phlebotomy Technician</a></p>
+	    <p><a href="/resources/cma/"><img src="/images/headers/header_ma_right.jpg" alt="" />Clinical Medical Assistant</a></p>
+	    <p><a href="/resources/spt/"><img src="/images/headers/header_spt_right.jpg" alt="" />Sterile Processing Technician</a></p>
+	  </div>
 	</div> <!-- /leftcontent -->
 
       </div> <!-- /section -->

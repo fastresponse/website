@@ -17,9 +17,9 @@ function handleit($e) {
 }
 set_exception_handler('handleit');
 
-function db_connect() {
+function db_connect($which = 'career_services') {
 
-  list($local_testing, $host, $user, $pass, $dbname) = dbsettings();
+  list($local_testing, $host, $user, $pass, $dbname) = dbsettings($which);
 
   try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
@@ -192,6 +192,31 @@ $requirements, $contact, $apply, $text) {
   );
 
   return db_insert($dbh, $i_jobpost, $params);
+}
+
+function query_next_date($dbh, $course, $type) {
+  $q_date =
+    "SELECT DATE_FORMAT(date, '%M %D, %Y') AS showdate, course, type
+    FROM start_dates
+    WHERE course = :course"
+  ;
+  $params = array(
+    ':course' => $course,
+  );
+  
+  if ($type) {
+    $q_date .= " AND type = :type";
+    $params[':type'] = $type;
+  }
+
+  $q_date .= " ORDER BY date ASC";
+
+  $result = db_query($dbh, $q_date, $params, 1);
+
+  if (!is_array($result) || !count($result))
+    $result = array('showdate' => 'TBA');
+
+  return $result;
 }
 
 ?>

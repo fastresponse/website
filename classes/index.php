@@ -15,9 +15,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -34,48 +36,39 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
   <style type="text/css">
-    .leftcontent .section {
+    #class-sections .section {
       width: 95%;
       margin: 3em auto;
       border: solid 1px white;
       border-radius: 1em;
       padding: 2% 0;
     }
-    .leftcontent .section div {
+    #class-sections .section div {
       display: inline-block;
       margin: 0 auto;
       width: 32%;
       vertical-align: middle;
     }
-    .leftcontent .section div * {
+    #class-sections .section div * {
       display: inline-block;
       margin: 0 auto;
       width: 100%;
       vertical-align: top;
     }
-    .leftcontent .section h2 {
+    #class-sections .section h2 {
       text-align: center;
     }
-    .leftcontent .section ul {
+    #class-sections .section ul {
       font-size: 120%;
       line-height: 2em;
     }
-    .leftcontent .section li {
+    #class-sections .section li {
       list-style-type: disc;
     }
-    .leftcontent .section img {
+    #class-sections .section img {
       height: auto;
       width: auto;
       vertical-align: middle;
@@ -91,7 +84,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -107,26 +100,26 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
-	  <div class="quicklinks">
-	    <dl>
-	      <a href="/pdfs/Fast Response Catalog 2013.pdf">
-		<dt><img src="/images/buttons/more_info.png" alt="Course Catalog" /></dt>
-		<dd>Course Catalog</dd>
-	      </a>
-	      <a href="/school/info/">
-		<dt><img src="/images/buttons/contact.png" alt="Contact Us" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-	      <a href="http://www.facebook.com/FastResponseSchool">
-		<dt><img src="/images/buttons/facebook.png" alt="Visit Us On Facebook" /></dt>
-		<dd>Visit Us On Facebook</dd>
-	      </a>
-	    </dl>
+	<div class="rightsidebar2">
+	  <div class="quicklinks2">
+	    <a href="/pdfs/Fast Response Catalog 2013.pdf" class="btn3 lines-2">
+	      <div>Course<br />Catalog</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="Visit Us On Facebook" />
+	      <div>Visit Us On<br />Facebook</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div> <!-- /quicklinks -->
 	</div>
 
-	<div class="leftcontent">
+	<div class="leftcontent2" id="class-sections">
 
 	  <h1 style="text-align: center; text-shadow: 2px 3px 8px #650010;">Courses offered at Fast Response School of Health Care Education</h1>
 
@@ -139,9 +132,9 @@
 	      <ul class="bullets">
 		<li><a href="/classes/career_courses/emt">EMT</a></li>
 		<li><a href="/classes/career_courses/phleotomy">Phlebotomy</a></li>
-		<li><a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a></li>
 		<li><a href="/classes/career_courses/medical_assistant">Medical Assistant</a></li>
 		<li><a href="/classes/career_courses/paramedic">Paramedic</a></li>
+		<li><a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a></li>
               </ul>
 	    </div>
 	    <div>
@@ -157,12 +150,12 @@
 	    <div>
 	      <ul class="bullets">
 		<li><a href="/classes/continuing_education/cpr">CPR</a></li>
-		<li><a href="/classes/continuing_education/acls_prep">ACLS Preparation</a></li>
 		<li><a href="/classes/continuing_education/acls">ACLS</a></li>
 		<li><a href="/classes/continuing_education/pals">PALS</a></li>
 		<li><a href="/classes/continuing_education/ecg_basic">ECG Basic</a></li>
 		<li><a href="/classes/continuing_education/12_lead_ecg">12-Lead ECG</a></li>
 		<li><a href="/classes/continuing_education/ecg_tech">ECG Technician</a></li>
+		<li><a href="/classes/continuing_education/acls_prep">ACLS Preparation</a></li>
 		<li><a href="/classes/continuing_education/itls">ITLS</a></li>
 		<li><a href="/classes/continuing_education/emt_r">EMT Refresher</a></li>
 		<li><a href="/classes/continuing_education/NREMT">NREMT</a></li>
@@ -193,11 +186,12 @@
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 0.2em;"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

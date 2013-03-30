@@ -34,7 +34,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
 </head>
 
@@ -57,15 +57,12 @@
       <div class="section">
 
 	<div class="rightsidebar2">
-	  <div class="quicklinks">
-	    <dl>
-
-	      <a href="./info/">
-		<dt><img src="/images/buttons/contact.png" alt="" /></dt>
-		<dd>Contact Us</dd>
-	      </a>
-
-	    </dl>
+	  <div class="quicklinks2">
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 
@@ -90,7 +87,7 @@
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 2em;"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 

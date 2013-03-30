@@ -37,15 +37,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
   <!-- Code for new formmail/autoreply -->
 
   <!-- JQuery -->
@@ -123,6 +114,7 @@
     }
     .quicklinks dt {
       color: #FF2020;
+      color: #D22828;
       text-decoration: underline;
       font-size: 110%;
       margin-top: 1em;
@@ -130,6 +122,7 @@
     }
     .quicklinks .title {
       color: #FF2020;
+      color: #D22828;
       text-decoration: underline;
       font-size: 120%;
       text-align: center;
@@ -158,7 +151,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -364,6 +357,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

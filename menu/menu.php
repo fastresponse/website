@@ -299,23 +299,14 @@
   </li>
 
   <li class="menuparent">
-  <a href="/community/">Community</a>
+  <a href="/classes/#community">Community</a>
   <ul>
     <li>
-    <a href="/community/">Community Education</a>
-    <ul>
-      <li>
-      <a href="/community/cpr/">CPR</a>
-      </li>
-
-      <li>
-      <a href="/community/first_aid/">First Aid</a>
-      </li>
-    </ul>
+    <a href="/community/cpr/">CPR</a>
     </li>
 
     <li>
-    <a href="/community/">Events And Information</a>
+    <a href="/community/first_aid/">First Aid</a>
     </li>
   </ul>
   </li>
@@ -324,26 +315,19 @@
   <a href="/school/info/">Contact Us</a>
   <ul>
     <li>
-    <a href="/school/location">Location</a>
-    <!--
-    <ul>
-      <li>
-      <a href="/school/location?init=map">Map</a>
-      </li>
+    <a href="/school/location/?section=maps">Location</a>
+    </li>
 
-      <li>
-      <a href="/school/location?init=directions">Directions</a>
-      </li>
+    <li>
+    <a href="/school/location?section=directions">Directions</a>
+    </li>
 
-      <li>
-      <a href="/school/location?init=transit">Transit</a>
-      </li>
+    <li>
+    <a href="/school/location?section=transit">Transit</a>
+    </li>
 
-      <li>
-      <a href="/school/location?init=parking">Parking</a>
-      </li>
-    </ul>
-    -->
+    <li>
+    <a href="/school/location?section=parking">Parking</a>
     </li>
   </ul>
   </li>

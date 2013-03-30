@@ -16,9 +16,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -35,16 +37,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
 </head>
 
@@ -53,13 +46,10 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
-      <!--
-      <img src="/images/headers/header_main.jpg" class="headerimg" alt="Fast Response School of Health Care Education" />
-      -->
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
       <img src="/images/headers/header_main_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
@@ -69,30 +59,34 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
-	  <div class="quicklinks">
-	    <div class="box">
-	      <span>Quick Links:</span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar">
-		View Calendar
-              </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/default.asp?page=Catalog">
-		Register for this course
-              </a></span>
-
-	      <span>
-		<a href="/community">
-		  Back to<br />Community Events
-	      </a></span>
-	    </div>
+	<div class="rightsidebar2">
+	  <div class="quicklinks2">
+            <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar" class="btn3 lines-1">
+	      <div>View Calendar</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+            <a href="http://www.ssreg.com/fastresponse/classes/default.asp?page=Catalog" class="btn3 lines-2">
+	      <div>Register For<br />This Course</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+            <a href="/community/" class="btn3 lines-2">
+	      <div>Community<br />Events</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 
-	<div class="leftcontent">
+	<div class="leftcontent2">
 
 	  <h1>Community CPR</h1>
 
@@ -109,7 +103,7 @@
 	    </ul>
 	  </div>
 
-	  <div class="clearfix" style="min-height: 2em;"></div>
+	  <div class="clearfix"></div>
 
 	</div> <!-- /leftcontent -->
 
@@ -118,6 +112,7 @@
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

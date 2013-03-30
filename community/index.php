@@ -16,9 +16,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -35,16 +37,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
   <style type="text/css">
     ul.looknice {
@@ -90,13 +83,10 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
-      <!--
-      <img src="/images/headers/header_main.jpg" class="headerimg" alt="Fast Response School of Health Care Education" />
-      -->
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
       <img src="/images/headers/header_community_first_aid_right.jpg" class="headerimgright" alt="" />
       <div class="clearfix"></div>
@@ -106,25 +96,30 @@
 
       <div class="section">
 
-	<div class="rightsidebar">
-	  <div class="quicklinks">
-	    <div class="box">
-
-	      <span>Quick Links:</span>
-
-	      <span><a href="/community/cpr">
-		Community CPR
-	      </a></span>
-
-	      <span><a href="/community/first_aid">
-		Community First Aid
-	      </a></span>
-
-	    </div>
+	<div class="rightsidebar2">
+	  <div class="quicklinks2">
+            <a href="/community/cpr/" class="btn3 lines-1">
+	      <div>Community CPR</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+            <a href="/community/first_aid/" class="btn3 lines-2">
+	      <div>Community<br />First Aid</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="/school/info/" class="btn2 lines-1">
+	      <img src="/images/buttons/envelope-icon.png" alt="" />
+	      <div>Contact Us</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
+	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	      <img src="/images/buttons/facebook-icon.png" alt="" />
+	      <div>Visit Us On<br />Facebook</div>
+              <div></div><div></div><div></div><div></div>
+	    </a>
 	  </div>
 	</div>
 
-	<div class="leftcontent" style="/*text-align: center;*/">
+	<div class="leftcontent2" style="/*text-align: center;*/">
 
 	  <h1 style="margin-left: 25%;">Community Events</h1>
 
@@ -166,13 +161,14 @@
 
 	</div> <!-- /leftcontent -->
 
-	<div class="clearfix" style="min-height: 3em;"></div>
+	<div class="clearfix"></div>
 
       </div> <!-- /section -->
 
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

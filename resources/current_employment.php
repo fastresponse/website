@@ -45,15 +45,6 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#menu").load("/menu/menu.html");
-    } );
-    $(document).ready(function() {
-      $("#footer").load("/menu/footer.html");
-    } );
-  </script>
-
   <script type="text/javascript" src="/js/frlib.js"></script>
 
   <!-- Code for new formmail/autoreply -->
@@ -216,7 +207,7 @@
     }
 
     hr {
-      width: 100%;
+      /* width: 100%; */
       margin: 1em 0;
       padding: 0;
       position: relative;
@@ -281,7 +272,7 @@
   <div id="page">
 
     <div id="menu">
-      <!-- filled in by javascript -->
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
     <div id="head">
@@ -350,12 +341,12 @@
 		  <div id="assistanceopts" class="hidden">
 		    <div style="min-height: 0.2em;"></div>
 		    <label class="wide">with:</label>
-		    <input type="checkbox" name="assistancetypes" value="resume" />Resume PUT THIS TEXT IN A SPAN WITH WIDTH=4EM
-		    <input type="checkbox" name="assistancetypes" value="coverletter" />Cover Letter
+		    <input type="checkbox" name="assistancetypes[]" value="Resume" /><span style="display: inline-block; width: 9em;">Resume</span>
+		    <input type="checkbox" name="assistancetypes[]" value="Cover Letter" />Cover Letter
 		    <br />
 		    <label class="wide">&nbsp;</label>
-		    <input type="checkbox" name="assistancetypes" value="interview" />Interview Skills
-		    <input type="checkbox" name="assistancetypes" value="opportunities" />Finding Job Opportunities
+		    <input type="checkbox" name="assistancetypes[]" value="Interview" /><span style="display: inline-block; width: 9em;">Interview Skills</span>
+		    <input type="checkbox" name="assistancetypes[]" value="Opportunities" />Finding Job Opportunities
 		    <br />
 		  </div>
 		  <label class="wide">I am willing to travel outside the Bay Area</label>
@@ -385,11 +376,12 @@
 
       </div> <!-- /section -->
 
-      <div class="clearfix" style="min-height: 1em;"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 
     <div id="footer">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
