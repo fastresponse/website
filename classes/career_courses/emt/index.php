@@ -1,6 +1,6 @@
 <?php
-  //require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
-  //$handle = db_connect('start_dates');
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+  $handle = db_connect('start_dates');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -108,16 +108,16 @@
 		<h3 class="yellow">Course Start Dates</h3>
 		<div class="yellow underline">Full Time</div>
 		<?php
-		  //$next = query_next_date($handle, 'EMT', 'Full-time');
-		  //echo "<div>{$next['showdate']}</div>";
+		  $next = query_next_date($handle, 'EMT', 'Full-time');
+		  echo "<div>{$next['showdate']}</div>";
 		?>
-                <div>May 20th, 2013</div>
+                <!--<div>May 20th, 2013</div>-->
 		<div class="yellow underline">Part Time</div>
 		<?php
-		  //$next = query_next_date($handle, 'EMT', 'Part-time');
-		  //echo "<div>{$next['showdate']}</div>";
+		  $next = query_next_date($handle, 'EMT', 'Part-time');
+		  echo "<div>{$next['showdate']}</div>";
 		?>
-                <div>June 17th, 2013</div>
+                <!--<div>June 17th, 2013</div>-->
 	      </div>
 	    </div>
 

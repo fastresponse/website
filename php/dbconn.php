@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 /* all functions related to database connections and queries */
 
 function handleit($e) {
-  /* this is debug stuff
+  /*
   echo '<pre>';
   print_r($e->getMessage());
   echo "\n";
@@ -196,7 +196,7 @@ $requirements, $contact, $apply, $text) {
 
 function query_next_date($dbh, $course, $type) {
   $q_date =
-    "SELECT DATE_FORMAT(date, '%M %D, %Y') AS showdate, course, type
+    "SELECT DATE_FORMAT(thedate, '%M %D, %Y') AS showdate, course, type
     FROM start_dates
     WHERE course = :course"
   ;
@@ -209,7 +209,7 @@ function query_next_date($dbh, $course, $type) {
     $params[':type'] = $type;
   }
 
-  $q_date .= " ORDER BY date ASC";
+  $q_date .= " ORDER BY thedate ASC";
 
   $result = db_query($dbh, $q_date, $params, 1);
 
