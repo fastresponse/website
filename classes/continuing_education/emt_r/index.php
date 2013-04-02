@@ -83,31 +83,12 @@
 	      <div>Visit Us On<br />Facebook</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
-	    
-	    <!--
-	    <div class="box">
-	      <span>Quick Links:</span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar">
-		View Calendar
-	      </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4120">
-		Register for this course
-	      </a></span>
-
-	      <span>
-		<a href="../../career_courses/emt/">
-		Information about our Accelerated EMT Program
-	      </a></span>
-	    </div>
-	    -->
 	  </div>
 	</div>
 
 	<div class="leftcontent2">
+
+          <?php include('../ceu_include.php'); ?>
 
 	  <h1>EMT Refresher</h1>
 

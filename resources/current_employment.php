@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <?php
-  error_reporting(E_ERROR);
+  error_reporting(0);
 
   $emailaddr = $_GET['emailaddr'];
-  if (!$emailaddr)
+  if (!$emailaddr || !filter_var($emailaddr, FILTER_VALIDATE_EMAIL))
     $emailaddr = 'anonymous@fastresponse.org';
 ?>
 
@@ -43,7 +43,7 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
   <script type="text/javascript" src="/js/frlib.js"></script>
 
@@ -70,7 +70,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "current_employment_mailer.php",
+	url: "/resources/current_employment_mailer.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {
@@ -295,7 +295,7 @@
 	        If you would be willing to provide the following information about your current employment status it would be very helpful to us in finding new ways to assist past, present, and future students. All of your information is extremely confidential and will not be released to any third party. Your participation is greatly appreciated and will be a tremendous help.
 	      </p>
 
-	      <form id="ajax-contact-form" method="post" action="current_employment_mailer.php">
+	      <form id="ajax-contact-form" method="post" action="/resources/current_employment_mailer.php">
 
 		<?php
 		  echo "<input type='hidden' name='emailaddr' value='$emailaddr' /><br />";

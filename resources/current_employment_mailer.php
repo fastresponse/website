@@ -2,11 +2,12 @@
 
 // This script receives POST data and emails it to us
 
-require("../php/phpmailer/class.phpmailer.php");
+require($_SERVER['DOCUMENT_ROOT'] . '/php/phpmailer/class.phpmailer.php');
 
-error_reporting (E_ERROR);
+error_reporting(0);
 
 if (empty($_POST)) {
+  echo '<div class="error";>No data.</div>';
   return;
 }
 
@@ -71,7 +72,7 @@ if (!$graddate) {
   $error .= "Please enter your graduation date.\n";
 }
 
-if (!$relevantjob || ($relevantjob != "yes" && $relevantjob != "no")) {
+if (!$relevantjob) {
   $error .= "Please indicate whether you are working in a position relevant to your course.\n";
 }
 
@@ -150,6 +151,9 @@ $sentok = $mail->Send();
 
 if ($sentok) {
   echo 'OK';
+}
+else {
+  echo '<div class="error">Error sending.</div>';
 }
 
 //--- end send email to us from user ---//

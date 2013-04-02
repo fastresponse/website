@@ -170,7 +170,8 @@
       padding: 5px;
       width: 90%;
     }
-    .companypages:hover {
+    .companypages:hover,
+    .announcement:hover {
       border-color: red;
       background-color: #000022;
     }
@@ -339,8 +340,20 @@
 	  </div>
 
 	  <div id="jobsearch" class="hidden">
-	    <h2 class="textcenter">Job Search</h2>
-	    <h4 class="textcenter">Click an entry to expand</h4>
+            
+	    <div style="float: left; width: 100%;">
+	      <div style="float: right; width: 22%;">
+		<a href="/resources/current_employment.php">
+		  <div class="announcement red" style="text-align: center;">
+		    <div class="yellow">Help us improve Career Services</div>
+		    <div>Let us know when you're hired!</div>
+		  </div>
+		</a>
+	      </div>
+
+	      <h2 style="margin-left: 22%; text-align: center;">Job Search</h2>
+	      <h4 style="margin-left: 22%; text-align: center;">Click an entry to expand</h4>
+	    </div>
 
 <?php
   $all_companies = query_companies_web_by_course($handle, $course_abbr);
@@ -368,7 +381,7 @@
     ;
   }
 ?>
-	    <div class="companypages borderbox radius1em pointer textcenter"
+	    <div class="companypages borderbox radius1em pointer textcenter" style="clear: left;"
 	      onClick="toggleClassArr(['companytitle', <?= implode($company_ids, ', '); ?>], 'hidden');"
 	    >
 	    <h5 id="companytitle"><?= $course_title ?> Employers list</h5>

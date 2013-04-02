@@ -111,13 +111,11 @@
 		  $next = query_next_date($handle, 'EMT', 'Full-time');
 		  echo "<div>{$next['showdate']}</div>";
 		?>
-                <!--<div>May 20th, 2013</div>-->
 		<div class="yellow underline">Part Time</div>
 		<?php
 		  $next = query_next_date($handle, 'EMT', 'Part-time');
 		  echo "<div>{$next['showdate']}</div>";
 		?>
-                <!--<div>June 17th, 2013</div>-->
 	      </div>
 	    </div>
 

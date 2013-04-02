@@ -198,7 +198,7 @@ function query_next_date($dbh, $course, $type) {
   $q_date =
     "SELECT DATE_FORMAT(thedate, '%M %D, %Y') AS showdate, course, type
     FROM start_dates
-    WHERE course = :course"
+    WHERE course = :course AND thedate >= CURDATE()"
   ;
   $params = array(
     ':course' => $course,

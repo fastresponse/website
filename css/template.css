@@ -721,6 +721,11 @@ div.pointer,
   text-align: left;
   margin-bottom: 1em;
 }
+.announcement hr {
+  width: auto;
+  border-color: #2211CC;
+  margin: 1em -1em;
+}
 .announcement h3 {
   font-size: 130%;
   font-size: large;

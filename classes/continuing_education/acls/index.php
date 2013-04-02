@@ -87,38 +87,12 @@
 	      <div>Visit Us On<br />Facebook</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
-	  
-	    <!--
-	    <div class="box">
-
-	      <span>Quick Links:</span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar">
-		View Calendar
-	      </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4106&pcatID=4105">
-		Register for "Provider"
-	      </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4107&pcatID=4105">
-		Register for "Renewal"
-	      </a></span>
-
-	      <span>
-		<a href="/pdfs/ACLS Study Guide 6.18.12.pdf" style="font-size: 130%;">
-		<span style="display: inline; text-decoration: underline;" class="red">Download<br />Study Guide</span>
-	      </a></span>
-
-	    </div>
-	    -->
 	  </div>
 	</div>
 
 	<div class="leftcontent2">
+
+          <?php include('../ceu_include.php'); ?>
 
 	  <h1>Advanced Cardiac Life Support (ACLS)</h1>
 

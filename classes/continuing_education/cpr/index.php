@@ -101,53 +101,12 @@
 	      <div>Visit Us On<br />Facebook</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
-
-            <!--
-	    <div class="box">
-              <span>Quick Links:</span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar">
-		View Calendar
-              </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4103&pcatID=4102">
-		Register for "Provider"
-              </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4104&pcatID=4102">
-		Register for "Renewal"
-              </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4243&pcatID=4242">
-		Register for BLS eLearning, Part 1: Code Purchase for Online Training
-	      </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4244&pcatID=4242">
-		Register for BLS eLearning, Parts 2 and 3: Skills Practice and Testing
-	      </a></span>
-
-	    </div>
-	    -->
 	  </div>
 	</div>
 
 	<div class="leftcontent2">
 
-	  <div style="display: inline-block; border: 2px solid #2211CC; border-radius: 1em; padding: 1em; float: right; font-weight: bold;">
-	    <span style="font-size: 1.4em; color: red">
-	      Now Offering BLS Renewal<br>
-	      Classes Every Other Saturday!
-	    </span>
-	    <br>
-	    <span style="font-size: 1.1em;" class="yellow">
-	      See calendar for specific dates.
-	    </span>
-	  </div>
+          <?php include('../ceu_include.php'); ?>
 
 	  <h1>Healthcare CPR</h1>
 
@@ -157,13 +116,13 @@
 
 	  <p class="squaredup">This class is for those who are taking CPR for the first time or have an expired CPR card. Covered in class are adult, child, and infant CPR and choking rescue. Use of the AED, barrier devices, and BVM are thoroughly covered using hands-on skill practice.</p>
 	  
-	  <img width="330" height="290" align="right" alt="" src="/images/CPR_Class.jpg" style="margin-left: 1em;">
-
 	  <ul class="bullets">
 	    <li><span style="font-weight: bold;" class="green">Taken for the first time, or for those with an expired CPR card.</span></li>
 	    <li>The class is 4.5 to 5 hours in length.</li>
 	    <li>AHA Certification good for 2 years.</li>
 	  </ul>
+
+	  <img alt="" src="/images/CPR_Class.jpg" style="margin-left: 1em; float: right;">
 
 	  <h2 class="yellow">Renewal (AHA)</h2>
 

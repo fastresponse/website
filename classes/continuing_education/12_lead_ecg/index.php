@@ -81,28 +81,12 @@
 	      <div>Visit Us On<br />Facebook</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
-
-	    <!--
-	    <div class="box">
-
-	      <span>Quick Links:</span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar">
-		View Calendar
-	      </a></span>
-
-	      <span>
-		<a href="http://www.ssreg.com/fastresponse/classes/default.asp?page=Catalog">
-		Register for this course
-	      </a></span>
-
-	    </div>
-	    -->
 	  </div>
 	</div>
 
 	<div class="leftcontent2">
+
+          <?php include('../ceu_include.php'); ?>
 
 	  <h1>ECG Recognition</h1>
 
