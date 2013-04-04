@@ -2,7 +2,7 @@
 <html>
 <head>
   {% block head %}
-  <title>{% block title %}{% endblock %} | Fast Response</title>
+  <title>{{ title is defined ? title ~ " | " }}Fast Response</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
@@ -16,7 +16,7 @@
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
-  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -26,14 +26,13 @@
     _gaq.push(['_trackPageview']);
 
     (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
      })();
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
   {% endblock head %}
 
 </head>
@@ -43,35 +42,31 @@
   <div id="page">
 
     <div id="menu">
-      {% include 'menu.php' %}
+      {% include 'menu.html' %}
     </div>
 
+    {% block top %}
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="" class="headerimgright" alt="" />
+      <img src="/images/headers/{{ headerimg|default('header_main_right.jpg') }}" class="headerimgright" alt="" />
       <div class="clearfix"></div>
     </div>
+    {% endblock top %}
 
     <div id="main">
 
+      {% block maincontent %}
       <div class="section">
-
-	<div class="rightsidebar2">
-          {% block sidebar %}{% endblock %}
-	</div>
-
-	<div class="leftcontent2">
-          {% block content %}{% endblock %}
-	</div> <!-- /leftcontent -->
-
+	{{ content }}
       </div> <!-- /section -->
+      {% endblock maincontent %}
 
-      <div class="clearfix vspacer"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 
     <div id="footer">
-      {% include 'footer.php' %}
+      {% include 'footer.html' %}
     </div> <!-- /footer -->
 
   </div> <!-- /page -->

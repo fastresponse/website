@@ -1,3 +1,8 @@
+<?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+  $handle = db_connect('start_dates');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
@@ -97,11 +102,17 @@
 	      <div class="announcement red">
 		<h3 class="yellow">Important Dates</h3>
 		<div class="yellow underline">Application Deadline</div>
-		<div>June 1st, 2013</div>
+		<?php
+		  $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
+		  echo "<div>{$next['showdate']}</div>";
+		?>
 		<div class="yellow underline">Paramedic A&amp;P Class </div>
 		<div>Online</div>
 		<div class="yellow underline">Academy Start</div>
-		<div>July 1st, 2013</div>
+		<?php
+		  $next = query_next_date($handle, 'Paramedic', 'Academy Start');
+		  echo "<div>{$next['showdate']}</div>";
+		?>
 	      </div>
 	    </div>
 

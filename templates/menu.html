@@ -1,0 +1,205 @@
+<!-- css for this is in /css/nicemenus.css -->
+
+<ul class="nice-menu nice-menu-down" id="nice-menu-1">
+
+  <!-- this level is the main menu visible at all times -->
+
+  <li class="menuparent">
+  <a href="/">Home</a>
+  <ul>
+    <!-- sub-menu -->
+    <li>
+    <a href="/school/about.php">About Us</a>
+    </li>
+    
+    <li>
+    <a href="/school/about.php#mission">Mission statement</a>
+    </li>
+    
+    <!--
+    <li>
+    <a href="/school/faqs.php">FAQs</a>
+    </li>
+    -->
+    
+    <li>
+    <a href="/school/sitemap.php">Sitemap</a>
+    </li>
+    
+    <li class="menuparent">
+    <a href="/school/policies/">Policies</a>
+    <ul>
+      <li>
+      <a href="/school/policies/ceu.php">Continuing Education</a>
+      </li>
+
+      <li>
+      <a href="/school/policies/privacy.php">Privacy Policy</a>
+      </li>
+
+      <li>
+      <a href="/school/policies/terms.php">Terms And Conditions</a>
+      </li>
+    </ul>
+    </li>
+
+    <li>
+    <a href="http://www.bppe.ca.gov/about_us/contact.shtml" title="Bureau of Private and Postsecondary Education">Contact the BPPE</a>
+    </li>
+  </ul> <!-- end submenu -->
+  </li>
+
+  <li class="menuparent">
+  <a href="/classes/">Courses</a>
+  <ul>
+    <li class="menuparent">
+    <a href="/classes/#career">Career courses</a>
+    <ul>
+      <li>
+      <a href="/classes/career_courses/emt">EMT</a>
+      </li>
+
+      <li>
+      <a href="/classes/career_courses/phlebotomy">Phlebotomy</a>
+      </li>
+
+      <li>
+      <a href="/classes/career_courses/medical_assistant">Medical Assistant</a>
+      </li>
+
+      <li>
+      <a href="/classes/career_courses/paramedic">Paramedic</a>
+      </li> 
+
+      <li>
+      <a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a>
+      </li>
+    </ul>
+    </li>
+ 
+    <li class="menuparent">
+    <a href="/classes/#continuing">Continuing Education Courses</a>
+    <ul>
+      <li>
+      <a href="/classes/continuing_education/cpr">CPR</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/acls">ACLS</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/pals">PALS</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/ecg_basic">ECG Basic</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/12_lead_ecg">ECG 12-Lead</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/ecg_tech">ECG Technician</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/acls_prep">ACLS Preparation</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/itls">ITLS</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
+      </li>
+
+      <li>
+      <a href="/classes/continuing_education/NREMT/">NREMT</a>
+      </li>
+    </ul>
+    </li>
+  </ul>
+  </li>
+
+  <li class="menuparent">
+  <a href="/resources/">Resources</a>
+  <ul>
+    {% set courses = {'EMT' : ['videos'], 'CPT' : [], 'CMA' : [], 'SPT' : []} %}
+    {% for course in courses|keys %}
+    {% set dir = course|lower %}
+    <li class="menuparent">
+    <a href="/resources/{{ dir }}/">{{ course|upper }}</a>
+    <ul>
+      <li>
+      <a href="/resources/{{ dir }}/?section=carsvcs">Career Services</a>
+      </li>
+
+      <li>
+      <a href="/resources/{{ dir }}/?section=resumes">Resumes</a>
+      </li>
+
+      <li>
+      <a href="/resources/{{ dir }}/?section=interviews">Interview Skills</a>
+      </li>
+
+      <li>
+      <a href="/resources/{{ dir }}/?section=jobsearch">Job Search</a>
+      </li>
+
+      {% if 'extcert' in courses[course] %}
+	<li>
+	<a href="/resources/{{ dir }}/?section=extcert">Externship &amp; Certification</a>
+	</li>
+      {% endif %}
+
+      {% if 'videos' in courses[course] %}
+	<li>
+	<a href="/resources/{{ dir }}/?section=videos">Videos</a>
+	</li>
+      {% endif %}
+    </ul>
+    </li>
+    {% endfor %}
+
+  </ul>
+  </li>
+
+  <li class="menuparent">
+  <a href="/classes/#community">Community</a>
+  <ul>
+    <li>
+    <a href="/community/cpr/">CPR</a>
+    </li>
+
+    <li>
+    <a href="/community/first_aid/">First Aid</a>
+    </li>
+  </ul>
+  </li>
+
+  <li class="menuparent">
+  <a href="/school/info/">Contact Us</a>
+  <ul>
+    <li>
+    <a href="/school/location/?section=maps">Location</a>
+    </li>
+
+    <li>
+    <a href="/school/location?section=directions">Directions</a>
+    </li>
+
+    <li>
+    <a href="/school/location?section=transit">Transit</a>
+    </li>
+
+    <li>
+    <a href="/school/location?section=parking">Parking</a>
+    </li>
+  </ul>
+  </li>
+</ul>
+
+

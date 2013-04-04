@@ -91,22 +91,30 @@
 
 	<div class="leftcontent2">
 
+          <div class="column smallauto" style="width: 17%;">
+	    <div class="announcement red">
+	      <h3 class="yellow">Course Start Dates</h3>
+	      <div>Students can enter at the beginning of almost any class section. Sections rotate on a weekly basis.</div>
+	      <div><a href="/school/info/" class="yellow">Contact us for details.</a></div>
+	    </div>
+	  </div>
+
 	  <h1>Clinical Medical Assistant</h1>
 
 	  <div>
-	    <img alt="Medical Assistant" align="right" width="230" height="120" src="/images/now_including.png" />
+	    <img alt="Medical Assistant" src="/images/now_including.png" style="width: 230px; height: 120px; float: right;"/>
 
-	    <p>The Medical Assistant is a liaison between the doctor and the patient and is <span style="font-style: italic;">vital to the success</span> of the medical practice. Medical Assistants enjoy <span style="text-decoration: underline;">exciting and multi-faceted careers</span> as duties vary greatly and can include taking and recording vital signs and medical histories, rooming patients and preparing them for exams, administering injections, drawing blood and performing commonly ordered lab tests.</p>
+	    <p>The Medical Assistant is a liaison between the doctor and the patient and is vital to the success of the medical practice. Medical Assistants enjoy <span style="text-decoration: underline;">exciting and multi-faceted careers</span> as duties vary greatly and can include taking and recording vital signs and medical histories, rooming patients and preparing them for exams, administering injections, drawing blood and performing commonly ordered lab tests.</p>
 
-	    <img alt="Assistant" align="left" width="201" height="190" src="/images/med_assistant00.png" />
+	    <img alt="Assistant" src="/images/med_assistant00.png" style="width: 201px; height: 190px; float: left;" />
 
-	    <p>Other schools only include venipuncture with their Medical Assistant Course, which is not enough training to draw blood in a hospital environment or work independently in a lab. However, <em><strong>Fast Response includes a complete PHLEBOTOMY CERTIFICATION with our program!</strong></em></p>
+	    <p>Other schools only include venipuncture with their Medical Assistant Course, which is not sufficient training to draw blood in a hospital environment or work independently in a lab. However, <em><strong>Fast Response includes a complete PHLEBOTOMY CERTIFICATION with our program!</strong></em></p>
 
-	    <p>Our 5 month course (usually only 3 hours per day!) will prepare you for clinical procedures such as sterile techniques, assisting with minor procedures, injections, phlebotomy and electrocardiograms (ECG/EKG). A full month (160 hours) of field experience gives you confidence, polished skills and contacts to get your career started right.</p>
-	    <p>Our externship satisfies the work experience requirements of some of the major hospitals in the area.</p>
-            <p>According to the US Department of Labor, Medical Assisting is one of the fastest growing and most in-demand professions in the country!</p>
+	    <p>Our 5-month course (usually only 3 hours per day!) will prepare you to perform clinical procedures such as sterile techniques, assisting with minor procedures, injections, phlebotomy and electrocardiograms (ECG/EKG). A full month (160 hours) of field experience gives you confidence, polished skills and contacts you need to get your career started right.</p>
+	    <p>Our externship satisfies the work experience requirements of many of the major hospitals in the area.</p>
+            <p>According to the US Department of Labor, Medical Assisting is one of the fastest-growing and most in-demand professions in the country!</p>
 
-	    <img alt="Increase Your Career Opportunities!" width="650" height="50" align="middle" src="/images/increase.png" />
+	    <img alt="Increase Your Career Opportunities!" src="/images/increase.png" style="width: 650px; height: 50px; vertical-align: middle;"/>
 
 	    <div class="section" style="clear: left;">
 	      <h3>We challenge you to find another course in the Bay Area that provides:</h3>

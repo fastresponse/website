@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="rightsidebar2">
+  {% block sidebar %}
+  <div class="quicklinks2">
+    {% for btn in buttons %}
+      {% include "button.html" %}
+    {% endfor %}
+  </div>
+  {% endblock sidebar %}
+</div>
+<div class="leftcontent2">
+  {{ content }}
+</div> 
+{% endblock content %}

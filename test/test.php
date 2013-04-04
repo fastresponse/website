@@ -1,20 +1,24 @@
 <?php
-require_once('../php/Twig/Autoloader.php');
-Twig_Autoloader::register();
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/templateload.php');
+$template = new TemplateRenderer();
 
-$loader = new Twig_Loader_Filesystem('../templates');
-$twig = new Twig_Environment($loader, array(
-  //'debug' => true;
-  'cache' => 'cache',
-  'auto_load' => true,
-));
-
-$template = $twig->loadTemplate('base.php');
-
-$template->display(array(
+$vars = (array(
   'title' => 'Testing',
-  'sidebar' => '<h4>Blah?</h4>',
-  'content' => '<h1>HELLO WORLD</h1>',
+  'content' => 'HELLO WORLD',
+  'buttons' => array(
+    array(
+      'text' => 'Test<br />Button',
+      'link' => '/school/info/',
+      'lines' => 2,
+      'target' => '_blank',
+    ),
+    array(
+      'text' => 'Click Me',
+      'link' => '/school/info/',
+      'img' => 'envelope-icon.png',
+    ),
+  ),
 ));
 
+$template->display('sidebar-view.html', $vars);
 ?>

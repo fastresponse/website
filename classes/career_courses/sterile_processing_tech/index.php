@@ -1,3 +1,8 @@
+<?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+  $handle = db_connect('start_dates');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
@@ -90,6 +95,17 @@
 	</div>
 
 	<div class="leftcontent2">
+
+          <div class="column smallauto">
+	    <div class="announcement red">
+	      <h3 class="yellow">Course Start Dates</h3>
+	      <div class="yellow underline">Full-time</div>
+	      <?php
+		$next = query_next_date($handle, 'SPT', 'Full-time');
+		echo "<div>{$next['showdate']}</div>";
+	      ?>
+	    </div>
+	  </div>
 
 	  <h1>Sterile Processing Technician</h1>
 
