@@ -1,114 +1,72 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/templateload.php');
-  $template = new TemplateRenderer();
-  $template->display('course.html', array(), array());
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/templateload.php');
+$template = new TemplateRenderer();
+
+$vars = array(
+  'title' => 'EMT',
+  'headerimg' => 'header_emt_right.jpg',
+  'buttons' => array(
+    array(
+      'text' => "Course Info\nPacket",
+      'link' => '/pdfs/EMT - Course Info Packet.pdf',
+      'target' => '_blank',
+    ),
+    array(
+      'text' => "Performance\nFace Sheet",
+      'link' => '/pdfs/EMT - Performance Fact Sheet.pdf',
+      'target' => '_blank',
+    ),
+    array(
+      'text' => "Student\nResources",
+      'link' => '/resources/emt/',
+    ),
+    array(
+      'text' => "Skills Videos",
+      'link' => '/resources/emt/?section=videos',
+    ),
+    array(
+      'text' => "Photo Gallery",
+      'link' => '/photos/emt/index.html#emt',
+    ),
+    array(
+      'text' => "Contact Us",
+      'link' => '/school/info/',
+      'img' => '/images/buttons/envelope-icon.png',
+    ),
+    array(
+      'text' => "Visit Us On\nFacebook",
+      'link' => 'http://www.facebook.com/FastResponseSchool',
+      'img' => '/images/buttons/facebook-icon.png',
+    ),
+  ),
+  'announcements' => array(
+    /*
+    array(
+      title => 'Course Start Dates',
+      subs => array (
+	array(
+	  'subtitle' => 'Full Time',
+	  'text' => query_next_date($handle, $course, $type),
+	),
+      ),
+    ),
+    */
+  ),
+));
   
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
-  $handle = db_connect('start_dates');
-  $course = 'EMT';
-  $dates = array('Full-time', 'Part-time');
-  foreach ($type in $dates)
-    $dates[$type] = query_next_date($handle, $course, $type);
-  //echo "<div>{$next['showdate']}</div>";
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+$handle = db_connect('start_dates');
+$course = 'EMT';
+$dates = array('Full-time', 'Part-time');
+foreach ($type in $dates) {
+  $vars['announcements']['Course Start Dates'][] = array(
+    'subtitle' => $type,
+    'text' => query_next_date($handle, $course, $type),
+  );
+}
+
+$template->display('course.twig', $vars);
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
-
-<head>
-  <title>EMT | Fast Response</title>
-
-  <base href="/" />
-
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="robots" content="INDEX, FOLLOW">
-  <meta name="googlebot" content="INDEX, FOLLOW">
-
-  <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
-
-  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
-  <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
-  <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
-  <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
-  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
-
-
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
-
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
-
-</head>
-
-<body>
-
-  <div id="page">
-
-    <div id="menu">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
-    </div>
-
-    <div id="head">
-      <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/header_emt_right.jpg" class="headerimgright" alt="" />
-      <div class="clearfix"></div>
-    </div>
-
-    <div id="main">
-
-      <div class="section">
-
-	<div class="rightsidebar2">
-
-	  <div class="quicklinks2">
-	    <a href="/pdfs/EMT - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
-	      <div>Course Info<br />Packet</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/pdfs/EMT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
-	      <div>Performance<br />Fact Sheet</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/resources/emt/" class="btn3 lines-2">
-	      <div>Student<br />Resources</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/resources/emt/?section=videos" class="btn3 lines-1">
-	      <div>Skills Videos</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/photos/emt/index.html#emt" class="btn3 lines-1">
-	      <div>Photo Gallery</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	      <img src="/images/buttons/facebook-icon.png" alt="" />
-	      <div>Visit Us On<br />Facebook</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	  </div> <!-- /quicklinks -->
-
-	</div> <!-- /rightsidebar -->
 
 	<div class="leftcontent2">
 

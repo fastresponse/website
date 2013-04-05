@@ -1,0 +1,11 @@
+{% extends 'sidebar-view.twig' %}
+
+{% block maincontent %}
+<div class="leftcontent2">
+  {% for announcement in announcements %}
+    {% include 'announcement.twig' %}
+  {% endfor %}
+
+  {{ content|raw }}
+</div>
+{% endblock maincontent %}

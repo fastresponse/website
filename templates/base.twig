@@ -33,9 +33,9 @@
 
   </script>
 
-  {{ scripts|default('') }}
+  {{ scripts|default('')|raw }}
 
-  {{ styles|default('') }}
+  {{ styles|default('')|raw }}
 
   {% endblock head %}
 
@@ -46,7 +46,7 @@
   <div id="page">
 
     <div id="menu">
-      {% include 'menu.html' %}
+      {% include 'menu.twig' %}
     </div>
 
     {% block top %}
@@ -57,11 +57,17 @@
     </div>
     {% endblock top %}
 
+    {% block banners %}
+    {% endblock banners %}
+
     <div id="main">
+
+      {% block sidebar %}
+      {% endblock sidebar %}
 
       {% block maincontent %}
       <div class="section">
-	{{ content }}
+	{{ content|raw }}
       </div> <!-- /section -->
       {% endblock maincontent %}
 
@@ -70,11 +76,10 @@
     </div> <!-- /main -->
 
     <div id="footer">
-      {% include 'footer.html' %}
+      {% include 'footer.twig' %}
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
 
 </body>
 </html>
-

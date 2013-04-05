@@ -1,8 +1,0 @@
-<a class="{{ btn.img is defined ? 'btn2' : 'btn3' }} lines-{{ btn.lines|default(1) }}" href="{{ btn.link|default('') }}"
-{{- btn.target is defined ? ' target="' ~ btn.target ~ '"' : "" -}} >
-  {% if btn.img is defined %}
-  <img src="/images/buttons/{{ btn.img }}" alt="" />
-  {% endif %}
-  <div>{{ btn.text|default('')|raw }}</div>
-  <div></div><div></div><div></div><div></div>
-</a>

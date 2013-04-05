@@ -43,16 +43,12 @@
     }
   
     $(document).ready(function() {
-
-      $("#sitemap").load("../menu/menu.html", function() {
-	/* load the menu list for use as the sitemap
-	   change the ID so it's different and remove the menu css
-	*/
-	$("#sitemap > ul").attr("id", "sitemap-menu");
-	$("#sitemap *").removeClass();
-	reloadStylesheets();
-      } );
-
+      /* load the menu list for use as the sitemap
+	 change the ID so it's different and remove the menu css
+      */
+      $("#sitemap > ul").attr("id", "sitemap-menu");
+      $("#sitemap *").removeClass();
+      reloadStylesheets();
     } );
   </script>
 
@@ -62,22 +58,39 @@
       width: 100%;
       padding-left: 0;
       margin-left: 0;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    #sitemap-menu ul {
+      margin-left: 0;
+      padding-left: 1em;
     }
     #sitemap-menu>li {
-      margin-bottom: 2em;
+      /* margin-bottom: 2em; */
       font-size: 140%;
       display: inline-block;
-      width: 19%;
+      width: 19.5%; /* depends on 5 columns */
       vertical-align: top;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
     }
     #sitemap-menu>li>ul>li {
       margin-top: 0.5em;
       /* 85% of 140% = 119% */
       font-size: 85%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
     }
     #sitemap-menu>li>ul>li>ul>li {
       /* 84% of 119% = 100% */
       font-size: 84%;
+      line-height: 1.4em;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
     }
   </style>
 
@@ -102,7 +115,7 @@
       <div class="section">
 
 	<div id="sitemap">
-	  <!-- filled in by javascript -->
+	  <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
 	</div>
 
       </div> <!-- /section -->

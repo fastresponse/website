@@ -4,12 +4,12 @@ $template = new TemplateRenderer();
 
 $vars = (array(
   'title' => 'Testing',
+  'headerimg' => 'header_map_right.jpg',
   'content' => 'HELLO WORLD',
   'buttons' => array(
     array(
-      'text' => 'Test<br />Button',
+      'text' => "Test\nButton",
       'link' => '/school/info/',
-      'lines' => 2,
       'target' => '_blank',
     ),
     array(
@@ -20,5 +20,5 @@ $vars = (array(
   ),
 ));
 
-$template->display('sidebar-view.html', $vars);
+$template->display('sidebar-view.twig', $vars);
 ?>

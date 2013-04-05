@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% block head %}
+  {{ parent() }}
+
+  {% include "slideshow.twig" %}
+{% endblock head %}
+
+{% block top %}
+  <div id="head" style="border-bottom: none;">
+    <div class="logotext">
+      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" />
+      <p>{{ introtext }}</p>
+    </div>
+
+    <div id="slideshow-id">
+      <!-- filled in by javascript -->
+    </div>
+
+    <div class="clearfix"></div>
+  </div> <!-- /head -->
+{% endblock top %}
+
+{% block banners %}
+  <div id="banners">
+    <div class="section" style="text-align: center;">
+      {% for banner in banners %}
+	{% include 'banner.twig' %}
+      {% endfor %}
+      <div class="clearfix"></div>
+    </div>
+  </div>
+{% endblock banners %}
+
+{% block maincontent %}
+  <div class="section" style="margin-top: 0;">
+    {{ content|raw }}
+  </div>
+{% endblock maincontent %}

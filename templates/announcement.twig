@@ -1,0 +1,16 @@
+{# figure out number of lines based on number of \n chars #}
+{% set lines = btn.text|default('')|split("\n")|length %}
+<a class="{{ btn.img is defined ? 'btn2' : 'btn3' }} lines-{{ lines|default(1) }}" href="{{ btn.link|default('') }}"
+{{- btn.target is defined ? ' target="' ~ btn.target ~ '"' : "" -}} >
+  {% if btn.img is defined %}
+  <img src="/images/buttons/{{ btn.img }}" alt="" />
+  {% endif %}
+  <div>{{ btn.text|default('')|nl2br }}</div>
+  <div></div><div></div><div></div><div></div>
+</a>
+
+<div class="column smallauto" style="float: right;">
+  <div class="announcement red">
+    <h3 class="yellow">{{ announcement.title }}</h3>
+  </div>
+</div>

@@ -319,15 +319,15 @@
     </li>
 
     <li>
-    <a href="/school/location?section=directions">Directions</a>
+    <a href="/school/location/?section=directions">Directions</a>
     </li>
 
     <li>
-    <a href="/school/location?section=transit">Transit</a>
+    <a href="/school/location/?section=transit">Transit</a>
     </li>
 
     <li>
-    <a href="/school/location?section=parking">Parking</a>
+    <a href="/school/location/?section=parking">Parking</a>
     </li>
   </ul>
   </li>

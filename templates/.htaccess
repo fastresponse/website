@@ -1,0 +1,5 @@
+AuthName "Restricted Area" 
+AuthType Basic 
+AuthUserFile /services/webpages/f/a/fastresponse.org/.htpasswd 
+AuthGroupFile /dev/null 
+require user fastresponse

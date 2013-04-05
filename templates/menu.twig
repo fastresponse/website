@@ -131,7 +131,7 @@
     {% for course in courses|keys %}
     {% set dir = course|lower %}
     <li class="menuparent">
-    <a href="/resources/{{ dir }}/">{{ course|upper }}</a>
+    <a href="/resources/{{ dir }}/">{{ course }}</a>
     <ul>
       <li>
       <a href="/resources/{{ dir }}/?section=carsvcs">Career Services</a>
