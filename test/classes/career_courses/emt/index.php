@@ -1,6 +1,15 @@
 <?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/templateload.php');
+  $template = new TemplateRenderer();
+  $template->display('course.html', array(), array());
+  
   require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
   $handle = db_connect('start_dates');
+  $course = 'EMT';
+  $dates = array('Full-time', 'Part-time');
+  foreach ($type in $dates)
+    $dates[$type] = query_next_date($handle, $course, $type);
+  //echo "<div>{$next['showdate']}</div>";
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"

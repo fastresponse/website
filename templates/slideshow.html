@@ -1,0 +1,35 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/fadeslideshow.js">
+
+/***********************************************
+* Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+var mygallery=new fadeSlideShow({
+  wrapperid: 'slideshow-id',
+  //width/height of gallery in pixels.
+  //Should reflect dimensions of largest image
+  dimensions: [{{ slideshow.dimensions|join(', ') }}],
+  imagearray: [
+    {% for img in slideshow.images %}
+    ['{{ img }}', '', '', '']{{ loop.last == false ? ',' : '' }}
+    {% endfor %}
+  ],
+  displaymode: {type:'auto', pause:4500, cycles:0,
+    wraparound:true, randomize:false},
+  //remember last viewed slide and recall within same session?
+  persist: false,
+  //transition duration (milliseconds)
+  fadeduration: 800,
+  descreveal: 'none',
+  togglerid: ''
+});
+
+</script>
