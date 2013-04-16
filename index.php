@@ -381,7 +381,7 @@
 		</a>
 	      </td>
 	      <td>
-		<a href="/classes/continuing_education/nremt" class="btn buttontext lines-1">
+		<a href="/classes/continuing_education/NREMT" class="btn buttontext lines-1">
 		  <div>NREMT</div>
 		  <span></span>
 		</a>
