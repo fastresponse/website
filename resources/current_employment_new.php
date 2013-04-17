@@ -151,7 +151,12 @@
     /* For new formmail/autoreply */
 
     #contactform { width: 100%; font: normal 11px/18px Verdana,Tahoma, Sans-serif; }
-    #contactform form { width: 100%; margin: 0; padding: 10px; margin-top: 20px; }
+    #contactform * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    #contactform form { width: 100%; margin: 0; padding: 0; }
 
     #contactform fieldset {
       width: 100%;
@@ -165,42 +170,87 @@
       font: normal 10px/18px Arial,Verdana,Tahoma; text-transform: uppercase; display: block;
     }
 
-    #contactform form label {
-      display: block; float: left; padding: 6px 10px 0 0;
-      margin: 0px; text-align: right; min-width: 120px; width: 9%;
+    #contactform div.box {
+      float: left;
+      clear: left;
+      margin: 0.7em 0;
     }
 
-    #contactform input.inpt, 
-    #contactform input.mailaddr, 
-    #contactform input.date, 
+    #contactform div.clearbox {
+      clear: left;
+      margin-bottom: 0.8em;
+    }
+
+    #contactform label {
+      display: inline-block;
+      padding: 0 10px 0 0;
+      margin: 0;
+      text-align: right;
+      width: 130px;
+    }
+
+    #contactform input,
     #contactform textarea, 
     #contactform select {
-      margin-bottom: 9px !important; border: 1px solid; background-color: #f5f5f5;
-      border-color: #ccc #ddd #ddd #ccc; border-radius: 4px; padding: 4px;
-      float: left; min-width: 140px; width: 11%;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 4px;
+      border: 1px solid;
+      border-color: #ccc #ddd #ddd #ccc;
+      border-radius: 4px;
     }
 
-    #contactform input.date { height: 16px; }
-    #contactform select { min-width: 150px; width: 11.7%; }
+    #contactform input { width: 140px; }
+    #contactform select { width: 140px; }
+    #contactform textarea { width: 400px; }
 
-    #contactform input.inpt:focus,
-    #contactform input.mailaddr:focus,
-    #contactform input.date:focus,
+    #contactform input:focus,
     #contactform select:focus,
-    #contactform textarea:focus	{ background: #fff; }
+    #contactform textarea:focus	{ background-color: #ffffff; }
 
     #contactform br { clear: left; }
+    #
     #contactform .required {
       background: #f5f5f5 url('/images/required.gif') 99% 50% no-repeat;
     }
-
-    #contactform input.btn { background: none; border: none;}
 
     #contactform input[type=radio] {
       vertical-align: text-bottom;
     }
     #contactform input[type=checkbox] {
       vertical-align: middle;
+      width: auto;
+      min-width: auto;
+    }
+    #contactform input[type=submit] {
+      font-size: 120%;
+      width: 140px;
+      height: 3em;
+      border: none;
+      cursor: pointer;
+      color: white;
+      background: #103068;
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+      background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+      border-radius: 15px;
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+      box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+		  3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+		  -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+		  -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+      -moz-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+		  3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+		  -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+		  -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+      -webkit-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+		  3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+		  -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+		  -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
     }
 
     #contactform #note { width: 90%; margin: 0 auto; }
@@ -235,12 +285,10 @@
     }
 
     hr {
-      /* width: 100%; */
-      margin: 1em 0;
+      margin: 0;
       padding: 0;
       position: relative;
-      /* needed to counteract the padding on the form */
-      left: -10px;
+      clear: left;
     }
 
     p {
@@ -251,51 +299,13 @@
       line-height: 1.25em;
     }
 
-    ol {
-      width: 65%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .quicklinks dd {
-      margin-bottom: 0;
-      text-align: left;
-    }
-    .quicklinks dt {
-      color: #FF2020;
-      text-decoration: underline;
-      font-size: 110%;
-      margin-top: 1em;
-      text-align: left;
-    }
-    .quicklinks .title {
-      color: #FF2020;
-      text-decoration: underline;
-      font-size: 120%;
-      text-align: center;
-    }
-    .quicklinks dd dl {
-      display: inline;
-      margin: 0;
-    }
-    .quicklinks dd dl dt {
-      display: inline;
-      margin: 0;
-      text-decoration: none;
-      color: #FF6600;
-    }
-    .quicklinks dd dl dd {
-      display: inline;
-      margin: 0;
-    }
-
     .calimg {
-      vertical-align: middle;
+      vertical-align: top;
       height: 20px;
       width: 20px;
-      margin: 2px 0;
       position: relative;
-      right: 25px;
+      right: 29px;
+      top: 3px;
     }
 
   </style>
@@ -331,73 +341,120 @@
 
 	      <form id="ajax-contact-form" method="post" action="/resources/current_employment_mailer.php">
 
-		<input type='hidden' name='emailaddr' value='<?= $emailaddr ?>' /><br />
-		<input type='hidden' name='sid' value='<?= $studentid ?>' /><br />
+		<input type='hidden' name='emailaddr' value='<?= $emailaddr ?>' />
+		<input type='hidden' name='sid' value='<?= $studentid ?>' />
 
-		<label>Name</label><input class="inpt" type="text" name="name" value="<?= $studentname ?>" />
-		<label>Phone number</label><input class="inpt" type="text" name="phone" value="<?= $studentphone ?>" />
-		<br />
+		<hr style="margin-top: 0;"/>
+		<div class="clearbox"></div>
 
-		<label>Course</label>
-		<select name="course">
-		  <?php
-		    foreach ($all_courses as $course => $selected)
-		      echo "<option value='$course' $selected>$course</option>\n";
-		  ?>
-		</select>
-		<label>Graduation Date</label>
-		<a href="javascript:NewCal('cal', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" class="calimg" /></a>
-		<input id="cal" type="text" name="graddate" class="date" readonly="readonly" value="" />
-		<br />
+		<div class="box">
+		  <label for="name">Name</label><input class="inpt" type="text" name="name" value="<?= $studentname ?>" />
+		  <label for="phone">Phone number</label><input class="inpt" type="text" name="phone" value="<?= $studentphone ?>" />
+		</div>
+
+		<div class="box">
+		  <label>Course</label><select name="course">
+		    <?php
+		      foreach ($all_courses as $course => $selected)
+			echo "<option value='$course' $selected>$course</option>\n";
+		    ?>
+		  </select>
+		  <label>Graduation Date</label><input id="cal" type="text" name="graddate" class="date" readonly="readonly" value="" />
+		  <a href="javascript:NewCal('cal', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" class="calimg" /></a>
+		</div>
 		
-		<hr style="clear: left; margin: 1em 0;" />
+		<div class="clearbox"></div>
+		<hr />
+		<div class="clearbox"></div>
 
-		<label>Employer Name</label><input class="inpt" type="text" name="empname" value="" />
-		<label>Employer Address</label><input class="inpt" type="text" name="empaddr" value="" />
-		<br />
+		<div class="box">
+		  <label>Employer Name</label><input class="inpt" type="text" name="empname" value="" />
+		  <label>Employer Address</label><input class="inpt" type="text" name="empaddr" value="" />
+		</div>
 
-		<label>Position</label><input class="inpt" type="text" name="position" value="" />
-		<label>Hire Date</label>
-		<a href="javascript:NewCal('cal2', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" class="calimg" /></a>
-		<input id="cal2" type="text" name="hiredate" class="date" readonly="readonly" value="" />
-		<br />
+		<div class="box">
+		  <label>Position</label><input class="inpt" type="text" name="position" value="" />
+		  <label>Hire Date</label><input id="cal2" type="text" name="hiredate" class="date" readonly="readonly" value="" />
+		  <a href="javascript:NewCal('cal2', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" class="calimg" /></a>
+		</div>
 
-		<label>Starting Pay</label>
-		<select name="startpay">
-		  <option value="10-15" selected="selected">$10 - $15</option>
-		  <option value="16-20">$16 - $20</option>
-		  <option value="21-25">$21 - $25</option>
-		  <option value="26-30">$26 - $30</option>
-		  <option value="over 30">More than $30</option>
-		</select>
-		<label>Current Pay</label>
-		<select name="currentpay">
-		  <option value="10-15" selected="selected">$10 - $15</option>
-		  <option value="16-20">$16 - $20</option>
-		  <option value="21-25">$21 - $25</option>
-		  <option value="26-30">$26 - $30</option>
-		  <option value="over 30">More than $30</option>
-		</select>
-		<br />
+		<div class="box">
+		  <label>Starting Pay</label><select name="startpay">
+		    <option value="10-15" selected="selected">$10 - $15</option>
+		    <option value="16-20">$16 - $20</option>
+		    <option value="21-25">$21 - $25</option>
+		    <option value="26-30">$26 - $30</option>
+		    <option value="over 30">More than $30</option>
+		  </select>
+		  <label>Current Pay</label><select name="currentpay">
+		    <option value="10-15" selected="selected">$10 - $15</option>
+		    <option value="16-20">$16 - $20</option>
+		    <option value="21-25">$21 - $25</option>
+		    <option value="26-30">$26 - $30</option>
+		    <option value="over 30">More than $30</option>
+		  </select>
+		</div>
 
-		<label>Hours Per Week</label>
-		<select name="hoursperweek">
-		  <option value="less than 20" selected="selected">Less than 20</option>
-		  <option value="20-30">20 - 30</option>
-		  <option value="31-40">31 - 40</option>
-		  <option value="41-50">41 - 50</option>
-		  <option value="51-60">51 - 60</option>
-		  <option value="over 60">More than 60</option>
-		</select>
-		<br />
+		<div class="box">
+		  <label>Hours Per Week</label><select name="hoursperweek">
+		    <option value="less than 20" selected="selected">Less than 20</option>
+		    <option value="20-30">20 - 30</option>
+		    <option value="31-40">31 - 40</option>
+		    <option value="41-50">41 - 50</option>
+		    <option value="51-60">51 - 60</option>
+		    <option value="over 60">More than 60</option>
+		  </select>
+		</div>
 
-		<hr style="margin: 1em 0;" />
+		<div class="clearbox"></div>
+		<hr />
+		<div class="clearbox"></div>
+
+		<div class="box">
+		  <label>Comments</label><textarea name="comments" cols="61" rows="5"></textarea>
+		</div>
+
+		<div class="box">
+		  <label></label>
+		  <input name="testimonialok" type="checkbox" class="inpt" onClick="toggleClass('release-box', 'hidden');" />
+		  <label style="width: auto;">Check here if you'd like to provide a testimonial for Fast Response.</label>
+
+		  <div id="release-box" class="hidden">
+		    <label></label>
+		    <input name="release" type="checkbox" class="inpt" onClick="toggleClass('testimonial-box', 'hidden');" />
+		    <label style="width: auto; padding-top: 0;">I have read the <a href="/resources/release.php" target="_blank">release of liability</a> and agree to be bound by it.</label>
+		    <br />
+		    <div id="testimonial-box" class="hidden">
+		      <label>Testimonial</label>
+		      <textarea name="testimonial" cols="61" rows="5"></textarea>
+		      <br />
+		    </div>
+		  </div>
+		</div>
+
+		<div class="box">
+		  <label>Reviews</label>
+		  <a href="http://www.yelp.com/biz/fast-response-school-of-health-care-education-berkeley"><img src="/images/buttons/yelp-icon.png" alt="" style="vertical-align: middle;" />Review us on Yelp</a>
+		</div>
+
+		<div class="clearbox"></div>
+		<hr />
+		<div class="clearbox"></div>
+
+		<div class="box">
+		  <label></label>
+		  <input name="opt-out" type="checkbox" class="inpt" />
+		  <label style="width: auto;">Please remove me from all future emails from Fast Response.</label>
+		</div>
+
+		<div style="clear: left; height: 2em; width: 140px;"></div>
 
 		<div id="note"></div>
 
 		<label id="load"></label>
 
-		<input id="submitbutton" name="submit" type="image" value="Send" class="buttontext" src="/images/submitbutton.png" style="border: none; color: white; cursor: pointer; width: 200px; height: 85px;" />
+		<!--<input id="submitbutton" name="submit" type="image" value="Send" class="buttontext" src="/images/submitbutton.png" style="border: none; color: white; cursor: pointer; width: 200px; height: 85px;" />-->
+		<input id="submitbutton" name="submit" type="submit" value="Submit" class="buttontext" />
 
 	      </form>
 	    </fieldset>
