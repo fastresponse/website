@@ -65,9 +65,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -151,6 +153,7 @@
     /* For new formmail/autoreply */
 
     #contactform { width: 100%; font: normal 11px/18px Verdana,Tahoma, Sans-serif; }
+    #contactform,
     #contactform * {
       box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -159,8 +162,8 @@
     #contactform form { width: 100%; margin: 0; padding: 0; }
 
     #contactform fieldset {
-      width: 100%;
-      padding: 10px 0; margin: 15px 0; border: 1px solid white; border-radius: 5px
+      max-width: 800px;
+      padding: 10px 0; margin: 15px auto; border: 1px solid white; border-radius: 5px
     }
     #contactform fieldset legend {
       font: normal bold 18px/26px "Trebuchet MS",Verdana,Tahoma; padding: 3px 25px;
@@ -172,8 +175,8 @@
 
     #contactform div.box {
       float: left;
-      clear: left;
-      margin: 0.7em 0;
+      margin: 7.5px 0;
+      position: relative;
     }
 
     #contactform div.clearbox {
@@ -186,7 +189,9 @@
       padding: 0 10px 0 0;
       margin: 0;
       text-align: right;
-      width: 130px;
+      width: 140px;
+      vertical-align: top;
+      line-height: 26px;
     }
 
     #contactform input,
@@ -198,18 +203,21 @@
       border: 1px solid;
       border-color: #ccc #ddd #ddd #ccc;
       border-radius: 4px;
+      vertical-align: top;
     }
 
-    #contactform input { width: 140px; }
-    #contactform select { width: 140px; }
-    #contactform textarea { width: 400px; }
+    #contactform input { width: 225px; }
+    #contactform select { width: 225px; }
+    #contactform textarea { width: 590px; }
+    #contactform textarea[name=empaddr] { width: 225px; height: 71px; }
+    #contactform a.reviewlink { display: inline-block; width: 225px; }
+    #contactform .spacer { width: 225px; display: inline-block; }
 
     #contactform input:focus,
     #contactform select:focus,
     #contactform textarea:focus	{ background-color: #ffffff; }
 
     #contactform br { clear: left; }
-    #
     #contactform .required {
       background: #f5f5f5 url('/images/required.gif') 99% 50% no-repeat;
     }
@@ -221,14 +229,21 @@
       vertical-align: middle;
       width: auto;
       min-width: auto;
+      padding: 0;
     }
     #contactform input[type=submit] {
       font-size: 120%;
       width: 140px;
       height: 3em;
-      border: none;
       cursor: pointer;
-      color: white;
+      margin-bottom: 1em;
+      color: #F0F0F0;
+      font-size: 14px;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-shadow: 1px -1px 3px rgba(15, 0, 15, 0.7),
+		  -1px 1px 3px rgba(15, 0, 15, 0.7);
       background: #103068;
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
       background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
@@ -236,21 +251,29 @@
       background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
       background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
       background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+      border: 3px solid rgba(0,0,0,0.50);
+      border-top: none;
+      border-bottom: none;
       border-radius: 15px;
       -moz-border-radius: 15px;
       -webkit-border-radius: 15px;
-      box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-		  3px -3px 15px 1px rgba(150, 150, 220, 0.5),
-		  -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-		  -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
-      -moz-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-		  3px -3px 15px 1px rgba(150, 150, 220, 0.5),
-		  -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-		  -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
-      -webkit-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-		  3px -3px 15px 1px rgba(150, 150, 220, 0.5),
-		  -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-		  -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+      box-shadow: 3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  3px -3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px -3px 15px 1px rgba(140, 0, 30, 0.5);
+      -moz-box-shadow: 3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  3px -3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px -3px 15px 1px rgba(140, 0, 30, 0.5);
+      -webkit-box-shadow: 3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  3px -3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px -3px 15px 1px rgba(140, 0, 30, 0.5);
+    }
+    #contactform input[type=submit]:hover {
+      background-color: #062070;
+      text-shadow: 1px -1px 5px rgba(30, 20, 20, 0.8),
+		  -1px 1px 5px rgba(30, 20, 20, 0.8);
     }
 
     #contactform #note { width: 90%; margin: 0 auto; }
@@ -303,9 +326,11 @@
       vertical-align: top;
       height: 20px;
       width: 20px;
-      position: relative;
-      right: 29px;
-      top: 3px;
+      position: absolute;
+      right: 5px;
+      top: 2px;
+      cursor: pointer;
+      border: 0;
     }
 
   </style>
@@ -349,6 +374,8 @@
 
 		<div class="box">
 		  <label for="name">Name</label><input class="inpt" type="text" name="name" value="<?= $studentname ?>" />
+		</div>
+		<div class="box">
 		  <label for="phone">Phone number</label><input class="inpt" type="text" name="phone" value="<?= $studentphone ?>" />
 		</div>
 
@@ -359,8 +386,10 @@
 			echo "<option value='$course' $selected>$course</option>\n";
 		    ?>
 		  </select>
+		</div>
+		<div class="box">
 		  <label>Graduation Date</label><input id="cal" type="text" name="graddate" class="date" readonly="readonly" value="" />
-		  <a href="javascript:NewCal('cal', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" class="calimg" /></a>
+		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal', 'ddmmmyyyy');" />
 		</div>
 		
 		<div class="clearbox"></div>
@@ -369,14 +398,21 @@
 
 		<div class="box">
 		  <label>Employer Name</label><input class="inpt" type="text" name="empname" value="" />
-		  <label>Employer Address</label><input class="inpt" type="text" name="empaddr" value="" />
 		</div>
-
 		<div class="box">
 		  <label>Position</label><input class="inpt" type="text" name="position" value="" />
-		  <label>Hire Date</label><input id="cal2" type="text" name="hiredate" class="date" readonly="readonly" value="" />
-		  <a href="javascript:NewCal('cal2', 'ddmmmyyyy');"><img src="/images/cal.gif" alt="Pick a date" class="calimg" /></a>
 		</div>
+		<div class="box">
+		  <label>Employer Phone</label><input class="inpt" type="text" name="empphone" value="" />
+		</div>
+		<div class="box">
+		  <label>Hire Date</label><input id="cal2" type="text" name="hiredate" class="date" readonly="readonly" value="" />
+		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal2', 'ddmmmyyyy');" />
+		</div>
+		<div class="box">
+		  <label>Employer Address</label><textarea name="empaddr" cols="61" rows="3"></textarea>
+		</div>
+
 
 		<div class="box">
 		  <label>Starting Pay</label><select name="startpay">
@@ -386,6 +422,8 @@
 		    <option value="26-30">$26 - $30</option>
 		    <option value="over 30">More than $30</option>
 		  </select>
+		</div>
+		<div class="box">
 		  <label>Current Pay</label><select name="currentpay">
 		    <option value="10-15" selected="selected">$10 - $15</option>
 		    <option value="16-20">$16 - $20</option>
@@ -395,6 +433,9 @@
 		  </select>
 		</div>
 
+		<div class="box">
+		  <label></label><div class="spacer"></div>
+		</div>
 		<div class="box">
 		  <label>Hours Per Week</label><select name="hoursperweek">
 		    <option value="less than 20" selected="selected">Less than 20</option>
@@ -414,10 +455,10 @@
 		  <label>Comments</label><textarea name="comments" cols="61" rows="5"></textarea>
 		</div>
 
-		<div class="box">
+		<div class="box" style="margin: 15px 0;">
 		  <label></label>
 		  <input name="testimonialok" type="checkbox" class="inpt" onClick="toggleClass('release-box', 'hidden');" />
-		  <label style="width: auto;">Check here if you'd like to provide a testimonial for Fast Response.</label>
+		  <label style="width: auto;">I would like to provide a testimonial for Fast Response.</label>
 
 		  <div id="release-box" class="hidden">
 		    <label></label>
@@ -434,7 +475,7 @@
 
 		<div class="box">
 		  <label>Reviews</label>
-		  <a href="http://www.yelp.com/biz/fast-response-school-of-health-care-education-berkeley"><img src="/images/buttons/yelp-icon.png" alt="" style="vertical-align: middle;" />Review us on Yelp</a>
+		  <a href="http://www.yelp.com/biz/fast-response-school-of-health-care-education-berkeley" class="reviewlink"><img src="/images/buttons/yelp-icon.png" alt="" style="vertical-align: middle; margin-left: -6px; border: 0;" />Review us on Yelp</a>
 		</div>
 
 		<div class="clearbox"></div>
@@ -453,8 +494,7 @@
 
 		<label id="load"></label>
 
-		<!--<input id="submitbutton" name="submit" type="image" value="Send" class="buttontext" src="/images/submitbutton.png" style="border: none; color: white; cursor: pointer; width: 200px; height: 85px;" />-->
-		<input id="submitbutton" name="submit" type="submit" value="Submit" class="buttontext" />
+		<input id="submitbutton" name="submit" type="submit" value="SUBMIT" class="buttontext" />
 
 	      </form>
 	    </fieldset>
