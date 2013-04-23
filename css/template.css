@@ -727,14 +727,16 @@ div.pointer,
   margin: 1em -1em;
 }
 .announcement h3 {
-  font-size: 130%;
   font-size: large;
+  font-size: 115%;
   margin-top: 0;
 }
 .announcement span,
 .announcement div {
-  font-size: 110%;
-  font-size: medium;
+  /*
+   * font-size: 110%;
+   * font-size: medium;
+   */
 }
 .announcement span {
   white-space: nowrap;

@@ -5,13 +5,101 @@
 <?php
   error_reporting(0);
 
-  $emailaddr = $_GET['emailaddr'];
-  if (!$emailaddr || !filter_var($emailaddr, FILTER_VALIDATE_EMAIL))
-    $emailaddr = 'anonymous@fastresponse.org';
+  require($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
+
+  $all_courses = array(
+    'Select One' => '',
+    'EMT' => '',
+    'Phlebotomy' => '',
+    'Medical Assistant' => '',
+    'Sterile Processing' => '',
+    'Paramedic' => '',
+  );
+  $emailaddr = 'anonymous@fastresponse.org';
+  $firstname = $lastname = $studentphone = '';
+  $studentid = '';
+  $graddate = '';
+  $program = $studentcourse = null;
+
+  foreach ($_GET as $key => $value) {
+    switch ($key) {
+      case 'em':
+	if ($value && filter_var($value, FILTER_VALIDATE_EMAIL))
+	  $emailaddr = $value;
+      break;
+
+      case 'sid':
+	$studentid = str_replace(',', '', $value);
+      break;
+
+      case 'fn':
+	$firstname = $value;
+      break;
+
+      case 'ln':
+	$lastname = $value;
+      break;
+
+      case 'co':
+	$studentcourse = $value;
+      break;
+
+      case 'pr':
+	$program = $value;
+      break;
+
+      case 'pn':
+	$studentphone = phone_format(phone_strip($value));
+      break;
+
+      case 'gd':
+	$tmpdate = date_create_from_format(
+	  'm/d/Y', $value, timezone_open('America/Los_Angeles')
+	);
+	$graddate = date_format($tmpdate, 'd-M-Y');
+      break;
+    }
+  }
+
+  $studentname = $firstname . ' ' . $lastname;
+
+  if ($program && !$studentcourse) {
+    switch ($program) {
+    case 'EMT-FT':
+    case 'EMT-PT':
+      $studentcourse = 'EMT';
+    break;
+
+    case 'PHL-FT':
+    case 'PHL-PT':
+    case 'PHL-ADV':
+      $studentcourse = 'Phlebotomy';
+    break;
+
+    case 'MAC-AM':
+    case 'MAC-PM':
+      $studentcourse = 'Medical Assistant';
+    break;
+
+    case 'SPT-IAHCSMM':
+    case 'SPT-CBSPD':
+      $studentcourse = 'Sterile Processing';
+    break;
+
+    case 'PAR':
+      $studentcourse = 'Paramedic';
+    break;
+    }
+  }
+
+  if (!$studentcourse || !in_array($studentcourse, array_keys($all_courses)))
+    $studentcourse = 'Select One';
+  $all_courses[$studentcourse] = "selected='selected'";
+
 ?>
 
 <head>
-  <title>Current Employment Survey | Fast Response</title>
+  <title>Post-graduation Employment Survey | Fast Response</title>
 
   <base href="/" />
 
@@ -24,9 +112,11 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
   <script type="text/javascript">
@@ -43,9 +133,8 @@
 
   </script>
 
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
-
   <script type="text/javascript" src="/js/frlib.js"></script>
+  <script type="text/javascript" src="/js/datetimepicker.js"></script>
 
   <!-- Code for new formmail/autoreply -->
 
@@ -83,8 +172,8 @@
 	  $('#loading').fadeOut(300, function() {
 	    $(this).remove();
 	    if (msg === 'OK') {
-	      $('input').val("");
-	      $('textarea').val("");
+	      //$('input').val("");
+	      //$('textarea').val("");
 	    }
 	    // Message Sent? Show the 'Thank You' message and hide the form
 	    result = (msg === 'OK') ? '<div class="success">Your responses have been saved. Thank you for participating!</div>' : msg;
@@ -111,11 +200,17 @@
     /* For new formmail/autoreply */
 
     #contactform { width: 100%; font: normal 11px/18px Verdana,Tahoma, Sans-serif; }
-    #contactform form { width: 100%; margin: 0; padding: 10px; margin-top: 20px; }
+    #contactform,
+    #contactform * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    #contactform form { width: 100%; margin: 0; padding: 0; }
 
     #contactform fieldset {
-      width: 100%;
-      padding: 10px 0; margin: 15px 0; border: 1px solid white; border-radius: 5px
+      max-width: 800px;
+      padding: 10px 0; margin: 15px auto; border: 1px solid white; border-radius: 5px
     }
     #contactform fieldset legend {
       font: normal bold 18px/26px "Trebuchet MS",Verdana,Tahoma; padding: 3px 25px;
@@ -125,54 +220,107 @@
       font: normal 10px/18px Arial,Verdana,Tahoma; text-transform: uppercase; display: block;
     }
 
-    #contactform form label {
-      display: block; float: left; padding: 6px 10px 0 0;
-      margin: 0px; text-align: right; width: 15%;
+    #contactform div.box {
+      float: left;
+      margin: 7.5px 0;
+      position: relative;
     }
 
-    #contactform form label.wide {
-      padding-top: 0;
-      width: 20%;
+    #contactform div.clearbox {
+      clear: left;
+      margin-bottom: 0.8em;
     }
 
-    #contactform input.inpt, 
-    #contactform input.mailaddr, 
-    #contactform input.date, 
+    #contactform label {
+      display: inline-block;
+      padding: 0 10px 0 0;
+      margin: 0;
+      text-align: right;
+      width: 140px;
+      vertical-align: top;
+      line-height: 26px;
+    }
+
+    #contactform input,
     #contactform textarea, 
     #contactform select {
-      margin-bottom: 9px !important; border: 1px solid; background-color: #f5f5f5;
-      border-color: #ccc #ddd #ddd #ccc; width: 30%; padding: 4px;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 4px;
+      border: 1px solid;
+      border-color: #ccc #ddd #ddd #ccc;
+      border-radius: 4px;
+      vertical-align: top;
     }
 
-    #contactform input.inpt, 
-    #contactform input.mailaddr, 
-    #contactform input.date, 
-    #contactform textarea, 
-    #contactform select { border-radius: 4px; }
+    #contactform input { width: 225px; }
+    #contactform select { width: 225px; }
+    #contactform textarea { width: 590px; resize: none; }
+    #contactform textarea[name=empaddr] { width: 225px; height: 71px; }
+    #contactform a.reviewlink { display: inline-block; width: 225px; }
+    #contactform .spacer { width: 225px; display: inline-block; }
 
-    #contactform input.inpt:focus,
-    #contactform input.mailaddr:focus,
-    #contactform input.date:focus,
+    #contactform input:focus,
     #contactform select:focus,
-    #contactform textarea:focus	{ background: #fff; }
+    #contactform textarea:focus	{ background-color: #ffffff; }
 
-    #contactform br { clear: left;}
-    #contactform input.required {
+    #contactform br { clear: left; }
+    #contactform .required {
       background: #f5f5f5 url('/images/required.gif') 99% 50% no-repeat;
     }
-
-    #contactform input.mailaddr,
-    #contactform input.date {
-      width: 30%;
-    }
-
-    #contactform input.btn { background: none; border: none;}
 
     #contactform input[type=radio] {
       vertical-align: text-bottom;
     }
     #contactform input[type=checkbox] {
       vertical-align: middle;
+      width: auto;
+      min-width: auto;
+      padding: 0;
+    }
+    #contactform input[type=submit] {
+      font-size: 120%;
+      width: 140px;
+      height: 3em;
+      cursor: pointer;
+      margin-bottom: 1em;
+      color: #F0F0F0;
+      font-size: 14px;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-shadow: 1px -1px 3px rgba(15, 0, 15, 0.7),
+		  -1px 1px 3px rgba(15, 0, 15, 0.7);
+      background: #103068;
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.20)), to(rgba(255,255,255,0)));
+      background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+      border: 3px solid rgba(0,0,0,0.50);
+      border-top: none;
+      border-bottom: none;
+      border-radius: 15px;
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+      box-shadow: 3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  3px -3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px -3px 15px 1px rgba(140, 0, 30, 0.5);
+      -moz-box-shadow: 3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  3px -3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px -3px 15px 1px rgba(140, 0, 30, 0.5);
+      -webkit-box-shadow: 3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  3px -3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px 3px 15px 1px rgba(140, 0, 30, 0.5),
+		  -3px -3px 15px 1px rgba(140, 0, 30, 0.5);
+    }
+    #contactform input[type=submit]:hover {
+      background-color: #062070;
+      text-shadow: 1px -1px 5px rgba(30, 20, 20, 0.8),
+		  -1px 1px 5px rgba(30, 20, 20, 0.8);
     }
 
     #contactform #note { width: 90%; margin: 0 auto; }
@@ -207,60 +355,29 @@
     }
 
     hr {
-      /* width: 100%; */
-      margin: 1em 0;
+      margin: 0;
       padding: 0;
       position: relative;
-      /* needed to counteract the padding on the form */
-      left: -10px;
+      clear: left;
     }
 
     p {
-      width: 65%;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: justify;
+      margin-left: 11%;
+      margin-right: 11%;
       font-family: serif;
       font-size: large;
       line-height: 1.25em;
     }
 
-    ol {
-      width: 65%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .quicklinks dd {
-      margin-bottom: 0;
-      text-align: left;
-    }
-    .quicklinks dt {
-      color: #FF2020;
-      text-decoration: underline;
-      font-size: 110%;
-      margin-top: 1em;
-      text-align: left;
-    }
-    .quicklinks .title {
-      color: #FF2020;
-      text-decoration: underline;
-      font-size: 120%;
-      text-align: center;
-    }
-    .quicklinks dd dl {
-      display: inline;
-      margin: 0;
-    }
-    .quicklinks dd dl dt {
-      display: inline;
-      margin: 0;
-      text-decoration: none;
-      color: #FF6600;
-    }
-    .quicklinks dd dl dd {
-      display: inline;
-      margin: 0;
+    .calimg {
+      vertical-align: top;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      right: 5px;
+      top: 2px;
+      cursor: pointer;
+      border: 0;
     }
 
   </style>
@@ -289,84 +406,144 @@
 
 	  <div id="contactform">
 	    <fieldset>
-	      <legend>Current Employment Survey</legend>
+	      <legend>Post-graduation Employment Survey</legend>
 
-	      <p>
-	        If you would be willing to provide the following information about your current employment status it would be very helpful to us in finding new ways to assist past, present, and future students. All of your information is extremely confidential and will not be released to any third party. Your participation is greatly appreciated and will be a tremendous help.
-	      </p>
+	      <p>Your responses to this survey will greatly help our accreditation efforts and allow us to better serve our students.</p>
+	      <p>Thank you for your participation.</p>
 
 	      <form id="ajax-contact-form" method="post" action="/resources/current_employment_mailer.php">
 
-		<?php
-		  echo "<input type='hidden' name='emailaddr' value='$emailaddr' /><br />";
-                ?>
+		<input type='hidden' name='email' value='<?= $emailaddr ?>' />
+		<input type='hidden' name='sid' value='<?= $studentid ?>' />
 
-		<label>Name</label><input class="required inpt" type="text" name="name" value="" /><br />
-		<label>Course</label><input class="required inpt" type="text" name="course" value="" /><br />
-		<label>Graduation Date</label><input class="required date" type="text" name="graddate" value="" /><br />
+		<hr style="margin-top: 0;"/>
+		<div class="clearbox"></div>
 
-		<label class="wide">Are you currently working in a job position relevant to your course of study?</label>
-		<input type="radio" name="relevantjob" value="yes" onClick="removeClass('relyes', 'hidden'); addClass('relno', 'hidden'); removeClass('submitbutton', 'hidden');" />Yes
-		<div style="display: inline-block; min-width: 1em;"></div>
-		<input type="radio" name="relevantjob" value="no" onClick="removeClass('relno', 'hidden'); addClass('relyes', 'hidden'); removeClass('submitbutton', 'hidden');" />No
-		<br />
-
-		<div id="relyes" class="hidden">
-		  <hr style="margin: 1em 0;" />
-		  <label>Position</label><input class="inpt" type="text" name="position" value="" /><br />
-		  <label>Employer Name</label><input class="inpt" type="text" name="empname" value="" /><br />
-		  <label>Employer Address</label><input class="inpt" type="text" name="empaddr" value="" /><br />
-		  <label>Hire Date</label><input class="inpt" type="text" name="hiredate" value="" /><br />
-		  <label>Starting Pay</label><input class="inpt" type="text" name="startpay" value="" />
-		  <input type="radio" name="startpaymethod" value="per hour" checked="checked" onClick="checkRadio('curpaymethod1');" id="startpaymethod1" />per hour
-		  <div style="display: inline-block; min-width: 1em;"></div>
-		  <input type="radio" name="startpaymethod" value="yearly salary" onClick="checkRadio('curpaymethod2');" id="startpaymethod2" />yearly salary
-		  <br />
-		  <label>Current Pay</label><input class="inpt" type="text" name="currentpay" value="" />
-		  <input type="radio" name="curpaymethod" value="per hour" checked="checked" onClick="checkRadio('startpaymethod1');" id="curpaymethod1" />per hour
-		  <div style="display: inline-block; min-width: 1em;"></div>
-		  <input type="radio" name="curpaymethod" value="yearly salary" onClick="checkRadio('startpaymethod2');" id="curpaymethod2" />yearly salary
-		  <br />
-		  <label>Hours Per Week</label><input class="inpt" type="text" name="hoursperweek" value="" /><br />
-		  <hr style="margin: 1em 0;" />
+		<div class="box">
+		  <label for="name">Name</label><input class="inpt" type="text" name="name" value="<?= $studentname ?>" />
+		</div>
+		<div class="box">
+		  <label for="phone">Phone number</label><input class="inpt" type="text" name="phone" value="<?= $studentphone ?>" />
 		</div>
 
-		<div id="relno" class="hidden">
-		  <hr style="margin: 1em 0;" />
-		  <label class="wide">I would like additional assistance</label>
-		  <input type="radio" name="wantassistance" value="yes" onClick="removeClass('assistanceopts', 'hidden');" />Yes
-		  <div style="display: inline-block; min-width: 1em;"></div>
-		  <input type="radio" name="wantassistance" value="no" checked="checked" onClick="addClass('assistanceopts', 'hidden');" />No
-		  <br />
-		  <div id="assistanceopts" class="hidden">
-		    <div style="min-height: 0.2em;"></div>
-		    <label class="wide">with:</label>
-		    <input type="checkbox" name="assistancetypes[]" value="Resume" /><span style="display: inline-block; width: 9em;">Resume</span>
-		    <input type="checkbox" name="assistancetypes[]" value="Cover Letter" />Cover Letter
+		<div class="box">
+		  <label>Course</label><select name="course">
+		    <?php
+		      foreach ($all_courses as $course => $selected)
+			echo "<option value='$course' $selected>$course</option>\n";
+		    ?>
+		  </select>
+		</div>
+		<div class="box">
+		  <label>Graduation Date</label><input id="cal" type="text" name="graddate" class="date" readonly="readonly" value="<?= $graddate ?>" />
+		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal', 'ddmmmyyyy');" />
+		</div>
+		
+		<div class="clearbox"></div>
+		<hr />
+		<div class="clearbox"></div>
+
+		<div class="box">
+		  <label>Employer Name</label><input class="inpt" type="text" name="empname" value="" />
+		</div>
+		<div class="box">
+		  <label>Position</label><input class="inpt" type="text" name="position" value="" />
+		</div>
+		<div class="box">
+		  <label>Employer Phone</label><input class="inpt" type="text" name="empphone" value="" />
+		</div>
+		<div class="box">
+		  <label>Hire Date</label><input id="cal2" type="text" name="hiredate" class="date" readonly="readonly" value="" />
+		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal2', 'ddmmmyyyy');" />
+		</div>
+		<div class="box">
+		  <label>Employer Address</label><textarea name="empaddr" cols="61" rows="3"></textarea>
+		</div>
+
+
+		<div class="box">
+		  <label>Starting Pay</label><select name="startpay">
+		    <option value="10-15" selected="selected">$10 - $15</option>
+		    <option value="16-20">$16 - $20</option>
+		    <option value="21-25">$21 - $25</option>
+		    <option value="26-30">$26 - $30</option>
+		    <option value="over 30">More than $30</option>
+		  </select>
+		</div>
+		<div class="box">
+		  <label>Current Pay</label><select name="currentpay">
+		    <option value="10-15" selected="selected">$10 - $15</option>
+		    <option value="16-20">$16 - $20</option>
+		    <option value="21-25">$21 - $25</option>
+		    <option value="26-30">$26 - $30</option>
+		    <option value="over 30">More than $30</option>
+		  </select>
+		</div>
+
+		<div class="box">
+		  <label></label><div class="spacer"></div>
+		</div>
+		<div class="box">
+		  <label>Hours Per Week</label><select name="hoursperweek">
+		    <option value="less than 20">Less than 20</option>
+		    <option value="20-30">20 - 30</option>
+		    <option value="31-40" selected="selected">31 - 40</option>
+		    <option value="41-50">41 - 50</option>
+		    <option value="51-60">51 - 60</option>
+		    <option value="over 60">More than 60</option>
+		  </select>
+		</div>
+
+		<div class="clearbox"></div>
+		<hr />
+		<div class="clearbox"></div>
+
+		<div class="box">
+		  <label>Comments</label><textarea name="comments" cols="61" rows="5"></textarea>
+		</div>
+
+		<div class="box" style="margin: 15px 0;">
+		  <label></label>
+		  <input name="ok_testimonial" type="checkbox" class="inpt" onClick="toggleClass('release-box', 'hidden');" />
+		  <label style="width: auto;">I would like to provide a testimonial for Fast Response.</label>
+
+		  <div id="release-box" class="hidden">
+		    <label></label>
+		    <input name="releaseok" type="checkbox" class="inpt" onClick="toggleClass('testimonial-box', 'hidden');" />
+		    <label style="width: auto; padding-top: 0;">I have read the <a href="/resources/release.php" target="_blank" onClick="return openWindow('/resources/release.php');">release of liability</a> and agree to be bound by it.</label>
 		    <br />
-		    <label class="wide">&nbsp;</label>
-		    <input type="checkbox" name="assistancetypes[]" value="Interview" /><span style="display: inline-block; width: 9em;">Interview Skills</span>
-		    <input type="checkbox" name="assistancetypes[]" value="Opportunities" />Finding Job Opportunities
-		    <br />
+		    <div id="testimonial-box" class="hidden">
+		      <label>Testimonial</label>
+		      <textarea name="testimonial" cols="61" rows="5"></textarea>
+		      <br />
+		    </div>
 		  </div>
-		  <label class="wide">I am willing to travel outside the Bay Area</label>
-		  <input type="radio" name="traveloutofbay" value="yes" />Yes
-		  <div style="display: inline-block; min-width: 1em;"></div>
-		  <input type="radio" name="traveloutofbay" value="no" checked="checked" />No
-		  <br />
-		  <label class="wide">I am willing to travel outside the state</label>
-		  <input type="radio" name="traveloutofstate" value="yes" />Yes
-		  <div style="display: inline-block; min-width: 1em;"></div>
-		  <input type="radio" name="traveloutofstate" value="no" checked="checked" />No
-		  <br />
-		  <hr style="margin: 1em 0;" />
 		</div>
+
+		<div class="box">
+		  <label>Reviews</label>
+		  <a href="http://www.yelp.com/biz/fast-response-school-of-health-care-education-berkeley" class="reviewlink" target="_blank"><img src="/images/buttons/yelp-icon.png" alt="" style="vertical-align: middle; margin-left: -6px; border: 0;" />Review us on Yelp</a>
+		</div>
+
+		<div class="clearbox"></div>
+		<hr />
+		<div class="clearbox"></div>
+
+		<!--
+		<div class="box">
+		  <label></label>
+		  <input name="opt-out" type="checkbox" class="inpt" />
+		  <label style="width: auto;">Please remove me from all future emails from Fast Response.</label>
+		</div>
+		-->
+
+		<div style="clear: left; height: 2em; width: 140px;"></div>
 
 		<div id="note"></div>
 
 		<label id="load"></label>
 
-		<input id="submitbutton" name="submit" type="image" value="Send" class="hidden buttontext" src="/images/submitbutton.png" style="border: none; color: white; cursor: pointer; width: 200px; height: 85px;" />
+		<input id="submitbutton" name="submit" type="submit" value="SUBMIT" class="buttontext" />
 
 	      </form>
 	    </fieldset>

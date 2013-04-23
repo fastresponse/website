@@ -206,3 +206,8 @@ function googleViewer(loc) {
   url = url + encodeURIComponent(loc);
   return url;
 }
+
+function openWindow(loc) {
+  window.open(loc, '_blank', 'height=300,width=600,', false);
+  return false;
+}

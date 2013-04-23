@@ -95,20 +95,32 @@
 
 	<div class="leftcontent2">
 
-	  <div style="float: right; width: 270px; margin: 0 1%;">
+	  <?php
+            $announcement_sections[] = <<<SECT1
+	      <h3 class="yellow">Course Start Date</h3>
+	      <div>June 10th, 2013</div>
+	      <h3 style="margin: 0.3em 0;">Now accepting payments!</h3>
+	      <div class="yellow"><a href="/school/info/" class="yellow">Contact us</a> at </a><a href="tel://1-510-849-4009" class="yellow" style="white-space: nowrap;">1-510-849-4009</a> for more information.</div>
+SECT1;
+	    include('../ceu_include.php');
+	  ?>
+
+	  <!--
+	  <div style="float: right; width: 310px; max-width: 45%; margin: 0 0 0 50px;">
 	    <div class="announcement red">
-	      <h3 class="underline" style="margin-top: 0;">Attention Employees of Alta Bates Medical and Alameda County Medical</h3>
+	      <h3 style="margin-top: 0; margin-bottom: 0; text-align: center;"><strong class="underline">Attention</strong></h3>
+              <h3 style="margin-top: 0;">Employees of Alta Bates Medical Center and Alameda County Medical Center</h3>
 	      <div class="yellow">
-	        You must register by phone at <a href="tel://1-510-849-4009" class="yellow">1-510-849-4009</a>. Online registrations are not permitted.
+	        You must register by phone at <a href="tel://1-510-849-4009" class="yellow" style="white-space: nowrap;">1-510-849-4009</a>. Online registrations are not permitted.
 	      </div>
               <hr />
 	      <h3 class="yellow">Course Start Date</h3>
 	      <div>June 10th, 2013</div>
 	      <h3 style="margin: 0.3em 0;">Now accepting payments!</h3>
-	      <div><a href="/school/info/" class="yellow">Call us at </a><a href="tel://1-510-849-4009" class="yellow" style="white-space: nowrap;">1-510-849-4009</a></div>
-	      <div><a href="/school/info/" class="yellow">for more information</a></div>
+	      <div class="yellow"><a href="/school/info/" class="yellow">Contact us</a> at </a><a href="tel://1-510-849-4009" class="yellow" style="white-space: nowrap;">1-510-849-4009</a> for more information.</div>
 	    </div>
 	  </div>
+	  -->
 
 	  <h1>ECG Technician</h1>
 

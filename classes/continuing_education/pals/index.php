@@ -92,7 +92,14 @@
 
 	<div class="leftcontent2">
 
-          <?php include('../ceu_include.php'); ?>
+	  <?php
+$announcement_sections[] = <<<SECT1
+<h3 style="margin-top: 0; text-align: center;"><strong class="underline">2010 AHA PALS Student Manual</strong></h3>
+<div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901052.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$60</span>.</div>
+<div style="font-size: 70%; margin-top: 1em;">Required for class. Not included in course fees.</div>
+SECT1;
+            include('../ceu_include.php');
+          ?>
 
 	  <h1>Pediatric Advanced Life Support (PALS)</h1>
 

@@ -106,7 +106,14 @@
 
 	<div class="leftcontent2">
 
-          <?php include('../ceu_include.php'); ?>
+	  <?php
+$announcement_sections[] = <<<SECT1
+<h3 style="margin-top: 0; text-align: center;"><strong class="underline">2010 AHA BLS Student Manual</strong></h3>
+<div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901038.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$20</span>.</div>
+<div style="font-size: 70%; margin-top: 1em;">Required for class. Not included in course fees.</div>
+SECT1;
+            include('../ceu_include.php');
+          ?>
 
 	  <h1>Healthcare CPR</h1>
 
@@ -122,11 +129,11 @@
 	    <li>AHA Certification good for 2 years.</li>
 	  </ul>
 
-	  <img alt="" src="/images/CPR_Class.jpg" style="margin-left: 1em; float: right;">
-
 	  <h2 class="yellow">Renewal (AHA)</h2>
 
 	  <p class="squaredup">This renewal course is for those who have a current CPR card. Covered in every class are adult, child, and infant CPR and choking rescue. Use of the AED, barrier devices, and BVM are thoroughly covered using hands-on skills practice.</p>
+
+	  <img alt="" src="/images/CPR_Class.jpg" style="margin-left: 1em; float: right;">
 
 	  <p style="font-weight: bold;" class="orange squaredup">Students must bring a current AHA Healthcare Provider CPR card to class!</p>
 
