@@ -135,6 +135,11 @@
 
   <script type="text/javascript" src="/js/frlib.js"></script>
   <script type="text/javascript" src="/js/datetimepicker.js"></script>
+  <script type="text/javascript">
+    function openRelease() {
+      window.open('/resources/release.php', 'releasewin', 'width=600,height=520,left=50,top=50,toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=0');
+    }
+  </script>
 
   <!-- Code for new formmail/autoreply -->
 
@@ -509,8 +514,8 @@
 
 		  <div id="release-box" class="hidden">
 		    <label></label>
-		    <input name="releaseok" type="checkbox" class="inpt" onClick="toggleClass('testimonial-box', 'hidden');" />
-		    <label style="width: auto; padding-top: 0;">I have read the <a href="/resources/release.php" target="_blank" onClick="return openWindow('/resources/release.php');">release of liability</a> and agree to be bound by it.</label>
+		    <input name="releaseok" id="releaseok" type="checkbox" class="inpt" onClick="toggleClass('testimonial-box', 'hidden');" />
+		    <label style="width: auto; padding-top: 0;">I have read the <a href="/resources/release.php" target="_blank" onClick="openRelease(); return false;">release of liability</a> and agree to be bound by it.</label>
 		    <br />
 		    <div id="testimonial-box" class="hidden">
 		      <label>Testimonial</label>

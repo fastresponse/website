@@ -97,6 +97,7 @@ h3 {
 
   /* standard background gradient syntax */
   background: linear-gradient(to bottom, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
+
 }
 
 /* a horizontal, rectangular section of content */
