@@ -12,15 +12,19 @@ if (empty($_POST)) {
   return;
 }
 
+
+
+//--- local testing mode ---//
+$localtesting = 0;
+//---//
+
+
+
 $formvalues = array(
   'email', 'sid', 'name', 'phone', 'course', 
   'graddate', 'empname', 'position', 'empphone', 'hiredate', 
-  'empaddr', 'startpay', 'currentpay', 'hoursperweek', 'comments', 
+  'empaddr', 'hourlywage', 'hoursperweek', 'comments', 
   'ok_testimonial', 'releaseok', 'testimonial',
-);
-
-$longvalues = array(
-  'empaddr', 'comments', 'testimonial',
 );
 
 $requiredvalues = array(
@@ -28,19 +32,52 @@ $requiredvalues = array(
   'course' => 'Please enter the course you took.',
   'graddate' => 'Please enter your graduation date.',
   'hiredate' => 'Please enter your date of hire.',
+  'empname' => 'Please enter the name of your employer.',
+  'position' => 'Please enter the name of your position.',
+  'hiredate' => 'Please enter the date you were hired.',
+  'hoursperweek' => 'Please enter the average hours worked per week.',
 );
 
+//--- check formatting of data ---//
+
 foreach ($_POST as $key => $value) {
-  if (in_array($key, $formvalues) && $value) {
-    $value = trim(stripslashes($value));
-    $$key = $value;
-  }
-  if (in_array($key, $longvalues) && $value) {
-    $$key = "\n" . $$key;
+  switch ($key) {
+  case 'course':
+    if ($value != 'Select One') $$key = $value;
+    else $$key = null;
+  break;
+  case 'hoursperweek':
+    $$key = intval(filter_var($value, FILTER_SANITIZE_NUMBER_INT));
+  break;
+  case 'hourlywage':
+    $$key = money_strip($value);
+  break;
+  case 'phone':
+    $$key = phone_format(phone_strip($value));
+  break;
+  case 'empaddr':
+  case 'comments':
+  case 'testimonial':
+    // add a newline on the front,
+    // then add 2 spaces at the beginning of each line
+    $$key = str_replace("\n", "\n  ", "\n" . $value);
+  break;
+  default:
+    if (in_array($key, $formvalues) && $value) {
+      $value = trim(stripslashes($value));
+      $$key = $value;
+    }
   }
 }
 
+if ($hourlywage && $hoursperweek)
+  $yearlysalary = $hourlywage * $hoursperweek * 52;
+else
+  $yearlysalary = 'not given';
+
 //--- settings ---//
+
+$localfile = $_SERVER['DOCUMENT_ROOT'] . '/php/mailerdebug.log';
 
 $autorespond = 0;
 $autofrom = 'career.services@fastresponse.org';
@@ -71,10 +108,6 @@ $error = '';
 
 foreach ($requiredvalues as $key => $value) {
   switch ($key) {
-  case 'course':
-    if (!$$key || $$key == 'Select One')
-      $error .= $value . "\n";
-  break;
   default:
     if (!$$key)
       $error .= $value . "\n";
@@ -98,24 +131,27 @@ if ($ok_testimonial == 'on' && $releaseok == 'on' && strlen($testimonial)) {
 }
 
 foreach ($formvalues as $key) {
+  switch ($key) {
+  default:
   if (!$$key)
     $$key = "not given";
+  }
 }
 
 $messages = "From: $email\n";
 $messages.= "Name: $name\n";
 $messages.= "Student ID: $sid\n";
-$messages.= "Phone: " . phone_format(phone_strip($phone)) . "\n";
+$messages.= "Phone: $phone\n";
 $messages.= "Course: $course\n";
 $messages.= "Graduation date: $graddate\n";
 $messages.= "Position: $position\n";
 $messages.= "Employer name: $empname\n";
-$messages.= "Employer address: " . str_replace("\n", "  \n", $empaddr) . "\n";
+$messages.= "Employer address: $empaddr\n";
 $messages.= "Hire date: $hiredate\n";
-$messages.= "Starting pay: $startpay\n";
-$messages.= "Current pay: $currentpay\n";
 $messages.= "Hours per week: $hoursperweek\n";
-$messages.= "Additional comments: " . str_replace("\n", "  \n", $comments) . "\n";
+$messages.= "Hourly wage: $hourlywage\n";
+$messages.= "Yearly salary: $yearlysalary\n";
+$messages.= "Additional comments: $comments\n";
 $messages.= $testimonial_text;
 
 $mail = new PHPMailer(); 
@@ -139,7 +175,17 @@ else {
   $mail->IsMail();
 }
 
-$sentok = $mail->Send();
+if ($localtesting) {
+  $output = "Email from student to us:\n";
+  $output.= "From: {$mail->FromName} ({$mail->From})\n";
+  $output.= "To: $to\n";
+  $output.= "Subject: {$mail->Subject}\n";
+  $output.= "Body:\n  " . str_replace("\n", "\n  ", $mail->Body) . "\n";
+  $sentok = file_put_contents($localfile, $output, 0);
+}
+else {
+  $sentok = $mail->Send();
+}
 
 if ($sentok) {
   echo 'OK';
@@ -151,11 +197,10 @@ else {
 //--- end send email to us from user ---//
 
 
-
 //--- send html autoreply email to user ---//
 
 // only send if the email to us succeeded and autorespond is on
-if (!$sentok || !$autorespond) {
+if (!($autorespond && ($localtesting || $sentok))) {
   return;
 }
 
@@ -184,7 +229,18 @@ else {
   $mail->IsMail();
 }
 
-$sentok = $mail->Send();
+if ($localtesting) {
+  $output = "\n\n";
+  $output.= "Email from us to student:\n";
+  $output.= "From: {$mail->FromName} ({$mail->From})\n";
+  $output.= "To: $to\n";
+  $output.= "Subject: {$mail->Subject}\n";
+  $output.= "Body:\n  " . str_replace("\n", "\n  ", $mail->Body) . "\n";
+  $sentok = file_put_contents($localfile, $output, FILE_APPEND);
+}
+else {
+  $sentok = $mail->Send();
+}
 
 if ($sentok) {
   // we don't actually do anything here

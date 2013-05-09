@@ -184,15 +184,8 @@
 		<dt>Phone:</dt> <dd>1-510-849-4009</dd> <br />
 		<dt>Fax:</dt> <dd>1-866-290-2739</dd> <br />
 		<dt>Email:</dt> <dd><a href="mailto: info@fastresponse.org">info@fastresponse.org</a></dd> <br />
-		<dt>Mailing address:</dt> <br />
+		<dt>Address:</dt> <br />
 		<!-- this needs to be block so the margin applies to every line -->
-		<dd style="display: block; margin-left: 0.5em;">
-		Fast Response School of<br />
-		Health Care Education<br />
-		PO Box 1283<br />
-		Berkeley, CA 94701<br />
-		</dd>
-		<dt>Physical address:</dt> <br />
 		<dd style="display: block; margin-left: 0.5em;">
 		Fast Response School of<br />
 		Health Care Education<br />

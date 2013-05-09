@@ -244,6 +244,7 @@
       width: 140px;
       vertical-align: top;
       line-height: 26px;
+      font-weight: bold;
     }
 
     #contactform input,
@@ -270,8 +271,22 @@
     #contactform textarea:focus	{ background-color: #ffffff; }
 
     #contactform br { clear: left; }
-    #contactform .required {
-      background: #f5f5f5 url('/images/required.gif') 99% 50% no-repeat;
+
+    #contactform input.required,
+    #contactform select.required {
+      /*background: #f5f5f5 url('/images/required.gif') 99% 50% no-repeat;*/
+      /*background-color: rgba(255, 100, 100, 1.0);*/
+      border: 1px solid #DD3333;
+    }
+    #contactform label.required {
+      text-shadow: 1px -1px 1px #DD3333;
+    }
+    #contactform h5.required {
+      text-shadow: 1px -1px 1px #DD3333;
+      text-align: center;
+      letter-spacing: 0.3em;
+      word-spacing: 0.3em;
+      margin: 0 auto;
     }
 
     #contactform input[type=radio] {
@@ -425,14 +440,14 @@
 		<div class="clearbox"></div>
 
 		<div class="box">
-		  <label for="name">Name</label><input class="inpt" type="text" name="name" value="<?= $studentname ?>" />
+		  <label for="name" class="required">*Name</label><input class="inpt required" type="text" name="name" value="<?= $studentname ?>" />
 		</div>
 		<div class="box">
-		  <label for="phone">Phone number</label><input class="inpt" type="text" name="phone" value="<?= $studentphone ?>" />
+		  <label for="phone" class="required">*Phone number</label><input class="inpt required" type="text" name="phone" value="<?= $studentphone ?>" />
 		</div>
 
 		<div class="box">
-		  <label>Course</label><select name="course">
+		  <label class="required">*Course</label><select name="course" class="required">
 		    <?php
 		      foreach ($all_courses as $course => $selected)
 			echo "<option value='$course' $selected>$course</option>\n";
@@ -440,7 +455,7 @@
 		  </select>
 		</div>
 		<div class="box">
-		  <label>Graduation Date</label><input id="cal" type="text" name="graddate" class="date" readonly="readonly" value="<?= $graddate ?>" />
+		  <label class="required">*Graduation Date</label><input id="cal" type="text" name="graddate" class="date required" readonly="readonly" value="<?= $graddate ?>" />
 		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal', 'ddmmmyyyy');" />
 		</div>
 		
@@ -449,25 +464,26 @@
 		<div class="clearbox"></div>
 
 		<div class="box">
-		  <label>Employer Name</label><input class="inpt" type="text" name="empname" value="" />
+		  <label class="required">*Employer Name</label><input class="inpt required" type="text" name="empname" value="" />
 		</div>
 		<div class="box">
-		  <label>Position</label><input class="inpt" type="text" name="position" value="" />
+		  <label class="required">*Position</label><input class="inpt required" type="text" name="position" value="" />
 		</div>
 		<div class="box">
 		  <label>Employer Phone</label><input class="inpt" type="text" name="empphone" value="" />
 		</div>
 		<div class="box">
-		  <label>Hire Date</label><input id="cal2" type="text" name="hiredate" class="date" readonly="readonly" value="" />
+		  <label class="required">*Hire Date</label><input id="cal2" type="text" name="hiredate" class="date required" readonly="readonly" value="" />
 		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal2', 'ddmmmyyyy');" />
 		</div>
 		<div class="box">
 		  <label>Employer Address</label><textarea name="empaddr" cols="61" rows="3"></textarea>
 		</div>
 
-
+		<!--
 		<div class="box">
 		  <label>Starting Pay</label><select name="startpay">
+		    <option value="decline to state">Decline to state</option>
 		    <option value="10-15" selected="selected">$10 - $15</option>
 		    <option value="16-20">$16 - $20</option>
 		    <option value="21-25">$21 - $25</option>
@@ -477,6 +493,7 @@
 		</div>
 		<div class="box">
 		  <label>Current Pay</label><select name="currentpay">
+		    <option value="decline to state">Decline to state</option>
 		    <option value="10-15" selected="selected">$10 - $15</option>
 		    <option value="16-20">$16 - $20</option>
 		    <option value="21-25">$21 - $25</option>
@@ -484,20 +501,31 @@
 		    <option value="over 30">More than $30</option>
 		  </select>
 		</div>
+		-->
 
+		<div class="box">
+		  <label class="required">*Hours Per Week</label><input class="inpt required" type="text" name="hoursperweek" value="" />
+		</div>
+
+		<div class="box">
+		  <label>Hourly Wage</label><input class="inpt" type="text" name="hourlywage" value="" />
+		</div>
+
+                <div class="clearfix">
+		  <h5 class="required">*These fields are required.</h5>
+		</div>
+
+		<!--
 		<div class="box">
 		  <label></label><div class="spacer"></div>
 		</div>
 		<div class="box">
 		  <label>Hours Per Week</label><select name="hoursperweek">
-		    <option value="less than 20">Less than 20</option>
-		    <option value="20-30">20 - 30</option>
-		    <option value="31-40" selected="selected">31 - 40</option>
-		    <option value="41-50">41 - 50</option>
-		    <option value="51-60">51 - 60</option>
-		    <option value="over 60">More than 60</option>
+		    <option value="less than 32">Less than 32</option>
+		    <option value="32 or more" selected="selected">32 or more</option>
 		  </select>
 		</div>
+		-->
 
 		<div class="clearbox"></div>
 		<hr />

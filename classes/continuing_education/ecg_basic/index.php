@@ -104,7 +104,7 @@
 
 	  <div style="clear: left;">
 	    <ul class="bullets">
-	      <li>Provides 12 CEUs.</li>
+	      <li>Provides 14 CEUs.</li>
 	      <li>Refresher or intro course.</li>
 	      <li>No prerequisite necessary.</li>
 	      <li>Great course for laypeople.</li>

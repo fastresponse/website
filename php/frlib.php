@@ -55,6 +55,15 @@ function arr_to_set($data_arr) {
   return $data_set;
 }
 
+function money_strip($str) {
+  $str = filter_var(
+    $str, FILTER_SANITIZE_NUMBER_FLOAT,
+    FILTER_FLAG_ALLOW_FRACTION
+  );
+  $num = floatval(sprintf("%.2f", $str));
+  return $num;
+}
+
 function phone_strip($str) {
   $str = '' . $str;
   $str = strtr($str, "()-+", "    ");
