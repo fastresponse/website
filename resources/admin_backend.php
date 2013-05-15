@@ -10,12 +10,12 @@ $all_company_data = null;
 $submitted = null;
 $date = null;
 $courses = null;
-$company = null;
+$allcompanynames = null;
 $text = null;
 $showdate = date('d-M-Y');
 $toplegend = "";
 $ret = null;
-$showjoblist = 0;
+$joblistrange = null;
 $infomsg = null;
 $errmsg = null;
 
@@ -30,7 +30,7 @@ if (!array_key_exists('courses', $_POST))
 
 switch ($submitted) {
   case "View Job Listings":
-    $showjoblist = 1;
+    $joblistrange = $_POST['joblistrange'];
   break;
 
   case "Post Job":
@@ -64,12 +64,12 @@ switch ($submitted) {
       $errmsg = "Error: Failed to connect to database";
       break;
     }
-    if (!post_set('name')) {
+    if (!post_set('company')) {
       $errmsg = "Error: Company name must be specified";
       break;
     }
     $ret = insert_company(
-      $handle, $_POST['name'], $_POST['website'], $_POST['apply'],
+      $handle, $_POST['company'], $_POST['website'], $_POST['apply'],
       $_POST['courses'], $_POST['streetaddr'], $_POST['city'],
       $_POST['state'], $_POST['phone'], $_POST['contact']
     );
@@ -125,13 +125,19 @@ if ($handle != null) {
 
     <div class="section">
       <input type="submit" name="submit" value="View Job Listings" />
+      <select name="joblistrange">
+        <option selected="selected">2 weeks</option>
+	<option>1 month</option>
+	<option>2 months</option>
+	<option>All</option>
+      </select>
       <!--<input type="button" name="hidejobs" id="hidejobs" onClick="toggleClass('joblist', 'hidden');" value="Hide Jobs" />-->
     </div>
 
     <?php
-      if ($showjoblist) {
+      if ($joblistrange) {
 	include_once($_SERVER['DOCUMENT_ROOT'] . '/php/joblist.php');
-	echo joblist($handle, 'Any');
+	echo joblist($handle, $joblistrange);
       }
     ?>
 
@@ -182,17 +188,16 @@ if ($handle != null) {
 
       <div class="column col2">
 
-	<div class="section hidden" id="companyname">
-	  <label>Name:</label>
-	  <input type="text" name="name" />
-	</div>
-
-	<div class="section" id="companylist">
+	<div class="section" id="companyname">
 	  <label>Company:</label>
-	  <select name="company" onChange="showCompanyInfo();">
-	    <?= $company_list ?>
-	  </select>
-	  <input type="button" value="Add New Company" style="width: auto;" onClick="toggleCompany();" />
+	  <input type="text" name="company" />
+	  <div class="section" id="companylist">
+	    <label></label>
+	    <select name="allcompanynames" onChange="showCompanyInfo();">
+	      <?= $company_list ?>
+	    </select>
+	    <input type="button" value="Add New Company" style="width: auto;" onClick="toggleCompany();" />
+	  </div>
 	</div>
 
 	<div class="section">

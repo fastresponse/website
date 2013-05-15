@@ -23,6 +23,9 @@
     $section = $query_args['section'];
   }
 
+  if (!$showjobsfrom)
+    $showjobsfrom = '1 month';
+
   if (!$button_lines)
     $button_lines = 1;
 
@@ -31,6 +34,7 @@
   // $course_abbr - abbreviation for course
   // $header_img - name of header file (without path)
   // $button_lines - number of lines of text for buttons containing $course in their text, either 1 or 2
+  // $showjobsfrom - a description of how far back to look for job entries (passed to date_interval_create_from_date_string() )
 
   $cover_dir = "../$course/covers/";
   $resume_dir = "../$course/resumes/";
@@ -390,7 +394,7 @@
 	    </div>
 
 	    <?php
-	      $joblist_tmp = joblist($handle, '1 month', $course);
+	      $joblist_tmp = joblist($handle, $showjobsfrom, $course);
 	      if (strlen($joblist_tmp))
 		echo $joblist_tmp;
 	      else

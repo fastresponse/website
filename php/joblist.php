@@ -11,6 +11,11 @@ function formatweblink($company_data = null) {
 
   // if website exists, wrap the name in a link, else just use the name
   if (array_key_exists('website', $company_data)) {
+    // ensure there's a protocol string on the front
+    if (strpos($company_data['website'], 'http://') === false &&
+    strpos($company_data['website'], 'https://') === false) {
+      $company_data['website'] = 'http://' . $company_data['website'];
+    }
     $company_data['weblink'] =
       "<a href=\"{$company_data['website']}\" target=\"_blank\">" .
       $company_data['name'] . "</a>\n"
@@ -61,7 +66,7 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
   $now = date('Y-m-d');
 
   if ($daterange == 'Any' || $daterange == 'All') {
-    $start = '2013-03-01';
+    $start = '2012-01-01';
   }
   else {
     $dateob = new DateTime();

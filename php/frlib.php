@@ -39,9 +39,10 @@ function htmlsafe($data) {
 // each newline-separated section becomes its own <li>
 function listify($in) {
   if (!$in || !strlen($in)) return "";
-  $lines = explode("\n", $in);
+  // use preg_split instead of explode to clear out extra newlines
+  $lines = preg_split("/(\r\n)+|(\n)+/", $in);
   $func = function($val) {
-    if (!strlen($val)) return "";
+    if (!$val || !strlen($val) || $val == "" || $val == " ") return "";
     return "<li>" . $val . "</li>";
   };
   $out = implode("\n", array_map($func, $lines));

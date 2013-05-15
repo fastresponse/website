@@ -15,6 +15,10 @@ function toggleShow(obj) {
 }
 
 function clearCompanyInfo() {
+  obj = document.getElementsByName('allcompanynames')[0].selectedOptions[0];
+  comp = document.getElementsByName('company')[0];
+  if (comp.value == obj.value)
+    comp.value = "";
   document.getElementsByName('streetaddr')[0].value = "";
   document.getElementsByName('city')[0].value = "";
   document.getElementsByName('state')[0].value = "CA";
@@ -36,10 +40,12 @@ function showCompanyInfo(id) {
   clearCompanyInfo();
 
   if (!id) {
-    obj = document.getElementsByName('company')[0].selectedOptions[0];
+    obj = document.getElementsByName('allcompanynames')[0].selectedOptions[0];
     id = obj.id;
   }
 
+  document.getElementsByName('company')[0].value =
+    obj.value;
   document.getElementsByName('streetaddr')[0].value =
     document.getElementById(id+'_streetaddr').value;
   document.getElementsByName('city')[0].value =
@@ -71,7 +77,6 @@ function toggleCompany() {
   toggleClass('legendcompany', 'hidden');
   toggleClass('leftcol', 'hidden');
   toggleClass('leftcolspacer', 'hidden');
-  toggleClass('companyname', 'hidden');
   toggleClass('companylist', 'hidden');
   toggleClass('companydata', 'hidden');
 }
