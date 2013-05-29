@@ -13,12 +13,12 @@
 
   <li>
   <div>Create a professional email account.</div>
-  <div class="textdefault">Many job postings request that you email your resume or application. Use complete sentences and check your spelling email, and proper spacing. Make sure that your email address is professional. Some combination of your first and last name is best, for example asjsmth@yahoo.com or jane.smith@msn.com. If you do not have an email address, you may set up a free email account at www.yahoo.com or www.msn.com.</div>
+  <div class="textdefault">Many job postings request that you email your resume or application. Use complete sentences and check your spelling, grammar, and spacing. Make sure that your email address is professional. Some combination of your first and last name is best, such as asjsmth@example.com or jane.smith@example.com. Free email accounts can be created at www.gmail.com, www.yahoo.com, and several other sites on the internet.</div>
   </li>
 
   <li>
   <div>Find at least one job posting every day.</div>
-  <div class="textdefault">Set aside an hour daily and try to find one job to apply for every day. Use the library or some other quiet place where you won't be distracted. Look online, check the newspaper, call places that you want to work and ask if they're hiring. Use the list of websites below to help you in your job search.</div>
+  <div class="textdefault">Set aside an hour daily and try to find one job to apply for every day. Use the library or some other quiet place where you won't be distracted. Look online, check the newspaper, call places that you want to work and ask if they're hiring. Use our <a href="/resources/<?= $course ?>/?section=jobsearch">Job Search</a> section to help find recent openings and employer websites.</div>
   </li>
 
   <li>

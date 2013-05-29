@@ -343,27 +343,23 @@ h3 {
 
 /* some common colorings */
 
-.yellow {
-  color: #FFFF99;
-}
-.red {
-  color: #DD0033;
-}
-.green {
-  color: #339966;
-}
-.orange {
-  color: #DC3300;
-}
+.yellow,
+.yellow a,
 a.yellow {
   color: #FFFF99;
 }
+.red,
+.red a,
 a.red {
   color: #DD0033;
 }
+.green,
+.green a,
 a.green {
   color: #339966;
 }
+.orange,
+.orange a,
 a.orange {
   color: #DC3300;
 }

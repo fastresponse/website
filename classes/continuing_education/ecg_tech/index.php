@@ -76,7 +76,7 @@
 	      <div>View Calendar</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4106&pcatID=4115" class="btn3 lines-2">
+	    <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4115" class="btn3 lines-2">
 	      <div>Register For<br />This Course</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>

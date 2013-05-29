@@ -133,6 +133,10 @@
     <a href="/resources/emt/">EMT</a>
     <ul>
       <li>
+      <a href="/resources/emt/?section=forms">Forms</a>
+      </li>
+
+      <li>
       <a href="/resources/emt/?section=carsvcs">Career Services</a>
       </li>
 
@@ -165,7 +169,11 @@
     <li class="menuparent">
     <a href="/resources/cpt/">CPT</a>
     <ul>
-      <li class="menuparent">
+      <li>
+      <a href="/resources/cpt/?section=forms">Forms</a>
+      </li>
+
+      <li>
       <a href="/resources/cpt/?section=carsvcs">Career Services</a>
       </li>
 
@@ -198,7 +206,11 @@
     <li class="menuparent">
     <a href="/resources/cma/">CMA</a>
     <ul>
-      <li class="menuparent">
+      <li>
+      <a href="/resources/cma/?section=forms">Forms</a>
+      </li>
+
+      <li>
       <a href="/resources/cma/?section=carsvcs">Career Services</a>
       </li>
 
@@ -232,7 +244,11 @@
     <li class="menuparent">
     <a href="/resources/paramedic/">Paramedic</a>
     <ul>
-      <li class="menuparent">
+      <li>
+      <a href="/resources/paramedic/?section=forms">Forms</a>
+      </li>
+
+      <li>
       <a href="/resources/paramedic/?section=carsvcs">Career Services</a>
       </li>
 
@@ -266,7 +282,11 @@
     <li class="menuparent">
     <a href="/resources/spt/">SPT</a>
     <ul>
-      <li class="menuparent">
+      <li>
+      <a href="/resources/spt/?section=forms">Forms</a>
+      </li>
+
+      <li>
       <a href="/resources/spt/?section=carsvcs">Career Services</a>
       </li>
 

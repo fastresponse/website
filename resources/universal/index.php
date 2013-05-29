@@ -1,4 +1,7 @@
 <?php
+
+  error_reporting(0);
+
   $self = $_SERVER['PHP_SELF'];
   $root = $_SERVER['DOCUMENT_ROOT'];
   $dir = dirname($self);
@@ -13,7 +16,8 @@
   parse_str($_SERVER['QUERY_STRING'], $query_args);
 
   $allowed_sections = array(
-    'carsvcs', 'resumes', 'interviews', 'jobsearch', 'extcert', 'videos'
+    'forms', 'carsvcs', 'resumes', 'interviews', 'jobsearch',
+    'extcert', 'videos'
   );
   if (!array_key_exists('section', $query_args) ||
       !in_array($query_args['section'], $allowed_sections)) {
@@ -99,11 +103,11 @@
   <script type="text/javascript">
     // this "main" does not refer to an element ID, it's just a group name
     setSection( "main", [
-      "carsvcs", "resumes", "interviews",
+      "forms", "carsvcs", "resumes", "interviews",
       "jobsearch", "extcert", "videos"
     ] );
     setSection( "sidebar_buttons", [
-      "sidebar_btn_carsvcs", "sidebar_btn_resumes", "sidebar_btn_interviews",
+      "sidebar_btn_forms", "sidebar_btn_carsvcs", "sidebar_btn_resumes", "sidebar_btn_interviews",
       "sidebar_btn_jobsearch", "sidebar_btn_extcert", "sidebar_btn_videos"
     ] );
     setSection( "resumes", [
@@ -218,7 +222,12 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
-	    <a href="#" id="sidebar_btn_carsvcs" class="btn3 lines-2 glow-yellow" onClick="navigateToSection('main', 'carsvcs', 'sidebar_buttons', this.id, 'glow-yellow');">
+	    <a href="#" id="sidebar_btn_forms" class="btn3 lines-1 glow-yellow" onClick="navigateToSection('main', 'forms', 'sidebar_buttons', this.id, 'glow-yellow');">
+	      <div>FORMS</div>
+	      <div></div><div></div><div></div><div></div>
+	    </a>
+
+	    <a href="#" id="sidebar_btn_carsvcs" class="btn3 lines-2" onClick="navigateToSection('main', 'carsvcs', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>CAREER<br />SERVICES</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
@@ -258,7 +267,25 @@
 	<div class="leftcontent2" style="position: relative;">
 
           <!-- show by default (because it doesn't have the "hidden" class -->
-	  <div id="carsvcs">
+
+	  <div id="forms" class="hidden">
+	    <!-- put the border on the longer of the two columns -->
+            <div class="column col2" style="width: 45%; padding: 20px 4% 20px 0; margin-right: 0; border-right: solid 1px white;">
+	      <h1>Admissions and Administrative Documents</h1>
+	      <?php include_once("../universal/forms.php") ?>
+	    </div>
+            <div class="column col2" style="width: 40%; padding: 20px 0 20px 4%; margin-left: 0;">
+	      <h1><?= $course_title ?> Forms</h1>
+	      <?php
+	        if (file_exists("../$course/forms.php"))
+		  include("../$course/forms.php");
+                else
+		  echo '<h3>No course specific documents available.</h3>';
+              ?>
+	    </div>
+	  </div>
+
+	  <div id="carsvcs" class="hidden">
 	    <h1><?= $course_title ?> Career Services</h1>
 	    <?php include_once("../universal/job_seeking_skills.php") ?>
 	  </div>
