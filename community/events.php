@@ -7,9 +7,13 @@ function format_event($event) {
   /*
    * $event = array(
    *   'id' => integer,
+   *   'date' => 'date in YYYY-MM-DD format',
+   *   'longdate' => 'date in MMM DD, YYYY format',
    *   'title' => 'string',
    *   'body' => 'html?',
-   *   'date' => 'date',
+   *   'programs' => array(
+   *     'EMT', 'CPT', ...
+   *   ),
    *   'images' => array(
    *     'image url 1', 'image url 2', ...
    *   ),
@@ -34,6 +38,12 @@ function format_event($event) {
 
   $event['title'] = "<div class='title'>{$event['title']}</div>\n";
   $event['date'] = "<div class='date'>{$event['date']}</div>";
+
+  $event['programs'] =
+    "<div class='programs'>" .
+    implode(", ", $event['programs']) .
+    "</div>\n"
+  ;
 
   $tmp = '';
   foreach ($event['images'] as $image) {
@@ -69,7 +79,7 @@ function get_events($handle, $max) {
   else if (!isset($max))
     $results = array($defs['notfound']);
 
-  $results = query_events($handle, $max);
+  $results = query_recent_events($handle, $max);
 
   if (!isset($results))
     $results = array($defs['notfound']);
@@ -79,7 +89,7 @@ function get_events($handle, $max) {
   foreach ($results as &$result) {
     $result = format_event($result);
   }
-  unset($result);
+  unset($result); // break reference
 
   return $results;
 }

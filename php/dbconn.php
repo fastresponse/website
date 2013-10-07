@@ -253,7 +253,7 @@ function create_query_dates($course, $type, $sort = 'thedate') {
     $q_where[] = 'type = :type';
   }
 
-  $q_where[] = 'thedate >= CURDATE()';
+  $q_where[] = "thedate >= '" . date('Y-m-d') . "'";
 
   if (isset($q_where) && count($q_where)) {
     $q_date .= ' WHERE ' . implode(' AND ', $q_where);
@@ -360,15 +360,16 @@ function query_promo_dates($dbh, $date1 = null, $date2 = null) {
   $params = array();
 
   // if last arg is not null, then previous arg must exist, right?
-  // both dates given = this is a date range to look in
+  // both dates given
+  // = all promos w/ promo_date between date1 and date2
   if ($date2) {
     $params[':end_date'] = $date2;
     $q_where[] = '((end_date is NULL) OR (end_date <= :end_date))';
     $params[':start_date'] = $date1;
     $q_where[] = '((start_date is NULL) OR (start_date >= :start_date))';
   }
-  // date1 exists but date2 does not
-  // all active promos during date1
+  // only one date given
+  // = all promos where date1 between promo start and promo end
   else if ($date1) {
     $params[':cur_date'] = $date1;
     $q_where[] = '((end_date is NULL) OR (:cur_date <= end_date))';
@@ -382,6 +383,22 @@ function query_promo_dates($dbh, $date1 = null, $date2 = null) {
   $q_promos .= ' ORDER BY start_date ASC';
 
   $result = db_query($dbh, $q_promos, $params);
+  return $result;
+}
+
+// get the $max (or less) most recent events
+// TODO: expand this to take a start and stop number
+function query_recent_events($dbh, $max) {
+  $query = 
+    "SELECT DATE_FORMAT(date, '%M %D, %Y') as longdate, " .
+    "date, title, body, programs, images, links " .
+    "FROM events " .
+    "ORDER BY date DESC " .
+    "LIMIT :max"
+  ;
+  $params[':max'] = $max;
+
+  $result = db_query($dbh, $query, $params);
   return $result;
 }
 
