@@ -35,6 +35,12 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
+  <style type="text/css">
+    .italic {
+      font-style: italic;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -102,15 +108,48 @@
 
 	  <h3 style="font-style: italic;">We are approved by the <a href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and Postsecondary Education</a>.</h3>
 
-	  <p>Fast Response is an American Heart Association (AHA), American Safety and Health Institute (ASHI) and American Academy of Pediatrics (AAP) affiliated training facility. We give CEUs to EMS, Nurses and Upper Level Professionals, and issue official certificates for most of our classes.</p>
+          <p class="bold italic">Fast Response School of Health Care Education is a private postsecondary educational school.</p>
+
+	  <p>We are an American Heart Association (AHA), American Safety and Health Institute (ASHI) and American Academy of Pediatrics (AAP) affiliated training facility. We provide CEUs (Continuing Education Units) for EMS personnel, Nurses and other medical professionals.</p>
 
 	  <p>Our Phlebotomy Technician program is approved by the State of California Department of Health Services, and our Emergency Medical Technician program is approved by the State of California Emergency Medical Services Authority.</p>
 
-	  <p>As a School of Health Care Education, much of our curriculum is approved by The Department of Health Services (DHS), California Laboratory Field Services (LFS), California Emergency Medical Services Authority (EMSA), and registered with The Bureau of Private Post-Secondary Vocational Education. To maintain this status, we must uphold the same standards as a junior college, University or Vocational School, but we can offer comparable training in a shorter period of time, providing you with superior training while you begin or augment your career in the medical field.</p>
+	  <p>As a School of Health Care Education, our curriculum is approved by The Department of Health Services California Laboratory Field Services, California Emergency Medical Services Authority (EMSA), and registered with The Bureau of Private Postsecondary Vocational Education. To maintain this status, we must uphold the same standards as a Junior College, University or Vocational School, but we can offer comparable training in a shorter period of time, providing you with superior training while you begin or augment your career in the medical field.</p>
 
-	  <p>In addition to providing training at our school in Berkeley, we also  provide training for hospitals, businesses, schools, community organizations, and individuals.</p>
+	  <p>In addition to providing training at our main campus in Berkeley, we also teach in a variety of healthcare and corporate settings in the greater Bay Area. We contract with hospitals, businesses, schools, daycares, community organizations, and individuals.</p>
 
-	  <p>Fast Response is a fifty percent woman-owned business, with women and minorities making up the largest percentage of our staff. We are an equal opportunity employer, accepting and sensitive to the needs of diverse populations.</p>
+	  <p>Since 1989, Fast Response School of Health Care Education has been the Bay Area's premier community and professional training center, offering certifications in:</p>
+
+	  <div class="column col2">
+            <h3 class="italic">POSTSECONDARY COURSES</h3>
+	    <ul class="bullets">
+	      <li>Clinical Medical Assistant</li>
+	      <li>Emergency Medical Technician</li>
+	      <li>Paramedic</li>
+	      <li>Certified Phlebotomy Technician</li>
+	      <li>Sterile Processing Technician</li>
+	    </ul>
+	  </div>
+
+	  <div class="column col2">
+	    <h3 class="italic">CEU COURSES</h3>
+	    <ul class="bullets">
+	      <li>AHA Advanced Cardiac Life Support (ACLS)</li>
+	      <li>AHA Healthcare Provider CPR (BLS)</li>
+	      <li>AHA Pediatric Advanced Life Support (PALS)</li>
+	      <li>AHA HeartSaver CPR</li>
+	      <li>AHA HeartSaver First Aid</li>
+	      <li>AHA HeartSaver Pediatric First Aid</li>
+	      <li>ECG Technician</li>
+	      <li>ECG Basic Arrhythmia Recognition</li>
+	      <li>ECG Introduction to 12-Lead</li>
+	      <li>Emergency Medical Patients: Assessment, Care, and Transport (EMPACT)</li>
+	      <li>Geriatric Education for Emergency Medical Services (GEMS)</li>
+	      <li>International Trauma Life Support (ITLS)</li>
+	    </ul>
+	  </div>
+
+	  <p>We promote an energetic, diverse, and challenging atmosphere where you are given the attention needed to lay the groundwork for success in today's exciting healthcare industry.  Our Instructors are all certified or licensed medical professionals with years of field and teaching experience.  Our school administrators are invested in the success of every student.  Fast Response is a fifty percent woman-owned business, with women and minorities making up a large percentage of our staff.</p>
 
 	  <hr>
 
@@ -118,6 +157,14 @@
 	  <p style="font-size: 120%; width: 70%;">
 	    To create a highly stimulating and supportive learning environment which will enable our students to obtain the necessary career skills to achieve their life goals. We sincerely believe that a learning environment which is challenging, accepting and lively inspires confidence and motivates our students to succeed. Together, we can be a driving factor in improving the quality of Health Care in our community.
 	  </p>
+
+	  <hr>
+
+	  <h2><a name="bureau">Bureau of Private and Postsecondary Education Reports</a></h2>
+	  <p><ul class="bullets">
+	    <li><a href="/pdfs/BPPE Annual Report 2012.pdf" target="_blank">BPPE Annual Report for 2012</a></li>
+	    <li><a href="/pdfs/BPPE Performance Fact Sheets 2012.pdf" target="_blank">Performance Fact Sheets for all courses 2012</a></li>
+	  </ul></p>
 
 	</div> <!-- /leftcontent -->
 

@@ -43,7 +43,7 @@ $handle = db_connect();
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 
   <script type="text/javascript" src="/js/datetimepicker.js"></script>
   <script type="text/javascript" src="/js/frlib.js"></script>

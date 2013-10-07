@@ -35,6 +35,26 @@ function htmlsafe($data) {
   return $data;
 }
 
+// add html tags to some text
+// mostly useful for array_map() calls
+// $where can be 'front', 'back', or 'both'
+//   determines where to place the tag
+//   only does an end-tag (</tag>) when using 'both'
+function htmlmap($text, $tag, $where = 'both') {
+  switch ($where) {
+    case 'both':
+      $text = "<$tag>$text</$tag>";
+    break;
+    case 'front':
+      $text = "<$tag>$text";
+    break;
+    case 'back':
+      $text = "$text<$tag>";
+    break;
+  }
+  return $text;
+}
+
 // turn a string into a set of html <li></li> items
 // each newline-separated section becomes its own <li>
 function listify($in) {

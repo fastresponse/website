@@ -90,16 +90,19 @@
 	      <div>Course Info<br />Packet</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/pdfs/CPT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	    <!--
+      <a href="/pdfs/CPT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Performance<br />Fact Sheet</div>
 	      <div></div><div></div><div></div><div></div>
-            </a>
+      </a>
+      -->
 	    <a href="/resources/cpt/" class="btn3 lines-2">
 	      <div>Student<br />Resources</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/photos/phleb/index.html#phleb" class="btn3 lines-1">
-	      <div>Photo Gallery</div>
+	    <!--<a href="/photos/phleb/index.html#phleb" class="btn3 lines-1">-->
+	    <a href="/gallery/index.php/Phlebotomy" class="btn3 lines-2">
+	      <div>Photo<br />Gallery</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/school/info/" class="btn2 lines-1">

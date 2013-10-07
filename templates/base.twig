@@ -1,5 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<!--
 <!DOCTYPE html>
 <html>
+-->
 <head>
   {% block head %}
   <title>{{ title is defined ? title ~ " | " }}Fast Response</title>
@@ -10,8 +16,8 @@
 
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
-  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
@@ -33,6 +39,8 @@
 
   </script>
 
+  {{ jquery is defined ? "<script type='text/javascript' src='/js/jquery-1.10.2.min.js'></script>" }}
+
   {{ scripts|default('')|raw }}
 
   {{ styles|default('')|raw }}
@@ -45,10 +53,6 @@
 
   <div id="page">
 
-    <div id="menu">
-      {% include 'menu.twig' %}
-    </div>
-
     {% block top %}
     <div id="head">
       <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
@@ -56,6 +60,10 @@
       <div class="clearfix"></div>
     </div>
     {% endblock top %}
+
+    <div id="menu">
+      {% include 'menu.twig' %}
+    </div>
 
     {% block banners %}
     {% endblock banners %}
@@ -67,7 +75,7 @@
 
       {% block maincontent %}
       <div class="section">
-	{{ content|raw }}
+	      {{ content|raw }}
       </div> <!-- /section -->
       {% endblock maincontent %}
 

@@ -39,16 +39,17 @@ $banners = array(
   ),
   array(
     'align' => 'center',
-    'link' => '/classes/career_courses/paramedic/',
+    'link' => '/gallery/index.php/Events/EMT-Career-Fair---August-23rd-2013/',
     'divstyle' => 'max-width: 50%;',
-    'bannerclass' => 'glow-red',
-    'text' => 'Paramedic Academy Begins July 1st, 2013',
+    'bannerclass' => 'glow-yellow',
+    'text' => 'Photos from our EMT Career Fair Aug 23rd',
   ),
 );
 
 $content = file_get_contents('./index.php.content/main-table.html');
 
 $template->display('index.twig', array(
+  'jquery' => true,
   'slideshow' => $slideshow,
   'styles' => $styles,
   'introtext' => $introtext,

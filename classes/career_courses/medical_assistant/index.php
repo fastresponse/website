@@ -1,3 +1,8 @@
+<?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+  $handle = db_connect('start_dates');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
@@ -62,29 +67,30 @@
 	  <div class="quicklinks2">
 	    <a href="/pdfs/CMA - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Course Info<br />Packet</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/pdfs/CMA - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	    <!--<a href="/pdfs/CMA - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Performance<br />Fact Sheet</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
+	    </a>-->
+      <a href="/resources/cma/" class="btn3 lines-2">
+        <div>Student<br />Resources</div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
-            <a href="/resources/cma/" class="btn3 lines-2">
-              <div>Student<br />Resources</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/photos/ma/index.html#medicalassistant" class="btn3 lines-1">
-	      <div>Photo Gallery</div>
-              <div></div><div></div><div></div><div></div>
+	    <!--<a href="/photos/ma/index.html#medicalassistant" class="btn3 lines-1">-->
+	    <a href="/gallery/index.php/Medical-Assistant" class="btn3 lines-2">
+	      <div>Photo<br />Gallery</div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/school/info/" class="btn2 lines-1">
 	      <img src="/images/buttons/envelope-icon.png" alt="" />
 	      <div>Contact Us</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
 	      <img src="/images/buttons/facebook-icon.png" alt="" />
 	      <div>Visit Us On<br />Facebook</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	  </div>
 	</div>
@@ -94,8 +100,24 @@
           <div class="column smallauto" style="width: 17%;">
 	    <div class="announcement red">
 	      <h3 class="yellow">Course Start Dates</h3>
-	      <div>Students can enter at the beginning of almost any class section. Sections rotate on a weekly basis.</div>
-	      <div><a href="/school/info/" class="yellow">Contact us for details.</a></div>
+              <div class="yellow underline">Morning Class</div>
+	      <?php
+		      $next = query_next_date($handle, 'CMA', 'AM');
+		      $cpt = query_prev_date($handle, 'CPT', 'Full-time', $next['thedate']);
+		      echo "<div>CPT: {$cpt['showdate']}</div>\n";
+		      echo "<div>CMA: {$next['showdate']}</div>\n";
+	      ?>
+	      <!-- <div class="yellow underline">Evening Class</div> -->
+	      <?php
+		      /*
+		      $next = query_next_date($handle, 'CMA', 'PM');
+		      $cpt = query_prev_date($handle, 'CPT', 'Full-time', $next['thedate']);
+		      echo "<div>CPT: {$cpt['showdate']}</div>\n";
+		      echo "<div>CMA: {$next['showdate']}</div>\n";
+	        */
+        ?>
+	      <div class="yellow" style="font-size: 85%; margin-top: 0.5em;">All CMA classes begin with the CPT course section.</div>
+
 	    </div>
 	  </div>
 

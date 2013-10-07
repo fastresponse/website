@@ -1,5 +1,6 @@
 <ul>
   <li><a href="/">Home</a></li>
+  <li><a href="/school/policies/">Policies</a></li>
   <li><a href="/classes/">Courses</a></li>
   <li><a href="/resources/">Resources</a></li>
   <li><a href="/community/">Community</a></li>

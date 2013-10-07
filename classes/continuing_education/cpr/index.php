@@ -109,7 +109,7 @@
 	  <?php
 $announcement_sections[] = <<<SECT1
 <h3 style="margin-top: 0; text-align: center;"><strong class="underline">2010 AHA BLS Student Manual</strong></h3>
-<div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901038.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$20</span>.</div>
+<div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901038.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$20</span> (Monday - Friday only).</div>
 <div style="font-size: 70%; margin-top: 1em;">Required for class. Not included in course fees.</div>
 SECT1;
             include('../ceu_include.php');
@@ -142,7 +142,7 @@ SECT1;
 	    <li>AHA Certification is good for 2 years.</li>
 	  </ul>
 
-	  <h2 class="yellow">BLS eLearning (AHA)</h2>
+	  <h2 class="yellow"><a name="elearning">BLS eLearning (AHA)</a></h2>
 
 	  <p class="squaredup">The American Heart Association's BLS for Healthcare Providers Online Part 1 Course, web-based and accessible 24 hours a day, provides a flexible alternative to classroom training. Through case-based scenarios, interactive activities, and videos, this course teaches the concepts of both single-rescuer and team basic life support.</p>
 

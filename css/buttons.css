@@ -487,6 +487,7 @@
 
 /* different outside glow colors */
 
+.glow-red,
 .btn.glow-red,
 .btn2.glow-red div:nth-of-type(3),
 .btn3.glow-red div:nth-of-type(3) {
@@ -504,6 +505,7 @@
               -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
 }
 
+.glow-yellow,
 .btn.glow-yellow,
 .btn2.glow-yellow div:nth-of-type(3),
 .btn3.glow-yellow div:nth-of-type(3) {
@@ -521,6 +523,7 @@
 	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
 }  
 
+.glow-orange,
 .btn.glow-orange,
 .btn2.glow-orange div:nth-of-type(3),
 .btn3.glow-orange div:nth-of-type(3) {
@@ -538,6 +541,7 @@
 	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
 }
 
+.glow-blue,
 .btn.glow-blue,
 .btn2.glow-blue div:nth-of-type(3),
 .btn3.glow-blue div:nth-of-type(3) {
@@ -555,6 +559,7 @@
               -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
 }
 
+.glow-lightblue,
 .btn.glow-lightblue,
 .btn2.glow-lightblue div:nth-of-type(3),
 .btn3.glow-lightblue div:nth-of-type(3) {

@@ -74,12 +74,12 @@
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 	    -->
-	    <a href="/pdfs/PAR - Performance Fact Sheet.pdf" class="btn3 lines-2" target="_blank">
+	    <!--<a href="/pdfs/PAR - Performance Fact Sheet.pdf" class="btn3 lines-2" target="_blank">
 	      <div>Performance<br />Fact Sheet</div>
 	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/photos/emt/index.html#emt" class="btn3 lines-1">
-	      <div>Photo Gallery</div>
+	    </a>-->
+	    <a href="/gallery/index.php/EMT" class="btn3 lines-2">
+	      <div>Photo<br />Gallery</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/school/info/" class="btn2 lines-1">

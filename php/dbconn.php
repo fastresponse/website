@@ -90,7 +90,8 @@ function query_company($dbh, $name) {
   $q_src =
     "SELECT website, apply, courses, streetaddr, city, state, phone, contact
     FROM companies
-    WHERE name = :name"
+    WHERE name = :name
+    LIMIT 1"
   ;
   $params = array(
     ':name' => $name,
@@ -111,7 +112,7 @@ function query_company_full($dbh) {
 
 function query_jobpostings($dbh, $firstdate, $lastdate, $course, $company) {
   $q_jobpost =
-    "SELECT DATE_FORMAT(postdate, '%d-%b-%Y') AS showdate,
+    "SELECT DATE_FORMAT(postdate, '%d-%b-%Y') AS showdate, id,
      courses, company, jobtitle, requirements, contact, apply, text
      FROM jobpostings
      WHERE postdate BETWEEN :firstdate AND :lastdate"
@@ -194,28 +195,193 @@ $requirements, $contact, $apply, $text) {
   return db_insert($dbh, $i_jobpost, $params);
 }
 
-function query_next_date($dbh, $course, $type) {
-  $q_date =
-    "SELECT DATE_FORMAT(thedate, '%M %D, %Y') AS showdate, course, type
-    FROM start_dates
-    WHERE course = :course AND thedate >= CURDATE()"
+function update_jobposting($dbh, $jobid, $date, $courses, $company, $jobtitle,
+$requirements, $contact, $apply, $text) {
+  $i_jobpost =
+    "UPDATE jobpostings
+    SET postdate = :postdate, courses = :courses, company = :company, jobtitle = :jobtitle,
+    requirements = :requirements, contact = :contact, apply = :apply, text = :text
+    WHERE id = :jobid"
   ;
+
+  // mysql REQUIRES YYYY-MM-DD date format, so convert whatever we get
+  $date = date('Y-m-d', strtotime($date));
+
+  if (is_array($courses))
+    $courses = arr_to_set($courses);
+
   $params = array(
-    ':course' => $course,
+    ':jobid' => $jobid,
+    ':postdate' => $date,
+    ':courses' => $courses,
+    ':company' => $company,
+    ':jobtitle' => stripslashes($jobtitle),
+    ':requirements' => stripslashes($requirements),
+    ':contact' => stripslashes($contact),
+    ':apply' => stripslashes($apply),
+    ':text' => stripslashes($text),
   );
+
+  return db_insert($dbh, $i_jobpost, $params);
+}
+
+
+function delete_jobposting($dbh, $jobid) {
+  $d_jobpost =
+    "DELETE FROM jobpostings
+    WHERE id = :id"
+  ;
+
+  $params[':id'] = $jobid;
+
+  return db_insert($dbh, $d_jobpost, $params);
+}
+
+function create_query_dates($course, $type, $sort = 'thedate') {
+  $q_date =
+    "SELECT DATE_FORMAT(thedate, '%M %D, %Y') AS showdate, " .
+    "thedate, course, type FROM start_dates"
+  ;
+
+  if ($course) {
+    $params[':course'] = $course;
+    $q_where[] = 'course = :course';
+  }
   
   if ($type) {
-    $q_date .= " AND type = :type";
     $params[':type'] = $type;
+    $q_where[] = 'type = :type';
   }
 
-  $q_date .= " ORDER BY thedate ASC";
+  $q_where[] = 'thedate >= CURDATE()';
 
+  if (isset($q_where) && count($q_where)) {
+    $q_date .= ' WHERE ' . implode(' AND ', $q_where);
+  }
+
+  switch ($sort) {
+    default:
+    case 'thedate':
+      $sort = 'thedate';
+      break;
+    case 'course':
+    case 'type':
+      $sort = "$sort,thedate";
+  }
+    
+  $q_date .= " ORDER BY $sort ASC";
+
+  return array($q_date, $params);
+}
+
+function query_course_dates($dbh, $course, $type, $sort) {
+  $query_data = create_query_dates($course, $type, $sort);
+  $q_date = $query_data[0];
+  $params = $query_data[1];
+  $result = db_query($dbh, $q_date, $params, 0);
+  return $result;
+}
+
+function query_next_date($dbh, $course, $type) {
+  $query_data = create_query_dates($course, $type);
+  $q_date = $query_data[0] . ' LIMIT 1';
+  $params = $query_data[1];
   $result = db_query($dbh, $q_date, $params, 1);
-
   if (!is_array($result) || !count($result))
     $result = array('showdate' => 'TBA');
+  return $result;
+}
 
+function query_prev_date($dbh, $course, $type, $thisdate) {
+  $q_date =
+    "SELECT DATE_FORMAT(thedate, '%M %D, %Y') AS showdate, " .
+    "thedate, course, type FROM start_dates"
+  ;
+
+  if ($course) {
+    $params[':course'] = $course;
+    $q_where[] = 'course = :course';
+  }
+  
+  if ($type) {
+    $params[':type'] = $type;
+    $q_where[] = 'type = :type';
+  }
+
+  $params[':thisdate'] = $thisdate;
+  $q_where[] = 'thedate <= :thisdate';
+
+  if (isset($q_where) && count($q_where)) {
+    $q_date .= ' WHERE ' . implode(' AND ', $q_where);
+  }
+
+  $q_date .= ' ORDER BY thedate DESC LIMIT 1';
+
+  $result = db_query($dbh, $q_date, $params, 1);
+  if (!is_array($result) || !count($result))
+    $result = array('showdate' => 'TBA');
+  return $result;
+}
+
+function query_promo($dbh, $code) {
+  $q_promo =
+    "SELECT DATE_FORMAT(start_date, '%M %D, %Y') AS start, " .
+    "DATE_FORMAT(end_date, '%M %D, %Y') AS end, " .
+    "code, title, header, body, buttons, start_date, end_date " .
+    "FROM promos " .
+    "WHERE code = :code LIMIT 1"
+  ;
+
+  $params[':code'] = $code;
+
+  $result = db_query($dbh, $q_promo, $params, 1);
+  return $result;
+}
+
+function query_button($dbh, $text) {
+  $q_button =
+    "SELECT * FROM buttons " .
+    "WHERE text = :text LIMIT 1"
+  ;
+
+  $params[':text'] = $text;
+
+  $result = db_query($dbh, $q_button, $params, 1);
+  return $result;
+}
+
+function query_promo_dates($dbh, $date1 = null, $date2 = null) {
+  $q_promos =
+    "SELECT DATE_FORMAT(start_date, '%M %D, %Y') AS start, " .
+    "DATE_FORMAT(end_date, '%M %D, %Y') as end, " .
+    "code, title, header, body, buttons, start_date, end_date " .
+    "FROM promos"
+  ;
+  $params = array();
+
+  // if last arg is not null, then previous arg must exist, right?
+  // both dates given = this is a date range to look in
+  if ($date2) {
+    $params[':end_date'] = $date2;
+    $q_where[] = '((end_date is NULL) OR (end_date <= :end_date))';
+    $params[':start_date'] = $date1;
+    $q_where[] = '((start_date is NULL) OR (start_date >= :start_date))';
+  }
+  // date1 exists but date2 does not
+  // all active promos during date1
+  else if ($date1) {
+    $params[':cur_date'] = $date1;
+    $q_where[] = '((end_date is NULL) OR (:cur_date <= end_date))';
+    $q_where[] = '((start_date is NULL) OR (:cur_date >= start_date))';
+  }
+
+  if (isset($q_where) && count($q_where)) {
+    $q_promos .= ' WHERE ' . implode(' AND ', $q_where);
+  }
+
+  $q_promos .= ' ORDER BY start_date ASC';
+
+  $result = db_query($dbh, $q_promos, $params);
   return $result;
 }
 

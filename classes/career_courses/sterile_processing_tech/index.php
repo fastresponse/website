@@ -69,27 +69,29 @@
 	      <div>Course Info<br />Packet</div>
               <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/pdfs/SPT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	    <!--
+      <a href="/pdfs/SPT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Performance<br />Fact Sheet</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
+        <div></div><div></div><div></div><div></div>
+	    </a>-->
 	    <a href="/resources/spt/" class="btn3 lines-2">
 	      <div>Student<br />Resources</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/photos/spt/index.html#spt" class="btn3 lines-1">
-	      <div>Photo Gallery</div>
-              <div></div><div></div><div></div><div></div>
+	    <!--<a href="/photos/spt/index.html#spt" class="btn3 lines-1">-->
+	    <a href="/gallery/index.php/Sterile-Processing" class="btn3 lines-2">
+	      <div>Photo<br />Gallery</div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/school/info" class="btn2 lines-1">
 	      <img src="/images/buttons/envelope-icon.png" alt="" />
 	      <div>Contact Us</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
 	      <img src="/images/buttons/facebook-icon.png" alt="" />
 	      <div>Visit Us On<br />Facebook</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	  </div>
 	</div>
@@ -102,6 +104,11 @@
 	      <div class="yellow underline">Full-time</div>
 	      <?php
 		$next = query_next_date($handle, 'SPT', 'Full-time');
+		echo "<div>{$next['showdate']}</div>";
+	      ?>
+	      <div class="yellow underline">Part-time</div>
+	      <?php
+		$next = query_next_date($handle, 'SPT', 'Part-time');
 		echo "<div>{$next['showdate']}</div>";
 	      ?>
 	    </div>

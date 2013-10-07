@@ -1,3 +1,2 @@
-
-ErrorDocument 403 http://fastresponse.org/index.html
-ErrorDocument 404 http://fastresponse.org/index.html
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php

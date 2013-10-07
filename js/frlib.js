@@ -211,3 +211,4 @@ function openWindow(loc) {
   window.open(loc, '_blank', 'height=300,width=600,', false);
   return false;
 }
+

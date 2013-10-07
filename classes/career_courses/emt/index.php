@@ -69,33 +69,34 @@
 	  <div class="quicklinks2">
 	    <a href="/pdfs/EMT - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Course Info<br />Packet</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/pdfs/EMT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
+	    <!--<a href="/pdfs/EMT - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
 	      <div>Performance<br />Fact Sheet</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
+        <div></div><div></div><div></div><div></div>
+	    </a>-->
 	    <a href="/resources/emt/" class="btn3 lines-2">
 	      <div>Student<br />Resources</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/resources/emt/?section=videos" class="btn3 lines-1">
 	      <div>Skills Videos</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
-	    <a href="/photos/emt/index.html#emt" class="btn3 lines-1">
-	      <div>Photo Gallery</div>
-              <div></div><div></div><div></div><div></div>
+	    <!--<a href="/photos/emt/index.html#emt" class="btn3 lines-1">-->
+	    <a href="/gallery/index.php/EMT" class="btn3 lines-2">
+	      <div>Photo<br />Gallery</div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="/school/info/" class="btn2 lines-1">
 	      <img src="/images/buttons/envelope-icon.png" alt="" />
 	      <div>Contact Us</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
 	      <img src="/images/buttons/facebook-icon.png" alt="" />
 	      <div>Visit Us On<br />Facebook</div>
-              <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
 	    </a>
 	  </div> <!-- /quicklinks -->
 

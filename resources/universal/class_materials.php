@@ -1,5 +1,4 @@
 <?php
-  //include_once("../$course/class_materials.php");
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 
   /* there are different ways to display various file types
@@ -21,15 +20,26 @@
     switch ($ext) {
       case 'pdf':
 	$url  = 'http://' . $_SERVER['SERVER_NAME'] . $file;
-	$out  = "<span onClick=\"showSubSection('materials', '$id'); ";
+	$out  = "";
+
+	$out .= "<a href='$file'>";
+	$out .= "<span style='font-size: 80%; background-color: #222222; ";
+	$out .= "color: #CCCC33; display: inline-block; padding: 2px 4px;'>";
+	$out .= "save pdf</span></a>";
+	$out .= "\n";
+
+	$out .= "<span class='underline' ";
+	$out .= "onClick=\"showSubSection('materials', '$id'); ";
 	$out .= "setSource('display_$id', googleViewer('$url'), false); \">";
-	$out .= "$title</span>\n";
+	$out .= "$title</span> ";
+	$out .= "\n";
       break;
 
       case 'php':
       case 'html':
       case 'htm':
-	$out  = "<span onClick=\"showSubSection('materials', '$id'); \">";
+	$out  = "<span class='underline' ";
+	$out .= "onClick=\"showSubSection('materials', '$id'); \">";
 	$out .= "$title</span>\n";
       break;
 
@@ -65,7 +75,7 @@
     $subdirs = array();
     $files = array();
 
-    $list .= "<ul class=\"bullets underline pointer\">\n";
+    $list .= "<ul class=\"bullets pointer\">\n";
     
     foreach ($entries as $name) {
       if ($name == ".." || $name == ".") continue;
@@ -79,7 +89,8 @@
     }
 
     foreach ($subdirs as $sub) {
-      $list .= "<li>" . file_title($sub) . "\n";
+      $list .= "<li><span style='font-weight: bold; font-size: 115%;'>";
+      $list .= file_title($sub) . "</span>\n";
       create_list_and_divs($sub, $list, $divs, $ids);
       $list .= "</li>";
     }
@@ -91,7 +102,7 @@
       $ids[] = $id;
 
       $list .= "<li>\n";
-      $list .= create_nav($file, $ext, $id, $title);
+      $list .= create_nav($file, $ext, $id, $title) . "\n";
       $list .= "</li>\n";
 
       // this extra style gunk is necessary to force the iframe inside to fill this div
@@ -132,11 +143,11 @@
   ] );
 </script>
 
-<div class="column" style="width: 25%;">
+<div class="column" style="width: 40%;">
 <?= $list ?>
 </div>
 
 <!-- this stuff is necessary to force the iframes inside to fill their container divs -->
-<div class="column" style="width: 65%; height: 100%; position: relative; top: 0; bottom: 0; right: 0; left: 0; ">
+<div class="column" style="width: 50%; height: 100%; height: auto; position: relative; top: 0; bottom: 0; right: 0; left: 0; ">
   <?= $divs ?>
 </div>

@@ -58,9 +58,42 @@ function fullcompanyinfo($handle = null, $company_name = null) {
   return $company_data;
 }
 
-function joblist($handle = null, $daterange = '2 weeks', $course = null, $company = null, $cells_per_row = 2) {
+function get_admin_controls($entry) {
+  $jobid = $entry['id'];
 
-  if ($handle == null)
+  $ret = "";
+
+  $ret .= "  <input type=\"button\" value=\"Edit\" class=\"edit_btn\" " .
+          "id=\"edit_$jobid\" />\n";
+  $ret .= "  <input type=\"button\" value=\"Delete\" class=\"delete_btn\" " .
+	  "id=\"delete_$jobid\" />\n";
+  $ret .= "  <span id=\"msg_$jobid\"></span>\n";
+
+  return $ret;
+}
+
+function joblist($handle, $args = array()) {
+
+  $course = null;
+  $company = null;
+  $daterange = '2 weeks';
+  $cells_per_row = 2;
+  $admin = false;
+
+  foreach ($args as $arg => $val) {
+    switch ($arg) {
+      case 'admin':
+      case 'daterange':
+      case 'course':
+      case 'company':
+      case 'cells_per_row':
+	$$arg = $val;
+      break;
+      default: // do nothing
+    }
+  }
+
+  if (!isset($handle))
     return '<h2 class="joberror">There was an error accessing the database.</h2>';
 
   $now = date('Y-m-d');
@@ -98,44 +131,48 @@ function joblist($handle = null, $daterange = '2 weeks', $course = null, $compan
       $ret .= "<tr>\n";
 
     $ret .= "<td>\n";
-    $ret .= "<div class=\"container\" onClick=\"toggleShow(this);\">\n";
+    $ret .= "<div class=\"container\" onClick=\"toggleShow(this);\" id=\"job_{$entry['id']}\">\n";
 
-    $ret .= "<div class=\"top date\">{$entry['showdate']}</div>\n";
-    $ret .= "<div class=\"top courses\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
-    $ret .= "<div class=\"top jobtitle\">" . $entry['jobtitle'] . "</div>\n";
+    $ret .= "<div class=\"top date\" id=\"date_{$entry['id']}\">{$entry['showdate']}</div>\n";
+    $ret .= "<div class=\"top courses\" id=\"courses_{$entry['id']}\">" . str_replace(",", ", ", $entry['courses']) . "</div>\n";
+    $ret .= "<div class=\"top jobtitle\" id=\"jobtitle_{$entry['id']}\">" . $entry['jobtitle'] . "</div>\n";
     $ret .= "<div class=\"top website hidden\" title=\"{$company_data['full_contact_info']}\">" . $company_data['weblink'] . "</div>\n";
-    $ret .= "<div class=\"top companyname\" title=\"{$company_data['full_contact_info']}\">" . $company_data['name'] . "</div>\n";
+    $ret .= "<div class=\"top companyname\"  id=\"company_{$entry['id']}\"title=\"{$company_data['full_contact_info']}\">" . $company_data['name'] . "</div>\n";
 
     $ret .= "<div class=\"bottom hidden\">\n";
     $ret .= "  <div class=\"reqs\">\n";
     $ret .= "    Requirements:<br />\n";
-    $ret .= "    <ul>\n" . listify($entry['requirements']) . "</ul>\n";
+    $ret .= "    <ul id=\"reqs_{$entry['id']}\">\n" . listify($entry['requirements']) . "</ul>\n";
     $ret .= "  </div>\n";
 
     $line = 1;
 
     if (strlen($entry['text'])) {
-      $ret .= "  <div class=\"line{$line}\">\n";
+      $ret .= "  <div class=\"line{$line}\" id=\"text_{$entry['id']}\">\n";
       $ret .= "    " . $entry['text'] . "\n";
       $ret .= "  </div>\n";
       $line++;
     }
     if (strlen($entry['contact'])) {
-      $ret .= "  <div class=\"line{$line}\">\n";
+      $ret .= "  <div class=\"line{$line}\" id=\"contact_{$entry['id']}\">\n";
       $ret .= "    " . $entry['contact'] . "\n";
       $ret .= "  </div>\n";
       $line++;
     }
     if (strlen($entry['apply'])) {
-      $ret .= "  <div class=\"line{$line}\">\n";
+      $ret .= "  <div class=\"line{$line}\" id=\"apply_{$entry['id']}\">\n";
       $ret .= "    " . $entry['apply'] . "\n";
       $ret .= "  </div>\n";
       $line++;
     }
 
-    $ret .= "</div>\n";
+    $ret .= "</div>\n"; // bottom
+    $ret .= "</div>\n"; // container
 
-    $ret .= "</div>\n";
+    if ($admin) {
+      $ret .= get_admin_controls($entry);
+    }
+
     $ret .= "</td>\n";
 
     if ($end_row)
