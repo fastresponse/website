@@ -84,13 +84,13 @@
   <style type="text/css">
     .link-column {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 10px 20px;
       text-align: center;
       vertical-align: top;
-      width: 270px;
+      width: 260px;
     }
     .link-column.cols-2 {
-      width: 500px;
+      width: 480px;
     }
     .link-column .title {
       letter-spacing: 0.1em;
@@ -101,10 +101,12 @@
       background-color: rgb(10, 30, 60);
       padding: 10px 27px;
       border-radius: 75px;
+      -moz-border-radius: 75px;
+      -webkit-border-radius: 75px;
     }
     .link-column .title>div {
       text-shadow: 2px 2px 5px rgb(0, 0, 0);
-      font-size: 120%;
+      /*font-size: 115%;*/
       margin: 0 auto;
       padding: 0.5em;
       border: 2px solid rgb(200, 200, 200);
@@ -126,19 +128,19 @@
       */
     }
     .link-column .title h1 {
-      font-size: 1em;
+      font-size: 115%;
       margin: 0 auto;
     }
     .link-column .title h2 {
-      font-size: 0.65em;
+      font-size: 65%;
       margin: 0 auto;
     }
     .link-column .body {
       width: 65%;
+      font-size: 90%;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 50px;
       padding: 5px;
       border: 5px solid rgb(10, 30, 60);
       border-bottom-right-radius: 15px;
@@ -181,31 +183,56 @@
       margin: 0;
     }
 
-    .logotext {
+    #head {
+      border-bottom: none;
+    }
+    #main {
+      padding-bottom: 0;
+    }
+    #headimg {
+      display: inline-block;
+      width: 500px;
+      padding: 0 15px;
+      box-sizing: border-box;
       float: left;
-      width: 50%;
     }
-    .logotext img {
-      display: block;
-    }
-    .logotext p {
+    #blurb {
+      display: inline-block;
       font-weight: bold;
       font-style: italic;
-      width: 90%;
-      margin: 0 auto;
+      text-align: justify;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      padding: 5% 20%;
+    }
+    .head-left {
+      float: left;
+      width: 50%;
+      float: none;
+      display: inline-block;
+      width: 69%;
+    }
+    .head-center {
+      display: inline-block;
+      width: 39%;
+      vertical-align: text-bottom;
+    }
+    .head-right {
+      display: inline-block;
+      width: 30%;
+      vertical-align: text-top;
     }
     #mainslideshow {
-      float: right;
-      max-width: 45%;
-      z-index: 0;
-      margin: 16px 3% 24px 0;
+      display: inline-block;
+      margin: 0 auto 2%;
       border-radius: 50px;
       -moz-border-radius: 50px;
       -webkit-border-radius: 50px;
     }
     .banners {
-      width: 100%;
-      margin: 0 0 1em;
+      text-align: center;
+      display: inline-block;
     }
     .banners.banners-4 .banner {
       width: 24.5%;
@@ -221,27 +248,24 @@
       float: none;
     }
     .banners .banner {
-      float: left;
+      clear: both;
       display: inline-block;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
-      padding-right: 1%;
-      padding-left: 1%;
-      margin-bottom: 2%;
-      /* right up against the head section
-         use padding on elements inside head to space them */
+      width: 100%;
+      margin: 9% auto 0;
     }
     .banners .banner.left {
     }
     .banners .banner.right {
-      float: right;
     }
     .banners .banner.center {
     }
     .banners .banner .btn {
       padding-left: 1em;
       padding-right: 1em;
+      width: 100%;
       background-image: none;
       background-color: rgb(42, 72, 115);
       background: -webkit-linear-gradient(top, rgb(85, 115, 145), rgb(0, 30, 85));
@@ -254,6 +278,14 @@
       font-family: Georgia, serif;
       font-style: italic;
       text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);
+    }
+    .leftsidebar2 {
+      width: 470px;
+      text-align: center;
+      padding: 0 15px;
+    }
+    .rightcontent2 {
+      padding-left: 500px;
     }
 
   </style>
@@ -268,158 +300,160 @@
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
     </div>
 
-    <div id="head" style="border-bottom: none;">
-      <div class="logotext">
+    <div id="head">
+      <div class="leftsidebar2">
 	      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" />
-	      <p>Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</p>
       </div>
-
-      <div id="mainslideshow" class="glow-lightblue">
-        <!-- filled in by javascript -->
+      <div class="rightcontent2">
+	      <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
       </div>
-
       <div class="clearfix"></div>
     </div> <!-- /head -->
 
-    <div class="banners banners-3 section" style="text-align: center;">
-
-	    <div class="banner left">
-	      <a href="/school/info/" class="btn buttontext lines-1">
-	        <div>
-	          Contact an Admissions Representative Now!
-	        </div>
-	        <span></span>
-	      </a>
-	    </div>
-
-	    <div class="banner center">
-	      <a href="/gallery/index.php/Events/EMT-Career-Fair---August-23rd-2013/" class="btn buttontext lines-1 glow-yellow">
-	        <div>
-	          Photos from our EMT Career Fair Aug 23rd
-	        </div>
-	        <span></span>
-	      </a>
-	    </div>
-
-      <div class="banner right">
-        <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
-          <div>
-            Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;">Jan 1st</div>
-          </div>
-          <span></span>
-        </a>
-      </div>
-	
-	    <div class="clearfix"></div>
-    </div>
-
-    <!--
-    <div class="banners banners-2 section" style="text-align: center;">
-	    <div class="clearfix"></div>
-    </div>
-    -->
-
     <div id="main">
-      <div class="section" style="margin-top: 0; text-align: justify; text-align-last: center; -moz-text-align-last: center;">
 
-      <div class="link-column">
-        <div class="title">
-          <div>
-            <h1>Career Courses</h1>
-            <h2>For Everyone</h2>
+      <div class="leftsidebar2">
+
+        <div id="mainslideshow" class="glow-lightblue">
+          <!-- filled in by javascript -->
+        </div>
+
+        <div class="banners">
+
+	        <div class="banner">
+	          <a href="/school/info/" class="btn buttontext lines-1">
+	            <div>
+	              Contact an Admissions Representative Now!
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+
+	        <div class="banner">
+	          <a href="/gallery/index.php/Events/EMT-Career-Fair---August-23rd-2013/" class="btn buttontext lines-1 glow-yellow">
+	            <div>
+	              Photos from our EMT Career Fair Aug 23rd
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+
+          <div class="banner">
+            <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
+              <div>
+                Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;">Jan 1st</div>
+              </div>
+              <span></span>
+            </a>
           </div>
-        </div>
-        <div class="body">
-          <a href="/classes/career_courses/emt/">Emergency Medical Technician</a>
-          <a href="/classes/career_courses/phlebotomy/">Certified Phlebotomy Technician</a>
-          <a href="/classes/career_courses/medical_assistant/">Clinical Medical Assistant</a>
-          <a href="/classes/career_courses/paramedic/">Paramedic</a>
-          <a href="/classes/career_courses/sterile_processing_tech/">Sterile Processing Technician</a>
+
+	        <div class="clearfix"></div>
+        </div> <!-- /banners -->
+
+        <div style="margin: 50px auto 20px;">
+	        <h4 style="text-align: center; letter-spacing: 0.12em;">This school has been approved by the <a style="white-space: nowrap;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and Postsecondary Education.</a></h4>
         </div>
 
-        <!--
-        <div class="title">
-          <div>
-            <h1>Student Resources</h1>
-            <h2>Current &amp; Past Students</h2>
-          </div>
+        <div class="section">
+	  <h5 style="text-align: center; max-width: 75%; margin: 1em auto 1em;">All prices and content subject to change.</h5>
         </div>
-        <div class="body">
-          <a href="/resources/emt/">EMT Resources</a>
-          <a href="/resources/cpt/">CPT Resources</a>
-          <a href="/resources/cma/">CMA Resources</a>
-          <a href="/resources/spt/">SPT Resources</a>
+
+      </div> <!-- /leftsidebar2 -->
+
+      <div class="rightcontent2">
+
+        <div class="section" style="margin-top: 0; text-align: center;">
+         
+          <div class="link-column">
+            <div class="title">
+              <div>
+                <h1>About Us</h1>
+                <h2>Fast Response</h2>
+              </div>
+            </div>
+            <div class="body">
+              <a href="/school/about.php">Who We Are</a>
+              <a href="/school/location/">Location</a>
+              <a href="/school/info/">Contact Us</a>
+              <!--<a href="/community/events.php">Community Events</a>-->
+              <a href="/gallery/index.php">Photo Galleries</a>
+            </div>
+          </div> <!-- /link-column -->
+
+          <div class="link-column">
+            <div class="title">
+              <div>
+                <h1>Career Courses</h1>
+                <h2>For Everyone</h2>
+              </div>
+            </div>
+            <div class="body">
+              <a href="/classes/career_courses/emt/">Emergency Medical Technician</a>
+              <a href="/classes/career_courses/phlebotomy/">Certified Phlebotomy Technician</a>
+              <a href="/classes/career_courses/medical_assistant/">Clinical Medical Assistant</a>
+              <a href="/classes/career_courses/paramedic/">Paramedic</a>
+              <a href="/classes/career_courses/sterile_processing_tech/">Sterile Processing Technician</a>
+            </div>
+
+            <!--
+            <div class="title">
+              <div>
+                <h1>Student Resources</h1>
+                <h2>Current &amp; Past Students</h2>
+              </div>
+            </div>
+            <div class="body">
+              <a href="/resources/emt/">EMT Resources</a>
+              <a href="/resources/cpt/">CPT Resources</a>
+              <a href="/resources/cma/">CMA Resources</a>
+              <a href="/resources/spt/">SPT Resources</a>
+            </div>
+            -->
+          </div> <!-- /link-column -->
+
+          <div class="link-column">
+            <div class="title">
+              <div>
+                <h1>Student Resources</h1>
+                <h2>Current &amp; Past Students</h2>
+              </div>
+            </div>
+            <div class="body">
+              <a href="/resources/emt/">EMT Resources</a>
+              <a href="/resources/cpt/">CPT Resources</a>
+              <a href="/resources/cma/">CMA Resources</a>
+              <!--<a href="/resources/paramedic/">Paramedic Resources</a>-->
+              <a href="/resources/spt/">SPT Resources</a>
+            </div>
+          </div> <!-- /link-column -->
+
+          <div class="link-column cols-2">
+            <div class="title">
+              <div>
+                <h1>Continuing Education</h1>
+                <h2>EMS &amp; Hospital Personnel</h2>
+              </div>
+            </div>
+            <div class="body">
+              <a href="/classes/continuing_education/cpr/">Healthcare Provider CPR (BLS)</a>
+              <a href="/classes/continuing_education/ecg_basic/">ECG Basic</a>
+              <a href="/classes/continuing_education/acls/">Advanced Cardiac Life Support (ACLS)</a>
+              <a href="/classes/continuing_education/12_lead_ecg">ECG 12-Lead</a>
+              <a href="/classes/continuing_education/pals/">Pediatric Advanced Life Support (PALS)</a>
+              <a href="/classes/continuing_education/ecg_tech/">ECG Technician</a>
+              <a href="/classes/continuing_education/acls_prep/">ACLS Preparation</a>
+              <a href="/classes/continuing_education/itls/">International Trauma Life Support (ITLS)</a>
+              <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
+              <a href="/classes/continuing_education/NREMT/">NREMT</a>
+            </div>
+          </div> <!-- /link-column -->
+
+          <div style="display: inline-block; width: 100%;"></div>
+
         </div>
-        -->
-      </div> <!-- /link-column -->
+      </div> <!-- /rightcontent2 -->
 
-      <div class="link-column cols-2">
-        <div class="title">
-          <div>
-            <h1>Continuing Education</h1>
-            <h2>EMS &amp; Hospital Personnel</h2>
-          </div>
-        </div>
-        <div class="body">
-          <a href="/classes/continuing_education/cpr/">Healthcare Provider CPR (BLS)</a>
-          <a href="/classes/continuing_education/ecg_basic/">ECG Basic</a>
-          <a href="/classes/continuing_education/acls/">Advanced Cardiac Life Support (ACLS)</a>
-          <a href="/classes/continuing_education/12_lead_ecg">ECG 12-Lead</a>
-          <a href="/classes/continuing_education/pals/">Pediatric Advanced Life Support (PALS)</a>
-          <a href="/classes/continuing_education/ecg_tech/">ECG Technician</a>
-          <a href="/classes/continuing_education/acls_prep/">ACLS Preparation</a>
-          <a href="/classes/continuing_education/itls/">International Trauma Life Support (ITLS)</a>
-          <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
-          <a href="/classes/continuing_education/NREMT/">NREMT</a>
-        </div>
-      </div> <!-- /link-column -->
-
-      <div class="link-column">
-        <div class="title">
-          <div>
-            <h1>Student Resources</h1>
-            <h2>Current &amp; Past Students</h2>
-          </div>
-        </div>
-        <div class="body">
-          <a href="/resources/emt/">EMT Resources</a>
-          <a href="/resources/cpt/">CPT Resources</a>
-          <a href="/resources/cma/">CMA Resources</a>
-          <!--<a href="/resources/paramedic/">Paramedic Resources</a>-->
-          <a href="/resources/spt/">SPT Resources</a>
-        </div>
-      </div> <!-- /link-column -->
-
-      <div class="link-column">
-        <div class="title">
-          <div>
-            <h1>About Us</h1>
-            <h2>Fast Response</h2>
-          </div>
-        </div>
-        <div class="body">
-          <a href="/school/about.php">Who We Are</a>
-          <a href="/school/location/">Location</a>
-          <a href="/school/info/">Contact Us</a>
-          <!--<a href="/community/events.php">Community Events</a>-->
-          <a href="/gallery/index.php">Photo Galleries</a>
-        </div>
-      </div> <!-- /link-column -->
-
-
-      <div style="display: inline-block; width: 100%;"></div>
-
-      </div>
-
-      <div class="section clearfix" style="margin-top: 0;">
-	      <h4 style="text-align: center; max-width: 75%; margin: 1em auto 1em; letter-spacing: 0.12em;">This school has been approved by the <a style="white-space: nowrap;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and Postsecondary Education.</a></h4>
-      </div>
-
-      <div class="section">
-	<h5 style="text-align: center; max-width: 75%; margin: 1em auto 1em;">All prices and content subject to change.</h5>
-      </div>
-
-      <div class="clearfix vspacer"></div>
+      <div class="clearfix"></div>
 
     </div> <!-- /main -->
 

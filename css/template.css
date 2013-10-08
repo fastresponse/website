@@ -96,7 +96,7 @@ h3 {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#27396C')"; 
 
   /* standard background gradient syntax */
-  background: linear-gradient(to bottom, black, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
+  background: linear-gradient(to bottom, black 150px, rgb(39, 57, 109) 600px, rgb(39, 57, 109));
 
 }
 

@@ -16,17 +16,17 @@
     'carsvcs', 'resumes', 'interviews', 'jobsearch', 'extcert', 'videos'
   );
   if (!array_key_exists('section', $query_args) ||
-      !in_array($query_args['section'], $allowed_sections)) {
-	$section = 'carsvcs';
+  !in_array($query_args['section'], $allowed_sections)) {
+	  $section = 'carsvcs';
   }
   else {
     $section = $query_args['section'];
   }
 
-  if (!$showjobsfrom)
+  if (!isset($showjobsfrom))
     $showjobsfrom = '1 month';
 
-  if (!$button_lines)
+  if (!isset($button_lines))
     $button_lines = 1;
 
   // each course's index.php sets the following variables:
