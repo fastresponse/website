@@ -82,111 +82,113 @@
 
       <div class="section">
 
-	<div class="rightsidebar2">
-	  <div class="quicklinks2">
-	    <a href="/pdfs/Fast Response Catalog 2013.pdf" class="btn3 lines-2">
-	      <div>Course<br />Catalog</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar" class="btn3 lines-2">
-	      <div>CEU<br />Calendar</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	      <img src="/images/buttons/facebook-icon.png" alt="Visit Us On Facebook" />
-	      <div>Visit Us On<br />Facebook</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	  </div> <!-- /quicklinks -->
-	</div>
+	      <div class="rightsidebar2">
+	        <div class="quicklinks2">
+	          <a href="/pdfs/Fast Response Catalog 2013.pdf" class="btn3 lines-2">
+	            <div>Course<br />Catalog</div>
+	            <div></div><div></div><div></div><div></div>
+	          </a>
+	          <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar" class="btn3 lines-2">
+	            <div>CEU<br />Calendar</div>
+	            <div></div><div></div><div></div><div></div>
+	          </a>
+	          <a href="/school/info/" class="btn2 lines-1">
+	            <img src="/images/buttons/envelope-icon.png" alt="" />
+	            <div>Contact Us</div>
+	            <div></div><div></div><div></div><div></div>
+	          </a>
+	          <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
+	            <img src="/images/buttons/facebook-icon.png" alt="Visit Us On Facebook" />
+	            <div>Visit Us On<br />Facebook</div>
+	            <div></div><div></div><div></div><div></div>
+	          </a>
+	        </div> <!-- /quicklinks -->
+	      </div>
 
-	<div class="leftcontent2">
+	      <div class="leftcontent2">
 
-	  <h1 style="text-align: center; text-shadow: 2px 3px 8px #650010;">Upcoming Course Dates</h1>
+	        <h1 style="text-align: center; text-shadow: 2px 3px 8px #650010;">Upcoming Course Dates</h1>
 
           <div class="section">
-	  <?php
+	        <?php
             foreach (array('EMT', 'CPT', 'CMA', 'SPT', 'Paramedic') as $course) {
-	      echo "<div class=\"course\">\n";
-	      echo "<h2>$course</h2>\n";
-	      echo "<ul class=\"bullets\">\n";
-	      $dates = query_course_dates($handle, $course, null, null);
-	      if (!is_array($dates) || !count($dates)) {
-		echo "<li class=\"red\">No classes currently scheduled</li>\n";
+	            echo "<div class=\"course\">\n";
+	            echo "<h2>$course</h2>\n";
+	            echo "<ul class=\"bullets\">\n";
+	            $dates = query_course_dates($handle, $course, null, null);
+	            if (!is_array($dates) || !count($dates)) {
+		            echo "<li class=\"red\">No classes currently scheduled</li>\n";
               }
-	      else {
-		foreach ($dates as $onedate) {
-		  echo "<li>{$onedate['type']}: {$onedate['showdate']}</li>\n";
-		  $event = $calendar->event()
-		    ->condition('timestamp', strtotime($onedate['showdate']))
-		    ->title('')
-		    ->output("{$onedate['course']} {$onedate['type']}")
-		    ->add_class('red')
-		  ;
-		  $calendar->attach($event);
-		}
-	      }
-	      echo "</ul>\n";
-	      echo "</div>\n";
-	    }
-	  ?>
+	            else {
+		            foreach ($dates as $onedate) {
+		              echo "<li>{$onedate['type']}: {$onedate['showdate']}</li>\n";
+		              $event = $calendar->event()
+		                ->condition('timestamp', strtotime($onedate['showdate']))
+		                ->title('')
+		                ->output("{$onedate['course']} {$onedate['type']}")
+		                ->add_class('red')
+		              ;
+		              $calendar->attach($event);
+		            }
+	            }
+	            echo "</ul>\n";
+	            echo "</div>\n";
+	          }
+	        ?>
           </div>
 
-	  <div class="section">
-	    <table id="calendar">
-	      <thead>
-	        <tr class="cal-nav">
-		  <th class="prev-month">
-		    <a href="<?= htmlspecialchars($calendar->prev_month_url()) ?>"><?= $calendar->prev_month() ?></a>
-		  </th>
-		  <th colspan="5" class="current-month"><?= $calendar->month() ?> <?= $calendar->year ?>
-		  </th>
-		  <th class="next-month"><a href="<?= htmlspecialchars($calendar->next_month_url()) ?>"><?= $calendar->next_month() ?></a>
-		  </th>
-		</tr>
-		<tr class="weekdays">
-		  <?php foreach ($calendar->days() as $day): ?>
-		    <th><?= $day ?></th>
-		  <?php endforeach ?>
-		</tr>
-	      </thead>
-	      <tbody>
-	      <?php
-		foreach ($calendar->weeks() as $week) {
-		  echo "<tr>\n";
-		  foreach ($week as $day) {
-		    list($number, $current, $data) = $day;
-		     
-		    $classes = array();
-		    $output  = '';
-		     
-		    if (is_array($data)) {
-		      $classes = $data['classes'];
-		      $title   = $data['title'];
-		      $output  = empty($data['output']) ? '' :
-			'<ul class="output"><li>' . implode('</li><li>', $data['output']) . '</li></ul>';
-		    }
-		    echo "<td class=\"day " . implode(' ', $classes) . "\">\n";
-		    echo "<span class=\"date\" title=\"" . implode(' / ', $title) . "\"> $number </span>\n";
-		    echo "<div class=\"day-content\">\n";
-		    echo "$output\n";
-		    echo "</div>\n";
-		    echo "</td>\n";
-		  }
-		  echo "</tr>\n";
-		}
-		?>
-		</tbody>
-	    </table>
-	  </div>
+	        <div class="section">
+	          <table id="calendar">
+	            <thead>
+	              <tr class="cal-nav">
+		              <th class="prev-month">
+		                <a href="<?= htmlspecialchars($calendar->prev_month_url()) ?>"><?= $calendar->prev_month() ?></a>
+		              </th>
+		              <th colspan="5" class="current-month"><?= $calendar->month() ?> <?= $calendar->year ?>
+		              </th>
+		              <th class="next-month"><a href="<?= htmlspecialchars($calendar->next_month_url()) ?>"><?= $calendar->next_month() ?></a>
+		              </th>
+		            </tr>
+		            <tr class="weekdays">
+		              <?php foreach ($calendar->days() as $day): ?>
+		                <th><?= $day ?></th>
+		              <?php endforeach ?>
+		            </tr>
+	            </thead>
+	            <tbody>
+	            <?php
+		          foreach ($calendar->weeks() as $week) {
+		            echo "<tr>\n";
+		            foreach ($week as $day) {
+		              list($number, $current, $data) = $day;
+		              
+		              $classes = array();
+		              $output  = '';
+		              
+		              if (is_array($data)) {
+		                $classes = $data['classes'];
+		                $title   = $data['title'];
+		                $output  = empty($data['output']) ? '' :
+			                '<ul class="output"><li>' .
+                      implode('</li><li>', $data['output']) . '</li></ul>';
+		              }
+		              echo "<td class=\"day " . implode(' ', $classes) . "\">\n";
+		              echo "<span class=\"date\" title=\"" .
+                       implode(' / ', $title) . "\"> $number </span>\n";
+		              echo "<div class=\"day-content\">\n";
+		              echo "$output\n";
+		              echo "</div>\n";
+		              echo "</td>\n";
+		            }
+		            echo "</tr>\n";
+		          }
+		          ?>
+		          </tbody>
+	          </table>
+	        </div>
 
 
-	</div> <!-- /leftcontent -->
+	      </div> <!-- /leftcontent -->
 
       </div> <!-- /section -->
 

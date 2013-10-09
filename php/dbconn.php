@@ -6,14 +6,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 /* all functions related to database connections and queries */
 
 function handleit($e) {
-  /*
   echo '<pre>';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
-  */
 }
 set_exception_handler('handleit');
 
@@ -391,12 +389,13 @@ function query_promo_dates($dbh, $date1 = null, $date2 = null) {
 function query_recent_events($dbh, $max) {
   $query = 
     "SELECT DATE_FORMAT(date, '%M %D, %Y') as longdate, " .
-    "date, title, body, programs, images, links " .
+    "id, date, title, body, programs, images, links " .
     "FROM events " .
     "ORDER BY date DESC " .
-    "LIMIT :max"
+    "LIMIT $max"
   ;
-  $params[':max'] = $max;
+  // using $params[':max'] = $max with an int for $max failed
+  $params = array();
 
   $result = db_query($dbh, $query, $params);
   return $result;

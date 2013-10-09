@@ -90,7 +90,7 @@
       width: 260px;
     }
     .link-column.cols-2 {
-      width: 480px;
+      width: 540px;
     }
     .link-column .title {
       letter-spacing: 0.1em;
@@ -190,11 +190,7 @@
       padding-bottom: 0;
     }
     #headimg {
-      display: inline-block;
-      width: 500px;
-      padding: 0 15px;
-      box-sizing: border-box;
-      float: left;
+      width: 100%;
     }
     #blurb {
       display: inline-block;
@@ -205,6 +201,17 @@
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       padding: 5% 20%;
+    }
+    .approved,
+    .disclaimer {
+      text-align: center;
+    }
+    .leftsidebar2 .approved {
+      margin: 50px auto 20px;
+    }
+    .rightcontent2 .approved,
+    .rightcontent2 .disclaimer {
+      display: none;
     }
     .head-left {
       float: left;
@@ -274,18 +281,107 @@
     .banners .banner .btn>div {
       width: 100%;
       text-align: center;
-      font-size: 110%;
+      font-size: 100%;
       font-family: Georgia, serif;
       font-style: italic;
       text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);
     }
     .leftsidebar2 {
-      width: 470px;
+      width: 420px;
       text-align: center;
-      padding: 0 15px;
+      padding: 0 15px 0 5px;
     }
     .rightcontent2 {
-      padding-left: 500px;
+      padding-left: 440px;
+    }
+
+    @media (max-width: 1023px) {
+      #headimg {
+        width: 65%;
+        margin: 0 auto;
+      }
+      .leftsidebar2 {
+        width: 100%;
+        padding: 0;
+      }
+      .rightcontent2 {
+        padding: 0;
+      }
+      #blurb {
+        padding: 1% 5% 2%;
+      }
+      .leftsidebar2 .approved,
+      .leftsidebar2 .disclaimer {
+        display: none;
+      }
+      .rightcontent2 .approved,
+      .rightcontent2 .disclaimer {
+        display: block;
+      }
+      #mainslideshow {
+        display: none;
+      }
+      .banners {
+        margin-bottom: 5%;
+      }
+      .banners .banner {
+        width: auto;
+        margin: 3% 3% 0;
+      }
+    }
+    @media (max-width: 639px) {
+      #menu {
+        display: none;
+      }
+      #head {
+        border-top: none;
+      }
+      #head .leftsidebar2 {
+        width: 100%;
+        padding: 0;
+      }
+      #head .rightcontent2 {
+        padding: 0;
+      }
+      #headimg {
+        width: 100%;
+        margin: 0;
+      }
+      #blurb {
+        padding: 1% 5% 5%;
+        text-align: left;
+      }
+      .approved,
+      .disclaimer {
+        /*text-align: left;*/
+      }
+
+      #main {
+        padding: 0;
+      }
+      #main .leftsidebar2 {
+        display: none;
+      }
+      #main .rightcontent2 {
+        padding-left: 0;
+      }
+      .link-column .title h1 {
+        font-size: 100%;
+      }
+      .link-column,
+      .link-column.cols-2 {
+        width: 98%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .link-column .body,
+      .link-column.cols-2 .body {
+        width: 65%;
+      }
+      .link-column a,
+      .link-column.cols-2 a {
+        width: 95%;
+      }
     }
 
   </style>
@@ -302,7 +398,7 @@
 
     <div id="head">
       <div class="leftsidebar2">
-	      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" />
+	      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" id="headimg" />
       </div>
       <div class="rightcontent2">
 	      <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
@@ -350,12 +446,12 @@
 	        <div class="clearfix"></div>
         </div> <!-- /banners -->
 
-        <div style="margin: 50px auto 20px;">
-	        <h4 style="text-align: center; letter-spacing: 0.12em;">This school has been approved by the <a style="white-space: nowrap;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and Postsecondary Education.</a></h4>
+        <div class="approved">
+	        <h4 style="text-align: center; letter-spacing: 0.08em;">This school has been approved by the <a style="display: block;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and <span style="white-space: nowrap;">Postsecondary Education</span>.</a></h4>
         </div>
 
-        <div class="section">
-	  <h5 style="text-align: center; max-width: 75%; margin: 1em auto 1em;">All prices and content subject to change.</h5>
+        <div class="disclaimer section">
+	        <h5 style="text-align: center; margin: 1em auto 1em;">All prices and content subject to change.</h5>
         </div>
 
       </div> <!-- /leftsidebar2 -->
@@ -364,6 +460,9 @@
 
         <div class="section" style="margin-top: 0; text-align: center;">
          
+          <!-- whitespace between link-column divs is shown in output,
+               so this structure is important for correct alignment -->
+
           <div class="link-column">
             <div class="title">
               <div>
@@ -378,9 +477,7 @@
               <!--<a href="/community/events.php">Community Events</a>-->
               <a href="/gallery/index.php">Photo Galleries</a>
             </div>
-          </div> <!-- /link-column -->
-
-          <div class="link-column">
+          </div><!-- /link-column --><div class="link-column">
             <div class="title">
               <div>
                 <h1>Career Courses</h1>
@@ -394,24 +491,7 @@
               <a href="/classes/career_courses/paramedic/">Paramedic</a>
               <a href="/classes/career_courses/sterile_processing_tech/">Sterile Processing Technician</a>
             </div>
-
-            <!--
-            <div class="title">
-              <div>
-                <h1>Student Resources</h1>
-                <h2>Current &amp; Past Students</h2>
-              </div>
-            </div>
-            <div class="body">
-              <a href="/resources/emt/">EMT Resources</a>
-              <a href="/resources/cpt/">CPT Resources</a>
-              <a href="/resources/cma/">CMA Resources</a>
-              <a href="/resources/spt/">SPT Resources</a>
-            </div>
-            -->
-          </div> <!-- /link-column -->
-
-          <div class="link-column">
+          </div><!-- /link-column --><div class="link-column">
             <div class="title">
               <div>
                 <h1>Student Resources</h1>
@@ -425,9 +505,7 @@
               <!--<a href="/resources/paramedic/">Paramedic Resources</a>-->
               <a href="/resources/spt/">SPT Resources</a>
             </div>
-          </div> <!-- /link-column -->
-
-          <div class="link-column cols-2">
+          </div><!-- /link-column --><div class="link-column cols-2">
             <div class="title">
               <div>
                 <h1>Continuing Education</h1>
@@ -448,7 +526,13 @@
             </div>
           </div> <!-- /link-column -->
 
-          <div style="display: inline-block; width: 100%;"></div>
+          <div class="approved">
+	          <h4 style="letter-spacing: 0.08em;">This school has been approved by the <a style="display: block;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and <span style="white-space: nowrap;">Postsecondary Education</span>.</a></h4>
+          </div>
+
+          <div class="disclaimer section">
+	          <h5 style="margin: 1em auto 1em;">All prices and content subject to change.</h5>
+          </div>
 
         </div>
       </div> <!-- /rightcontent2 -->

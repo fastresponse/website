@@ -27,35 +27,44 @@ function format_event($event) {
   // html_entity_decode to counteract the htmlentities() that all text from
   // the db_query func is sent through
   $event['body'] =
-    "<div class='body'><p>" .
+    "<p>" .
     str_replace(
       "\n",
       "</p>\n<p>",
       html_entity_decode($event['body'])
     ) .
-    "</p></div>\n"
+    "</p>"
   ;
 
-  $event['title'] = "<div class='title'>{$event['title']}</div>\n";
-  $event['date'] = "<div class='date'>{$event['date']}</div>";
+  $event['programs'] = str_replace(',', ', ', $event['programs']);
 
-  $event['programs'] =
-    "<div class='programs'>" .
-    implode(", ", $event['programs']) .
-    "</div>\n"
-  ;
-
-  $tmp = '';
-  foreach ($event['images'] as $image) {
-    $tmp .= "<img src='$image' alt='' />";
+  if (isset($event['images']) && is_array($event['images'])) {
+    $tmp = '';
+    foreach ($event['images'] as $image) {
+      $tmp .= "<img src='$image' alt='' class='image' />";
+    }
+    $event['images'] = $tmp;
   }
-  $event['images'] = $tmp . "\n";
+  else
+    $event['images'] = '';
 
-  $tmp = '';
-  foreach ($event['links'] as $linktext => $linkurl) {
-    $tmp .= "<a href='$linkurl' class='link'>$linktext</a>";
+  if (isset($event['links'])) {
+    $event['links'] = explode(',', $event['links']);
+    $tmp = '';
+    foreach ($event['links'] as $linktext => $linkurl) {
+      $tmp .= "<a href='$linkurl' class='link'>$linkurl</a>";
+    }
+    $event['links'] = $tmp;
   }
-  $event['links'] = $tmp . "\n";
+  else
+    $event['links'] = '';
+
+  foreach ($event as $key => $val) {
+    if (is_int($key) || $key == 'html') continue;
+    $classes = $key;
+    if ($val == '') $classes .= ' empty';
+    $event[$key] = "<div class='$classes'>$val</div>";
+  }
 
   return $event;
 }
@@ -74,12 +83,15 @@ function get_events($handle, $max) {
     ),
   );
 
-  if (!isset($handle))
+  if (!isset($handle)) {
     $results = array($defs['connerr']);
-  else if (!isset($max))
+  }
+  else if (!isset($max)) {
     $results = array($defs['notfound']);
-
-  $results = query_recent_events($handle, $max);
+  }
+  else {
+    $results = query_recent_events($handle, $max);
+  }
 
   if (!isset($results))
     $results = array($defs['notfound']);
@@ -137,6 +149,56 @@ $events = get_events($handle, 8);
   <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 
   <style type="text/css">
+    .leftcontent2 {
+      padding-right: 250px;
+    }
+    .rightsidebar2 {
+      width: 250px;
+    }
+    .event {
+      width: 80%;
+      vertical-align: top;
+      margin: 0 auto;
+      border: 1px solid rgb(150, 150, 150);
+      padding: 2%;
+    }
+    .event div {
+      display: inline-block;
+      vertical-align: top;
+      width: 33%;
+    }
+    .event div.empty {
+      display: none;
+    }
+    .event .date,
+    .event .id {
+      display: none;
+    }
+    .event .links {
+      width: 100%;
+      margin-top: 1%;
+    }
+    .event .link {
+      display: inline-block;
+      padding: 5px;
+      border: 1px solid white;
+      margin: 5px;
+      text-decoration: none;
+    }
+    .event .title {
+      font-size: 120%;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      color: orange;
+    }
+    .event .body {
+      width: 100%;
+      padding: 0 5%;
+      display: block;
+    }
+    .event .body p {
+      margin-bottom: 0;
+    }
   </style>
 
 </head>
@@ -157,31 +219,32 @@ $events = get_events($handle, 8);
 
     <div id="main">
 
-      <h1 style="text-align: center;">Community Events</h1>
-      
-      <?php foreach($page_data['sections'] as $section): ?>
-      <div class="cell">
+	    <div class="rightsidebar2">
+        <div style="margin-bottom: 50px;">Upcoming classes</div>
+        <div>Calendar</div>
+	    </div>
 
-	      <div class="rightsidebar2">
-	        <div class="quicklinks2">
-            <?php foreach($section['buttons'] as $button): ?>
-              <?= $button['html'] ?>
-            <?php endforeach; ?>
-	        </div>
-	      </div>
+	    <div class="leftcontent2">
 
-	      <div class="leftcontent2">
-          <?= $section['header'] ?>
-          <?= $section['dates'] ?>
-          <?= $section['body'] ?>
-	      </div> <!-- /leftcontent -->
+        <h1 style="text-align: center;">Community Events</h1>
 
-      </div> <!-- /section -->
+        <?php foreach ($events as $event): ?>
+          <pre><?php //print_r($event); ?></pre>
+          <div class="event section">
+          <?= $event['longdate'] ?>
+          <?= $event['date'] ?>
+          <?= $event['title'] ?>
+          <?= $event['programs'] ?>
+          <?= $event['id'] ?>
+          <?= $event['body'] ?>
+          <?= $event['links'] ?>
+          <?= $event['images'] ?>
+          </div>
+        <?php endforeach; ?>
 
-      <!--<div class="clearfix"></div>-->
-      <?php endforeach; ?>
+	    </div> <!-- /leftcontent -->
 
-      <div class="clearfix" style="display: inline-block; width: 100%;"></div>
+      <div class="clearfix"></div>
     </div> <!-- /main -->
 
     <div id="footer">
