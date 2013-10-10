@@ -87,7 +87,7 @@ function joblist($handle, $args = array()) {
       case 'course':
       case 'company':
       case 'cells_per_row':
-	$$arg = $val;
+	      $$arg = $val;
       break;
       default: // do nothing
     }

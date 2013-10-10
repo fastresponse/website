@@ -212,3 +212,16 @@ function openWindow(loc) {
   return false;
 }
 
+function getViewport(what) {
+  var w = window, d = document,
+      e = d.documentElement,
+      b = d.getElementsByTagName('body')[0];
+
+  if (what == "height") {
+    return w.innerHeight || e.clientHeight || b.clientHeight;
+  }
+  if (what == "width") {
+    return w.innerWidth || e.clientWidth || b.clientWidth;
+  }
+  return 0;
+}

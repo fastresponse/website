@@ -38,45 +38,55 @@
   <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 
   <script type="text/javascript" src="/js/fadeslideshow.js">
-
   /***********************************************
   * Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
   * This notice MUST stay intact for legal use
   * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
   ***********************************************/
-
   </script>
 
   <script type="text/javascript">
 
-  var mygallery=new fadeSlideShow({
-    //ID of blank DIV on page to house Slideshow
-    wrapperid: "mainslideshow",
-    //width/height of gallery in pixels.
-    //Should reflect dimensions of largest image
-    //dimensions: [550, 298],
-    dimensions: [412, 225],
-    imagearray: [
-      ["/slideshow/412x225/slide01.jpg", "", "", ""],
-      ["/slideshow/412x225/slide02.jpg", "", "", ""],
-      ["/slideshow/412x225/slide03.jpg", "", "", ""],
-      ["/slideshow/412x225/slide04.png", "", "", ""],
-      ["/slideshow/412x225/slide05.jpg", "", "", ""],
-      ["/slideshow/412x225/slide06.jpg", "", "", ""],
-      ["/slideshow/412x225/slide07.png", "", "", ""],
-      ["/slideshow/412x225/slide08.jpg", "", "", ""],
-      ["/slideshow/412x225/slide09.png", "", "", ""]
-    ],
-    displaymode: {type:'auto', pause:4500, cycles:0,
-      wraparound:true, randomize:false},
-    //remember last viewed slide and recall within same session?
-    persist: false,
-    //transition duration (milliseconds)
-    fadeduration: 800,
-    descreveal: "none",
-    togglerid: ""
-  });
+    var mygallery;
 
+    function startSlideshow() {
+      // don't start if already started or the window is too small
+      if (mygallery || jQuery(window).width() < 1024)
+        return;
+
+      mygallery=new fadeSlideShow({
+        //ID of blank DIV on page to house Slideshow
+        wrapperid: "mainslideshow",
+        //width/height of gallery in pixels.
+        //Should reflect dimensions of largest image
+        //dimensions: [550, 298],
+        dimensions: [412, 225],
+        imagearray: [
+          ["/slideshow/412x225/slide01.jpg", "", "", ""],
+          ["/slideshow/412x225/slide02.jpg", "", "", ""],
+          ["/slideshow/412x225/slide03.jpg", "", "", ""],
+          ["/slideshow/412x225/slide04.png", "", "", ""],
+          ["/slideshow/412x225/slide05.jpg", "", "", ""],
+          ["/slideshow/412x225/slide06.jpg", "", "", ""],
+          ["/slideshow/412x225/slide07.png", "", "", ""],
+          ["/slideshow/412x225/slide08.jpg", "", "", ""],
+          ["/slideshow/412x225/slide09.png", "", "", ""]
+        ],
+        displaymode: {type:'auto', pause:4500, cycles:0,
+          wraparound:true, randomize:false},
+        //remember last viewed slide and recall within same session?
+        persist: false,
+        //transition duration (milliseconds)
+        fadeduration: 800,
+        descreveal: "none",
+        togglerid: ""
+      });
+    }
+
+    // note: can't use $() because fadeslideshow calls jQuery.noConflict()
+    // which turns off jQuery's use of $ so fadeslideshow can use it
+    jQuery(document).ready( startSlideshow );
+    jQuery(window).resize( startSlideshow );
   </script>
 
   <!--<script type = "text/javascript" src="/js/jquery.js"></script>-->
@@ -295,7 +305,7 @@
       padding-left: 440px;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1023px) and (min-width: 640px) {
       #headimg {
         width: 65%;
         margin: 0 auto;
@@ -329,7 +339,7 @@
         margin: 3% 3% 0;
       }
     }
-    @media (max-width: 639px) {
+    @media handheld, (max-width: 639px) {
       #menu {
         display: none;
       }

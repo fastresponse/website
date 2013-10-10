@@ -3,7 +3,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 $handle = db_connect('events');
 
-function format_event($event) {
+function format_event($handle, $event) {
   /*
    * $event = array(
    *   'id' => integer,
@@ -38,10 +38,11 @@ function format_event($event) {
 
   $event['programs'] = str_replace(',', ', ', $event['programs']);
 
-  if (isset($event['images']) && is_array($event['images'])) {
+  if (isset($event['images'])) {
+    $event['images'] = explode(',', $event['images']);
     $tmp = '';
     foreach ($event['images'] as $image) {
-      $tmp .= "<img src='$image' alt='' class='image' />";
+      $tmp .= "<img src='$image' alt='' class='event-image' />";
     }
     $event['images'] = $tmp;
   }
@@ -51,8 +52,11 @@ function format_event($event) {
   if (isset($event['links'])) {
     $event['links'] = explode(',', $event['links']);
     $tmp = '';
-    foreach ($event['links'] as $linktext => $linkurl) {
-      $tmp .= "<a href='$linkurl' class='link'>$linkurl</a>";
+    foreach ($event['links'] as $linktext) {
+      $data = query_button($handle, $linktext);
+      if (!isset($data) || !count($data)) continue;
+      $linkurl = $data['link'];
+      $tmp .= "<a href='$linkurl' class='event-link'>$linktext</a>";
     }
     $event['links'] = $tmp;
   }
@@ -61,7 +65,7 @@ function format_event($event) {
 
   foreach ($event as $key => $val) {
     if (is_int($key) || $key == 'html') continue;
-    $classes = $key;
+    $classes = "event-$key";
     if ($val == '') $classes .= ' empty';
     $event[$key] = "<div class='$classes'>$val</div>";
   }
@@ -99,7 +103,7 @@ function get_events($handle, $max) {
   // loop variable by reference
   // lets us change the value in the original array
   foreach ($results as &$result) {
-    $result = format_event($result);
+    $result = format_event($handle, $result);
   }
   unset($result); // break reference
 
@@ -155,50 +159,67 @@ $events = get_events($handle, 8);
     .rightsidebar2 {
       width: 250px;
     }
-    .event {
-      width: 80%;
-      vertical-align: top;
-      margin: 0 auto;
-      border: 1px solid rgb(150, 150, 150);
-      padding: 2%;
+    .article-box {
+      display: block;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .event div {
-      display: inline-block;
-      vertical-align: top;
-      width: 33%;
+    .article-box .body {
+      width: 75%;
+      text-align: left;
     }
-    .event div.empty {
+    
+    .empty {
       display: none;
     }
-    .event .date,
-    .event .id {
+    .event-date,
+    .event-id {
       display: none;
     }
-    .event .links {
-      width: 100%;
-      margin-top: 1%;
-    }
-    .event .link {
-      display: inline-block;
-      padding: 5px;
-      border: 1px solid white;
-      margin: 5px;
-      text-decoration: none;
-    }
-    .event .title {
+
+    .event-title {
+      /*
       font-size: 120%;
       font-weight: bold;
       letter-spacing: 0.08em;
-      color: orange;
+      */
     }
-    .event .body {
-      width: 100%;
-      padding: 0 5%;
+    .event-body {
+      /*
+      width: 90%;
       display: block;
+      */
+      padding: 0 5% 1%;
     }
-    .event .body p {
+    .event-body p {
       margin-bottom: 0;
     }
+
+    .event-links,
+    .event-images {
+      width: 100%;
+      margin-top: 1%;
+      text-align: center;
+    }
+    .event-link {
+      display: inline-block;
+      padding: 5px 7px;
+      border: 1px solid white;
+      border-radius: 5px;
+      margin: 5px;
+      text-decoration: none;
+    }
+    .event-link:hover {
+      /*color: rgb(221, 0, 51);
+      border-color: rgb(221, 0, 51);*/
+    }
+    .event-image {
+      display: inline-block;
+      margin: 5px;
+      height: 120px;
+    }
+      
   </style>
 
 </head>
@@ -230,15 +251,19 @@ $events = get_events($handle, 8);
 
         <?php foreach ($events as $event): ?>
           <pre><?php //print_r($event); ?></pre>
-          <div class="event section">
-          <?= $event['longdate'] ?>
-          <?= $event['date'] ?>
-          <?= $event['title'] ?>
-          <?= $event['programs'] ?>
-          <?= $event['id'] ?>
-          <?= $event['body'] ?>
-          <?= $event['links'] ?>
-          <?= $event['images'] ?>
+          <div class="event article-box">
+            <div class="title">
+              <div class="title-border">
+                <div class="left"><?= $event['longdate'] ?></div>
+                <div class="center"><h1><?= $event['title'] ?></h1></div>
+                <div class="right"><?= $event['programs'] ?></div>
+              </div>
+            </div>
+            <div class="body">
+              <?= $event['body'] ?>
+              <?= $event['links'] ?>
+              <?= $event['images'] ?>
+            </div>
           </div>
         <?php endforeach; ?>
 
