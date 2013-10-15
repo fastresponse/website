@@ -1004,17 +1004,20 @@ div#section-display {
 }
 .article-box .title .left,
 .article-box .title .right {
-  width: 17%;
+  width: 20%;
   display: inline-block;
 }
 .article-box .title .left {
   text-align: left;
+  direction: ltr;
 }
 .article-box .title .right {
   text-align: right;
+  direction: rtl;
 }
 .article-box .title .center {
-  width: 65%;
+  width: 54%;
+  padding: 0 3%;
   text-align: center;
   display: inline-block;
 }

@@ -98,6 +98,7 @@
       text-align: center;
       vertical-align: top;
       width: 260px;
+      direction: ltr;
     }
     .link-column.cols-2 {
       width: 540px;
@@ -468,7 +469,7 @@
 
       <div class="rightcontent2">
 
-        <div class="section" style="margin-top: 0; text-align: center;">
+        <div class="section" style="margin-top: 0; text-align: center; direction: ltr;">
          
           <!-- whitespace between link-column divs is shown in output,
                so this structure is important for correct alignment -->
@@ -515,7 +516,21 @@
               <!--<a href="/resources/paramedic/">Paramedic Resources</a>-->
               <a href="/resources/spt/">SPT Resources</a>
             </div>
-          </div><!-- /link-column --><div class="link-column cols-2">
+          </div><!-- /link-column --><!--<div class="link-column">
+            <div class="title">
+              <div>
+                <h1>Test</h1>
+                <h2>Subheading</h2>
+              </div>
+            </div>
+            <div class="body">
+              <a href="/">Test 1</a>
+              <a href="/">Test 2</a>
+              <a href="/">Test 3</a>
+              <a href="/">Test 4</a>
+              <a href="/">Test 5</a>
+            </div>
+          </div>--><!-- /link-column --><div class="link-column cols-2">
             <div class="title">
               <div>
                 <h1>Continuing Education</h1>
@@ -534,7 +549,7 @@
               <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
               <a href="/classes/continuing_education/NREMT/">NREMT</a>
             </div>
-          </div> <!-- /link-column -->
+          </div><!-- /link-column -->
 
           <div class="approved">
 	          <h4 style="letter-spacing: 0.08em;">This school has been approved by the <a style="display: block;" href="http://www.bppe.ca.gov/about_us/contact.shtml">Bureau of Private and <span style="white-space: nowrap;">Postsecondary Education</span>.</a></h4>

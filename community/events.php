@@ -14,6 +14,7 @@ function format_event($handle, $event) {
    *   'programs' => array(
    *     'EMT', 'CPT', ...
    *   ),
+   *   'imagesize' => 'small/medium/large',
    *   'images' => array(
    *     'image url 1', 'image url 2', ...
    *   ),
@@ -38,11 +39,14 @@ function format_event($handle, $event) {
 
   $event['programs'] = str_replace(',', ', ', $event['programs']);
 
+  if (!isset($event['imagesize']))
+    $event['imagesize'] = '';
+
   if (isset($event['images'])) {
     $event['images'] = explode(',', $event['images']);
     $tmp = '';
     foreach ($event['images'] as $image) {
-      $tmp .= "<img src='$image' alt='' class='event-image' />";
+      $tmp .= "<img src='$image' alt='' class='event-image size-{$event['imagesize']}' />";
     }
     $event['images'] = $tmp;
   }
@@ -217,7 +221,17 @@ $events = get_events($handle, 8);
     .event-image {
       display: inline-block;
       margin: 5px;
-      height: 120px;
+      vertical-align: top;
+      /*height: 120px;*/
+    }
+    .event-image.size-small {
+      height: 110px;
+    }
+    .event-image.size-medium {
+      height: 150px;
+    }
+    .event-image.size-large {
+      height: 200px;
     }
       
   </style>

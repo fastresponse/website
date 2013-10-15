@@ -389,7 +389,7 @@ function query_promo_dates($dbh, $date1 = null, $date2 = null) {
 function query_recent_events($dbh, $max) {
   $query = 
     "SELECT DATE_FORMAT(date, '%M %D, %Y') as longdate, " .
-    "id, date, title, body, programs, images, links " .
+    "id, date, title, body, programs, imagesize, images, links " .
     "FROM events " .
     "ORDER BY date DESC " .
     "LIMIT $max"
