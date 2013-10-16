@@ -1002,25 +1002,6 @@ div#section-display {
 }
 .article-box.cols-2 {
 }
-.article-box .title .left,
-.article-box .title .right {
-  width: 20%;
-  display: inline-block;
-}
-.article-box .title .left {
-  text-align: left;
-  direction: ltr;
-}
-.article-box .title .right {
-  text-align: right;
-  direction: rtl;
-}
-.article-box .title .center {
-  width: 54%;
-  padding: 0 3%;
-  text-align: center;
-  display: inline-block;
-}
 .article-box .title {
   font-family: Century Gothic, sans-serif;
   font-weight: bold;
@@ -1031,7 +1012,6 @@ div#section-display {
   border-radius: 75px;
   -moz-border-radius: 75px;
   -webkit-border-radius: 75px;
-  white-space: nowrap;
 }
 .article-box .title .title-border {
   /* visual effects around the title area */
@@ -1045,6 +1025,8 @@ div#section-display {
   box-shadow: 0px 1px 1px 1px #111111;
   -moz-box-shadow: 0px 1px 1px 1px #111111;
   -webkit-box-shadow: 0px 1px 1px 1px #111111;
+  overflow: hidden;
+  position: relative;
 }
 .article-box .title h1,
 .article-box .title h2 {
@@ -1057,6 +1039,26 @@ div#section-display {
 }
 .article-box .title h2 {
   font-size: 65%;
+}
+.article-box .title table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.article-box .title .left {
+  text-align: left;
+}
+.article-box .title .right {
+  text-align: right;
+}
+.article-box .title .center {
+  text-align: center;
+  font-size: 125%;
+  width: 50%;
+}
+.article-box .title .left,
+.article-box .title .right {
+  font-size: 95%;
 }
 .article-box .body {
   width: 65%;

@@ -189,6 +189,10 @@ $events = get_events($handle, 8);
       letter-spacing: 0.08em;
       */
     }
+    .event-longdate,
+    .event-programs {
+      /*margin-top: 5px;*/
+    }
     .event-body {
       /*
       width: 90%;
@@ -268,9 +272,11 @@ $events = get_events($handle, 8);
           <div class="event article-box">
             <div class="title">
               <div class="title-border">
-                <div class="left"><?= $event['longdate'] ?></div>
-                <div class="center"><h1><?= $event['title'] ?></h1></div>
-                <div class="right"><?= $event['programs'] ?></div>
+                <table><tbody><tr>
+                  <td class="left"><?= $event['longdate'] ?></td>
+                  <td class="center"><?= $event['title'] ?></td>
+                  <td class="right"><?= $event['programs'] ?></td>
+                </tr></tbody></table>
               </div>
             </div>
             <div class="body">
