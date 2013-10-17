@@ -1047,18 +1047,24 @@ div#section-display {
 }
 .article-box .title .left {
   text-align: left;
+  width: 25%;
 }
 .article-box .title .right {
   text-align: right;
+  width: 25%;
 }
 .article-box .title .center {
   text-align: center;
-  font-size: 125%;
   width: 50%;
 }
-.article-box .title .left,
-.article-box .title .right {
+.article-box .title .center h1 {
+  font-size: 125%;
+  padding: 0 10px;
+}
+.article-box .title .left h2,
+.article-box .title .right h2 {
   font-size: 95%;
+  letter-spacing: 0;
 }
 .article-box .body {
   width: 65%;

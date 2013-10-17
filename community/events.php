@@ -1,7 +1,20 @@
 <?php
 
+// load database code
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 $handle = db_connect('events');
+
+
+// create a calendar
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/calendar/calendar.php');
+
+$calendar = Calendar::factory();
+$calendar->standard('today')->standard('holidays');
+
+
+// events code
 
 function format_event($handle, $event) {
   /*
@@ -115,6 +128,44 @@ function get_events($handle, $max) {
 }
 
 $events = get_events($handle, 8);
+
+
+// load class dates
+
+$courses = array('EMT', 'CPT', 'CMA', 'SPT', 'Paramedic');
+$dates = array();
+foreach ($courses as $course) {
+  $tmp = query_course_dates($handle, $course, null, null);
+  foreach ($tmp as $onedate)
+    $dates[] = $onedate;
+}
+
+// create calendar events for each class date
+
+foreach ($dates as $onedate) {
+  $event = $calendar->event()
+    ->condition('timestamp', strtotime($onedate['showdate']))
+    ->title('')
+		->output("{$onedate['course']} {$onedate['type']}")
+		->add_class('class-date')
+	;
+  $calendar->attach($event);
+}
+
+
+// create calendar events for each community event
+
+/*
+foreach ($events as $e) {
+  $event = $calendar->event()
+    ->condition('timestamp', $e['date'])
+    ->title($e['title'])
+    ->output($e['body'][0..36] . '...')
+    ->add_class('event-date')
+  ;
+  $calendar->attach($event);
+}
+*/
 
 ?>
 
@@ -261,6 +312,52 @@ $events = get_events($handle, 8);
 	    <div class="rightsidebar2">
         <div style="margin-bottom: 50px;">Upcoming classes</div>
         <div>Calendar</div>
+        <table class="calendar">
+          <thead>
+	          <tr class="cal-nav">
+		          <th class="prev-month">
+		            <a href="<?= htmlspecialchars($calendar->prev_month_url()) ?>"><?= $calendar->prev_month() ?></a>
+		          </th>
+		          <th colspan="5" class="current-month"><?= $calendar->month() ?> <?= $calendar->year ?>
+		          </th>
+		          <th class="next-month"><a href="<?= htmlspecialchars($calendar->next_month_url()) ?>"><?= $calendar->next_month() ?></a>
+		          </th>
+		        </tr>
+		        <tr class="weekdays">
+		          <?php foreach ($calendar->days() as $day): ?>
+		            <th><?= $day ?></th>
+		          <?php endforeach ?>
+		        </tr>
+	        </thead>
+	        <tbody>
+	        <?php
+		      foreach ($calendar->weeks() as $week) {
+		        echo "<tr>\n";
+		        foreach ($week as $day) {
+		          list($number, $current, $data) = $day;
+		          
+		          $classes = array();
+		          $output  = '';
+		          
+		          if (is_array($data)) {
+		            $classes = $data['classes'];
+		            $title   = $data['title'];
+		            $output  = empty($data['output']) ? '' :
+                  implode('<br />', $data['output']);
+		          }
+		          echo "<td class=\"day " . implode(' ', $classes) . "\">\n";
+		          echo "<span class=\"date\" title=\"" .
+                    implode(' / ', $title) . "\"> $number </span>\n";
+		          echo "<div class=\"day-content\">\n";
+		          echo "$output\n";
+		          echo "</div>\n";
+		          echo "</td>\n";
+		        }
+		        echo "</tr>\n";
+		      }
+		      ?>
+		      </tbody>
+	      </table>
 	    </div>
 
 	    <div class="leftcontent2">
@@ -272,10 +369,10 @@ $events = get_events($handle, 8);
           <div class="event article-box">
             <div class="title">
               <div class="title-border">
-                <table><tbody><tr>
-                  <td class="left"><?= $event['longdate'] ?></td>
-                  <td class="center"><?= $event['title'] ?></td>
-                  <td class="right"><?= $event['programs'] ?></td>
+                <table cellpadding="0"><tbody><tr>
+                  <td class="left"><h2><?= $event['longdate'] ?></h2></td>
+                  <td class="center"><h1><?= $event['title'] ?></h1></td>
+                  <td class="right"><h2><?= $event['programs'] ?></h2></td>
                 </tr></tbody></table>
               </div>
             </div>

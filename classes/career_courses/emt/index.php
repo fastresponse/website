@@ -106,17 +106,17 @@
 
 	    <div class="column smallauto">
 	      <div class="announcement red">
-		<h3 class="yellow">Course Start Dates</h3>
-		<div class="yellow underline">Full Time</div>
-		<?php
-		  $next = query_next_date($handle, 'EMT', 'Full-time');
-		  echo "<div>{$next['showdate']}</div>";
-		?>
-		<div class="yellow underline">Part Time</div>
-		<?php
-		  $next = query_next_date($handle, 'EMT', 'Part-time');
-		  echo "<div>{$next['showdate']}</div>";
-		?>
+		      <h3 class="yellow">Course Start Dates</h3>
+		      <div class="yellow underline">Full Time</div>
+		      <?php
+		        $next = query_next_date($handle, 'EMT', 'Full-time');
+		        echo "<div>{$next['showdate']}</div>";
+		      ?>
+		      <div class="yellow underline">Part Time</div>
+		      <?php
+		        $next = query_next_date($handle, 'EMT', 'Part-time');
+		        echo "<div>{$next['showdate']}</div>";
+		      ?>
 	      </div>
 	    </div>
 
