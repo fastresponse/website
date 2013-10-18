@@ -6,14 +6,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 $handle = db_connect('events');
 
 
-// create a calendar
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/calendar/calendar.php');
-
-$calendar = Calendar::factory();
-$calendar->standard('today')->standard('holidays');
-
-
 // events code
 
 function format_event($handle, $event) {
@@ -24,6 +16,7 @@ function format_event($handle, $event) {
    *   'longdate' => 'date in MMM DD, YYYY format',
    *   'title' => 'string',
    *   'body' => 'html?',
+   *   'thumbnail' => 'image url',
    *   'programs' => array(
    *     'EMT', 'CPT', ...
    *   ),
@@ -51,6 +44,12 @@ function format_event($handle, $event) {
   ;
 
   $event['programs'] = str_replace(',', ', ', $event['programs']);
+
+  if (!isset($event['thumbnail']))
+    $event['thumbnail'] = '';
+  
+  if ($event['thumbnail'] != '')
+    $event['thumbnail'] = "<img src='{$event['thumbnail']}' alt='' class='event-thumbnail' />";
 
   if (!isset($event['imagesize']))
     $event['imagesize'] = '';
@@ -81,7 +80,7 @@ function format_event($handle, $event) {
     $event['links'] = '';
 
   foreach ($event as $key => $val) {
-    if (is_int($key) || $key == 'html') continue;
+    if (is_int($key) || $key == 'html' || $key == 'thumbnail') continue;
     $classes = "event-$key";
     if ($val == '') $classes .= ' empty';
     $event[$key] = "<div class='$classes'>$val</div>";
@@ -129,44 +128,6 @@ function get_events($handle, $max) {
 
 $events = get_events($handle, 8);
 
-
-// load class dates
-
-$courses = array('EMT', 'CPT', 'CMA', 'SPT', 'Paramedic');
-$dates = array();
-foreach ($courses as $course) {
-  $tmp = query_course_dates($handle, $course, null, null);
-  foreach ($tmp as $onedate)
-    $dates[] = $onedate;
-}
-
-// create calendar events for each class date
-
-foreach ($dates as $onedate) {
-  $event = $calendar->event()
-    ->condition('timestamp', strtotime($onedate['showdate']))
-    ->title('')
-		->output("{$onedate['course']} {$onedate['type']}")
-		->add_class('class-date')
-	;
-  $calendar->attach($event);
-}
-
-
-// create calendar events for each community event
-
-/*
-foreach ($events as $e) {
-  $event = $calendar->event()
-    ->condition('timestamp', $e['date'])
-    ->title($e['title'])
-    ->output($e['body'][0..36] . '...')
-    ->add_class('event-date')
-  ;
-  $calendar->attach($event);
-}
-*/
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -191,6 +152,11 @@ foreach ($events as $e) {
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
+  <!-- for jquery calendar -->
+	<link rel="stylesheet" href="/js/eventCalendar/css/eventCalendar.css">
+	<!--<link rel="stylesheet" href="/js/eventCalendar/css/eventCalendar_theme_responsive.css">-->
+
+
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -205,18 +171,23 @@ foreach ($events as $e) {
 
   </script>
 
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
+
+  <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+  <!--<script src="/js/jquery.eventCalendar.min.js" type="text/javascript"></script>-->
+  <script src="/js/eventCalendar/js/jquery.eventCalendar.js" type="text/javascript"></script>
+
 
   <style type="text/css">
     .leftcontent2 {
-      padding-right: 250px;
+      padding-right: 300px;
     }
     .rightsidebar2 {
-      width: 250px;
+      width: 300px;
     }
     .article-box {
       display: block;
-      width: 90%;
+      width: 95%;
       margin-left: auto;
       margin-right: auto;
     }
@@ -253,6 +224,11 @@ foreach ($events as $e) {
     }
     .event-body p {
       margin-bottom: 0;
+    }
+    .event-thumbnail {
+      float: right;
+      max-width: 200px;
+      margin: 0 10px 10px;
     }
 
     .event-links,
@@ -291,6 +267,50 @@ foreach ($events as $e) {
       
   </style>
 
+  <style type="text/css">
+    .eventsCalendar-daysList {
+      padding-left: 0;
+    }
+    .eventsCalendar-daysList li.dayWithEvents {
+      background: rgba(150, 150, 150, 0.4);
+    }
+    .eventsCalendar-daysList li a {
+      font-size: 12px;
+    }
+    .eventDesc.hidden,
+    .eventDesc.hidden .bt {
+      visibility: visible;
+      max-width: none;
+      max-height: none;
+      overflow: auto;
+      margin: 1em auto;
+    }
+    .eventDesc.hidden .bt {
+      display: inline;
+    }
+    .eventsCalendar-list {
+      padding-left: 20px;
+    }
+    .eventsCalendar-list li {
+      margin-bottom: 10px;
+    }
+    .eventsCalendar-list li small {
+      display: none;
+    }
+    .eventsCalendar-list .deadline,
+    .eventsCalendar-list .deadline a {
+      color: red;
+    }
+    .eventsCalendar-list .class-start,
+    .eventsCalendar-list .class-start a {
+      color: orange;
+    }
+    .eventTitle {
+      margin-left: 20px;
+      display: block;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -310,54 +330,19 @@ foreach ($events as $e) {
     <div id="main">
 
 	    <div class="rightsidebar2">
-        <div style="margin-bottom: 50px;">Upcoming classes</div>
-        <div>Calendar</div>
-        <table class="calendar">
-          <thead>
-	          <tr class="cal-nav">
-		          <th class="prev-month">
-		            <a href="<?= htmlspecialchars($calendar->prev_month_url()) ?>"><?= $calendar->prev_month() ?></a>
-		          </th>
-		          <th colspan="5" class="current-month"><?= $calendar->month() ?> <?= $calendar->year ?>
-		          </th>
-		          <th class="next-month"><a href="<?= htmlspecialchars($calendar->next_month_url()) ?>"><?= $calendar->next_month() ?></a>
-		          </th>
-		        </tr>
-		        <tr class="weekdays">
-		          <?php foreach ($calendar->days() as $day): ?>
-		            <th><?= $day ?></th>
-		          <?php endforeach ?>
-		        </tr>
-	        </thead>
-	        <tbody>
-	        <?php
-		      foreach ($calendar->weeks() as $week) {
-		        echo "<tr>\n";
-		        foreach ($week as $day) {
-		          list($number, $current, $data) = $day;
-		          
-		          $classes = array();
-		          $output  = '';
-		          
-		          if (is_array($data)) {
-		            $classes = $data['classes'];
-		            $title   = $data['title'];
-		            $output  = empty($data['output']) ? '' :
-                  implode('<br />', $data['output']);
-		          }
-		          echo "<td class=\"day " . implode(' ', $classes) . "\">\n";
-		          echo "<span class=\"date\" title=\"" .
-                    implode(' / ', $title) . "\"> $number </span>\n";
-		          echo "<div class=\"day-content\">\n";
-		          echo "$output\n";
-		          echo "</div>\n";
-		          echo "</td>\n";
-		        }
-		        echo "</tr>\n";
-		      }
-		      ?>
-		      </tbody>
-	      </table>
+        <div id="event-calendar"></div>
+			  <script type="text/javascript">
+				  $(document).ready(function() {
+					  $("#event-calendar").eventCalendar({
+						  eventsjson: '/js/eventCalendar/json/event.humanDate.json.php',
+              jsonDateFormat: 'human',
+              eventsLimit: 0,
+						  startWeekOnMonday: false,
+              alwaysHideDescription: true,
+              txt_NextEvents: "Upcoming Classes and Events:"
+					  });
+				  });
+			  </script>
 	    </div>
 
 	    <div class="leftcontent2">
@@ -377,6 +362,7 @@ foreach ($events as $e) {
               </div>
             </div>
             <div class="body">
+              <?= $event['thumbnail'] ?>
               <?= $event['body'] ?>
               <?= $event['links'] ?>
               <?= $event['images'] ?>

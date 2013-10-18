@@ -437,9 +437,9 @@
 	        </div>
 
 	        <div class="banner">
-	          <a href="/gallery/index.php/Events/EMT-Career-Fair---August-23rd-2013/" class="btn buttontext lines-1 glow-yellow">
+	          <a href="/classes/continuing_education/cpr/" class="btn buttontext lines-1 glow-yellow">
 	            <div>
-	              Photos from our EMT Career Fair Aug 23rd
+	              <div style="display: inline; font-weight: bold; font-size: 110%;" class="red">NEW</div> Low BLS Prices
 	            </div>
 	            <span></span>
 	          </a>

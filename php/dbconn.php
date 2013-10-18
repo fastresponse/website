@@ -15,9 +15,9 @@ function handleit($e) {
 }
 set_exception_handler('handleit');
 
-function db_connect($which = 'career_services') {
+function db_connect($table = '') {
 
-  list($local_testing, $host, $user, $pass, $dbname) = dbsettings($which);
+  list($local_testing, $host, $user, $pass, $dbname) = dbsettings($table);
 
   try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
@@ -389,7 +389,8 @@ function query_promo_dates($dbh, $date1 = null, $date2 = null) {
 function query_recent_events($dbh, $max) {
   $query = 
     "SELECT DATE_FORMAT(date, '%M %D, %Y') as longdate, " .
-    "id, date, title, body, programs, imagesize, images, links " .
+    "id, date, title, body, thumbnail, " .
+    "programs, imagesize, images, links " .
     "FROM events " .
     "ORDER BY date DESC " .
     "LIMIT $max"
