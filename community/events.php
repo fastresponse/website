@@ -31,8 +31,8 @@ function format_event($handle, $event) {
    * );
    */
 
-  // html_entity_decode to counteract the htmlentities() that all text from
-  // the db_query func is sent through
+  // all text from db_query is sent through htmlentities()
+  // html_entity_decode() counteracts that so we can display html
   $event['body'] =
     "<p>" .
     str_replace(
@@ -49,7 +49,8 @@ function format_event($handle, $event) {
     $event['thumbnail'] = '';
   
   if ($event['thumbnail'] != '')
-    $event['thumbnail'] = "<img src='{$event['thumbnail']}' alt='' class='event-thumbnail' />";
+    $event['thumbnail'] =
+      "<img src='{$event['thumbnail']}' alt='' class='event-thumbnail' />";
 
   if (!isset($event['imagesize']))
     $event['imagesize'] = '';
@@ -58,7 +59,8 @@ function format_event($handle, $event) {
     $event['images'] = explode(',', $event['images']);
     $tmp = '';
     foreach ($event['images'] as $image) {
-      $tmp .= "<img src='$image' alt='' class='event-image size-{$event['imagesize']}' />";
+      $tmp .= "<img src='$image' alt='' " .
+	      "class='event-image size-{$event['imagesize']}' />";
     }
     $event['images'] = $tmp;
   }
@@ -94,7 +96,8 @@ function get_events($handle, $max) {
     'connerr' => array(
       'id' => 0,
       'title' => 'Events',
-      'body' => 'There was a problem connecting to the server. Please try again later.',
+      'body' => 'There was a problem connecting to the server. ' .
+                'Please try again later.',
     ),
     'notfound' => array(
       'id' => 0,
@@ -329,23 +332,23 @@ $events = get_events($handle, 8);
 
     <div id="main">
 
-	    <div class="rightsidebar2">
+      <div class="rightsidebar2">
         <div id="event-calendar"></div>
-			  <script type="text/javascript">
-				  $(document).ready(function() {
-					  $("#event-calendar").eventCalendar({
-						  eventsjson: '/js/eventCalendar/json/event.humanDate.json.php',
-              jsonDateFormat: 'human',
-              eventsLimit: 0,
-						  startWeekOnMonday: false,
-              alwaysHideDescription: true,
-              txt_NextEvents: "Upcoming Classes and Events:"
-					  });
-				  });
-			  </script>
-	    </div>
+	<script type="text/javascript">
+	  $(document).ready(function() {
+	    $("#event-calendar").eventCalendar({
+	      eventsjson: '/js/eventCalendar/json/event.humanDate.json.php',
+	      jsonDateFormat: 'human',
+	      eventsLimit: 0,
+	      startWeekOnMonday: false,
+	      alwaysHideDescription: true,
+	      txt_NextEvents: "Upcoming Classes and Events:"
+	    });
+	  });
+	</script>
+      </div>
 
-	    <div class="leftcontent2">
+      <div class="leftcontent2">
 
         <h1 style="text-align: center;">Community Events</h1>
 

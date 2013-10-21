@@ -6,12 +6,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 /* all functions related to database connections and queries */
 
 function handleit($e) {
+  /*
   echo '<pre>';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
+  */
 }
 set_exception_handler('handleit');
 
@@ -22,6 +24,7 @@ function db_connect($table = '') {
   try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
   }
   catch(PDOException $e) {
     $dbh = null;
@@ -38,6 +41,36 @@ function db_query($dbh, $query, $params, $single = 0) {
   $sth->execute($params);
 
   if ($single == 0) {
+    $data = $sth->fetchAll();
+  }
+  else {
+    $data = $sth->fetch();
+  }
+
+  $data = htmlsafe($data);
+
+  return $data;
+}
+
+function basic_query($dbh, $select, $table, $where, $order, $limit, $params) {
+  if ($dbh == null) return;
+
+  if (!($select && count($select) && $table)) return;
+
+  $query = 'SELECT ' . implode(',', $select);
+  $query.= ' FROM ' . $table;
+
+  if ($where && count($where))
+    $query.= ' WHERE ' . implode(' AND ', $where);
+  if ($order)
+    $query.= ' ORDER BY ' . $order;
+  if ($limit)
+    $query.= ' LIMIT ' . $limit;
+
+  $sth = $dbh->prepare($query, array() );
+  $sth->execute($params);
+
+  if ($limit == 0) {
     $data = $sth->fetchAll();
   }
   else {
@@ -393,10 +426,77 @@ function query_recent_events($dbh, $max) {
     "programs, imagesize, images, links " .
     "FROM events " .
     "ORDER BY date DESC " .
-    "LIMIT $max"
+    //"LIMIT $max"
+    "LIMIT :max"
   ;
   // using $params[':max'] = $max with an int for $max failed
+  //$params = array();
+  $params[':max'] = $max;
+
+  $result = db_query($dbh, $query, $params);
+  return $result;
+}
+
+function query_start_dates($dbh, $limit, $year, $month, $day) {
+  $select = array('course', 'type', 'thedate AS date');
+  $table = 'start_dates';
+  $order = null;
+
   $params = array();
+  $where = array();
+
+  if ($year) {
+    $params[':year'] = $year;
+    $where[] = '(YEAR(date) == :year)';
+  }
+  if ($month) {
+    $params[':month'] = $month;
+    $where[] = '(MONTH(date) == :month)';
+  }
+  if ($day) {
+    $params[':day'] = $day;
+    $where[] = '(DAY(date) == :day)';
+  }
+
+  if ($limit) {
+    $params[':limit'] = $limit;
+    $limit = ':limit';
+  }
+
+  $result = basic_query(
+    $dbh, $select, $table, $where, $order, $limit, $params
+  );
+  return $result;
+}
+
+function query_event_dates($dbh, $limit, $year, $month, $day) {
+  $query =
+    "SELECT date, title, body " .
+    "FROM events"
+  ;
+  $params = array();
+
+  if ($year) {
+    $params[':year'] = $year;
+    $where[] = '(YEAR(date) == :year)';
+  }
+  if ($month) {
+    $params[':month'] = $month;
+    $where[] = '(MONTH(date) == :month)';
+  }
+  if ($day) {
+    $params[':day'] = $day;
+    $where[] = '(DAY(date) == :day)';
+  }
+
+  if (isset($where) && count($where)) {
+    $query .= ' WHERE ' . implode(' AND ', $where);
+  }
+
+  if ($limit) {
+    $params[':limit'] = $limit;
+    $query .= " LIMIT :limit";
+  }
 
   $result = db_query($dbh, $query, $params);
   return $result;

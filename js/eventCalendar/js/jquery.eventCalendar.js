@@ -256,6 +256,8 @@
 				getEventsData(flags.eventsJson, limit, year, month, day, direction);
 			}).error(function() {
 				showError("error getting json: ");
+			}).fail(function(jqxhr, txtStatus, error) {
+			  console.log("Fail: "+txtStatus+", "+error);
 			});
 		} else {
 			// filter previus saved json
