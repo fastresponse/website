@@ -458,7 +458,7 @@ function query_start_dates($dbh, $limit, $year, $month, $day) {
     $where[] = '(DAY(date) == :day)';
   }
 
-  if ($limit) {
+  if ($limit && $limit > 0) {
     $params[':limit'] = $limit;
     $limit = ':limit';
   }

@@ -232,12 +232,16 @@
 		var day = day || '';
 
 		// to avoid problem with january (month = 0)
+    var month = (month === 0 ? '' : (month || '') );
 
+    /*
 		if (typeof month != 'undefined') {
 			var month = month;
 		} else {
 			var month = '';
 		}
+    */
+    //if (!month && month !== 0) month = '';
 
 		//var month = month || '';
 		flags.wrap.find('.eventsCalendar-loading').fadeIn();
@@ -256,9 +260,21 @@
 				getEventsData(flags.eventsJson, limit, year, month, day, direction);
 			}).error(function() {
 				showError("error getting json: ");
-			}).fail(function(jqxhr, txtStatus, error) {
-			  console.log("Fail: "+txtStatus+", "+error);
 			});
+      /*
+      $.ajax({
+			  url: eventsOpts.eventsjson + "?limit="+limit+"&year="+year+"&month="+month+"&day="+day,
+        dataType: 'json',
+        success: function(data, txtStatus, jqxhr) {
+				  flags.eventsJson = data; // save data to future filters
+				  getEventsData(flags.eventsJson, limit, year, month, day, direction);
+			  },
+        error: function(jqxhr, txtStatus, errThrown) {
+				  showError("error getting json: ");
+			    //console.log("Fail: "+txtStatus+", "+errThrown);
+			  }
+			});
+      */
 		} else {
 			// filter previus saved json
 			getEventsData(flags.eventsJson, limit, year, month, day, direction);

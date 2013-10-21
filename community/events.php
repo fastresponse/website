@@ -342,7 +342,7 @@ $events = get_events($handle, 8);
 	      eventsLimit: 0,
 	      startWeekOnMonday: false,
 	      alwaysHideDescription: true,
-	      txt_NextEvents: "Upcoming Classes and Events:"
+	      txt_NextEvents: "Upcoming Classes and Events"
 	    });
 	  });
 	</script>
