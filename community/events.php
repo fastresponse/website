@@ -1,3 +1,9 @@
+<?php
+// variable defaults
+  $max = 8;
+  $date_start = date('Y-m-') . '01';
+  $date_end = date('Y-m-') . '31';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
@@ -217,10 +223,36 @@
 
         <h1 style="text-align: center;">Community Events</h1>
 
+        <div id="events_div">
+          <?php
+            ob_start();
+            include($_SERVER['DOCUMENT_ROOT'] . '/php/events_ajax.php');
+            echo ob_get_clean();
+          ?>
+        </div>
+
+        <!--
         <script type="text/javascript">
-          // $.ajax call to /php/events_ajax.php
-          // what to show by default?? <?php include(/php/events_ajax.php) ?> ???
+          $(document).ready(function() {
+            /*
+            $.ajax({
+              url: "/php/events_ajax.php",
+              type: "POST",
+              data: { date_start: "", date_end: "", max: 8 },
+              dataType: "html",
+              username: "fastresponse",
+              password: "2Berk0Way7Allston5",
+              success: function(data, txt_status, jqxhr) {
+                $("#events_div").html(data);
+              },
+              error: function(jqxhr, txt_status, txt_error) {
+                console.log("Error: "+txt_status+", "+txt_error);
+              }
+            });
+            */
+          });
         </script>
+        -->
 	    </div> <!-- /leftcontent -->
 
       <div class="clearfix"></div>

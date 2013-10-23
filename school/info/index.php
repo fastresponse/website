@@ -260,22 +260,22 @@
 		<label>How did you hear about us?</label>
 		<select name="reference" id="reference" class="select">
 		  <option value="">Select Source</option>
-		  <option value="Google">Google</option>
-		  <option value="Bing">Bing</option>
-		  <option value="Yahoo">Yahoo</option>
-		  <option value="Facebook">Facebook</option>
 		  <option value="EMS-1">EMS-1 Website/Ad</option>
-		  <option value="Internet-Other">Internet-Other</option>
 		  <option value="Friend/Relative">Friend/Relative</option>
 		  <option value="Coworker">Coworker</option>
+		  <option value="Employer">Employer</option>
 		  <option value="Former student">Former student</option>
 		  <option value="CalWorks">CalWorks</option>
 		  <option value="DHS/EMSA">DHS/EMSA</option>
-		  <option value="Employer">Employer</option>
 		  <option value="Walk/Drive">Walk-In/Drive-By</option>
 		  <option value="Flier">Flyer/Brochure</option>
 		  <option value="career">Career Fair</option>
 		  <option value="Youth Bridges">Youth Bridges</option>
+		  <option value="Bing">Bing</option>
+		  <option value="Yahoo">Yahoo</option>
+		  <option value="Facebook">Facebook</option>
+		  <option value="Google">Google</option>
+		  <option value="Internet-Other">Internet-Other</option>
 		  <option value="Other">Other/Not specified</option>
 		</select>
 		<br />

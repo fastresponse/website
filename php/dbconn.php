@@ -417,26 +417,6 @@ function query_promo_dates($dbh, $date1 = null, $date2 = null) {
   return $result;
 }
 
-// get the $max (or less) most recent events
-// TODO: expand this to take a start and stop number
-function query_recent_events($dbh, $max) {
-  $query = 
-    "SELECT DATE_FORMAT(date, '%M %D, %Y') as longdate, " .
-    "id, date, title, body, thumbnail, " .
-    "programs, imagesize, images, links " .
-    "FROM events " .
-    "ORDER BY date DESC " .
-    //"LIMIT $max"
-    "LIMIT :max"
-  ;
-  // using $params[':max'] = $max with an int for $max failed
-  //$params = array();
-  $params[':max'] = $max;
-
-  $result = db_query($dbh, $query, $params);
-  return $result;
-}
-
 function query_start_dates($dbh, $limit, $year, $month, $day) {
   $select = array('course', 'type', 'thedate AS date');
   $table = 'start_dates';
@@ -469,36 +449,57 @@ function query_start_dates($dbh, $limit, $year, $month, $day) {
   return $result;
 }
 
-function query_event_dates($dbh, $limit, $year, $month, $day) {
-  $query =
-    "SELECT date, title, body " .
-    "FROM events"
-  ;
+function query_events_full($dbh, $limit, $date_start, $date_end) {
+  $select = array(
+    "DATE_FORMAT(date, '%M %D, %Y') as longdate",
+    'id', 'date', 'title', 'body', 'thumbnail',
+    'programs', 'imagesize', 'images', 'links',
+  );
+  $table = 'events';
+  $order = 'date DESC';
+
   $params = array();
+  $where = array();
 
-  if ($year) {
-    $params[':year'] = $year;
-    $where[] = '(YEAR(date) == :year)';
-  }
-  if ($month) {
-    $params[':month'] = $month;
-    $where[] = '(MONTH(date) == :month)';
-  }
-  if ($day) {
-    $params[':day'] = $day;
-    $where[] = '(DAY(date) == :day)';
+  if ($date_start && $date_end) {
+    $params[':datestart'] = $date_start;
+    $params[':dateend'] = $date_end;
+    $where[] = 'date BETWEEN :datestart AND :dateend';
   }
 
-  if (isset($where) && count($where)) {
-    $query .= ' WHERE ' . implode(' AND ', $where);
-  }
-
-  if ($limit) {
+  if ($limit && $limit > 0) {
     $params[':limit'] = $limit;
-    $query .= " LIMIT :limit";
+    $limit = ':limit';
   }
 
-  $result = db_query($dbh, $query, $params);
+  $result = basic_query(
+    $dbh, $select, $table, $where, $order, $limit, $params
+  );
+  return $result;
+}
+
+function query_events_summary($dbh, $limit, $date_start, $date_end) {
+  $select = array('date', 'title', 'thumbnail');
+  $table = 'events';
+  $order = 'date DESC';
+
+  $params = array();
+  $where = array();
+
+  if ($date_start && $date_end) {
+    $params[':datestart'] = $date_start;
+    $params[':dateend'] = $date_end;
+    $where[] = 'date BETWEEN :datestart AND :dateend';
+  }
+
+  if ($limit && $limit > 0) {
+    $params[':limit'] = $limit;
+    $limit = ':limit';
+  }
+
+  $result = basic_query(
+    $dbh, $select, $table, $where, $order, $limit, $params
+  );
   return $result;
 }
 

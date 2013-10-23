@@ -4,6 +4,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 
 $handle = db_connect('events');
 
+if (!isset($max)) $max = 0;
+if (!isset($date_start)) $date_start = null;
+if (!isset($date_end)) $date_end = null;
+
+$allowed_args = array(
+  'max', 'date_start', 'date_end',
+);
+
+foreach ($allowed_args as $arg) {
+  if (isset($_POST[$arg]))
+    $$arg = $_POST[$arg];
+}
+
 function format_event($handle, $event) {
   /*
    * $event = array(
@@ -38,6 +51,12 @@ function format_event($handle, $event) {
     ) .
     "</p>"
   ;
+
+  if (!isset($event['longdate']))
+    $event['longdate'] = '';
+
+  if (!isset($event['programs']))
+    $event['programs'] = '';
 
   $event['programs'] = str_replace(',', ', ', $event['programs']);
 
@@ -87,7 +106,7 @@ function format_event($handle, $event) {
   return $event;
 }
 
-function get_events($handle, $max) {
+function get_events($handle, $max, $date_start, $date_end) {
   $defs = array(
     'connerr' => array(
       'id' => 0,
@@ -109,7 +128,7 @@ function get_events($handle, $max) {
     $results = array($defs['notfound']);
   }
   else {
-    $results = query_recent_events($handle, $max);
+    $results = query_events_full($handle, $max, $date_start, $date_end);
   }
 
   if (!isset($results))
@@ -125,10 +144,11 @@ function get_events($handle, $max) {
   return $results;
 }
 
-$events = get_events($handle, 8);
+$events = get_events($handle, $max, $date_start, $date_end);
 
 foreach ($events as $event) {
-  $out = <<<OUT
+  echo <<<OUT
+
 <div class='event article-box'>
   <div class='title'>
     <div class='title-border'>
@@ -146,6 +166,7 @@ foreach ($events as $event) {
     {$event['images']}
   </div>
 </div>
+
 OUT;
 }
 
