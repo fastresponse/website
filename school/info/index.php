@@ -48,7 +48,7 @@
     var close_note = $("#note");
     close_note.click(function () {
       jQuery("#note").slideUp(500, function () {
-	jQuery(this).hide();
+	      jQuery(this).hide();
       });
     });
 
@@ -59,34 +59,34 @@
       note = $('#note');
 
       $.ajax({
-	type: "POST",
-	url: "/school/info/contact.php",
-	data: fem,
-	success: function(msg) {
-	  if ( note.height() ) {
-	    note.slideUp(500, function() {
-	      $(this).hide();
-	    });
-	  } 
-	  else note.hide();
+	      type: "POST",
+	      url: "/school/info/contact.php",
+	      data: fem,
+	      success: function(msg) {
+	        if ( note.height() ) {
+	          note.slideUp(500, function() {
+	            $(this).hide();
+	          });
+	        } 
+	        else note.hide();
 
-	  $('#loading').fadeOut(300, function() {
-	    $(this).remove();
-	    if (msg === 'OK') {
-	      $('input').val("");
-	      $('textarea').val("");
-	    }
-	    // Message Sent? Show the 'Thank You' message and hide the form
-	    result = (msg === 'OK') ? '<div class="success">Your message has been sent. Thank you!</div>' : msg;
+	        $('#loading').fadeOut(300, function() {
+	          $(this).remove();
+	          if (msg === 'OK') {
+	            $('input').val("");
+	            $('textarea').val("");
+	          }
+	          // Message Sent? Show the 'Thank You' message and hide the form
+	          result = (msg === 'OK') ? '<div class="success">Your message has been sent. Thank you!</div>' : msg;
 
-	    var i = setInterval(function() {
-	      if ( !note.is(':visible') ) {
-		note.html(result).slideDown(500);
-		clearInterval(i);
+	          var i = setInterval(function() {
+	            if ( !note.is(':visible') ) {
+		            note.html(result).slideDown(500);
+		            clearInterval(i);
+	            }
+	          }, 40);    
+	        }); // end loading image fadeOut
 	      }
-	    }, 40);    
-	  }); // end loading image fadeOut
-	}
       });
 
       return false;
@@ -354,26 +354,6 @@
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
-
-  <!-- Google Code for Autoreply form Conversion Page -->
-  <script type="text/javascript">
-  /* <![CDATA[ */
-  var google_conversion_id = 1004366580;
-  var google_conversion_language = "en";
-  var google_conversion_format = "3";
-  var google_conversion_color = "000000";
-  var google_conversion_label = "-fkCCMzGlQUQ9NX13gM";
-  var google_conversion_value = 0;
-  var google_remarketing_only = false;
-  /* ]]> */
-  </script>
-  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-  </script>
-  <noscript>
-  <div style="display:inline;">
-  <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1004366580/?value=0&amp;label=-fkCCMzGlQUQ9NX13gM&amp;guid=ON&amp;script=0"/>
-  </div>
-  </noscript>
 
 </body>
 </html>

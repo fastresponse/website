@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/**
+* styles for forms,
+**/
+
+.input-wrap {
+	margin-bottom: 0.4em;
+	line-height: 1.2;
+	clear:both;
+}
+
+/*.input-wrap.full {
+	clear:both;
+}*/
+
+.input-wrap.half {
+	width:48.8%;
+	float:left;
+	clear:none;
+}
+.input-wrap.third {
+	width:25%;
+	float:left;
+	clear:none;
+}
+.input-wrap.right {
+	float:right;
+	clear:right;
+}
+
+.input-wrap textarea,
+.input-wrap select,
+.input-wrap input {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-background-clip:padding;
+	-moz-background-clip:padding;
+	-ms-background-clip:padding-box;
+	background-clip:padding-box;
+	border-radius:4px;
+	box-shadow:1px 3px 1px -1px rgba(20,20,20,.22) inset;
+	border:1px solid #999999;
+	padding:.1em .2em;
+	font-size:0.8em;
+	height:2.1em;
+	font-family:Arial, "Liberation Sans", FreeSans, sans-serif;
+	vertical-align:top;
+	width:100%;
+	margin-top:0.2em;
+}
+
+.input-wrap select {
+	padding: 0.3em;
+}
+
+.input-wrap textarea {
+	height: 5em;
+	line-height: 1.2;
+	min-height: 3.1em;
+	padding: 0.3em 0.4em;
+	resize: vertical;
+}
+
+.input-wrap textarea:hover,
+.input-wrap select:hover,
+.input-wrap input:hover {
+	border-color:#E19823;
+}
+
+.input-wrap textarea:focus,
+.input-wrap select:focus,
+.input-wrap input:focus {
+	box-shadow: 1px 3px 1px -1px rgba(20,20,20,.22) inset, 0 0 2px #FF9E00;
+	border-color:#FF9E00;
+}
+
+label {
+	cursor: pointer;
+	display: block;
+}
+
+label > span {
+	color:#666;
+	font-size:0.95em;
+	margin:0 0 0 0.25em;
+	display: inline-block;
+}
+
+label:hover > span {
+	color: #F8691A;
+}
+
+.required {
+	color:red;
+}
+
+/* checkbox styles */
+
+.checkbox-wrap input {
+	display: inline-block;
+	width: auto;
+}
+
+.checkbox-wrap {
+	margin: 0.2em 0.6em 0.5em;
+}
+.checkbox-group label > span,
+.checkbox-wrap label > span {
+	display: inline;
+	margin: 0;
+}
+
+
+
+.checkbox-group {
+	margin:.2em 0 .5em;
+}
+
+.submit-wrap {
+	padding:.6em 0 1.5em;
+	clear: both;
+
+}
+.submit-wrap input {
+	border: none;
+	box-shadow: 0 0 2px -1px rgba(0, 0, 0, 0.75);
+	color: #FFFFFF;
+	display: block;
+	font-size: 25px;
+	font-weight: 700;
+	height: 49px;
+	margin: 0 auto;
+	padding: 1px;
+	text-shadow: 0 -1px 0 #C9003C, 0 1px 0 #F12F69;
+	width: 100%;
+	cursor: pointer;
+}
+
+
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* validation styles */
+.v_error {
+	background: none repeat scroll 0 0 #FFAABB;
+	color: #600;
+}

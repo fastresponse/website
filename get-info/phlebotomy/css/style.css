@@ -1,0 +1,407 @@
+@charset "UTF-8";
+
+/*------------------------------------*\
+	$MAIN
+\*------------------------------------*/
+html{
+	background:url("../img/bg.png") repeat-x scroll 0 0 #F3F0F7;
+	color:#000;
+	font-family: 'Lato',arial,'lucida grande',sans-serif;
+}
+.wrap {
+	width:1014px;
+	margin:0 auto;
+	margin-bottom: 90px;
+}
+.main {
+	background:#FFF;
+	overflow: hidden;
+	position:relative;
+}
+
+#content {
+    color: #000000;
+    float: left;
+    line-height: 1.4;
+    margin-left: 30px;
+    padding: 16px 0 50px;
+    width: 620px;
+}
+
+
+
+/*------------------------------------*\
+	$ISLANDS
+\*------------------------------------*/
+
+.btn {
+	background: #F1004A;
+}
+.btn:hover {
+	background: #F12F69;
+	text-decoration: none;
+}
+
+.btn:active {
+	background:#C9003C;
+}
+
+.get-info-now a {
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: 1.7em;
+    font-weight: 700;
+    line-height: 2em;
+    margin: 4em auto 1em;
+    text-align: center;
+    width: 40%;
+}
+
+
+
+.accreditation-badge {
+	margin:2px 6px;
+	vertical-align: middle;
+}
+
+.accreditations .widget-body {
+	font-size:0.8em;
+	text-align: center;
+}
+
+.list-2col {
+    border-color: #7D7D7D;
+    border-style: solid;
+    border-width: 2px 0;
+    clear: both;
+    margin: 1.1em 0 2em;
+    overflow: hidden;
+    padding: 1em 1.4em;
+}
+
+.list-2col ul {
+	margin:0;
+}
+.list-2col li {
+    background: url("../img/tick.png") no-repeat scroll 2px 6px transparent;
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-bottom: 1em;
+    padding-left: 24px;
+    padding-right: 5px;
+    width: 255px;
+}
+
+.list-2col li:nth-child(odd) {
+    clear: left;
+}
+
+.info-form-wrap {
+	background:#B3FFAE;
+}
+
+.hero {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	border:6px solid #F3F3F3;
+}
+
+/*------------------------------------*\
+	$HEADER
+\*------------------------------------*/
+#header {
+    background: #10162C;
+    color: #FFFFFF;
+    height: 140px;
+    position: relative;
+}
+
+#logo,
+#header .location,
+#header .phone {
+	position:absolute;
+}
+
+#logo {
+	left:15px;
+	top:4px;
+	height:136px;
+}
+
+#header .location {
+    right:80px;
+    top: 23px;
+}
+
+#header .phone {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 0.7em;
+    position: absolute;
+    right: 36px;
+    text-align: center;
+    top: 58px;
+}
+#header .phone strong {
+    font-family: 'Bitter',serif;
+}
+
+#header .phone .tagline {
+    font-size: 0.5em;
+    font-weight: 400;
+}
+
+#header .phone span.phone-wrap {
+	color: #F0004A;
+}
+
+
+/*------------------------------------*\
+	$SIDEBAR
+\*------------------------------------*/
+#sidebar {
+    float: right;
+    padding: 0 0 48px;
+    width: 312px;
+}
+
+.form-area {
+	background:#F3F3F3;
+	margin-bottom: 1em;
+}
+
+.form-area .cta {
+    color: #3E3E40;
+    font-size: 15px;
+/*    height: 160px;*/
+    line-height: 1.1;
+    position: relative;
+}
+
+.form-area .cta h3 {
+    background: url("../img/form_top.png") no-repeat scroll center bottom transparent;
+    color: #FFFFFF;
+    font-size: 1.9em;
+    margin: 0 0 0.4em;
+    padding: 0.2em 0 0.5em;
+    text-align: center;
+}
+
+.form-area .cta p {
+    margin: 0 0.9em 0.2em;
+}
+
+.form-area .container {
+	margin-top: 0;
+    padding: 0.3em 1.7em 1em;
+}
+
+.widget {
+    border: 2px solid #E8E8E8;
+    margin-bottom:1em;
+}
+.widget h3 {
+	background: #CDCDCD;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    line-height: 30px;
+    margin: 0;
+    padding: .3em 0 .4em;
+    text-align: center;
+}
+.widget p {
+	font-size:0.9em;
+	margin:0 0.4em 1em;
+}
+.widget-body {
+    overflow: hidden;
+    padding: 18px 10px 11px;
+}
+
+.erform_privacy {
+	font-size: 12px;
+    margin: 0 0 8px;
+    text-align: center;
+}
+
+.erform_privacy a {
+    background: url("../img/padlock.png") no-repeat scroll 0 center transparent;
+    display: inline-block;
+    height: 16px;
+    padding-left: 17px;
+    text-decoration: none;
+}
+
+.erform_privacy a:hover {
+	text-decoration: underline;
+}
+
+.widget.testimonials h3 {
+    background: url("../img/quote-icon-fff.png") no-repeat scroll 15px center #CDCDCD;
+}
+
+.widget.testimonials blockquote {
+    background: none;
+    border: medium none;
+    font-size: 1.1em;
+    margin: 0.6em;
+    padding: 0;
+}
+
+/*------------------------------------*\
+	$FOOTER
+\*------------------------------------*/
+#footer {
+	position:relative;
+    background:#42435D;
+    color: #C4C5C9;
+    font-size: 0.95em;
+    text-align: center;
+    padding:2em 1em 2.2em;
+}
+	#footer a {
+		color:#FFF;
+	}
+
+	.footer-nav ul {
+	    font-weight: 400;
+	    margin: 0.5em 0 1.5em;
+	}
+
+	.footer-nav li {
+	    margin: 0 0.5em;
+	}
+
+#address-footer {
+	background: #171C2F;
+	color: #fff;
+	overflow: hidden;
+}
+
+#address-footer img {
+    margin: 1.2em 2em 3em 6em;
+    max-width: 230px;
+}
+
+#address-footer address {
+    font-size: 0.9em;
+    line-height: 1.2;
+    margin: 1.3em 0;
+    max-width: 160px;
+}
+
+
+/*------------------------------------*\
+	$TYPE
+\*------------------------------------*/
+a{
+	color: #2454A7;
+}
+a.no-ul:hover {
+	text-decoration: none;
+}
+
+.phone-wrap > a {
+	color: inherit;
+}
+
+blockquote {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border-left: 1px solid #CCCCCC;
+    color: #555555;
+    font-family: helvetica,arial,sans-serif;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 1em 0.5em 1.5em;
+    overflow: hidden;
+    padding: 0.35em 0.35em 0.35em 1.5em;
+}
+
+blockquote p {
+    font-style: italic;
+    margin-bottom:0.5em;
+}
+
+
+.caption {
+	border:1px solid #CCC;
+	padding:.5em .3em;
+	text-align:center;
+	max-width:98%;
+	margin-top:.5em;
+	margin-bottom:1.5em;
+}
+.caption img {
+	margin-bottom:.3em;
+	display:block;
+}
+.caption p {
+	font-size:.8em;
+	text-align:center;
+	margin:0 0 .6em;
+}
+.caption p:last-child {
+	margin-bottom:0;
+}
+
+
+h1.title {
+    font-size: 2.5em;
+    letter-spacing: -1.6px;
+    line-height: 1;
+    margin:.25em 0 .45em;
+    text-align: center;
+    font-family: 'Bitter', serif;
+}
+h2.title {
+	font-weight:normal;
+	color:#4D4D4D;
+	margin:0 0 .85em;
+	line-height: 1;
+}
+
+
+ul {
+	list-style: square outside none;
+}
+ul.fancy {
+	margin-left:1.3em;
+}
+ul.fancy li {
+    background: url("../img/tick.png") no-repeat scroll 2px 6px transparent;
+    font-weight: bold;
+    list-style: none outside none;
+    padding-bottom: 3px;
+    padding-left: 29px;
+}
+
+.widget ul {
+	margin:.5em .5em 1em;
+	list-style-position: inside;
+}
+
+
+/*------------------------------------*\
+	$MISC
+\*------------------------------------*/
+/*::selection		{ background-color:#FFFED7; color:#000; }
+::-moz-selection{ background-color:#FFFED7; color:#000; }*/
+hr{
+	padding:0;
+	border:none;
+	height:1px;
+	background-color:#ccc;
+}
+#scroll-to-top {
+	position:absolute;
+	right:5px;
+	bottom:5px;
+}
+#scroll-to-top img {
+	display: block;
+}
