@@ -1,0 +1,141 @@
+/**
+* responsive design styles
+* this stylesheet provides some guidelines, but tweak as needed
+*/
+
+.header-get-info,
+#scroll-to-top {
+	display: none;
+}
+
+@media all and (max-width: 1040px) {
+	.wrap {
+		width: 980px;
+	}
+}
+/**
+* 740px wide design for larger devices
+*/
+@media all and (max-width: 1000px) {
+	.wrap {
+		width: 740px;
+	}
+	#content {
+		margin-left: 7px;
+		width: 450px;
+	}
+	#sidebar {
+		width: 275px;
+	}
+	.form-area .container {
+		padding: 5px 8px 16px;
+	}
+	#scroll-to-top {
+		display: block;
+	}
+
+}
+
+/**
+* fluid design for all smaller devices
+*/
+@media all and (max-width: 768px) {
+	html {
+		background:#F3F0F7;
+	}
+	.wrap {
+		width: 100%;
+		min-width: 200px;
+	}
+
+	#content {
+		float: none;
+		margin: 0 1em;
+		width: auto;
+	}
+	#sidebar {
+		float: none;
+		margin: 0.5em auto 1.5em;
+		max-width: 312px;
+		width: 100%;
+	}
+
+	/* CONTENT IMAGES, ETC. */
+	.fleft, .fright {
+		clear: both;
+		margin: 0.5em auto 1.5em;
+		max-width: 100%;
+		float: none;
+		display: block;
+	}
+
+	#content .caption {
+		border:none;
+	}
+	#content .caption img {
+		margin: .5em auto .5em;
+	}
+
+	#content iframe {
+		max-width: 100%;
+	}
+
+	/* HEADER */
+	#header {
+		padding:.5em;
+		height:auto;
+	}
+	#header #logo,
+	#header .location,
+	#header .phone {
+		display: block;
+		position:static;
+		margin: .2em auto .5em;
+		text-align: center;
+		line-height: 1.1;
+		height:auto;
+	}
+
+	.header-get-info {
+		display: block;
+		background: #FFF;
+		font-size: 1.1em;
+		text-align: center;
+		padding: 0.5em;
+	}
+
+	.get-info-now {
+		display: none;
+	}
+	.header-get-info .get-info-now {
+		display: block;
+	}
+	/* hide the bottom "get info now", it will now appear right above the form */
+	.header-get-info .get-info-now a {
+		display: inline-block;
+		margin: 0.2em;
+	}
+
+	/* FORM */
+	.input-wrap,
+	.input-wrap.half,
+	.input-wrap.half.right {
+		width:auto;
+		float:none;
+		clear:both;
+		margin:0 0 .5em;
+	}
+	.checkbox-group.chk-questions > label {
+		margin: 0 0 0.4em;
+	}
+
+	#address-footer address,
+	#address-footer img {
+		margin:.2em;
+		display: inline-block;
+	}
+	#address-footer {
+		text-align: center;
+	}
+
+}

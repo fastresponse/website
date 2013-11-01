@@ -115,7 +115,7 @@ SECT1;
 		<li><span style="text-decoration: underline;">Two days</span>, 9:00am-5:00pm.</li>
 		<li>For new medical professionals or those with expired PALS cards.</li>
 		<li>Provides 14 CEUs.</li>
-		<li>AHA certification is good for two years.</li>
+		<li>AHA certification is valid for two years.</li>
 	      </ul>
 	    </div>
 
@@ -124,7 +124,7 @@ SECT1;
 	      <ul class="bullets">
 		<li><span class="green" style="font-weight: bold; font-style: italic;">Need to possess a current AHA PALS card and bring it to class.</span></li>
 		<li><span style="text-decoration: underline;">One day</span>, 9:00am-5:00pm.</li>
-		<li>AHA Certification is good for two years.</li>
+		<li>AHA Certification is valid for two years.</li>
 		<li>7 CEUs are issued to the student upon the completion of this class.</li>
 	      </ul>
 	    </div>

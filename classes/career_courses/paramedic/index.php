@@ -68,16 +68,6 @@
 
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
-	    <!--
-	    <a href="https://spreadsheets.google.com/viewform?formkey=dFdxVVppNHJLT1dpNTBOeTNwNk9fNFE6MQ" target="_blank" class="btn3 lines-2">
-	      <div>Paramedic Academy<br />Interest Card</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    -->
-	    <!--<a href="/pdfs/PAR - Performance Fact Sheet.pdf" class="btn3 lines-2" target="_blank">
-	      <div>Performance<br />Fact Sheet</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>-->
 	    <a href="/gallery/index.php/EMT" class="btn3 lines-2">
 	      <div>Photo<br />Gallery</div>
 	      <div></div><div></div><div></div><div></div>
@@ -146,28 +136,28 @@
 	    <ul>
 	      <li style="margin-top: 1em;">For interview candidacy:</li>
 	      <ul>
-		<li>Complete an Application for Consideration.</li>
-		<li>Successful completion of an entrance examination (Wonderlic) with a score of 20 or greater.</li>
-		<li>Proof of age (must be 21 at <strong>Program Expected Graduation date</strong>).</li>
-		<li>Proof of legal ability to work in the United States.</li>
-		<li>Proof of minimum education requirements:</li>
-		<ul>
-		  <li>High school diploma, official high school transcripts showing successful completion, GED, or official college transcripts.</li>
-		  <li>Copy of current Emergency Medical Technician Certification and Health Care Provider CPR card, both individually renewed within 12 months of the
-		  <span style="font-weight: bold; white-space: nowrap;">Program Expected Start Date</span>.</li>
-		</ul>
-	      
-		<li>Proof of at least 2080 hours (one year full-time equivalent) EMT experience. (Pay stubs, W-2 forms, letter from supervisor, etc.).</li>
-		<li>Copy of current resume.</li>
-		<li>Copy of required essay. </li>
-		<li>Completion of an Anatomy and Physiology class or Paramedic A&amp;P.</li>
+		      <li>Complete an Application for Consideration.</li>
+		      <li>Successful completion of an entrance examination (Wonderlic) with a score of 20 or greater.</li>
+		      <li>Proof of age (must be 18 at <strong>Program Expected Graduation date</strong>).</li>
+		      <li>Proof of legal ability to work in the United States.</li>
+		      <li>Proof of minimum education requirements:</li>
+		      <ul>
+		        <li>High school diploma, official high school transcripts showing successful completion, GED, or official college transcripts.</li>
+		        <li>Copy of current Emergency Medical Technician Certification and Health Care Provider CPR card, both individually renewed within 12 months of the
+		        <span style="font-weight: bold; white-space: nowrap;">Program Expected Start Date</span>.</li>
+		      </ul>
+	            
+		      <li>Proof of at least 1040 hours (six months full-time equivalent) EMT experience. (Pay stubs, W-2 forms, letter from supervisor, etc.).</li>
+		      <li>Copy of current resume.</li>
+		      <li>Copy of required essay. </li>
+		      <li>Completion of an Anatomy and Physiology class or Paramedic A&amp;P.</li>
 	      </ul>
 
 	      <li style="margin-top: 1em;">If accepted after interview:</li>
 	      <ul>
-		<li>Completion of an enrollment agreement.</li>
-		<li>Financial plan for funding education.</li>
-		<li>Payment either in full or of the first required installment of a payment plan.</li>
+		      <li>Completion of an enrollment agreement.</li>
+		      <li>Financial plan for funding education.</li>
+		      <li>Payment either in full or of the first required installment of a payment plan.</li>
 	      </ul>
 	    </ul>
 
@@ -179,49 +169,49 @@
 
 	    <div class="column col3">
 	      <div class="section listbox">
-		<ul class="checkmark">
-		  <h3 style="margin-top: 0;">Included in the program:</h3>
-		  <li>728 hours of didactic lecture</li>
-		  <li>620 hours <span class="">guaranteed</span> internship</li>
-		  <li>80 hours of didactic observation</li>
-		  <li>Completion of PALS, ACLS, ITLS, GEMS, and EMPACT certifications</li>
-		</ul>
+		      <ul class="checkmark">
+		        <h3 style="margin-top: 0;">Included in the program:</h3>
+		        <li>728 hours of didactic lecture</li>
+		        <li>620 hours <span class="">guaranteed</span> internship</li>
+		        <li>80 hours of didactic observation</li>
+		        <li>Completion of PALS, ACLS, ITLS, GEMS, and EMPACT certifications</li>
+		      </ul>
 	      </div>
 	    </div>
 
 	    <div class="column col3">
 	      <div class="section">
-		<ul class="bullets">
-		  <h3>Internships With:</h3>
-		  <li>Paramedics Plus</li>
-		  <li>Eden Medical Center</li>
-		  <li>Kaiser Hospitals (ED, OR)</li>
-		</ul>
+		      <ul class="bullets">
+		        <h3>Internships With:</h3>
+		        <li>Paramedics Plus</li>
+		        <li>Eden Medical Center</li>
+		        <li>Kaiser Hospitals (ED, OR)</li>
+		      </ul>
 	      </div>
 	      <div class="section" style="margin-top: 2em;">
-		<ul class="bullets">
-		  <h3>Training Resources:</h3>
-		  <li>Simulation Lab with high fidelity ALS manikin</li>
-		  <li>On-site Ambulance simulator</li>
-		  <li>iPad Mini with EMS software included with cost of course</li>
-		  <li>NREMT-P Test Prep</li>
-		</ul>
+		      <ul class="bullets">
+		        <h3>Training Resources:</h3>
+		        <li>Simulation Lab with high fidelity ALS manikin</li>
+		        <li>On-site Ambulance simulator</li>
+		        <li>iPad Mini with EMS software included with cost of course</li>
+		        <li>NREMT-P Test Prep</li>
+		      </ul>
 	      </div>
 	    </div>
 
 	    <div class="column col3">
 	      <div class="section">
-		<ul class="bullets">
-		  <h3>Didactic Observation Sites:</h3>
-		  <li>EDEN ED, ICU, Trauma Rounds</li>
-		  <li>Sutter Respiratory</li>
-		  <li>St. Francis Burn Center</li>
-		  <li>ALCO Juvenile Hall</li>
-		  <li>ALCO Coroners' Bureau</li>
-		  <li>Touro University Cadaver Lab</li>
-		  <li>Paramedics Plus</li>
-		  <li>Berkeley Fire</li>
-		</ul>
+		      <ul class="bullets">
+		        <h3>Didactic Observation Sites:</h3>
+		        <li>EDEN ED, ICU, Trauma Rounds</li>
+		        <li>Sutter Respiratory</li>
+		        <li>St. Francis Burn Center</li>
+		        <li>ALCO Juvenile Hall</li>
+		        <li>ALCO Coroners' Bureau</li>
+		        <li>Touro University Cadaver Lab</li>
+		        <li>Paramedics Plus</li>
+		        <li>Berkeley Fire</li>
+		      </ul>
 	      </div>
 	    </div>
 
@@ -240,11 +230,11 @@
 	      <h3 style="text-align: center;">Call us or click <a style="color:#C30;" href="/school/info/">HERE</a> to talk to an Admissions Representative!</h3>
 
 	      <div class="bgimg fontsans" style="width: 20.25em; height: 2.25em; font-size: 220%;">
-		<div style="width: 20.25em; height: 2.25em; line-height: 2.25em;">
-		  Call <a href="tel://1-800-637-7387">(800) 637-7387</a> or
-		  <a href="tel://1-510-849-4009">(510) 849-4009</a>
-		</div>
-		<img src="/images/cloudbg.png" alt="phone number" />
+		      <div style="width: 20.25em; height: 2.25em; line-height: 2.25em;">
+		        Call <a href="tel://1-800-637-7387">(800) 637-7387</a> or
+		        <a href="tel://1-510-849-4009">(510) 849-4009</a>
+		      </div>
+		      <img src="/images/cloudbg.png" alt="phone number" />
 	      </div>
 	    </div>
 	  </div>

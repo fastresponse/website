@@ -126,7 +126,7 @@ SECT1;
 	  <ul class="bullets">
 	    <li><span style="font-weight: bold;" class="green">Taken for the first time, or for those with an expired CPR card.</span></li>
 	    <li>The class is 4.5 to 5 hours in length.</li>
-	    <li>AHA Certification good for 2 years.</li>
+	    <li>AHA Certification valid for 2 years.</li>
 	  </ul>
 
 	  <h2 class="yellow">Renewal (AHA)</h2>
@@ -139,7 +139,7 @@ SECT1;
 
 	  <ul class="bullets">
 	    <li>The class is 3.5 hours in length.</li>
-	    <li>AHA Certification is good for 2 years.</li>
+	    <li>AHA Certification is valid for 2 years.</li>
 	  </ul>
 
 	  <h2 class="yellow"><a name="elearning">BLS eLearning (AHA)</a></h2>
@@ -153,7 +153,7 @@ SECT1;
 	  <ul class="bullets">
 	    <li>The online class is 1-2 hours in length.</li>
 	    <li>Skills practice and testing session is 1.5 hours in length.</li>
-	    <li>AHA Certification is good for 2 years.</li>
+	    <li>AHA Certification is valid for 2 years.</li>
 	    <li>System requirements listed in <a href="http://www.heart.org/idc/groups/heart-public/@wcm/@ecc/documents/downloadable/ucm_426256.pdf">this FAQ document</a> by the AHA.</li>
 	  </ul>
 

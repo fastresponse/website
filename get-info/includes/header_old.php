@@ -77,7 +77,7 @@ include_once('vwo_code.php');
 <?php
 	if(!$hideForm) {
 ?>
-	<div class="get-info-now"><a href="#info-form" class="do-flash btn"><span>Get Info Now!</span></a></div>
+	<div class="get-info-now"><a href="#info-form"><span>Get Info Now!</span></a></div>
 <?php
 	}
 ?>

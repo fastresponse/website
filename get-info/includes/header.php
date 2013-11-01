@@ -9,11 +9,12 @@
 	include_once('vars.php');
 
 	// default
-	if($title_suffix == '')	$title_suffix	= ' | Fast Response';
-	if($title 	== '') 	$title		= 'Welcome';
-	if($description == '') 	$description	= 'Fast Response offers training for Health Care careers';
+	if(!isset($title_suffix))	$title_suffix	= ' | Fast Response';
+	if(!isset($title)) 	$title		= 'Welcome';
+	if(!isset($description)) 	$description	= 'Fast Response offers training for Health Care careers';
 
 	if(!isset($hideForm))	$hideForm	= false;
+	if(!isset($hide_h1))	$hide_h1	= false;
 	if(!isset($hide_h2))	$hide_h2	= false;
 	if(!isset($conversionCode)) $conversionCode = false;
 
@@ -21,7 +22,7 @@
 	$subhead = get_dynamic_val('h2',$subhead); //Get the dynamic headline if used, otherwise use the default headline (defined at the page level).
 
 	//Determine the locations the current program is offered at. Then override if the dynamic locations are used (via the URL).
-	if($location 	== '') 	$location	= 'Berkeley, CA';
+	if(!isset($location)) 	$location	= 'Berkeley, CA';
 	$location = get_dynamic_val('loc',$location); //Will use the default determined above if no loc request parameter is passed
 
 	$full_title = $title . $title_suffix; //this is the default title

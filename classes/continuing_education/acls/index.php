@@ -116,7 +116,7 @@ SECT1;
 	      <ul class="bullets">
 		<li>For new students, or students with expired ACLS cards.</li>
 		<li><span style="text-decoration: underline;">Two days</span>, 9:00am-5:00pm.</li>
-		<li>AHA certification is good for 2 years.</li>
+		<li>AHA certification is valid for 2 years.</li>
 		<li>14 CEUs are issued to the student upon the completion of this class.</li>
 	      </ul>
 	    </div>
@@ -127,7 +127,7 @@ SECT1;
 		<li><span class="green" style="font-weight: bold; font-style: italic;">Need to possess a current AHA ACLS card and bring it to class.</span></li>
 		<li>For students who need to recertify in ACLS.</li>
 		<li><span style="text-decoration: underline;">One day</span>, 9:00am-5:00pm.</li>
-		<li>AHA Certification is good for two years.</li>
+		<li>AHA Certification is valid for two years.</li>
 		<li>7 CEUs are issued to the student upon the completion of this class.</li>
 	      </ul>
 	    </div>

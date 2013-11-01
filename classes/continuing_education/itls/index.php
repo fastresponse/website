@@ -108,7 +108,7 @@
 	      <ul class="bullets">
 		<li>Interactive didactic presentation in a traditional classroom setting.</li>
 		<li><span style="text-decoration: underline;">Two days</span>, 8:30am-5:00pm.</li>
-		<li>ITLS Certification is good for 3 years.</li>
+		<li>ITLS Certification is valid for 3 years.</li>
 		<li>16 CEUs are issued to the student upon the completion of this class.</li>
 	      </ul>
 	    </div>
