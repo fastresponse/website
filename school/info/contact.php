@@ -7,8 +7,11 @@ require("phpmailer/class.phpmailer.php");
 
 error_reporting (E_ERROR);
 
+$error_output = null;
+$success_output = null;
+
 if (empty($_POST)) {
-  return;
+  $error_output = 'Error sending message. Please try again later.';
 }
 
 $subject = stripslashes($_POST['subject']);
@@ -16,6 +19,12 @@ $name = stripslashes($_POST['name']);
 $email = trim($_POST['email']);
 $message = stripslashes($_POST['message']);
 $phone = stripslashes($_POST['phone']);
+
+
+//--- status ---//
+
+$sentok = 0;
+$auto_ok = 0;
 
 
 //--- settings ---//
@@ -28,6 +37,7 @@ $autoname = 'Fast Response School';
 $replydir = 'email_replies/';
 
 $usesmtp = 0;
+
 
 // ----- //
 // these settings are only used if usesmtp=1
@@ -108,39 +118,38 @@ function ValidatePhone($phone) {
   );
 }
 
-$error = '';
+$errors = array();
 
 if (!$name) {
-  $error .= "Please enter your name.\n";
+  $errors[] = "Please enter your name.";
 }
 
 if (!$email) {
-  $error .= "Please enter an e-mail address.\n";
+  $errors[] = "Please enter an e-mail address.";
 }
 
 if ($email && !ValidateEmail($email)) {
-  $error .= "Please enter a valid e-mail address.\n";
+  $errors[] = "Please enter a valid e-mail address.";
 }
 
 if (!$phone) {
-  $error .= "Please enter a phone number.\n";
+  $errors[] = "Please enter a phone number.";
 }
 
 if ($phone && !ValidatePhone($phone)) {
-  $error .= "Please enter a valid phone number with area code.\n";
+  $errors[] = "Please enter a valid phone number with area code.";
 }
 
 if (!$subject) {
-  $error .= "Please select your course of interest.\n";
+  $errors[] = "Please select your course of interest.";
 }
 
 if ($subject && !$courses[$subject]) {
-  $error .= "Please select a valid course.\n";
+  $errors[] = "Please select a valid course.";
 }
 
-if ($error) {
-  echo '<div class="error">'.nl2br($error).'</div>';
-  return;
+if (count($errors)) {
+  $error_output =  '<div class="error">'.implode("<br />\n", $errors).'</div>';
 }
 
 //--- end of validation of input ---//
@@ -149,18 +158,20 @@ if ($error) {
 
 //--- create and send email to us from user ---//
 
-$messages = "From: $email\n";
-$messages.= "Name: $name\n";
-$messages.= "Email: $email\n";
-$messages.= "Phone: $phone\n";
-$messages.= "Newsletter: $newsletter\n";
-$messages.= "Reference: $reference\n";
-$messages.= "WhentoReach: $whenreachme\n";
-$messages.= "WhatTime: $time\n";
-$messages.= "StreetAddress1: $streetaddress1\n";
-$messages.= "StreetAddress2: $streetaddress2\n";
-$messages.= "StreetAddress3: $streetaddress3\n";
-$messages.= "Message: $message\n";
+$messages = <<<ENDMSGS
+From: $email
+Name: $name
+Email: $email
+Phone: $phone
+Newsletter: $newsletter
+Reference: $reference
+WhentoReach: $whenreachme
+WhatTime: $time
+StreetAddress1: $streetaddress1
+StreetAddress2: $streetaddress2
+StreetAddress3: $streetaddress3
+Message: $message
+ENDMSGS;
 
 //$to = $courses[$subject]['email'];
 $to = $courses['Generic']['email'];
@@ -188,7 +199,7 @@ else {
 $sentok = $mail->Send();
 
 if ($sentok) {
-  echo 'OK';
+  $success_output = 'Your message has been sent. Thank you!';
 }
 
 //--- end send email to us from user ---//
@@ -198,40 +209,54 @@ if ($sentok) {
 //--- send html autoreply email to user ---//
 
 // only send if the email to us succeeded and autorespond is on
-if (!$sentok || !$autorespond) {
-  return;
-}
+if ($sentok && $autorespond) {
 
-$messages = file_get_contents(
-  //$replydir . $courses[$subject]['page']
-  $replydir . $courses['Generic']['page']
-);
+  $messages = file_get_contents(
+    //$replydir . $courses[$subject]['page']
+    $replydir . $courses['Generic']['page']
+  );
 
-$mail = new PHPMailer(); 
+  $mail = new PHPMailer(); 
 
-$mail->SetFrom($autofrom, $autoname);
-$mail->AddReplyTo($autofrom, $autoname);
-$mail->AddAddress($email, $name);
-$mail->Subject = $autosubject;
-$mail->MsgHTML($messages);
-$mail->AltBody = strip_tags($messages);
+  $mail->SetFrom($autofrom, $autoname);
+  $mail->AddReplyTo($autofrom, $autoname);
+  $mail->AddAddress($email, $name);
+  $mail->Subject = $autosubject;
+  $mail->MsgHTML($messages);
+  $mail->AltBody = strip_tags($messages);
 
-if ($usesmtp) {
-  $mail->IsSMTP();
-  $mail->SMTPAuth = true;
-  $mail->Host = $smtphost;
-  $mail->Port = $smtpport;
-  $mail->Username = $smtpusername;
-  $mail->Password = $smtppassword;
-}
-else {
-  $mail->IsMail();
-}
+  if ($usesmtp) {
+    $mail->IsSMTP();
+    $mail->SMTPAuth = true;
+    $mail->Host = $smtphost;
+    $mail->Port = $smtpport;
+    $mail->Username = $smtpusername;
+    $mail->Password = $smtppassword;
+  }
+  else {
+    $mail->IsMail();
+  }
 
-$sentok = $mail->Send();
+  $auto_ok = $mail->Send();
 
-if ($sentok) {
-  // we don't actually do anything here
+  if ($auto_ok) {
+    // we don't actually do anything here
+  }
 }
 
 ?>
+
+<?php if ($error_output): ?>
+
+<div class="error"><?= $error_output ?></div>
+
+<?php elseif ($success_output): ?>
+
+<div class="success"><?= $success_output ?></div>
+
+<?php
+  include($_SERVER['DOCUMENT_ROOT'] . '/php/conversion_google.php');
+  include($_SERVER['DOCUMENT_ROOT'] . '/php/conversion_facebook.php');
+?>
+
+<?php endif; ?>

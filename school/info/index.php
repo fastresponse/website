@@ -21,80 +21,9 @@
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/form.css" />
 
-  <script type="text/javascript">
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
-
-  <script type="text/javascript" src="/js/jquery.js"></script>
-
-  <!-- Code for new formmail/autoreply -->
-
-  <!-- JQuery -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-
-  <script type="text/javascript">  
-  /* <![CDATA[ */    
-  $(document).ready(function() {
-    var close_note = $("#note");
-    close_note.click(function () {
-      jQuery("#note").slideUp(500, function () {
-	      jQuery(this).hide();
-      });
-    });
-
-    $("#ajax-contact-form").submit(function() {
-      $('#load').append('<center><img src="/images/ajax-loader.gif" alt="Currently Loading" id="loading" /></center>');
-
-      var fem = $(this).serialize(),
-      note = $('#note');
-
-      $.ajax({
-	      type: "POST",
-	      url: "/school/info/contact.php",
-	      data: fem,
-	      success: function(msg) {
-	        if ( note.height() ) {
-	          note.slideUp(500, function() {
-	            $(this).hide();
-	          });
-	        } 
-	        else note.hide();
-
-	        $('#loading').fadeOut(300, function() {
-	          $(this).remove();
-	          if (msg === 'OK') {
-	            $('input').val("");
-	            $('textarea').val("");
-	          }
-	          // Message Sent? Show the 'Thank You' message and hide the form
-	          result = (msg === 'OK') ? '<div class="success">Your message has been sent. Thank you!</div>' : msg;
-
-	          var i = setInterval(function() {
-	            if ( !note.is(':visible') ) {
-		            note.html(result).slideDown(500);
-		            clearInterval(i);
-	            }
-	          }, 40);    
-	        }); // end loading image fadeOut
-	      }
-      });
-
-      return false;
-    });
-  });
-  /* ]]> */
-  </script>  
-  <!-- End form code -->
+  <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 
   <style type="text/css">
 
@@ -171,32 +100,32 @@
 
 	      <dt>Admissions (Career Courses)</dt>
 	      <dd><dl>
-		<dt>Hours:</dt> <dd>9-5, M-F</dd> <br />
-		<dt>Phone:</dt> <dd>1-510-809-3654</dd> <br />
-		<dt>Toll Free:</dt> <dd>1-800-637-7387</dd> <br />
-		<dt>Fax:</dt> <dd>1-866-572-3363</dd> <br />
-		<dt>Email:</dt> <dd><a href="mailto: admissions@fastresponse.org">admissions@fastresponse.org</a></dd> <br />
+		      <dt>Hours:</dt> <dd>9-5, M-F</dd> <br />
+		      <dt>Phone:</dt> <dd>1-510-809-3654</dd> <br />
+		      <dt>Toll Free:</dt> <dd>1-800-637-7387</dd> <br />
+		      <dt>Fax:</dt> <dd>1-866-572-3363</dd> <br />
+		      <dt>Email:</dt> <dd><a href="mailto: admissions@fastresponse.org">admissions@fastresponse.org</a></dd> <br />
 	      </dl></dd>
 
 	      <dt>Front Desk, Continuing Education,<br />and General Inquiries</dt>
 	      <dd><dl>
-		<dt>Hours:</dt> <dd>9-5, M-F</dd> <br />
-		<dt>Phone:</dt> <dd>1-510-849-4009</dd> <br />
-		<dt>Fax:</dt> <dd>1-866-290-2739</dd> <br />
-		<dt>Email:</dt> <dd><a href="mailto: info@fastresponse.org">info@fastresponse.org</a></dd> <br />
-		<dt>Address:</dt> <br />
-		<!-- this needs to be block so the margin applies to every line -->
-		<dd style="display: block; margin-left: 0.5em;">
-		Fast Response School of<br />
-		Health Care Education<br />
-		2075 Allston Way<br />
-		Berkeley, CA 94704<br />
-		</dd>
-              </dl></dd>
+		      <dt>Hours:</dt> <dd>9-5, M-F</dd> <br />
+		      <dt>Phone:</dt> <dd>1-510-849-4009</dd> <br />
+		      <dt>Fax:</dt> <dd>1-866-290-2739</dd> <br />
+		      <dt>Email:</dt> <dd><a href="mailto: info@fastresponse.org">info@fastresponse.org</a></dd> <br />
+		      <dt>Address:</dt> <br />
+		      <!-- this needs to be block so the margin applies to every line -->
+		      <dd style="display: block; margin-left: 0.5em;">
+		      Fast Response School of<br />
+		      Health Care Education<br />
+		      2075 Allston Way<br />
+		      Berkeley, CA 94704<br />
+		      </dd>
+        </dl></dd>
 
 	      <dt>EMT Program</dt>
 	      <dd><dl>
-		<dt>Email:</dt> <dd><a href="mailto: emt@fastresponse.org">emt@fastresponse.org</a></dd> <br />
+		      <dt>Email:</dt> <dd><a href="mailto: emt@fastresponse.org">emt@fastresponse.org</a></dd> <br />
 	      </dl></dd>
 
 	      <dt>Sterile Processing Program</dt>
@@ -354,6 +283,72 @@
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
+
+  <!-- form code -->
+  <script type="text/javascript">  
+  /* <![CDATA[ */    
+
+  $(document).ready(function() {
+    var note = $('#note');
+
+    function displayOutput(data) {
+	    if ( note.height() ) {
+	      note.slideUp(500, function() {
+	        $(this).hide();
+	      });
+	    } 
+	    else note.hide();
+
+	    $('#loading').fadeOut(300, function() {
+	      $(this).remove();
+	      $('input').val("");
+	      $('textarea').val("");
+
+	      var i = setInterval(function() {
+	        if ( !note.is(':visible') ) {
+		        note.html(data).slideDown(500);
+		        clearInterval(i);
+	        }
+	      }, 40);    
+	    }); // end loading image fadeOut
+    }
+
+    $('#note').click(function() {
+      $('#note').slideUp(500, function() {
+	      $(this).hide();
+      });
+    });
+
+    $("#ajax-contact-form").submit(function() {
+      event.preventDefault();
+
+      $('#load').append(
+        '<center><img src="/images/ajax-loader.gif" alt="Currently Loading" id="loading" /></center>'
+      );
+
+      var formdata = $(this).serialize();
+
+      $.ajax({
+	      type: "POST",
+	      url: "/school/info/contact.php",
+	      data: formdata,
+        dataType: 'html',
+
+	      success: function(data, textStatus, jqxhr) {
+          displayOutput(data);
+	      },
+
+        error: function(jqxhr, textStatus, errorThrown) {
+          displayOutput("<div class=\"error\">There was a problem sending your message. Please try again later.</div>\n");
+        }
+      });
+
+    });
+  });
+
+  /* ]]> */
+  </script>  
+  <!-- End form code -->
 
 </body>
 </html>
