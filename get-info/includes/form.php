@@ -1,5 +1,6 @@
 <?php
 	if (empty($full_title)) {die('form error');} # disallow bots navigating straight to this file by checking a file set in header.php
+  error_reporting(0);
 ?>
 <form id="sb_form" action="<?= BASE_URL; ?>contact/index.php" method="post" onsubmit="return validate(this);">
 
@@ -27,7 +28,7 @@
 	<div class="input-wrap">
 		<label class="input">
 			<span>Questions / Comments</span>
-			<textarea cols="5" name="comments" rows="5"></textarea>
+			<textarea cols="5" name="comments" rows="4"></textarea>
 		</label>
 	</div>
 
@@ -37,6 +38,16 @@
 			<select name="program" required="required" id="program_select">
 				<option value="">&ndash; Select a program &ndash;</option>
 				<?= get_program_options($program_options,$program_of_interest); ?>
+			</select>
+		</label>
+	</div>
+
+	<div class="input-wrap">
+		<label class="input">
+			<span>Where did you hear about us?</span>
+			<select name="source" required="required" id="source_select">
+				<option selected="selected" value="">&ndash; Select one &ndash;</option>
+				<?= get_program_options($source_options, get_referring_source()); ?>
 			</select>
 		</label>
 	</div>
@@ -75,7 +86,7 @@
 	<input type="hidden" name="device" value="<?= get_url_tag('dvc'); ?>">
 	<input type="hidden" name="lead_src" value="<?= get_url_tag('lead_src'); ?>">
 
-	<input type="hidden" name="source" value="PPC">
+	<!--<input type="hidden" name="source" value="PPC">-->
 
 	<input type="hidden" name="landing_page" value="<?= get_url_tag('landing_url'); ?>">
 	<input type="hidden" name="submit_page" value="<?= get_current_url(); ?>">

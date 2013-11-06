@@ -29,4 +29,25 @@
 	$program_options['Paramedic'] = 'Paramedic';
 	$program_options['Other Courses'] = 'Other Courses';
 
+  $source_options = array();
+  $source_options['Google'] = 'Google';
+  $source_options['Facebook'] = 'Facebook';
+  $source_options['Yahoo / Bing'] = 'Yahoo / Bing';
+  $source_options['Yelp'] = 'Yelp';
+  $source_options['Friend / Relative'] = 'Friend / Relative';
+  $source_options['Coworker / Employer'] = 'Coworker / Employer';
+  $source_options['Flyer / Brochure'] = 'Flyer / Brochure';
+  $source_options['Career Fair'] = 'Career Fair';
+  $source_options['Other'] = 'Other';
+
+  $source_hosts = array(
+    'www.google.com' => 'Google',
+    'www.facebook.com' => 'Facebook',
+    'm.facebook.com' => 'Facebook',
+    'www.bing.com' => 'Yahoo / Bing',
+    'search.yahoo.com' => 'Yahoo / Bing',
+    'www.yelp.com' => 'Yelp',
+    'm.yelp.com' => 'Yelp',
+  );
+
 ?>

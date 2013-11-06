@@ -313,6 +313,12 @@
 	    }); // end loading image fadeOut
     }
 
+    function evalJS(obj) {
+      obj.find('script').each(function(i) {
+        eval( $(this).text() );
+      });
+    }
+
     $('#note').click(function() {
       $('#note').slideUp(500, function() {
 	      $(this).hide();
@@ -336,6 +342,7 @@
 
 	      success: function(data, textStatus, jqxhr) {
           displayOutput(data);
+          evalJS(note);
 	      },
 
         error: function(jqxhr, textStatus, errorThrown) {

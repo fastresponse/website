@@ -142,4 +142,33 @@ function set_landing_url() {
 
 }
 
+/**
+* check HTTP_REFERER and return a name as a source
+*
+*/
+function get_referring_source() {
+  $refer = $_SERVER['HTTP_REFERER'];
+    if (!$refer || $refer == '')
+      return '';
+
+  $host = parse_url($refer, PHP_URL_HOST);
+  if (!$host || $host == '')
+    return '';
+
+  if (array_key_exists($host, $source_hosts))
+    return $source_hosts[$host];
+
+  /*
+  // alternatively, if $source_hosts contains regex patterns:
+  foreach ($source_hosts as $pattern => $src) {
+    if (preg_match($pattern, $host)) {
+      return $src;
+    }
+  }
+  */
+
+  //return '';
+  return 'Other';
+}
+
 ?>

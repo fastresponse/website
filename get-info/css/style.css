@@ -56,7 +56,7 @@ html{
 }
 
 .btn:active {
-	background:#C9003C;
+	background: #C9003C;
 }
 
 .get-info-now a {
@@ -128,7 +128,7 @@ html{
 	$HEADER
 \*------------------------------------*/
 #header {
-    background: transparent;
+    background: black;
     color: #FFFFFF;
     height: 140px;
     position: relative;
@@ -161,7 +161,7 @@ html{
     top: 58px;
 }
 #header .phone strong {
-    font-family: 'Bitter',serif;
+    font-family: 'Bitter', serif;
 }
 
 #header .phone .tagline {
@@ -219,7 +219,7 @@ html{
     margin-bottom:1em;
 }
 .widget h3 {
-	background: rgb(10, 30, 60);
+    background: rgb(10, 30, 60);
     color: #FFFFFF;
     font-size: 1.4em;
     line-height: 30px;
