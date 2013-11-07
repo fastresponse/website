@@ -65,13 +65,13 @@ include_once('includes/header.php');
 	Healthcare training isn't about getting a diploma - it's about getting a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with things like resume preparation, interview techniques and job searches.
 </p>
 
-<p>Financial Aid is available for those that qualify.</p>
+<p>Payment plans are available for those that qualify.</p>
 
 <h3>Is Phlebotomy Right for You?</h3>
 <h4>Get More Information&#8230;</h4>
 
 <p>
-	If you're interested in learning more about a career in phlebotomy, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative would be happy to answer any questions you have and can help with everything from scheduling to financial aid.
+	If you're interested in learning more about a career in phlebotomy, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative would be happy to answer any questions you have and can assist you with everything from scheduling to payment plans.
 </p>
 <p>
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.

@@ -74,7 +74,4 @@ include_once('../includes/header.php');
 </p>
 
 
-
-<?php
-include('../includes/footer.php');
-?>
+<?php include_once('../includes/footer.php'); ?>

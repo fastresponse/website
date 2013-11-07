@@ -403,9 +403,13 @@ ul.fancy li {
 
 .widget ul {
 	margin:.5em .5em 1em;
-	list-style-position: inside;
+  padding-left: 20px;
+	/*list-style-position: inside;*/
 }
 
+.widget ul.fancy {
+  padding-left: 0;
+}
 
 /*------------------------------------*\
 	$MISC

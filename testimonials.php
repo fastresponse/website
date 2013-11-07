@@ -19,65 +19,10 @@
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
-
   <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
-
 
   <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 
-  <script type="text/javascript" src="/js/fadeslideshow.js">
-  /***********************************************
-  * Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-  * This notice MUST stay intact for legal use
-  * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
-  ***********************************************/
-  </script>
-
-  <script type="text/javascript">
-
-    var mygallery;
-
-    function startSlideshow() {
-      // don't start if already started or the window is too small
-      if (mygallery || jQuery(window).width() < 1024)
-        return;
-
-      mygallery=new fadeSlideShow({
-        //ID of blank DIV on page to house Slideshow
-        wrapperid: "mainslideshow",
-        //width/height of gallery in pixels.
-        //Should reflect dimensions of largest image
-        //dimensions: [550, 298],
-        dimensions: [412, 225],
-        imagearray: [
-          ["/slideshow/412x225/slide01.jpg", "", "", ""],
-          ["/slideshow/412x225/slide02.jpg", "", "", ""],
-          ["/slideshow/412x225/slide03.jpg", "", "", ""],
-          ["/slideshow/412x225/slide04.png", "", "", ""],
-          ["/slideshow/412x225/slide05.jpg", "", "", ""],
-          ["/slideshow/412x225/slide06.jpg", "", "", ""],
-          ["/slideshow/412x225/slide07.png", "", "", ""],
-          ["/slideshow/412x225/slide08.jpg", "", "", ""],
-          ["/slideshow/412x225/slide09.png", "", "", ""]
-        ],
-        displaymode: {type:'auto', pause:4500, cycles:0,
-          wraparound:true, randomize:false},
-        //remember last viewed slide and recall within same session?
-        persist: false,
-        //transition duration (milliseconds)
-        fadeduration: 800,
-        descreveal: "none",
-        togglerid: ""
-      });
-    }
-
-    // note: can't use $() because fadeslideshow calls jQuery.noConflict()
-    // which turns off jQuery's use of $ so fadeslideshow can use it
-    jQuery(document).ready( startSlideshow );
-    jQuery(window).resize( startSlideshow );
-  </script>
-
-  <!--<script type = "text/javascript" src="/js/jquery.js"></script>-->
 
   <style type="text/css">
     .link-column {
@@ -415,22 +360,14 @@
 
         <div class="banners">
 
-<?php
-  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
-  $handle = db_connect('start_dates');
-  $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
-  if (empty($next)) $next['thedate'] = '2014-01-15';
-  $date = date_create_from_format('Y-m-d', $next['thedate']);
-  $date = $date->format('M jS');
-?>
-          <div class="banner">
-            <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
-              <div>
-              Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;"><?= $date ?></div>
-              </div>
-              <span></span>
-            </a>
-          </div>
+	        <div class="banner">
+	          <a href="/school/info/" class="btn buttontext lines-1">
+	            <div>
+	              Contact an Admissions Representative Now!
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
 
 	        <div class="banner">
 	          <a href="/classes/continuing_education/cpr/" class="btn buttontext lines-1 glow-yellow">
@@ -442,13 +379,13 @@
 	        </div>
 
           <div class="banner">
-	          <a href="/school/info/" class="btn buttontext lines-1">
-	            <div>
-	              Contact an Admissions Representative Now!
-	            </div>
-	            <span></span>
-	          </a>
-	        </div>
+            <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
+              <div>
+                Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;">Jan 1st</div>
+              </div>
+              <span></span>
+            </a>
+          </div>
 
 	        <div class="clearfix"></div>
         </div> <!-- /banners -->

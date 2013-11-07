@@ -75,25 +75,19 @@ include_once('vwo_code.php');
 </div>
 
 <div class="header-get-info">
-<?php
-	if(!$hideForm) {
-?>
+<?php if (!$hideForm): ?>
 	<div class="get-info-now"><a href="#info-form" class="do-flash btn"><span>Get Info Now!</span></a></div>
-<?php
-	}
-?>
+<?php endif; ?>
 </div>
 
 <div class="main">
 
 	<div id="content">
 
-		<?php
-			if (!empty($headline) && (!$hide_h1)) {
-			?><h1 class="title"><?= $headline; ?></h1><?php
-			}
+	<?php if (!empty($headline) && (!$hide_h1)): ?>
+    <h1 class="title"><?= $headline; ?></h1>
+  <?php endif; ?>
 
-			if (!empty($subhead) && (!$hide_h2)) {
-			?><h2 class="title"><?= $subhead; ?></h2><?php
-			}
-		?>
+	<?php if (!empty($subhead) && (!$hide_h2)): ?>
+	  <h2 class="title"><?= $subhead; ?></h2>
+  <?php endif; ?>

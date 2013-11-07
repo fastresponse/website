@@ -1,51 +1,42 @@
 
-<?php
-	if(!$hideForm) {
-	?>
+<?php //include_once('testimonial_videos.php'); ?>
+
+<?php	if (!$hideForm): ?>
 	<div class="get-info-now"><a href="#info-form" class="do-flash btn"><span>Get Info Now!</span></a></div>
-	<?php
-	}
-?>
+<?php endif; ?>
 
+</div><?php /* /#content */ ?>
 
-</div>
 <div id="sidebar">
 
-	<?php
-		if (!$hideForm) {
-		?>
-		<div id="contact-form">
-			<div class="info-form-wrap">
-				<div class="form-area" id="info-form">
-					<div class="cta">
-						<h3>I Want Answers!</h3>
-						<p>Choose from the following and fill out the form below...</p>
-					</div>
-					<div class="container">
-						<?php
-							include('form.php');
-						?>
+	<?php if (!$hideForm): ?>
+	<div id="contact-form">
+		<div class="info-form-wrap">
+			<div class="form-area" id="info-form">
+				<div class="cta">
+					<h3>I Want Answers!</h3>
+					<p>Choose from the following and fill out the form below...</p>
+				</div>
+				<div class="container">
 
-						<div class="erform_privacy">
-							<p class="no-margin"><a title="Privacy Statement" href="<?= BASE_URL; ?>privacy-policy.php" target="_blank">Privacy Policy</a></p>
-						</div>
+					<?php	include('form.php'); ?>
+
+					<div class="erform_privacy">
+						<p class="no-margin"><a title="Privacy Statement" href="<?= BASE_URL; ?>privacy-policy.php" target="_blank">Privacy Policy</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<?php
-		} else {
-		?>
-		<div class="widget">
-			<h3>Privacy Statement</h3>
-			<div class="widget-body thankyou-privacy">
+	</div>
+	<?php else: ?>
+	<div class="widget">
+		<h3>Privacy Statement</h3>
+		<div class="widget-body thankyou-privacy">
 
-				<p>At Fast Response, <strong>we respect <a title="Privacy Statement" href="<?= BASE_URL; ?>privacy-policy.php">your privacy</a></strong>. We do not distribute any of your information to third parties.</p>
-			</div>
+			<p>At Fast Response, <strong>we respect <a title="Privacy Statement" href="<?= BASE_URL; ?>privacy-policy.php">your privacy</a></strong>. We do not distribute any of your information to third parties.</p>
 		</div>
-		<?php
-		}
-	?>
+	</div>
+	<?php endif; ?>
 
 
 	<div class="widget accreditations">
@@ -85,19 +76,28 @@
 	</div>
 
 	<div class="widget testimonials">
-
 		<h3>Success Stories</h3>
-
 		<div class="widget-body">
-
-			<?php
-				include('testimonials.php');
-			?>
-
+			<?php include('testimonials.php'); ?>
 		</div>
-
 	</div>
 
+  <div class="widget externship-sites">
+    <h3>Externship Sites</h3>
+    <div class="widget-body">
+      <ul>
+        <li>Kaiser</li>
+        <li>Falcon Ambulance</li>
+      </ul>
+    </div>
+  </div> 
+
+  <div class="widget transportation">
+    <h3>Transportation</h3>
+    <div class="widget-body">
+      <p>Downtown Berkeley BART station only one block away</p>
+    </div>
+  </div> 
 
 
 </div><?php /* /#sidebar */ ?>
@@ -119,11 +119,13 @@
 		&copy; <?= date('Y'); ?> <a class="no-ul" href="http://www.fastresponse.org/" target="_blank">Fast Response</a>, All Rights Reserved
 	</div>
 
-<!--	<div class="footer-nav">
+<!--
+  <div class="footer-nav">
 		<ul class="nav">
 			<li><a href="<?= BASE_URL; ?>">About Us</a></li>
 		</ul>
-	</div>-->
+	</div>
+-->
 
 	<a id="scroll-to-top" href="#top"><img src="<?= BASE_URL; ?>img/scroll-top.png" alt="Back to top" title="Back to top"></a>
 
@@ -136,7 +138,6 @@
 <script type="text/javascript" src="<?= BASE_URL; ?>js/functions.js"></script>
 
 <?php
-
   if (isset($extra_footer_code))
 	  echo "\n$extra_footer_code\n";
 
@@ -146,7 +147,8 @@
 	} else {
 		# non-conversion remarketing and tracking code for landing pages
 		include('remarketingCode.php');
-} ?>
+  }
+?>
 
 </body>
 </html>

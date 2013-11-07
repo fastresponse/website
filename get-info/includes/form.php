@@ -44,7 +44,7 @@
 
 	<div class="input-wrap">
 		<label class="input">
-			<span>Where did you hear about us?</span>
+			<span>Where did you first hear about us?</span>
 			<select name="source" required="required" id="source_select">
 				<option selected="selected" value="">&ndash; Select one &ndash;</option>
 				<?= get_program_options($source_options, get_referring_source()); ?>
