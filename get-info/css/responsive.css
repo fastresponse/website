@@ -138,4 +138,8 @@
 		text-align: center;
 	}
 
+  .video-content {
+    display: none;
+  }
+
 }

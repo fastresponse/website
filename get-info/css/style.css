@@ -66,7 +66,7 @@ html{
     font-size: 1.7em;
     font-weight: 700;
     line-height: 2em;
-    margin: 4em auto 1em;
+    margin: 2em auto 1em;
     text-align: center;
     width: 40%;
 }
@@ -348,6 +348,14 @@ blockquote p {
     margin-bottom:0.5em;
 }
 
+.testimonials img {
+  margin-bottom: 5px;
+ }
+
+.video-content {
+  margin: 10px auto;
+  text-align: center;
+}
 
 .caption {
 	border:1px solid #CCC;
