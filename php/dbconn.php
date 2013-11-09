@@ -57,7 +57,7 @@ function basic_query($dbh, $select, $table, $where, $order, $limit, $params) {
 
   if (!($select && count($select) && $table)) return;
 
-  $query = 'SELECT ' . implode(',', $select);
+  $query = 'SELECT ' . implode(', ', $select);
   $query.= ' FROM ' . $table;
 
   if ($where && count($where))

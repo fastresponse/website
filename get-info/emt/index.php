@@ -27,11 +27,11 @@ include_once('../includes/header.php');
 	The Certified Emergency Medical Technician Program from Fast Response School of Healthcare Education provides the <strong>hands-on training</strong>, practical field experience and industry support it takes to pursue a rewarding EMT position.
 </p>
 <p>
-	Topics covered in this course include EMT foundations, trauma emergencies, medical emergencies, and <strong><em style="color: red;">OTHER STUFF CHANGE THIS!!</em></strong>. Every class begins with <strong>CPR</strong> certification.
+	Topics covered in this course include vital signs and initial patient assessment, airway management, immobilization, lifting and moving, trauma management, bleeding and shock management, injury assessment, resuscitation, medical emergencies, and special emergency care situations. Every class begins with <strong>CPR</strong> certification.
 </p>
 
 
-<h3>Clinical Externship - On-the-Job Experience</h3>
+<h3>Clinical &amp; Field Externship - On-the-Job Experience</h3>
 
 <p>
 	Emergency Medical Technicians have very hands-on careers, and at Fast Response we believe that's how it should be taught. As a student in the EMT Program you'll complete a professional externship in a <strong>real emergency room</strong>, as well as <strong>two ambulance ride-along shifts</strong>. Externships are a great way to get a feel for different aspects of a career and make valuable industry contacts.
@@ -48,8 +48,8 @@ include_once('../includes/header.php');
 </p>
 
 <ul>
-	<li>Full-Time Program can be completed in <strong>9 weeks</strong>, including 5 weeks of instruction and 24+ hours of externship</li>
-	<li>Part-Time Program can be completed in <strong>12 weeks</strong>, including 8 weeks of instruction and 24+ hours of externship</li>
+	<li>Full-Time Program includes <strong>5 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
+	<li>Part-Time Program includes <strong>8 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
 </ul>
 
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/emt-photostrip.jpg" alt="Fast Response health care careers">

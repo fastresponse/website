@@ -1,5 +1,5 @@
 
-<?php //include_once('testimonial_videos.php'); ?>
+<?php include('video.php'); ?>
 
 <?php	if (!$hideForm): ?>
 	<div class="get-info-now"><a href="#info-form" class="do-flash btn"><span>Get Info Now!</span></a></div>
@@ -62,24 +62,19 @@
 	</div>
 
 	<div class="widget checks-features">
+    <h3>Key Values</h3>
 		<div class="widget-body">
 			<ul class="fancy">
-				<li>Flexible payment options available</li>
-				<li>Career services</li>
+        <li>NREMT Certification pass rate of 91% on first attempt</li>
+				<li>Flexible payment options</li>
+				<li>Career services assistance</li>
 				<li>Day and evening classes</li>
-				<li>Clinical externships guaranteed</li>
-				<li>Expand your earning potential</li>
+        <li>Located one block from BART</li>
+				<li>Guaranteed clinical externships</li>
 				<li>Affiliated with California Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
 			</ul>
 		</div>
 
-	</div>
-
-	<div class="widget testimonials">
-		<h3>Success Stories</h3>
-		<div class="widget-body">
-			<?php include('testimonials.php'); ?>
-		</div>
 	</div>
 
   <div class="widget externship-sites">
@@ -92,12 +87,12 @@
     </div>
   </div> 
 
-  <div class="widget transportation">
-    <h3>Transportation</h3>
-    <div class="widget-body">
-      <p>Downtown Berkeley BART station only one block away</p>
-    </div>
-  </div> 
+	<div class="widget testimonials">
+		<h3>Success Stories</h3>
+		<div class="widget-body">
+			<?php include('testimonials.php'); ?>
+		</div>
+	</div>
 
 
 </div><?php /* /#sidebar */ ?>
@@ -134,7 +129,14 @@
 </div><?php /* /.wrap */ ?>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+
+<script type="text/javascript">
+window.jQuery || document.write(
+  '<script src="/js/jquery-1.10.2.min.js"><\/script>'
+);
+</script>
+
 <script type="text/javascript" src="<?= BASE_URL; ?>js/functions.js"></script>
 
 <?php
