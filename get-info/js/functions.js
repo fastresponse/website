@@ -34,6 +34,46 @@ function validate(f) {
 	}
 
 }
+
+function zipValidate(z) {
+	// TODO: better checks here, order matters, etc
+
+	// delete any non-digits
+	if (/\D/g.test(z.value)) {
+		z.value = z.value.replace(/\D/g, '');
+	}
+
+	// this re-hides the message if they backspace from 5
+	if (z.value.length < 5) {
+		$('#zipcheck').slideUp('fast');
+	}
+
+	// at 5, check the entered zip
+	if (z.value.length == 5) {
+    $.ajax({
+			url: '/php/ajax.ziplookup.php',
+			type: 'POST',
+			data: { zip: z.value },
+			dataType: 'html',
+			success: function(data, txtStatus, jqxhr) {
+				if (data != null && data > 50) {
+					$('#zipcheck').html('This zip code is more than 50 miles from our campus.').slideDown();
+				}
+			},
+			error: function(jqxhr, txtStatus, txtError) {
+			}
+		});
+	}
+
+	// delete characters past 5
+	// do z here to avoid showing zip-check over again if they keep typing past 5
+	if (z.value.length > 5) {
+		z.value = z.value.substr(0, 4);
+	}
+
+	return true;
+}
+
 function looksLikeMail(str) {
     var lastAtPos = str.lastIndexOf('@'),
     	lastDotPos = str.lastIndexOf('.');

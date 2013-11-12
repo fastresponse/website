@@ -6,7 +6,7 @@ class ZipLookup {
   const LOOKUP_BASE = 'http://zipcodedistanceapi.redline13.com/rest/$api_key/distance.$format/$src_zip/$dest_zip/$units';
 
   // constant key for API access at above url
-  const API_KEY = '';
+  const API_KEY = '2JLqY031p82uMaOi5WgX7GVNpOp3u1mwL7XJ80Ly9N2VYRd4Ou1VaWJAK8Ef91MV';
 
   //-----------------------------
 
@@ -26,8 +26,9 @@ class ZipLookup {
   //-----------------------------
 
   // standard methods
-  public function __construct() {
+  public function __construct($dest = null) {
     $this->set_default_values();
+    $this->set_dest_zip($dest);
   }
 
   public function set_default_values() {
@@ -74,7 +75,7 @@ class ZipLookup {
     if (!$response)
       return false;
 
-    $this->response = $response;
+    $this->response = (array) $response;
 
     return true;
   }
@@ -96,16 +97,29 @@ class ZipLookup {
     if (!$this->set_url_parameters())
       return false;
 
+    /*
     $this->response = http_get($this->lookup_url,
       array( 'timeout' => $this->timeout, )
     );
+    */
+
+
+    // ok, since http_get isn't guaranteed available,
+    // we have to go through this BS:
+    $copts = array('html' => array(
+      'method' => 'GET',
+      'timeout' => $this->timeout,
+    ) );
+    $context = stream_context_create($copts);
+    $this->response = file_get_contents($this->lookup_url, false, $context);
+
 
     // false indicates any of several failures
     // we don't really care why it failed, the user is waiting
     if (!$this->response)
       return false;
 
-    $func = 'parse_' . strtolower($this->format));
+    $func = 'parse_' . strtolower($this->format);
 
     if (!method_exists($this, $func))
       return false;

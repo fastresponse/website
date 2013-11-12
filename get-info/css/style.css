@@ -402,7 +402,7 @@ ul.fancy {
 	margin-left:1.3em;
 }
 ul.fancy li {
-    background: url("../img/tick.png") no-repeat scroll 2px 6px transparent;
+    background: url("../img/tick-red.png") no-repeat scroll 2px 6px transparent;
     font-weight: bold;
     list-style: none outside none;
     padding-bottom: 3px;
