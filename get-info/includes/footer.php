@@ -65,7 +65,9 @@
     <h3>Key Values</h3>
 		<div class="widget-body">
 			<ul class="fancy">
-        <li>NREMT Certification pass rate of 91% on first attempt</li>
+        <?php foreach ($key_values as $item): ?>
+        <li><?= $item ?></li>
+        <?php endforeach; ?>
 				<li>Flexible payment options</li>
 				<li>Career services assistance</li>
 				<li>Day and evening classes</li>
@@ -80,10 +82,7 @@
   <div class="widget externship-sites">
     <h3>Externship Sites</h3>
     <div class="widget-body">
-      <ul>
-        <li>Kaiser</li>
-        <li>Falcon Ambulance</li>
-      </ul>
+			<?php include('externship.php'); ?>
     </div>
   </div> 
 

@@ -82,6 +82,27 @@ function basic_query($dbh, $select, $table, $where, $order, $limit, $params) {
   return $data;
 }
 
+function query_set_values($dbh, $column, $table) {
+  $query = "SHOW COLUMNS FROM `$table` LIKE '$column'";
+  $results = db_query($dbh, $query, array());
+  if (empty($results))
+    return array();
+
+  $values = $results[0]['Type'];
+  // string: set('one','two','three','four')
+  // string: enum('one','two')
+
+  $leftparenpos = strpos($values, '(');
+
+  $values = substr($values, $leftparenpos+2, -2);
+  // string: one','two','three','four
+  
+  $values = explode("','", $values);
+  // array('one', 'two', 'three', 'four')
+
+  return $values;
+}
+
 function db_insert($dbh, $statement, $params) {
   if ($dbh == null) return;
 

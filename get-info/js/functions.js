@@ -35,9 +35,7 @@ function validate(f) {
 
 }
 
-function zipValidate(z) {
-	// TODO: better checks here, order matters, etc
-
+function zipValidate(z, radius) {
 	// delete any non-digits
 	if (/\D/g.test(z.value)) {
 		z.value = z.value.replace(/\D/g, '');
@@ -56,8 +54,10 @@ function zipValidate(z) {
 			data: { zip: z.value },
 			dataType: 'html',
 			success: function(data, txtStatus, jqxhr) {
-				if (data != null && data > 50) {
-					$('#zipcheck').html('This zip code is more than 50 miles from our campus.').slideDown();
+				if (data != null && data > radius) {
+					$('#zipcheck').html(
+						'This zip code is more than '+radius+' miles from our campus.'
+					).slideDown();
 				}
 			},
 			error: function(jqxhr, txtStatus, txtError) {
@@ -66,9 +66,10 @@ function zipValidate(z) {
 	}
 
 	// delete characters past 5
-	// do z here to avoid showing zip-check over again if they keep typing past 5
+	// do this after the == 5 check to avoid showing zip-check
+	// over again if they keep typing past 5
 	if (z.value.length > 5) {
-		z.value = z.value.substr(0, 4);
+		z.value = z.value.substr(0, 5);
 	}
 
 	return true;
