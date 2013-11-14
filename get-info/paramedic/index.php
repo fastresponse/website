@@ -1,16 +1,17 @@
 <?php
 //page variables - change as needed for this page
-$title		= 'EMT Career Training';
+$title		= 'Paramedic Training';
 $description	= null;
 
-$headline = 'Get the Skills to Be an Emergency Medical Technician';
-$subhead = 'Guaranteed Externships Including Ambulance Ride-alongs';
+$headline = 'Get the Advanced Skills You Need to Become a Paramedic';
+$subhead = 'Guaranteed Internships, Diverse Observation Sites';
 
-$program_of_interest = 'EMT';
+$program_of_interest = 'Paramedic';
 
 $key_values = array(
-  'NREMT Certification pass rate of 91% on first attempt<br />' .
-  '<span style="font-size: 90%;">(3rd quarter 2013)</span>',
+  'NREMT-P Test Preparation',
+  'Completion of PALS, ACLS, ITLS, GEMS, and EMPACT certifications',
+  'iPad with EMS software included',
 );
 
 $zip_radius = 50;
@@ -19,30 +20,24 @@ include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/emt-top.jpg" alt="Phlebotomy careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.jpg" alt="Phlebotomy careers">
 
 <p>
-  Emergency medical technicians provide emergency medical support to injured and ill people. They may work in an ambulance, with a fire department, in a hospital emergency room or on a search and rescue team.
-</p>
-<!--<p>
-	If you're a compassionate person interested in helping others and you're looking to start a rewarding healthcare career (<em>without spending years in school</em>), EMT training could be an excellent opportunity.
-</p>-->
-<p>
-	If you want to become one of the best-trained EMTs in the Bay Area (<em>without spending years in school</em>), come to Fast Response School of Health Care Education. Our EMT program's intensive, comprehensive curriculum and unique teaching methods prepare you for certification and employment in a rewarding healthcare career.
+  Paramedics provide advanced emergency medical care above and beyond what an EMT can do. They are able to administer medications, start IVs, and provide extensive prehospital care. Paramedics typically work in ambulances, but can also be found in hospitals, fire departments, and other places where medical care may be needed.
 </p>
 
 <p>
-  Fast Response students are recognized by Bay Area ambulance companies as being exceptional. During the third quarter of 2013, <strong>91%</strong> of our graduates passed their certification exams on the first attempt!
+  The Paramedic Academy at Fast Response School of Health Care Education is dedicated to training quality paramedics. Our academy focuses on critical thinking and comprehensive education to prepare you for real emergency medicine, not just for passing a test!
 </p>
 
-<h3>Becoming a Certified EMT</h3>
+<p>
+  Fast Response students are recognized by the Bay Area EMS community as being exceptional! 
+</p>
 
-<!--<p>
-	The Certified Emergency Medical Technician Program from Fast Response School of Healthcare Education provides the <strong>hands-on training</strong>, practical field experience and industry support it takes to pursue a rewarding EMT position.
-</p>-->
+<h3>Becoming a Licensed Paramedic</h3>
 
 <p>
-  The Emergency Medical Technician program at Fast Response provides dynamic classroom training, hands-on skills training, and practical field experience. Our instructors are all <strong>licensed EMTs</strong> and <strong>paramedics</strong>.
+  The Paramedic Academy provides extensive classroom training - <strong>over 50% more didactic hours</strong> than required - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructors are all <strong>licensed paramedics</strong>.
 </p>
 
 <p>
@@ -71,7 +66,7 @@ include_once('../includes/header.php');
 	<li>Part-Time Program includes <strong>8 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
 </ul>
 
-<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/emt-photostrip-2.jpg" alt="Fast Response health care careers">
+<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/paramedic-photostrip.jpg" alt="Fast Response health care careers">
 
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>

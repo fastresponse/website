@@ -524,4 +524,34 @@ function query_events_summary($dbh, $limit, $date_start, $date_end) {
   return $result;
 }
 
+function query_external($dbh, $course, $type, $dept = false, $loc = false) {
+  $select = array('site');
+  if ($dept) $select[] = 'department';
+  if ($loc) $select[] = 'location';
+
+  $results = basic_query($dbh,
+    $select, # select
+    'external_sites', # from
+    array(
+      'FIND_IN_SET(:course, courses) > 0',
+      'FIND_IN_SET(:type, type) > 0'
+    ), # where
+    'site', # order by
+    0, # limit
+    array(
+      ':course' => $course,
+      ':type' => $type
+    ) # replacement parameters
+  );
+
+  foreach ($results as &$r) {
+    $r['site_department'] = $r['site'];
+    if (!empty($r['department'])) {
+      $r['site_department'] .= ' ' . $r['department'];
+    }
+  }
+
+  return $results;
+}
+
 ?>

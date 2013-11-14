@@ -79,10 +79,10 @@
 
 	</div>
 
-  <div class="widget externship-sites">
-    <h3>Externship Sites</h3>
+  <div class="widget external-sites">
+    <h3>External Sites</h3>
     <div class="widget-body">
-			<?php include('externship.php'); ?>
+			<?php include('external_sites.php'); ?>
     </div>
   </div> 
 

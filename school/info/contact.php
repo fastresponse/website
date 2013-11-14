@@ -5,7 +5,7 @@
 
 require("phpmailer/class.phpmailer.php");
 
-error_reporting (E_ERROR);
+error_reporting (0);
 
 $error_output = null;
 $success_output = null;

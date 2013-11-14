@@ -1,6 +1,6 @@
 <?php
   require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
-  $handle = db_connect('start_dates');
+  $handle = db_connect();
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -28,21 +28,7 @@
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
-
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
+  <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
   <script type="text/javascript" src="/js/frlib.js"></script>
 
@@ -183,9 +169,9 @@
 	      <div class="section">
 		      <ul class="bullets">
 		        <h3>Internships With:</h3>
-		        <li>Paramedics Plus</li>
-		        <li>Eden Medical Center</li>
-		        <li>Kaiser Hospitals (ED, OR)</li>
+<?php foreach (query_external($handle, 'Paramedic', 'internship', true) as $site): ?>
+  <li><?= $site['site_department'] ?></li>
+<?php endforeach; ?>
 		      </ul>
 	      </div>
 	      <div class="section" style="margin-top: 2em;">
@@ -193,7 +179,7 @@
 		        <h3>Training Resources:</h3>
 		        <li>Simulation Lab with high fidelity ALS manikin</li>
 		        <li>On-site Ambulance simulator</li>
-		        <li>iPad Mini with EMS software included with cost of course</li>
+		        <li>iPad with EMS software included with cost of course</li>
 		        <li>NREMT-P Test Prep</li>
 		      </ul>
 	      </div>
@@ -203,14 +189,9 @@
 	      <div class="section">
 		      <ul class="bullets">
 		        <h3>Didactic Observation Sites:</h3>
-		        <li>EDEN ED, ICU, Trauma Rounds</li>
-		        <li>Sutter Respiratory</li>
-		        <li>St. Francis Burn Center</li>
-		        <li>ALCO Juvenile Hall</li>
-		        <li>ALCO Coroners' Bureau</li>
-		        <li>Touro University Cadaver Lab</li>
-		        <li>Paramedics Plus</li>
-		        <li>Berkeley Fire</li>
+<?php foreach (query_external($handle, 'Paramedic', 'didactic observation', true) as $site): ?>
+  <li><?= $site['site_department'] ?></li>
+<?php endforeach; ?>
 		      </ul>
 	      </div>
 	    </div>

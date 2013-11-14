@@ -4,7 +4,9 @@
   $video_height = 250;
 
   $video_numbers = array(
-    'EMT' => 1003789,
+    //'EMT' => 1003789,
+    'EMT' => null,
+    'Paramedic' => null,
     'Phlebotomy' => null,
   );
   if (in_array($program_of_interest, array_keys($video_numbers)))
