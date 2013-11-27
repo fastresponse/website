@@ -1,4 +1,5 @@
-<div id="testimonial-wrapper">
+<h1>Success Stories</h1>
+<div class="testimonial-wrapper">
 
 <?php
 
@@ -9,26 +10,26 @@ if (empty($handle))
 // not using max_quotes at this time
 $max_quotes = 3;
 
-$programs = array_unique(
-  array('general', $program_abbreviation, $program_of_interest)
+$courses = array_unique(
+  array('general', $course_abbr, $course_title)
 );
 
-$quote_query = function($handle, $program) {
+$quote_query = function($handle, $course) {
   $results = basic_query($handle,
     array('name', 'quote', 'image'), # select
     'testimonials', # from
     array('FIND_IN_SET(:course, courses) > 0'), # where
     null, # order by
     0, # limit
-    array(':course' => $program) # replacement parameters
+    array(':course' => $course) # replacement parameters
   );
   return $results;
 };
 
 do {
-  $program = array_pop($programs);
-  $quotes_tmp = $quote_query($handle, $program);
-} while (empty($quotes_tmp) && !empty($programs));
+  $course = array_pop($courses);
+  $quotes_tmp = $quote_query($handle, $course);
+} while (empty($quotes_tmp) && !empty($courses));
 
 if (!empty($quotes_tmp))
   shuffle($quotes_tmp);
@@ -39,9 +40,6 @@ foreach ($quotes_tmp as $quote):
   $quote_text = html_entity_decode($quote['quote']);
   $quote_name = $quote['name'];
   $quote_image = $quote['image'];
-  $quote_image = (empty($quote_image)) ? ''
-    : "<img alt='Fast Response graduate photo' class='fleft' src='$quote_image' />"
-  ;
 
   $initial_visibility = ($i == 0) ? 'block' : 'none';
   $i++;
@@ -49,9 +47,11 @@ foreach ($quotes_tmp as $quote):
 ?>
 
   <blockquote style="display: <?= $initial_visibility ?>;">
-  <?= $quote_image ?>
-  <p><?= $quote_text ?></p>
-  <div class="source"><strong><?= $quote_name ?></strong>, Fast Response Graduate</div>
+  <?php if (!empty($quote_image)): ?>
+    <img alt="Fast Response graduate photo" src="<?= $quote_image ?>" />
+  <?php endif; ?>
+    <p><?= $quote_text ?></p>
+    <div class="source"><strong><?= $quote_name ?></strong>, Fast Response Graduate</div>
   </blockquote>
 
 <?php endforeach; ?>
@@ -69,7 +69,7 @@ window.jQuery || document.write(
 
 <script type="text/javascript">
 $(document).ready(function() {
-  var $container = $("#testimonial-wrapper");
+  var $container = $(".testimonial-wrapper").first();
   if ($container.children().length) {
     $container.children().hide();
     $container.rotate(10000);

@@ -7,6 +7,9 @@
 	$subhead = ''; //This is the main headline of the body
 
 	$hideForm	= true;
+	$hideKeyValues	= true;
+	$hideExternalSites	= true;
+	$hideTestimonials	= true;
 	$conversionCode = true;
 
 //	$program_training_in = ' ';

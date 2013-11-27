@@ -326,7 +326,7 @@ function create_query_dates($course, $type, $sort = 'thedate') {
   return array($q_date, $params);
 }
 
-function query_course_dates($dbh, $course, $type, $sort) {
+function query_course_dates($dbh, $course, $type, $sort = 'thedate') {
   $query_data = create_query_dates($course, $type, $sort);
   $q_date = $query_data[0];
   $params = $query_data[1];

@@ -844,6 +844,40 @@ div.pointer,
   width: 22%;
 }
 
+.testimonial-wrapper {
+  text-align: left;
+}
+
+.testimonial-wrapper blockquote {
+  line-height: 1.35;
+}
+
+.testimonial-wrapper blockquote img {
+  margin-right: 14px;
+  margin-bottom: 5px;
+  max-width: 45%;
+  float: left;
+}
+
+.testimonial-wrapper blockquote p {
+  font-style: italic;
+  quotes: "\"" "\"";
+}
+
+.testimonial-wrapper blockquote p:before {
+  content: open-quote;
+}
+
+.testimonial-wrapper blockquote p:after {
+  content: close-quote;
+}
+
+.testimonial-wrapper blockquote .source {
+}
+.testimonial-wrapper blockquote .source:before {
+  content: '- ';
+}
+
 
 .testimonial {
   clear: left;
@@ -1000,9 +1034,16 @@ div#section-display {
   text-align: center;
   vertical-align: top;
 }
+.article-box,
+.article-box * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 .article-box.cols-2 {
 }
 .article-box .title {
+  letter-spacing: 0.1em;
   font-family: Century Gothic, sans-serif;
   font-weight: bold;
   text-align: center;
@@ -1015,9 +1056,10 @@ div#section-display {
 }
 .article-box .title .title-border {
   /* visual effects around the title area */
-  width: 96%;
+  /*width: 96%;*/
   margin: 0 auto;
-  padding: 1.25% 2%;
+  /*padding: 1.25% 2%;*/
+  padding: 7.5px;
   border: 2px solid rgb(200, 200, 200);
   border-radius: 15px;
   -moz-border-radius: 15px;
@@ -1068,6 +1110,8 @@ div#section-display {
 }
 .article-box .body {
   width: 65%;
+  font-size: 90%;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   padding: 5px;
@@ -1081,10 +1125,46 @@ div#section-display {
   background-image: -o-linear-gradient(top, rgb(10, 30, 60), rgb(0, 0, 0));
   background-image: linear-gradient(to bottom, rgb(10, 30, 60), rgb(0, 0, 0));
 }
-.article-box a:hover {
+.article-box .body ul,
+.article-box .body ol,
+.article-box .body dl,
+.article-box .body dt,
+.article-box .body dd {
+  margin: 0;
+  padding: 0;
+}
+.article-box .body a,
+.article-box .body li,
+.article-box .body dt,
+.article-box .body dd,
+.article-box .body div.line {
+  display: block;
+  padding: 10px 5px;
+  text-decoration: none;
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  /*
+  height: 30px;
+  line-height: 15px;
+  */
+}
+.article-box .body dd {
+  padding: 2px 5px;
+}
+.article-box .body a:hover,
+.article-box .body li:hover,
+.article-box .body div.line:hover {
   color: rgb(221, 0, 51);
 }
 .article-box.cols-2 .body {
+  text-align: center;
   width: 80%;
 }
-
+.article-box.cols-2 .body a,
+.article-box.cols-2 .body li,
+.article-box.cols-2 .body div.line {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 46%;
+}  

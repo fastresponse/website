@@ -199,7 +199,8 @@
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
-      padding: 5% 20%;
+      /*padding: 5% 20%;*/
+      padding: 0 20% 2%;
     }
     .approved,
     .disclaimer {
@@ -285,6 +286,74 @@
       font-style: italic;
       text-shadow: -1px 1px 3px rgba(0,0,0,0.5), 1px -1px 3px rgba(0,0,0,0.5);
     }
+    .banner-top {
+      min-width: 580px;
+      width: 100%;
+      margin: 10px auto;
+      text-align: center;
+    }
+    .banner-top .banner {
+      width: 100%;
+    }
+    .banner-top .banner .btn {
+      width: 100%;
+      border-bottom: 3px solid rgba(0,0,0, 0.8);
+      /*background: -webkit-linear-gradient(top, rgb(85, 115, 145), rgb(0, 30, 85));*/
+      background-color: rgb(85, 115, 145);
+      background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0, 30, 85,1));
+    }
+    .banner-top .banner .btn div {
+      font-style: italic;
+      font-family: Georgia, serif;
+    }
+
+    .banner-top .article-box {
+      margin: 20px auto;
+      min-width: 580px;
+      width: 65%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    .banner-top .article-box>a {
+      display: block;
+      text-decoration: none;
+    }
+    .banner-top .article-box .title {
+      background: linear-gradient(165deg,
+        rgb(25, 50, 85) 25%, rgb(10, 30, 60), rgb(7, 21, 42)
+      );
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+    .banner-top .article-box .title-border {
+      padding: 7.5px 15px;
+      border-color: #DD0033;
+      border-color: rgba(221, 0, 51, 0.85);
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 17px;
+      border-bottom-right-radius: 17px;
+    }
+    .banner-top .article-box .title h1 {
+      font-size: 95%;
+      font-style: italic;
+      font-family: Georgia, serif;
+      color: rgba(255, 255, 255, 0.92);
+    }
+    .banner-top .article-box:hover .title-border {
+      border-color: rgba(240, 0, 70, 0.97);
+    }
+    .banner-top .article-box:hover .title {
+      background: linear-gradient(165deg,
+        rgb(30, 55, 90) 30%, rgb(15, 35, 65), rgb(12, 26, 47)
+      );
+    }
+    .banner-top .article-box:hover .title h1 {
+      color: white;
+    }
+
+
     .leftsidebar2 {
       width: 420px;
       text-align: center;
@@ -346,6 +415,9 @@
         width: 100%;
         margin: 0;
       }
+      .banner-top {
+        display: none;
+      }
       #blurb {
         padding: 1% 5% 5%;
         text-align: left;
@@ -400,7 +472,30 @@
 	      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" id="headimg" />
       </div>
       <div class="rightcontent2">
-	      <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
+
+        <div class="banner-top">
+          <!--
+	        <div class="banner">
+	          <a href="/gallery/index.php/Events/" class="btn buttontext lines-1 glow-orange">
+	            <div>
+	              Check out the Fast Response Events Photo Gallery here
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+          -->
+          <div class="article-box">
+            <a href="/gallery/index.php/Events/">
+              <div class="title">
+                <div class="title-border">
+                  <h1>Check out the Fast Response Events Photo Gallery here</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+	      
+        <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
       </div>
       <div class="clearfix"></div>
     </div> <!-- /head -->

@@ -15,7 +15,7 @@
 	define('BASE_URL','/get-info/');
 
 	define('EMAIL_FROM', 'autoreply@fastresponse.org'); // use the same domain as the webpage
-	define('EMAIL_TO', 'it@fastresponse.org'); // use the same domain as the webpage
+	define('EMAIL_TO', 'autoreply@fastresponse.org'); // use the same domain as the webpage
 
 	define('PHONE','1-800-637-7387');
 	# url parameters for youtube embeds

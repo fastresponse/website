@@ -61,6 +61,7 @@
 
 	</div>
 
+  <?php if (!$hideKeyValues): ?>
 	<div class="widget checks-features">
     <h3>Key Values</h3>
 		<div class="widget-body">
@@ -76,22 +77,26 @@
 				<li>Affiliated with California Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
 			</ul>
 		</div>
-
 	</div>
+  <?php endif; ?>
 
+  <?php if (!$hideExternalSites): ?>
   <div class="widget external-sites">
     <h3>External Sites</h3>
     <div class="widget-body">
 			<?php include('external_sites.php'); ?>
     </div>
-  </div> 
+  </div>
+  <?php endif; ?>
 
+  <?php if (!$hideTestimonials): ?>
 	<div class="widget testimonials">
 		<h3>Success Stories</h3>
 		<div class="widget-body">
 			<?php include('testimonials.php'); ?>
 		</div>
 	</div>
+  <?php endif; ?>
 
 
 </div><?php /* /#sidebar */ ?>

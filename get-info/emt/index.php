@@ -7,6 +7,7 @@ $headline = 'Get the Skills to Be an Emergency Medical Technician';
 $subhead = 'Guaranteed Externships Including Ambulance Ride-alongs';
 
 $program_of_interest = 'EMT';
+$program_abbreviation = 'EMT';
 
 $key_values = array(
   'NREMT Certification pass rate of 91% on first attempt<br />' .
@@ -14,6 +15,10 @@ $key_values = array(
 );
 
 $zip_radius = 50;
+
+$video_numbers = array(
+  1399035,
+);
 
 include_once('../includes/header.php');
 
@@ -24,9 +29,7 @@ include_once('../includes/header.php');
 <p>
   Emergency medical technicians provide emergency medical support to injured and ill people. They may work in an ambulance, with a fire department, in a hospital emergency room or on a search and rescue team.
 </p>
-<!--<p>
-	If you're a compassionate person interested in helping others and you're looking to start a rewarding healthcare career (<em>without spending years in school</em>), EMT training could be an excellent opportunity.
-</p>-->
+
 <p>
 	If you want to become one of the best-trained EMTs in the Bay Area (<em>without spending years in school</em>), come to Fast Response School of Health Care Education. Our EMT program's intensive, comprehensive curriculum and unique teaching methods prepare you for certification and employment in a rewarding healthcare career.
 </p>
@@ -36,10 +39,6 @@ include_once('../includes/header.php');
 </p>
 
 <h3>Becoming a Certified EMT</h3>
-
-<!--<p>
-	The Certified Emergency Medical Technician Program from Fast Response School of Healthcare Education provides the <strong>hands-on training</strong>, practical field experience and industry support it takes to pursue a rewarding EMT position.
-</p>-->
 
 <p>
   The Emergency Medical Technician program at Fast Response provides dynamic classroom training, hands-on skills training, and practical field experience. Our instructors are all <strong>licensed EMTs</strong> and <strong>paramedics</strong>.
@@ -86,7 +85,7 @@ include_once('../includes/header.php');
 <h4>Get More Information&#8230;</h4>
 
 <p>
-	If you're interested in learning more about a career as an EMT, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative would be happy to answer any questions you have and can help with everything from scheduling to payment plans.
+	If you're interested in learning more about a career as an EMT, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative will be happy to answer any questions you have and can assist with everything from scheduling to payment plans.
 </p>
 <p>
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.

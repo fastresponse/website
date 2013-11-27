@@ -7,6 +7,7 @@ $headline = 'Get the Advanced Skills You Need to Become a Paramedic';
 $subhead = 'Guaranteed Internships, Diverse Observation Sites';
 
 $program_of_interest = 'Paramedic';
+$program_abbreviation = 'Paramedic';
 
 $key_values = array(
   'NREMT-P Test Preparation',
@@ -34,36 +35,40 @@ include_once('../includes/header.php');
   Fast Response students are recognized by the Bay Area EMS community as being exceptional! 
 </p>
 
+
 <h3>Becoming a Licensed Paramedic</h3>
 
 <p>
-  The Paramedic Academy provides extensive classroom training - <strong>over 50% more didactic hours</strong> than required - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructors are all <strong>licensed paramedics</strong>.
+  The Paramedic Academy provides extensive classroom training - <strong>over 50% more didactic hours</strong> than other programs - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructors are all <strong>licensed paramedics</strong>.
 </p>
 
 <p>
-	Topics covered in this course include vital signs and initial patient assessment, airway management, immobilization, lifting and moving, trauma management, bleeding and shock management, injury assessment, resuscitation, medical emergencies, and special emergency care situations. Every class begins with <strong>CPR</strong> certification.
+	Topics covered in this course include anatomy and physiology, pharmacology and medication administration, airway management, respiratory and endocrine emergencies, cardiovascular emergencies, abdominal, gastrointestinal, genitourinary, renal, and gynecological emergencies, neurological, hematologic, and immunologic emergencies, infectious disease, toxicology, psychiatric emergencies, trauma systems, orthopedic trauma, burns, shock, resuscitation, environmental emergencies, and special patient care.
 </p>
 
 
-<h3>Clinical &amp; Field Externship - On-the-Job Experience</h3>
+<h3>Clinical &amp; Field Internship - On-the-Job Experience</h3>
 
 <p>
-	As a student in the EMT Program you'll complete a one-day clinical shift in a <strong>hospital emergency department</strong>, as well as <strong>two ambulance ride-along shifts</strong> with the Bay Area's largest ambulance companies. In addition to hands-on experience, externships are a great way to make valuable industry contacts.
+	As a student in the Paramedic Academy you'll gain valuable experience during your clinical internship in a <strong>hospital emergency department</strong>. During your field internship you'll put your knowledge and skills to work on <strong>911 ambulance ride-alongs</strong>.
 </p>
 <p>
-	Graduates of this program are fully prepared and feel confident in emergency medical situations after gaining so much practical, real-world experience.
+	Fast Response provides you with <strong>30% more</strong> clinical internship hours and up to <strong>50% more</strong> field internship hours than other schools, because we want you to succeed.
 </p>
 
 
-<h3>Convenient Day or Evening Schedules</h3>
+<h3>12-Month Course</h3>
 
 <p>
-	Fast Response programs are designed for busy, adult learners. Many students are raising families and/or continuing working while going to school. Choose from flexible full or part-time options.
+  The Fast Response Paramedic Academy can be completed in <strong>12 months</strong>, including internships. We want <strong>you</strong> to have a <strong>rewarding career</strong> as soon as possible!
 </p>
 
 <ul>
-	<li>Full-Time Program includes <strong>5 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
-	<li>Part-Time Program includes <strong>8 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
+  <li>Didactic instruction: 728 hours</li>
+  <li>Continuing Education Units: 80 hours (included as part of didactic instruction)</li>
+  <li>Didactic observation: 48 hours</li>
+  <li>Clinical internship: 208 hours</li>
+  <li>Field internship: 480 - 720 hours</li>
 </ul>
 
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/paramedic-photostrip.jpg" alt="Fast Response health care careers">
@@ -77,11 +82,11 @@ include_once('../includes/header.php');
 
 <p>Payment plans are available for those that qualify.</p>
 
-<h3>Is EMT Training Right for You?</h3>
+<h3>Is Paramedic Training Right for You?</h3>
 <h4>Get More Information&#8230;</h4>
 
 <p>
-	If you're interested in learning more about a career as an EMT, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative would be happy to answer any questions you have and can help with everything from scheduling to payment plans.
+	If you're interested in learning more about becoming a paramedic, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative will be happy to answer any questions you have and can assist with everything from scheduling to payment plans.
 </p>
 <p>
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.

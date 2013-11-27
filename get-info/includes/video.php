@@ -3,16 +3,9 @@
   $video_width = 366;
   $video_height = 250;
 
-  $video_numbers = array(
-    //'EMT' => 1003789,
-    'EMT' => null,
-    'Paramedic' => null,
-    'Phlebotomy' => null,
-  );
-  if (in_array($program_of_interest, array_keys($video_numbers)))
-    $video_number = $video_numbers[$program_of_interest];
+  if (!empty($video_numbers))
+    $video_number = $video_numbers[array_rand($video_numbers)];
   
-  // dynamic load w/ ajax?
 ?>
 <?php if ($video_number): ?>
 <div class="video-content"

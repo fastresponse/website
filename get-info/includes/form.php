@@ -78,7 +78,7 @@ onsubmit="return validate(this);">
   <div class="input-wrap">
     <label class="input">
       <span>Zipcode</span>
-      <input type="text" name="zip" required="required" onkeyup="return zipValidate(this, <?= $zip_radius ?>);"/>
+      <input type="text" name="zip" required="required" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);"/>
       <div id="zipcheck"></div>
     </label>
   </div>
