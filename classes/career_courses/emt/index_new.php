@@ -83,9 +83,9 @@
 	        </div><!-- /article-box -->
         </div>
 
-        <div>
+        <div class="bottom-image">
           <a target="_self" href="/gallery/index.php/<?= $course_abbr ?>">
-            <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.jpg" alt="" style="width: 100%;" />
+            <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.jpg" alt="" />
           </a>
         </div>
 

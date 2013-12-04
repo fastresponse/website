@@ -39,7 +39,7 @@ include_once('../includes/header.php');
 <h3>Becoming a Licensed Paramedic</h3>
 
 <p>
-  The Paramedic Academy provides extensive classroom training - <strong>over 50% more didactic hours</strong> than other programs - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructors are all <strong>licensed paramedics</strong>.
+  The Paramedic Academy provides extensive classroom training - <strong>35% more didactic hours</strong> than other programs - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructors are all <strong>licensed paramedics</strong>.
 </p>
 
 <p>
@@ -52,10 +52,11 @@ include_once('../includes/header.php');
 <p>
 	As a student in the Paramedic Academy you'll gain valuable experience during your clinical internship in a <strong>hospital emergency department</strong>. During your field internship you'll put your knowledge and skills to work on <strong>911 ambulance ride-alongs</strong>.
 </p>
+<!--
 <p>
 	Fast Response provides you with <strong>30% more</strong> clinical internship hours and up to <strong>50% more</strong> field internship hours than other schools, because we want you to succeed.
 </p>
-
+-->
 
 <h3>12-Month Course</h3>
 
@@ -64,11 +65,11 @@ include_once('../includes/header.php');
 </p>
 
 <ul>
-  <li>Didactic instruction: 728 hours</li>
+  <li>Didactic instruction: 608 hours</li>
   <li>Continuing Education Units: 80 hours (included as part of didactic instruction)</li>
-  <li>Didactic observation: 48 hours</li>
-  <li>Clinical internship: 208 hours</li>
-  <li>Field internship: 480 - 720 hours</li>
+  <li>Didactic observation: 32 hours</li>
+  <li>Clinical internship: 160 hours</li>
+  <li>Field internship: 480</li>
 </ul>
 
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/paramedic-photostrip.jpg" alt="Fast Response health care careers">

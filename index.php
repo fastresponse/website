@@ -364,6 +364,9 @@
     }
 
     @media (max-width: 1023px) and (min-width: 640px) {
+      #menu {
+        min-height: 1.65em;
+      }
       #headimg {
         width: 65%;
         margin: 0 auto;

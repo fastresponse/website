@@ -66,13 +66,12 @@
 .student-testimonials {
   margin-top: 30px;
   text-align: left;
-  border: solid rgba(255, 255, 153, 0.4) 2px;
+  border: solid rgb(255, 255, 153) 2px;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
 .student-testimonials:hover {
-  border-color: rgba(255, 255, 153, 0.75);
 }
 .student-testimonials h1 {
   font-size: large;
@@ -91,15 +90,14 @@
 }
 .course-start-date {
   color: #FFFF99;
-  vertical-align: top;
+  vertical-align: top
 }
 
 .article-box {
   width: 50%;
-  min-width: 206px;
   max-width: 370px;
   margin: 0 0 20px;
-  padding: 0 10px;
+  padding: 0 3px;
   font-size: 92%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -132,4 +130,110 @@
   -moz-border-top-right-radius: 15px;
   -webkit-border-top-left-radius: 15px;
   -webkit-border-top-right-radius: 15px;
+}
+
+.bottom-image {
+  text-align: center;
+}
+.bottom-image a {
+  display: inline-block;
+}
+.bottom-image img {
+  max-width: 100%;
+}
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  #menu {
+    min-height: 1.65em;
+  }
+  #head {
+    margin-bottom: 25px;
+  }
+  #head #logo-container {
+    width: 100%;
+    text-align: center;
+  }
+  #head #logo-container img {
+    width: 65%;
+  }
+  #head #title-container {
+    width: 100%;
+    padding: 0;
+    position: static;
+  }
+  .left.sidebar {
+    width: 100%;
+    padding: 0;
+    float: none;
+  }
+  .left.sidebar .course-header-image {
+    width: 45%;
+    float: left;
+    margin-bottom: 25px;
+  }
+  .left.sidebar #contact-form-div {
+    width: 50%;
+    float: right;
+    margin-top: -10px;
+    padding-top: 0;
+  }
+  .left.sidebar .student-testimonials {
+    display: none;
+  }
+  .right.sidebar {
+    clear: right;
+    width: 120px;
+    padding: 0 0 0 10px;
+    direction: ltr;
+  }
+  .right.sidebar .quicklinks2 {
+    padding: 0;
+  }
+  .right.sidebar .quicklinks2 .btn3,
+  .right.sidebar .quicklinks2 .btn2 {
+  }
+  .content {
+    padding: 0;
+  }
+  .article-box {
+    width: 240px;
+  }
+}
+
+@media handheld, (max-width: 639px) {
+  #menu {
+    display: none;
+  }
+  #head {
+    border-top: none;
+  }
+  #title-container {
+    padding: 0;
+    position: static;
+  }
+  .course-header-image {
+    display: none;
+  }
+  .course-title {
+  }
+  .student-testimonials {
+    display: none;
+  }
+  .left.sidebar {
+    width: 100%;
+    padding: 0;
+    float: none;
+  }
+  .right.sidebar {
+    display: none;
+  }
+  .content {
+    padding: 0;
+  }
+  .article-box,
+  .article-box.cols-2 {
+    width: 98%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

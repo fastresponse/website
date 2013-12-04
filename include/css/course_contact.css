@@ -12,17 +12,17 @@
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  border: solid rgba(255, 255, 153, 0.4) 2px;
+  border: solid rgb(255, 255, 153) 2px;
 }
 #contact-form fieldset:hover {
-  border-color: rgba(255, 255, 153, 0.75);
 }
 #contact-form legend {
   color: rgb(255, 255, 153);
 }
 #contact-form input,
 #contact-form select,
-#contact-form textarea {
+#contact-form textarea,
+#contact-form .call {
   width: 220px;
   border: 2px;
   margin: 2px 0;
@@ -48,6 +48,7 @@
   margin: 8px 0 5px;
   padding: 5px 2px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 115%;
   color: #F0F0F0;
   background-color: #103068;
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
@@ -72,15 +73,113 @@
   background-color: #041445;
 }
 #contact-form .call {
-  display: block;
-  text-decoration: none;
+  display: inline-block;
   margin-top: 7px;
   text-align: center;
   letter-spacing: 2px;
   font-weight: bold;
   text-shadow: 1px -1px 3px rgb(10, 30, 60), -1px 1px 3px rgb(10, 30, 60);
 }
-#contact-form .call:hover {
+#contact-form .call a {
+  text-decoration: none;
+}
+#contact-form .call a:hover {
   text-decoration: underline;
-  color: #DD0033;
+  /*color: #DD0033;*/
+}
+#contact-form .call a .phone-number {
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  #contact-form input,
+  #contact-form select,
+  #contact-form textarea,
+  #contact-form .call {
+    width: 180px;
+    width: 72%;
+  }
+  #contact-form .call {
+    font-size: 80%;
+  }
+  #contact-form label {
+    width: 70px;
+    width: 25%;
+    font-size: 80%;
+  }
+}
+
+@media handheld, (max-width: 639px) {
+  #contact-form-div {
+    margin: 0 auto 5px;
+    max-width: 330px;
+  }
+  #contact-form label {
+    width: 22%;
+  }
+  #contact-form input {
+    width: 75%;
+  }
+  #contact-form .form-section-program,
+  #contact-form .form-section-zip,
+  #contact-form .form-section-comments,
+  #contact-form .form-section-submit label,
+  #contact-form .form-section-call label,
+  #contact-form .form-section-submit br {
+    display: none;
+  }
+  #contact-form .form-section-submit,
+  #contact-form .form-section-call {
+    text-align: center;
+  }
+  #contact-form input[type="submit"] {
+    width: 95%;
+    max-width: 300px;
+    font-size: 17px;
+    height: 3.4em;
+    white-space: normal;
+  }
+  #contact-form .call {
+    width: 95%;
+    max-width: 300px;
+    font-size: 17px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    margin: 16px 0 5px;
+    padding: 5px 2px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    letter-spacing: normal;
+    height: 3.4em;
+    color: #F0F0F0;
+    background-color: #103068;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+    border: 3px solid rgba(0,0,0,0.50);
+    border-top: none;
+    text-shadow: 1px -1px 3px rgba(15, 0, 15, 0.7), -1px 1px 3px rgba(15, 0, 15, 0.7);
+    box-shadow:
+      3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+      3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+      -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
+      -3px -3px 15px 1px rgba(150, 150, 220, 0.5),
+      1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+      1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+      -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
+      -1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset
+    ;
+  }
+  #contact-form .call a {
+    display: block;
+    line-height: 2.5em;
+  }
+  #contact-form .call a:hover {
+    text-decoration: none;
+  }
+  #contact-form .call:hover {
+    background-color: #062070;
+  }
+  #contact-form .call:active {
+    background-color: #041445;
+  }
+  
 }

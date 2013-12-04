@@ -157,9 +157,9 @@
 	      <div class="section listbox">
 		      <ul class="checkmark">
 		        <h3 style="margin-top: 0;">Included in the program:</h3>
-		        <li>728 hours of didactic lecture</li>
-		        <li>620 hours <span class="">guaranteed</span> internship</li>
-		        <li>80 hours of didactic observation</li>
+		        <li>608 hours of didactic lecture</li>
+		        <li>640 hours <span class="">guaranteed</span> internship</li>
+		        <li>32 hours of didactic observation</li>
 		        <li>Completion of PALS, ACLS, ITLS, GEMS, and EMPACT certifications</li>
 		      </ul>
 	      </div>
