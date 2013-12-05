@@ -2,12 +2,29 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 if (empty($handle)) $handle = db_connect();
 
-function get_course_dates($handle,
-$course_abbr, $course_types, $count_max = false) {
+function course_date_query($handle, $course_abbr, $type) {
+  $results = basic_query($handle,
+    array("DATE_FORMAT(thedate, '%M %D, %Y') as date"),
+    'start_dates',
+    array(
+      'type = :type',
+      'course = :course',
+      "thedate >= '" . date('Y-m-d') . "'",
+    ),
+    'thedate ASC',
+    0,
+    array(':type' => $type, ':course' => $course_abbr)
+  );
+  $results = array_column($results, 'date');
+  return $results;
+};
+
+function get_course_dates($handle, $course_abbr, $course_types, $count_max = false) {
 
   $max = 0;
   $types_list = array();
 
+  /*
   $date_query = function($handle, $course_abbr, $type) {
     $results = basic_query($handle,
       array("DATE_FORMAT(thedate, '%M %D, %Y') as date"),
@@ -24,9 +41,10 @@ $course_abbr, $course_types, $count_max = false) {
     $results = array_column($results, 'date');
     return $results;
   };
+  */
 
   foreach ($course_types as $type) {
-    $tmp = $date_query($handle, $course_abbr, $type);
+    $tmp = course_date_query($handle, $course_abbr, $type);
 
     if ($count_max && count($tmp) > $max) {
       $max = count($tmp);
@@ -41,6 +59,12 @@ $course_abbr, $course_types, $count_max = false) {
   return $types_list;
 }
 
+function course_date_add_html(&$value, $key, $lineht) {
+  $value =
+    "<div class='course-start-date' style='line-height: $lineht';>$value</div>"
+  ;
+}
+
 function get_course_dates_list($handle, $course_abbr, $course_types) {
   $output = array();
 
@@ -53,6 +77,7 @@ function get_course_dates_list($handle, $course_abbr, $course_types) {
     $lineht = $max / count($date_list) * 1.25;
 
     // add html to every value
+    /*
     array_walk(
       $date_list,
       function(&$value, $key, $lineht) {
@@ -61,8 +86,17 @@ function get_course_dates_list($handle, $course_abbr, $course_types) {
         ;
       }, $lineht
     );
+    */
 
-    $output[$type] = implode("\n", $date_list);
+    $date_list_html = array();
+    foreach ($date_list as $date) {
+      echo "Looping...";
+      $date_list_html[] = 
+	"<div class='course-start-date' style='line-height: $lineht';>$date</div>"
+      ;
+    }
+
+    $output[$type] = implode("\n", $date_list_html);
 
     if (count($date_list) < $max) {
       //$output[$type] .= str_repeat( '<br />', $max - count($date_list) );

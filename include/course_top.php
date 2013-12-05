@@ -76,8 +76,8 @@
 	        </a>
           <?php endif; ?>
           <?php if ($buttons['Skills Videos']): ?>
-	        <a href="/resources/<?= strtolower($course_abbr) ?>/?section=videos" class="btn3 lines-1">
-	          <div>Skills Videos</div>
+	        <a href="/resources/<?= strtolower($course_abbr) ?>/?section=videos" class="btn3 lines-2">
+	          <div>Skills<br />Videos</div>
             <div></div><div></div><div></div><div></div>
 	        </a>
           <?php endif; ?>

@@ -1,18 +1,30 @@
 <?php
 //page variables - change as needed for this page
 $title		= 'Phlebotomy Career Training';
-$description	= '';
+$description	= null;
 
 $headline = 'Get the Skills to Be a Certified Phlebotomy Technician';
 $subhead = 'Clinical Externships Start in as Little as 2 Weeks';
 
 $program_of_interest = 'Phlebotomy';
+$program_abbreviation = 'CPT';
 
-include_once('includes/header.php');
+$hideExternalSites = true;
+$hideTestimonials = false;
+
+$key_values = array(
+);
+
+$zip_radius = 75;
+
+$video_numbers = array(
+);
+
+include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/phlebotomy-hero.jpg" alt="Phlebotomy careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/phlebotomy-top.jpg" alt="Phlebotomy careers">
 
 <p>
 	Phlebotomists work directly with patients to collect and process blood specimens for laboratory testing. Professionals in this field play an important role in the clinical laboratory and contribute to the comfort, safety and care of patients.
@@ -56,7 +68,7 @@ include_once('includes/header.php');
 	<li>Part-Time Program can be completed in <strong>6 weeks</strong>, externship starts at 4 weeks</li>
 </ul>
 
-<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/fast-response-photostrip.jpg" alt="Fast Response health care careers">
+<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/phlebotomy-photostrip.jpg" alt="Fast Response health care careers">
 
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
@@ -71,7 +83,7 @@ include_once('includes/header.php');
 <h4>Get More Information&#8230;</h4>
 
 <p>
-	If you're interested in learning more about a career in phlebotomy, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative would be happy to answer any questions you have and can assist you with everything from scheduling to payment plans.
+	If you're interested in learning more about a career in phlebotomy, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative will be happy to answer any questions you have and can assist you with everything from scheduling to payment plans.
 </p>
 <p>
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.
@@ -79,6 +91,4 @@ include_once('includes/header.php');
 
 
 
-<?php
-include('includes/footer.php');
-?>
+<?php include_once('../includes/footer.php'); ?>
