@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="/js/contactform.js"></script>
 
-<form id="contact-form" action="" method="post" onsubmit="return validate(this);">
+<form id="contact-form" action="/include/course_contact_emailer.php" method="post" onsubmit="return validate(this);">
   <fieldset>
     <legend>Contact Us</legend>
     <div class="form-section-program">
@@ -23,7 +23,7 @@
       <br />
     </div>
     <label for="form-name">Name</label>
-    <input type="text" id="form-name" name="full_name" required="required" />
+    <input type="text" id="form-name" name="name" required="required" />
     <br />
     <label for="form-email">Email</label>
     <input type="email" id="form-email" name="email" required="required" />
@@ -43,8 +43,10 @@
       <br />
     </div>
     <div class="form-section-submit">
+      <label id="loading"></label>
+      <div id="output"></div>
       <label for="form-submit"></label>
-      <input type="submit" id="form-submit" name="submit" title="Submit" value="Get More Information" class="glow-lightblue" />
+      <input type="submit" id="form-submit" name="submit" title="Submit" value="Get More Information" class="innerglow-orange" />
       <br />
     </div>
     <div class="form-section-call">
@@ -55,3 +57,74 @@
     </div>
   </fieldset>
 </form>
+
+<script type="text/javascript">  
+/* <![CDATA[ */    
+
+$(document).ready(function() {
+  var form = $('#contact-form');
+  var output = $('#output');
+  var loadingimgdiv = $('#loading');
+  var loadingimgid = 'loadingimg';
+
+  function displayOutput(data) {
+	  if ( output.height() ) {
+	    output.slideUp(500);
+	  } 
+	  else output.hide();
+
+	  $('#'+loadingimgid).fadeOut(300, function() {
+	    $(this).remove();
+	    $('input').prop('disabled', true);
+	    $('textarea').prop('disabled', true);
+
+	    var i = setInterval(function() {
+	      if ( !output.is(':visible') ) {
+		      output.html(data).slideDown(500);
+		      clearInterval(i);
+	      }
+	    }, 40);    
+	  }); // end loading image fadeOut
+  }
+
+  function evalJS(obj) {
+    obj.find('script').each(function(i) {
+      eval( $(this).text() );
+    });
+  }
+
+  output.click(function() {
+    output.slideUp(500);
+  });
+
+  form.submit(function() {
+    event.preventDefault();
+
+    loadingimgdiv.append(
+      '<img src="/images/ajax-loader.gif" alt="Currently Loading" id="'+loadingimgid+'" style="margin: 0 auto;" />'
+    );
+
+    var formdata = $(this).serialize();
+
+    $.ajax({
+	    type: "POST",
+	    url: "/include/course_contact_emailer.php",
+	    data: formdata,
+      dataType: 'html',
+
+	    success: function(data, textStatus, jqxhr) {
+        displayOutput(data);
+        evalJS(output);
+	    },
+
+      error: function(jqxhr, textStatus, errorThrown) {
+        displayOutput("<div class=\"error\">There was a problem sending your message. Please try again later.</div>\n");
+      }
+    });
+
+  });
+});
+
+/* ]]> */
+</script>  
+

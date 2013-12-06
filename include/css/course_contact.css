@@ -51,10 +51,12 @@
   font-size: 115%;
   color: #F0F0F0;
   background-color: #103068;
+  background-color: #dd0033;
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
   border: 3px solid rgba(0,0,0,0.50);
   border-top: none;
   text-shadow: 1px -1px 3px rgba(15, 0, 15, 0.7), -1px 1px 3px rgba(15, 0, 15, 0.7);
+  /*
   box-shadow:
     3px 3px 15px 1px rgba(150, 150, 220, 0.5),
     3px -3px 15px 1px rgba(150, 150, 220, 0.5),
@@ -65,12 +67,15 @@
     -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
     -1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset
   ;
+  */
 }
 #contact-form input[type="submit"]:hover {
   background-color: #062070;
+  background-color: #cc0022;
 }
 #contact-form input[type="submit"]:active {
   background-color: #041445;
+  background-color: #dd2f53;
 }
 #contact-form .call {
   display: inline-block;
