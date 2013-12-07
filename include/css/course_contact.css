@@ -41,6 +41,14 @@
   -webkit-box-sizing: border-box;
   display: none;
 }
+#contact-form #loading {
+  vertical-align: top;
+}
+#contact-form #output {
+  display: inline-block;
+  width: 220px;
+  vertical-align: top;
+}
 #contact-form input[type="submit"] {
   border-radius: 15px;
   -moz-border-radius: 15px;

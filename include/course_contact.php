@@ -5,8 +5,6 @@
   );
 ?>
 
-<script type="text/javascript" src="/js/contactform.js"></script>
-
 <form id="contact-form" action="/include/course_contact_emailer.php" method="post" onsubmit="return validate(this);">
   <fieldset>
     <legend>Contact Us</legend>
@@ -57,6 +55,12 @@
     </div>
   </fieldset>
 </form>
+
+<script type="text/javascript">
+window.jQuery || document.write(
+  '<script src="/js/jquery-1.10.2.min.js"><\/script>'
+);
+</script>
 
 <script type="text/javascript">  
 /* <![CDATA[ */    
