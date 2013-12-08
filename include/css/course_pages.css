@@ -249,4 +249,7 @@
   .article-box.cols-2 .body li {
     width: 95%;
   }
+  .bottom-image {
+    display: none;
+  }
 }

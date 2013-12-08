@@ -83,16 +83,32 @@ function ValidateEmail($email) {
 
 function FormatPhone($phone) {
   // replace extra chars common in phone numbers with spaces
-  $test = strtr($phone, "()-+", "    ");
+  $test = strtr($phone, '()-+x', '     ');
   // strip all spaces
-  $test = str_replace(" ", "", $test);
+  $test = str_replace(' ', '', $test);
 
-  // now validate: string of at least 10 numbers
-  if (strlen($test) >= 10 &&
-  FALSE !== filter_var((int)$test, FILTER_VALIDATE_INT)) {
-    $test =
-      substr($tmp, 0, 3) . '-' . substr($test, 3, 3) . '-' . substr($test, 7);
-    return $test;
+  // validate: only numbers left
+  if (FALSE !== filter_var((int)$test, FILTER_VALIDATE_INT)) {
+
+    // chop off a leading 1 if present
+    if (strlen($test) == 11 && substr($test, 0, 1) == '1') {
+      $test = substr($test, 1);
+    }
+
+    // insert hyphens for AAA-PPP-SSSS format, then return it
+    if (strlen($test) == 10) {
+      $test =
+	substr($test, 0, 3) . '-' . substr($test, 3, 3) . '-' . substr($test, 6);
+      return $test;
+    }
+
+    else {
+      // we're not sure what format they entered the phone number in,
+      // so just return the original text they entered.
+      // it's guaranteed the only non-digits are ()-+x and space
+      return $phone;
+    }
+
   }
 
   return FALSE;

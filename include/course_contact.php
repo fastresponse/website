@@ -33,7 +33,6 @@
       <label for="form-zip">Zipcode</label>
       <input type="text" id="form-zip" name="zip" required="required" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);" />
       <div id="zipcheck"></div>
-      <br />
     </div>
     <div class="form-section-comments">
       <label for="form-comments">Questions<br />and<br />Comments</label>
@@ -62,6 +61,8 @@ window.jQuery || document.write(
 );
 </script>
 
+<script type="text/javascript" src="/js/contactform.js"></script>
+
 <script type="text/javascript">  
 /* <![CDATA[ */    
 
@@ -69,15 +70,14 @@ $(document).ready(function() {
   var form = $('#contact-form');
   var output = $('#output');
   var loadingimgdiv = $('#loading');
-  var loadingimgid = 'loadingimg';
+  var loadingimgid = '#loadingimg';
 
   function displayOutput(data) {
 	  if ( output.height() ) {
-	    output.slideUp(500);
+	    output.html('');
 	  } 
-	  else output.hide();
 
-	  $('#'+loadingimgid).fadeOut(300, function() {
+	  $(loadingimgid).fadeOut(300, function() {
 	    $(this).remove();
 	    $('input').prop('disabled', true);
 	    $('textarea').prop('disabled', true);
