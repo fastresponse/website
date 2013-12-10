@@ -30,6 +30,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 	  <div class="article-box">
       <div class="title">
         <div class="title-border">
+          <h2>Five Week Course</h2>
           <h1>Full-time Schedule</h1>
 		      <h2>Day classes</h2>
         </div>
@@ -47,6 +48,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
     </div><!-- /article-box --><div class="article-box">
       <div class="title">
         <div class="title-border">
+          <h2>Eight Week Course</h2>
           <h1>Part-time Schedule</h1>
 		      <h2>Evening classes</h2>
         </div>
@@ -70,7 +72,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       </div>
       <div class="body">
         <ul>
-          <li>NREMT Certification pass rate of 91% on <span style="white-space: nowrap;">first attempt</span> <span style="white-space: nowrap; font-size: 90%">(3rd quarter 2013)</span></li>
+          <li>NREMT Certification pass rate exceeds national average <span style="font-size: 85%;">(86% vs 74% Q3 2013)</span></li>
 		      <li>Maximum student to instructor <span style="white-space: nowrap;">ratio of 10:1</span></li>
           <li>Day and evening classes</li>
 		      <li>Flexible payment options</li>

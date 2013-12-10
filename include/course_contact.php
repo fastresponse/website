@@ -31,7 +31,7 @@
     <br />
     <div class="form-section-zip">
       <label for="form-zip">Zipcode</label>
-      <input type="text" id="form-zip" name="zip" required="required" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);" />
+      <input type="text" id="form-zip" name="zip" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);" />
       <div id="zipcheck"></div>
     </div>
     <div class="form-section-comments">
@@ -44,12 +44,11 @@
       <div id="output"></div>
       <label for="form-submit"></label>
       <input type="submit" id="form-submit" name="submit" title="Submit" value="Get More Information" class="innerglow-orange" />
-      <br />
     </div>
     <div class="form-section-call">
       <label for="form-call"></label>
       <div class="call" id="form-call">
-        <a href="tel://1-800-637-7387">Or Call <span class="phone-number">1-800-637-7387</span></a>
+        <a href="tel://1-800-637-7387">Phone <span class="phone-number">1-800-637-7387</span></a>
       </div>
     </div>
   </fieldset>
@@ -71,23 +70,15 @@ $(document).ready(function() {
   var output = $('#output');
   var loadingimgdiv = $('#loading');
   var loadingimgid = '#loadingimg';
+  var submitid = '#form-submit';
 
   function displayOutput(data) {
-	  if ( output.height() ) {
-	    output.html('');
-	  } 
-
 	  $(loadingimgid).fadeOut(300, function() {
 	    $(this).remove();
 	    $('input').prop('disabled', true);
+	    $('select').prop('disabled', true);
 	    $('textarea').prop('disabled', true);
-
-	    var i = setInterval(function() {
-	      if ( !output.is(':visible') ) {
-		      output.html(data).slideDown(500);
-		      clearInterval(i);
-	      }
-	    }, 40);    
+		  output.html(data).slideDown(500);
 	  }); // end loading image fadeOut
   }
 
@@ -101,11 +92,16 @@ $(document).ready(function() {
     output.slideUp(500);
   });
 
-  form.submit(function() {
+  form.submit(function(event) {
     event.preventDefault();
 
+    output.show();
+    output.html('');
+
+    loadingimgdiv.show();
     loadingimgdiv.append(
-      '<img src="/images/ajax-loader.gif" alt="Currently Loading" id="'+loadingimgid+'" style="margin: 0 auto;" />'
+      '<img src="/images/ajax-loader.gif" alt="Currently Loading" id="' +
+      loadingimgid.slice(1) + '" style="margin: 0 auto;" />'
     );
 
     var formdata = $(this).serialize();
@@ -117,12 +113,18 @@ $(document).ready(function() {
       dataType: 'html',
 
 	    success: function(data, textStatus, jqxhr) {
-        displayOutput(data);
-        evalJS(output);
+        $(submitid).slideUp(500, function() {
+          $('label[for="' + submitid.slice(1) + '"]').hide();
+          displayOutput(data);
+          evalJS(output);
+        });
 	    },
 
       error: function(jqxhr, textStatus, errorThrown) {
-        displayOutput("<div class=\"error\">There was a problem sending your message. Please try again later.</div>\n");
+        displayOutput(
+          "<div class=\"error\">There was a problem sending your message. " +
+          "Please try again later.</div>\n"
+        );
       }
     });
 

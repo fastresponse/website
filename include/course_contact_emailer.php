@@ -26,6 +26,9 @@ $to_them_ok = 0;
 
 //--- settings ---//
 
+$debug_write_to_file = false;
+$debug_write_filename = 'debug_output.txt';
+
 $send_to_us_from = 'autoreply@fastresponse.org';
 
 $send_to_them_auto = 1;
@@ -83,7 +86,7 @@ function ValidateEmail($email) {
 
 function FormatPhone($phone) {
   // replace extra chars common in phone numbers with spaces
-  $test = strtr($phone, '()-+x', '     ');
+  $test = strtr($phone, '()-.+x', '      ');
   // strip all spaces
   $test = str_replace(' ', '', $test);
 
@@ -98,14 +101,17 @@ function FormatPhone($phone) {
     // insert hyphens for AAA-PPP-SSSS format, then return it
     if (strlen($test) == 10) {
       $test =
-	substr($test, 0, 3) . '-' . substr($test, 3, 3) . '-' . substr($test, 6);
+	      substr($test, 0, 3) . '-' .
+        substr($test, 3, 3) . '-' .
+        substr($test, 6)
+      ;
       return $test;
     }
 
     else {
       // we're not sure what format they entered the phone number in,
       // so just return the original text they entered.
-      // it's guaranteed the only non-digits are ()-+x and space
+      // it's guaranteed the only non-digits are ()-.+x and space
       return $phone;
     }
 
@@ -160,28 +166,39 @@ $messages = <<<ENDMSGS
 <b>Phone:</b> $form_phone
 <b>Zip:</b> $form_zip
 <b>Program:</b> $form_program
-<b>Comments:</b> $form_comments
+<b>Comments:</b>
+$form_comments
 ENDMSGS;
 
-$messages = nl2br($messages);
 
 //$to = $courses[$subject]['email'];
 $to = $courses['Generic']['email'];
 
-$mail = new PHPMailer(); 
+if ($debug_write_to_file) {
+  $output  = "From: $form_name ($form_email)\n";
+  $output .= "To: $form_name ($to)\n";
+  $output .= "Subject: New Lead: $form_program\n";
+  $output .= "Body:\n\n$messages\n";
 
-$mail->SetFrom($form_email);
-$mail->AddReplyTo($form_email, $form_name);
-$mail->AddAddress($to, $form_name);
-$mail->Subject = "New Lead: $form_program";
-$mail->Body = $messages;
-$mail->IsMail();
-$mail->IsHTML();
+  file_put_contents($debug_write_filename, $output);
 
-$to_us_ok = $mail->Send();
+  $to_us_ok = true;
+}
+else {
+  $mail = new PHPMailer(); 
+
+  $mail->SetFrom($form_email, $form_name);
+  $mail->AddAddress($to);
+  $mail->Subject = "New Lead: $form_program";
+  $mail->Body = nl2br($messages);
+  $mail->IsMail();
+  $mail->IsHTML();
+
+  $to_us_ok = $mail->Send();
+}
 
 if ($to_us_ok) {
-  $success_output = 'Your message has been sent. Thank you!';
+  $success_output = 'Your request has been sent. Thank you!';
 }
 
 //--- end send email to us from user ---//
@@ -198,15 +215,28 @@ if ($to_us_ok && $send_to_them_auto) {
     $send_to_them_dir . $courses['Generic']['page']
   );
 
-  $mail = new PHPMailer(); 
+  if ($debug_write_to_file) {
+    $output  = "\n\n\n";
+    $output .= "From: $send_to_them_name ($send_to_them_email)\n";
+    $output .= "To: $form_name ($form_email)\n";
+    $output .= "Subject: $send_to_them_subject\n";
+    $output .= "Body (text):\n\n " . strip_tags($messages) . "\n\n";
+    $output .= "Body (html):\n\n$messages\n";
 
-  $mail->SetFrom($send_to_them_from, $send_to_them_name);
-  $mail->AddReplyTo($send_to_them_from, $send_to_them_name);
-  $mail->AddAddress($form_email, $form_name);
-  $mail->Subject = $send_to_them_subject;
-  $mail->MsgHTML($messages);
-  $mail->AltBody = strip_tags($messages);
-  $mail->IsMail();
+    file_put_contents($debug_write_filename, $output, FILE_APPEND);
+
+    $to_them_ok = true;
+  }
+  else {
+    $mail = new PHPMailer(); 
+
+    $mail->SetFrom($send_to_them_from, $send_to_them_name);
+    $mail->AddAddress($form_email, $form_name);
+    $mail->Subject = $send_to_them_subject;
+    $mail->MsgHTML($messages);
+    $mail->AltBody = strip_tags($messages);
+    $mail->IsMail();
+  }
 
   $to_them_ok = $mail->Send();
 
