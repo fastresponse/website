@@ -64,42 +64,34 @@
 	    <div class="right sidebar">
 	      <div class="quicklinks2">
           <?php if ($buttons['Course Info Packet']): ?>
-	        <a href="/pdfs/<?= $course_abbr ?> - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
-	          <div>Course Info<br />Packet</div>
-            <div></div><div></div><div></div><div></div>
-	        </a>
+          <div class="basic-button innerglow-lightblue">
+            <a href="/pdfs/<?= $course_abbr ?> - Course Info Packet.pdf" target="_blank"><div>Course Info Packet</div></a>
+          </div>
           <?php endif; ?>
           <?php if ($buttons['Student Resources']): ?>
-	        <a href="/resources/<?= strtolower($course_abbr) ?>/" class="btn3 lines-2">
-	          <div>Student<br />Resources</div>
-            <div></div><div></div><div></div><div></div>
-	        </a>
+          <div class="basic-button innerglow-lightblue">
+            <a href="/resources/<?= strtolower($course_abbr) ?>/"><div>Student Resources</div></a>
+          </div>
           <?php endif; ?>
           <?php if ($buttons['Skills Videos']): ?>
-	        <a href="/resources/<?= strtolower($course_abbr) ?>/?section=videos" class="btn3 lines-2">
-	          <div>Skills<br />Videos</div>
-            <div></div><div></div><div></div><div></div>
-	        </a>
+          <div class="basic-button innerglow-lightblue">
+            <a href="/resources/<?= strtolower($course_abbr) ?>/?section=videos"><div>Skills Videos</div></a>
+          </div>
           <?php endif; ?>
           <?php if ($buttons['Photo Gallery']): ?>
-	        <a href="/gallery/index.php/<?= $course_abbr ?>" class="btn3 lines-2">
-	          <div>Photo<br />Gallery</div>
-            <div></div><div></div><div></div><div></div>
-	        </a>
+          <div class="basic-button innerglow-lightblue">
+            <a href="/gallery/index.php/<?= $course_abbr ?>"><div>Photo Gallery</div></a>
+          </div>
           <?php endif; ?>
           <?php if ($buttons['Contact Us']): ?>
-	        <a href="/school/info/" class="btn2 lines-1">
-	          <img src="/images/buttons/envelope-icon.png" alt="" />
-	          <div>Contact Us</div>
-            <div></div><div></div><div></div><div></div>
-	        </a>
+          <div class="basic-button image-button glow-lightblue">
+            <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+          </div>
           <?php endif; ?>
           <?php if ($buttons['Facebook']): ?>
-	        <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	          <img src="/images/buttons/facebook-icon.png" alt="" />
-	          <div>Visit Us On<br />Facebook</div>
-            <div></div><div></div><div></div><div></div>
-	        </a>
+          <div class="basic-button image-button glow-lightblue">
+            <a href="http://www.facebook.com/FastResponseSchool"><div>Visit Us On Facebook</div><img src="/images/buttons/facebook-icon.png" alt="" /></a>
+          </div>
           <?php endif; ?>
 	      </div> <!-- /quicklinks -->
 	    </div> <!-- /right sidebar -->

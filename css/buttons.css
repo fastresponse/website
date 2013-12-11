@@ -1,6 +1,134 @@
 /* really nice looking buttons in all but IE <= 8  */
 
 
+
+/* usage:
+  <div class="basic-button innerglow-lightblue">
+    <a href=""><div>Button Text</div></a>
+  </div>
+ * the <a> and <div> start and end tags MUST BE TOUCHING
+ */
+
+.basic-button {
+  display: inline-block;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  margin-bottom: 30px;
+  width: 94%;
+  height: 60px;
+  color: white;
+  background-color: #103068;
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.40), rgba(255,255,255,0) 90%);
+  border: 3px solid rgba(0,0,0,0.50);
+  border-top: none;
+  text-shadow: 1px -1px 3px rgba(15, 0, 15, 0.7), -1px 1px 3px rgba(15, 0, 15, 0.7);
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Helvetica", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7em;
+}
+
+.basic-button.image-button {
+  height: 95px;
+  line-height: 1.1em;
+  z-index: 1;
+  position: relative;
+}
+
+.basic-button:hover {
+  background-color: #062070;
+}
+
+/* needs to be height 100% so the whole button is clickable */
+.basic-button a {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  text-decoration: none;
+  margin-bottom: 0;
+  height: 100%;
+  position: relative;
+}
+
+/* this creates an element before the div
+ * it has no width or content
+ * since both are inline(-block), we can vertical-align them
+ * voila, the text is vertically aligned
+ * this inside div cannot be height 100%
+ */
+.basic-button a:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.basic-button.image-button a:before {
+  height: 0;
+  content: none;
+}
+.basic-button.image-button a:after {
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 60px;
+  background-color: rgba(255, 0, 0, 0.5);
+  position: relative;
+  top: -80px;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border: solid 1px rgba(160, 195, 230, 0.5);
+  background-color: #001C63;
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  -moz-box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  -webkit-box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  z-index: 2;
+}
+
+.basic-button a div {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.basic-button.image-button a div {
+  vertical-align: top;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  box-sizing: border-box;
+  height: 45px;
+  width: 100%;
+  padding-top: 7px;
+  font-size: 15px;
+  position: relative;
+  z-index: 4;
+}
+
+.basic-button.image-button a img {
+  width: 60px;
+  height: 40px;
+  padding: 10px;
+  position: relative;
+  top: -15px;
+  z-index: 3;
+}
+
 /* begin sidebar buttons */
 
 /* note: border-radius cannot be set to "inherit", so we have to
@@ -77,6 +205,7 @@
   display: inline-block;
   cursor: pointer;
   /* lightblue glow default */
+  /*
   box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
               3px -3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
@@ -89,6 +218,7 @@
               3px -3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  */
   border: 3px solid rgba(0,0,0,0.50);
   border-top: none;
   border-radius: 20px;
@@ -147,6 +277,7 @@
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border: solid 1px rgba(160, 195, 230, 0.5);
+  /*
   box-shadow: 1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
               1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset,
               -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
@@ -159,6 +290,7 @@
               1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset,
               -1px 1px 10px 1px rgba(160, 195, 230, 0.5) inset,
               -1px -1px 10px 1px rgba(160, 195, 230, 0.5) inset;
+  */
   z-index: 3;
 }
 
@@ -563,6 +695,10 @@
 .btn.glow-lightblue,
 .btn2.glow-lightblue div:nth-of-type(3),
 .btn3.glow-lightblue div:nth-of-type(3) {
+  box-shadow: 0 0 15px 5px rgba(150, 150, 220, 1.0);
+  -moz-box-shadow: 0 0 15px 5px rgba(150, 150, 220, 1.0);
+  -webkit-box-shadow: 0 0 15px 5px rgba(150, 150, 220, 1.0);
+  /*
   box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
               3px -3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
@@ -575,29 +711,20 @@
               3px -3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
               -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
+  */
 }
 
 .innerglow-orange {
   box-shadow:
     0 0 15px 5px rgba(140, 80, 30, 1.0),
-    0 0 10px 2px rgba(255, 190, 126, 1.0) inset
-  /*
-    3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	  3px -3px 15px 2px rgba(140, 80, 30, 0.5),
-	  -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
-	  -3px -3px 15px 2px rgba(140, 80, 30, 0.5),
-    1px 1px 10px 1px rgba(255, 190, 126, 0.5) inset,
-    1px -1px 10px 1px rgba(255, 190, 126, 0.5) inset,
-    -1px 1px 10px 1px rgba(255, 190, 126, 0.5) inset,
-    -1px -1px 10px 1px rgba(255, 190, 126, 0.5) inset
-  */
+    0 0 11px 4px rgba(255, 190, 126, 1.0) inset
   ;
 }
   
 .innerglow-lightblue {
   box-shadow:
     0 0 15px 5px rgba(150, 150, 220, 1.0),
-    0 0 10px 2px rgba(160, 195, 230, 1.0) inset
+    0 0 11px 4px rgba(160, 195, 230, 1.0) inset
   ;
 }
   
