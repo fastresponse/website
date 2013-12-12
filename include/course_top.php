@@ -64,22 +64,22 @@
 	    <div class="right sidebar">
 	      <div class="quicklinks2">
           <?php if ($buttons['Course Info Packet']): ?>
-          <div class="basic-button innerglow-lightblue">
+          <div class="basic-button innerglow-lightblue glow-lightblue">
             <a href="/pdfs/<?= $course_abbr ?> - Course Info Packet.pdf" target="_blank"><div>Course Info Packet</div></a>
           </div>
           <?php endif; ?>
           <?php if ($buttons['Student Resources']): ?>
-          <div class="basic-button innerglow-lightblue">
+          <div class="basic-button glow-lightblue innerglow-lightblue">
             <a href="/resources/<?= strtolower($course_abbr) ?>/"><div>Student Resources</div></a>
           </div>
           <?php endif; ?>
           <?php if ($buttons['Skills Videos']): ?>
-          <div class="basic-button innerglow-lightblue">
+          <div class="basic-button glow-lightblue innerglow-lightblue">
             <a href="/resources/<?= strtolower($course_abbr) ?>/?section=videos"><div>Skills Videos</div></a>
           </div>
           <?php endif; ?>
           <?php if ($buttons['Photo Gallery']): ?>
-          <div class="basic-button innerglow-lightblue">
+          <div class="basic-button glow-lightblue innerglow-lightblue">
             <a href="/gallery/index.php/<?= $course_abbr ?>"><div>Photo Gallery</div></a>
           </div>
           <?php endif; ?>

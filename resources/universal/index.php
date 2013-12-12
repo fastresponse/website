@@ -130,6 +130,9 @@
       height: 100%;
       position: relative;
     }
+    .hidden {
+      display: none;
+    }
     #interviewvideo {
       text-align: center;
     }
@@ -197,7 +200,7 @@
 
 </head>
 
-<body onLoad="if (!navigated) navigateToSection('main', '<?= $section ?>', 'sidebar_buttons', 'sidebar_btn_<?= $section ?>', 'glow-yellow');">
+<body onLoad="//if (!navigated) navigateToSection('main', '<?= $section ?>', 'sidebar_buttons', 'sidebar_btn_<?= $section ?>', 'glow-yellow');">
 
   <div id="page">
 
@@ -218,16 +221,15 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
+      <!--
 	    <a href="#" id="sidebar_btn_carsvcs" class="btn3 lines-2 glow-yellow" onClick="navigateToSection('main', 'carsvcs', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>CAREER<br />SERVICES</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
-
 	    <a href="#" id="sidebar_btn_resumes" class="btn3 lines-1" onClick="navigateToSection('main', 'resumes', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>RESUMES</div>
 	      <div></div><div></div><div></div><div></div>
 	    </a>
-
 	    <a href="#" id="sidebar_btn_interviews" class="btn3 lines-2" onClick="navigateToSection('main', 'interviews', 'sidebar_buttons', this.id, 'glow-yellow');">
 	      <div>INTERVIEW<br />SKILLS</div>
 	      <div></div><div></div><div></div><div></div>
@@ -252,18 +254,49 @@
 	      </a>
             <?php endif; ?>
 
+      -->
+
+      <div class="basic-button glow-yellow innerglow-lightblue">
+        <a href="#" id="sidebar_btn_carsvcs"><div>CAREER SERVICES</div></a>
+      </div>
+
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="#" id="sidebar_btn_resumes"><div>RESUMES</div></a>
+      </div>
+
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="#" id="sidebar_btn_interviews"><div>INTERVIEW SKILLS</div></a>
+      </div>
+
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="#" id="sidebar_btn_jobsearch"><div>JOB SEARCH</div></a>
+      </div>
+
+      <?php if (file_exists("../$course/externship_certification.php")): ?>
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="#" id="sidebar_btn_extcert"><div>EXTERNSHIP &amp; CERTIFICATION</div></a>
+      </div>
+      <?php endif; ?>
+
+      <?php if (file_exists("../$course/videos.php")): ?>
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="#" id="sidebar_btn_videos"><div>VIDEOS</div></a>
+      </div>
+      <?php endif; ?>
+
+
           </div>
 	</div>
 
 	<div class="leftcontent2" style="position: relative;">
 
-          <!-- show by default (because it doesn't have the "hidden" class -->
-	  <div id="carsvcs">
+    <!-- show by default (because it doesn't have the "hidden" class -->
+	  <div id="carsvcs" data-section="main">
 	    <h1><?= $course_title ?> Career Services</h1>
 	    <?php include_once("../universal/job_seeking_skills.php") ?>
 	  </div>
 
-	  <div id="resumes" class="hidden">
+	  <div id="resumes" data-section="main" class="hidden">
 
 	    <div class="smallnavbar" style="margin-bottom: 2em;">
 	      <div id="resumeguidelines_nav" class="column col6 underline pointer highlight" onClick="navigateToSection('resumes', 'resumeguidelines', 'resume_nav', this.id, 'highlight');">
@@ -312,7 +345,7 @@
               
 	  </div>
 
-	  <div id="interviews" class="hidden">
+	  <div id="interviews" data-section="main" class="hidden">
 
 	    <div class="smallnavbar" style="margin-bottom: 2em;">
 	      <div id="interviewguidelines_nav" class="column col4 underline pointer highlight" onClick="navigateToSection('interview', 'interviewguidelines', 'interview_nav', this.id, 'highlight');">
@@ -343,7 +376,7 @@
 
 	  </div>
 
-	  <div id="jobsearch" class="hidden">
+	  <div id="jobsearch" data-section="main" class="hidden">
             
 	    <div style="float: left; width: 100%;">
 	      <div style="float: right; width: 22%;">
@@ -405,13 +438,13 @@
 	  </div>
 
 	  <?php if (file_exists("../$course/externship_certification.php")): ?>
-	    <div id="extcert" class="hidden">
+	    <div id="extcert" data-section="main" class="hidden">
 	      <?php include_once("../$course/externship_certification.php") ?>
 	    </div>
 	  <?php endif; ?>
 
 	  <?php if (file_exists("../$course/videos.php")): ?>
-	    <div id="videos" class="hidden" style="position: relative;">
+	    <div id="videos" data-section="main" class="hidden" style="position: relative;">
 	      <?php include_once("../$course/videos.php") ?>
 	    </div>
 	  <?php endif; ?>
@@ -432,6 +465,31 @@
     </div> <!-- /footer -->
 
   </div> <!-- /page -->
+
+  <script type="text/javascript">
+  window.jQuery || document.write(
+    '<script src="/js/jquery-1.10.2.min.js"><\/script>'
+  );
+  </script>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('[id^="sidebar_btn_"]').click(function(event) {
+      var tgt_id = this.id.slice(12); // remove "sidebar_btn_"
+      var section = $('#'+tgt_id).attr('data-section');
+
+      // hide all elements in this group, then unhide the one we want
+      $('[data-section="' + section + '"]').addClass('hidden');
+      $('#'+tgt_id).removeClass('hidden');
+
+      // now do the same for glow-yellow on the sidebar buttons
+      $('[id^="sidebar_btn_"]').parent('.basic-button')
+        .removeClass('glow-yellow').addClass('glow-lightblue');
+      $(this).parent('.basic-button')
+        .removeClass('glow-lightblue').addClass('glow-yellow');
+    });
+  });
+  </script>
 
 </body>
 </html>

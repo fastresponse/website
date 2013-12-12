@@ -43,7 +43,7 @@
       <label id="loading"></label>
       <div id="output"></div>
       <label for="form-submit"></label>
-      <input type="submit" id="form-submit" name="submit" title="Submit" value="Get More Information" class="innerglow-orange" />
+      <input type="submit" id="form-submit" name="submit" title="Submit" value="Get More Information" class="inner-outer-glow-orange" />
     </div>
     <div class="form-section-call">
       <label for="form-call"></label>

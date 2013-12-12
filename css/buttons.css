@@ -3,7 +3,7 @@
 
 
 /* usage:
-  <div class="basic-button innerglow-lightblue">
+  <div class="basic-button glow-lightblue innerglow-lightblue">
     <a href=""><div>Button Text</div></a>
   </div>
  * the <a> and <div> start and end tags MUST BE TOUCHING
@@ -32,13 +32,6 @@
   line-height: 1.7em;
 }
 
-.basic-button.image-button {
-  height: 95px;
-  line-height: 1.1em;
-  z-index: 1;
-  position: relative;
-}
-
 .basic-button:hover {
   background-color: #062070;
 }
@@ -54,6 +47,7 @@
   margin-bottom: 0;
   height: 100%;
   position: relative;
+  z-index: 5;
 }
 
 /* this creates an element before the div
@@ -69,6 +63,25 @@
   height: 100%;
 }
 
+.basic-button a div {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding: 5px 10px;
+}
+
+
+/* image-buttons have a small icon inside them */
+
+.basic-button.image-button {
+  height: 95px;
+  line-height: 1.1em;
+  z-index: 4;
+  position: relative;
+}
+
 .basic-button.image-button a:before {
   height: 0;
   content: none;
@@ -78,7 +91,6 @@
   display: inline-block;
   width: 80px;
   height: 60px;
-  background-color: rgba(255, 0, 0, 0.5);
   position: relative;
   top: -80px;
   border-radius: 12px;
@@ -91,16 +103,7 @@
   box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
   -moz-box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
   -webkit-box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
-  z-index: 2;
-}
-
-.basic-button a div {
-  display: inline-block;
-  vertical-align: middle;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  padding: 5px 10px;
+  z-index: 6;
 }
 
 .basic-button.image-button a div {
@@ -117,7 +120,7 @@
   padding-top: 7px;
   font-size: 15px;
   position: relative;
-  z-index: 4;
+  z-index: 8;
 }
 
 .basic-button.image-button a img {
@@ -126,7 +129,7 @@
   padding: 10px;
   position: relative;
   top: -15px;
-  z-index: 3;
+  z-index: 7;
 }
 
 /* begin sidebar buttons */
@@ -623,6 +626,10 @@
 .btn.glow-red,
 .btn2.glow-red div:nth-of-type(3),
 .btn3.glow-red div:nth-of-type(3) {
+  box-shadow: 0 0 15px 5px rgba(140, 0, 30, 1.0);
+  -moz-box-shadow: 0 0 15px 5px rgba(140, 0, 30, 1.0);
+  -webkit-box-shadow: 0 0 15px 5px rgba(140, 0, 30, 1.0);
+  /*
   box-shadow: 3px 3px 15px 2px rgba(140, 0, 30, 0.5),
               3px -3px 15px 2px rgba(140, 0, 30, 0.5),
               -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
@@ -635,12 +642,17 @@
               3px -3px 15px 2px rgba(140, 0, 30, 0.5),
               -3px 3px 15px 2px rgba(140, 0, 30, 0.5),
               -3px -3px 15px 2px rgba(140, 0, 30, 0.5);
+  */
 }
 
 .glow-yellow,
 .btn.glow-yellow,
 .btn2.glow-yellow div:nth-of-type(3),
 .btn3.glow-yellow div:nth-of-type(3) {
+  box-shadow: 0 0 15px 5px rgba(140, 140, 30, 1.0);
+  -moz-box-shadow: 0 0 15px 5px rgba(140, 140, 30, 1.0);
+  -webkit-box-shadow: 0 0 15px 5px rgba(140, 140, 30, 1.0);
+  /*
   box-shadow: 3px 3px 15px 2px rgba(140, 140, 30, 0.5),
 	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
 	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
@@ -653,12 +665,17 @@
 	      3px -3px 15px 2px rgba(140, 140, 30, 0.5),
 	      -3px 3px 15px 2px rgba(140, 140, 30, 0.5),
 	      -3px -3px 15px 2px rgba(140, 140, 30, 0.5);
+  */
 }  
 
 .glow-orange,
 .btn.glow-orange,
 .btn2.glow-orange div:nth-of-type(3),
 .btn3.glow-orange div:nth-of-type(3) {
+  box-shadow: 0 0 15px 5px rgba(140, 80, 30, 1.0);
+  -moz-box-shadow: 0 0 15px 5px rgba(140, 80, 30, 1.0);
+  -webkit-box-shadow: 0 0 15px 5px rgba(140, 80, 30, 1.0);
+  /*
   box-shadow: 3px 3px 15px 2px rgba(140, 80, 30, 0.5),
 	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
 	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
@@ -671,12 +688,17 @@
 	      3px -3px 15px 2px rgba(140, 80, 30, 0.5),
 	      -3px 3px 15px 2px rgba(140, 80, 30, 0.5),
 	      -3px -3px 15px 2px rgba(140, 80, 30, 0.5);
+  */
 }
 
 .glow-blue,
 .btn.glow-blue,
 .btn2.glow-blue div:nth-of-type(3),
 .btn3.glow-blue div:nth-of-type(3) {
+  box-shadow: 0 0 15px 5px rgba(30, 60, 130, 1.0);
+  -moz-box-shadow: 0 0 15px 5px rgba(30, 60, 130, 1.0);
+  -webkit-box-shadow: 0 0 15px 5px rgba(30, 60, 130, 1.0);
+  /*
   box-shadow: 3px 3px 15px 2px rgba(30, 60, 130, 0.5),
               3px -3px 15px 2px rgba(30, 60, 130, 0.5),
               -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
@@ -689,6 +711,7 @@
               3px -3px 15px 2px rgba(30, 60, 130, 0.5),
               -3px 3px 15px 2px rgba(30, 60, 130, 0.5),
               -3px -3px 15px 2px rgba(30, 60, 130, 0.5);
+  */
 }
 
 .glow-lightblue,
@@ -698,36 +721,56 @@
   box-shadow: 0 0 15px 5px rgba(150, 150, 220, 1.0);
   -moz-box-shadow: 0 0 15px 5px rgba(150, 150, 220, 1.0);
   -webkit-box-shadow: 0 0 15px 5px rgba(150, 150, 220, 1.0);
-  /*
-  box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
-              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
-  -moz-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
-              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
-  -webkit-box-shadow: 3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-              3px -3px 15px 1px rgba(150, 150, 220, 0.5),
-              -3px 3px 15px 1px rgba(150, 150, 220, 0.5),
-              -3px -3px 15px 1px rgba(150, 150, 220, 0.5);
-  */
 }
 
-.innerglow-orange {
+
+/* inside glow colors, this allows us to set different colors for
+ * the inside or outside (to highlight the current button for example)
+ * note the normal ones apply to the first child element,
+ * which will need to be the same size as the parent
+ */
+
+.innerglow-orange>*,
+.innerglow-orange-self {
+  box-shadow: 0 0 11px 4px rgba(255, 162, 71, 1.0) inset;
+  -moz-box-shadow: 0 0 11px 4px rgba(255, 162, 71, 1.0) inset;
+  -webkit-box-shadow: 0 0 11px 4px rgba(255, 162, 71, 1.0) inset;
+}
+
+.innerglow-lightblue>*,
+.innerglow-lightblue-self {
+  box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  -moz-box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  -webkit-box-shadow: 0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+}
+
+/* combos to put the same color on both inside and outside on the same element
+ * use this on self-closing elements like img or input
+ */
+
+.inner-outer-glow-orange {
   box-shadow:
     0 0 15px 5px rgba(140, 80, 30, 1.0),
-    0 0 11px 4px rgba(255, 190, 126, 1.0) inset
-  ;
+    0 0 11px 4px rgba(255, 162, 71, 1.0) inset;
+  -moz-box-shadow:
+    0 0 15px 5px rgba(140, 80, 30, 1.0),
+    0 0 11px 4px rgba(255, 162, 71, 1.0) inset;
+  -webkit-box-shadow:
+    0 0 15px 5px rgba(140, 80, 30, 1.0),
+    0 0 11px 4px rgba(255, 162, 71, 1.0) inset;
 }
-  
-.innerglow-lightblue {
+
+.inner-outer-glow-lightblue {
   box-shadow:
     0 0 15px 5px rgba(150, 150, 220, 1.0),
-    0 0 11px 4px rgba(160, 195, 230, 1.0) inset
-  ;
+    0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  -moz-box-shadow:
+    0 0 15px 5px rgba(150, 150, 220, 1.0),
+    0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
+  -webkit-box-shadow:
+    0 0 15px 5px rgba(150, 150, 220, 1.0),
+    0 0 11px 4px rgba(160, 195, 230, 1.0) inset;
 }
-  
 
 /* end of glow colors */
 

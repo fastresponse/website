@@ -82,7 +82,7 @@
 }
 #contact-form input[type="submit"]:hover {
   background-color: #062070;
-  background-color: #cc0022;
+  background-color: #b80000;
 }
 #contact-form input[type="submit"]:active {
   background-color: #041445;
