@@ -55,9 +55,15 @@
           <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_contact.php'); ?>
 	      </div>
 
+        <?php if ($sections['Testimonials']): ?>
 	      <div class="student-testimonials">
           <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_testimonials.php'); ?>
 	      </div>
+        <?php endif; ?>
+
+        <?php if ($sections['Extra']): ?>
+          <?php include_once(getcwd() . '/extra_sections.php'); ?>
+        <?php endif; ?>
 
       </div> <!-- /left sidebar -->
 

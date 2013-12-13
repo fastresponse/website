@@ -65,33 +65,21 @@
 
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
-	    <a href="/pdfs/CMA - Course Info Packet.pdf" target="_blank" class="btn3 lines-2">
-	      <div>Course Info<br />Packet</div>
-        <div></div><div></div><div></div><div></div>
-	    </a>
-	    <!--<a href="/pdfs/CMA - Performance Fact Sheet.pdf" target="_blank" class="btn3 lines-2">
-	      <div>Performance<br />Fact Sheet</div>
-        <div></div><div></div><div></div><div></div>
-	    </a>-->
-      <a href="/resources/cma/" class="btn3 lines-2">
-        <div>Student<br />Resources</div>
-        <div></div><div></div><div></div><div></div>
-	    </a>
-	    <!--<a href="/photos/ma/index.html#medicalassistant" class="btn3 lines-1">-->
-	    <a href="/gallery/index.php/Medical-Assistant" class="btn3 lines-2">
-	      <div>Photo<br />Gallery</div>
-        <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-        <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	      <img src="/images/buttons/facebook-icon.png" alt="" />
-	      <div>Visit Us On<br />Facebook</div>
-        <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="/pdfs/CMA - Course Info Packet.pdf" target="_blank"><div>Course Info Packet</div></a>
+	    </div>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+        <a href="/resources/cma/"><div>Student Resources</div></a>
+	    </div>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="/gallery/index.php/Medical-Assistant"><div>Photo Gallery</div></a>
+	    </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="http://www.facebook.com/FastResponseSchool"><div>Visit Us On Facebook</div><img src="/images/buttons/facebook-icon.png" alt="" /></a>
+      </div>
 	  </div>
 	</div>
 

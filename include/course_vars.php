@@ -16,6 +16,10 @@
   $course_title = '';
   $course_types = array('');
 
+  $sections = array(
+    'Testimonials' => true,
+  );
+
   $buttons = array(
     'Course Info Packet' => true,
     'Student Resources' => true,

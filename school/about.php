@@ -64,39 +64,31 @@
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
 
-	    <a href="/pdfs/Fast Response Catalog 2013.pdf" class="btn3 lines-2">
-	      <div>Course<br />Catalog</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="/pdfs/Fast Response Catalog 2013.pdf"><div>Course Catalog</div></a>
+      </div>
 
 	    <!--
-	    <a href="./faqs.php" class="btn3 lines-1">
-	      <div>FAQs</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="./faqs.php"><div>FAQs</div></a>
+      </div>
 	    -->
 
-	    <a href="./sitemap.php" class="btn3 lines-1">
-	      <div>Sitemap</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="./sitemap.php"><div>Sitemap</div></a>
+      </div>
 
-	    <a href="./location/" class="btn3 lines-1">
-	      <div>Location</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="./location/"><div>Location</div></a>
+      </div>
 
-	    <a href="./info/" class="btn2 lines-1">
-	      <div>Contact Us</div>
-	      <div></div><div></div><div></div><div></div>
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	    </a>
+      <div class="basic-button image-button glow-lightblue">
+	      <a href="./info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
 
-	    <a href="http://www.bppe.ca.gov/about_us/contact.shtml" class="btn2 lines-2">
-	      <div>Contact<br />The BPPE</div>
-	      <div></div><div></div><div></div><div></div>
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	    </a>
+      <div class="basic-button image-button glow-lightblue">
+	      <a href="http://www.bppe.ca.gov/about_us/contact.shtml"><div>Contact The BPPE</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
 
 	  </div>
 	</div>

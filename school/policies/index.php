@@ -58,11 +58,9 @@
 
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button image-button glow-lightblue">
+	      <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
 	  </div>
 	</div>
 

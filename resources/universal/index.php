@@ -91,38 +91,9 @@
 
   </script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/joblist.js"></script>
   <script type="text/javascript" src="/js/frlib.js"></script>
   <script type="text/javascript" src="/js/vidchooser.js"></script>
-
-  <script type="text/javascript">
-    // this "main" does not refer to an element ID, it's just a group name
-    setSection( "main", [
-      "carsvcs", "resumes", "interviews",
-      "jobsearch", "extcert", "videos"
-    ] );
-    setSection( "sidebar_buttons", [
-      "sidebar_btn_carsvcs", "sidebar_btn_resumes", "sidebar_btn_interviews",
-      "sidebar_btn_jobsearch", "sidebar_btn_extcert", "sidebar_btn_videos"
-    ] );
-    setSection( "resumes", [
-      "resumeguidelines", "coverguidelines", "resumekeywords",
-      "cover1", "cover2", "courseresume"
-    ] );
-    setSection( "interview", [
-      "interviewguidelines", "interviewquestions", "interviewthankyou",
-      "interviewvideo"
-    ] );
-    setSection( "resume_nav", [
-      "resumeguidelines_nav", "coverguidelines_nav", "resumekeywords_nav",
-      "cover1_nav", "cover2_nav", "courseresume_nav"
-    ] );
-    setSection( "interview_nav", [
-      "interviewguidelines_nav", "interviewquestions_nav", "interviewthankyou_nav",
-      "interviewvideo_nav"
-    ] );
-  </script>
 
   <style type="text/css">
     iframe {
@@ -200,7 +171,7 @@
 
 </head>
 
-<body onLoad="//if (!navigated) navigateToSection('main', '<?= $section ?>', 'sidebar_buttons', 'sidebar_btn_<?= $section ?>', 'glow-yellow');">
+<body>
 
   <div id="page">
 
@@ -221,66 +192,32 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
-      <!--
-	    <a href="#" id="sidebar_btn_carsvcs" class="btn3 lines-2 glow-yellow" onClick="navigateToSection('main', 'carsvcs', 'sidebar_buttons', this.id, 'glow-yellow');">
-	      <div>CAREER<br />SERVICES</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="#" id="sidebar_btn_resumes" class="btn3 lines-1" onClick="navigateToSection('main', 'resumes', 'sidebar_buttons', this.id, 'glow-yellow');">
-	      <div>RESUMES</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="#" id="sidebar_btn_interviews" class="btn3 lines-2" onClick="navigateToSection('main', 'interviews', 'sidebar_buttons', this.id, 'glow-yellow');">
-	      <div>INTERVIEW<br />SKILLS</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
 
-	    <a href="#" id="sidebar_btn_jobsearch" class="btn3 lines-1" onClick="navigateToSection('main', 'jobsearch', 'sidebar_buttons', this.id, 'glow-yellow');">
-	      <div>JOB SEARCH</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-
-            <?php if (file_exists("../$course/externship_certification.php")): ?>
-	      <a href="#" id="sidebar_btn_extcert" class="btn3 lines-2" onClick="navigateToSection('main', 'extcert', 'sidebar_buttons', this.id, 'glow-yellow');">
-		<div>EXTERNSHIP &amp;<br />CERTIFICATION</div>
-		<div></div><div></div><div></div><div></div>
-	      </a>
-            <?php endif; ?>
-
-            <?php if (file_exists("../$course/videos.php")): ?>
-	      <a href="#" id="sidebar_btn_videos" class="btn3 lines-1" onClick="navigateToSection('main', 'videos', 'sidebar_buttons', this.id, 'glow-yellow');">
-		<div>VIDEOS</div>
-		<div></div><div></div><div></div><div></div>
-	      </a>
-            <?php endif; ?>
-
-      -->
-
-      <div class="basic-button glow-yellow innerglow-lightblue">
-        <a href="#" id="sidebar_btn_carsvcs"><div>CAREER SERVICES</div></a>
+      <div id="sidebar_btn_carsvcs" class="basic-button glow-yellow innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>CAREER SERVICES</div></a>
       </div>
 
-      <div class="basic-button glow-lightblue innerglow-lightblue">
-        <a href="#" id="sidebar_btn_resumes"><div>RESUMES</div></a>
+      <div id="sidebar_btn_resumes" class="basic-button glow-lightblue innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>RESUMES</div></a>
       </div>
 
-      <div class="basic-button glow-lightblue innerglow-lightblue">
-        <a href="#" id="sidebar_btn_interviews"><div>INTERVIEW SKILLS</div></a>
+      <div id="sidebar_btn_interviews" class="basic-button glow-lightblue innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>INTERVIEW SKILLS</div></a>
       </div>
 
-      <div class="basic-button glow-lightblue innerglow-lightblue">
-        <a href="#" id="sidebar_btn_jobsearch"><div>JOB SEARCH</div></a>
+      <div id="sidebar_btn_jobsearch" class="basic-button glow-lightblue innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>JOB SEARCH</div></a>
       </div>
 
       <?php if (file_exists("../$course/externship_certification.php")): ?>
-      <div class="basic-button glow-lightblue innerglow-lightblue">
-        <a href="#" id="sidebar_btn_extcert"><div>EXTERNSHIP &amp; CERTIFICATION</div></a>
+      <div id="sidebar_btn_extcert" class="basic-button glow-lightblue innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>EXTERNSHIP &amp; CERTIFICATION</div></a>
       </div>
       <?php endif; ?>
 
       <?php if (file_exists("../$course/videos.php")): ?>
-      <div class="basic-button glow-lightblue innerglow-lightblue">
-        <a href="#" id="sidebar_btn_videos"><div>VIDEOS</div></a>
+      <div id="sidebar_btn_videos" class="basic-button glow-lightblue innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>VIDEOS</div></a>
       </div>
       <?php endif; ?>
 
@@ -299,47 +236,47 @@
 	  <div id="resumes" data-section="main" class="hidden">
 
 	    <div class="smallnavbar" style="margin-bottom: 2em;">
-	      <div id="resumeguidelines_nav" class="column col6 underline pointer highlight" onClick="navigateToSection('resumes', 'resumeguidelines', 'resume_nav', this.id, 'highlight');">
+	      <div id="resumenav_resumeguidelines" data-section="resume-nav" class="column col6 underline pointer highlight">
 		Resume<br />Guidelines
 	      </div>
-	      <div id="resumekeywords_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'resumekeywords', 'resume_nav', this.id, 'highlight');">
+	      <div id="resumenav_resumekeywords" data-section="resume-nav" class="column col6 underline pointer">
 		Resume<br />Keywords
 	      </div>
-	      <div id="courseresume_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'courseresume', 'resume_nav', this.id, 'highlight');">
+	      <div id="resumenav_resumesample" data-section="resume-nav" class="column col6 underline pointer">
 		Sample<br />Resume
 	      </div>
-	      <div id="coverguidelines_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'coverguidelines', 'resume_nav', this.id, 'highlight');">
+	      <div id="resumenav_coverguidelines" data-section="resume-nav" class="column col6 underline pointer">
 		Cover Letter<br />Guidelines
 	      </div>
-	      <div id="cover1_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'cover1', 'resume_nav', this.id, 'highlight');">
+	      <div id="resumenav_coversampleref" data-section="resume-nav" class="column col6 underline pointer">
 		Sample Cover -<br />Referred
 	      </div>
-	      <div id="cover2_nav" class="column col6 underline pointer" onClick="navigateToSection('resumes', 'cover2', 'resume_nav', this.id, 'highlight');">
+	      <div id="resumenav_coversamplenoref" data-section="resume-nav" class="column col6 underline pointer">
 		Sample Cover -<br />Not Referred
 	      </div>
 	    </div>
 
-	    <div id="resumeguidelines">
+	    <div id="resumeguidelines" data-section="resumes">
 	      <?php include_once("../universal/resume_guidelines.php") ?>
 	    </div>
 
-	    <div id="resumekeywords" class="hidden">
+	    <div id="resumekeywords" data-section="resumes" class="hidden">
 	      <?php include_once("../universal/resume_keywords.php") ?>
 	    </div>
 
-	    <div id="coverguidelines" class="hidden">
+	    <div id="coverguidelines" data-section="resumes" class="hidden">
 	      <?php include_once("../universal/cover_guidelines.php") ?>
 	    </div>
 
-	    <div id="cover1" class="hidden">
+	    <div id="coversampleref" data-section="resumes" class="hidden">
 	      <?php include("../universal/covers/referred.php") ?>
 	    </div>
 
-	    <div id="cover2" class="hidden">
+	    <div id="coversamplenoref" data-section="resumes" class="hidden">
 	      <?php include("../universal/covers/not_referred.php") ?>
 	    </div>
 
-	    <div id="courseresume" class="hidden">
+	    <div id="resumesample" data-section="resumes" class="hidden">
 	      <?php include($resume_dir . 'resume1.php'); ?>
 	    </div>
               
@@ -348,30 +285,30 @@
 	  <div id="interviews" data-section="main" class="hidden">
 
 	    <div class="smallnavbar" style="margin-bottom: 2em;">
-	      <div id="interviewguidelines_nav" class="column col4 underline pointer highlight" onClick="navigateToSection('interview', 'interviewguidelines', 'interview_nav', this.id, 'highlight');">
+	      <div id="interviewnav_interviewguidelines" data-section="interview-nav" class="column col4 underline pointer highlight">
 		Interview<br />Guidelines
 	      </div>
-	      <div id="interviewquestions_nav" class="column col4 underline pointer" onClick="navigateToSection('interview', 'interviewquestions', 'interview_nav', this.id, 'highlight');">
+	      <div id="interviewnav_interviewquestions" data-section="interview-nav" class="column col4 underline pointer">
 		Sample Interview<br />Questions
 	      </div>
-	      <div id="interviewvideo_nav" class="column col4 underline pointer" onClick="navigateToSection('interview', 'interviewvideo', 'interview_nav', this.id, 'highlight'); insertVideo('interviewvideo', 'Sample Interview', false, '600', '400');">
+	      <div id="interviewnav_interviewvideo" data-section="interview-nav" class="column col4 underline pointer" onClick="insertVideo('interviewvideo', 'Sample Interview', false, '600', '400');">
 		Sample Interview<br />Video
 	      </div>
-	      <div id="interviewthankyou_nav" class="column col4 underline pointer" onClick="navigateToSection('interview', 'interviewthankyou', 'interview_nav', this.id, 'highlight');">
+	      <div id="interviewnav_interviewthankyou" data-section="interview-nav" class="column col4 underline pointer">
 		Sample Thank You<br />Letter
 	      </div>
 	    </div>
 
-	    <div id="interviewguidelines">
+	    <div id="interviewguidelines" data-section="interviews">
 	      <?php include_once("../universal/interview_guidelines.php"); ?>
 	    </div>
-	    <div id="interviewquestions" class="hidden">
+	    <div id="interviewquestions" data-section="interviews" class="hidden">
 	      <?php include_once("../$course/interview_questions.php"); ?>
 	    </div>
-	    <div id="interviewthankyou" class="hidden">
+	    <div id="interviewthankyou" data-section="interviews" class="hidden">
 	      <?php include_once("../universal/interview_thankyou.php"); ?>
 	    </div>
-	    <div id="interviewvideo" class="hidden">
+	    <div id="interviewvideo" data-section="interviews" class="hidden">
 	    </div>
 
 	  </div>
@@ -473,21 +410,40 @@
   </script>
 
   <script type="text/javascript">
+  function setClassOneElementFromSection(id, turnon, turnoff) {
+    var section = $('#'+id).attr('data-section');
+
+    // first set the whole section to the opposite
+    $('[data-section="' + section + '"]')
+      .removeClass(turnon).addClass(turnoff);
+
+    // on one element, remove one set of classes and add the other
+    $('#'+id).removeClass(turnoff).addClass(turnon);
+  }
   $(document).ready(function() {
-    $('[id^="sidebar_btn_"]').click(function(event) {
+    $('[data-section="sidebar-buttons"]').click(function(event) {
       var tgt_id = this.id.slice(12); // remove "sidebar_btn_"
-      var section = $('#'+tgt_id).attr('data-section');
-
-      // hide all elements in this group, then unhide the one we want
-      $('[data-section="' + section + '"]').addClass('hidden');
-      $('#'+tgt_id).removeClass('hidden');
-
-      // now do the same for glow-yellow on the sidebar buttons
-      $('[id^="sidebar_btn_"]').parent('.basic-button')
-        .removeClass('glow-yellow').addClass('glow-lightblue');
-      $(this).parent('.basic-button')
-        .removeClass('glow-lightblue').addClass('glow-yellow');
+      setClassOneElementFromSection(tgt_id, '', 'hidden');
+      setClassOneElementFromSection(this.id, 'glow-yellow', 'glow-lightblue');
+      event.preventDefault();
     });
+    $('[data-section="resume-nav"]').click(function(event) {
+      var tgt_id = this.id.slice(10); // remove "resumenav_"
+      setClassOneElementFromSection(tgt_id, '', 'hidden');
+      setClassOneElementFromSection(this.id, 'highlight', '');
+      event.preventDefault();
+    });
+    $('[data-section="interview-nav"]').click(function(event) {
+      var tgt_id = this.id.slice(13); // remove "interviewnav_"
+      setClassOneElementFromSection(tgt_id, '', 'hidden');
+      setClassOneElementFromSection(this.id, 'highlight', '');
+      event.preventDefault();
+    });
+
+    setClassOneElementFromSection('<?= $section ?>', '', 'hidden');
+    setClassOneElementFromSection(
+      'sidebar_btn_<?= $section ?>', 'glow-yellow', 'glow-lightblue'
+    );
   });
   </script>
 

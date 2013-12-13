@@ -61,28 +61,21 @@
 
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
-	    <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar" class="btn3 lines-1">
-	      <div>View Calendar</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4116" class="btn3 lines-2">
-	      <div>Register For<br />This Course</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/pdfs/ECG Basic - Study Guide.pdf" class="btn3 lines-2 glow-red">
-	      <div>Download<br />Study Guide</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	      <img src="/images/buttons/facebook-icon.png" alt="" />
-	      <div>Visit Us On<br />Facebook</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar"><div>View Calendar</div></a>
+	    </div>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+	      <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4116"><div>Register For This Course</div></a>
+	    </div>
+      <div class="basic-button innerglow-lightblue glow-red">
+	      <a href="/pdfs/ECG Basic - Study Guide.pdf"><div>Download Study Guide</div></a>
+	    </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="http://www.facebook.com/FastResponseSchool"><div>Visit Us On Facebook</div><img src="/images/buttons/facebook-icon.png" alt="" /></a>
+      </div>
 	  </div>
 	</div>
 

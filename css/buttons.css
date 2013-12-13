@@ -32,6 +32,14 @@
   line-height: 1.7em;
 }
 
+.basic-button.lines-3 {
+  line-height: 1.05em;
+}
+
+.basic-button.font-smaller {
+  font-size: 13px;
+}
+
 .basic-button:hover {
   background-color: #062070;
 }
@@ -69,7 +77,7 @@
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
-  padding: 5px 10px;
+  padding: 5px 8px;
 }
 
 
