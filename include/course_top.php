@@ -62,7 +62,9 @@
         <?php endif; ?>
 
         <?php if ($sections['Extra']): ?>
+        <div class="course-extra">
           <?php include_once(getcwd() . '/extra_sections.php'); ?>
+        </div>
         <?php endif; ?>
 
       </div> <!-- /left sidebar -->

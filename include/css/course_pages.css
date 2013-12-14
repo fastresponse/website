@@ -63,7 +63,8 @@
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
-.student-testimonials {
+.student-testimonials,
+.course-extra div {
   margin-top: 30px;
   text-align: left;
   border: solid rgb(255, 255, 153) 2px;
@@ -73,12 +74,21 @@
 }
 .student-testimonials:hover {
 }
-.student-testimonials h1 {
+.student-testimonials h1,
+.course-extra div h1 {
   font-size: large;
   text-align: center;
   letter-spacing: 3px;
   color: #FFFF99;
 }
+
+.course-extra div {
+  padding: 5px 15px;
+}
+.course-extra div ul {
+  padding: 0 20px;
+}
+
 .course-start-box {
   margin-top: 40px;
 }
@@ -187,7 +197,8 @@
     margin-top: -10px;
     padding-top: 0;
   }
-  .left.sidebar .student-testimonials {
+  .left.sidebar .student-testimonials,
+  .left.sidebar .course-extra {
     display: none;
   }
   .right.sidebar {
@@ -227,7 +238,8 @@
   .course-title {
     font-size: x-large;
   }
-  .student-testimonials {
+  .student-testimonials,
+  .course-extra {
     display: none;
   }
   .left.sidebar {

@@ -87,7 +87,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 
   <div class="bottom-image">
     <a target="_self" href="/gallery/index.php/<?= $course_abbr ?>">
-      <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.jpg" alt="" />
+      <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.png" alt="" />
     </a>
   </div>
 

@@ -5,15 +5,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 
 /* all functions related to database connections and queries */
 
+error_reporting(E_ALL);
+
 function handleit($e) {
-  /*
   echo '<pre>';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
-  */
 }
 set_exception_handler('handleit');
 
@@ -474,7 +474,7 @@ function query_events_full($dbh, $limit, $date_start, $date_end) {
   $select = array(
     "DATE_FORMAT(date, '%M %D, %Y') as longdate",
     'id', 'date', 'title', 'body', 'thumbnail',
-    'programs', 'imagesize', 'images', 'links',
+    'programs', /*'imagesize',*/ 'images', 'links',
   );
   $table = 'events';
   $order = 'date DESC';

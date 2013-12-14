@@ -20,6 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_top.php');
 ?>
 
 <div class="content">
+  <h2>Advanced Skills for EMTs</h2>
   <p>
   It is the mission of the Fast Response Paramedic Academy to produce extraordinary critical thinking paramedics who provide compassionate and proficient patient care. We do this by creating a supportive learning environment that includes the student in the learning process. We provide several opportunities for outside activities that enrich the didactic experience. The opportunities include ride alongs with local 911 EMS providers.
   </p>
@@ -46,7 +47,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <h2>Twelve Month Course</h2>
         </div>
       </div>
-      <div class="body">
+      <div class="body" id="schedule">
         <ul>
           <li><span class="course-start-title">Application Deadline</span><br />
           <?= $course_dates['Application Deadline'] ?>
@@ -58,17 +59,17 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>32 hours of didactic observation</li>
           <li>160 hours of clinical internship</li>
           <li>480 hours of field internship</li>
-          <li>Mon - Wed:<br />8:30 AM - 5:00 PM</li>
+          <li>Mon - Wed:<br />9:00 AM - 6:00 PM</li>
         </ul>
       </div>
     </div><!-- /article-box --><div class="article-box">
       <div class="title">
         <div class="title-border">
           <h1>Certifications Included</h1>
-          <h2>80 hours - included with instruction</h2>
+          <h2>80 hours of instruction</h2>
         </div>
       </div>
-      <div class="body">
+      <div class="body" id="certs">
         <ul>
           <li>Pediatric Advanced Life Support (PALS)</li>
           <li>Advanced Cardiac Life Support (ACLS)</li>
@@ -77,7 +78,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>Emergency Medical Patient Assessment, Care, and Transport (EMPACT)</li>
         </ul>
       </div>
-    </div><!-- /article-box --><div class="article-box">
+    </div><!-- /article-box --><?php if (false): ?><div class="article-box">
       <div class="title">
         <div class="title-border">
           <h1>Internship Sites</h1>
@@ -103,7 +104,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 <?php endforeach; ?>
         </ul>
       </div>
-    </div><!-- /article-box --><div class="article-box cols-2">
+    </div><!-- /article-box --><?php endif; ?><div class="article-box cols-2">
       <div class="title">
         <div class="title-border">
           <h1>Key Values</h1>
@@ -118,15 +119,31 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 		      <li>Career services assistance</li>
           <li>Located one block from BART</li>
 		      <li>Guaranteed clinical and field internships</li>
-		      <li>Affiliated with CA Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
+		      <li style="width: 85%;">Affiliated with CA Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
         </ul>
 	    </div>
 	  </div><!-- /article-box -->
   </div>
 
+<script type="text/javascript">
+window.jQuery || document.write(
+  '<script src="/js/jquery-1.10.2.min.js" type="text/javascript"><\/script>'
+);
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+  if ($(window).width() >= 640) {
+    var h1 = $('#schedule').innerHeight();
+    var h2 = $('#certs').innerHeight();
+    if (h1 > h2) $('#certs').innerHeight(h1);
+    if (h2 > h1) $('#schedule').innerHeight(h2);
+  }
+});
+</script>
+
   <div class="bottom-image">
     <a target="_self" href="/gallery/index.php/<?= $course_abbr ?>">
-      <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.jpg" alt="" />
+      <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.png" alt="" />
     </a>
   </div>
 

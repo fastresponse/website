@@ -36,8 +36,6 @@
 
   </script>
 
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
-
   <style type="text/css">
     #class-sections .section {
       width: 95%;
@@ -102,20 +100,15 @@
 
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
-	    <a href="/pdfs/Fast Response Catalog 2013.pdf" class="btn3 lines-2">
-	      <div>Course<br />Catalog</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	      <img src="/images/buttons/facebook-icon.png" alt="Visit Us On Facebook" />
-	      <div>Visit Us On<br />Facebook</div>
-	      <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+	      <a href="/pdfs/Fast Response Catalog 2013.pdf"><div>Course Catalog</div></a>
+      </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="http://www.facebook.com/FastResponseSchool"><div>Visit Us On Facebook</div><img src="/images/buttons/facebook-icon.png" alt="" /></a>
+      </div>
 	  </div> <!-- /quicklinks -->
 	</div>
 

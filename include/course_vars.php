@@ -18,6 +18,7 @@
 
   $sections = array(
     'Testimonials' => true,
+    'Extra' => false,
   );
 
   $buttons = array(

@@ -37,8 +37,6 @@
 
   </script>
 
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
-
   <style type="text/css">
     ul.looknice {
       margin-top: 0;
@@ -98,24 +96,18 @@
 
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
-            <a href="/community/cpr/" class="btn3 lines-1">
-	      <div>Community CPR</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-            <a href="/community/first_aid/" class="btn3 lines-2">
-	      <div>Community<br />First Aid</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="/school/info/" class="btn2 lines-1">
-	      <img src="/images/buttons/envelope-icon.png" alt="" />
-	      <div>Contact Us</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
-	    <a href="http://www.facebook.com/FastResponseSchool" class="btn2 lines-2">
-	      <img src="/images/buttons/facebook-icon.png" alt="" />
-	      <div>Visit Us On<br />Facebook</div>
-              <div></div><div></div><div></div><div></div>
-	    </a>
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="/community/cpr/"><div>Community CPR</div></a>
+      </div>
+      <div class="basic-button glow-lightblue innerglow-lightblue">
+        <a href="/community/first_aid/"><div>Community First Aid</div></a>
+      </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
+      </div>
+      <div class="basic-button image-button glow-lightblue">
+        <a href="http://www.facebook.com/FastResponseSchool"><div>Visit Us On Facebook</div><img src="/images/buttons/facebook-icon.png" alt="" /></a>
+      </div>
 	  </div>
 	</div>
 

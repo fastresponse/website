@@ -2,7 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 
-$handle = db_connect('events');
+if (empty($handle)) $handle = db_connect();
 
 if (!isset($max)) $max = 0;
 if (!isset($date_start)) $date_start = null;
