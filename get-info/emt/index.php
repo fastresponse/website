@@ -12,6 +12,7 @@ $program_abbreviation = 'EMT';
 $key_values = array(
   'NREMT Certification pass rate of 91% on first attempt<br />' .
   '<span style="font-size: 90%;">(3rd quarter 2013)</span>',
+  'Day and evening classes',
 );
 
 $zip_radius = 50;
@@ -19,6 +20,8 @@ $zip_radius = 50;
 $video_numbers = array(
   1399035,
 );
+
+$hideTestimonials = false;
 
 include_once('../includes/header.php');
 

@@ -12,13 +12,14 @@ $program_abbreviation = 'CPT';
 $hideExternalSites = true;
 $hideTestimonials = false;
 
-$key_values = array(
-);
-
 $zip_radius = 75;
 
 $video_numbers = array(
 );
+
+$key_values = array(
+  'Day and evening classes',
+);  
 
 include_once('../includes/header.php');
 

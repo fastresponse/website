@@ -1,2 +1,10 @@
 ErrorDocument 403 /index.php
 ErrorDocument 404 /index.php
+
+Redirect permanent /emt/files https://www.dropbox.com/sh/oraprlo3w5sv0wv/pv0IJl427r
+
+Redirect permanent /cma/files https://www.dropbox.com/sh/tzm52wedoavf21b/5bIKvxMNIp
+
+Redirect permanent /cpt/files https://www.dropbox.com/sh/bg2ypckxonnxl49/A4TgR1SZCd
+
+Redirect permanent /spt/files https://www.dropbox.com/sh/ouj945afck1mu4h/-1zcmWDLDr

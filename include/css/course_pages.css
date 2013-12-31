@@ -88,6 +88,9 @@
 .course-extra div ul {
   padding: 0 20px;
 }
+.course-extra div ul li {
+  margin-bottom: 0.75em;
+}
 
 .course-start-box {
   margin-top: 40px;
@@ -113,7 +116,8 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.article-box.cols-2 {
+.article-box.cols-2,
+.article-box.wide {
   width: 100%;
   max-width: 760px;
 }
@@ -125,7 +129,7 @@
 }
 
 .article-box .title h2 + h1,
-.article-box .title h1 + h2 {
+.article-box .title h1 ~ h2 {
   margin-top: 5px;
 }
 .article-box .title h2 {
@@ -135,7 +139,8 @@
 .article-box .title .title-border {
 }
 
-.article-box.cols-2 .body {
+.article-box.cols-2 .body,
+.article-box.wide .body {
   width: 90%;
   max-width: 640px;
 }

@@ -108,7 +108,7 @@ $(document).ready(function() {
 
     $.ajax({
 	    type: "POST",
-	    url: "/include/course_contact_emailer.php",
+	    url: "/php/ajax/ajax.course_contact_emailer.php",
 	    data: formdata,
       dataType: 'html',
 

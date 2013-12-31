@@ -71,9 +71,8 @@
         <?php endforeach; ?>
 				<li>Flexible payment options</li>
 				<li>Career services assistance</li>
-				<li>Day and evening classes</li>
         <li>Located one block from BART</li>
-				<li>Guaranteed clinical externships</li>
+				<li>Guaranteed externships and internships for all students</li>
 				<li>Affiliated with California Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
 			</ul>
 		</div>
@@ -132,8 +131,6 @@
 
 </div><?php /* /.wrap */ ?>
 
-
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 
 <script type="text/javascript">
 window.jQuery || document.write(

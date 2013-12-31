@@ -4,9 +4,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
 
 if (empty($handle)) $handle = db_connect();
 
-if (!isset($max)) $max = 0;
-if (!isset($date_start)) $date_start = null;
-if (!isset($date_end)) $date_end = null;
+if (empty($max)) $max = 0;
+if (empty($date_start)) $date_start = null;
+if (empty($date_end)) $date_end = null;
 
 $allowed_args = array(
   'max', 'date_start', 'date_end',
@@ -40,7 +40,7 @@ function format_event($handle, $event) {
    * );
    */
 
-  // all text from db_query is sent through htmlentities()
+  // all text from db_query is sent through htmlentities().
   // html_entity_decode() counteracts that so we can display html
   $event['body'] =
     "<p>" .
@@ -146,28 +146,23 @@ function get_events($handle, $max, $date_start, $date_end) {
 
 $events = get_events($handle, $max, $date_start, $date_end);
 
-foreach ($events as $event) {
-  echo <<<OUT
-
+foreach ($events as $event):
+?>
 <div class='event article-box'>
   <div class='title'>
     <div class='title-border'>
       <table cellpadding='0'><tbody><tr>
-        <td class='left'><h2>{$event['longdate']}</h2></td>
-        <td class='center'><h1>{$event['title']}</h1></td>
-        <td class='right'><h2>{$event['programs']}</h2></td>
+        <td class='left'><h2><?= $event['longdate'] ?></h2></td>
+        <td class='center'><h1><?= $event['title'] ?></h1></td>
+        <td class='right'><h2><?= $event['programs'] ?></h2></td>
       </tr></tbody></table>
     </div>
   </div>
   <div class='body'>
-    {$event['thumbnail']}
-    {$event['body']}
-    {$event['links']}
-    {$event['images']}
+    <?= $event['thumbnail'] ?>
+    <?= $event['body'] ?>
+    <?= $event['links'] ?>
+    <?= $event['images'] ?>
   </div>
 </div>
-
-OUT;
-}
-
-?>
+<?php endforeach; ?>

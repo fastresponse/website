@@ -71,19 +71,16 @@
 
 	    <div style="width: auto; min-width: 15%; max-width: 25%; float: right; margin: 0 1% 1% 1%;">
 	      <div class="announcement red">
-		<h3 class="yellow">Important Dates</h3>
-		<div class="yellow underline">Application Deadline</div>
-		<?php
-		  $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
-		  echo "<div>{$next['showdate']}</div>";
-		?>
-		<div class="yellow underline">Paramedic A&amp;P Class </div>
-		<div>Online</div>
-		<div class="yellow underline">Academy Start</div>
-		<?php
-		  $next = query_next_date($handle, 'Paramedic', 'Academy Start');
-		  echo "<div>{$next['showdate']}</div>";
-		?>
+		      <h3 class="yellow">Important Dates</h3>
+		      <div class="yellow underline">Application Deadline</div>
+		      <?php $next = query_next_date($handle, 'Paramedic', 'Application Deadline'); ?>
+	        <div><?= $next['showdate'] ?></div>
+		      <div class="yellow underline">Paramedic A&amp;P Class </div>
+		      <?php $next = query_next_date($handle, 'Paramedic', 'Anatomy and Physiology'); ?>
+	        <div><?= $next['showdate'] ?></div>
+		      <div class="yellow underline">Academy Start</div>
+		      <?php $next = query_next_date($handle, 'Paramedic', 'Academy Start'); ?>
+          <div><?= $next['showdate'] ?></div>
 	      </div>
 	    </div>
 
@@ -152,9 +149,9 @@
 	      <div class="section listbox">
 		      <ul class="checkmark">
 		        <h3 style="margin-top: 0;">Included in the program:</h3>
-		        <li>608 hours of didactic lecture</li>
-		        <li>640 hours <span class="">guaranteed</span> internship</li>
-		        <li>32 hours of didactic observation</li>
+		        <li>728 hours of didactic lecture</li>
+		        <li>688 hours <span class="">guaranteed</span> internship</li>
+		        <li>48 hours of didactic observation</li>
 		        <li>Completion of PALS, ACLS, ITLS, GEMS, and EMPACT certifications</li>
 		      </ul>
 	      </div>

@@ -408,6 +408,10 @@ ul.fancy li {
     padding-bottom: 3px;
     padding-left: 29px;
 }
+ul ul {
+  margin-bottom: 0;
+  list-style: disc outside none;
+}
 
 .widget ul {
 	margin:.5em .5em 1em;

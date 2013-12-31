@@ -69,7 +69,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "/resources/questionnaire_mailer.php",
+	url: "/php/ajax/ajax.questionnaire_mailer.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {

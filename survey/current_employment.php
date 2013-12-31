@@ -79,7 +79,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "/resources/current_employment_mailer.php",
+	url: "/php/ajax/ajax.current_employment_mailer.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {

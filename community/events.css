@@ -1,0 +1,129 @@
+.leftcontent2 {
+  padding-right: 300px;
+}
+.rightsidebar2 {
+  width: 300px;
+}
+.article-box {
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.article-box .body {
+  width: 75%;
+  text-align: left;
+}
+
+.empty {
+  display: none;
+}
+.event-date,
+.event-id {
+  display: none;
+}
+
+.event-title {
+  /*
+  font-size: 120%;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  */
+}
+.event-longdate,
+.event-programs {
+  /*margin-top: 5px;*/
+}
+.event-body {
+  /*
+  width: 90%;
+  display: block;
+  */
+  padding: 0 5% 1%;
+}
+.event-body p {
+  margin-bottom: 0;
+}
+.event-thumbnail {
+  float: right;
+  max-width: 200px;
+  margin: 0 10px 10px;
+}
+
+.event-links,
+.event-images {
+  width: 100%;
+  margin-top: 1%;
+  text-align: center;
+}
+.event-link {
+  display: inline-block;
+  padding: 5px 7px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px;
+  text-decoration: none;
+}
+.event-link:hover {
+  /*color: rgb(221, 0, 51);
+  border-color: rgb(221, 0, 51);*/
+}
+.event-image {
+  display: inline-block;
+  margin: 5px;
+  vertical-align: top;
+  /*height: 120px;*/
+}
+.event-image.size-small {
+  height: 110px;
+}
+.event-image.size-medium {
+  height: 150px;
+}
+.event-image.size-large {
+  height: 200px;
+}
+  
+
+.eventsCalendar-daysList {
+  padding-left: 0;
+}
+.eventsCalendar-daysList li.dayWithEvents {
+  background: rgba(150, 150, 150, 0.4);
+}
+.eventsCalendar-daysList li a {
+  font-size: 12px;
+}
+.eventDesc.hidden,
+.eventDesc.hidden .bt {
+  visibility: visible;
+  max-width: none;
+  max-height: none;
+  overflow: auto;
+  margin: 1em auto;
+}
+.eventDesc.hidden .bt {
+  display: inline;
+}
+.eventsCalendar-list {
+  padding-left: 20px;
+}
+.eventsCalendar-list li {
+  margin-bottom: 10px;
+}
+.eventsCalendar-list li small {
+  display: none;
+}
+.eventsCalendar-list .deadline,
+.eventsCalendar-list .deadline a {
+  color: red;
+}
+.eventsCalendar-list .class-start,
+.eventsCalendar-list .class-start a {
+  color: orange;
+}
+.eventTitle {
+  margin-left: 20px;
+  display: block;
+}
+

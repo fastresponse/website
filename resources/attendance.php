@@ -201,7 +201,7 @@
 
       $.ajax({
 	type: "POST",
-	url: "/resources/attendance_mailer.php",
+	url: "/php/ajax/ajax.attendance_mailer.php",
 	data: fem,
 	success: function(msg) {
 	  if ( note.height() ) {

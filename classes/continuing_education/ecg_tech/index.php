@@ -89,14 +89,16 @@
 
 	<div class="leftcontent2">
 
-	  <?php
-            $announcement_sections[] = <<<SECT1
-	      <h3 class="yellow">Course Start Date</h3>
-	      <div>June 10th, 2013</div>
-	      <h3 style="margin: 0.3em 0;">Now accepting payments!</h3>
-	      <div class="yellow"><a href="/school/info/" class="yellow">Contact us</a> at </a><a href="tel://1-510-849-4009" class="yellow" style="white-space: nowrap;">1-510-849-4009</a> for more information.</div>
+    <?php
+if (false) {
+$announcement_sections[] = <<<SECT1
+<h3 class="yellow">Course Start Date</h3>
+<div>June 10th, 2013</div>
+<h3 style="margin: 0.3em 0;">Now accepting payments!</h3>
+<div class="yellow"><a href="/school/info/" class="yellow">Contact us</a> at </a><a href="tel://1-510-849-4009" class="yellow" style="white-space: nowrap;">1-510-849-4009</a> for more information.</div>
 SECT1;
-	    include('../ceu_include.php');
+}
+	  include('../ceu_include.php');
 	  ?>
 
 	  <!--

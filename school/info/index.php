@@ -336,7 +336,7 @@
 
       $.ajax({
 	      type: "POST",
-	      url: "/school/info/contact.php",
+	      url: "/php/ajax/ajax.contact_page_mailer.php",
 	      data: formdata,
         dataType: 'html',
 

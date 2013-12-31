@@ -319,7 +319,7 @@ function clearForm() {
 $(".delete_btn").click(function() {
   var jobid = $(this).attr('id').replace("delete_", "");
   $.ajax({
-    url: "/php/dbajax.php",
+    url: "/php/ajax/ajax.db.php",
     type: "POST",
     data: { action: "job_delete", jobid: jobid },
     success: function(data) {

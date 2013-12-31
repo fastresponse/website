@@ -11,35 +11,33 @@ $program_abbreviation = 'Paramedic';
 
 $key_values = array(
   'NREMT-P Test Preparation',
-  'Completion of PALS, ACLS, ITLS, GEMS, and EMPACT certifications',
+  'Certification completion: PALS, ACLS, ITLS, GEMS, and EMPACT',
   'iPad with EMS software included',
 );
 
 $zip_radius = 50;
 
+$hideTestimonials = true;
+
 include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.jpg" alt="Phlebotomy careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.png" alt="Phlebotomy careers">
 
 <p>
-  Paramedics provide advanced emergency medical care above and beyond what an EMT can do. They are able to administer medications, start IVs, and provide extensive prehospital care. Paramedics typically work in ambulances, but can also be found in hospitals, fire departments, and other places where medical care may be needed.
+  Paramedics provide advanced emergency medical care above and beyond what an EMT can do. They are able to administer medications, start IVs, and provide extensive prehospital care. Paramedics typically work in ambulances, but can also be found in hospitals, fire departments, and other places where advanced emergency medical care may be needed.
 </p>
 
 <p>
   The Paramedic Academy at Fast Response School of Health Care Education is dedicated to training quality paramedics. Our academy focuses on critical thinking and comprehensive education to prepare you for real emergency medicine, not just for passing a test!
 </p>
 
-<p>
-  Fast Response students are recognized by the Bay Area EMS community as being exceptional! 
-</p>
-
 
 <h3>Becoming a Licensed Paramedic</h3>
 
 <p>
-  The Paramedic Academy provides extensive classroom training - <strong>35% more didactic hours</strong> than other programs - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructors are all <strong>licensed paramedics</strong>.
+  The Paramedic Academy provides extensive classroom training - <strong>35% more didactic hours</strong> than other programs - to ensure the highest quality of education. Students are active participants in the <strong>Socratic learning method</strong> in the classroom and gain valuable insights at <strong>didactic observation sites</strong> throughout the course. Our instructional staff includes <strong>licensed paramedics</strong>, <strong>RNs</strong>, and <strong>MDs</strong>.
 </p>
 
 <p>
@@ -50,7 +48,7 @@ include_once('../includes/header.php');
 <h3>Clinical &amp; Field Internship - On-the-Job Experience</h3>
 
 <p>
-	As a student in the Paramedic Academy you'll gain valuable experience during your clinical internship in a <strong>hospital emergency department</strong>. During your field internship you'll put your knowledge and skills to work on <strong>911 ambulance ride-alongs</strong>.
+	As a student in the Paramedic Academy you'll gain valuable experience during your clinical internship in a <strong>hospital emergency department</strong>, as well as <strong>operating room</strong>, <strong>intensive care unit</strong>, <strong>PACU</strong>, and <strong>OB</strong> experience. During your field internship you'll put your knowledge and skills to work on a <strong>911 ambulance</strong>.
 </p>
 <!--
 <p>
@@ -65,14 +63,16 @@ include_once('../includes/header.php');
 </p>
 
 <ul>
-  <li>Didactic instruction: 608 hours</li>
-  <li>Continuing Education Units: 80 hours (included as part of didactic instruction)</li>
-  <li>Didactic observation: 32 hours</li>
-  <li>Clinical internship: 160 hours</li>
-  <li>Field internship: 480</li>
+  <li>Didactic instruction: 728 hours</li>
+  <ul>
+    <li>Continuing Education Units: 80 hours</li>
+    <li>Didactic observation: 48 hours</li>
+  </ul>
+  <li>Clinical internship: 208 hours (minimum)</li>
+  <li>Field internship: 480 hours (minimum)</li>
 </ul>
 
-<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/paramedic-photostrip.jpg" alt="Fast Response health care careers">
+<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/paramedic-photostrip.png" alt="Fast Response health care careers">
 
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>

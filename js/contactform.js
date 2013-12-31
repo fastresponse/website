@@ -49,7 +49,7 @@ function zipValidate(z, out_id, radius) {
 	// at 5, check the entered zip
 	if (z.value.length == 5) {
     $.ajax({
-			url: '/php/ajax.ziplookup.php',
+			url: '/php/ajax/ajax.ziplookup.php',
 			type: 'POST',
 			data: { zip: z.value },
 			dataType: 'html',

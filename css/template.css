@@ -55,6 +55,24 @@ h3 {
   background-color: black;
 }
 
+#logo-container img {
+  width: 100%;
+}
+#title-container {
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.page-header {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: xx-large;
+}
+  
+
 /* not every image in every header should have these */
 .headerimg {
   display: block;
@@ -166,6 +184,47 @@ h3 {
   width: auto;
   margin: 0;
 }
+
+
+
+/*
+  $left_sidebar_width = 350;
+  $right_sidebar_width = 180;
+  $sidebar_pad_inside = 25;
+  $sidebar_pad_outside = 5;
+  $sidebar_pad_total = 30; ($sidebar_pad_inside + $sidebar_pad_outside)
+  $content_pad_left = 380; ($left_sidebar_width + $sidebar_pad_total)
+  $content_pad_right = 210; ($right_sidebar_width + $sidebar_pad_total)
+*/
+
+.sidebar {
+  text-align: justify;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left.sidebar {
+  width: 350px;
+  padding-right: 25px;
+  padding-left: 5px;
+  float: left;
+  direction: ltr;
+}
+.right.sidebar {
+  width: 180px;
+  padding-right: 5px;
+  padding-left: 25px;
+  float: right;
+  direction: rtl;
+}
+
+.content {
+  padding-left: 380px;
+  padding-right: 210px;
+}
+
+
+
 
 /* new-style sidebars of fixed size */
 .rightsidebar2 {
@@ -1159,7 +1218,8 @@ div#section-display {
 .article-box .body div.line:hover {
   color: rgb(221, 0, 51);
 }
-.article-box.cols-2 .body {
+.article-box.cols-2 .body,
+.article-box.wide .body {
   text-align: center;
   width: 80%;
 }
@@ -1170,4 +1230,12 @@ div#section-display {
   text-align: center;
   vertical-align: top;
   width: 46%;
+}  
+.article-box.wide .body a,
+.article-box.wide .body li,
+.article-box.wide .body div.line {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
 }  
