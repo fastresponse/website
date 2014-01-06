@@ -104,8 +104,8 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 <?php endforeach; ?>
         </ul>
       </div>
-    </div><!-- /article-box --><?php endif; ?><div class="article-box wide" id="paramedic_admissions" style="cursor: pointer;">
-      <div class="title">
+    </div><!-- /article-box --><?php endif; ?><div class="article-box wide" id="paramedic_admissions">
+      <div class="title" style="cursor: pointer;">
         <div class="title-border">
           <h1>Paramedic Admissions Procedures</h1>
 		      <h2>Click to view</h2>
@@ -172,7 +172,7 @@ $(document).ready(function() {
     if (h1 > h2) $('#certs').innerHeight(h1);
     if (h2 > h1) $('#schedule').innerHeight(h2);
   }
-  $('#paramedic_admissions').click(function(event) {
+  $('#paramedic_admissions .title').click(function(event) {
     $('#paramedic_admissions .body').slideToggle("fast", function() {
       $('#paramedic_admissions .title h2').toggle();
     });

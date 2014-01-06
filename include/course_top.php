@@ -49,7 +49,7 @@
 
       <div class="left sidebar" style="position: relative;">
 
-        <img src="/images/headers/<?= strtolower($course_abbr) ?>_header.jpg" class="course-header-image glow-lightblue" alt="" />
+        <img src="/images/headers/<?= strtolower($course_abbr) ?>_header.png" class="course-header-image glow-lightblue" alt="" />
 
         <div id="contact-form-div">
           <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_contact.php'); ?>

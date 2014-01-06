@@ -3,7 +3,9 @@
 // 'receive' refers to sending an email to us from the user via web form
 // 'reply' is sending an email to the user presumably with additional info
 
-const PHPMAILER_PATH = $_SERVER['DOCUMENT_ROOT'] . '/php/phpmailer/class.phpmailer.php';
+const PHPMAILER_PATH =
+  $_SERVER['DOCUMENT_ROOT'] . '/php/phpmailer/class.phpmailer.php'
+;
 require_once(PHPMAILER_PATH);
 
 class FRMailer {
@@ -14,6 +16,52 @@ class FRMailer {
   private $debug_write_to_file = false;
   private $status_receive = null;
   private $status_reply = null;
+  private $settings = null;
+
+
+  public __construct($settings) {
+    $this->settings = $settings || array();
+  }
+
+}
+
+class FRMailerSettings {
+  private static $replace_vars = array(
+    'receive_to_addr', 'receive_from_addr',
+    'receive_from_name', 'receive_subject',
+    'reply_to_addr', 'reply_from_addr',
+    'reply_from_name', 'reply_subject',
+  );
+
+  private $receive_to_addr = 'autoreply@fastresponse.org';
+  private $receive_from_addr = '%email%';
+  private $receive_from_name = '%name%';
+  private $receive_subject = '';
+  private $receive_body = '';
+
+  private $send_reply = false;
+
+  private $reply_to_addr = '%email%';
+  private $reply_from_addr = 'info@fastresponse.org';
+  private $reply_from_name = 'Fast Response School';
+  private $reply_subject = '';
+  private $reply_body = '';
+
+  private $input = null;
+
+
+  public function __construct($in) {
+    $this->input = $in || array();
+  }
+
+
+  public function validate() {
+    if (!validate_email($this->input['email']))
+      err('Please enter a valid email address.');
+    if (!validate_phone($this->input['phone']))
+      err('Please enter a valid phone number.');
+  }
+
 
   private function validate_email($email) {
     return (
@@ -46,7 +94,7 @@ class FRMailer {
     return $phone;
   }
 
-  private function validate_phone($phone) {
+  private function validate_phone(&$phone) {
     // strip extra characters
     $stripped = strip_phone($phone);
 
@@ -58,50 +106,114 @@ class FRMailer {
     // if so...
     if ($ret_value) {
       // ...attempt to format according to US phone number format
-      $this->phone = format_phone($stripped);
+      $tmp_phone = format_phone($stripped);
     }
 
-    // if it didn't strip or format correctly, just use the original input
-    if (!isset($this->phone) || $this->phone == $stripped) {
-      $this->phone = $phone;
+    // if it stripped and formatted correctly, use it instead of original input
+    if (isset($tmp_phone) && $tmp_phone == $stripped) {
+      $phone = $tmp_phone;
     }
 
     return $ret_value;
   }
 
-}
-
-class FRMailerSettings {
-  private $receive_to_addr = 'autoreply@fastresponse.org';
-  private $receive_from_addr = '$email';
-  private $receive_from_name = '$name';
-  private $receive_subject = 'New Lead: $course';
-
-  private $send_reply = false;
-
-  private $reply_to_addr = '$email';
-  private $reply_from_addr = 'info@fastresponse.org';
-  private $reply_from_name = 'Fast Response School';
-  private $reply_subject = 'Welcome to Fast Response';
-
-  public function process_variables($post_vars) {
+  private function process_variables() {
+    foreach ($this->input as $rep => $rep_value) {
+      foreach (self::$replace_vars as $var) {
+        // in each var, replace '%name%' with the value of $input['name']
+        $this->$var = str_replace("%{$rep}%", $rep_value, $this->$var);
+      }
+    }
   }
 
-  public function create_receive_body() {
+  private function create_receive_body() {
+    $this->receive_body = '';
+    foreach ($this->input as $rep => $rep_value) {
+      // array('graduation_date' => '2014-01-15')
+      // becomes "Graduation Date: 2014-01-15\n"
+      $this->receive_body .=
+        "<b>" . ucwords(str_replace('_', ' ', $rep)) . ":</b> $rep_value\n"
+      ;
+    }
   }
+
+  private function create_reply_body() {
+  }
+
 }
 
 class FRMailerSettingsCourse extends FRMailerSettings {
   const REPLY_DIR = $_SERVER['DOCUMENT_ROOT'] . '/mailer/course_replies/';
-  private $file = 'generic.html';
 
-  private $receive_subject = 'New Lead: $course';
+  // private $receive_to_addr = '%courseabbr%.coordinators@fastresponse.org
+  private $receive_to_addr = 'autoreply@fastresponse.org';
+  private $receive_from_addr = '%email%';
+  private $receive_from_name = '%name%';
+  private $receive_subject = 'New Lead: %course%';
+
   private $send_reply = true;
+
+  private $reply_to_addr = '%email%';
+  private $reply_from_addr = 'info@fastresponse.org';
+  private $reply_from_name = 'Fast Response School';
   private $reply_subject = 'Welcome to Fast Response';
-  
-  public function create_reply_body() {
-    $this->reply_body = file_get_contents(REPLY_DIR . $file);
+
+
+  public __construct($in) {
+    parent::__construct($in);
+
+    $abbr = get_course_abbr($this->input['course']);
+    if (isset($abbr))
+      $this->input['courseabbr'] = $abbr;
   }
+    
+
+  private function create_reply_body() {
+    $file = null;
+    $tests = array(
+      $this->input['course'],
+      $this->input['courseabbr'],
+    );
+
+    foreach ($tests as $test) {
+      $test = REPLY_DIR . $test;
+      if (file_exists($test)) {
+        $file = $test;
+        break;
+      }
+    }
+    if (!isset($file)) {
+      $file = REPLY_DIR . 'generic.html';
+    }
+
+    $this->reply_body = file_get_contents($file);
+  }
+
+  private function get_course_abbr($course) {
+    switch (strtolower($course)) {
+    case 'emergency medical technician':
+      return 'emt';
+
+    case 'phl':
+    case 'phlebotomy':
+      return 'cpt';
+
+    case 'ma':
+    case 'medical assistant':
+    case 'certified medical assistant':
+      return 'cma';
+
+    case 'sterile processing':
+    case 'sterile processing technician':
+      return 'spt';
+
+    case 'paramedic academy':
+      return 'paramedic';
+
+    }
+    return null;
+  }
+
 }
 
 // using separate classes as basically structs that replace some default settings
@@ -130,7 +242,6 @@ class FRMailerSettingsCourseOther extends FRMailerSettingsCourse {
   private $receive_to_addr = 'autoreply@fastresponse.org';
   private $file = 'other.html';
 }
-
 
 
 

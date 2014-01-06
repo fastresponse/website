@@ -65,7 +65,7 @@ include_once('../includes/header.php');
 <ul>
   <li>Didactic instruction: 728 hours</li>
   <ul>
-    <li>Continuing Education Units: 80 hours</li>
+    <li>Advanced Specialized Courses: 80 hours</li>
     <li>Didactic observation: 48 hours</li>
   </ul>
   <li>Clinical internship: 208 hours (minimum)</li>
