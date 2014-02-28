@@ -1,0 +1,7 @@
+Note:
+
+All email reply files must have their image paths set so they are relative
+from the directory where the processing script is!
+
+This is because the script is not necessarily in the same place as this file
+and the script is what needs to find the images.

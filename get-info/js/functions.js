@@ -13,6 +13,11 @@ function validate(f) {
 			errors++;
 			$(this).addClass('v_error');
 		}
+    if(t == 'checkbox' && !$(this).prop('checked')) {
+      errors++;
+      error_msg = "Please verify the following:\n"+v;
+			$(this).addClass('v_error');
+    }
 		if(t == 'email' && !looksLikeMail(v)) {
 			errors++;
 			error_msg = "Please enter a valid email address";
@@ -50,14 +55,20 @@ function zipValidate(z, out_id, radius) {
 	if (z.value.length == 5) {
     $.ajax({
 			url: '/php/ajax/ajax.ziplookup.php',
+			//url: '/php/ajax.ziplookup.php',
 			type: 'POST',
 			data: { zip: z.value },
-			dataType: 'html',
+			dataType: 'json',
 			success: function(data, txtStatus, jqxhr) {
-				if (data != null && data > radius) {
-					$(out_id).html(
-						'This zip code is more than '+radius+' miles from our campus.'
-					).slideDown();
+				if (data != null) {
+          if (data.dist && data.dist > radius) {
+					  $(out_id).html(
+						  'This zip code is more than '+radius+' miles from our campus.'
+					  ).slideDown();
+          }
+          if (data.city) {
+            $('#city').val(data.city);
+          }
 				}
 			},
 			error: function(jqxhr, txtStatus, txtError) {

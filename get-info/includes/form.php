@@ -7,13 +7,14 @@
 onsubmit="return validate(this);">
 
   <div class="checkbox-group chk-questions">
+    <?= $questions_code ?>
     <label>
       <input type="checkbox" name="how_much_is_tuition" value="How much is tuition?">
       <span>How much is tuition?</span>
     </label>
     <label>
-      <input type="checkbox" name="can_i_get_financial_aid" value="Can I get financial aid?">
-      <span>Can I get financial aid?</span>
+      <input type="checkbox" name="what_payment_plans_are_available" value="What payment plans are available?">
+      <span>What payment plans are available?</span>
     </label>
     <label>
       <input type="checkbox" value="What are my career prospects?" name="what_are_my_career_prospects">
@@ -83,6 +84,7 @@ onsubmit="return validate(this);">
     </label>
   </div>
 
+  <input type="hidden" name="city" id="city" value="">
   <input type="hidden" name="creative" value="<?= get_url_tag('crtv'); ?>">
   <input type="hidden" name="network" value="<?= get_url_tag('ntwk'); ?>">
   <input type="hidden" name="keyword" value="<?= get_url_tag('kw'); ?>">

@@ -14,9 +14,11 @@
 	if(!isset($description)) 	$description	= 'Fast Response offers training for Health Care careers';
 
 	if(!isset($hideForm))	$hideForm	= false;
+	if(!isset($hideLinkList))	$hideLinkList	= true;
 	if(!isset($hide_h1))	$hide_h1	= false;
 	if(!isset($hide_h2))	$hide_h2	= false;
 	if(!isset($conversionCode)) $conversionCode = false;
+	if(!isset($questions_code)) $questions_code = '';
 
 	$headline = get_dynamic_val('h1',$headline); //Get the dynamic headline if used, otherwise use the default headline (defined at the page level).
 	$subhead = get_dynamic_val('h2',$subhead); //Get the dynamic headline if used, otherwise use the default headline (defined at the page level).

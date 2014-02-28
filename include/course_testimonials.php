@@ -1,5 +1,5 @@
 <h1>Success Stories</h1>
-<div class="testimonial-wrapper">
+<div class="testimonial-wrapper slideshow">
 
 <?php
 
@@ -58,6 +58,7 @@ foreach ($quotes_tmp as $quote):
 
 </div>
 
+<?php if (false): ?>
 <?php if (!empty($quotes_tmp)): ?>
 <script type="text/javascript">
 window.jQuery || document.write(
@@ -68,13 +69,10 @@ window.jQuery || document.write(
 <script src="/js/jquery.rotate-visible.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-  var $container = $(".testimonial-wrapper").first();
-  if ($container.children().length) {
-    $container.children().hide();
-    $container.rotate(10000);
-  }
+jQuery(document).ready(function() {
+  jQuery(".slideshow").slideshow(6000, 900);
 });
 </script>
+<?php endif; ?>
 <?php endif; ?>
 

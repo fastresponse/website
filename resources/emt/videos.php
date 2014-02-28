@@ -16,8 +16,10 @@
     <li onClick="choosevid(this, 'EMT BP Palpation');">EMT BP Palpation</li>
     <li onClick="choosevid(this, 'EMT BS Auscultation');" class="odd">EMT BS Auscultation</li>
     <li onClick="choosevid(this, 'EMT BS Palpation');">EMT BS Palpation</li>
-    <li onClick="choosevid(this, 'EMT Childbirth');" class="odd">EMT Childbirth</li>
-    <li onClick="choosevid(this, 'EMT Combitube');">EMT Combitube</li>
+    <li onClick="choosevid(this, 'EMT C-Collar');" class="odd">EMT C-Collar</li>
+    <li onClick="choosevid(this, 'EMT Childbirth');">EMT Childbirth</li>
+    <li onClick="choosevid(this, 'EMT Combitube');"class="odd">EMT Combitube</li>
+    <li onClick="choosevid(this, 'EMT CPAP');">EMT CPAP</li>
     <li onClick="choosevid(this, 'EMT Hare Traction Splint');" class="odd">EMT Hare Traction Splint</li>
     <li onClick="choosevid(this, 'EMT King LT-D');">EMT King LT-D</li>
     <li onClick="choosevid(this, 'EMT KTD Traction Splint');" class="odd">EMT KTD Traction Splint</li>

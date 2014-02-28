@@ -61,6 +61,48 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>Eight weeks of instruction</li>
           <li>Mon, Tue, Thu:<br />6:00 PM - 10:00 PM</li>
           <li>Sat:<br />8:30 AM - 5:00 PM</li>
+          <li>Wed:<br />Optional Tutoring</li>
+        </ul>
+      </div>
+    </div><!-- /article-box --><div class="article-box">
+      <div class="title">
+        <div class="title-border">
+          <h1>Course Hour Outline</h1>
+        </div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>5 hours - AHA Healthcare Provider CPR</li>
+          <li>168 hours - In-class didactic and laboratory instruction and practice<br />
+            <ul>
+              <li>EMT Foundations - 40 hours</li>
+              <li>Trauma Emergencies - 40 hours</li>
+              <li>Medical Emergencies - 40 hours</li>
+              <li>Specialties - 40 hours</li>
+              <li>Cumulative Final - 40 hours</li>
+            </ul>
+          </li>
+          <li>8 hours - Emergency Department externship</li>
+          <li>16-24 hours - Ambulance externship</li>
+        </ul>
+      </div>
+    </div><!-- /article-box --><div class="article-box">
+      <div class="title">
+        <div class="title-border">
+          <h1>Program Fees and Tuition</h1>
+        </div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>Registration Fee: $250.00</li>
+          <li>Background Check: $200.00</li>
+          <li>Insurance: $200.00</li>
+          <li>Textbooks: $225.00</li>
+          <li>Equipment: $50.00</li>
+          <li>Uniform Patches: $5.00</li>
+          <li>Student Tuition Recovery Fund (STRF): $1.00</li>
+          <li>Tuition: $1,544.00</li>
+          <li>Total Program Cost: $2,475.00</li>
         </ul>
       </div>
     </div><!-- /article-box --><div class="article-box cols-2">

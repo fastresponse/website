@@ -163,7 +163,6 @@ From: $email
 Name: $name
 Email: $email
 Phone: $phone
-Newsletter: $newsletter
 Reference: $reference
 WhentoReach: $whenreachme
 WhatTime: $time
@@ -172,6 +171,15 @@ StreetAddress2: $streetaddress2
 StreetAddress3: $streetaddress3
 Message: $message
 ENDMSGS;
+
+if ($subject == 'Paramedic') {
+  $current_emt = $_POST['current_emt'];
+  if ($current_emt != 'Yes') {
+    $current_emt = 'No';
+  }
+  $current_emt = 'Current EMT: ' . $current_emt;
+  $messages .= "\n$current_emt";
+}
 
 //$to = $courses[$subject]['email'];
 $to = $courses['Generic']['email'];
@@ -224,6 +232,7 @@ if ($sentok && $autorespond) {
   $mail->Subject = $autosubject;
   $mail->MsgHTML($messages);
   $mail->AltBody = strip_tags($messages);
+  $mail->Body = $messages;
 
   if ($usesmtp) {
     $mail->IsSMTP();

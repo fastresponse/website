@@ -71,6 +71,14 @@
       margin: 0;
     }
 
+    #current_emt_checkbox input {
+      vertical-align: top;
+      margin-right: 10px;
+    }
+    #current_emt_checkbox .smaller {
+      font-size: 90%;
+      margin-left: 10px;
+    }
   </style>
 
 </head>
@@ -168,7 +176,8 @@
 		For continuing education courses, please contact our Front Desk. We will be happy to answer all of your questions.
 	      </p>
 
-	      <form id="ajax-contact-form" method="post" action="/school/info/contact.php">
+     <!--<form id="ajax-contact-form" method="post" action="/school/info/contact.php">-->
+     <form id="ajax-contact-form" method="post" action="/php/ajax/ajax.contact_page_mailer.php">
 
 		<label>Full Name</label><input class="required inpt" type="text" name="name" value="" /><br />
 		<label>E-Mail</label><input class="required inpt" type="text" name="email" value="" /><br />
@@ -184,6 +193,9 @@
 		  <!-- <option value="Ward Clerk">Ward Clerk</option> -->
 		  <option value="Other Courses">Other Course(s)</option>
 		</select>
+    <div id="current_emt_checkbox" style="display: none;">
+      <label></label><input type="checkbox" id="current_emt" name="current_emt" value="Yes" /><span>I am currently an EMT.<span class="smaller">(six months experience required)</span></span>
+    </div>
 		<br />
 
 		<label>How did you hear about us?</label>
@@ -287,6 +299,17 @@
   <!-- form code -->
   <script type="text/javascript">  
   /* <![CDATA[ */    
+
+  $("#subject").change(function() {
+    if ($(this).val() == 'Paramedic') {
+      $("#current_emt_checkbox").show();
+      $("#current_emt_checkbox input").attr("required", "required");
+    }
+    else {
+      $("#current_emt_checkbox").hide();
+      $("#current_emt_checkbox input").removeAttr("required");
+    }
+  } );
 
   $(document).ready(function() {
     var note = $('#note');

@@ -108,7 +108,7 @@
 	    
 	  </div>
 
-	  <div id="admissionsproc" class="section hidden collapsebox" style="clear: left; border: solid white; border-width: 1px 0;">
+	  <div id="admissionsproc" name="admissionsproc" class="section hidden collapsebox" style="clear: left; border: solid white; border-width: 1px 0;">
 
 	    <h3>Fast Response Paramedic Academy admissions procedures:</h3>
 	    <ul>

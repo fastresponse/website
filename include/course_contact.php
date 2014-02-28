@@ -51,6 +51,7 @@
         <a href="tel://1-800-637-7387">Phone <span class="phone-number">1-800-637-7387</span></a>
       </div>
     </div>
+    <input type="hidden" id="city" name="city" value="" />
   </fieldset>
 </form>
 
@@ -65,26 +66,26 @@ window.jQuery || document.write(
 <script type="text/javascript">  
 /* <![CDATA[ */    
 
-$(document).ready(function() {
-  var form = $('#contact-form');
-  var output = $('#output');
-  var loadingimgdiv = $('#loading');
+jQuery(document).ready(function() {
+  var form = jQuery('#contact-form');
+  var output = jQuery('#output');
+  var loadingimgdiv = jQuery('#loading');
   var loadingimgid = '#loadingimg';
   var submitid = '#form-submit';
 
   function displayOutput(data) {
-	  $(loadingimgid).fadeOut(300, function() {
-	    $(this).remove();
-	    $('input').prop('disabled', true);
-	    $('select').prop('disabled', true);
-	    $('textarea').prop('disabled', true);
+	  jQuery(loadingimgid).fadeOut(300, function() {
+	    jQuery(this).remove();
+	    jQuery('input').prop('disabled', true);
+	    jQuery('select').prop('disabled', true);
+	    jQuery('textarea').prop('disabled', true);
 		  output.html(data).slideDown(500);
 	  }); // end loading image fadeOut
   }
 
   function evalJS(obj) {
     obj.find('script').each(function(i) {
-      eval( $(this).text() );
+      eval( jQuery(this).text() );
     });
   }
 
@@ -104,7 +105,7 @@ $(document).ready(function() {
       loadingimgid.slice(1) + '" style="margin: 0 auto;" />'
     );
 
-    var formdata = $(this).serialize();
+    var formdata = jQuery(this).serialize();
 
     $.ajax({
 	    type: "POST",
@@ -113,8 +114,8 @@ $(document).ready(function() {
       dataType: 'html',
 
 	    success: function(data, textStatus, jqxhr) {
-        $(submitid).slideUp(500, function() {
-          $('label[for="' + submitid.slice(1) + '"]').hide();
+        jQuery(submitid).slideUp(500, function() {
+          jQuery('label[for="' + submitid.slice(1) + '"]').hide();
           displayOutput(data);
           evalJS(output);
         });

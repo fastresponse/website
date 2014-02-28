@@ -19,6 +19,7 @@ $zip_radius = 50;
 
 $video_numbers = array(
   1399035,
+  1492665,
 );
 
 $hideTestimonials = false;

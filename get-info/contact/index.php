@@ -25,6 +25,9 @@ $mail->Subject = 'New Lead: Fast Response PPC';
 $mail->Body    = "<b>Name</b>: {$_POST['full_name']}<br>";
 $mail->Body   .= "<b>Email</b>: {$_POST['email']}<br>";
 $mail->Body   .= "<b>Phone</b>: {$_POST['phone']}<br>";
+if (isset($_POST['city'])) {
+  $mail->Body   .= "<b>City</b>: {$_POST['city']}<br>";
+}
 $mail->Body   .= "<b>Zip</b>: {$_POST['zip']}<br>";
 $mail->Body   .= "<b>Program</b>: {$_POST['program']}<br>";
 $mail->Body   .= "<b>Questions</b>: {$_POST['chk_questions']}<br>";

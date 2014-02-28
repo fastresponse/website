@@ -39,12 +39,22 @@
 	<?php endif; ?>
 
 
+  <?php if (!$hideLinkList): ?>
+  <div class="widget links">
+    <h3><?= $link_title ?></h3>
+    <div class="widget-body">
+      <ul>
+        <?php foreach ($link_list as $text => $link): ?>
+        <li><a href="<?= $link ?>" target="_blank"><?= $text ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  </div>
+  <?php endif; ?>
+
 	<div class="widget accreditations">
-
 		<h3>Affiliations</h3>
-
 		<div class="widget-body">
-
 			<div class="text-left">
 				<p>Approved by</p>
 				<ul>
@@ -56,9 +66,7 @@
 					</li>
 				</ul>
 			</div>
-
 		</div>
-
 	</div>
 
   <?php if (!$hideKeyValues): ?>

@@ -15,6 +15,20 @@ $key_values = array(
   'iPad with EMS software included',
 );
 
+$questions_code = <<<ENDQ
+    <label style="line-height: 1em; margin-bottom: 8px;">
+      <input type="checkbox" required="required" name="i_am_an_emt" value="I am currently an EMT.">
+      <span>I am currently an EMT.</span><br />
+      <span style="font-size: small; margin-left: 23px;">(six months experience required)</span>
+    </label>
+ENDQ;
+
+$hideLinkList = false;
+$link_title = 'Paramedic Academy Application';
+$link_list = array(
+  'Application for Consideration' => '/pdfs/Paramedic Academy Application.pdf',
+);
+
 $zip_radius = 50;
 
 $hideTestimonials = true;

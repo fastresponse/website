@@ -63,6 +63,19 @@
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
+.course-header-slideshow {
+  width: 100%;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+.course-header-slideshow img {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
 .student-testimonials,
 .course-extra div {
   margin-top: 30px;
