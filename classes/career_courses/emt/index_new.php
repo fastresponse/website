@@ -89,7 +89,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
     </div><!-- /article-box --><div class="article-box">
       <div class="title">
         <div class="title-border">
-          <h1>Program Fees and Tuition</h1>
+          <h1>Tuition and Fees</h1>
         </div>
       </div>
       <div class="body">

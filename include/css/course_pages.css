@@ -68,6 +68,7 @@
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
+  margin: 15px 0;
 }
 .course-header-slideshow img {
   display: block;
@@ -204,10 +205,16 @@
     padding: 0;
     float: none;
   }
-  .left.sidebar .course-header-image {
+  .left.sidebar .course-header-image,
+  .left.sidebar .course-header-slideshow {
     width: 45%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 0;
+    max-height: 200px;
+  }
+  .left.sidebar .course-header-slideshow img {
+    max-height: 200px;
   }
   .left.sidebar #contact-form-div {
     width: 50%;
@@ -250,7 +257,9 @@
     padding: 0;
     position: static;
   }
-  .course-header-image {
+  .course-header-image,
+  .course-header-slideshow,
+  .course-header-slideshow img {
     display: none;
   }
   .course-title {

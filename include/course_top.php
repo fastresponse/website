@@ -40,13 +40,51 @@
     var slide_pause_time = 6000;
     var slide_fade_time = 900;
 
+  <?php
+    error_reporting(0);
+
+    $slide_path =
+      '/slideshow/' . strtolower($course_abbr) . '/'
+    ;
+    $files_list = array_diff(
+      scandir($_SERVER['DOCUMENT_ROOT'] . $slide_path, 0),
+      array('..', '.', 'Thumbs.db')
+    );
+
+    // remove first file from list, output as normal html
+    $first_slide = '  <img src="' . $slide_path . array_shift($files_list) . '" alt="" />';
+
+    // send the rest of the slides to jquery to be loaded
+    // this way it only displays multiple slides if the browser supports it
+    $slides_list = array();
+    foreach ($files_list as $slidefile) {
+      $slides_list[] = '  "' . $slide_path . $slidefile . '"';
+    }
+
+    $slideload = implode(",\n", $slides_list);
+    echo <<<SLIDESOUT
+    var slides_to_load = [
+    $slideload
+    ];
+SLIDESOUT;
+  ?>
+
+    function load_slides(elem) {
+      for (var i = 0; i < slides_to_load.length; i++) {
+        jQuery('<img/>', {
+          src: slides_to_load[i],
+          alt: ''
+        }).appendTo(elem);
+      }
+    }
+
     function start_slideshow() {
       if (slideshow_started || jQuery(window).width() < 1024)
         return;
+      load_slides( jQuery('.course-header-slideshow') );
       jQuery(".slideshow").slideshow(slide_pause_time, slide_fade_time);
       slideshow_started = true;
     }
-
 
     jQuery(document).ready(function() {
       start_slideshow();
@@ -64,11 +102,11 @@
           }
         }
       });
-
     });
 
     jQuery(window).resize(function() {
       start_slideshow();
+      jQuery('.article-box .body').sameHeight();
     });
   </script>
 
@@ -104,26 +142,7 @@
         <?php endif; ?>
 
         <div class="glow-lightblue slideshow course-header-slideshow">
-          <?php
-            error_reporting(0);
-
-            $slide_path =
-              '/slideshow/' . strtolower($course_abbr) . '/'
-            ;
-            $files_list = array_diff(
-              scandir($_SERVER['DOCUMENT_ROOT'] . $slide_path, 0),
-              array('..', '.', 'Thumbs.db')
-            );
-
-            $slides_list = array();
-            foreach ($files_list as $slidefile) {
-              $slides_list[] =
-                '  <img src="' . $slide_path . $slidefile . '" alt="" />';
-            }
-
-            $slides = implode("\n", $slides_list);
-            echo $slides;
-          ?>
+          <?= $first_slide ?>
           <?php if (false): ?>
           <img src="/slideshow/<?= strtolower($course_abbr) ?>/slide01.jpg" alt="" />
           <img src="/slideshow/<?= strtolower($course_abbr) ?>/slide02.jpg" alt="" />

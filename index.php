@@ -25,6 +25,87 @@
 
   <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 
+  <script type="text/javascript" src="/js/popup/jquery.magnific-popup.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.slideshow.js"></script>
+  <script type="text/javascript" src="/js/jquery.sameheight.js"></script>
+
+  <script type="text/javascript">
+
+    var slideshow_started = false;
+    var slide_pause_time = 6000;
+    var slide_fade_time = 900;
+
+  <?php
+    error_reporting(0);
+
+    $slide_path =
+      '/slideshow/frontpage/'
+    ;
+    $files_list = array_diff(
+      scandir($_SERVER['DOCUMENT_ROOT'] . $slide_path, 0),
+      array('..', '.', 'Thumbs.db')
+    );
+
+    // remove first file from list, output as normal html
+    $first_slide = '  <img src="' . $slide_path . array_shift($files_list) . '" alt="" />';
+
+    // send the rest of the slides to jquery to be loaded
+    // this way it only displays multiple slides if the browser supports it
+    $slides_list = array();
+    foreach ($files_list as $slidefile) {
+      $slides_list[] = '  "' . $slide_path . $slidefile . '"';
+    }
+
+    $slideload = implode(",\n", $slides_list);
+    echo <<<SLIDESOUT
+    var slides_to_load = [
+    $slideload
+    ];
+SLIDESOUT;
+  ?>
+
+    function load_slides(elem) {
+      for (var i = 0; i < slides_to_load.length; i++) {
+        jQuery('<img/>', {
+          src: slides_to_load[i],
+          alt: ''
+        }).appendTo(elem);
+      }
+    }
+
+    function start_slideshow() {
+      if (slideshow_started || jQuery(window).width() < 1024)
+        return;
+      load_slides( jQuery('#mainslideshow') );
+      jQuery(".slideshow").slideshow(slide_pause_time, slide_fade_time);
+      slideshow_started = true;
+    }
+
+    jQuery(document).ready(function() {
+      start_slideshow();
+
+      jQuery('.link-column .body').sameHeight();
+
+      jQuery('#mainslideshow').magnificPopup({
+        delegate: 'img',
+        type: 'image',
+        gallery: { enabled: true },
+        image: { verticalFit: true },
+        callbacks: {
+          elementParse: function(item) {
+            item.src = item.el.context.src;
+          }
+        }
+      });
+    });
+
+    jQuery(window).resize(function() {
+      start_slideshow();
+    });
+  </script>
+
+
+  <!--
   <script type="text/javascript" src="/js/fadeslideshow.js">
   /***********************************************
   * Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
@@ -76,8 +157,7 @@
     jQuery(document).ready( startSlideshow );
     jQuery(window).resize( startSlideshow );
   </script>
-
-  <!--<script type = "text/javascript" src="/js/jquery.js"></script>-->
+  -->
 
   <style type="text/css">
     .link-column {
@@ -233,6 +313,12 @@
     #mainslideshow {
       display: inline-block;
       margin: 0 auto 2%;
+      border-radius: 50px;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+    }
+    #mainslideshow img {
+      display: block;
       border-radius: 50px;
       -moz-border-radius: 50px;
       -webkit-border-radius: 50px;
@@ -507,7 +593,8 @@
 
       <div class="leftsidebar2">
 
-        <div id="mainslideshow" class="glow-lightblue">
+        <div id="mainslideshow" class="glow-lightblue slideshow">
+          <?= $first_slide ?>
           <!-- filled in by javascript -->
         </div>
 
