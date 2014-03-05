@@ -170,6 +170,22 @@
   -webkit-border-top-left-radius: 15px;
   -webkit-border-top-right-radius: 15px;
 }
+.article-box .body table {
+  text-align: left;
+  font-weight: bold;
+  font-size: 95%;
+}
+.article-box .body table td {
+  vertical-align: bottom;
+  padding: 5px 0px;
+}
+.article-box .body table td+td {
+  text-align: right;
+  width: 70px;
+}
+.article-box .body table .divider {
+  border-top: solid 1px white;
+}
 
 .bottom-image {
   text-align: center;

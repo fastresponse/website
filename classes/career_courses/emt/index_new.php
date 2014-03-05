@@ -8,6 +8,7 @@ $course_abbr = 'EMT';
 $course_title = 'Emergency Medical Technician';
 $course_types = array('Full-time', 'Part-time');
 
+$buttons['Course Info Packet'] = false;
 $buttons['Skills Videos'] = true;
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_top.php');
@@ -71,6 +72,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
         </div>
       </div>
       <div class="body">
+        <!--
         <ul>
           <li>5 hours - AHA Healthcare Provider CPR</li>
           <li>168 hours - In-class didactic and laboratory instruction and practice<br />
@@ -85,6 +87,21 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>8 hours - Emergency Department externship</li>
           <li>16-24 hours - Ambulance externship</li>
         </ul>
+        -->
+        <table>
+          <tr><td>AHA Healthcare Provider CPR:</td><td>5 hours</td></tr>
+          <tr><td colspan="2"></td></tr>
+          <tr><td colspan="2" class="divider">In-class didactic and laboratory instruction and practice:</td></tr>
+          <tr><td>EMT Foundations</td><td>40 hours</td></tr>
+          <tr><td>Trauma Emergencies</td><td>40 hours</td></tr>
+          <tr><td>Medical Emergencies</td><td>40 hours</td></tr>
+          <tr><td>Specialties</td><td>40 hours</td></tr>
+          <tr><td>Cumulative Final</td><td>40 hours</td></tr>
+          <tr><td>Total Instruction</td><td class="divider">168 hours</td></tr>
+          <tr><td colspan="2" class="divider"></td></tr>
+          <tr><td>Emergency Department externship:</td><td>8 hours</td></tr>
+          <tr><td>Ambulance externship:</td><td>16 hours</td></tr>
+        </table>
       </div>
     </div><!-- /article-box --><div class="article-box">
       <div class="title">
@@ -93,6 +110,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
         </div>
       </div>
       <div class="body">
+        <!--
         <ul>
           <li>Registration Fee: $250.00</li>
           <li>Background Check: $200.00</li>
@@ -104,6 +122,29 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>Tuition: $1,544.00</li>
           <li>Total Program Cost: $2,475.00</li>
         </ul>
+        <dl>
+          <dt>Registration Fee:</dt><dd>$250.00</dd>
+          <dt>Background Check:</dt><dd>$200.00</dd>
+          <dt>Insurance:</dt><dd>$200.00</dd>
+          <dt>Textbooks:</dt><dd>$225.00</dd>
+          <dt>Equipment:</dt><dd>$50.00</dd>
+          <dt>Uniform Patches:</dt><dd>$5.00</dd>
+          <dt>Student Tuition Recovery Fund (STRF):</dt><dd>$1.00</dd>
+          <dt>Tuition:</dt><dd>$1,544.00</dd>
+          <dt>Total Program Cost:</dt><dd>$2,475.00</dd>
+        </dl>
+        -->
+        <table>
+          <tr><td>Registration Fee:</td><td>$250.00</td></tr>
+          <tr><td>Background Check:</td><td>$200.00</td></tr>
+          <tr><td>Insurance:</td><td>$200.00</td></tr>
+          <tr><td>Textbooks:</td><td>$225.00</td></tr>
+          <tr><td>Equipment:</td><td>$50.00</td></tr>
+          <tr><td>Uniform Patches:</td><td>$5.00</td></tr>
+          <tr><td>Student Tuition Recovery Fund (STRF):</td><td>$1.00</td></tr>
+          <tr><td>Tuition:</td><td>$1,544.00</td></tr>
+          <tr><td>Total Program Cost:</td><td class="divider">$2,475.00</td></tr>
+        </table>
       </div>
     </div><!-- /article-box --><div class="article-box cols-2">
       <div class="title">

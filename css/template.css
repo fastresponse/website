@@ -1203,19 +1203,17 @@ div#section-display {
   display: block;
   padding: 10px 5px;
   text-decoration: none;
-  font-family: Century Gothic, sans-serif;
   font-weight: bold;
   /*
+  font-family: Century Gothic, sans-serif;
   height: 30px;
   line-height: 15px;
   */
 }
-.article-box .body dd {
-  padding: 2px 5px;
-}
 .article-box .body a:hover,
 .article-box .body li:hover,
-.article-box .body div.line:hover {
+.article-box .body div.line:hover,
+.article-box .body tr:hover {
   color: rgb(221, 0, 51);
 }
 .article-box.cols-2 .body,
