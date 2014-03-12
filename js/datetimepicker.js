@@ -82,11 +82,19 @@ function NewCal(pCtrl,pFormat,pShowTime,pTimeMode)
 		{
 			strMonth=exDateTime.substring(Sp1+1,Sp2);
 			strDate=exDateTime.substring(0,Sp1);
+		  strYear=exDateTime.substring(Sp2+1,Sp2+5);
 		}
 		else if ((Cal.Format.toUpperCase()=="MMDDYYYY") || (Cal.Format.toUpperCase()=="MMMDDYYYY"))
 		{
 			strMonth=exDateTime.substring(0,Sp1);
 			strDate=exDateTime.substring(Sp1+1,Sp2);
+		  strYear=exDateTime.substring(Sp2+1,Sp2+5);
+		}
+		else if ((Cal.Format.toUpperCase()=="YYYYMMDD") || (Cal.Format.toUpperCase()=="YYYYMMMDD"))
+		{
+			strMonth=exDateTime.substring(Sp1+1,Sp2);
+			strDate=exDateTime.substring(Sp2+1,Sp2+3);
+		  strYear=exDateTime.substring(0,Sp1);
 		}
 		if (isNaN(strMonth))
 			intMonth=Cal.GetMonthIndex(strMonth);
@@ -100,7 +108,6 @@ function NewCal(pCtrl,pFormat,pShowTime,pTimeMode)
 			Cal.Date=strDate;
 		//end parse Date
 		//parse year
-		strYear=exDateTime.substring(Sp2+1,Sp2+5);
 		YearPattern=/^\d{4}$/;
 		if (YearPattern.test(strYear))
 			Cal.Year=parseInt(strYear,10);
@@ -476,6 +483,10 @@ Calendar.prototype.IsLeapYear=IsLeapYear;
 
 function FormatDate(pDate)
 {
+  pDate = pDate.toString();
+  if (pDate.length < 2)
+    pDate = "0" + pDate;
+
 	if (this.Format.toUpperCase()=="DDMMYYYY")
 		return (pDate+DateSeparator+(this.Month+1)+DateSeparator+this.Year);
 	else if (this.Format.toUpperCase()=="DDMMMYYYY")
@@ -484,5 +495,9 @@ function FormatDate(pDate)
 		return ((this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year);
 	else if (this.Format.toUpperCase()=="MMMDDYYYY")
 		return (this.GetMonthName(false)+DateSeparator+pDate+DateSeparator+this.Year);			
+  else if (this.Format.toUpperCase()=="YYYYMMDD")
+    return (this.Year+DateSeparator+(this.Month+1)+DateSeparator+pDate);
+  else if (this.Format.toUpperCase()=="YYYYMMMDD")
+    return (this.Year+DateSeparator+this.GetMonthName(false)+DateSeparator+pDate);
 }
 Calendar.prototype.FormatDate=FormatDate;	

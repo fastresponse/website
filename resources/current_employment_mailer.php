@@ -60,7 +60,8 @@ foreach ($_POST as $key => $value) {
   case 'testimonial':
     // add a newline on the front,
     // then add 2 spaces at the beginning of each line
-    $$key = str_replace("\n", "\n  ", "\n" . $value);
+    if (strlen(trim($$key)))
+      $$key = str_replace("\n", "\n  ", "\n" . $value);
   break;
   default:
     if (in_array($key, $formvalues) && $value) {
@@ -133,7 +134,7 @@ if ($ok_testimonial == 'on' && $releaseok == 'on' && strlen($testimonial)) {
 foreach ($formvalues as $key) {
   switch ($key) {
   default:
-  if (!$$key)
+  if (!$$key || !strlen(trim($$key)))
     $$key = "not given";
   }
 }
@@ -158,7 +159,7 @@ $mail = new PHPMailer();
 
 $mail->SetFrom($email);
 $mail->AddReplyTo($email, $name);
-$mail->AddAddress($to, $name);
+$mail->AddAddress($to, 'Fast Response');
 $mail->Subject = "Post-graduate Employment Survey";
 $mail->IsHTML(false);
 $mail->Body = $messages;

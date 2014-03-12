@@ -24,39 +24,39 @@
   foreach ($_GET as $key => $value) {
     switch ($key) {
       case 'em':
-	if ($value && filter_var($value, FILTER_VALIDATE_EMAIL))
-	  $emailaddr = $value;
+	      if ($value && filter_var($value, FILTER_VALIDATE_EMAIL))
+	        $emailaddr = $value;
       break;
 
       case 'sid':
-	$studentid = str_replace(',', '', $value);
+	      $studentid = str_replace(',', '', $value);
       break;
 
       case 'fn':
-	$firstname = $value;
+	      $firstname = $value;
       break;
 
       case 'ln':
-	$lastname = $value;
+	      $lastname = $value;
       break;
 
       case 'co':
-	$studentcourse = $value;
+	      $studentcourse = $value;
       break;
 
       case 'pr':
-	$program = $value;
+	      $program = $value;
       break;
 
       case 'pn':
-	$studentphone = phone_format(phone_strip($value));
+	      $studentphone = phone_format(phone_strip($value));
       break;
 
       case 'gd':
-	$tmpdate = date_create_from_format(
-	  'm/d/Y', $value, timezone_open('America/Los_Angeles')
-	);
-	$graddate = date_format($tmpdate, 'd-M-Y');
+	      $tmpdate = date_create_from_format(
+	        'm/d/Y', $value, timezone_open('America/Los_Angeles')
+	      );
+	      $graddate = date_format($tmpdate, 'Y-M-d');
       break;
     }
   }
@@ -65,30 +65,30 @@
 
   if ($program && !$studentcourse) {
     switch ($program) {
-    case 'EMT-FT':
-    case 'EMT-PT':
-      $studentcourse = 'EMT';
-    break;
+      case 'EMT-FT':
+      case 'EMT-PT':
+        $studentcourse = 'EMT';
+      break;
 
-    case 'PHL-FT':
-    case 'PHL-PT':
-    case 'PHL-ADV':
-      $studentcourse = 'Phlebotomy';
-    break;
+      case 'PHL-FT':
+      case 'PHL-PT':
+      case 'PHL-ADV':
+        $studentcourse = 'Phlebotomy';
+      break;
 
-    case 'MAC-AM':
-    case 'MAC-PM':
-      $studentcourse = 'Medical Assistant';
-    break;
+      case 'MAC-AM':
+      case 'MAC-PM':
+        $studentcourse = 'Medical Assistant';
+      break;
 
-    case 'SPT-IAHCSMM':
-    case 'SPT-CBSPD':
-      $studentcourse = 'Sterile Processing';
-    break;
+      case 'SPT-IAHCSMM':
+      case 'SPT-CBSPD':
+        $studentcourse = 'Sterile Processing';
+      break;
 
-    case 'PAR':
-      $studentcourse = 'Paramedic';
-    break;
+      case 'PAR':
+        $studentcourse = 'Paramedic';
+      break;
     }
   }
 
@@ -119,32 +119,22 @@
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
   <script type="text/javascript" src="/js/frlib.js"></script>
   <script type="text/javascript" src="/js/datetimepicker.js"></script>
   <script type="text/javascript">
     function openRelease() {
-      window.open('/resources/release.php', 'releasewin', 'width=600,height=520,left=50,top=50,toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=0');
+      window.open('/resources/release.php', 'releasewin',
+        'width=600,height=520,left=50,top=50,toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=0'
+      );
     }
   </script>
 
   <!-- Code for new formmail/autoreply -->
 
   <!-- JQuery -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 
   <script type="text/javascript">  
   /* <![CDATA[ */    
@@ -152,7 +142,7 @@
     var close_note = $("#note");
     close_note.click(function () {
       jQuery("#note").slideUp(500, function () {
-	jQuery(this).hide();
+	      jQuery(this).hide();
       });
     });
 
@@ -163,34 +153,34 @@
       note = $('#note');
 
       $.ajax({
-	type: "POST",
-	url: "/php/ajax/ajax.current_employment_mailer.php",
-	data: fem,
-	success: function(msg) {
-	  if ( note.height() ) {
-	    note.slideUp(500, function() {
-	      $(this).hide();
-	    });
-	  } 
-	  else note.hide();
+	      type: "POST",
+	      url: "/php/ajax/ajax.current_employment_mailer.php",
+	      data: fem,
+	      success: function(msg) {
+	        if ( note.height() ) {
+	          note.slideUp(500, function() {
+	            $(this).hide();
+	          });
+	        } 
+	        else note.hide();
 
-	  $('#loading').fadeOut(300, function() {
-	    $(this).remove();
-	    if (msg === 'OK') {
-	      //$('input').val("");
-	      //$('textarea').val("");
-	    }
-	    // Message Sent? Show the 'Thank You' message and hide the form
-	    result = (msg === 'OK') ? '<div class="success">Your responses have been saved. Thank you for participating!</div>' : msg;
+	        $('#loading').fadeOut(300, function() {
+	          $(this).remove();
+	          if (msg === 'OK') {
+	            //$('input').val("");
+	            //$('textarea').val("");
+	          }
+	          // Message Sent? Show the 'Thank You' message and hide the form
+	          result = (msg === 'OK') ? '<div class="success">Your responses have been saved. Thank you for participating!</div>' : msg;
 
-	    var i = setInterval(function() {
-	      if ( !note.is(':visible') ) {
-		note.html(result).slideDown(500);
-		clearInterval(i);
+	          var i = setInterval(function() {
+	            if ( !note.is(':visible') ) {
+		            note.html(result).slideDown(500);
+		            clearInterval(i);
+	            }
+	          }, 40);    
+	        }); // end loading image fadeOut
 	      }
-	    }, 40);    
-	  }); // end loading image fadeOut
-	}
       });
 
       return false;
@@ -431,7 +421,7 @@
 	      <p>Your responses to this survey will greatly help our accreditation efforts and allow us to better serve our students.</p>
 	      <p>Thank you for your participation.</p>
 
-	      <form id="ajax-contact-form" method="post" action="/resources/current_employment_mailer.php">
+	      <form id="ajax-contact-form" method="post" action="/php/ajax/ajax.current_employment_mailer.php">
 
 		<input type='hidden' name='email' value='<?= $emailaddr ?>' />
 		<input type='hidden' name='sid' value='<?= $studentid ?>' />
@@ -450,13 +440,13 @@
 		  <label class="required">*Course</label><select name="course" class="required">
 		    <?php
 		      foreach ($all_courses as $course => $selected)
-			echo "<option value='$course' $selected>$course</option>\n";
+			      echo "<option value='$course' $selected>$course</option>\n";
 		    ?>
 		  </select>
 		</div>
 		<div class="box">
 		  <label class="required">*Graduation Date</label><input id="cal" type="text" name="graddate" class="date required" readonly="readonly" value="<?= $graddate ?>" />
-		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal', 'ddmmmyyyy');" />
+		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal', 'yyyymmmdd');" />
 		</div>
 		
 		<div class="clearbox"></div>
@@ -474,13 +464,13 @@
 		</div>
 		<div class="box">
 		  <label class="required">*Hire Date</label><input id="cal2" type="text" name="hiredate" class="date required" readonly="readonly" value="" />
-		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal2', 'ddmmmyyyy');" />
+		  <img src="/images/cal.gif" alt="Pick a date" class="calimg" onClick="NewCal('cal2', 'yyyymmmdd');" />
 		</div>
 		<div class="box">
 		  <label>Employer Address</label><textarea name="empaddr" cols="61" rows="3"></textarea>
 		</div>
 
-		<!--
+    <?php if (false): ?>
 		<div class="box">
 		  <label>Starting Pay</label><select name="startpay">
 		    <option value="decline to state">Decline to state</option>
@@ -501,7 +491,7 @@
 		    <option value="over 30">More than $30</option>
 		  </select>
 		</div>
-		-->
+    <?php endif; ?>
 
 		<div class="box">
 		  <label class="required">*Hours Per Week</label><input class="inpt required" type="text" name="hoursperweek" value="" />
@@ -515,7 +505,7 @@
 		  <h5 class="required">*These fields are required.</h5>
 		</div>
 
-		<!--
+    <?php if (false): ?>
 		<div class="box">
 		  <label></label><div class="spacer"></div>
 		</div>
@@ -525,7 +515,7 @@
 		    <option value="32 or more" selected="selected">32 or more</option>
 		  </select>
 		</div>
-		-->
+    <?php endif; ?>
 
 		<div class="clearbox"></div>
 		<hr />
@@ -562,13 +552,13 @@
 		<hr />
 		<div class="clearbox"></div>
 
-		<!--
+    <?php if (false): ?>
 		<div class="box">
 		  <label></label>
 		  <input name="opt-out" type="checkbox" class="inpt" />
 		  <label style="width: auto;">Please remove me from all future emails from Fast Response.</label>
 		</div>
-		-->
+    <?php endif; ?>
 
 		<div style="clear: left; height: 2em; width: 140px;"></div>
 
