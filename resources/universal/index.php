@@ -76,20 +76,7 @@
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
-
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php') ?>
 
   <script type="text/javascript" src="/js/joblist.js"></script>
   <script type="text/javascript" src="/js/frlib.js"></script>
@@ -192,6 +179,9 @@
 	<div class="rightsidebar2">
           <div class="quicklinks2">
 
+      <div id="sidebar_btn_forms" class="basic-button glow-lightblue innerglow-lightblue" data-section="sidebar-buttons">
+        <a href="#"><div>FORMS</div></a>
+      </div>
 
       <div id="sidebar_btn_carsvcs" class="basic-button glow-yellow innerglow-lightblue" data-section="sidebar-buttons">
         <a href="#"><div>CAREER SERVICES</div></a>
@@ -226,6 +216,23 @@
 	</div>
 
 	<div class="leftcontent2" style="position: relative;">
+
+    <div id="forms" data-section="main">
+      <div class="column col2" style="width: 45%; padding: 20px 4% 20px 0; margin-right: 0; border-right: solid 1px white;">
+        <h1>Admissions and Administrative Documents</h1>
+        <?php include('../universal/forms.php'); ?>
+      </div>
+      <div class="column col2" style="width: 40%; padding: 20px 0 20px 4%; margin-left: 0;">
+	      <h1><?= $course_title ?> Documents and Information</h1>
+	      <?php
+	        if (file_exists("../$course/forms.php"))
+		        include("../$course/forms.php");
+          else
+		        echo '<h3>No course specific documents available.</h3>';
+        ?>
+	    </div>
+        
+    </div>
 
     <!-- show by default (because it doesn't have the "hidden" class -->
 	  <div id="carsvcs" data-section="main">
