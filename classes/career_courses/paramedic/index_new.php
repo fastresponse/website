@@ -8,18 +8,23 @@ $course_abbr = 'Paramedic';
 $course_title = 'Paramedic Academy';
 $course_types = array('Application Deadline', 'Academy Start');
 
-$sections['Testimonials'] = false;
-$sections['Extra'] = true;
-
-$buttons['Course Info Packet'] = false;
-$buttons['Student Resources'] = false;
-
 $zip_radius = 75;
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_top.php');
+$sections['left'] = array(
+  'Slideshow',
+  'Contact Form',
+  'Gallery Link',
+  'Quicklinks',
+  'Course Approvals',
+  'Externship',
+  //'Testimonials',
+);
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');
 ?>
 
-<div class="content">
+<?php if (false): ?>
+
   <h2>Advanced Skills for EMTs</h2>
   <p>
   It is the mission of the Fast Response Paramedic Academy to produce extraordinary critical thinking paramedics who provide compassionate and proficient patient care. We do this by creating a supportive learning environment that includes the student in the learning process. We provide several opportunities for outside activities that enrich the didactic experience. The opportunities include ride alongs with local 911 EMS providers.
@@ -104,41 +109,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 <?php endforeach; ?>
         </ul>
       </div>
-    </div><!-- /article-box --><?php endif; ?><div class="article-box wide" id="paramedic_admissions">
-      <div class="title" style="cursor: pointer;">
-        <div class="title-border">
-          <h1>Paramedic Admissions Procedures</h1>
-		      <h2>Click to view</h2>
-          <h2 style="display: none;">Click to hide</h2>
-        </div>
-      </div>
-      <div class="body" style="display: none;">
-        <ul>
-	        <li><span class="course-start-title">For interview candidacy</span></li>
-	        <ul>
-		        <li>Complete an Application for Consideration.</li>
-		        <li>Successful completion of an entrance examination (Wonderlic) with a score of 20 or greater.</li>
-		        <li>Proof of age (must be 18 at <strong>Program Expected Graduation date</strong>).</li>
-		        <li>Proof of legal ability to work in the United States.</li>
-		        <li>Proof of minimum education requirements:</li>
-		        <ul style="padding-left: 25px;">
-		          <li>High school diploma, official high school transcripts showing successful completion, GED, or official college transcripts.</li>
-		          <li>Copy of current Emergency Medical Technician Certification and Health Care Provider CPR card, both individually renewed within 12 months of the <strong>Program Expected Start Date</strong>.</li>
-		        </ul>
-		        <li>Proof of at least 1040 hours (six months full-time equivalent) EMT experience. (Pay stubs, W-2 forms, letter from supervisor, etc.).</li>
-		        <li>Copy of current resume.</li>
-		        <li>Copy of required essay. </li>
-		        <li>Completion of an Anatomy and Physiology class or Paramedic A&amp;P.</li>
-	        </ul>
-	        <li><span class="course-start-title">If accepted after interview</span></li>
-	        <ul>
-		        <li>Completion of an enrollment agreement.</li>
-		        <li>Financial plan for funding education.</li>
-		        <li>Payment either in full or of the first required installment of a payment plan.</li>
-	        </ul>
-	      </ul>
-	    </div>
-	  </div><!-- /article-box --><div class="article-box cols-2">
+    </div><!-- /article-box --><?php endif; ?><div class="article-box cols-2">
       <div class="title">
         <div class="title-border">
           <h1>Key Values</h1>
@@ -186,5 +157,5 @@ $(document).ready(function() {
     </a>
   </div>
 
-</div> <!-- /content -->
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_bottom.php'); ?>
+
+<?php endif; ?>

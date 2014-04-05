@@ -600,11 +600,12 @@ SLIDESOUT;
 
         <div class="banners">
 
+<?php if (false): // disable this banner ?>
 <?php
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
   $handle = db_connect('start_dates');
   $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
-  if (empty($next)) $next['thedate'] = '2014-01-15';
+  if (empty($next) || empty($next['thedate'])) $next['thedate'] = '2014-01-15';
   $date = date_create_from_format('Y-m-d', $next['thedate']);
   $date = $date->format('M jS');
 ?>
@@ -616,6 +617,7 @@ SLIDESOUT;
               <span></span>
             </a>
           </div>
+<?php endif; // end disabled banner ?>
 
 	        <div class="banner">
 	          <a href="/classes/continuing_education/cpr/" class="btn buttontext lines-1 glow-yellow">
@@ -697,21 +699,7 @@ SLIDESOUT;
               <!--<a href="/resources/paramedic/">Paramedic Resources</a>-->
               <a href="/resources/spt/">SPT Resources</a>
             </div>
-          </div><!-- /link-column --><!--<div class="link-column">
-            <div class="title">
-              <div>
-                <h1>Test</h1>
-                <h2>Subheading</h2>
-              </div>
-            </div>
-            <div class="body">
-              <a href="/">Test 1</a>
-              <a href="/">Test 2</a>
-              <a href="/">Test 3</a>
-              <a href="/">Test 4</a>
-              <a href="/">Test 5</a>
-            </div>
-          </div>--><!-- /link-column --><div class="link-column cols-2">
+          </div><!-- /link-column --><div class="link-column cols-2">
             <div class="title">
               <div>
                 <h1>Continuing Education</h1>
@@ -729,6 +717,7 @@ SLIDESOUT;
               <a href="/classes/continuing_education/itls/">International Trauma Life Support (ITLS)</a>
               <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
               <a href="/classes/continuing_education/NREMT/">NREMT</a>
+              <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>
             </div>
           </div><!-- /link-column -->
 

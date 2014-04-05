@@ -121,6 +121,10 @@
       <li>
       <a href="/classes/continuing_education/NREMT/">NREMT</a>
       </li>
+
+      <li>
+      <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>
+      </li>
     </ul>
     </li>
   </ul>

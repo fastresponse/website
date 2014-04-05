@@ -1,9 +1,9 @@
 <?php
   $handle = null;
 
-  $left_sidebar_width = 350;
-  $right_sidebar_width = 180;
-  $sidebar_pad_inside = 45;
+  $left_sidebar_width = 320;
+  $right_sidebar_width = 220;
+  $sidebar_pad_inside = 25;
   $sidebar_pad_outside = 5;
   $sidebar_pad_total = $sidebar_pad_inside + $sidebar_pad_outside;
   $content_pad_left = $left_sidebar_width + $sidebar_pad_total;
@@ -16,21 +16,78 @@
   $course_title = '';
   $course_types = array('');
 
-  $sections = array(
-    'Testimonials' => true,
-    'Extra' => false,
-  );
-
-  $buttons = array(
-    'Course Info Packet' => true,
-    'Student Resources' => true,
-    'Skills Videos' => false,
-    'Photo Gallery' => true,
-    'Contact Us' => true,
-    'Facebook' => true,
-  );
-
   $zip_radius = 50;
 
   $head_code = '';
+
+
+  /* sections */
+
+  $course_incl_dir = $_SERVER['DOCUMENT_ROOT'] . '/include/course/';
+
+  $sections['head'] = array(
+  );
+
+  $sections['topleft'] = array(
+    'Page Logo',
+  );
+  $sections['topright'] = array(
+    //'Promotions',
+  );
+  $sections['topcenter'] = array(
+    'Page Title',
+  );
+
+  $sections['left'] = array(
+    'Slideshow',
+    'Contact Form',
+    'Gallery Link',
+    'Quicklinks',
+    'Course Approvals',
+    'Externship',
+    'Testimonials',
+  );
+
+  $sections['right'] = array(
+    //'Events',
+    //'Calendar',
+    'Download Links',
+    'Course Contacts',
+    'FAQs',
+    'Misc',
+  );
+
+  $sections['center'] = array(
+    'Course Description',
+    'Prerequisites',
+    'Immunizations',
+    'Admissions Procedures',
+    'Class Start Dates',
+    'Class Schedules',
+    'Certifications',
+    'Tuition And Fees',
+    'Financing',
+    'Instructor Introductions',
+  );
+
+  // turns 'Contact Form' into 'contact_form.php'
+  // if this file exists in the current dir (course-specific) then use that
+  // otherwise use the one in $course_incl_dir
+  //
+  // this func will be called in course_template.php to give each page time to
+  // reconfigure things if wanted
+  function translate_includes() {
+    global $sections, $course_incl_dir;
+    foreach ($sections as &$sect) {
+      foreach ($sect as &$chunk) {
+        $fname = str_replace(' ', '_', strtolower($chunk)) . '.php';
+        $dir = $course_incl_dir;
+        if (file_exists(getcwd() . '/' . $fname)) {
+          $dir = getcwd() . '/';
+        }
+        $chunk = $dir . $fname;
+      }
+    }
+  }
+
 ?>

@@ -2,6 +2,8 @@ ErrorDocument 403 /index.php
 ErrorDocument 404 /index.php
 
 Redirect permanent /emt/files https://www.dropbox.com/sh/oraprlo3w5sv0wv/pv0IJl427r
+Redirect permanent /emt/studentfiletest https://drive.google.com/folderview?id=0B7Ouhne2XskXbzhjUFBmRGVwdTg&usp=sharing#list
+Redirect permanent /emt/invoicetest https://drive.google.com/folderview?id=0B7Ouhne2XskXUEI3d2ZvRF90QlE&usp=sharing#list
 
 Redirect permanent /cma/files https://www.dropbox.com/sh/tzm52wedoavf21b/5bIKvxMNIp
 

@@ -55,6 +55,9 @@
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
       <div class="basic-button innerglow-lightblue glow-lightblue">
+        <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216"><div>Register for A &amp; P Class</div></a>
+      </div>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
 	      <a href="/gallery/index.php/Paramedic"><div>Photo Gallery</div></a>
       </div>
       <div class="basic-button image-button glow-lightblue">

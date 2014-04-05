@@ -13,7 +13,7 @@
   parse_str($_SERVER['QUERY_STRING'], $query_args);
 
   $allowed_sections = array(
-    'carsvcs', 'resumes', 'interviews', 'jobsearch', 'extcert', 'videos'
+    'forms', 'carsvcs', 'resumes', 'interviews', 'jobsearch', 'extcert', 'videos'
   );
   if (!array_key_exists('section', $query_args) ||
   !in_array($query_args['section'], $allowed_sections)) {
@@ -218,6 +218,25 @@
 	<div class="leftcontent2" style="position: relative;">
 
     <div id="forms" data-section="main">
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead style="vertical-align: top;"><tr>
+          <th style="width: 50%; border-right: solid 1px white; padding: 0 20px;"><h1>Admissions and Administrative Documents</h1></th>
+          <th style="width: 50%; padding: 0 20px;"><h1><?= $course_title ?> Documents and Information</h1></th>
+        </tr></thead>
+        <tbody style="vertical-align: top;"><tr>
+          <td style="border-right: solid 1px white; padding: 0 20px;"><?php include('../universal/forms.php'); ?></td>
+          <td style="padding: 0 20px;">
+	          <?php
+	            if (file_exists("../$course/forms.php"))
+		            include("../$course/forms.php");
+              else
+		            echo '<h3>No course specific documents available.</h3>';
+            ?>
+          </td>
+        </tr></tbody>
+      </table>
+
+      <?php if (false): ?>
       <div class="column col2" style="width: 45%; padding: 20px 4% 20px 0; margin-right: 0; border-right: solid 1px white;">
         <h1>Admissions and Administrative Documents</h1>
         <?php include('../universal/forms.php'); ?>
@@ -231,7 +250,7 @@
 		        echo '<h3>No course specific documents available.</h3>';
         ?>
 	    </div>
-        
+      <?php endif; ?>
     </div>
 
     <!-- show by default (because it doesn't have the "hidden" class -->

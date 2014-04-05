@@ -8,6 +8,8 @@ $course_abbr = 'EMT';
 $course_title = 'Emergency Medical Technician';
 $course_types = array('Full-time', 'Part-time');
 
+$sections['Approved'] = true;
+
 $buttons['Course Info Packet'] = false;
 $buttons['Skills Videos'] = true;
 
@@ -33,7 +35,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
         <div class="title-border">
           <h2>Five Week Course</h2>
           <h1>Full-time Schedule</h1>
-		      <h2>Day classes</h2>
+		      <h2>Daytime</h2>
         </div>
       </div>
       <div class="body">
@@ -51,7 +53,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
         <div class="title-border">
           <h2>Eight Week Course</h2>
           <h1>Part-time Schedule</h1>
-		      <h2>Evening classes</h2>
+		      <h2>Evening</h2>
         </div>
       </div>
       <div class="body">
@@ -68,10 +70,24 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
     </div><!-- /article-box --><div class="article-box">
       <div class="title">
         <div class="title-border">
-          <h1>Course Hour Outline</h1>
+          <h1>Course Hours</h1>
         </div>
       </div>
       <div class="body">
+        <dl class="alternate">
+          <div class="highlight"><dt>AHA Healthcare Provider CPR</dt><dd>5 hours</dd></div>
+          <hr style="width: 75%;"/>
+          <div style="clear: both; font-weight: bold; margin-bottom: 10px;" class="yellow">In-class didactic and laboratory instruction and practice:</div>
+          <div class="highlight"><dt>EMT Foundations</dt><dd>40 hours</dd></div>
+          <div class="highlight"><dt>Trauma Emergencies</dt><dd>40 hours</dd></div>
+          <div class="highlight"><dt>Medical Emergencies</dt><dd>40 hours</dd></div>
+          <div class="highlight"><dt>Specialties</dt><dd>40 hours</dd></div>
+          <div class="highlight"><dt>Cumulative Final</dt><dd>40 hours</dd></div>
+          <div class="highlight yellow" style="padding-bottom: 5px;"><dt>Total Instruction</dt><dd>168 hours</dd></div>
+          <hr style="width: 75%; margin-bottom: 20px; margin-top: -15px;"/>
+          <div class="highlight"><dt>Emergency Department externship</dt><dd>8 hours</dd></div>
+          <div class="highlight"><dt>Ambulance externship</dt><dd>16 hours</dd></div>
+        </dl>
         <!--
         <ul>
           <li>5 hours - AHA Healthcare Provider CPR</li>
@@ -87,7 +103,6 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>8 hours - Emergency Department externship</li>
           <li>16-24 hours - Ambulance externship</li>
         </ul>
-        -->
         <table>
           <tr><td>AHA Healthcare Provider CPR:</td><td>5 hours</td></tr>
           <tr><td colspan="2"></td></tr>
@@ -102,6 +117,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <tr><td>Emergency Department externship:</td><td>8 hours</td></tr>
           <tr><td>Ambulance externship:</td><td>16 hours</td></tr>
         </table>
+        -->
       </div>
     </div><!-- /article-box --><div class="article-box">
       <div class="title">
@@ -122,18 +138,19 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <li>Tuition: $1,544.00</li>
           <li>Total Program Cost: $2,475.00</li>
         </ul>
-        <dl>
-          <dt>Registration Fee:</dt><dd>$250.00</dd>
-          <dt>Background Check:</dt><dd>$200.00</dd>
-          <dt>Insurance:</dt><dd>$200.00</dd>
-          <dt>Textbooks:</dt><dd>$225.00</dd>
-          <dt>Equipment:</dt><dd>$50.00</dd>
-          <dt>Uniform Patches:</dt><dd>$5.00</dd>
-          <dt>Student Tuition Recovery Fund (STRF):</dt><dd>$1.00</dd>
-          <dt>Tuition:</dt><dd>$1,544.00</dd>
-          <dt>Total Program Cost:</dt><dd>$2,475.00</dd>
-        </dl>
         -->
+        <dl class="alternate">
+          <div class="highlight"><dt>Registration Fee</dt><dd>$250.00</dd></div>
+          <div class="highlight"><dt>Background Check</dt><dd>$200.00</dd></div>
+          <div class="highlight"><dt>Insurance</dt><dd>$200.00</dd></div>
+          <div class="highlight"><dt>Textbooks</dt><dd>$225.00</dd></div>
+          <div class="highlight"><dt>Equipment</dt><dd>$50.00</dd></div>
+          <div class="highlight"><dt>Uniform Patches</dt><dd>$5.00</dd></div>
+          <div class="highlight"><dt>Student Tuition Recovery Fund</dt><dd>$1.00</dd></div>
+          <div class="highlight"><dt>Tuition</dt><dd>$1,544.00</dd></div>
+          <div class="highlight yellow"><dt>Total Program Cost</dt><dd>$2,475.00</dd></div>
+        </dl>
+        <!--
         <table>
           <tr><td>Registration Fee:</td><td>$250.00</td></tr>
           <tr><td>Background Check:</td><td>$200.00</td></tr>
@@ -145,6 +162,7 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
           <tr><td>Tuition:</td><td>$1,544.00</td></tr>
           <tr><td>Total Program Cost:</td><td class="divider">$2,475.00</td></tr>
         </table>
+        -->
       </div>
     </div><!-- /article-box --><div class="article-box cols-2">
       <div class="title">

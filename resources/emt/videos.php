@@ -29,9 +29,10 @@
     <li onClick="choosevid(this, 'EMT O2 Nasal Cannula');" class="odd">EMT O<sub>2</sub> Nasal Cannula</li>
     <li onClick="choosevid(this, 'EMT O2 Non-rebreather Mask');">EMT O<sub>2</sub> Non-rebreather Mask</li>
     <li onClick="choosevid(this, 'EMT OPA');" class="odd">EMT OPA</li>
-    <li onClick="choosevid(this, 'EMT Sager Traction Splint');">EMT Sager Traction Splint</li>
-    <li onClick="choosevid(this, 'EMT Skin Assessment');" class="odd">EMT Skin Assessment</li>
-    <li onClick="choosevid(this, 'EMT Suctioning');">EMT Suctioning</li>
+    <li onClick="choosevid(this, 'EMT Primary Assessment');">EMT Primary Assessment</li>
+    <li onClick="choosevid(this, 'EMT Sager Traction Splint');" class="odd">EMT Sager Traction Splint</li>
+    <li onClick="choosevid(this, 'EMT Skin Assessment');">EMT Skin Assessment</li>
+    <li onClick="choosevid(this, 'EMT Suctioning');" class="odd">EMT Suctioning</li>
   </ul>
 </div>
 

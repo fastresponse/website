@@ -9,29 +9,29 @@
 */
 
 .sidebar {
-  text-align: justify;
+  text-align: left;
   padding-top: 0;
   padding-bottom: 0;
 }
-
 .left.sidebar {
-  width: 350px;
+  width: 320px;
   padding-right: 25px;
   padding-left: 5px;
   float: left;
   direction: ltr;
 }
 .right.sidebar {
-  width: 180px;
+  width: 220px;
   padding-right: 5px;
   padding-left: 25px;
   float: right;
-  direction: rtl;
+  direction: ltr;
+  font-size: 80%;
 }
-
 .content {
-  padding-left: 380px;
-  padding-right: 210px;
+  padding-left: 350px;
+  padding-right: 250px;
+  text-align: center;
 }
 
 
@@ -39,18 +39,19 @@
   border-bottom: none;
   position: relative;
 }
-#logo-container img {
+
+
+#page_logo {
   width: 100%;
 }
-#title-container {
+#page_title {
   position: absolute;
   top: 45%;
   bottom: 0;
   left: 0;
   right: 0;
 }
-
-.course-title {
+#page_title h1 {
   text-align: center;
   margin: 0 auto;
   font-weight: bold;
@@ -63,83 +64,132 @@
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
-.course-header-slideshow {
+#slideshow {
   width: 100%;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   margin: 15px 0;
 }
-.course-header-slideshow img {
+.slideshow img {
   display: block;
   width: 100%;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
-.student-testimonials,
-.course-extra div {
-  margin-top: 30px;
-  text-align: left;
+
+.left.sidebar .border,
+.right.sidebar .border,
+.sidebar .module,
+.sidebar .article-box {
   border: solid rgb(255, 255, 153) 2px;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
+  padding: 5px 15px;
+  margin: 0 0 30px 0;
 }
-.student-testimonials:hover {
-}
-.student-testimonials h1,
-.course-extra div h1 {
+
+.left.sidebar h1,
+.right.sidebar h1,
+.sidebar .module h1,
+.sidebar .article-box h1 {
   font-size: large;
   text-align: center;
   letter-spacing: 3px;
   color: #FFFF99;
 }
 
-.course-extra div {
-  padding: 5px 15px;
+#gallery_link {
+  text-align: center;
+  max-width: 100%;
 }
-.course-extra div ul {
-  padding: 0 20px;
+#gallery_link img {
+  width: 100%;
 }
-.course-extra div ul li {
-  margin-bottom: 0.75em;
+#download_links a,
+#quick_links a {
+  display: block;
+  margin-bottom: 0.5em;
+}
+#course_description {
+  text-align: left;
+  margin-bottom: 40px;
+}
+#course_contacts ul {
+  padding-left: 0;
+  margin-left: 10px;
+  margin-top: 0;
+}
+#faqs ol {
+  padding: 0;
+  margin: 0;
+}
+#course_contacts ul li {
+  list-style-type: none;
+}
+#faqs ol li {
+  margin-bottom: 0.5em;
 }
 
-.course-start-box {
-  margin-top: 40px;
+.sidebar .article-box .title {
+  border: none;
+  padding: 0;
+  background-color: transparent;
 }
-.course-start-title {
-  font-size: 120%;
-  text-decoration: underline;
-  margin-bottom: 0;
-  color: #DD0033;
+.sidebar .article-box .title-border {
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
-.course-start-date {
-  color: #FFFF99;
-  vertical-align: top
+.sidebar .article-box .title-border h1 {
+  margin-bottom: 0.65em;
+  text-shadow: none;
+}
+.sidebar .article-box .body {
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+}
+.sidebar .article-box .body li,
+.sidebar .article-box .body a,
+.sidebar .article-box .body dt,
+.sidebar .article-box .body dd {
+  font-weight: normal;
+  padding: 0;
 }
 
 .article-box {
+  /*
   width: 48%;
   max-width: 370px;
-  margin: 0 0 20px;
+  */
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 20px;
   padding: 0 3px;
-  /*font-size: 92%;*/
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 .article-box.cols-2,
 .article-box.wide {
+  /*
   width: 100%;
   max-width: 760px;
+  */
 }
 
 .article-box .title {
   border-radius: 35px;
   -moz-border-radius: 35px;
   -webkit-border-radius: 35px;
+  border: 1px dashed #dd0033;
 }
 
 .article-box .title h2 + h1,
@@ -155,12 +205,14 @@
 
 .article-box.cols-2 .body,
 .article-box.wide .body {
+  /*
   width: 90%;
   max-width: 640px;
+  */
 }
 .article-box .body {
+  text-align: left;
   width: 90%;
-  max-width: 250px;
   position: relative;
   top: -4px;
   border-top-left-radius: 15px;
@@ -169,10 +221,12 @@
   -moz-border-top-right-radius: 15px;
   -webkit-border-top-left-radius: 15px;
   -webkit-border-top-right-radius: 15px;
+  border: 1px dashed #dd0033;
+  border-top: none;
+  font-weight: normal;
 }
 .article-box .body table {
   text-align: left;
-  font-weight: bold;
   font-size: 95%;
 }
 .article-box .body table td {
@@ -181,7 +235,7 @@
 }
 .article-box .body table td+td {
   text-align: right;
-  width: 70px;
+  width: 75px;
 }
 .article-box .body table .divider {
   border-top: solid 1px white;
@@ -196,6 +250,38 @@
 .bottom-image img {
   max-width: 100%;
 }
+.article-box dl.alternate dt {
+  padding: 0;
+  text-align: center;
+}
+.article-box dl.alternate dd {
+  padding: 2px 0 15px 0;
+  text-align: right;
+}
+.article-box dl.alternate div.highlight {
+  clear: both;
+}
+.article-box dl.alternate div.highlight:hover {
+  color: #dd0033;
+}
+
+
+
+.course-start-box {
+  margin-top: 40px;
+}
+.course-start-title {
+  font-size: 120%;
+  text-decoration: underline;
+  margin-bottom: 0;
+  color: #DD0033;
+}
+.course-start-date {
+  color: #FFFF99;
+  vertical-align: top
+}
+
+
 
 @media (max-width: 1023px) and (min-width: 640px) {
   #menu {
@@ -238,6 +324,14 @@
     margin-top: -10px;
     padding-top: 0;
   }
+  .left.sidebar .course-approved {
+    float: right;
+    margin-top: -50px;
+    margin-bottom: 30px;
+  }
+  .left.sidebar .course-approved div h1 {
+    font-size: medium;
+  }
   .left.sidebar .student-testimonials,
   .left.sidebar .course-extra {
     display: none;
@@ -259,6 +353,9 @@
     padding-right: 120px;
   }
   .article-box {
+  }
+  .hide-medium {
+    display: none;
   }
 }
 
@@ -318,5 +415,28 @@
   }
   .bottom-image {
     display: none;
+  }
+  .hide-small {
+    display: none;
+  }
+  .course-approved {
+    padding: 5px;
+  }
+  .course-approved div {
+    margin: 0 auto 5px;
+    max-width: 330px;
+  }
+  .course-approved div h1 {
+    margin: 3px 0;
+    font-size: small;
+    letter-spacing: 0;
+  }
+  .course-approved div ul {
+    margin-bottom: 0.5em;
+    padding-left: 0.2em;
+  }
+  .course-approved div ul li {
+    font-size: x-small;
+    margin-bottom: 0.5em;
   }
 }

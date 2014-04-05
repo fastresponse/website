@@ -39,6 +39,11 @@ include_once('../includes/header.php');
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.png" alt="Phlebotomy careers">
 
+<p style="width: 90%; margin-left: auto; margin-right: auto; color: #dd0033;">
+  In order to begin paramedic training, you must first be a licensed and practicing Emergency Medical Technician with at least six months experience.<br style="line-height: 1.5em;" />
+  <a style="font-weight: bold;" href="/get-info/emt/">If you're not already an EMT, <span style="text-decoration: underline;">get information about becoming an EMT here.</span></a>
+</p>
+
 <p>
   Paramedics provide advanced emergency medical care above and beyond what an EMT can do. They are able to administer medications, start IVs, and provide extensive prehospital care. Paramedics typically work in ambulances, but can also be found in hospitals, fire departments, and other places where advanced emergency medical care may be needed.
 </p>
