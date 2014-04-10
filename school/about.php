@@ -65,7 +65,7 @@
 	  <div class="quicklinks2">
 
       <div class="basic-button innerglow-lightblue glow-lightblue">
-	      <a href="/pdfs/Fast Response Catalog 2013.pdf"><div>Course Catalog</div></a>
+	      <a href="/pdfs/Fast Response Catalog 2014.pdf"><div>Course Catalog</div></a>
       </div>
 
 	    <!--

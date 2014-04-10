@@ -101,6 +101,13 @@
   color: #FFFF99;
 }
 
+.sidebar .module .body li {
+  margin-top: 0.5em;
+}
+.sidebar .module .body li:first-child {
+  margin-top: 0;
+}
+
 #gallery_link {
   text-align: center;
   max-width: 100%;
@@ -108,30 +115,73 @@
 #gallery_link img {
   width: 100%;
 }
-#download_links a,
-#quick_links a {
+/*
+#links a {
   display: block;
-  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
+#links a:first-child {
+  margin-top: 0;
+}
+*/
 #course_description {
   text-align: left;
   margin-bottom: 40px;
 }
-#course_contacts ul {
+#staff ul {
   padding-left: 0;
   margin-left: 10px;
+  margin-top: 0;
+}
+#staff ul li {
+  list-style-type: none;
   margin-top: 0;
 }
 #faqs ol {
   padding: 0;
   margin: 0;
 }
-#course_contacts ul li {
-  list-style-type: none;
+#faqs ol li:first-child {
+  margin-top: 0;
 }
 #faqs ol li {
-  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
+
+#testimonials .body>div  {
+  line-height: 1.35;
+}
+
+#testimonials .body {
+  text-align: justify;
+}
+
+#testimonials .body>div img {
+  margin-right: 14px;
+  /*margin-bottom: 5px;*/
+  max-width: 45%;
+  float: left;
+}
+
+#testimonials .body>div p {
+  font-style: italic;
+  quotes: "\"" "\"";
+}
+
+#testimonials .body>div p:before {
+  content: open-quote;
+}
+
+#testimonials .body>div p:after {
+  content: close-quote;
+}
+
+#testimonials .body>div .source {
+}
+#testimonials .body>div .source:before {
+  content: '- ';
+}
+
 
 .sidebar .article-box .title {
   border: none;
@@ -332,7 +382,7 @@
   .left.sidebar .course-approved div h1 {
     font-size: medium;
   }
-  .left.sidebar .student-testimonials,
+  .left.sidebar #testimonials,
   .left.sidebar .course-extra {
     display: none;
   }
@@ -378,7 +428,7 @@
   .course-title {
     font-size: x-large;
   }
-  .student-testimonials,
+  #testimonials,
   .course-extra {
     display: none;
   }

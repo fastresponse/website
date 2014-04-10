@@ -1,6 +1,10 @@
-<div id="testimonials" class="student-testimonials">
-<h1>Success Stories</h1>
-<div class="testimonial-wrapper slideshow">
+<div id="testimonials" class="module article-box">
+  <div class="title">
+    <div class="title-border">
+      <h1>Success Stories</h1>
+    </div>
+  </div>
+  <div class="body slideshow">
 
 <?php
 
@@ -47,13 +51,13 @@ foreach ($quotes_tmp as $quote):
 
 ?>
 
-  <blockquote style="display: <?= $initial_visibility ?>;">
+  <div style="display: <?= $initial_visibility ?>;">
   <?php if (!empty($quote_image)): ?>
     <img alt="Fast Response graduate photo" src="<?= $quote_image ?>" />
   <?php endif; ?>
     <p><?= $quote_text ?></p>
     <div class="source"><strong><?= $quote_name ?></strong>, Fast Response Graduate</div>
-  </blockquote>
+  </div>
 
 <?php endforeach; ?>
 

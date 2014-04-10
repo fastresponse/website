@@ -5,6 +5,6 @@
     </div>
   </div>
   <div class="body">
-    <p>Course-specific miscellaneous stuff goes here.</p>
+    <div>Course-specific miscellaneous stuff goes here.</div>
   </div>
 </div>

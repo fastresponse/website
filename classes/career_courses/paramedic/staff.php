@@ -1,7 +1,7 @@
-<div id="course_contacts" class="module article-box">
+<div id="staff" class="module article-box">
   <div class="title">
     <div class="title-border">
-      <h1>Contacts</h1>
+      <h1>Staff</h1>
     </div>
   </div>
   <div class="body">

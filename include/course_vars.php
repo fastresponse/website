@@ -42,17 +42,16 @@
     'Slideshow',
     'Contact Form',
     'Gallery Link',
-    'Quicklinks',
-    'Course Approvals',
     'Externship',
     'Testimonials',
   );
 
   $sections['right'] = array(
+    'Course Approvals',
     //'Events',
     //'Calendar',
-    'Download Links',
-    'Course Contacts',
+    'Links',
+    'Staff',
     'FAQs',
     'Misc',
   );
@@ -67,7 +66,6 @@
     'Certifications',
     'Tuition And Fees',
     'Financing',
-    'Instructor Introductions',
   );
 
   // turns 'Contact Form' into 'contact_form.php'

@@ -5,8 +5,10 @@
     </div>
   </div>
   <div class="body">
-    <div>CA BPPE</div>
-    <div>Paramedic People</div>
-    <div>Etc</div>
+    <ul>
+      <li>CA BPPE</li>
+      <li>Paramedic People</li>
+      <li>Etc</li>
+    </ul>
   </div>
 </div>
