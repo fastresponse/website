@@ -6,6 +6,40 @@
 
   <hr style="width: 20%; margin: 20px auto;" />
 
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Externship_Requirements_Checklist.pdf" target="_blank">Externship Requirements Checklist</a></div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/EMT Externship Expectations.pdf" target="_blank">Externship Expectations</a></div>
+    <div class="textdefault">Please read this document carefully. It is your responsibility to understand everything that is required of you on your externships.</div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Clinical_and_Field_Patient_Contact_Log.pdf" target="_blank">Clinical and Field Patient Contact Log</a></div>
+    <div class="textdefault">You need a minimum of 10 logged patient contacts. You may use the same form for both clinical and field sites.</div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Evaluation_Form_of_Clinical_and_Field_Experience.pdf" target="_blank">Evaluation Form for Clinical and Field Experience</a></div>
+    <div class="textdefault">Your evaluation of your clinical and field externship experience.</div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Evaluation_Form_of_Student.pdf" target="_blank">Evaluation Form of Student</a></div>
+    <div class="textdefault">Your supervisor must fill out this evaluation form at each site of your externship <span style="white-space: nowrap;">(minimum 2;</span> one for clinical site and one for ambulance ride-along).</div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Externship_Time_Log.pdf" target="_blank">Externship Time Log</a></div>
+    <div class="textdefault">Log all hours during externship. You must have your supervisor for each site sign off on this sheet.</div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Patient_Care_Report.pdf" target="_blank">Patient Care Report</a></div>
+    <div class="textdefault">You must have completed 4 PCRs minimum, including 2 from your clinical externship and 2 from your ambulance ride-along. It is highly recommended that you fill out additional PCRs, however, in the event that one of your reports is not accepted (incomplete, illegible, etc.).</div>
+  </li>
+  <li class="bold red">
+    <div><a href="/pdfs/EMT Externship Files/Ride_Along_Student_Agreement.pdf" target="_blank">Ride Along Student Agreement</a></div>
+    <div class="textdefault">You must fill out a student agreement for each ride-along externship you attend.</div>
+  </li>
+
+  <hr style="width: 20%; margin: 20px auto;" />
+
   <li class="bold underline yellow">Ambulance Driver Certificate Information</li>
   <ul class="bullets">
     <li>Here is the <a href="https://www.dmv.ca.gov/dl/ambu_drvr_cert.htm" class="yellow">DMV's FAQ page</a>.  This link describes all the steps needed to obtain a California Ambulance Driver Certificate.</li>
