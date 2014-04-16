@@ -20,6 +20,21 @@
 
   $head_code = '';
 
+  $global_links = array(
+    'School Catalog',
+    'Wonderlic SLE Study Guide',
+    'Wonderlic SLE Sample Test',
+  );  
+  $links = array();
+  
+  $global_faqs = array(
+    array('How do I do stuff?' => 'With things.'),
+    array('Where is the bathroom?' => 'Down the hall.'),
+    array('How much wood would a woodchuck chuck if a woodchuck could chuck wood?' =>
+          'As much wood as a woodchuck could chuck if a woodchuck could chuck wood.'),
+  );
+  $faqs = array();
+  
 
   /* sections */
 
@@ -48,18 +63,20 @@
 
   $sections['right'] = array(
     'Course Approvals',
+    'Immunizations',
     //'Events',
     //'Calendar',
     'Links',
     'Staff',
-    'FAQs',
+    'FAQs Menu',
     'Misc',
   );
 
   $sections['center'] = array(
+    'Send to a Friend',
     'Course Description',
+    'FAQs List',
     'Prerequisites',
-    'Immunizations',
     'Admissions Procedures',
     'Class Start Dates',
     'Class Schedules',

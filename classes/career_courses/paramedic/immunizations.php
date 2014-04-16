@@ -5,6 +5,16 @@
     </div>
   </div>
   <div class="body">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi ante, vulputate eu rutrum non, euismod sed lectus. Ut ac mi augue, semper molestie lectus. Nam a nulla vitae justo porta lobortis. Etiam cursus dictum auctor. Nam eu lacus ante. Ut at nibh et leo volutpat adipiscing at at diam. Sed sit amet congue enim. Fusce purus mi, accumsan ac ultrices eu, mollis in risus. Fusce ac lectus luctus lorem tincidunt tristique. Duis interdum fermentum vehicula. Phasellus dui tortor, tristique rutrum consectetur vel, molestie ut quam. Suspendisse non enim sit amet lorem eleifend facilisis.</p>
+    <p>The following immunizations will be required in order to be accepted for externship:</p>
+    <ul>
+      <li>Measles - 2 vaccinations</li>
+      <li>Mumps - 2 vaccinations</li>
+      <li>Rubella - 2 vaccinations</li>
+      <li>Tuberculosis - 2 skin tests -or- 1 chest x-ray</li>
+      <li>Tetanus</li>
+      <li>Hepatitis B - at least 2 of 3 parts</li>
+      <li>Influenza</li>
+      <li>Varicella Zoster (Chicken Pox) - 2 vaccinations</li>
+    </ul>
   </div>
 </div>

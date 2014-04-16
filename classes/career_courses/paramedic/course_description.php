@@ -12,8 +12,8 @@ We provide our students with an iPad loaded with EMS software to include iPCR, T
 Fast Response has developed strong relationships with Paramedics Plus, Kaiser Permanente Regional Medical Centers, and Eden Medical Center. Through contractual agreements with these facilities, Fast Response is able to guarantee immediate access to both clinical and field internships.
 </p>
 
-<h3 class="red" style="text-align: center;">STOP</h3>
-<p class="red">
+<div style="text-align: center;"><img src="/images/stop.png" alt="STOP" style="height: 75px; width: 90px;" /></div>
+<p class="red bold" style="width: 70%; margin: 0 auto 1em;">
 You must be a certified EMT with six months of experience before you can begin training as a paramedic. Please click <a href="/classes/career_courses/emt/">here</a> to get information about our EMT program.
 </p>
 </div>

@@ -8,6 +8,10 @@ $course_abbr = 'Paramedic';
 $course_title = 'Paramedic Academy';
 $course_types = array('Application Deadline', 'Academy Start');
 
+$links = array(
+  'Academy Application',
+);
+
 $zip_radius = 75;
 
 // don't include the testimonials section in left sidebar

@@ -124,9 +124,17 @@
   margin-top: 0;
 }
 */
+#links .body hr,
+#faqs_list .body hr,
+#faqs_menu .body hr {
+  width: 40%;
+}
 #course_description {
   text-align: left;
   margin-bottom: 40px;
+}
+#course_description h2 {
+  margin-top: 0;
 }
 #staff ul {
   padding-left: 0;
@@ -137,15 +145,43 @@
   list-style-type: none;
   margin-top: 0;
 }
-#faqs ol {
+#faqs_menu ol {
   padding: 0;
   margin: 0;
 }
-#faqs ol li:first-child {
+#faqs_menu ol li:first-child {
   margin-top: 0;
 }
-#faqs ol li {
+#faqs_menu ol li {
   margin-top: 0.5em;
+}
+#faqs_list ol li a {
+  display: inline;
+  padding: 0;
+}
+#faqs_list ol li div {
+  padding-left: 17px;
+}
+#faqs_list,
+#send_to_a_friend {
+  display: none;
+}
+#faqs_list .title,
+#send_to_a_friend .title {
+  cursor: pointer;
+}
+#send_to_a_friend .body {
+  text-align: center;
+}
+#send_to_a_friend .body form input[type=text],
+#send_to_a_friend .body form input[type=email] {
+  width: 30%;
+}
+#send_to_a_friend .body form textarea {
+  width: 60%;
+}
+#send_to_a_friend .body form input[type=submit],
+#send_to_a_friend .body form button[type=button] {
 }
 
 #testimonials .body>div  {
@@ -216,6 +252,19 @@
   font-weight: normal;
   padding: 0;
 }
+.sidebar .article-box .body li {
+  display: block;
+}
+
+.article-box .body li {
+  display: list-item;
+  list-style-position: inside;
+  padding: 10px 0 0 20px;
+  font-weight: normal;
+}
+.article-box .body li:first-child {
+  padding-top: 0;
+}
 
 .article-box {
   /*
@@ -239,7 +288,7 @@
   border-radius: 35px;
   -moz-border-radius: 35px;
   -webkit-border-radius: 35px;
-  border: 1px dashed #dd0033;
+  /*border: 1px dashed #dd0033;*/
 }
 
 .article-box .title h2 + h1,
@@ -263,6 +312,8 @@
 .article-box .body {
   text-align: left;
   width: 90%;
+  font-weight: normal;
+  /*
   position: relative;
   top: -4px;
   border-top-left-radius: 15px;
@@ -273,7 +324,7 @@
   -webkit-border-top-right-radius: 15px;
   border: 1px dashed #dd0033;
   border-top: none;
-  font-weight: normal;
+  */
 }
 .article-box .body table {
   text-align: left;

@@ -65,7 +65,7 @@
 	      <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar"><div>View Calendar</div></a>
 	    </div>
       <div class="basic-button innerglow-lightblue glow-lightblue">
-	      <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4106&pcatID=4120"><div>Register For This Course</div></a>
+	      <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4120"><div>Register For This Course</div></a>
 	    </div>
       <div class="basic-button innerglow-lightblue glow-lightblue font-smaller">
 	      <a href="/classes/career_courses/emt/"><div>Fast Response EMT Program</div></a>

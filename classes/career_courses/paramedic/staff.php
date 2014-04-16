@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body">
-    <div class="yellow">Course Coordinator</div>
+    <div class="yellow">Program Director</div>
     <div><strong>Lisa Dubnoff</strong></div>
     <ul>
       <li>510-809-3646</li>

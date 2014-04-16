@@ -112,6 +112,12 @@ SLIDESOUT;
     });
   </script>
 
+  <style type="text/css">
+    .course-header-slideshow {
+      cursor: pointer;
+    }
+  </style>
+
 </head>
 
 <body>
