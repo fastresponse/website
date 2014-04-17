@@ -12,7 +12,14 @@
       <li>ldubnoff@fastresponse.org</li>
     </ul>
     <br />
-    <div class="yellow">Externships</div>
+    <div class="yellow">Program Coordinator</div>
+    <div><strong>Troy Vincent</strong></div>
+    <ul>
+      <li>510-809-3658</li>
+      <li>tvincent@fastresponse.org</li>
+    </ul>
+    <br />
+    <div class="yellow">Internship Coordinator</div>
     <div><strong>Stephanie Sumpter</strong></div>
     <ul>
       <li>510-809-3656</li>

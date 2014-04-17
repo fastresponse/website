@@ -14,4 +14,4 @@
       <li>Emergency Medical Patient Assessment, Care, and Transport (EMPACT)</li>
     </ul>
   </div>
-</div><!-- /article-box -->
+</div>

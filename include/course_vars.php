@@ -57,16 +57,17 @@
     'Slideshow',
     'Contact Form',
     'Gallery Link',
+    'Certifications',
     'Externship',
     'Testimonials',
   );
 
   $sections['right'] = array(
     'Course Approvals',
-    'Immunizations',
     //'Events',
     //'Calendar',
     'Links',
+    'Immunizations',
     'Staff',
     'FAQs Menu',
     'Misc',
@@ -80,7 +81,6 @@
     'Admissions Procedures',
     'Class Start Dates',
     'Class Schedules',
-    'Certifications',
     'Tuition And Fees',
     'Financing',
   );
