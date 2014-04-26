@@ -125,6 +125,11 @@
   margin-bottom: 0;
 }
 
+.content .module .body a {
+  display: inline;
+  padding: 0;
+}
+
 #gallery_link {
   text-align: center;
   max-width: 100%;
@@ -141,6 +146,7 @@
   margin-top: 0;
 }
 */
+.sidebar .article-box .body hr,
 #links .body hr,
 #faqs_list .body hr,
 #faqs_menu .body hr {
@@ -278,12 +284,16 @@
 }
 .sidebar .article-box .body li {
   display: block;
+  cursor: default;
 }
 
+.content .article-box .body ul {
+  margin-left: 18px;
+}
 .article-box .body li {
   display: list-item;
   list-style-position: inside;
-  padding: 10px 0 0 20px;
+  padding: 5px 0 0 0;
   font-weight: normal;
 }
 .article-box .body>ul>li:first-child {

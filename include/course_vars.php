@@ -1,5 +1,6 @@
 <?php
-  $handle = null;
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+  if (!isset($handle)) $handle = db_connect();
 
   $left_sidebar_width = 320;
   $right_sidebar_width = 220;
@@ -15,6 +16,9 @@
   $course_abbr = '';
   $course_title = '';
   $course_types = array('');
+
+  $course_dates_type = 'separate';
+  $course_dates_limit = 0;
 
   $zip_radius = 50;
 
@@ -97,12 +101,53 @@
       foreach ($sect as &$chunk) {
         $fname = str_replace(' ', '_', strtolower($chunk)) . '.php';
         $dir = $course_incl_dir;
-        if (file_exists(getcwd() . '/' . $fname)) {
-          $dir = getcwd() . '/';
+        if (file_exists(getcwd() . DIRECTORY_SEPARATOR . $fname)) {
+          $dir = getcwd() . DIRECTORY_SEPARATOR;
         }
         $chunk = $dir . $fname;
       }
     }
   }
+
+  function query_links_from_db() {
+    global $handle, $global_links, $links;
+
+    // pre-lookup links
+    // from:
+    // 0 => 'text 1', 1 => 'text 2'
+    // to:
+    // 'text 1' => array('link' => 'http://etc.com', 'target' => '_blank')
+
+    $query_links = function($dbh, $textarr) {
+      $textstr = "'" . implode("','", $textarr) . "'";
+      return basic_query($dbh,
+        array('text', 'link', 'target'),
+        'buttons',
+        array('text in (' . $textstr . ')'),
+        'FIELD(text, ' . $textstr . ')',
+        0, array()
+      );
+    };
+
+    $new_global = array();
+    foreach ($query_links($handle, $global_links) as $link_data) {
+      $new_global[$link_data['text']] = array(
+        'link' => $link_data['link'],
+        'target' => $link_data['target']
+      );
+    }
+    $global_links = $new_global;
+
+    $new_links = array();
+    foreach ($query_links($handle, $links) as $link_data) {
+      $new_links[$link_data['text']] = array(
+        'link' => $link_data['link'],
+        'target' => $link_data['target']
+      );
+    }
+    $links = $new_links;
+  }
+
+
 
 ?>

@@ -19,7 +19,7 @@
       <li>tvincent@fastresponse.org</li>
     </ul>
     <br />
-    <div class="yellow">Internship Coordinator</div>
+    <div class="yellow">Program Administrator</div>
     <div><strong>Stephanie Sumpter</strong></div>
     <ul>
       <li>510-809-3656</li>

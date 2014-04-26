@@ -629,6 +629,15 @@ SLIDESOUT;
 	        </div>
 
           <div class="banner">
+	          <a href="/school/info/" class="btn buttontext lines-1 glow-red">
+	            <div style="text-shadow: 2px 2px 2px #000000;">
+	              Fast Response graduates receive discounts on additional classes - Call for details!
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+
+          <div class="banner">
 	          <a href="/school/info/" class="btn buttontext lines-1">
 	            <div>
 	              Contact an Admissions Representative Now!

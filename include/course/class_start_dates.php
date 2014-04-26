@@ -8,76 +8,54 @@ if (version_compare(phpversion(), '5.5.0', '<')) {
 
 if (empty($handle)) $handle = db_connect();
 
-function get_course_dates($handle, $course_abbr, $course_types, $count_max = false) {
-  $max = 0;
-  $types_list = array();
-
-  $date_query = function($handle, $course_abbr, $type) {
-    $results = basic_query($handle,
-      array(
-        "DATE_FORMAT(thedate, '%M %D, %Y') as date"
-      ),
-      'start_dates',
-      array(
-        'type = :type',
-        'course = :course',
-        "thedate >= '" . date('Y-m-d') . "'",
-      ),
-      'thedate ASC',
-      0,
-      array(':type' => $type, ':course' => $course_abbr)
-    );
-    $results = array_column($results, 'date');
-    return $results;
-  };
-
-  foreach ($course_types as $type) {
-    $tmp = $date_query($handle, $course_abbr, $type);
-
-    if ($count_max && count($tmp) > $max) {
-      $max = count($tmp);
-    }
-
-    $types_list[$type] = $tmp;
-  }
-
-  if ($count_max)
-    return array($max, $types_list);
-
-  return $types_list;
-}
-
 function get_course_dates_list($handle, $course_abbr, $course_types) {
+  $max = 0;
+  $prev_date = null;
+  $types_list = array();
   $output = array();
 
-  list($max, $types_list) =
-    get_course_dates($handle, $course_abbr, $course_types, true)
-  ;
+  global $course_dates_type, $course_dates_limit;
+
+  foreach ($course_types as $type) {
+    $result = query_course_date(
+      $handle, $course_abbr, $type, 'after', $prev_date, $course_dates_limit
+    );
+    if ($course_dates_limit == 1) {
+      $tmp = array($result['showdate']);
+    }
+    else {
+      $tmp = array_column($result, 'showdate');
+    }
+    if (count($tmp) > $max) {
+      $max = count($tmp);
+    }
+    $types_list[$type] = $tmp;
+    /*   
+    array(
+      'FT' => array('February 2nd, 2015', 'March 18th, 2015'),
+      'PT' => array('August 17th, 2015'),
+    )
+    */
+    if ($course_dates_type == 'sequential') {
+      $prev_date = $result['thedate'];
+    }
+  }
+
+  // separate loop necessary because we count max entries per type
 
   foreach ($types_list as $type => $date_list) {
-
     if (!count($date_list)) {
       $date_list[] = 'TBA';
     }
-
     $lineht = $max / count($date_list) * 1.25;
-
     $date_list_html = array();
-
-    // add html to every value
+    // format values as html
     foreach ($date_list as $date) {
       $date_list_html[] = 
 	      "<div class='course-start-date' style='line-height: $lineht';>$date</div>"
       ;
     }
-
     $output[$type] = implode("\n", $date_list_html);
-
-    /* ** using a fractional line-height instead of adding line breaks **
-    if (count($date_list) < $max) {
-      $output[$type] .= str_repeat( '<br />', $max - count($date_list) );
-    }
-    */
   }
 
   return $output;

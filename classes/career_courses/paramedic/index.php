@@ -75,15 +75,23 @@
 	    <div style="width: auto; min-width: 15%; max-width: 25%; float: right; margin: 0 1% 1% 1%;">
 	      <div class="announcement red">
 		      <h3 class="yellow">Important Dates</h3>
+          <?php
+            $dates['application'] = query_next_course_date($handle,
+              'Paramedic', 'Application Deadline'
+            );
+            $dates['anatomy'] = query_next_course_date($handle,
+              'Paramedic', 'Anatomy and Physiology', $dates['application']['thedate']
+            );
+            $dates['start'] = query_next_course_date($handle,
+              'Paramedic', 'Academy Start', $dates['anatomy']['thedate']
+            );
+          ?>
 		      <div class="yellow underline">Application Deadline</div>
-		      <?php $next = query_next_date($handle, 'Paramedic', 'Application Deadline'); ?>
-	        <div><?= $next['showdate'] ?></div>
+	        <div><?= $dates['application']['showdate'] ?></div>
 		      <div class="yellow underline">Paramedic A&amp;P Class </div>
-		      <?php $next = query_next_date($handle, 'Paramedic', 'Anatomy and Physiology'); ?>
-	        <div><?= $next['showdate'] ?></div>
+	        <div><?= $dates['anatomy']['showdate'] ?></div>
 		      <div class="yellow underline">Academy Start</div>
-		      <?php $next = query_next_date($handle, 'Paramedic', 'Academy Start'); ?>
-          <div><?= $next['showdate'] ?></div>
+          <div><?= $dates['start']['showdate'] ?></div>
 	      </div>
 	    </div>
 
@@ -164,7 +172,7 @@
 	      <div class="section">
 		      <ul class="bullets">
 		        <h3>Internships With:</h3>
-<?php foreach (query_external($handle, 'Paramedic', 'internship', true) as $site): ?>
+<?php foreach (query_external($handle, 'Paramedic', 'internship', true, true) as $site): ?>
   <li><?= $site['site_department'] ?></li>
 <?php endforeach; ?>
 		      </ul>
@@ -184,7 +192,7 @@
 	      <div class="section">
 		      <ul class="bullets">
 		        <h3>Didactic Observation Sites:</h3>
-<?php foreach (query_external($handle, 'Paramedic', 'didactic observation', true) as $site): ?>
+<?php foreach (query_external($handle, 'Paramedic', 'didactic observation', true, true) as $site): ?>
   <li><?= $site['site_department'] ?></li>
 <?php endforeach; ?>
 		      </ul>

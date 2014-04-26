@@ -12,7 +12,7 @@ if (!$handle) $handle = db_connect();
   </div>
   <div class="body">
     <ul>
-    <?php foreach (query_external($handle, 'Paramedic', 'didactic observation', true) as $site): ?>
+    <?php foreach (query_external($handle, 'Paramedic', 'didactic observation', true, true) as $site): ?>
       <li><?= $site['site_department'] ?></li>
     <?php endforeach; ?>
     </ul>
@@ -26,7 +26,7 @@ if (!$handle) $handle = db_connect();
   </div>
   <div class="body">
     <ul>
-    <?php foreach (query_external($handle, 'Paramedic', 'internship', true) as $site): ?>
+    <?php foreach (query_external($handle, 'Paramedic', 'internship', true, true) as $site): ?>
       <li><?= $site['site_department'] ?></li>
     <?php endforeach; ?>
     </ul>

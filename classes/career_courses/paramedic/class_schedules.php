@@ -1,7 +1,3 @@
-<?php
-$course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
-?>
-
 <div id="class_schedules" class="module article-box">
   <div class="title">
     <div class="title-border">
@@ -11,8 +7,14 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
   </div>
   <div class="body">
     <ul>
+      <?php
+        $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
+      ?>
       <li><span class="course-start-title">Application Deadline</span><br />
       <?= $course_dates['Application Deadline'] ?>
+      </li>
+      <li><span class="course-start-title">Paramedic Anatomy &amp; Physiology</span><br />
+      <?= $course_dates['Anatomy and Physiology'] ?>
       </li>
       <li><span class="course-start-title">Academy Start Date</span><br />
       <?= $course_dates['Academy Start'] ?>

@@ -8,12 +8,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 error_reporting(E_ALL);
 
 function handleit($e) {
+  /*
   echo '<pre>';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
+  */
 }
 set_exception_handler('handleit');
 
@@ -344,6 +346,54 @@ function query_next_date($dbh, $course, $type) {
   return $result;
 }
 
+function query_course_date(
+  $dbh, $course, $type, $when = 'after', $date = null, $limit = 1
+) {
+  if (!$date) $date = '' . date('Y-m-d') . '';
+  settype($date, "string");
+
+  if (!$limit || $limit < 1) $limit = 0;
+
+  switch ($when) {
+    default:
+    case 'after':
+      $operator = '>=';
+      $sort = 'ASC';
+    break;
+
+    case 'before':
+      $operator = '<=';
+      $sort = 'DESC';
+    break;
+  }
+
+  $result = basic_query($dbh,
+    array(
+      "DATE_FORMAT(thedate, '%M %D, %Y') as showdate",
+      'thedate',
+    ),
+    'start_dates',
+    array(
+      'course = :course',
+      'type = :type',
+      'thedate ' . $operator . ' :date',
+    ),
+    'thedate ' . $sort,
+    $limit,
+    array(':course' => $course, ':type' => $type, ':date' => $date)
+  );
+
+  if (!is_array($result) || !count($result))
+    $result = array('showdate' => 'TBA', 'thedate' => 0);
+  return $result;
+}
+function query_next_course_date($dbh, $course, $type, $date = null, $limit = 1) {
+  return query_course_date($dbh, $course, $type, 'after', $date, $limit);
+}
+function query_prev_course_date($dbh, $course, $type, $date = null, $limit = 1) {
+  return query_course_date($dbh, $course, $type, 'before', $date, $limit);
+}
+
 function query_prev_date($dbh, $course, $type, $thisdate) {
   $q_date =
     "SELECT DATE_FORMAT(thedate, '%M %D, %Y') AS showdate, " .
@@ -536,7 +586,7 @@ function query_external($dbh, $course, $type, $dept = false, $loc = false) {
       'FIND_IN_SET(:course, courses) > 0',
       'FIND_IN_SET(:type, type) > 0'
     ), # where
-    'site', # order by
+    'site, location, department', # order by
     0, # limit
     array(
       ':course' => $course,
@@ -546,6 +596,9 @@ function query_external($dbh, $course, $type, $dept = false, $loc = false) {
 
   foreach ($results as &$r) {
     $r['site_department'] = $r['site'];
+    if (!empty($r['location'])) {
+      $r['site_department'] .= ' ' . $r['location'];
+    }
     if (!empty($r['department'])) {
       $r['site_department'] .= ' ' . $r['department'];
     }

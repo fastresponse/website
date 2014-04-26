@@ -1,31 +1,40 @@
 <div id="admissions_procedures" class="module article-box" >
   <div class="title">
     <div class="title-border">
-      <h1>Paramedic Admissions Procedures</h1>
+      <h1>Application Process</h1>
     </div>
   </div>
   <div class="body">
-	  <h2 class="course-start-title">For interview candidacy</h2>
-	  <ul>
-		  <li>Complete an Application for Consideration.</li>
-		  <li>Successful completion of an entrance examination (Wonderlic) with a score of 20 or greater.</li>
-		  <li>Proof of age (must be 18 at <strong>Program Expected Graduation date</strong>).</li>
-		  <li>Proof of legal ability to work in the United States.</li>
-		  <li>Proof of minimum education requirements:</li>
-		  <ul style="padding-left: 20px;">
-		    <li>High school diploma, official high school transcripts showing successful completion, GED, or official college transcripts.</li>
-		    <li>Copy of current Emergency Medical Technician Certification and Health Care Provider CPR card, both individually renewed within 12 months of the <strong>Program Expected Start Date</strong>.</li>
-		  </ul>
-		  <li>Proof of at least 1040 hours (six months full-time equivalent) EMT experience. (Pay stubs, W-2 forms, letter from supervisor, etc.).</li>
-		  <li>Copy of current resume.</li>
-		  <li>Copy of required essay. </li>
-		  <li>Completion of an Anatomy and Physiology class or Paramedic A&amp;P.</li>
-	  </ul>
-	  <h2 class="course-start-title">If accepted after interview</h2>
-	  <ul>
-		  <li>Completion of an enrollment agreement.</li>
-		  <li>Financial plan for funding education.</li>
-		  <li>Payment either in full or of the first required installment of a payment plan.</li>
-	  </ul>
+	  <h2 class="course-start-title">Phase I</h2>
+    <ul>
+      <li>Application Submission</li>
+	    <ul>
+        <li>Application (First five pages)</li>
+        <li>Essay</li>
+        <li>Work verification form</li>
+        <li>Reference forms</li>
+        <li>Resume</li>
+        <li>Copy of government issued identification (Drivers License, Passport, etc.)</li>
+        <li>Copy of high school or GED Diploma</li>
+        <li>Copy of college degree or official transcripts</li>
+        <li>Copy of current healthcare provider CPR card</li>
+        <li>Copy of current EMT card (CA State or NREMT)</li>
+        <li>Letters of Recommendation (Optional)</li>
+	    </ul>
+      <li>Successfully pass the school entrance examination</li>
+    </ul>
+
+	  <h2 class="course-start-title">Phase II</h2>
+    <ul>
+      <li>Oral Board - By invitation only</li>
+    </ul>
+
+    <p>Prior to the first day of class, all students will need to complete and submit all required immunizations and drug screening results.</p>
+
+    <hr />
+    <?php
+    $app_link = $links['Paramedic Application Process'];
+    ?>
+    <p><a class="underline" href="<?= $app_link['link'] ?>" target="<?= $app_link['target'] ?>">Full application details here</a></p>
 	</div>
 </div><!-- /article-box -->

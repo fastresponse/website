@@ -8,7 +8,7 @@ $ext_types = query_set_values($handle, 'type', 'external_sites');
 
 foreach ($ext_types as $type):
 
-  $external_sites = query_external($handle, $program_abbreviation, $type, true);
+  $external_sites = query_external($handle, $program_abbreviation, $type, true, true);
   if (empty($external_sites))
     continue;
 ?>

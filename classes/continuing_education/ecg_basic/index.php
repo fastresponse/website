@@ -22,22 +22,10 @@
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
-
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
+  <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.toggledisplay.js"></script>
 
 </head>
 
@@ -64,6 +52,9 @@
       <div class="basic-button innerglow-lightblue glow-lightblue">
 	      <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar"><div>View Calendar</div></a>
 	    </div>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
+        <a style="cursor: pointer;" onClick="jQuery('#ceu-announce,#ceu-promos,#promobtn1,#promobtn2').toggleDisplay('inline-block'); return 1;"><div id="promobtn1">Current Promotions</div><div id="promobtn2" style="display: none;">CEU Notices</div></a>
+      </div>
       <div class="basic-button innerglow-lightblue glow-lightblue">
 	      <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4116"><div>Register For This Course</div></a>
 	    </div>
@@ -108,7 +99,7 @@
 
       </div> <!-- /section -->
 
-      <div class="section">
+      <div class="section" style="margin-top: 5em;">
 	<div class="bgimg fontsans" style="width: 20.25em; height: 2.25em; font-size: 220%;">
 	  <div style="width: 20.25em; height: 2.25em; line-height: 2.25em;">
 	    Call <a href="tel://1-800-637-7387">(800) 637-7387</a> or

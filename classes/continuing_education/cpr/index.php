@@ -8,7 +8,7 @@
   <base href="/" />
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Expires" content="Fri, 1 Mar 2013 12:00:00 GMT">
+  <!--<meta http-equiv="Expires" content="Fri, 1 Mar 2013 12:00:00 GMT">-->
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
 
@@ -23,25 +23,14 @@
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
 
-  <script type="text/javascript">
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
-
-  <!--<script type="text/javascript" src="/js/jquery.js"></script>-->
+  <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.toggledisplay.js"></script>
 
   <style type="text/css">
     .squaredup {
-      width: 70%;
+      width: 95%;
       text-align: justify;
     }
     h2 {
@@ -75,6 +64,9 @@
 	      <a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar"><div>View Calendar</div></a>
 	    </div>
       <div class="basic-button innerglow-lightblue glow-lightblue">
+        <a style="cursor: pointer;" onClick="jQuery('#ceu-announce,#ceu-promos,#promobtn1,#promobtn2').toggleDisplay('inline-block'); return 1;"><div id="promobtn1">Current Promotions</div><div id="promobtn2" style="display: none;">CEU Notices</div></a>
+      </div>
+      <div class="basic-button innerglow-lightblue glow-lightblue">
 	      <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4103&pcatID=4102"><div>Register For &quot;Provider&quot;</div></a>
 	    </div>
       <div class="basic-button innerglow-lightblue glow-lightblue">
@@ -98,10 +90,12 @@
 	<div class="leftcontent2">
 
 	  <?php
+$course_abbr = 'BLS';
+
 $announcement_sections[] = <<<SECT1
 <h3 style="margin-top: 0; text-align: center;"><strong class="underline">2010 AHA BLS Student Manual</strong></h3>
 <div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901038.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$20</span> (Monday - Friday only).</div>
-<div style="margin-top: 1em;">* Required for class.<br />* Not included in course fees.</div>
+<div style="margin-top: 1em; font-size: 90%;">* Required for class.<br />* Not included in course fees.</div>
 SECT1;
     include('../ceu_include.php');
     ?>
@@ -120,11 +114,11 @@ SECT1;
 	    <li>AHA Certification valid for 2 years.</li>
 	  </ul>
 
+	  <img alt="" src="/images/CPR_Class.jpg" style="margin-left: 50px; float: right;">
+
 	  <h2 class="yellow">Renewal (AHA)</h2>
 
 	  <p class="squaredup">This renewal course is for those who have a current CPR card. Covered in every class are adult, child, and infant CPR and choking rescue. Use of the AED, barrier devices, and BVM are thoroughly covered using hands-on skills practice.</p>
-
-	  <img alt="" src="/images/CPR_Class.jpg" style="margin-left: 1em; float: right;">
 
 	  <p style="font-weight: bold;" class="orange squaredup">Students must bring a current AHA Healthcare Provider CPR card to class!</p>
 

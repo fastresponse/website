@@ -353,6 +353,10 @@
     <li>
     <a href="/school/location/?section=parking">Parking</a>
     </li>
+
+    <li>
+    <a href="http://www.facebook.com/FastResponseSchool">Visit Us On Facebook</a>
+    </li>
   </ul>
   </li>
 </ul>
