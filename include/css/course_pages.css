@@ -146,11 +146,13 @@
   margin-top: 0;
 }
 */
-.sidebar .article-box .body hr,
-#links .body hr,
-#faqs_list .body hr,
-#faqs_menu .body hr {
+.sidebar .article-box .body hr {
   width: 40%;
+}
+.content .article-box .body hr {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 #course_description {
   text-align: left;
@@ -284,6 +286,14 @@
 }
 .sidebar .article-box .body li {
   display: block;
+}
+
+.content .article-box .body a {
+  text-decoration: underline;
+  color: #dd0033;
+}
+
+.article-box .body li {
   cursor: default;
 }
 
@@ -364,20 +374,43 @@
   border-top: none;
   */
 }
+
+div.fill {
+  display: inline-block;
+  height: 50%;
+  border-bottom: dotted 1px white;
+}
+
 .article-box .body table {
   text-align: left;
   font-size: 95%;
+  border-collapse: collapse;
+}
+.article-box .body table tr {
+  cursor: default;
 }
 .article-box .body table td {
-  vertical-align: bottom;
-  padding: 5px 0px;
+  vertical-align: top;
+  padding: 5px 5px;
 }
-.article-box .body table td+td {
+#tuition_and_fees .body table tbody td {
+  border-bottom: dotted 1px white;
+}
+.article-box .body table td:first-child+td {
   text-align: right;
-  width: 75px;
 }
-.article-box .body table .divider {
+.article-box .body table thead th {
+  border-bottom: solid 1px white;
+  font-weight: bold;
+  font-size: 110%;
+  color: #ffff99;
+}
+.article-box .body table tfoot td {
   border-top: solid 1px white;
+  font-weight: bold;
+}
+.article-box .body table td.notes-col {
+  width: 50%;
 }
 
 .bottom-image {

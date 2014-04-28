@@ -6,24 +6,27 @@
     </div>
   </div>
   <div class="body">
-    <ul>
+    <div style="float: left; width: 50%;">
       <?php
         $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       ?>
-      <li><span class="course-start-title">Application Deadline</span><br />
+      <h2 class="course-start-title">Application Deadline</h2>
       <?= $course_dates['Application Deadline'] ?>
-      </li>
-      <li><span class="course-start-title">Paramedic Anatomy &amp; Physiology</span><br />
+      <h2 class="course-start-title">Paramedic Anatomy &amp; Physiology</h2>
       <?= $course_dates['Anatomy and Physiology'] ?>
-      </li>
-      <li><span class="course-start-title">Academy Start Date</span><br />
+      <h2 class="course-start-title">Academy Start Date</h2>
       <?= $course_dates['Academy Start'] ?>
-      </li>
-      <li>728 hours of didactic instruction</li>
-      <li>48 hours of didactic observation</li>
-      <li>208+ hours of clinical internship</li>
-      <li>480+ hours of field internship</li>
-      <li>Mon - Wed:<br />9:00 AM - 6:00 PM</li>
-    </ul>
+    </div>
+    <div style="float: right; width: 50%;">
+      <h2 class="course-start-title">Class Hours</h2>
+      <div class="course-start-date">Mon - Wed, 9:00 AM - 6:00 PM</div>
+      <ul style="margin-top: 20px;">
+        <li>728 hours of didactic instruction</li>
+        <li>48 hours of didactic observation</li>
+        <li>208+ hours of clinical internship</li>
+        <li>480+ hours of field internship</li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
   </div>
 </div><!-- /article-box -->

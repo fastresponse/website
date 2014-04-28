@@ -29,12 +29,12 @@
       <li>Oral Board - By invitation only</li>
     </ul>
 
+    <hr />
     <p>Prior to the first day of class, all students will need to complete and submit all required immunizations and drug screening results.</p>
 
-    <hr />
     <?php
     $app_link = $links['Paramedic Application Process'];
     ?>
-    <p><a class="underline" href="<?= $app_link['link'] ?>" target="<?= $app_link['target'] ?>">Full application details here</a></p>
+    <p><a href="<?= $app_link['link'] ?>" target="<?= $app_link['target'] ?>">Full application details here.</a></p>
 	</div>
 </div><!-- /article-box -->

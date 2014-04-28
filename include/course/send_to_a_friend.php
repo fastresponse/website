@@ -12,7 +12,7 @@
       <input type="text" name="friendname" placeholder="Friend's Name" />
       <input type="email" name="friendemail" placeholder="Friend's Email Address" />
       <br />
-      <textarea rows=3></textarea>
+      <textarea rows=3 placeholder="Enter a note to send with the page"></textarea>
       <br />
       <input type="submit" value="Send" name="submit" />
       <button type="reset" name="clear">Clear</button>

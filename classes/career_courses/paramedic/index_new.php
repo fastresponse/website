@@ -30,7 +30,7 @@ $sections['left'] = array_diff($sections['left'],
 
 // insert at the 4th position:
 array_splice(
-  $sections['center'], 3, 0, array('Anatomy and Physiology')
+  $sections['center'], 4, 0, array('Anatomy and Physiology')
 );
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');

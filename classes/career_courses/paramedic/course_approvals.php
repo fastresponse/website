@@ -6,9 +6,9 @@
   </div>
   <div class="body">
     <ul>
-      <li>CA BPPE</li>
-      <li>Paramedic People</li>
-      <li>Etc</li>
+      <li>CA Bureau for Private Postsecondary Education (BPPE)</li>
+      <li>CA Emergency Medical Services Authority (EMSA)</li>
+      <li>Alameda County EMS Agency</li>
     </ul>
   </div>
 </div>
