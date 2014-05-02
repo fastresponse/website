@@ -1,26 +1,18 @@
 <?php
 //page variables - change as needed for this page
-$title		= 'EMT Career Training';
+$title		= 'Medical Assistant Training';
 $description	= null;
 
-$headline = 'Get the Skills to Be an Emergency Medical Technician';
-$subhead = 'Guaranteed Externships Including Ambulance Ride-alongs';
+$headline = 'Get the Skills to Be a Clinical Medical Assistant';
+$subhead = 'Guaranteed Externships at Bay Area Clinics';
 
-$program_of_interest = 'EMT';
-$program_abbreviation = 'EMT';
+$program_of_interest = 'Clinical Medical Assistant';
+$program_abbreviation = 'CMA';
 
 $key_values = array(
-  'NREMT Certification pass rate of 91% on first attempt<br />' .
-  '<span style="font-size: 90%;">(3rd quarter 2013)</span>',
-  'Day and evening classes',
 );
 
 $zip_radius = 50;
-
-$video_numbers = array(
-  1399035,
-  1492665,
-);
 
 $hideTestimonials = false;
 
@@ -28,7 +20,7 @@ include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/emt-top.jpg" alt="EMT careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cma-top.jpg" alt="Medical Assistant careers">
 
 <p>
   Emergency medical technicians provide emergency medical support to injured and ill people. They may work in an ambulance, with a fire department, in a hospital emergency room or on a search and rescue team.
@@ -42,7 +34,7 @@ include_once('../includes/header.php');
   Fast Response students are recognized by Bay Area ambulance companies as being exceptional. During the third quarter of 2013, <strong>91%</strong> of our graduates passed their certification exams on the first attempt!
 </p>
 
-<h3>Becoming a Certified EMT</h3>
+<h3>Becoming a Clinical Medical Assistant</h3>
 
 <p>
   The Emergency Medical Technician program at Fast Response provides dynamic classroom training, hands-on skills training, and practical field experience. Our instructors are all <strong>licensed EMTs</strong> and <strong>paramedics</strong>.
@@ -53,7 +45,7 @@ include_once('../includes/header.php');
 </p>
 
 
-<h3>Clinical &amp; Field Externship - On-the-Job Experience</h3>
+<h3>Clinical Externship - On-the-Job Experience</h3>
 
 <p>
 	As a student in the EMT Program you'll complete a one-day clinical shift in a <strong>hospital emergency department</strong>, as well as <strong>two ambulance ride-along shifts</strong> with the Bay Area's largest ambulance companies. In addition to hands-on experience, externships are a great way to make valuable industry contacts.
@@ -74,7 +66,7 @@ include_once('../includes/header.php');
 	<li>Part-Time Program includes <strong>8 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
 </ul>
 
-<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/emt-photostrip-2.jpg" alt="Fast Response health care careers">
+<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/cma-photostrip-2.jpg" alt="Fast Response health care careers">
 
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
@@ -85,11 +77,11 @@ include_once('../includes/header.php');
 
 <p>Payment plans are available for those that qualify.</p>
 
-<h3>Is EMT Training Right for You?</h3>
+<h3>Is Medical Assistant Training Right for You?</h3>
 <h4>Get More Information&#8230;</h4>
 
 <p>
-	If you're interested in learning more about a career as an EMT, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative will be happy to answer any questions you have and can assist with everything from scheduling to payment plans.
+	If you're interested in learning more about a career as a medical assistant, and exploring whether this is the right career path for you, fill out the form on the side of this page to receive more information. A helpful Fast Response Admissions Representative will be happy to answer any questions you have and can assist with everything from scheduling to payment plans.
 </p>
 <p>
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.

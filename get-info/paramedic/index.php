@@ -37,7 +37,7 @@ include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.png" alt="Phlebotomy careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.png" alt="Paramedic careers">
 
 <p style="width: 90%; margin-left: auto; margin-right: auto; color: #dd0033;">
   In order to begin paramedic training, you must first be a licensed and practicing Emergency Medical Technician with at least six months experience.<br style="line-height: 1.5em;" />

@@ -86,6 +86,7 @@ SLIDESOUT;
 
       jQuery('.link-column .body').sameHeight();
 
+      /*
       jQuery('#mainslideshow').magnificPopup({
         delegate: 'img',
         type: 'image',
@@ -97,10 +98,12 @@ SLIDESOUT;
           }
         }
       });
+      */
     });
 
     jQuery(window).resize(function() {
       start_slideshow();
+      jQuery('.link-column .body').sameHeight();
     });
   </script>
 

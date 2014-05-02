@@ -199,10 +199,14 @@
   text-align: center;
 }
 #send_to_a_friend .body form input[type=text],
-#send_to_a_friend .body form input[type=email] {
+#send_to_a_friend .body form input[type=email],
+#send_to_a_friend .body form label {
+  display: inline-block;
   width: 30%;
 }
-#send_to_a_friend .body form textarea {
+#send_to_a_friend .body form textarea,
+#send_to_a_friend .body form label[for=form_message] {
+  display: inline-block;
   width: 60%;
 }
 #send_to_a_friend .body form input[type=submit],
@@ -302,7 +306,7 @@
 }
 .article-box .body li {
   display: list-item;
-  list-style-position: inside;
+  /*list-style-position: inside;*/
   padding: 5px 0 0 0;
   font-weight: normal;
 }
@@ -310,7 +314,8 @@
   padding-top: 0;
 }
 
-.article-box .body>h2:first-child {
+.article-box .body h2:first-child,
+.article-box .body p:first-child {
   margin-top: 0;
 }
 
@@ -323,6 +328,7 @@
   max-width: 760px;
   margin: 0 auto 20px;
   padding: 0 3px;
+  display: block;
 }
 .article-box.cols-2,
 .article-box.wide {
@@ -394,7 +400,7 @@ div.fill {
   padding: 5px 5px;
 }
 #tuition_and_fees .body table tbody td {
-  border-bottom: dotted 1px white;
+  border-bottom: dotted 1px rgb(90, 90, 90);
 }
 .article-box .body table td:first-child+td {
   text-align: right;

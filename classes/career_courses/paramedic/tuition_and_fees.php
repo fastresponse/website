@@ -10,16 +10,18 @@
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
       <tfoot>
-        <tr><td>Total</td><td>$13,000.00</td><td></td></tr>
+        <tr><td>Total</td><td>$12,000.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
         <tr><td>Background Check</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Insurance</td><td>$250.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
-        <tr><td>Supplies</td><td>$1,844.50</td><td class="notes-col">Textbooks, iPad, T-shirt, etc.</td></tr>
+        <tr><td>Supplies</td><td>$1,845.00</td><td class="notes-col">Textbooks, iPad, T-shirt, etc.</td></tr>
         <tr><td>Uniform Patches</td><td>$49.00</td><td class="notes-col">Required to attend</td></tr>
-        <tr><td>Tuition</td><td>$10,400.00</td><td class="notes-col">Equivalent to $7.26 per clock hour</td></tr>
-        <tr><td>STRF</td><td>$6.50</td><td class="notes-col">Non-Refundable ($0.50 for every $1000.00, rounded to the nearest $1000.00.)</td></tr>
+        <tr><td>Tuition</td><td>$8,600.00</td><td class="notes-col">Equivalent to $11.81 per clock hour</td></tr>
+        <tr><td>Clinical Externship</td><td>$300.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>
+        <tr><td>Field Internship</td><td>$500.00</td><td class="notes-col">Non-refundable after first day of field internship</td></tr>
+        <tr><td>STRF</td><td>$6.00</td><td class="notes-col">Non-Refundable ($0.50 for every $1000.00, rounded to the nearest $1000.00.)</td></tr>
       </tbody>
     </table>
     <table style="margin: 20px auto 0;">

@@ -21,7 +21,7 @@
     Cost: $450.00 - Books included.
     </p>
 
-    <p><a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Please register for Fast Response School's Anatomy &amp; Physiology course online.</a></p>
+    <!--<p><a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Please register for Fast Response School's Anatomy &amp; Physiology course online.</a></p>-->
 
     <hr />
 

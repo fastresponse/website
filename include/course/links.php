@@ -6,7 +6,7 @@
   </div>
   <div class="body">
     <ul>
-      <li><a id="link_send" href="#send_to_a_friend">Send to a Friend</a></li>
+      <!--<li><a id="link_send" href="#send_to_a_friend">Send to a Friend</a></li>-->
       <?php foreach ($global_links as $link_text => $link_data): ?>
       <li><a href="<?= $link_data['link'] ?>" <?= ($link_data['target'] ? "target=\"{$link_data['target']}\"" : '') ?>><?= $link_text ?></a></li>
       <?php endforeach; ?>

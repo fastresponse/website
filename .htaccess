@@ -5,11 +5,8 @@ Redirect permanent /emt/files https://drive.google.com/folderview?id=0B7Ouhne2Xs
 
 Redirect permanent /paramedic/files https://drive.google.com/folderview?id=0B7Ouhne2XskXNHVkemFhTDdHSlE#list
 
-Redirect permanent /cma/old https://www.dropbox.com/sh/tzm52wedoavf21b/5bIKvxMNIp
 Redirect permanent /cma/files https://drive.google.com/folderview?id=0B7Ouhne2XskXcjJOMG9OT0tuNm8#list
 
-Redirect permanent /cpt/files https://www.dropbox.com/sh/bg2ypckxonnxl49/A4TgR1SZCd
-Redirect permanent /cpt/new https://drive.google.com/folderview?id=0B7Ouhne2XskXQWtaanRNejFma3M#list
+Redirect permanent /cpt/files https://drive.google.com/folderview?id=0B7Ouhne2XskXQWtaanRNejFma3M#list
 
-Redirect permanent /spt/old https://www.dropbox.com/sh/ouj945afck1mu4h/-1zcmWDLDr
 Redirect permanent /spt/files https://drive.google.com/folderview?id=0B7Ouhne2XskXX0gtaGZ2NDYtWVU#list

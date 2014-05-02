@@ -73,20 +73,20 @@
     'Links',
     'Immunizations',
     'Staff',
-    'FAQs Menu',
-    'Misc',
+    //'FAQs Menu',
+    //'Misc',
   );
 
   $sections['center'] = array(
-    'Send to a Friend',
+    //'Send to a Friend',
     'Course Description',
-    'FAQs List',
+    //'FAQs List',
     'Prerequisites',
     'Admissions Procedures',
     'Class Start Dates',
     'Class Schedules',
     'Tuition And Fees',
-    'Financing',
+    //'Financing',
   );
 
   // turns 'Contact Form' into 'contact_form.php'
