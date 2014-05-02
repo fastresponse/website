@@ -1,5 +1,7 @@
 .*.swp
 Thumbs.db
 .DS_STORE
+documents/
+gallery/
 ipad/
 php/dbsettings.php

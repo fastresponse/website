@@ -1,5 +1,0 @@
-<center><br />
-<div class="survey-navigator">{NAVIGATOR}</div>
-<div class="clearall"> {CLEARALL} </div>
-{SAVE}
-</center>

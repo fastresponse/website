@@ -1,5 +1,0 @@
-<br />
-<div class="survey-assessment"><strong>{ASSESSMENT_HEADING}</strong></div>
-<div>
-	{ASSESSMENTS}
-</div>

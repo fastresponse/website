@@ -1,9 +1,0 @@
-<center>
-<div class="survey-load">
-<span style="color:red">{LOADERROR}</span><br />
-<span style="font-size:18px; font-weight:bold;">{LOADHEADING}</span><br /><br />
-{LOADMESSAGE}<br />
-{LOADFORM}<br />
-{RETURNTOSURVEY}
-</div>
-</center>
