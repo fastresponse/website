@@ -64,6 +64,8 @@
 					</li>
 					<li>National Center for Competency Testing (NCCT)
 					</li>
+          <li>California Certifying Board for Medical Assistants (CCBMA)
+          </li>
 				</ul>
 			</div>
 		</div>

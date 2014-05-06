@@ -1,4 +1,0 @@
-
-ErrorDocument 404 /index.html
-
-Redirect 301 http://www.fastresponse.org/latest1/?page=courses/EMT_B http://www.fastresponse.org/classes/career_courses/emt/
