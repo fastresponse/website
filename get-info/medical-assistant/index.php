@@ -5,13 +5,15 @@ $description	= null;
 
 $headline = 'Get the Skills to Be a Clinical Medical Assistant';
 //$subhead = 'Guaranteed Externships at Bay Area Clinics';
-$subhead = 'Phlebotomy Training Included - Guaranteed Externships';
+$subhead = 'Phlebotomy and EKG Training - Guaranteed Externships<br>' .
+           'All included for $6,500';
 
 $program_of_interest = 'Clinical Medical Assistant';
 $program_abbreviation = 'CMA';
 
 $key_values = array(
-  'Graduates are eligible for certifications in the fields of Medical Assisting, Phlebotomy, and ECG Technician',
+  'Eligibility for certifications in the fields of Medical Assisting, Phlebotomy, and ECG Technician',
+  'Graduates can perform many different job functions, making them extremely hirable',
 );
 
 $zip_radius = 50;
@@ -29,7 +31,7 @@ Medical Assistants are involved in many aspects of patient care. They are hired 
 </p>
 
 <p>
-If you want to become one of the best-trained Medical Assistants in the Bay Area (<em>without spending years in school</em>), come to Fast Response School of Health Care Education. Our Clinical Medical Assisting program's curriculum and highly trained staff will prepare you for certification and employment in a rewarding healthcare career. It's also one of the only programs in the Bay Area that <strong style="text-decoration: underline;">includes Phlebotomy training</strong>!
+If you want to become one of the best-trained Medical Assistants in the Bay Area (<em>without spending years in school</em>), come to Fast Response School of Health Care Education. Our Clinical Medical Assisting program's curriculum and highly trained staff will prepare you for certification and employment in a rewarding healthcare career. It's also one of the only programs in the Bay Area that <strong style="text-decoration: underline;">includes Phlebotomy and EKG training</strong>!
 </p>
 
 <p>
