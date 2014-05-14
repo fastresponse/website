@@ -1212,7 +1212,7 @@ div#section-display {
 .article-box .body a:hover,
 .article-box .body li:hover,
 .article-box .body div.line:hover,
-.article-box .body tr:hover {
+.article-box .body table.row-highlight tr:hover {
   color: rgb(221, 0, 51);
 }
 .article-box.cols-2 .body,

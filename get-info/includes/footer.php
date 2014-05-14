@@ -1,4 +1,25 @@
 
+<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/<?= strtolower($program_abbreviation) ?>-photostrip.jpg" alt="Fast Response health care careers">
+
+<h3>Get the Support You Need to Launch a Successful Career</h3>
+
+<p>
+Healthcare training isn't about getting a diploma; it's about obtaining a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with resume preparation, interview techniques and job searches.
+</p>
+
+<p>Payment plans are available for those who qualify.</p>
+
+<h3>Is <?= $program_of_interest ?> Training Right for You?</h3>
+<h4>Get More Information&#8230;</h4>
+
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/php/lib/class.IndefiniteArticle.php'); ?>
+<p>
+If you'd like to explore a career as <?= IndefiniteArticle::A($program_career_name) ?>, just complete the form on this page. A friendly Admissions Representative will get back to you to answer all your questions and assist you with everything from scheduling to payment plans.
+</p>
+<p>
+For immediate questions, call <strong style="white-space: nowrap;"><?= phone_link(PHONE); ?></strong>.
+</p>
+
 <?php include('video.php'); ?>
 
 <?php	if (!$hideForm): ?>
@@ -82,7 +103,7 @@
 				<li>Flexible payment options</li>
 				<li>Career services assistance</li>
         <li>Located one block from BART</li>
-				<li>Guaranteed externships and internships for all students</li>
+				<li>Guaranteed externships</li>
 				<li>Affiliated with California Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
 			</ul>
 		</div>
@@ -127,13 +148,13 @@
 		&copy; <?= date('Y'); ?> <a class="no-ul" href="http://www.fastresponse.org/" target="_blank">Fast Response</a>, All Rights Reserved
 	</div>
 
-<!--
+<?php if (false): ?>
   <div class="footer-nav">
 		<ul class="nav">
 			<li><a href="<?= BASE_URL; ?>">About Us</a></li>
 		</ul>
 	</div>
--->
+<?php endif; ?>
 
 	<a id="scroll-to-top" href="#top"><img src="<?= BASE_URL; ?>img/scroll-top.png" alt="Back to top" title="Back to top"></a>
 

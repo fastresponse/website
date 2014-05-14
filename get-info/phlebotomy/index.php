@@ -8,6 +8,7 @@ $subhead = 'Clinical Externships Start in as Little as 2 Weeks';
 
 $program_of_interest = 'Phlebotomy';
 $program_abbreviation = 'CPT';
+$program_career_name = 'Phlebotomy Technician';
 
 $hideExternalSites = true;
 $hideTestimonials = false;
@@ -25,7 +26,7 @@ include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/phlebotomy-top.jpg" alt="Phlebotomy careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cpt-top.jpg" alt="Phlebotomy careers">
 
 <p>
 	Phlebotomists work directly with patients to collect and process blood specimens for laboratory testing. Professionals in this field play an important role in the clinical laboratory and contribute to the comfort, safety and care of patients.
@@ -69,8 +70,8 @@ include_once('../includes/header.php');
 	<li>Part-Time Program can be completed in <strong>6 weeks</strong>, externship starts at 4 weeks</li>
 </ul>
 
+<?php if (false): ?>
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/phlebotomy-photostrip.jpg" alt="Fast Response health care careers">
-
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
 
@@ -90,6 +91,6 @@ include_once('../includes/header.php');
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.
 </p>
 
-
+<?php endif; ?>
 
 <?php include_once('../includes/footer.php'); ?>

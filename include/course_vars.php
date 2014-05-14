@@ -80,11 +80,11 @@
   $sections['center'] = array(
     //'Send to a Friend',
     'Course Description',
+    'Class Start Dates',
+    'Class Schedules',
     //'FAQs List',
     'Prerequisites',
     'Admissions Procedures',
-    'Class Start Dates',
-    'Class Schedules',
     'Tuition And Fees',
     //'Financing',
   );

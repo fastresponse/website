@@ -74,8 +74,8 @@ include_once('../includes/header.php');
 	<li>Part-Time Program includes <strong>8 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
 </ul>
 
+<?php if (false): ?>
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/emt-photostrip-2.jpg" alt="Fast Response health care careers">
-
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
 
@@ -95,5 +95,6 @@ include_once('../includes/header.php');
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.
 </p>
 
+<?php endif; ?>
 
 <?php include_once('../includes/footer.php'); ?>

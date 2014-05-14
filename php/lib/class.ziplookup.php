@@ -115,6 +115,9 @@ class ZipLookup {
     if (!$response)
       return false;
 
+    // TODO:
+    // possible logic problem: if $response (above) then $response = something (below)
+
     $response = json_decode($response);
     if (!$response)
       return false;

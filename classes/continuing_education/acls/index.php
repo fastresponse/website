@@ -77,6 +77,8 @@
 	<div class="leftcontent2">
 
 	  <?php
+$course_abbr = 'ACLS';
+
 $announcement_sections[] = <<<SECT1
 <h3 style="margin-top: 0; text-align: center;"><strong class="underline">2010 AHA ACLS Student Manual</strong></h3>
 <div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901014.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$52.75</span>.</div>

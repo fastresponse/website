@@ -1,7 +1,19 @@
 <?php
+
 include_once('../includes/functions.php');
 include_once('../includes/vars.php');
 
+$ajax = false;
+$send_to_them_auto = false;
+$empty_form_page = BASE_URL;
+$success_page = BASE_URL . 'thankyou.php';
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/ajax/ajax.course_contact_emailer.php');
+
+?>
+
+<?php if (false): ?>
+<?php
 if (empty($_POST)) {
 	header('Location: ' . BASE_URL);
 	exit;
@@ -42,5 +54,5 @@ if(!$mail->send()) {
 
 header('Location: ' . BASE_URL . 'thankyou.php');
 exit;
-
 ?>
+<?php endif; ?>

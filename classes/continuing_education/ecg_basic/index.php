@@ -72,7 +72,10 @@
 
 	<div class="leftcontent2">
 
-          <?php include('../ceu_include.php'); ?>
+    <?php
+    $course_abbr = 'ECG-B';
+    include('../ceu_include.php');
+    ?>
 
 	  <h1>ECG Recognition</h1>
 

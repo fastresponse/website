@@ -122,9 +122,9 @@
       <a href="/classes/continuing_education/NREMT/">NREMT</a>
       </li>
 
-      <li>
+      <!--<li>
       <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>
-      </li>
+      </li>-->
     </ul>
     </li>
   </ul>
@@ -244,7 +244,7 @@
     </ul>
     </li>
 
-    <!--
+<?php if (false): // disabled this section?>
     <li class="menuparent">
     <a href="/resources/paramedic/">Paramedic</a>
     <ul>
@@ -268,20 +268,20 @@
       <a href="/resources/paramedic/?section=jobsearch">Job Search</a>
       </li>
 
-      <?php //if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/paramedic/externship_certification.php')): ?>
+      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/paramedic/externship_certification.php')): ?>
 	<li>
 	<a href="/resources/paramedic/?section=extcert">Externship &amp; Certification</a>
 	</li>
-      <?php //endif; ?>
+      <?php endif; ?>
 
-      <?php //if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/paramedic/videos.php')): ?>
+      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/paramedic/videos.php')): ?>
 	<li>
 	<a href="/resources/paramedic/?section=videos">Videos</a>
 	</li>
-      <?php //endif; ?>
+      <?php endif; ?>
     </ul>
     </li>
-    -->
+<?php endif; // end disabled section ?>
 
     <li class="menuparent">
     <a href="/resources/spt/">SPT</a>

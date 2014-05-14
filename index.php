@@ -577,10 +577,10 @@ SLIDESOUT;
 	        </div>
           -->
           <div class="article-box">
-            <a href="/gallery/index.php/Events/">
+            <a href="https://operationindependence2014.eventbrite.com/?ref=elink" target="_blank">
               <div class="title">
                 <div class="title-border">
-                  <h1>Check out the Fast Response Events Photo Gallery here</h1>
+                  <h1 style="color: #ffff99;">Operation Independence 2014<br>Free Disaster Preparedness Classes</h1>
                 </div>
               </div>
             </a>
@@ -729,7 +729,7 @@ SLIDESOUT;
               <a href="/classes/continuing_education/itls/">International Trauma Life Support (ITLS)</a>
               <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
               <a href="/classes/continuing_education/NREMT/">NREMT</a>
-              <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>
+              <!--<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>-->
             </div>
           </div><!-- /link-column -->
 

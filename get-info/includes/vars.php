@@ -24,10 +24,10 @@
 	$program_options = array();
 	$program_options['EMT'] = 'EMT';
 	$program_options['Sterile Processing'] = 'Sterile Processing';
-	$program_options['Clinical Medical Assistant'] = 'Clinical Medical Assistant';
+	$program_options['Medical Assistant'] = 'Medical Assistant';
 	$program_options['Phlebotomy'] = 'Phlebotomy';
 	$program_options['Paramedic'] = 'Paramedic';
-	$program_options['Other Courses'] = 'Other Courses';
+	$program_options['Other'] = 'Other';
 
   $source_options = array();
   $source_options['Google'] = 'Google';

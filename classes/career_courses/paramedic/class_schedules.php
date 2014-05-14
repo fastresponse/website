@@ -6,7 +6,8 @@
     </div>
   </div>
   <div class="body">
-    <div style="float: left; width: 50%;">
+    <table><tr>
+    <td>
       <?php
         $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       ?>
@@ -16,8 +17,8 @@
       <?= $course_dates['Anatomy and Physiology'] ?>
       <h2 class="course-start-title">Academy Start Date</h2>
       <?= $course_dates['Academy Start'] ?>
-    </div>
-    <div style="float: right; width: 50%;">
+    </td>
+    <td>
       <h2 class="course-start-title">Class Hours</h2>
       <div class="course-start-date">Mon - Wed, 9:00 AM - 6:00 PM</div>
       <ul style="margin-top: 20px;">
@@ -26,7 +27,7 @@
         <li>208+ hours of clinical internship</li>
         <li>480+ hours of field internship</li>
       </ul>
-    </div>
-    <div class="clearfix"></div>
+    </td>
+    </tr></table>
   </div>
 </div><!-- /article-box -->

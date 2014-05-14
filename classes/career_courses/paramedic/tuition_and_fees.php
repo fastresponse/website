@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body">
-    <table style="margin: 0 auto;">
+    <table style="margin: 0 auto;" class="row-highlight">
       <thead>
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
@@ -24,7 +24,7 @@
         <tr><td>STRF</td><td>$6.00</td><td class="notes-col">Non-Refundable ($0.50 for every $1000.00, rounded to the nearest $1000.00.)</td></tr>
       </tbody>
     </table>
-    <table style="margin: 20px auto 0;">
+    <table style="margin: 20px auto 0;" class="row-highlight">
       <thead>
         <tr><th colspan="3" align="center">Additional Costs</th></tr>
       </thead>

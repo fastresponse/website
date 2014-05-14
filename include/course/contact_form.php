@@ -31,7 +31,7 @@
     <input type="tel" id="form-phone" name="phone" required="required" />
     <br />
     <div class="form-section-zip">
-      <label for="form-zip">Zipcode</label>
+      <label for="form-zip">Zip Code</label>
       <input type="text" id="form-zip" name="zip" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);" />
       <div id="zipcheck"></div>
     </div>
@@ -40,6 +40,13 @@
       <textarea cols="28" rows="3" id="form-comments" name="comments" style="vertical-align: top;"></textarea>
       <br />
     </div>
+<?php if ($course_name == 'Paramedic'): ?>
+    <div class="form-section-emt">
+      <input type="checkbox" id="form-emt" name="emt" value="I am currently an EMT." required="required" />
+      <label for="form-emt">I am currently an EMT.</label>
+      <br />
+    </div>
+<?php endif; ?>
     <div class="form-section-submit">
       <label id="loading"></label>
       <div id="output"></div>
@@ -64,30 +71,26 @@ window.jQuery || document.write(
 
 <script type="text/javascript" src="/js/contactform.js"></script>
 
+<!-- for conversion tracking code -->
+<script type="text/javascript" src="/js/frlib2.js"></script>
+
 <script type="text/javascript">  
 /* <![CDATA[ */    
 
+var formid = '#contact-form';
+
 jQuery(document).ready(function() {
-  var form = jQuery('#contact-form');
+  var form = jQuery(formid);
   var output = jQuery('#output');
   var loadingimgdiv = jQuery('#loading');
   var loadingimgid = '#loadingimg';
   var submitid = '#form-submit';
 
-  function displayOutput(data) {
+  function displayOutput(htmlout) {
 	  jQuery(loadingimgid).fadeOut(300, function() {
-	    jQuery(this).remove();
-	    jQuery('input').prop('disabled', true);
-	    jQuery('select').prop('disabled', true);
-	    jQuery('textarea').prop('disabled', true);
-		  output.html(data).slideDown(500);
-	  }); // end loading image fadeOut
-  }
-
-  function evalJS(obj) {
-    obj.find('script').each(function(i) {
-      eval( jQuery(this).text() );
-    });
+	    jQuery(this).remove(); // removes the loading image
+		  output.html(htmlout).slideDown(500);
+	  });
   }
 
   output.click(function() {
@@ -112,14 +115,29 @@ jQuery(document).ready(function() {
 	    type: "POST",
 	    url: "/php/ajax/ajax.course_contact_emailer.php",
 	    data: formdata,
-      dataType: 'html',
+      dataType: 'json',
 
+      // data.success: true/false
+      // data.output: html to display
 	    success: function(data, textStatus, jqxhr) {
-        jQuery(submitid).slideUp(500, function() {
-          jQuery('label[for="' + submitid.slice(1) + '"]').hide();
-          displayOutput(data);
-          evalJS(output);
-        });
+
+        // jQuery docs say to do the following, but it errors because PHP's
+        // json_encode() isn't quoting the names of 'name' : 'value' pairs
+        //   data = jQuery.parseJSON(data);
+        // everything works fine without it
+
+        // always fade/remove the loading image and display output
+        displayOutput(data.output);
+
+        // on success, disable further input and track conversions
+        if (data.success) {
+          jQuery(submitid).slideUp(500, function() {
+	          jQuery('input,select,textarea').prop('disabled', true);
+            jQuery('label[for="' + submitid.slice(1) + '"]').hide();
+            // in frlib2.js
+            trackConversions();
+          });
+        }
 	    },
 
       error: function(jqxhr, textStatus, errorThrown) {

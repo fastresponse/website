@@ -22,14 +22,22 @@ extract(
   'form'
 );
 
+$var_list = array(
+  'form_program', 'form_name', 'form_email',
+  'form_phone', 'form_zip', 'form_city',
+  'form_emt', 'form_questions', 'form_comments',
+  'form_source', 'form_whenreachme', 'form_timeframe',
+);
+
+foreach ($var_list as $var) {
+  if (!isset($$var)) $$var = null;
+}
+
 // status variables
 $to_us_ok = 0;
 $to_them_ok = 0;
 
 //--- settings ---//
-
-$debug_write_to_file = false;
-$debug_write_filename = 'debug_output.txt';
 
 $send_to_us_from = 'autoreply@fastresponse.org';
 
@@ -140,41 +148,53 @@ if (!$form_program || !$courses[$form_program]) {
   $error_msgs[] = "Please select your course of interest.";
 }
 
-if (count($error_msgs)) {
-  $error_output =  '<div class="error">'.implode("<br />\n", $error_msgs).'</div>';
+if ($form_program == 'Paramedic' && !$form_emt) {
+  $error_msgs[] = "Please confirm that you are currently an EMT.";
 }
 
 //--- end of validation of input ---//
 
 
+if (count($error_msgs)) {
+  $error_output =  '<div class="error">'.implode("<br />\n", $error_msgs).'</div>';
+}
 
-//--- create and send email to us from user ---//
+else {
 
-$messages = <<<ENDMSGS
+  //--- create and send email to us from user ---//
+
+  $messages = <<<ENDMSGS
+<b>Program:</b> $form_program
 <b>Name:</b> $form_name
 <b>Email:</b> $form_email
 <b>Phone:</b> $form_phone
-<b>Zip:</b> $form_zip
-<b>Program:</b> $form_program
-<b>Comments:</b>
-$form_comments
+
 ENDMSGS;
 
+  if ($form_city) $messages .= "<b>City:</b> $form_city\n";
+  if ($form_zip) $messages .= "<b>Zip:</b> $form_zip\n";
 
-//$to = $courses[$subject]['email'];
-$to = $courses['Generic']['email'];
+  if ($form_whenreachme) {
+    $messages .= "<b>When to reach me:</b> $form_whenreachme";
+    if ($form_timeframe) {
+      $messages .= ", $form_timeframe";
+    }
+    $messages .= "\n";
+  }
+  else if ($form_timeframe) {
+    $messages .= "<b>When to reach me:</b> $form_timeframe\n";
+  }
 
-if ($debug_write_to_file) {
-  $output  = "From: $form_name ($form_email)\n";
-  $output .= "To: $form_name ($to)\n";
-  $output .= "Subject: New Lead: $form_program\n";
-  $output .= "Body:\n\n$messages\n";
+  if ($form_emt) $messages .= "<b><u>$form_emt</u></b>\n";
 
-  file_put_contents($debug_write_filename, $output);
+  if ($form_questions) $messages .= "<b>Questions:</b> $form_questions\n";
+  if ($form_comments) $messages .= "<b>Comments:</b>\n$form_comments\n";
+  if ($form_source) $messages .= "<b>Source:</b> $form_source\n";
 
-  $to_us_ok = true;
-}
-else {
+
+  //$to = $courses[$subject]['email'];
+  $to = $courses['Generic']['email'];
+
   $mail = new PHPMailer(); 
 
   $mail->SetFrom($form_email, $form_name);
@@ -185,39 +205,25 @@ else {
   $mail->IsHTML();
 
   $to_us_ok = $mail->Send();
-}
 
-if ($to_us_ok) {
-  $success_output = 'Your request has been sent. Thank you!';
-}
-
-//--- end send email to us from user ---//
-
-
-
-//--- send html autoreply email to user ---//
-
-// only send if the email to us succeeded and send_to_them_auto is on
-if ($to_us_ok && $send_to_them_auto) {
-
-  $messages = file_get_contents(
-    //$send_to_them_dir . $courses[$subject]['page']
-    $send_to_them_dir . $courses['Generic']['page']
-  );
-
-  if ($debug_write_to_file) {
-    $output  = "\n\n\n";
-    $output .= "From: $send_to_them_name ($send_to_them_email)\n";
-    $output .= "To: $form_name ($form_email)\n";
-    $output .= "Subject: $send_to_them_subject\n";
-    $output .= "Body (text):\n\n " . strip_tags($messages) . "\n\n";
-    $output .= "Body (html):\n\n$messages\n";
-
-    file_put_contents($debug_write_filename, $output, FILE_APPEND);
-
-    $to_them_ok = true;
+  if ($to_us_ok) {
+    $success_output = '<div class="success">Your request has been sent. Thank you!</div>';
   }
-  else {
+
+  //--- end send email to us from user ---//
+
+
+
+  //--- send html autoreply email to user ---//
+
+  // only send if the email to us succeeded and send_to_them_auto is on
+  if ($to_us_ok && $send_to_them_auto) {
+
+    $messages = file_get_contents(
+      //$send_to_them_dir . $courses[$subject]['page']
+      $send_to_them_dir . $courses['Generic']['page']
+    );
+
     $mail = new PHPMailer(); 
 
     $mail->SetFrom($send_to_them_from, $send_to_them_name);
@@ -226,28 +232,29 @@ if ($to_us_ok && $send_to_them_auto) {
     $mail->MsgHTML($messages);
     $mail->AltBody = strip_tags($messages);
     $mail->IsMail();
+
+    $to_them_ok = $mail->Send();
+
+    if ($to_them_ok) {
+      // we don't actually do anything here
+    }
   }
 
-  $to_them_ok = $mail->Send();
+} //--- end of sending emails ---//
 
-  if ($to_them_ok) {
-    // we don't actually do anything here
-  }
+
+//--- handle output back to JS ---//
+
+if ($error_output) {
+  $output = $error_output;
+  $success = false;
+}
+else {
+  $output = $success_output;
+  $success = true;
 }
 
+$data = array('success' => $success, 'output' => $output);
+header('Content-Type: application/json');
+echo json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 ?>
-
-<?php if ($error_output): ?>
-
-<div class="error"><?= $error_output ?></div>
-
-<?php elseif ($success_output): ?>
-
-<div class="success"><?= $success_output ?></div>
-
-<?php
-  include($_SERVER['DOCUMENT_ROOT'] . '/php/conversion_google.php');
-  include($_SERVER['DOCUMENT_ROOT'] . '/php/conversion_facebook.php');
-?>
-
-<?php endif; ?>

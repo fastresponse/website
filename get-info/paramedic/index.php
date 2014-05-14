@@ -17,7 +17,7 @@ $key_values = array(
 
 $questions_code = <<<ENDQ
     <label style="line-height: 1em; margin-bottom: 8px;">
-      <input type="checkbox" required="required" name="i_am_an_emt" value="I am currently an EMT.">
+      <input type="checkbox" id="form-emt" required="required" name="emt" value="I am currently an EMT.">
       <span>I am currently an EMT.</span><br />
       <span style="font-size: small; margin-left: 23px;">(six months experience required)</span>
     </label>
@@ -91,8 +91,8 @@ include_once('../includes/header.php');
   <li>Field internship: 480 hours (minimum)</li>
 </ul>
 
+<?php if (false): ?>
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/paramedic-photostrip.png" alt="Fast Response health care careers">
-
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
 
@@ -112,5 +112,6 @@ include_once('../includes/header.php');
 	For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.
 </p>
 
+<?php endif; ?>
 
 <?php include_once('../includes/footer.php'); ?>

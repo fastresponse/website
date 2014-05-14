@@ -6,14 +6,14 @@ function validate(f) {
 
 	fields.removeClass('v_error').each(function(){
 
-		var v = $(this).val()
-			t = $(this).attr('type');
+		var v = $(this).val();
+		var t = $(this).attr('type');
 
 		if(v == '') {
 			errors++;
 			$(this).addClass('v_error');
 		}
-    if(t == 'checkbox' && !$(this).prop('checked')) {
+    if(t == 'checkbox' && !$(this).is(':checked')) {
       errors++;
       error_msg = "Please verify the following:\n"+v;
 			$(this).addClass('v_error');

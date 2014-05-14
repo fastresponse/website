@@ -354,6 +354,8 @@ function query_course_date(
 
   if (!$limit || $limit < 1) $limit = 0;
 
+  $params = array(':course' => $course, ':date' => $date);
+
   switch ($when) {
     default:
     case 'after':
@@ -367,6 +369,14 @@ function query_course_date(
     break;
   }
 
+  if (is_array($type)) {
+    $type_line = 'FIND_IN_SET(type, \'' . implode(',', $type) . '\')';
+  }
+  else {
+    $type_line = 'type = :type';
+    $params[':type'] = $type;
+  }
+
   $result = basic_query($dbh,
     array(
       "DATE_FORMAT(thedate, '%M %D, %Y') as showdate",
@@ -375,12 +385,12 @@ function query_course_date(
     'start_dates',
     array(
       'course = :course',
-      'type = :type',
+      $type_line,
       'thedate ' . $operator . ' :date',
     ),
     'thedate ' . $sort,
     $limit,
-    array(':course' => $course, ':type' => $type, ':date' => $date)
+    $params
   );
 
   if (!is_array($result) || !count($result))

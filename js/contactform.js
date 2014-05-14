@@ -56,7 +56,9 @@ function zipValidate(z, out_id, radius) {
 			success: function(data, txtStatus, jqxhr) {
 				if (data != null && data > radius) {
 					$(out_id).html(
-						'This zip code is more than '+radius+' miles from our campus.'
+						'This zip code is more than ' +
+            '<span style="white-space: nowrap;">'+radius+' miles</span> ' +
+            'from our campus.'
 					).slideDown();
 				}
 			},

@@ -3,8 +3,7 @@
 $title		= 'Medical Assistant Training';
 $description	= null;
 
-$headline = 'Get the Skills to Be a Clinical Medical Assistant';
-//$subhead = 'Guaranteed Externships at Bay Area Clinics';
+$headline = 'Get the Skills to Become a Clinical Medical Assistant';
 $subhead = 'Phlebotomy and EKG Training - Guaranteed Externships<br>' .
            'All included for $6,500';
 
@@ -12,8 +11,8 @@ $program_of_interest = 'Clinical Medical Assistant';
 $program_abbreviation = 'CMA';
 
 $key_values = array(
-  'Eligibility for certifications in the fields of Medical Assisting, Phlebotomy, and ECG Technician',
-  'Graduates can perform many different job functions, making them extremely hirable',
+  'Eligibility for certifications in Medical Assisting, Phlebotomy, and ECG Technician',
+  'Our graduates are marketable because they are skilled in a variety of job functions',
 );
 
 $zip_radius = 50;
@@ -26,57 +25,58 @@ include_once('../includes/header.php');
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cma-top.jpg" alt="Medical Assistant careers">
 
+<h3 style="width: 80%; margin: 1em auto 2em; text-align: center; color: #2454A7;">Evening classes beginning in July! Contact us for details.</h3>
+
+<h3><em>"What does a Clinical Medical Assistant do?"</em></h3>
+
 <p>
-Medical Assistants are involved in many aspects of patient care. They are hired to work in many departments throughout the medical facility, to include: Dermatology, Oncology, Gastroenterology, Podiatry, Same Day Surgery, Obstetrics and Gynecology, Emergency Medicine, and many more! Medical Assisting is one of the fastest growing health occupations with 29% growth between 2012 and 2022, according to the Bureau of Labor Statistics.
+As a Clinical Medical Assistant (Medical Assistant / CMA / MA), you will have an exciting career learning state-of-the-art medical procedures and be helping patients of all ages. You can become a vital partner in increasing medical office productivity and communicating with and assisting medical personnel in a variety of procedures. As a Medical Assistant, you may work in Dermatology, Oncology, Gastroenterology, Podiatry, Same Day Surgery, Obstetrics, Gynecology, Emergency Medicine and many other departments.
+</p>
+
+<h3><em>"What are the career prospects as a Medical Assistant?"</em></h3>
+
+<p>
+Clinical Medical Assisting is one of the fastest-growing healthcare careers in the U.S. The demand for Clinical Medical Assistants will increase by 29% over the next 10 years (Bureau of Labor Statistics, U.S. Department of Labor). Healthcare cannot be outsourced to another country and due to the Affordable Care Act (Obamacare), there will continue to be an increased need for health care professionals.
+</p>
+
+<h4>Why choose Fast Response?</h4>
+
+<p>
+If you want to become a highly-skilled medical professional, capable of competing in the job market, come experience our Clinical Medical Assistant Program. You will learn patient assessment, vital signs, 12-Lead ECG, surgical tray setup, assisting with minor surgeries, immunizations and injections, preparation and administration of medications, patient rehab, lab tests, patient charting and documentation. 
 </p>
 
 <p>
-If you want to become one of the best-trained Medical Assistants in the Bay Area (<em>without spending years in school</em>), come to Fast Response School of Health Care Education. Our Clinical Medical Assisting program's curriculum and highly trained staff will prepare you for certification and employment in a rewarding healthcare career. It's also one of the only programs in the Bay Area that <strong style="text-decoration: underline;">includes Phlebotomy and EKG training</strong>!
+Fast Response students are recognized by Bay Area hospitals as being exceptionally prepared and competent. Our graduates, who have taken the optional California Certification Board for Medical Assistants Exam, have a <strong>100%</strong> pass rate on the first attempt! 
 </p>
 
 <p>
-Fast Response students are recognized by Bay Area hospitals as being exceptional. Of our students who have taken the optional California Certification Board for Medical Assistants Exam, <strong style="text-decoration: underline;">100%</strong> passed on their first attempt! 
+The Clinical Medical Assisting program at Fast Response provides dynamic classroom training, hands-on clinical skills training, and a clinical externship. Our instructors are all highly-trained and experienced <strong>California Certified Medical Assistants</strong> (CCMA) and AHA (American Heart Association) certified CPR Instructors. We utilize a student-based Socratic teaching method where there is a shared dialogue between teacher and students, drawing knowledge from the learners, creating an exchange of information in the classroom. 
 </p>
-
-<h3>Becoming a Clinical Medical Assistant</h3>
-
-<p>
-The Clinical Medical Assisting program at Fast Response provides dynamic classroom training, hands-on clinical skills training, and a clinical externship. Our instructors are all <strong>California Certified Medical Assistants</strong> (CCMA) and AHA Approved CPR Instructors.
-</p>
-
-<p>
-Topics covered in this course include patient screening and documentation, vital signs, <span style="white-space: nowrap;">12-Lead ECG</span>, surgical tray setup, assisting with minor procedures, immunizations and injections, and much more! Each student will begin by taking our two week <strong>Phlebotomy Program</strong> as part of the course. 
-</p>
-
 
 <h3>Clinical Externship - On-the-Job Experience</h3>
 
 <p>
-As a student in the Medical Assisting program, you will complete 160 hours of clinical externship at one of our <strong>contracted medical facilities</strong>. Additionally, you will complete up to 80 hours of externship as part of our Phlebotomy program requirement. In addition to hands-on experience, externships are a great way to network amongst other healthcare professionals.
+As a student in the Clinical Medical Assisting program, you will complete 160 hours of clinical externship and 80 hours for your Phlebotomy at one of our <strong>contracted medical facilities</strong>. You will be working with real patients in a wide variety of clinical settings. Externships often lead directly to employment and can be a great way to network. 
 </p>
-<p>
-Graduates of this program are fully prepared and feel confident in clinical and hospital situations after gaining so much practical, real-world experience.
-</p>
-
 
 <h3>Class Schedules</h3>
 
 <p>
-Fast Response programs are designed for busy, adult learners. Many students are raising families and/or continuing working while going to school. This course has flexible entry dates and convenient part-time schedules.
+Fast Response programs are designed for busy, adult learners. Many students continue to work while attending school. This course has flexible entry dates and convenient part-time schedules with morning and evening classes.
 </p>
 
 <ul>
-  <li>Phlebotomy training included with all classes: <strong>2 weeks</strong> of classroom and skills training, plus <strong>80 hours</strong> of externship</li>
-	<li>Clinical Medical Assistant training includes <strong>18 weeks</strong> of classroom training and <strong style="white-space: nowrap;">160 hours</strong> of clinical externship</li>
+  <li>Clinical Medical Assistant program = <strong>18 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
+  <li>Phlebotomy program (included with Medical Assistant program) = <strong>2 weeks</strong> of classroom and skills training, plus <strong>80 hours</strong> of externship</li>
 </ul>
 
-<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/cma-photostrip-2.jpg" alt="Fast Response health care careers">
-
+<?php if (false): ?>
+<img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/cma-photostrip.jpg" alt="Fast Response health care careers">
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
 
 <p>
-Healthcare training isn't about getting a diploma - it's about getting a career you love. <span style="white-space: nowrap;">Fast Response</span> is dedicated to supporting you throughout your career. <span style="white-space: nowrap;">Experienced Career Services</span> professionals are happy to help with things like resume preparation, interview techniques and job searches.
+Healthcare training isn't about getting a diploma; it's about obtaining a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with resume preparation, interview techniques and job searches.
 </p>
 
 <p>Payment plans are available for those that qualify.</p>
@@ -90,6 +90,6 @@ If you're interested in learning more about a career as a medical assistant, and
 <p>
 For immediate questions, call <strong><?= phone_link(PHONE); ?></strong>.
 </p>
-
+<?php endif; ?>
 
 <?php include_once('../includes/footer.php'); ?>

@@ -17,7 +17,7 @@ onsubmit="return validate(this);">
       <span>What payment plans are available?</span>
     </label>
     <label>
-      <input type="checkbox" value="What are my career prospects?" name="what_are_my_career_prospects">
+      <input type="checkbox" name="what_are_my_career_prospects" value="What are my career prospects?">
       <span>What are my career prospects?</span>
     </label>
     <label>

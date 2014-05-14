@@ -20,6 +20,8 @@
 	if(!isset($conversionCode)) $conversionCode = false;
 	if(!isset($questions_code)) $questions_code = '';
 
+  if (!isset($program_career_name)) $program_career_name = $program_of_interest;
+
 	$headline = get_dynamic_val('h1',$headline); //Get the dynamic headline if used, otherwise use the default headline (defined at the page level).
 	$subhead = get_dynamic_val('h2',$subhead); //Get the dynamic headline if used, otherwise use the default headline (defined at the page level).
 
@@ -71,8 +73,8 @@ include_once('vwo_code.php');
 	</div>
 
 	<div class="phone">
-		<strong>Call <?= phone_link(PHONE); ?></strong><br>
-		<span class="tagline">Speak to a friendly admissions advisor</span>
+		<strong>Call <span style="white-space: nowrap;"><?= phone_link(PHONE); ?></span></strong><br>
+		<span class="tagline">to speak to a friendly Admissions Representative</span>
 	</div>
 </div>
 
