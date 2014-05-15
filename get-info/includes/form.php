@@ -9,19 +9,19 @@ onsubmit="return validate(this);">
   <div class="checkbox-group chk-questions">
     <?= $questions_code ?>
     <label>
-      <input type="checkbox" name="how_much_is_tuition" value="How much is tuition?">
+      <input type="checkbox" name="questions[]" value="How much is tuition?">
       <span>How much is tuition?</span>
     </label>
     <label>
-      <input type="checkbox" name="what_payment_plans_are_available" value="What payment plans are available?">
+      <input type="checkbox" name="questions[]" value="What payment plans are available?">
       <span>What payment plans are available?</span>
     </label>
     <label>
-      <input type="checkbox" name="what_are_my_career_prospects" value="What are my career prospects?">
+      <input type="checkbox" name="questions[]" value="What are my career prospects?">
       <span>What are my career prospects?</span>
     </label>
     <label>
-      <input type="checkbox" name="when_does_it_start" value="When does it start?">
+      <input type="checkbox" name="questions[]" value="When does it start?">
       <span>When does it start?</span>
     </label>
   </div>
@@ -58,7 +58,7 @@ onsubmit="return validate(this);">
   <div class="input-wrap">
     <label class="input">
       <span>Your name</span>
-      <input type="text" name="full_name" required="required" />
+      <input type="text" name="name" required="required" />
     </label>
   </div>
 

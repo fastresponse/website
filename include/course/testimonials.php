@@ -61,23 +61,6 @@ foreach ($quotes_tmp as $quote):
 
 <?php endforeach; ?>
 
-</div>
+  </div>
 
-<?php if (false): ?>
-<?php if (!empty($quotes_tmp)): ?>
-<script type="text/javascript">
-window.jQuery || document.write(
-  '<script src="/js/jquery-1.10.2.min.js" type="text/javascript"><\/script>'
-);
-</script>
-
-<script src="/js/jquery.rotate-visible.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-  jQuery(".slideshow").slideshow(6000, 900);
-});
-</script>
-<?php endif; ?>
-<?php endif; ?>
 </div>

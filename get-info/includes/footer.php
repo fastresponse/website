@@ -1,4 +1,6 @@
 
+<?php if (isset($program_of_interest)): ?>
+
 <img class="fcenter v-spaced" src="<?= BASE_URL; ?>img/<?= strtolower($program_abbreviation) ?>-photostrip.jpg" alt="Fast Response health care careers">
 
 <h3>Get the Support You Need to Launch a Successful Career</h3>
@@ -25,6 +27,8 @@ For immediate questions, call <strong style="white-space: nowrap;"><?= phone_lin
 <?php	if (!$hideForm): ?>
 	<div class="get-info-now"><a href="#info-form" class="do-flash btn"><span>Get Info Now!</span></a></div>
 <?php endif; ?>
+
+<?php endif; // isset(program_of_interest) ?>
 
 </div><?php /* /#content */ ?>
 
@@ -92,6 +96,8 @@ For immediate questions, call <strong style="white-space: nowrap;"><?= phone_lin
 		</div>
 	</div>
 
+  <?php if (isset($program_of_interest)): ?>
+
   <?php if (!$hideKeyValues): ?>
 	<div class="widget checks-features">
     <h3>Key Values</h3>
@@ -127,6 +133,8 @@ For immediate questions, call <strong style="white-space: nowrap;"><?= phone_lin
 		</div>
 	</div>
   <?php endif; ?>
+
+  <?php endif; // isset(program_of_interest) ?>
 
 
 </div><?php /* /#sidebar */ ?>

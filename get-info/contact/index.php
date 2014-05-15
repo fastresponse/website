@@ -3,56 +3,42 @@
 include_once('../includes/functions.php');
 include_once('../includes/vars.php');
 
-$ajax = false;
-$send_to_them_auto = false;
-$empty_form_page = BASE_URL;
-$success_page = BASE_URL . 'thankyou.php';
+error_reporting(0);
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/ajax/ajax.course_contact_emailer.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/php/lib/class.autoreply_emailer.php');
+
+$emailer_ob = new AutoreplyEmailer();
+
+if ($emailer_ob->validate_variables()) {
+  $emailer_ob->send_email_to_us();
+}
+
+$success = $emailer_ob->get_status();
+
+if ($success) {
+  $emailer_ob->send_email_to_them();
+  header('Location: ' . BASE_URL . 'thankyou.php');
+  exit;
+}
+
+$go_back = BASE_URL;
+if (isset($_SERVER['HTTP_REFERER']))
+  $go_back = $_SERVER['HTTP_REFERER'];
 
 ?>
 
-<?php if (false): ?>
+<html>
+<head>
+  <meta http-equiv="refresh" content="5; url=<?= $go_back ?>">
+  <title>Please try again</title>
+</head>
+<body>
+
+<div class="error"><?= $emailer_ob->get_output() ?></div>
+
+</body>
+</html>
+
 <?php
-if (empty($_POST)) {
-	header('Location: ' . BASE_URL);
-	exit;
-}
-
-require('../includes/PHPMailerAutoload.php');
-
-$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-$_POST['comments'] = nl2br($_POST['comments']);
-
-//print_r($_POST);
-
-$mail = new PHPMailer;
-
-$mail->From = EMAIL_FROM;
-$mail->FromName = 'fastresponse.org mailer';
-$mail->addAddress(EMAIL_TO);
-$mail->isHTML(true);
-
-$mail->Subject = 'New Lead: Fast Response PPC';
-$mail->Body    = "<b>Name</b>: {$_POST['full_name']}<br>";
-$mail->Body   .= "<b>Email</b>: {$_POST['email']}<br>";
-$mail->Body   .= "<b>Phone</b>: {$_POST['phone']}<br>";
-if (isset($_POST['city'])) {
-  $mail->Body   .= "<b>City</b>: {$_POST['city']}<br>";
-}
-$mail->Body   .= "<b>Zip</b>: {$_POST['zip']}<br>";
-$mail->Body   .= "<b>Program</b>: {$_POST['program']}<br>";
-$mail->Body   .= "<b>Questions</b>: {$_POST['chk_questions']}<br>";
-$mail->Body   .= "<b>Comments</b>: {$_POST['comments']}<br>";
-$mail->Body   .= "<b>Source</b>: {$_POST['source']}<br>";
-
-if(!$mail->send()) {
-	echo 'Message could not be sent. ';
-	echo 'Mailer Error: ' . $mail->ErrorInfo;
-	exit;
-};
-
-header('Location: ' . BASE_URL . 'thankyou.php');
-exit;
+  header('Refresh: 5; URL=' . $go_back);
 ?>
-<?php endif; ?>

@@ -82,6 +82,9 @@
       font-size: 90%;
       margin-left: 10px;
     }
+    #output {
+      display: inline-block;
+    }
     .form form label {
       display: inline-block;
       float: none;
@@ -334,6 +337,7 @@
 
     <label id="loading"></label>
 		<div id="output"></div>
+    <div></div>
 
 		<label for="form-submit"></label>
 		<input type="submit" id="form-submit" name="submit" title="Submit" value="Submit" class="inner-outer-glow-orange" />

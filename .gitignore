@@ -1,7 +1,13 @@
 .*.swp
+*.bak
+*.orig
+*.xcf
+* - Copy.*
+*_????-??-??.*
 Thumbs.db
 .DS_STORE
 documents/
 gallery/
 ipad/
 php/dbsettings.php
+test/

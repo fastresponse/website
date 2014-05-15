@@ -65,16 +65,20 @@ window.jQuery || document.write(
 );
 </script>
 
-<script src="/js/jquery.rotate-visible.js" type="text/javascript"></script>
+<script src="/js/jquery.slideshow.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-  var $container = $("#testimonial-wrapper");
-  if ($container.children().length) {
-    $container.children().hide();
-    $container.rotate(10000);
-  }
-});
+var slideshow_started = false;
+
+function start_slideshow() {
+  if (slideshow_started || jQuery(window).width() < 1024) return;
+  jQuery('#testimonial-wrapper').slideshow(10000, 900);
+  slideshow_started = true;
+}
+
+jQuery(document).ready(start_slideshow);
+jQuery(document).resize(start_slideshow);
+
 </script>
 <?php endif; ?>
 

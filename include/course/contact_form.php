@@ -6,7 +6,7 @@
 ?>
 
 <div id="contact-form-div">
-<form id="contact-form" action="/include/course_contact_emailer.php" method="post" onsubmit="return validate(this);">
+<form id="contact-form" action="/php/ajax/ajax.course_contact_emailer.php" method="post" onsubmit="return validate(this);">
   <fieldset>
     <legend>Contact Us</legend>
     <div class="form-section-program">

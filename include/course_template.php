@@ -42,7 +42,7 @@ query_links_from_db();
   <script type="text/javascript">
 
     var slideshow_started = false;
-    var slide_pause_time = 6000;
+    var slide_pause_time = 10000;
     var slide_fade_time = 900;
 
   <?php
