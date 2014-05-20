@@ -9,7 +9,7 @@ $course_title = 'Emergency Medical Technician';
 $course_types = array('Full-time', 'Part-time');
 
 $links = array(
-  'EMT Course Info Packet',
+  'Immunizations',
   'EMT Skills Videos',
 );
 

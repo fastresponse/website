@@ -25,7 +25,9 @@ include_once('../includes/header.php');
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cma-top.jpg" alt="Medical Assistant careers">
 
+<?php if (false): ?>
 <h3 style="width: 80%; margin: 1em auto 2em; text-align: center; color: #2454A7;">Evening classes beginning in July! Contact us for details.</h3>
+<?php endif; ?>
 
 <h3><em>"What does a Clinical Medical Assistant do?"</em></h3>
 

@@ -9,7 +9,7 @@ $course_title = 'Clinical Medical Assistant';
 $course_types = array('AM');
 
 $links = array(
-  'Immunizations for Medical Assistants',
+  'Immunizations',
 );
 
 $zip_radius = 50;
@@ -18,9 +18,6 @@ $sections['left'] = array_diff($sections['left'],
   array('Certifications')
 );
 
-array_splice(
-  $sections['left'], 1, 0, array('Announcements')
-);
 array_splice(
   $sections['right'], 2, 0, array('Certifications')
 );

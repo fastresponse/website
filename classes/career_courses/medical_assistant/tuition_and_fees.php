@@ -32,9 +32,10 @@
         <tr><td colspan="3"></td></tr>
       </tfoot>
       <tbody>
-        <tr><td>State (CCBMA) Medical Assistant Exam</td><td>$115.00</td><td class="notes-col">Total price for basic and clinical sections. Both are required for certification.</td></tr>
+        <tr><td>CA State (CCBMA) Medical Assistant Exam</td><td>$115.00</td><td class="notes-col">Total price for basic and clinical sections. Both are required for certification.</td></tr>
         <tr><td>National (NCCT) Medical Assistant Exam</td><td>$90.00</td><td class="notes-col"></td></tr>
-        <tr><td>National (NCCT) Phlebotomy Technician Exam</td><td>$90.00</td><td class="notes-col"></td></tr>
+        <tr><td>CA State Phlebotomy Technician License Fee</td><td>$100.00</td><td class="notes-col">Highly recommended for all graduates.</td></tr>
+        <tr><td>National (NCCT) Phlebotomy Technician Exam</td><td>$90.00</td><td class="notes-col">Highly recommended for all graduates.</td></tr>
         <tr><td>National (NCCT) ECG Technician Exam</td><td>$90.00</td><td class="notes-col"></td></tr>
         <tr><td>Immunizations</td><td>as needed</td><td></td></tr>
       </tbody>

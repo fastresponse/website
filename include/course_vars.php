@@ -59,6 +59,7 @@
 
   $sections['left'] = array(
     'Slideshow',
+    'Announcements',
     'Contact Form',
     'Gallery Link',
     'Certifications',
