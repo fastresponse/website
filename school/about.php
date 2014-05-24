@@ -19,19 +19,7 @@
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
   <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/css/buttons-ie.css" /><![endif]-->
 
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
+  <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
@@ -113,7 +101,7 @@
 	  <p>Since 1989, Fast Response School of Health Care Education has been the Bay Area's premier community and professional training center, offering certifications in:</p>
 
 	  <div class="column col2">
-            <h3 class="italic">POSTSECONDARY COURSES</h3>
+      <h3 class="italic">POSTSECONDARY COURSES</h3>
 	    <ul class="bullets">
 	      <li>Clinical Medical Assistant</li>
 	      <li>Emergency Medical Technician</li>
@@ -136,8 +124,8 @@
 	      <li>ECG Basic Arrhythmia Recognition</li>
 	      <li>ECG Introduction to 12-Lead</li>
 	      <li>Emergency Medical Patients: Assessment, Care, and Transport (EMPACT)</li>
-	      <li>Geriatric Education for Emergency Medical Services (GEMS)</li>
-	      <li>International Trauma Life Support (ITLS)</li>
+	      <!--<li>International Trauma Life Support (ITLS)</li>-->
+	      <!--<li>Geriatric Education for Emergency Medical Services (GEMS)</li>-->
 	    </ul>
 	  </div>
 

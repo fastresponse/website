@@ -17,8 +17,8 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       <div class="course-start-date">Mon - Fri, 9:00 AM - 4:30 PM</div>
       <ul style="margin-top: 5px;">
         <li>Two weeks of instruction</li>
-        <li>65 hours instruction and lab practice</li>
-        <li>80 hours of field externship</li>
+        <li>65 hours instruction and laboratory practice</li>
+        <li>80 hours of clinical externship</li>
       </ul>
     </td>
     <td>
