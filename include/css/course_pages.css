@@ -412,6 +412,13 @@ div.fill {
   width: 50%;
   border-right: dotted 1px rgb(90, 90, 90);
 }
+#class_schedules .body table tr.bottomborder td {
+  padding-bottom: 20px;
+  border-bottom: dotted 1px rgb(90, 90, 90);
+}
+#class_schedules .body table td h4 {
+  margin-top: 0;
+}
 #tuition_and_fees .body table tbody td {
   border-bottom: dotted 1px rgb(90, 90, 90);
 }
@@ -563,6 +570,9 @@ div.highlight:hover {
   }
   #title-container {
     padding: 0;
+    position: static;
+  }
+  #page_title {
     position: static;
   }
   .course-header-image,

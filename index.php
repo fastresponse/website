@@ -622,10 +622,21 @@ SLIDESOUT;
           </div>
 <?php endif; // end disabled banner ?>
 
+          <!--
 	        <div class="banner">
 	          <a href="/classes/continuing_education/cpr/" class="btn buttontext lines-1 glow-yellow">
 	            <div>
 	              <div style="display: inline; font-weight: bold; font-size: 110%;" class="red">NEW</div> Low BLS Prices
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+          -->
+
+	        <div class="banner">
+	          <a href="/classes/career_courses/medical_assistant/" class="btn buttontext lines-1 glow-yellow">
+	            <div>
+                <div style="font-size: 115%;">Evening Medical Assistant classes</div>
 	            </div>
 	            <span></span>
 	          </a>

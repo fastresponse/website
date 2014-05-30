@@ -39,7 +39,7 @@ class AutoreplyEmailer {
   const AUTOREPLY_DIR = '/school/info/email_replies/';
 
   private $variables = null;
-  private $required = null;
+  private $stripslashes = null;
   private $variable_errors = null;
 
   private $use_generic = null;
@@ -73,8 +73,8 @@ class AutoreplyEmailer {
       'emt' => null, 'questions' => null, 'comments' => null,
       'source' => null, 'whenreachme' => null, 'timeframe' => null,
     );
-    $this->required = array(
-      'program', 'name', 'email', 'phone',
+    $this->stripslashes = array(
+      'name', 'email', 'comments',
     );
 
     $this->send_to_us_from = 'autoreply@fastresponse.org';
@@ -147,12 +147,18 @@ class AutoreplyEmailer {
       $this->output_error = 'Error sending message. Please try again later.';
       return ($this->status_vars_ok = false);
     }
+
     $vars = filter_var_array($vars, FILTER_SANITIZE_STRING);
+    
     foreach ($vars as $k => $v) {
       if (array_key_exists($k, $this->variables)) {
+        if (array_key_exists($k, $this->stripslashes)) {
+          $v = stripslashes($v);
+        }
         $this->variables[$k] = $v;
       }
     }
+    
     if (
       isset($this->variables['questions']) &&
       is_array($this->variables['questions'])
@@ -175,6 +181,8 @@ class AutoreplyEmailer {
     }
 
     $this->variable_errors = array();
+
+    // check required vars and add msg to variable_errors[] if not correct
 
     if (
       !$this->variables['program'] ||
@@ -254,6 +262,8 @@ class AutoreplyEmailer {
   }
 
   public function send_email_to_us() {
+    if (!$this->status_vars_ok) return;
+
     $messages = "<b>Program:</b> {$this->variables['program']}\n";
     $messages.= "<b>Name:</b> {$this->variables['name']}\n";
     $messages.= "<b>Email:</b> {$this->variables['email']}\n";
@@ -314,6 +324,8 @@ class AutoreplyEmailer {
   }    
   
   public function send_email_to_them() {
+    if (!$this->status_vars_ok) return;
+
     $path = $this->send_to_them_dir;
     if ($this->use_generic) {
       $program = 'Generic';
