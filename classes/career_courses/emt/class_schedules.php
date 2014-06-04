@@ -3,6 +3,19 @@
 $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 ?>
 
+<script type="text/javascript">
+jQuery.fn.sameHeight || document.write(
+  '<script src="/js/jquery.sameheight.js"><\/script>'
+);
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('.sameheight1').sameHeight();
+  jQuery('.sameheight2').sameHeight();
+});
+</script>
+
 <div class="module article-box">
   <div class="title">
     <div class="title-border">
@@ -10,33 +23,38 @@ $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
     </div>
   </div>
   <div class="body">
-    <table><tr>
-    <td>
+    <div class="col">
       <h2 class="course-start-title">Full-time Start Dates</h2>
-      <?= $course_dates['Full-time'] ?>
+      <div class="course-start-date sameheight1">
+        <?= $course_dates['Full-time'] ?>
+      </div>
       <h2 class="course-start-title">Full-time Class Hours</h2>
-      <div class="course-start-date">Tue - Fri, 8:30 AM - 5:00 PM</div>
-      <div class="course-start-date">Mon, Optional Tutoring</div>
+      <div class="course-start-date sameheight2">
+        Tue - Fri, 8:30 AM - 5:00 PM<br />
+        Mon, Optional Tutoring<br />
+      </div>
       <ul style="margin-top: 5px;">
         <li>Five weeks of instruction</li>
         <li>168 hours instruction and skills practice</li>
         <li>24-32 hours of field externship</li>
       </ul>
-    </td>
-    <td>
+    </div><div class="col">
       <h2 class="course-start-title">Part-time Start Dates</h2>
-      <?= $course_dates['Part-time'] ?>
+      <div class="course-start-date sameheight1">
+        <?= $course_dates['Part-time'] ?>
+      </div>
       <h2 class="course-start-title">Part-time Class Hours</h2>
-      <div class="course-start-date">Mon Tue Thu, 6:00 PM - 10:00 PM</div>
-      <div class="course-start-date">Sat, 8:30 AM - 5:00 PM</div>
-      <div class="course-start-date">Wed, Optional Tutoring</div>
+      <div class="course-start-date sameheight2">
+        Mon Tue Thu, 6:00 PM - 10:00 PM<br />
+        Sat, 8:30 AM - 5:00 PM<br />
+        Wed, Optional Tutoring<br />
+      </div>
       <ul style="margin-top: 5px;">
         <li>Eight weeks of instruction</li>
         <li>168 hours instruction and skills practice</li>
         <li>24-32 hours of field externship</li>
       </ul>
-    </td>
-    </tr></table>
+    </div>
   </div>
 </div>
 

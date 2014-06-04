@@ -2,15 +2,19 @@
   var maxheights = {};
 
   this.each(function() {
-    var mytop = $(this).offset().top;
-    var myheight = $(this).height();
-    if ( !maxheights[mytop] || myheight > maxheights[mytop]) {
-      maxheights[mytop] = myheight;
+    var t = $(this).offset().top;
+    var h = $(this).height();
+    if ( !maxheights[ t ] || h > maxheights[ t ]) {
+      maxheights[ t ] = h;
     }
   });
 
   this.each(function() {
-    $(this).height( maxheights[ $(this).offset().top ] );
+    var t = $(this).offset().top;
+    var h = maxheights[ t ];
+    if (h > $(this).height()) {
+      $(this).height(h);
+    }
   });
 
   return this;

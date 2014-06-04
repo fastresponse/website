@@ -67,11 +67,14 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
       $date_list[] = 'TBA';
     }
     $lineht = $max / count($date_list) * 1.25;
+    $lineht = "style='line-height: $lineht;'";
+    $lineht = ''; // temporary turn off
     $date_list_html = array();
     // format values as html
     foreach ($date_list as $date) {
       $date_list_html[] = 
-	      "<div class='course-start-date' style='line-height: $lineht';>$date</div>"
+	      /*"<div class='course-start-date' $lineht>$date</div>"*/
+        "$date<br />"
       ;
     }
     $output[$type] = implode("\n", $date_list_html);
