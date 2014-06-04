@@ -13,6 +13,8 @@ query_links_from_db();
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
 
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
