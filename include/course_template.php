@@ -21,6 +21,7 @@ query_links_from_db();
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/include/css/course_pages.css" />
+  <!--<link type="text/css" rel="stylesheet" media="all" href="/include/css/courses.css" />-->
   <link type="text/css" rel="stylesheet" media="all" href="/include/css/course_contact.css" />
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
   <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
