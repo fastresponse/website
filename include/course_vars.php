@@ -1,4 +1,14 @@
 <?php
+
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/mobile-detect/Mobile_Detect.php');
+  $detect = new Mobile_Detect;
+  $mobile = $detect->isMobile();
+  $device = (
+    $detect->isTablet() ? 'tablet' : (
+      $detect->isMobile() ? 'phone' : 'desktop'
+    )
+  );
+
   require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
   if (!isset($handle)) $handle = db_connect();
 
@@ -43,6 +53,23 @@
   /* sections */
 
   $course_incl_dir = $_SERVER['DOCUMENT_ROOT'] . '/include/course/';
+
+  $sections['mobile headers'] = array(
+    'Page Logo',
+    'Page Title',
+    'Slideshow',
+  );
+
+  $sections['mobile'] = array(
+    'Contact Form',
+    'Course Description',
+    'Prerequisites',
+    'Admissions Procedures',
+    'Class Start Dates',
+    'Class Schedules',
+    'Tuition and Fees',
+    'Contact Form',
+  );
 
   $sections['head'] = array(
   );

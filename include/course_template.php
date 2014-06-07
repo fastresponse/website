@@ -2,31 +2,39 @@
 translate_includes();
 query_links_from_db();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
 <head>
 <title><?= $page_title ?> | Fast Response</title>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="robots" content="INDEX, FOLLOW">
-  <meta name="googlebot" content="INDEX, FOLLOW">
+  <meta name="description" content="<?= $page_description ?>" />
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="googlebot" content="INDEX, FOLLOW" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
 
-  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
+  <!--<link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />-->
+
+  <link type="text/css" rel="stylesheet" media="all" href="/css/reset.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/base.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/footer.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/article-box.css" />
+
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/include/css/course_pages.css" />
-  <!--<link type="text/css" rel="stylesheet" media="all" href="/include/css/courses.css" />-->
   <link type="text/css" rel="stylesheet" media="all" href="/include/css/course_contact.css" />
+
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
-  <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
-  <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
+
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
+
 
   <link type="text/css" rel="stylesheet" href="/js/popup/magnific-popup.css" />
 
@@ -127,64 +135,80 @@ SLIDESOUT;
 </head>
 
 <body>
+<div id="page">
 
-  <div id="page">
+<?php if ($device == 'phone'): ?>
+  <header>
+  <?php foreach($sections['mobile headers'] as $incl): ?>
+    <?php include($incl); ?>
+  <?php endforeach; ?>
+  </header>
 
-    <div id="menu">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
-    </div>
+  <section id="main">
+    <main>
+    <?php foreach($sections['mobile'] as $incl): ?>
+      <?php include($incl); ?>
+    <?php endforeach; ?>
+    </main>
+  </section>
+<?php else: ?>
+  <nav id="menu">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>
+  </nav>
 
+  <header id="head">
+    <aside class="left">
+    <?php foreach($sections['topleft'] as $incl): ?>
+      <?php include($incl); ?>
+    <?php endforeach; ?>
+    </aside>
 
-    <div id="head">
-      <div class="left sidebar" id="section-top-left">
-        <?php foreach($sections['topleft'] as $incl): ?>
-          <?php include($incl); ?>
-        <?php endforeach; ?>
-      </div>
+    <aside class="right">
+    <?php foreach($sections['topright'] as $incl): ?>
+      <?php include($incl); ?>
+    <?php endforeach; ?>
+    </aside>
 
-      <div class="right sidebar" id="section-top-right">
-        <?php foreach($sections['topright'] as $incl): ?>
-          <?php include($incl); ?>
-        <?php endforeach; ?>
-      </div>
+    <?php foreach($sections['topcenter'] as $incl): ?>
+    <section>
+      <?php include($incl); ?>
+    </section>
+    <?php endforeach; ?>
 
-      <div class="content" id="section-top-center">
-        <?php foreach($sections['topcenter'] as $incl): ?>
-          <?php include($incl); ?>
-        <?php endforeach; ?>
-      </div>
-      <div class="clearfix"></div>
-    </div> <!-- /head -->
+    <div class="clearfix"></div>
+  </header>
 
+  <section id="main">
+    <main class="content">
+    <?php foreach($sections['center'] as $incl): ?>
+      <?php include($incl); ?>
+    <?php endforeach; ?>
+    </main>
 
-    <div id="main">
-      <div class="left sidebar" style="position: relative;">
-        <?php foreach($sections['left'] as $incl): ?>
-          <?php include($incl); ?>
-        <?php endforeach; ?>
-      </div> <!-- /left sidebar -->
+    <aside class="left">
+    <?php foreach($sections['left'] as $incl): ?>
+      <section>
+        <?php include($incl); ?>
+      </section>
+    <?php endforeach; ?>
+    </aside>
 
-	    <div class="right sidebar">
-        <?php foreach($sections['right'] as $incl): ?>
-          <?php include($incl); ?>
-        <?php endforeach; ?>
-	    </div> <!-- /right sidebar -->
+	  <aside class="right">
+    <?php foreach($sections['right'] as $incl): ?>
+      <section>
+        <?php include($incl); ?>
+      </section>
+    <?php endforeach; ?>
+	  </aside>
 
-      <div class="content">
-        <?php foreach($sections['center'] as $incl): ?>
-          <?php include($incl); ?>
-        <?php endforeach; ?>
-      </div> <!-- /content -->
+    <div class="clearfix"></div>
+  </section>
+<?php endif; ?>
 
-      <div class="clearfix"></div>
-    </div> <!-- /main -->
+  <footer id="footer">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
+  </footer>
 
-    <div id="footer">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/footer.php'); ?>
-    </div> <!-- /footer -->
-
-  </div> <!-- /page -->
-
+</div> <!-- /page -->
 </body>
 </html>
-

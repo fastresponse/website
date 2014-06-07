@@ -739,7 +739,7 @@ SLIDESOUT;
               <a href="/classes/continuing_education/acls_prep/">ACLS Preparation</a>
               <a href="/classes/continuing_education/itls/">International Trauma Life Support (ITLS)</a>
               <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
-              <a href="/classes/continuing_education/NREMT/">NREMT</a>
+              <!--<a href="/classes/continuing_education/NREMT/">NREMT</a>-->
               <!--<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>-->
             </div>
           </div><!-- /link-column -->

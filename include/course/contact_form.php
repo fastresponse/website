@@ -5,10 +5,13 @@
   );
 ?>
 
-<div id="contact-form-div">
+<section id="contact-form-section">
 <form id="contact-form" action="/php/ajax/ajax.course_contact_emailer.php" method="post" onsubmit="return validate(this);">
   <fieldset>
+  <?php if (!$mobile): ?>
     <legend>Contact Us</legend>
+  <?php endif; ?>
+  <!-- this will be hidden via css if mobile -->
     <div class="form-section-program">
       <label for="form-program">Program</label>
       <select id="form-program" name="program" required="required">
@@ -21,6 +24,7 @@
       </select>
       <br />
     </div>
+  <!-- end hiding -->
     <label for="form-name">Name</label>
     <input type="text" id="form-name" name="name" required="required" />
     <br />
@@ -30,6 +34,7 @@
     <label for="form-phone">Phone</label>
     <input type="tel" id="form-phone" name="phone" required="required" />
     <br />
+  <?php if (!$mobile): ?>
     <div class="form-section-zip">
       <label for="form-zip">Zip Code</label>
       <input type="text" id="form-zip" name="zip" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);" />
@@ -40,26 +45,28 @@
       <textarea cols="28" rows="3" id="form-comments" name="comments" style="vertical-align: top;"></textarea>
       <br />
     </div>
-<?php if ($course_name == 'Paramedic'): ?>
+  <?php endif; ?>
+  <?php if ($course_name == 'Paramedic'): ?>
     <div class="form-section-emt">
       <input type="checkbox" id="form-emt" name="emt" value="I am currently an EMT." required="required" />
       <label for="form-emt">I am currently an EMT.</label>
       <br />
     </div>
-<?php endif; ?>
+  <?php endif; ?>
     <div class="form-section-submit">
       <label id="loading"></label>
       <div id="output"></div>
       <label for="form-submit"></label>
-      <input type="submit" id="form-submit" name="submit" title="Submit" value="Get More Information" class="inner-outer-glow-orange" />
-    </div>
-    <div class="form-section-call">
+      <input type="submit" id="form-submit" name="submit" title="Submit" value="Email Us" class="inner-outer-glow-orange" />
+    </div><div class="form-section-call">
       <label for="form-call"></label>
       <div class="call" id="form-call">
-        <a href="tel://1-800-637-7387">Phone <span class="phone-number">1-800-637-7387</span></a>
+        <a href="tel://1-800-637-7387">Call Us</a>
       </div>
     </div>
+  <?php if (!$mobile): ?>
     <input type="hidden" id="city" name="city" value="" />
+  <?php endif; ?>
   </fieldset>
 </form>
 
@@ -153,4 +160,4 @@ jQuery(document).ready(function() {
 
 /* ]]> */
 </script>  
-</div>
+</section>

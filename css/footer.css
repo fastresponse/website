@@ -1,0 +1,47 @@
+#footer {
+  padding-bottom: 15px;
+  text-align: left;
+  line-height: 28px;
+}
+
+#footer ul {
+  display: inline;
+  display: inline-block;
+  float: left;
+  padding: 0px;
+  margin: 6px;
+}
+
+#footer ul li {
+  display: inline-block;
+  float: left;
+  list-style-type: none;
+  padding: 0pt 0.5em;
+}
+
+#footer ul li div {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+#footer ul li a {
+  display: inline-block;
+  text-decoration: underline;
+  font-size: small;
+  color: white;
+}
+
+#footer ul li a:hover {
+  color: #865566;
+}
+
+#footer ul li a img {
+  text-decoration: none;
+  display: inline;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  float: right;
+  border: none;
+}
+

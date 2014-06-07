@@ -1,0 +1,146 @@
+.article-box {
+  display: inline-block;
+  margin: 0 10px 20px;
+  text-align: center;
+  vertical-align: top;
+}
+.article-box,
+.article-box * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.article-box .title {
+  letter-spacing: 0.1em;
+  font-family: Century Gothic, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  background-color: rgb(10, 30, 60);
+  padding: 10px 27px;
+  border-radius: 75px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+}
+.article-box .title .title-border {
+  /* visual effects around the title area */
+  /*width: 96%;*/
+  margin: 0 auto;
+  /*padding: 1.25% 2%;*/
+  padding: 7.5px;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  box-shadow: 0px 1px 1px 1px #111111;
+  -moz-box-shadow: 0px 1px 1px 1px #111111;
+  -webkit-box-shadow: 0px 1px 1px 1px #111111;
+  overflow: hidden;
+  position: relative;
+}
+.article-box .title h1,
+.article-box .title h2 {
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+}
+.article-box .title h1 {
+  font-size: 115%;
+}
+.article-box .title h2 {
+  font-size: 65%;
+}
+.article-box .title table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.article-box .title .left {
+  text-align: left;
+  width: 25%;
+}
+.article-box .title .right {
+  text-align: right;
+  width: 25%;
+}
+.article-box .title .center {
+  text-align: center;
+  width: 50%;
+}
+.article-box .title .center h1 {
+  font-size: 125%;
+  padding: 0 10px;
+}
+.article-box .title .left h2,
+.article-box .title .right h2 {
+  font-size: 95%;
+  letter-spacing: 0;
+}
+.article-box .body {
+  width: 65%;
+  font-size: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: 5px solid rgb(10, 30, 60);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: rgb(5, 15, 30);
+  background-image: -webkit-linear-gradient(top, rgb(10, 30, 60), rgb(0, 0, 0));
+  background-image: -moz-linear-gradient(top, rgb(10, 30, 60), rgb(0, 0, 0));
+  background-image: -ms-linear-gradient(top, rgb(10, 30, 60), rgb(0, 0, 0));
+  background-image: -o-linear-gradient(top, rgb(10, 30, 60), rgb(0, 0, 0));
+  background-image: linear-gradient(to bottom, rgb(10, 30, 60), rgb(0, 0, 0));
+}
+.article-box .body ul,
+.article-box .body ol,
+.article-box .body dl,
+.article-box .body dt,
+.article-box .body dd {
+  margin: 0;
+  padding: 0;
+}
+.article-box .body a,
+.article-box .body li,
+.article-box .body dt,
+.article-box .body dd,
+.article-box .body div.line {
+  display: block;
+  padding: 10px 5px;
+  text-decoration: none;
+  font-weight: bold;
+  /*
+  font-family: Century Gothic, sans-serif;
+  height: 30px;
+  line-height: 15px;
+  */
+}
+.article-box .body a:hover,
+.article-box .body li:hover,
+.article-box .body div.line:hover,
+.article-box .body table.row-highlight tr:hover {
+  color: rgb(221, 0, 51);
+}
+.article-box.cols-2 .body,
+.article-box.wide .body {
+  text-align: center;
+  width: 80%;
+}
+.article-box.cols-2 .body a,
+.article-box.cols-2 .body li,
+.article-box.cols-2 .body div.line {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 46%;
+}  
+.article-box.wide .body a,
+.article-box.wide .body li,
+.article-box.wide .body div.line {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+}  
+
