@@ -1,9 +1,15 @@
-#contact-form-div {
+#contact-form-section {
   text-align: left;
   /* -5px top margin to counter extra space from fieldset padding */
-  margin: -5px 0 30px;
+  /*margin: -5px 0 10px;*/
+  margin-bottom: 15px;
   /*padding: 5px;*/
 }
+
+#contact-form .form-section-program {
+  display: hidden;
+}
+
 #contact-form label {
   font-size: 95%;
   width: 75px;
@@ -12,6 +18,7 @@
 }
 #contact-form fieldset {
   margin: 0;
+  padding: 5px;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -156,6 +163,17 @@
 #contact-form .form-section-emt label {
   width: auto;
 }
+#contact-form .form-section-submit,
+#contact-form .form-section-call {
+  display: inline-block;
+  width: 50%;
+}
+
+@media (min-width: 1024px) {
+  #contact-form .form-section-program {
+    display: block;
+  }
+}
 
 @media (max-width: 1023px) and (min-width: 640px) {
   #contact-form input,
@@ -178,7 +196,7 @@
 @media handheld, (max-width: 639px) {
   #contact-form-div {
     margin: 0 auto 5px;
-    max-width: 330px;
+    /*max-width: 330px;*/
   }
   #contact-form label {
     width: 22%;
@@ -213,7 +231,7 @@
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    margin: 16px 0 5px;
+    margin: 5px 0;
     padding: 0;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #F0F0F0;
