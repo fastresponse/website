@@ -1,20 +1,7 @@
-<section id="course_description">
-<h1>Accelerated EMT Program</h1>
-<p>If you want to become the best EMT, come to Fast Response!</p>
-<p>Emergency Medical Technicians (EMTs) are health care professionals who critically assess, evaluate and treat medical and trauma patients. EMTs may work on ambulances, in fire departments or hospital emergency departments, on search and rescue teams or with a ski patrol. </p>
-<p>Our extensive, five-week EMT course provides the most effective and expedient platform for our graduates to excel as compassionate, critical-thinking EMTs.</p>
-<p>Our course is one of the most unique and exciting  programs in the Bay Area where  students immediately put to practice their skills learned in the classroom in our state-of-the-art Simulation Lab using a High-Fidelity ALS manikin, ambulance simulator and cutting edge medical equipment. Students gain more experience and confidence with patient contact in the field while participating in their guaranteed 18-hour clinical and field externship in a local EMS ambulance and hospital Emergency Department.</p>
-<p>Along with creating a challenging learning environment for our students, we also provide training tools to prepare them for the NREMT (National Registry of Emergency Medical Technicians) examination.</p>
-<p>Our students’ pass rate for the NREMT surpasses the national average!</p>
-<p>Our programs provide:
-  <ul>
-  <li>Free tutoring</li>
-  <li>NREMT test preparation</li>
-  <li>CPR certification included</li>
-  <li>Maximum Student to Instructor skills ratio: 10:1</li>
-  <li>Job opening notifications (unlimited)</li>
-  <li>Career services assistance (resume building and interview skills)</li>
-  <li>Flexible payment options</li>
-  </ul>
-</p>
-</section>
+<div id="course_description">
+<h2>Accelerated EMT Program</h2>
+<p>If you want to be the best, come to Fast Response! Our EMT course is designed for anyone wanting to get into emergency medicine as an EMT. EMTs may work in an ambulance, with a fire department, in a hospital emergency room or on a search and rescue team.</p>
+<p>We believe that our five weeks of classroom training with additional field experience provide the most effective and expedient platform for our graduates to continue on to success in the EMT field. Throughout the course, students practice skills in the classroom and the Fast Response Simulation Lab.</p>
+<p>Realistic scenarios and guaranteed externships in both the ambulance and Emergency Room environment give graduates confidence in their abilities.</p>
+<p>Guaranteed externships include a one-day clinical shift in a hospital emergency department as well as two ambulance ride-along shifts with the Bay Area's largest ambulance companies.</p>
+</div>
