@@ -13,7 +13,7 @@
       <li>Tetanus</li>
       <li>Hepatitis B</li>
       <li>Influenza</li>
-      <li>Varicella Zoster (Chicken Pox)</li>
+      <li>Varicella</li>
     </ul>
     <hr />
     <?php
