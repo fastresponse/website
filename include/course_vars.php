@@ -68,7 +68,6 @@
     'Class Start Dates',
     'Class Schedules',
     'Tuition and Fees',
-    'Contact Form',
   );
 
   $sections['head'] = array(

@@ -23,7 +23,7 @@ jQuery(document).ready(function() {
     </div>
   </div>
   <div class="body">
-    <div class="col">
+    <div class="">
       <h2 class="course-start-title">Full-time Start Dates</h2>
       <div class="course-start-date sameheight1">
         <?= $course_dates['Full-time'] ?>
@@ -38,7 +38,7 @@ jQuery(document).ready(function() {
         <li>168 hours instruction and skills practice</li>
         <li>24-32 hours of field externship</li>
       </ul>
-    </div><div class="col">
+    </div><div class="">
       <h2 class="course-start-title">Part-time Start Dates</h2>
       <div class="course-start-date sameheight1">
         <?= $course_dates['Part-time'] ?>

@@ -25,6 +25,7 @@ query_links_from_db();
   <link type="text/css" rel="stylesheet" media="all" href="/css/base.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/footer.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/article-box.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/include/css/article-box.css" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
