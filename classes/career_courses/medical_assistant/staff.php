@@ -13,10 +13,10 @@
     </ul>
     <br />
     <div class="yellow">Assistant Instructor</div>
-    <div><strong>Nancy Moore</strong></div>
+    <div><strong>Ashanti Boykin</strong></div>
     <ul>
-      <li>510-809-3645</li>
-      <li>nmoore@fastresponse.org</li>
+      <li>510-809-3655</li>
+      <li>aboykin@fastresponse.org</li>
     </ul>
     <br />
     <div class="yellow">Phlebotomy Coordinator</div>

@@ -21,6 +21,5 @@
     <br />
     <div class="yellow">Instructors</div>
     <div><strong>Christopher Barney</strong></div>
-    <div><strong>Nancy Moore</strong></div>
   </div>
 </div>

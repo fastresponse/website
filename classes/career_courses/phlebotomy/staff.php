@@ -13,7 +13,8 @@
     </ul>
     <br />
     <div class="yellow">Instructors</div>
-    <div><strong>Pauline Perez</strong></div>
+    <div><strong>Marilyn Blaylock</strong></div>
+    <div><strong>Mary Candric</strong></div>
     <div><strong>Bonnie Fergusson</strong></div>
     <div><strong>Salu Ribeiro</strong></div>
   </div>
