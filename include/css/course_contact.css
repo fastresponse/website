@@ -2,7 +2,6 @@
   text-align: left;
   /* -5px top margin to counter extra space from fieldset padding */
   /*margin: -5px 0 10px;*/
-  margin-bottom: 15px;
   /*padding: 5px;*/
 }
 
@@ -27,7 +26,10 @@
 #contact-form fieldset:hover {
 }
 #contact-form legend {
-  color: rgb(255, 255, 153);
+  color: #FFFF99;
+  text-align: center;
+  padding: 0 5px;
+  font-size: 120%;
 }
 #contact-form input,
 #contact-form select,

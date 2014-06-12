@@ -24,8 +24,8 @@ query_links_from_db();
   <link type="text/css" rel="stylesheet" media="all" href="/css/reset.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/base.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/footer.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/article-box.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/include/css/article-box.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/article-box.base.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/article-box.course.css" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
@@ -140,18 +140,17 @@ SLIDESOUT;
 
 <?php if ($device == 'phone'): ?>
   <header>
-  <?php foreach($sections['mobile headers'] as $incl): ?>
+  <?php foreach($sections['mobile top'] as $incl): ?>
     <?php include($incl); ?>
   <?php endforeach; ?>
   </header>
 
-  <section id="main">
-    <main>
+  <main id="main">
     <?php foreach($sections['mobile'] as $incl): ?>
       <?php include($incl); ?>
     <?php endforeach; ?>
-    </main>
-  </section>
+    <div class="clearfix onepx"></div>
+  </main>
 <?php else: ?>
   <nav id="menu">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/menu/menu.php'); ?>

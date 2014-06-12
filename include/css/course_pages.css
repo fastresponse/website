@@ -166,7 +166,6 @@
 }
 #course_description {
   text-align: left;
-  margin-bottom: 40px;
 }
 #course_description h2 {
   margin-top: 0;
@@ -314,12 +313,13 @@
 .content .article-box .body ul {
   margin-left: 18px;
 }
+/*
 .article-box .body li {
   display: list-item;
-  /*list-style-position: inside;*/
   padding: 5px 0 0 0;
   font-weight: normal;
 }
+  */
 .article-box .body>ul>li:first-child {
   padding-top: 0;
 }
@@ -330,14 +330,10 @@
 }
 
 .article-box {
-  /*
-  width: 48%;
-  max-width: 370px;
-  */
+  /*max-width: 760px;*/
   width: 100%;
-  max-width: 760px;
-  margin: 0 auto 20px;
-  padding: 0 3px;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
 }
 
@@ -397,6 +393,7 @@ div.fill {
 #class_schedules .body table td h4 {
   margin-top: 0;
 }
+/*
 #class_schedules .body div.col:first-child {
   border-right: dotted 1px rgb(90, 90, 90);
   padding-left: 5px;
@@ -408,6 +405,7 @@ div.fill {
   padding-left: 10px;
   vertical-align: top;
 }
+*/
 #tuition_and_fees .body table tbody td {
   border-bottom: dotted 1px rgb(90, 90, 90);
 }

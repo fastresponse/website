@@ -54,7 +54,7 @@
 
   $course_incl_dir = $_SERVER['DOCUMENT_ROOT'] . '/include/course/';
 
-  $sections['mobile headers'] = array(
+  $sections['mobile top'] = array(
     'Page Logo',
     'Page Title',
     'Slideshow',

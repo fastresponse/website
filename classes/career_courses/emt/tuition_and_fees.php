@@ -1,10 +1,11 @@
-<div id="tuition_and_fees" class="module article-box">
-  <div class="title">
+<section id="tuition_and_fees">
+<article class="module article-box">
+  <header class="title">
     <div class="title-border">
       <h1>Tuition and Fees</h1>
     </div>
-  </div>
-  <div class="body">
+  </header>
+  <section class="body">
     <table style="margin: 0 auto;" class="row-highlight">
       <thead>
         <tr><th colspan="3" align="center">Main Fees</th></tr>
@@ -43,5 +44,6 @@
         <tr><td>County EMS Certification fee</td><td>$50.00</td><td class="notes-col">May vary by county</td></tr>
       </tbody>
     </table>
-  </div>
-</div>
+  </section>
+</article>
+</section>

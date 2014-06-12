@@ -8,10 +8,9 @@
 <section id="contact-form-section">
 <form id="contact-form" action="/php/ajax/ajax.course_contact_emailer.php" method="post" onsubmit="return validate(this);">
   <fieldset>
-  <?php if (!$mobile): ?>
-    <legend>Contact Us</legend>
-  <?php endif; ?>
+    <legend>Get More Information</legend>
   <!-- this will be hidden via css if mobile -->
+  <!-- can't do via PHP, program has to be there -->
     <div class="form-section-program">
       <label for="form-program">Program</label>
       <select id="form-program" name="program" required="required">
@@ -34,7 +33,7 @@
     <label for="form-phone">Phone</label>
     <input type="tel" id="form-phone" name="phone" required="required" />
     <br />
-  <?php if (!$mobile): ?>
+  <?php if ($device != 'phone'): ?>
     <div class="form-section-zip">
       <label for="form-zip">Zip Code</label>
       <input type="text" id="form-zip" name="zip" onkeyup="return zipValidate(this, '#zipcheck', <?= $zip_radius ?>);" />
@@ -64,7 +63,7 @@
         <a href="tel://1-800-637-7387">Call Us</a>
       </div>
     </div>
-  <?php if (!$mobile): ?>
+  <?php if ($device != 'phone'): ?>
     <input type="hidden" id="city" name="city" value="" />
   <?php endif; ?>
   </fieldset>

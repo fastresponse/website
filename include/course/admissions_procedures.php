@@ -1,11 +1,12 @@
-<div id="admissions_procedures" class="module article-box" >
-  <div class="title">
+<section id="admissions_procedures">
+<article class="module article-box" >
+  <header class="title">
     <div class="title-border">
       <h1>Admissions Procedure</h1>
     </div>
-  </div>
-  <div class="body">
-	  <h2 class="course-start-title">Postsecondary Admissions Steps</h2>
+  </header>
+  <section class="body">
+	  <h1>Postsecondary Admissions Steps</h1>
     <ul>
       <li>Provide evidence of meeting the program's minimum standards -</li>
       <ul>
@@ -20,5 +21,6 @@
       <li>Financial plan for funding education</li>
       <li>Payment either in full or of first required installment</li>
     </ul>
-	</div>
-</div><!-- /article-box -->
+	</section>
+</article><!-- /article-box -->
+</section>

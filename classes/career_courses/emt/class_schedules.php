@@ -1,4 +1,4 @@
-<div id="class_schedules">
+<section id="class_schedules">
 <?php
 $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
 ?>
@@ -16,56 +16,56 @@ jQuery(document).ready(function() {
 });
 </script>
 
-<div class="module article-box">
-  <div class="title">
+<article class="module article-box">
+  <header class="title">
     <div class="title-border">
       <h1>Class Schedules</h1>
     </div>
-  </div>
-  <div class="body">
-    <div class="">
-      <h2 class="course-start-title">Full-time Start Dates</h2>
+  </header>
+  <section class="body">
+    <div class="col">
+      <h1>Full-time Start Dates</h1>
       <div class="course-start-date sameheight1">
         <?= $course_dates['Full-time'] ?>
       </div>
-      <h2 class="course-start-title">Full-time Class Hours</h2>
+      <h1>Full-time Class Hours</h1>
       <div class="course-start-date sameheight2">
         Tue - Fri, 8:30 AM - 5:00 PM<br />
         Mon, Optional Tutoring<br />
       </div>
-      <ul style="margin-top: 5px;">
+      <ul>
         <li>Five weeks of instruction</li>
         <li>168 hours instruction and skills practice</li>
         <li>24-32 hours of field externship</li>
       </ul>
-    </div><div class="">
-      <h2 class="course-start-title">Part-time Start Dates</h2>
+    </div><div class="col">
+      <h1>Part-time Start Dates</h1>
       <div class="course-start-date sameheight1">
         <?= $course_dates['Part-time'] ?>
       </div>
-      <h2 class="course-start-title">Part-time Class Hours</h2>
+      <h1>Part-time Class Hours</h1>
       <div class="course-start-date sameheight2">
         Mon Tue Thu, 6:00 PM - 10:00 PM<br />
         Sat, 8:30 AM - 5:00 PM<br />
         Wed, Optional Tutoring<br />
       </div>
-      <ul style="margin-top: 5px;">
+      <ul>
         <li>Eight weeks of instruction</li>
         <li>168 hours instruction and skills practice</li>
         <li>24-32 hours of field externship</li>
       </ul>
     </div>
-  </div>
-</div>
+  </section>
+</article>
 
 <?php if (false): ?>
-<div class="module article-box">
-  <div class="title">
+<article class="module article-box">
+  <header class="title">
     <div class="title-border">
       <h1>Course Hours</h1>
     </div>
-  </div>
-  <div class="body">
+  </header>
+  <section class="body">
     <dl class="alternate">
       <div class="highlight"><dt>AHA Healthcare Provider CPR</dt><dd>5 hours</dd></div>
       <hr style="width: 75%;"/>
@@ -80,7 +80,7 @@ jQuery(document).ready(function() {
       <div class="highlight"><dt>Emergency Department externship</dt><dd>8 hours</dd></div>
       <div class="highlight"><dt>Ambulance externship</dt><dd>16 hours</dd></div>
     </dl>
-  </div>
-</div>
+  </section>
+</article>
 <?php endif; ?>
-</div>
+</section>
