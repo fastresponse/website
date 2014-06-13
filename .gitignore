@@ -7,7 +7,8 @@
 Thumbs.db
 .DS_STORE
 documents/
-gallery/
+gallery/*
+!gallery/video.php
 ipad/
 php/dbsettings.php
 test/
