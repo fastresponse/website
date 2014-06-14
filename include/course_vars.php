@@ -57,7 +57,6 @@
   $sections['mobile top'] = array(
     'Page Logo',
     'Page Title',
-    'Slideshow',
   );
 
   $sections['mobile'] = array(

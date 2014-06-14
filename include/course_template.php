@@ -29,8 +29,8 @@ query_links_from_db();
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/include/css/course_pages.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/include/css/course_contact.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/course_pages.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/course_contact.css" />
 
   <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
 
