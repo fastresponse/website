@@ -10,3 +10,4 @@ Redirect permanent /cma/files https://drive.google.com/folderview?id=0B7Ouhne2Xs
 Redirect permanent /cpt/files https://drive.google.com/folderview?id=0B7Ouhne2XskXQWtaanRNejFma3M#list
 
 Redirect permanent /spt/files https://drive.google.com/folderview?id=0B7Ouhne2XskXX0gtaGZ2NDYtWVU#list
+Redirect permanent /spt/spt_student_files.zip https://drive.google.com/file/d/0B7Ouhne2XskXWjljNUFWSGNUWlU

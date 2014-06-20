@@ -11,7 +11,7 @@
   <li>Free tutoring</li>
   <li>NREMT test preparation</li>
   <li>CPR certification included</li>
-  <li>Maximum Student to Instructor skills ratio: 10:1</li>
+  <li>Maximum Student to Instructor skills ratio: 9:1</li>
   <li>Job opening notifications (unlimited)</li>
   <li>Career services assistance (resume building and interview skills)</li>
   <li>Flexible payment options</li>

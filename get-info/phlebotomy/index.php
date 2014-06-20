@@ -10,7 +10,7 @@ $program_of_interest = 'Phlebotomy';
 $program_abbreviation = 'CPT';
 $program_career_name = 'Phlebotomy Technician';
 
-$hideExternalSites = true;
+$hideExternalSites = false;
 $hideTestimonials = false;
 
 $zip_radius = 75;

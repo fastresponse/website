@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
         Wed, Optional Tutoring<br />
       </div>
       <ul style="margin-top: 5px;">
-        <li>Eight weeks of instruction</li>
+        <li>Nine weeks of instruction</li>
         <li>168 hours instruction and skills practice</li>
         <li>24-32 hours of field externship</li>
       </ul>

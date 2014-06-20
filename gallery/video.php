@@ -18,7 +18,7 @@ $dataset = array(
   ),
 );
 
-if (!isset($which)) $which = 'all';
+if (!isset($which) || !array_key_exists($which, $dataset) ) $which = 'all';
 
 $page_title = $dataset[$which]['page title'];
 $page_header = $dataset[$which]['page header'];
