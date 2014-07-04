@@ -115,7 +115,7 @@
 	    <div style="width: 45%; display: inline-block;">
 	      <h3>Included in the program:</h3>
 	      <ul class="bullets">
-		<li>Certification readiness for the IASCHMM</li>
+		<li>Certification readiness for the IAHSCMM</li>
 		<li>Sort, disassemble, clean and disinfect trays, instruments, carts, supplies and equipment</li>
 		<li>Ensure use of effective and safe sterilization procedures</li>
 		<li>Provide instrument sets for surgical procedures and case carts for booked and emergency surgery</li>

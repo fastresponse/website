@@ -547,6 +547,18 @@ SLIDESOUT;
       }
     }
 
+    .phone-addr {
+      margin: 0 0 2em 1.25em;
+      font-size: 92%;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1.3em;
+      letter-spacing: 0.13em;
+    }
+    .phone-addr a {
+      text-decoration: none;
+    }
+
   </style>
 
 </head>
@@ -562,6 +574,11 @@ SLIDESOUT;
     <div id="head">
       <div class="leftsidebar2">
 	      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" id="headimg" />
+        <div class="phone-addr yellow">
+          <a href="tel://510-849-4009">510-849-4009</a><br />
+          <a href="http://www.google.com/maps/place/2075+Allston+Way+Berkeley+CA+94704/">2075 Allston Way<br />
+          Berkeley, CA 94704</a>
+        </div>
       </div>
       <div class="rightcontent2">
 
@@ -577,6 +594,16 @@ SLIDESOUT;
 	        </div>
           -->
           <div class="article-box">
+            <a href="/gallery/index.php/Events/">
+              <div class="title">
+                <div class="title-border">
+                  <h1 style="color: #ffff99;">Fast Response Events Photo Gallery</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!--
+          <div class="article-box">
             <a href="https://operationindependence2014.eventbrite.com/?ref=elink" target="_blank">
               <div class="title">
                 <div class="title-border">
@@ -585,6 +612,7 @@ SLIDESOUT;
               </div>
             </a>
           </div>
+          -->
         </div>
 	      
         <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
@@ -642,6 +670,7 @@ SLIDESOUT;
 	          </a>
 	        </div>
 
+          <!--
           <div class="banner">
 	          <a href="/school/info/" class="btn buttontext lines-1 glow-red">
 	            <div style="text-shadow: 2px 2px 2px #000000;">
@@ -650,6 +679,7 @@ SLIDESOUT;
 	            <span></span>
 	          </a>
 	        </div>
+          -->
 
           <div class="banner">
 	          <a href="/school/info/" class="btn buttontext lines-1">

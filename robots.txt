@@ -30,7 +30,7 @@ Disallow: /php
 Disallow: /resources/current_employment.php
 Disallow: /resources/release.php
 Disallow: /scripts
-Disallow: /sitemap
+Disallow: /sitemap.old
 Disallow: /sites
 Disallow: /slideshow
 Disallow: /spt
