@@ -11,8 +11,10 @@
       <?php
         $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       ?>
+      <?php if (false): ?>
       <h2 class="course-start-title">Application Deadline</h2>
       <?= $course_dates['Application Deadline'] ?>
+      <?php endif; ?>
       <h2 class="course-start-title">Paramedic Anatomy &amp; Physiology</h2>
       <?= $course_dates['Anatomy and Physiology'] ?>
       <h2 class="course-start-title">Academy Start Date</h2>

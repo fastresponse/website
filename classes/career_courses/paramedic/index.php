@@ -20,14 +20,9 @@ $links = array(
 
 $zip_radius = 75;
 
-array_splice(
-  $sections['topright'], 1, 0, array('Announcements')
-);
-
 // don't include the testimonials section in left sidebar
 $sections['left'] = array_diff($sections['left'],
-  array('Testimonials'),
-  array('Announcements')
+  array('Testimonials')
 );
 
 // example of adding to the bottom of the right sidebar:
