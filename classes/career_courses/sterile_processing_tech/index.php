@@ -115,7 +115,7 @@
 	    <div style="width: 45%; display: inline-block;">
 	      <h3>Included in the program:</h3>
 	      <ul class="bullets">
-		<li>Certification readiness for the IAHSCMM</li>
+		<li>Certification readiness for the IAHSCMM exam</li>
 		<li>Sort, disassemble, clean and disinfect trays, instruments, carts, supplies and equipment</li>
 		<li>Ensure use of effective and safe sterilization procedures</li>
 		<li>Provide instrument sets for surgical procedures and case carts for booked and emergency surgery</li>
@@ -138,6 +138,7 @@
 
       </div> <!-- /section -->
 
+<!--
       <div class="photos">
 	<a target="_self" href="/photos/spt/index.html#spt">
 	  <img alt="" width="880" height="250" src="/sites/default/files/fckuploads/image/EMT-3_images.jpg" />
@@ -146,6 +147,7 @@
 	  Actual Photo From Class - Click Here to View Gallery
 	</a></p>
       </div>
+-->
 
       <div style="margin: 1.5em auto 0 auto;">
 	<h3 style="text-align: center;">*Call us, drop by our office, or click <a style="color:#C30;" href="/school/info/">HERE</a> to begin your new career!*</h3>
