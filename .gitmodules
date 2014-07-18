@@ -1,3 +1,6 @@
 [submodule "php/mobile-detect"]
 	path = php/mobile-detect
 	url = https://github.com/serbanghita/Mobile-Detect.git
+[submodule "twig"]
+	path = twig
+	url = https://github.com/fabpot/Twig.git
