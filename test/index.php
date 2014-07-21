@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/templateload.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/templates/loader.php');
 $template = new TemplateRenderer();
 
 $slideshow = array(

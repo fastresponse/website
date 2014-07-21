@@ -1,43 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
-
-<!--
 <!DOCTYPE html>
-<html>
--->
+<html lang="en" dir="ltr">
+
 <head>
   {% block head %}
   <title>{{ title is defined ? title ~ " | " }}Fast Response</title>
 
+  <meta name="description" content="" />
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
 
-  <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />
-  <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/fastresponse/css/print.css" /> 
-  <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie6.css";</style><![endif]-->
-  <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
-  <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
+  <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
+  <link type="text/css" rel="stylesheet" media="all" href="/css/reset.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/base.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/css/footer.css" />
 
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
+  {% include 'analytics_google.html' %}
 
   {{ jquery is defined ? "<script type='text/javascript' src='/js/jquery-1.10.2.min.js'></script>" }}
 
@@ -46,48 +29,38 @@
   {{ styles|default('')|raw }}
 
   {% endblock head %}
-
 </head>
 
 <body>
+<div id="page">
 
-  <div id="page">
+  {% block top %}
+  <header>
+    <div class="clearfix"></div>
+  </header>
+  {% endblock top %}
 
-    {% block top %}
-    <div id="head">
-      <img src="/images/headers/header_main_left.png" class="headerimgleft" alt="Fast Response School of Health Care Education" />
-      <img src="/images/headers/{{ headerimg|default('header_main_right.jpg') }}" class="headerimgright" alt="" />
-      <div class="clearfix"></div>
-    </div>
-    {% endblock top %}
+  <aside class="left">
+    {% block left %}{% endblock left %}
+  </aside>
 
-    <div id="menu">
-      {% include 'menu.twig' %}
-    </div>
+  <section id="main">
+    {% block maincontent %}
+    <main>
+      {{ content|raw }}
+    </main>
+    {% endblock maincontent %}
+    <div class="clearfix"></div>
+  </section> <!-- /main -->
 
-    {% block banners %}
-    {% endblock banners %}
+  <aside class="right">
+    {% block right %}{% endblock right %}
+  </aside>
 
-    <div id="main">
+  <footer id="footer">
+    {% include 'footer.twig' %}
+  </footer> <!-- /footer -->
 
-      {% block sidebar %}
-      {% endblock sidebar %}
-
-      {% block maincontent %}
-      <div class="section">
-	      {{ content|raw }}
-      </div> <!-- /section -->
-      {% endblock maincontent %}
-
-      <div class="clearfix"></div>
-
-    </div> <!-- /main -->
-
-    <div id="footer">
-      {% include 'footer.twig' %}
-    </div> <!-- /footer -->
-
-  </div> <!-- /page -->
-
+</div> <!-- /page -->
 </body>
 </html>
