@@ -55,7 +55,7 @@
 }
 #page_title h1 {
   text-align: center;
-  margin: 0 auto;
+  margin: 1em auto 0;
   font-weight: bold;
   font-size: xx-large;
 }

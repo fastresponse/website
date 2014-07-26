@@ -3,16 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>ACLS | Fast Response</title>
+  <title>ACLS at Fast Response</title>
 
   <base href="/" />
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Expires" content="Fri, 1 Mar 2013 12:00:00 GMT">
-  <meta name="robots" content="INDEX, FOLLOW">
-  <meta name="googlebot" content="INDEX, FOLLOW">
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="googlebot" content="INDEX, FOLLOW" />
 
-  <link type="image/x-icon" rel="shortcut icon" href="/misc/favicon.ico" />
+  <meta name="description" content="AHA approved ACLS classes at Fast Response in Berkeley, CA with a focus on teamwork and managing the initial ten minutes of cardiopulmonary emergencies." />
+
+  <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/template.css" />
   <link type="text/css" rel="stylesheet" media="all" href="/css/nicemenus.css" />

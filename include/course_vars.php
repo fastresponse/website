@@ -9,6 +9,9 @@
     )
   );
 
+  if (!isset($category)) $category = 'postsec';
+  // categories: 'postsec', 'ceu'
+
   require_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
   if (!isset($handle)) $handle = db_connect();
 
@@ -54,68 +57,136 @@
 
   $course_incl_dir = $_SERVER['DOCUMENT_ROOT'] . '/include/course/';
 
-  $sections['mobile headers'] = array(
-    'Page Logo',
-    'Page Title',
-    'Slideshow',
-  );
 
-  $sections['mobile'] = array(
-    'Contact Form',
-    'Course Description',
-    'Prerequisites',
-    'Admissions Procedures',
-    'Class Start Dates',
-    'Class Schedules',
-    'Tuition and Fees',
-    'Contact Form',
-  );
+  switch ($category) {
 
-  $sections['head'] = array(
-  );
+  case 'ceu':
 
-  $sections['topleft'] = array(
-    'Page Logo',
-  );
-  $sections['topright'] = array(
-    //'Promotions',
-  );
-  $sections['topcenter'] = array(
-    'Page Title',
-  );
+    $sections['mobile headers'] = array(
+      'Page Logo',
+      'Page Title',
+      'Slideshow',
+    );
 
-  $sections['left'] = array(
-    'Slideshow',
-    'Announcements',
-    'Contact Form',
-    'Gallery Link',
-    'Certifications',
-    'Externship',
-    'Testimonials',
-  );
+    $sections['mobile'] = array(
+      'Contact Form',
+      'Course Description',
+      'Prerequisites',
+      'Admissions Procedures',
+      'Class Start Dates',
+      'Class Schedules',
+      'Tuition and Fees',
+      'Contact Form',
+    );
 
-  $sections['right'] = array(
-    'Course Approvals',
-    //'Events',
-    //'Calendar',
-    'Links',
-    'Immunizations',
-    'Staff',
-    //'FAQs Menu',
-    //'Misc',
-  );
+    $sections['head'] = array(
+    );
 
-  $sections['center'] = array(
-    //'Send to a Friend',
-    'Course Description',
-    'Class Start Dates',
-    'Class Schedules',
-    //'FAQs List',
-    'Prerequisites',
-    'Admissions Procedures',
-    'Tuition And Fees',
-    //'Financing',
-  );
+    $sections['topleft'] = array(
+      'Page Logo',
+    );
+    $sections['topright'] = array(
+      //'Promotions',
+    );
+    $sections['topcenter'] = array(
+      'Page Title',
+    );
+
+    $sections['left'] = array(
+      'Slideshow',
+      'Announcements',
+      'Contact Form',
+    );
+
+    $sections['right'] = array(
+      'Course Approvals',
+      'Registration',
+      'Staff',
+    );
+
+    $sections['center'] = array(
+      //'Send to a Friend',
+      'Course Description',
+      'Class Start Dates',
+      'Class Schedules',
+      //'FAQs List',
+      'Prerequisites',
+      'Tuition And Fees',
+      //'Financing',
+    );
+  break;
+
+
+  default:
+  case 'postsec':
+
+    $sections['mobile headers'] = array(
+      'Page Logo',
+      'Page Title',
+      'Slideshow',
+    );
+
+    $sections['mobile'] = array(
+      'Contact Form',
+      'Course Description',
+      'Prerequisites',
+      'Admissions Procedures',
+      'Class Start Dates',
+      'Class Schedules',
+      'Tuition and Fees',
+      'Contact Form',
+    );
+
+    $sections['head'] = array(
+    );
+
+    $sections['topleft'] = array(
+      'Page Logo',
+    );
+    $sections['topright'] = array(
+      //'Promotions',
+    );
+    $sections['topcenter'] = array(
+      'Page Title',
+    );
+
+    $sections['left'] = array(
+      'Slideshow',
+      'Announcements',
+      'Contact Form',
+      'Gallery Link',
+      'Certifications',
+      'Externship',
+      'Testimonials',
+    );
+
+    $sections['right'] = array(
+      'Course Approvals',
+      //'Events',
+      //'Calendar',
+      'Links',
+      'Immunizations',
+      'Staff',
+      //'FAQs Menu',
+      //'Misc',
+    );
+
+    $sections['center'] = array(
+      //'Send to a Friend',
+      'Course Description',
+      'Class Start Dates',
+      'Class Schedules',
+      //'FAQs List',
+      'Prerequisites',
+      'Admissions Procedures',
+      'Tuition And Fees',
+      //'Financing',
+    );
+  break;
+
+  }
+
+
 
   // turns 'Contact Form' into 'contact_form.php'
   // if this file exists in the current dir (course-specific) then use that
@@ -124,7 +195,7 @@
   // this func will be called in course_template.php to give each page time to
   // reconfigure things if wanted
   function translate_includes() {
-    global $sections, $course_incl_dir;
+    global $sections, $category, $course_incl_dir;
     foreach ($sections as &$sect) {
       foreach ($sect as &$chunk) {
         $fname = str_replace(' ', '_', strtolower($chunk)) . '.php';

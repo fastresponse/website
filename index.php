@@ -3,11 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 
 <head>
-  <title>Fast Response</title>
+  <title>Fast Response School of Health Care Education</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="INDEX, FOLLOW">
   <meta name="googlebot" content="INDEX, FOLLOW">
+
+  <meta name="description" content="The Bay Area's most comprehensive healthcare education including entry-level courses, certifications, and continuing education units." />
 
   <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
