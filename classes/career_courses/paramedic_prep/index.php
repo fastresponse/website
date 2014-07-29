@@ -1,5 +1,5 @@
 <?php
-$category = 'postsec';
+$category = 'ceu';
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_vars.php');
 
@@ -16,22 +16,12 @@ $links = array(
   'Academy Application',
   'Immunizations for Paramedics',
   'Paramedic Application Process',
-  //'Paramedic Anatomy and Physiology',
 );
 
 $zip_radius = 75;
 
-$sections['left'] = array_diff($sections['left'],
-  array('Testimonials')
-);
-$sections['center'] = array_diff($sections['center'],
-  array('Admissions Procedures')
-);
-$sections['right'] = array_diff($sections['right'],
-  array('Immunizations')
-);
 array_splice(
-  $sections['right'], 1, 0, array('Registration')
+  $sections['left'], 3, 0, array('Gallery Link')
 );
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');

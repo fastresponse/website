@@ -171,6 +171,25 @@
 #course_description h2 {
   margin-top: 0;
 }
+#registration .body {
+  text-align: center;
+}
+#registration button {
+  background-color: #dd0033;
+  border: 3px solid rgba(0,0,0,0.50);
+  border-top: none;
+  border-radius: 10px;
+  padding: 5px 8px;
+  color: white;
+}
+#contact_info dt {
+  display: inline-block;
+  width: 20%;
+}
+#contact_info dd {
+  display: inline-block;
+  width: 75%;
+}
 #staff ul {
   padding-left: 0;
   margin-left: 10px;

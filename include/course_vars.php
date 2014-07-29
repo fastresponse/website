@@ -69,14 +69,13 @@
     );
 
     $sections['mobile'] = array(
-      'Contact Form',
+      'Contact Info',
       'Course Description',
       'Prerequisites',
-      'Admissions Procedures',
       'Class Start Dates',
       'Class Schedules',
       'Tuition and Fees',
-      'Contact Form',
+      'Contact Info',
     );
 
     $sections['head'] = array(
@@ -86,7 +85,6 @@
       'Page Logo',
     );
     $sections['topright'] = array(
-      //'Promotions',
     );
     $sections['topcenter'] = array(
       'Page Title',
@@ -95,12 +93,13 @@
     $sections['left'] = array(
       'Slideshow',
       'Announcements',
-      'Contact Form',
+      'Contact Info',
     );
 
     $sections['right'] = array(
       'Course Approvals',
       'Registration',
+      'Promotions',
       'Staff',
     );
 
@@ -112,7 +111,6 @@
       //'FAQs List',
       'Prerequisites',
       'Tuition And Fees',
-      //'Financing',
     );
   break;
 
