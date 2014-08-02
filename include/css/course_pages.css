@@ -171,6 +171,16 @@
 #course_description h2 {
   margin-top: 0;
 }
+#books .body h3 {
+  margin-bottom: 0;
+}
+#books .recommended_books {
+  margin-left: 17px;
+  display: list-item;
+}
+#books .isbn {
+  font-size: 80%;
+}
 #registration .body {
   text-align: center;
 }
@@ -344,6 +354,7 @@
 }
 
 .article-box .body h2:first-child,
+.article-box .body h3:first-child,
 .article-box .body p:first-child {
   margin-top: 0;
 }

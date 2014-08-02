@@ -94,12 +94,14 @@
       'Slideshow',
       'Announcements',
       'Contact Info',
+      'CEU Promotions',
     );
 
     $sections['right'] = array(
       'Course Approvals',
       'Registration',
-      'Promotions',
+      'Books',
+      'CEU Announcements',
       'Staff',
     );
 

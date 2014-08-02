@@ -14,12 +14,3 @@
 </ul>
 
 <p>Upon successful completion of the program, students will be awarded a Certificate of Completion. The certificate allows the student to take the National Center for Competency Testing (NCCT) ECG Technician Exam. Upon successful completion of the NCCT exam, students will be Nationally Licensed ECG Technicians.</p>
-
-<p>The course length is 40 hours, consisting of:</p>
-
-<ul>
-	<li>24 Hours of Classroom Lecture and Instruction</li>
-	<li>12 Hours of Hands-on Training</li>
-	<li>4 Hours of Written and Practical Skills Testing</li>
-</ul>
-</div>
