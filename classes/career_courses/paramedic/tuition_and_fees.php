@@ -16,7 +16,7 @@
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
         <tr><td>Background Check</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Insurance</td><td>$250.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
-        <tr><td>Supplies</td><td>$1,845.00</td><td class="notes-col">Textbooks, iPad, T-shirt, etc.</td></tr>
+        <tr><td>Supplies</td><td>$1,845.00</td><td class="notes-col">Textbooks, tablet, T-shirt, etc.</td></tr>
         <tr><td>Uniform Patches</td><td>$49.00</td><td class="notes-col">Required to attend</td></tr>
         <tr><td>Tuition</td><td>$8,600.00</td><td class="notes-col">Equivalent to $11.81 per clock hour</td></tr>
         <tr><td>Clinical Externship</td><td>$300.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>

@@ -7,7 +7,7 @@
   <hr style="width: 20%; margin: 20px auto;" />
 
   <li class="bold red">
-    <div><a href="/pdfs/EMT Externship Files/Externship_Requirements_Checklist.pdf" target="_blank">Externship Requirements Checklist</a></div>
+    <div><a href="/pdfs/Externship_Requirements_Checklist.pdf" target="_blank">Externship Requirements Checklist</a></div>
   </li>
   <li class="bold red">
     <div><a href="/pdfs/EMT Externship Files/EMT Externship Expectations.pdf" target="_blank">Externship Expectations</a></div>

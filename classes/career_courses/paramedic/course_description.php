@@ -5,7 +5,7 @@ It is the mission of the Fast Response Paramedic Academy to produce extraordinar
 </p>
 
 <p>
-We provide our students with an iPad loaded with EMS software to include iPCR, Title 22, local and regional EMS Regulations, as well as online learning tools. These tools will enhance the overall learning experience, while utilizing up to date technology students can expect to use in the field. This equipment will be incorporated into all aspects of clinical and field training. We have an excellent skills lab that includes a scenario based Simulation Lab, a High Fidelity ALS manikin, and an ambulance simulator. 
+We provide our students with a tablet computer loaded with EMS software to include iPCR, Title 22, local and regional EMS Regulations, as well as online learning tools. These tools will enhance the overall learning experience, while utilizing up to date technology students can expect to use in the field. This equipment will be incorporated into all aspects of clinical and field training. We have an excellent skills lab that includes a scenario based Simulation Lab, a High Fidelity ALS manikin, and an ambulance simulator. 
 </p>
 
 <p>

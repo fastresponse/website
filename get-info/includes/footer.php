@@ -110,7 +110,7 @@ For immediate questions, call <strong style="white-space: nowrap;"><?= phone_lin
 				<li>Career services assistance</li>
         <li>Located one block from BART</li>
 				<li>Guaranteed externships</li>
-				<li>Affiliated with California Dept. of Rehabilitation and Workforce Investment Act eligible provider</li>
+				<li>Affiliated with California Dept. of Rehabilitation</li>
 			</ul>
 		</div>
 	</div>
