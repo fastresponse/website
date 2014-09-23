@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body">
-    <div>Evening classes beginning in July!</div>
+    <div>Evening classes now available!</div>
     <div>Contact us for details.</div>
   </div>
 </div>

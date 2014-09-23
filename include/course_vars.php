@@ -165,6 +165,7 @@
       //'Events',
       //'Calendar',
       'Links',
+      'Test Results',
       'Immunizations',
       'Staff',
       //'FAQs Menu',

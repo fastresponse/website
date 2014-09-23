@@ -5,18 +5,18 @@
     </div>
   </div>
   <div class="body">
-    <div class="yellow">MA Coordinator, Lead Instructor</div>
-    <div><strong>Anthony Montano</strong></div>
-    <ul>
-      <li>510-849-4009 ext. 150</li>
-      <li>tmontano@fastresponse.org</li>
-    </ul>
-    <br />
-    <div class="yellow">Assistant Instructor</div>
+    <div class="yellow">Program Coordinator</div>
     <div><strong>Ashanti Boykin</strong></div>
     <ul>
       <li>510-809-3655</li>
       <li>aboykin@fastresponse.org</li>
+    </ul>
+    <br />
+    <div class="yellow">Assistant Instructor</div>
+    <div><strong>Danielle Gullo</strong></div>
+    <ul>
+      <li>510-849-4009 ext. 150</li>
+      <li>dgullo@fastresponse.org</li>
     </ul>
     <br />
     <div class="yellow">Phlebotomy Coordinator</div>

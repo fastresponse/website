@@ -27,11 +27,18 @@
       $results = basic_query($handle,
         array('title', 'description', 'notes'),
         'promotions',
-        array('FIND_IN_SET(:course, courses)'),
+        array('active = 1', 'FIND_IN_SET(:course, courses)'),
         'id ASC',
         0,
         array(':course' => $course_abbr)
       );
+
+      if (!isset($results) || !count($results)) {
+        $results = array( array(
+          'title' => 'No Promotions',
+          'description' => 'There are no promotions active at this time.',
+        ) );
+      }
 
       $i = 0;
 
