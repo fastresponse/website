@@ -6,7 +6,7 @@
 <p>Our course is one of the most unique and exciting  programs in the Bay Area where  students immediately put to practice their skills learned in the classroom in our state-of-the-art Simulation Lab using a High-Fidelity ALS manikin, ambulance simulator and cutting edge medical equipment. Students gain more experience and confidence with patient contact in the field while participating in their guaranteed 18-hour clinical and field externship in a local EMS ambulance and hospital Emergency Department.</p>
 <p>Along with creating a challenging learning environment for our students, we also provide training tools to prepare them for the NREMT (National Registry of Emergency Medical Technicians) examination.</p>
 <p>Our student pass rate for the NREMT surpasses the national average!</p>
-<p>Our programs provide:
+<p>Our program provides:
   <ul>
   <li>Free tutoring</li>
   <li>NREMT test preparation</li>

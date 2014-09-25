@@ -17,7 +17,7 @@
       <li>Successful completion of an entrance examination (Wonderlic)</li>
       <li>Completion of an enrollment agreement</li>
       <li>Completion of a financial agreement</li>
-      <li>Financial plan for funding education</li>
+      <!--<li>Financial plan for funding education</li>-->
       <li>Payment either in full or of first required installment</li>
     </ul>
 	</div>

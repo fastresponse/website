@@ -5,11 +5,18 @@
     </div>
   </div>
   <div class="body">
-    <div class="yellow">Phlebotomy Coordinator</div>
+    <div class="yellow">Program Coordinator</div>
     <div><strong>Genetia Roberts</strong></div>
     <ul>
       <li>510-809-3642</li>
       <li>groberts@fastresponse.org</li>
+    </ul>
+    <br />
+    <div class="yellow">Lead Instructor</div>
+    <div><strong>Carmie Cindric</strong></div>
+    <ul>
+      <li>510-849-4009 ext. </li>
+      <li>ccindric@fastresponse.org</li>
     </ul>
     <br />
     <div class="yellow">Instructors</div>

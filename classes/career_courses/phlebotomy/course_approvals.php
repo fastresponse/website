@@ -6,9 +6,9 @@
   </div>
   <div class="body">
     <ul>
-      <li>CA Bureau for Private Postsecondary Education (BPPE)</li>
-      <li>National Center for Competency Testing (NCCT)</li>
-      <li>California Department of Public Health, Laboratory Field Services (CDPH/LFS)</li>
+      <li>CA Bureau for Private Postsecondary Education</li>
+      <li>National Center for Competency Testing</li>
+      <li>California Department of Public Health, Laboratory Field Services</li>
     </ul>
   </div>
 </div>

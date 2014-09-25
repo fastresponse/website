@@ -12,10 +12,10 @@
     <br />
     <div class="yellow">2013</div>
     <div><strong>Fast Response: 80%</strong></div>
-    <div>National: %</div>
+    <div>National: 69%</div>
     <br />
     <div class="yellow">2012</div>
     <div><strong>Fast Response: 68%</strong></div>
-    <div>National: %</div>
+    <div>National: 70%</div>
   </div>
 </div>
