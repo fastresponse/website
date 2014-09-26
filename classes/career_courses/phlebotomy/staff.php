@@ -15,13 +15,11 @@
     <div class="yellow">Lead Instructor</div>
     <div><strong>Carmie Cindric</strong></div>
     <ul>
-      <li>510-849-4009 ext. </li>
+      <li>510-849-4009 ext. 149</li>
       <li>ccindric@fastresponse.org</li>
     </ul>
     <br />
     <div class="yellow">Instructors</div>
-    <div><strong>Marilyn Blaylock</strong></div>
-    <div><strong>Carmie Cindric</strong></div>
     <div><strong>Bonnie Fergusson</strong></div>
     <div><strong>Salu Ribeiro</strong></div>
     <div><strong>Jazmin Tate</strong></div>

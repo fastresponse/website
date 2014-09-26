@@ -62,6 +62,12 @@
       word-spacing: 0.15em;
       font-style: italic;
     }
+    .announcement {
+      font-size: 80%;
+    }
+    .announcement div {
+      font-size: 115%;
+    }
   </style>
 
 </head>
@@ -108,23 +114,35 @@
 
 	  <div class="column smallauto">
 	    <div class="announcement red">
+        <?php
+          require_once(
+            $_SERVER['DOCUMENT_ROOT'] . '/include/course/class_start_dates.php'
+          );
+          $course_dates = get_course_dates_list(
+            $handle, 'CPT', array('Full-time', 'Part-time')
+          );
+        ?>
 	      <h3 class="yellow">Course Start Dates</h3>
 	      <div class="yellow underline">Full Time</div>
+        <?= $course_dates['Full-time'] ?>
 	      <?php
-		$next = query_next_date($handle, 'CPT', 'Full-time');
-		echo "<div>{$next['showdate']}</div>";
+		    //$next = query_next_date($handle, 'CPT', 'Full-time');
+		    //echo "<div>{$next['showdate']}</div>";
 	      ?>
 	      <div class="yellow underline">Part Time</div>
+        <?= $course_dates['Part-time'] ?>
 	      <?php
-		$next = query_next_date($handle, 'CPT', 'Part-time');
-		echo "<div>{$next['showdate']}</div>";
+		    //$next = query_next_date($handle, 'CPT', 'Part-time');
+		    //echo "<div>{$next['showdate']}</div>";
 	      ?>
 	    </div>
 	  </div>
 
+    <?php if (false): ?>
 	  <div class="announcement banner yellow" style="max-width: 35%; float: right;">
 	    <h3 style="font-style: italic;">Free ECG and CPR classes included!</h3>
 	  </div>
+    <?php endif; ?>
 
 	  <div style="margin-bottom: 2em;">
 	    <h1 style="display: inline-block; vertical-align: top;">Phlebotomy</h1>

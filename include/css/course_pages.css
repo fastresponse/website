@@ -8,6 +8,11 @@
   $content_pad_right = 210; ($right_sidebar_width + $sidebar_pad_total)
 */
 
+.lorem-ipsum {
+  font-style: italic;
+  color: #FFAA88;
+}
+
 .sidebar {
   text-align: left;
   padding-top: 0;

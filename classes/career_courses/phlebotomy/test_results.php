@@ -6,15 +6,15 @@
   </div>
   <div class="body">
     <div class="yellow">2014</div>
-    <div><strong>Fast Response: 89%</strong></div>
+    <div><strong>Fast Response: <span class="red">89%</span></strong></div>
     <div>National: 76%</div>
     <br />
     <div class="yellow">2013</div>
-    <div><strong>Fast Response: 82%</strong></div>
+    <div><strong>Fast Response: <span class="red">82%</span></strong></div>
     <div>National: 75%</div>
     <br />
     <div class="yellow">2012</div>
-    <div><strong>Fast Response: 84%</strong></div>
+    <div><strong>Fast Response: <span class="red">84%</span></strong></div>
     <div>National: 75%</div>
   </div>
 </div>

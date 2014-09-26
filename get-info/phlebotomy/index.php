@@ -41,7 +41,7 @@ include_once('../includes/header.php');
 	The Certified Phlebotomy Technician Program from Fast Response School of Healthcare Education provides the <strong>hands-on training</strong>, practical clinic experience and industry support it takes to pursue a rewarding medical lab position.
 </p>
 <p>
-	Topics covered in this course include anatomy and physiology, laboratory safety, infection control precautions, blood-borne pathogens, specimen collection, and proper needle disposal. <strong>ECG</strong> and <strong>CPR</strong> courses are also included at no charge.
+Topics covered in this course include anatomy and physiology, laboratory safety, infection control precautions, blood-borne pathogens, specimen collection, and proper needle disposal.<!-- <strong>ECG</strong> and <strong>CPR</strong> courses are also included at no charge. -->
 </p>
 <p>
 	Note: Advanced Certification is available for practicing phlebotomists who need to obtain their CPT-1 under the new CA State standards.
