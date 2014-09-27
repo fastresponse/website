@@ -13,12 +13,17 @@
     Sections of this course may be held in an online format.  All students must have online access and the ability to complete assignments autonomously. Intermittent quizzes will be given as formative assessments to ensure that each student is advancing sufficiently in the course.  
     </p>
 
-    <p>
-    Schedule: Monday / Tuesday / Wednesday from 9:00 A.M. to 6:00 P.M.
-    </p>
+    <h2 class="course-start-title">Class Hours</h2>
+    <div class="course-start-date">November 3rd, 2014 to December 15th, 2014</div>
+    <div class="course-start-date">Mondays and Wednesdays, 12:00 PM - 6:00 PM</div>
+    <div class="course-start-date" style="font-size: 90%;">Due to the Thanksgiving holiday, class will take place on Tues, Nov 25th instead of Wed, Nov 26th.</div>
 
     <p>
     Cost: $450.00 - Books included.
+    </p>
+
+    <p>
+    <a href="http://www.ssreg.com/fastresponse/classes/results.asp?cID=78819">Online signup for A&amp;P is available.</a>
     </p>
 
     <!--<p><a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Please register for Fast Response School's Anatomy &amp; Physiology course online.</a></p>-->

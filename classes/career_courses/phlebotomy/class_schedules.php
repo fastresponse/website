@@ -34,7 +34,7 @@ jQuery(document).ready(function() {
       <ul style="margin-top: 5px;">
         <li>Two weeks of instruction</li>
         <li>65 hours instruction and laboratory practice</li>
-        <li>80 hours of clinical externship</li>
+        <li>80+ hours of clinical externship</li>
       </ul>
     </td>
     <td>
@@ -43,11 +43,11 @@ jQuery(document).ready(function() {
         <?= $course_dates['Part-time'] ?>
       </div>
       <h2 class="course-start-title">Part-time Class Hours</h2>
-      <div class="course-start-date">Mon - Fri, 6:00 PM - 10:00 PM</div>
+      <div class="course-start-date">Mon - Thu, 6:00 PM - 10:00 PM</div>
       <ul style="margin-top: 5px;">
         <li>Four weeks of instruction</li>
         <li>65 hours of instruction and laboratory practice</li>
-        <li>80 hours of clinical externship</li>
+        <li>80+ hours of clinical externship</li>
       </ul>
     </td>
     </tr></table>
