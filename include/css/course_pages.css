@@ -292,6 +292,11 @@
   content: '- ';
 }
 
+#immunizations .body ul li {
+  display: inline-block;
+  width: 50%;
+}
+
 .sidebar #immunizations div dt {
   margin-top: 0.5em;
 }

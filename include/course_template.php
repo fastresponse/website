@@ -82,6 +82,7 @@ switch ($category) {
       $slides_list[] = '  "' . $slide_path . $slidefile . '"';
     }
 
+    // note we're inside a script tag; PHP is echoing out javascript code
     $slideload = implode(",\n", $slides_list);
     echo <<<SLIDESOUT
     var slides_to_load = [
