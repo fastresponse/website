@@ -45,16 +45,30 @@ foreach ($quotes_tmp as $quote):
   $quote_text = html_entity_decode($quote['quote']);
   $quote_name = $quote['name'];
   $quote_image = $quote['image'];
+  $video = $quote['video'];
 
   $initial_visibility = ($i == 0) ? 'block' : 'none';
   $i++;
 
+  // need to load jquery and/or magnificpopup.js,
+  // then call $('.testimonial-video').magnificPopup();
+  if (!empty($video)) {
+    $class = 'testimonial-video mfp-iframe';
+    $attrs = 'data-mfp-src: "' . $video . '"';
+    if (empty($quote_text)) {
+      $quote_text = 'Click to play';
+    }
+  }
+  else {
+    $class = 'testimonial-text';
+  }
+
 ?>
 
-  <div style="display: <?= $initial_visibility ?>;">
-  <?php if (!empty($quote_image)): ?>
-    <img alt="Fast Response graduate photo" src="<?= $quote_image ?>" />
-  <?php endif; ?>
+  <div class="<?= $class ?>" style="display: <?= $initial_visibility ?>;">
+    <?php if (!empty($quote_image)): ?>
+      <img alt="Fast Response graduate" src="<?= $quote_image ?>" />
+    <?php endif; ?>
     <p><?= $quote_text ?></p>
     <div class="source"><strong><?= $quote_name ?></strong>, Fast Response Graduate</div>
   </div>
