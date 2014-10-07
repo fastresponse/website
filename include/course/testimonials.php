@@ -21,7 +21,7 @@ $courses = array_unique(
 
 $quote_query = function($handle, $course) {
   $results = basic_query($handle,
-    array('name', 'quote', 'image'), # select
+    array('name', 'quote', 'image', 'video'), # select
     'testimonials', # from
     array('FIND_IN_SET(:course, courses) > 0'), # where
     null, # order by
@@ -46,6 +46,7 @@ foreach ($quotes_tmp as $quote):
   $quote_name = $quote['name'];
   $quote_image = $quote['image'];
   $video = $quote['video'];
+  $attrs = '';
 
   $initial_visibility = ($i == 0) ? 'block' : 'none';
   $i++;
@@ -54,7 +55,7 @@ foreach ($quotes_tmp as $quote):
   // then call $('.testimonial-video').magnificPopup();
   if (!empty($video)) {
     $class = 'testimonial-video mfp-iframe';
-    $attrs = 'data-mfp-src: "' . $video . '"';
+    $attrs = 'data-mfp-src="' . $video . '"';
     if (empty($quote_text)) {
       $quote_text = 'Click to play';
     }
@@ -65,7 +66,7 @@ foreach ($quotes_tmp as $quote):
 
 ?>
 
-  <div class="<?= $class ?>" style="display: <?= $initial_visibility ?>;">
+  <div class="<?= $class ?>" <?= $attrs ?> style="display: <?= $initial_visibility ?>;">
     <?php if (!empty($quote_image)): ?>
       <img alt="Fast Response graduate" src="<?= $quote_image ?>" />
     <?php endif; ?>
@@ -76,5 +77,9 @@ foreach ($quotes_tmp as $quote):
 <?php endforeach; ?>
 
   </div>
+
+  <script type="text/javascript">
+    jQuery('.testimonial-video').magnificPopup();
+  </script>
 
 </div>

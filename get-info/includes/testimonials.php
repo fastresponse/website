@@ -17,7 +17,7 @@ $quote_query = function($handle, $program) {
   $results = basic_query($handle,
     array('name', 'quote', 'image'), # select
     'testimonials', # from
-    array('FIND_IN_SET(:course, courses) > 0'), # where
+    array('FIND_IN_SET(:course, courses) > 0', 'video IS NULL'), # where
     null, # order by
     0, # limit
     array(':course' => $program) # replacement parameters

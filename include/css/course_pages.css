@@ -266,11 +266,17 @@
   text-align: justify;
 }
 
-#testimonials .body>div img {
+#testimonials .body>div.testimonial-text img {
   margin-right: 14px;
   /*margin-bottom: 5px;*/
   max-width: 45%;
   float: left;
+}
+
+#testimonials .body>div.testimonial-video img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #testimonials .body>div p {
