@@ -272,24 +272,24 @@
   max-width: 45%;
   float: left;
 }
+#testimonials .body>div.testimonial-text p {
+  font-style: italic;
+  quotes: "\"" "\"";
+}
+#testimonials .body>div.testimonial-text p:before {
+  content: open-quote;
+}
+#testimonials .body>div.testimonial-text p:after {
+  content: close-quote;
+}
 
+#testimonials .body>div.testimonial-video {
+  cursor: pointer;
+}
 #testimonials .body>div.testimonial-video img {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-}
-
-#testimonials .body>div p {
-  font-style: italic;
-  quotes: "\"" "\"";
-}
-
-#testimonials .body>div p:before {
-  content: open-quote;
-}
-
-#testimonials .body>div p:after {
-  content: close-quote;
 }
 
 #testimonials .body>div .source {

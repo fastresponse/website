@@ -8,7 +8,6 @@
     <div class="yellow">Program Coordinator</div>
     <div><strong>Lucas Williams</strong></div>
     <ul>
-      <li>510-849-4009 x102</li>
       <li>lwilliams@fastresponse.org</li>
     </ul>
     <br />
