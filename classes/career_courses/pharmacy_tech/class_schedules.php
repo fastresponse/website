@@ -1,7 +1,7 @@
 <div id="class_schedules" class="module article-box">
   <div class="title">
     <div class="title-border">
-      <h1>Full-time Schedule</h1>
+      <h1>Part-time Schedule</h1>
       <h2>Ten Week Course</h2>
     </div>
   </div>
@@ -18,7 +18,8 @@
       <h2 class="course-start-title">Class Hours</h2>
       <div class="course-start-date">Tue - Fri, 9:00 AM - 4:30 PM</div>
       <ul style="margin-top: 20px;">
-        <li>Hour breakdown?</li>
+        <li>406 hours of didactic instruction</li>
+        <li>160 hours of clinical externship</li>
       </ul>
     </td>
     </tr></table>

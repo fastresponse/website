@@ -20,10 +20,10 @@
     </ul>
     <br />
     <div class="yellow">Program Administrator</div>
-    <div><strong>Stephanie Sumpter</strong></div>
+    <div><strong>Alicia Brown</strong></div>
     <ul>
       <li>510-809-3656</li>
-      <li>ssumpter@fastresponse.org</li>
+      <li>abrown@fastresponse.org</li>
     </ul>
   </div>
 </div>

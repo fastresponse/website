@@ -6,7 +6,7 @@ $page_title = 'Pharmacy Technician';
 $course_name = 'Pharmacy Technician';
 $course_abbr = 'PHARM-TECH';
 $course_title = 'Pharmacy Technician';
-$course_types = array('Full-time', 'Part-time');
+$course_types = array('Part-time');
 
 $links = array(
   'Immunizations',

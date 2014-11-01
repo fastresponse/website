@@ -4,12 +4,14 @@ $title		= 'Pharmacy Technician Training';
 $description	= null;
 
 $headline = 'Get the Skills to Become a Pharmacy Technician';
-$subhead = 'Guaranteed Externships';
+$subhead = 'Guaranteed Externships, Convenient Schedule';
 
 $program_of_interest = 'Pharmacy Technician';
 $program_abbreviation = 'PHARM-TECH';
 
 $key_values = array(
+  "Eligibility for candidacy of Pharmacy Technician registration with the California State Board of Pharmacy and candidacy for testing to become a National Certified Pharmacy Technician",
+  "Training in a variety of marketable job skills"
 );
 
 $zip_radius = 50;
@@ -26,47 +28,59 @@ include_once('../includes/header.php');
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/emt-top.jpg" alt="EMT careers">
 
 <p>
-  Emergency medical technicians provide emergency medical support to injured and ill people. They may work in an ambulance, with a fire department, in a hospital emergency room or on a search and rescue team.
+Pharmacy Technicians work directly under the supervision of a Doctor of Pharmacy. The Pharmacist and Pharmacy Technician are in perpetual collaboration in order to maintain the art and science of pharmacy practice as well as, maintaining patient safety. The function and role of today's Pharmacy Technician is expanding toward a rewarding and robust career path while always maintaining a commitment and dedication of best practices in the profession.
 </p>
 
 <p>
-	If you want to become one of the best-trained EMTs in the Bay Area (<em>without spending years in school</em>), come to Fast Response School of Health Care Education. Our EMT program's intensive, comprehensive curriculum and unique teaching methods prepare you for certification and employment in a rewarding healthcare career.
+According to the United States Bureau of Labor Statistics, "Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations. Several factors will lead to increased demand for prescription medications".
 </p>
 
 <p>
-  Fast Response students are recognized by Bay Area ambulance companies as being exceptional. During the third quarter of 2013, <strong>91%</strong> of our graduates passed their certification exams on the first attempt!
+If you are an individual who is committed to being an advocate for patient safety within the scope of pharmacy practice as a Technician, then the Pharmacy Technician Program at Fast Response is where your new career will begin.
 </p>
 
-<h3>Becoming a Certified EMT</h3>
+<h3>Becoming a Registered Pharmacy Technician</h3>
 
 <p>
-  The Emergency Medical Technician program at Fast Response provides dynamic classroom training, hands-on skills training, and practical field experience. Our instructors are all <strong>licensed EMTs</strong> and <strong>paramedics</strong>.
+The California State Board of Pharmacy requires that each Pharmacy Technician applicant complete a "course that provides a minimum of 240 hours of instruction as specified in Title 16 California Code of Regulation section 1793.6&copy;" (<a href="http://www.pharmacy.ca.gov">www.pharmacy.ca.gov</a>) in order to become registered as a Pharmacy Technician.
 </p>
 
 <p>
-	Topics covered in this course include vital signs and initial patient assessment, airway management, immobilization, lifting and moving, trauma management, bleeding and shock management, injury assessment, resuscitation, medical emergencies, and special emergency care situations. Every class begins with <strong>CPR</strong> certification.
+The Pharmacy Technician Program at Fast Response offers each candidate a robust curriculum of 406 hours of didactic training that aligns with the core competencies involving the community pharmacy practice setting, institutional pharmacy practice setting, as well as, special practice settings.
 </p>
 
-
-<h3>Clinical &amp; Field Externship - On-the-Job Experience</h3>
-
 <p>
-	As a student in the EMT Program you'll complete a one-day clinical shift in a <strong>hospital emergency department</strong>, as well as <strong>two ambulance ride-along shifts</strong> with the Bay Area's largest ambulance companies. In addition to hands-on experience, externships are a great way to make valuable industry contacts.
-</p>
-<p>
-	Graduates of this program are fully prepared and feel confident in emergency medical situations after gaining so much practical, real-world experience.
+Upon successful completion of the Pharmacy Technician Program at Fast Response, the Technician graduate will then be able to sit for the Pharmacy Technician Certification Exam (PTCE) which is administered by the Pharmacy Technician Certification Board (PTCB).
 </p>
 
-
-<h3>Convenient Day or Evening Schedules</h3>
+<h3>Clinical Externship - On-the-Job Experience</h3>
 
 <p>
-	Fast Response programs are designed for busy, adult learners. Many students are raising families and/or continuing working while going to school. Choose from flexible full or part-time options.
+As a learner in the Pharmacy Technician program, you will complete 160 hours of clinical externship under the direct supervision of a licensed pharmacist. You will be working with real patients in a wide variety of practice settings. Externships often lead directly to employment and can be a great way to network.
+</p>
+
+<h3>Why choose Fast Response?</h3>
+
+<p>
+If you want to become a highly-skilled healthcare professional, capable of competing in the job market, come experience our Pharmacy Technician Program. You will learn about anatomy and physiology, medication order entry procedures, non-sterile and sterile compounding standards, customer service, pharmacy math formula processes, pharmacy law, medication safety, patient safety, common drug interactions, common disease states and, pharmaceutical interventions.
+</p>
+
+<p>
+The Pharmacy Technician Program at Fast Response provides dynamic classroom training, hands-on clinical skills training, and a clinical externship. Our instructors are all highly-trained and experienced <strong>California Registered Pharmacy Technicians</strong> as well as <strong>Nationally Certified Pharmacy Technicians</strong> (CPhT).  
+</p>
+
+<p>
+We utilize a student-based Socratic teaching method where there is a shared dialogue between teacher an learners, drawing knowledge from the learners, creating an exchange of information in the classroom.
+</p>
+
+<h3>Convenient Schedule</h3>
+
+<p>
+	Fast Response programs are designed for busy, adult learners. Many students are raising families and/or continuing working while going to school. This course has flexible entry dates and convenient part-time schedules with morning and evening classes.
 </p>
 
 <ul>
-	<li>Full-Time Program includes <strong>5 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
-	<li>Part-Time Program includes <strong>8 weeks</strong> of instruction and <strong>24+ hours</strong> of clinical and field externship</li>
+	<li>Part-Time Program includes <strong>10 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
 </ul>
 
 <?php if (false): ?>

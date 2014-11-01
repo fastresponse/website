@@ -7,6 +7,8 @@
   <div class="body">
     <ul>
       <li>CA Bureau for Private Postsecondary Education</li>
+      <li>CA State Board of Pharmacy</li>
+      <li>Pharmacy Technician Certification Board</li>
     </ul>
   </div>
 </div>

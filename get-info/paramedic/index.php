@@ -12,7 +12,7 @@ $program_abbreviation = 'Paramedic';
 $key_values = array(
   'NREMT-P Test Preparation',
   'Certification completion: PALS, ACLS, ITLS, GEMS, and EMPACT',
-  'iPad with EMS software included',
+  'Tablet with EMS software included',
 );
 
 $questions_code = <<<ENDQ
