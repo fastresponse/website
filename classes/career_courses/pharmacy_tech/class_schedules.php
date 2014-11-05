@@ -9,16 +9,16 @@
     <table><tr>
     <td>
       <?php
-        //$course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
+        $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       ?>
       <h2 class="course-start-title">Class Start Dates</h2>
-      <?php //<?= $course_dates['Full-time'] ?>
+      <?= $course_dates['Part-time'] ?>
     </td>
     <td>
       <h2 class="course-start-title">Class Hours</h2>
-      <div class="course-start-date">Tue - Fri, 9:00 AM - 4:30 PM</div>
+      <div class="course-start-date">Tue - Thu, 6:00 PM - 10:00 PM</div>
       <ul style="margin-top: 20px;">
-        <li>406 hours of didactic instruction</li>
+        <li>246 hours of didactic instruction</li>
         <li>160 hours of clinical externship</li>
       </ul>
     </td>

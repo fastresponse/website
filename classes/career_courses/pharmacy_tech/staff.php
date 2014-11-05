@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body">
-    <div class="yellow">Program Coordinator</div>
+    <div class="yellow">Program Director</div>
     <div><strong>Paul Sabatini</strong></div>
     <ul>
       <li>510-809-3649</li>

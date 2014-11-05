@@ -14,8 +14,6 @@ if (!$handle) $handle = db_connect();
     <?php foreach (query_external($handle, $course_abbr, 'clinical externship', true, true) as $site): ?>
       <li><?= $site['site_department'] ?></li>
     <?php endforeach; ?>
-      <li>Site A</li>
-      <li>Site B</li>
     </ul>
   </div>
 </div>
