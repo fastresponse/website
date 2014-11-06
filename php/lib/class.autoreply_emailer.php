@@ -107,6 +107,10 @@ class AutoreplyEmailer {
         'email' => 'autoreply@fastresponse.org',
         'page' => 'phl.html',
       ),
+      'Pharmacy Technician' => array(
+        'email' => 'autoreply@fastresponse.org',
+        'page' => 'generic.html',
+      ),
       'Paramedic' => array(
         'email' => 'autoreply@fastresponse.org',
         'page' => 'para.html',

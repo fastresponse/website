@@ -7,10 +7,12 @@ $headline = 'Get the Skills to Become a Pharmacy Technician';
 $subhead = 'Guaranteed Externships, Convenient Schedule';
 
 $program_of_interest = 'Pharmacy Technician';
-$program_abbreviation = 'PHARM-TECH';
+$program_abbreviation = 'PHT';
 
 $key_values = array(
-  "Eligibility for candidacy of Pharmacy Technician registration with the California State Board of Pharmacy and candidacy for testing to become a National Certified Pharmacy Technician",
+  //"Eligibility for candidacy of Pharmacy Technician registration with the California State Board of Pharmacy and candidacy for testing to become a National Certified Pharmacy Technician",
+  "Preparation to become a CA Registered Pharmacy Technician",
+  "Eligibility for testing to become a National Certified Pharmacy Technician",
   "Training in a variety of marketable job skills"
 );
 
@@ -25,7 +27,7 @@ include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/emt-top.jpg" alt="EMT careers">
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/pht-top.jpg" alt="EMT careers">
 
 <p>
 Pharmacy Technicians work directly under the supervision of a Doctor of Pharmacy. The Pharmacist and Pharmacy Technician are in perpetual collaboration in order to maintain the art and science of pharmacy practice as well as, maintaining patient safety. The function and role of today's Pharmacy Technician is expanding toward a rewarding and robust career path while always maintaining a commitment and dedication of best practices in the profession.
@@ -46,7 +48,7 @@ The California State Board of Pharmacy requires that each Pharmacy Technician ap
 </p>
 
 <p>
-The Pharmacy Technician Program at Fast Response offers each candidate a robust curriculum of 406 hours of didactic training that aligns with the core competencies involving the community pharmacy practice setting, institutional pharmacy practice setting, as well as, special practice settings.
+The Pharmacy Technician Program at Fast Response offers each candidate a robust curriculum of 246 hours of didactic training that aligns with the core competencies involving the community pharmacy practice setting, institutional pharmacy practice setting, as well as, special practice settings.
 </p>
 
 <p>

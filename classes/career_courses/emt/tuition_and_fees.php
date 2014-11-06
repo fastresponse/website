@@ -35,7 +35,7 @@
         <tr><td>Drug Screen</td><td>$55.00</td><td class="notes-col"></td></tr>
         <tr><td>Live Scan</td><td>$69.00</td><td class="notes-col"></td></tr>
         <tr><td>DMV Live Scan</td><td>$50.00</td><td class="notes-col"></td></tr>
-        <tr><td>Immunizations</td><td>as needed</td><td class="notes-col"></td></tr>
+        <tr><td>Immunizations</td><td>varies</td><td class="notes-col"></td></tr>
         <tr><td>Physical Examination</td><td>$75.00</td><td class="notes-col">Required for Ambulance Drivers License</td></tr>
         <tr><td>Ambulance License fee</td><td>$25.00</td><td class="notes-col"></td></tr>
         <tr><td>NREMT Examination</td><td>$90.00</td><td class="notes-col"></td></tr>

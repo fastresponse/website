@@ -1,7 +1,8 @@
 <?php
   $programs = array(
-    'EMT', 'Phlebotomy', 'Medical Assistant',
-    'Sterile Processing', 'Paramedic'
+    'EMT', 'Phlebotomy',
+    'Pharmacy Technician', 'Medical Assistant',
+    'Sterile Processing', 'Paramedic',
   );
 ?>
 

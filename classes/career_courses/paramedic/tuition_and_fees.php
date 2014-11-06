@@ -37,7 +37,7 @@
         <tr><td>Live Scan</td><td>$69.00</td><td class="notes-col">(additional $50.00 for DMV Live Scan, if needed)</td></tr>
         <tr><td>Drug Screen</td><td>$55.00</td><td></td></tr>
         <tr><td>Uniform</td><td>$200.00</td><td class="notes-col">approximate cost for full uniform (shirt, pants, boots, belt, nameplate)</td></tr>
-        <tr><td>Immunizations</td><td>as needed</td><td></td></tr>
+        <tr><td>Immunizations</td><td>varies</td><td></td></tr>
       </tbody>
     </table>
   </div>

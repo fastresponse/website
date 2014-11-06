@@ -35,7 +35,7 @@
         <tr><td>Drug Screen</td><td>$55.00</td><td class="notes-col"></td></tr>
         <tr><td>CA State Phlebotomy Technician License Fee</td><td>$100.00</td><td class="notes-col"></td></tr>
         <tr><td>National (NCCT) Phlebotomy Technician Exam</td><td>$90.00</td><td class="notes-col"></td></tr>
-        <tr><td>Immunizations</td><td>as needed</td><td></td></tr>
+        <tr><td>Immunizations</td><td>varies</td><td></td></tr>
         <tr><td>Additional national exam review session</td><td>$20.00</td><td class="notes-col">Optional, 2+ hours</td></tr>
       </tbody>
     </table>

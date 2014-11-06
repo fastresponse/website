@@ -37,7 +37,7 @@
         <tr><td>CA State Phlebotomy Technician License Fee</td><td>$100.00</td><td class="notes-col">Highly recommended for all graduates.</td></tr>
         <tr><td>National (NCCT) Phlebotomy Technician Exam</td><td>$90.00</td><td class="notes-col">Highly recommended for all graduates.</td></tr>
         <tr><td>National (NCCT) ECG Technician Exam</td><td>$90.00</td><td class="notes-col"></td></tr>
-        <tr><td>Immunizations</td><td>as needed</td><td></td></tr>
+        <tr><td>Immunizations</td><td>varies</td><td></td></tr>
       </tbody>
     </table>
   </div>

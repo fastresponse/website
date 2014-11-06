@@ -31,10 +31,10 @@
         <tr><td>National Practitioners Data Bank fee</td><td>$5.00</td><td class="notes-col">Required</td></tr>
         <tr><td>FBI Scan</td><td>$17.00</td><td class="notes-col">Required</td></tr>
         <tr><td>DOJ Scan</td><td>$32.00</td><td class="notes-col">Required</td></tr>
-        <tr><td>Live Scan</td><td>Varies by county</td><td class="notes-col">Required</td></tr>
+        <tr><td>Live Scan</td><td>$70.00</td><td class="notes-col">Required, price varies by county</td></tr>
         <tr><td>CA State Registration</td><td>$105.00</td><td class="notes-col">Required for state licensing</td></tr>
         <tr><td>Pharmacy Technician Certification Exam</td><td>$129.00</td><td class="notes-col">Optional but recommended</td></tr>
-        <tr><td>Immunizations</td><td>as needed</td><td></td></tr>
+        <tr><td>Immunizations</td><td>varies</td><td></td></tr>
       </tbody>
     </table>
   </div>
