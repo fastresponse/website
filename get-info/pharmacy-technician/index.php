@@ -44,7 +44,7 @@ If you are an individual who is committed to being an advocate for patient safet
 <h3>Becoming a Registered Pharmacy Technician</h3>
 
 <p>
-The California State Board of Pharmacy requires that each Pharmacy Technician applicant complete a "course that provides a minimum of 240 hours of instruction as specified in Title 16 California Code of Regulation section 1793.6&copy;" (<a href="http://www.pharmacy.ca.gov">www.pharmacy.ca.gov</a>) in order to become registered as a Pharmacy Technician.
+The California State Board of Pharmacy requires that each Pharmacy Technician applicant complete a "course that provides a minimum of 240 hours of instruction as specified in Title 16 California Code of Regulation section 1793.6(C)" (<a href="http://www.pharmacy.ca.gov">www.pharmacy.ca.gov</a>) in order to become registered as a Pharmacy Technician.
 </p>
 
 <p>
@@ -82,7 +82,7 @@ We utilize a student-based Socratic teaching method where there is a shared dial
 </p>
 
 <ul>
-	<li>Part-Time Program includes <strong>10 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
+	<li>Part-Time Program includes <strong>13 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
 </ul>
 
 <?php if (false): ?>
