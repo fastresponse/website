@@ -11,6 +11,8 @@
       <li>510-809-3649</li>
       <li>psabatini@fastresponse.org</li>
     </ul>
+    <?php if (false): ?>
+    <!--
     <br />
     <div class="yellow">Lead Instructor</div>
     <div><strong>John Everyman</strong></div>
@@ -18,5 +20,7 @@
       <li>510-809-36XX</li>
       <li>jeveryman@fastresponse.org</li>
     </ul>
+    -->
+    <?php endif; ?>
   </div>
 </div>

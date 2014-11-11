@@ -30,11 +30,11 @@ include_once('../includes/header.php');
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/pht-top.jpg" alt="EMT careers">
 
 <p>
-Pharmacy Technicians work directly under the supervision of a Doctor of Pharmacy. The Pharmacist and Pharmacy Technician are in perpetual collaboration in order to maintain the art and science of pharmacy practice as well as, maintaining patient safety. The function and role of today's Pharmacy Technician is expanding toward a rewarding and robust career path while always maintaining a commitment and dedication of best practices in the profession.
+Pharmacy Technicians work directly under the supervision of a Doctor of Pharmacy. The Pharmacist and Pharmacy Technician are in perpetual collaboration in order to maintain the art and science of pharmacy practice as well as maintaining patient safety. The function and role of today's Pharmacy Technician is expanding toward a rewarding and robust career path while always maintaining a commitment and dedication to best practices in the profession.
 </p>
 
 <p>
-According to the United States Bureau of Labor Statistics, "Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations. Several factors will lead to increased demand for prescription medications".
+According to the United States Bureau of Labor Statistics, "Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations. Several factors will lead to increased demand for prescription medications."
 </p>
 
 <p>
@@ -64,7 +64,7 @@ As a learner in the Pharmacy Technician program, you will complete 160 hours of 
 <h3>Why choose Fast Response?</h3>
 
 <p>
-If you want to become a highly-skilled healthcare professional, capable of competing in the job market, come experience our Pharmacy Technician Program. You will learn about anatomy and physiology, medication order entry procedures, non-sterile and sterile compounding standards, customer service, pharmacy math formula processes, pharmacy law, medication safety, patient safety, common drug interactions, common disease states and, pharmaceutical interventions.
+If you want to become a highly-skilled healthcare professional, capable of competing in the job market, come experience our Pharmacy Technician Program. You will learn about anatomy and physiology, medication order entry procedures, non-sterile and sterile compounding standards, customer service, pharmacy math formula processes, pharmacy law, medication safety, patient safety, common drug interactions, common disease states, and pharmaceutical interventions.
 </p>
 
 <p>
