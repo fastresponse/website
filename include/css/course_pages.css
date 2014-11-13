@@ -314,6 +314,22 @@
   font-size: 90%;
 }
 
+.sidebar #admissions_procedures .body h2 {
+  font-size: 100%;
+  margin-bottom: 1em;
+  text-align: center;
+  display: none;
+}
+.sidebar #admissions_procedures .body>ul {
+  font-size: 90%;
+}
+.sidebar #admissions_procedures .body ul ul {
+  margin: 0.5em 0 1em 20px;
+}
+.sidebar #admissions_procedures .body ul ul li {
+  display: list-item;
+}
+
 
 .sidebar .article-box .title {
   border: none;

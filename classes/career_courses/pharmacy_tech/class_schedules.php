@@ -16,8 +16,8 @@
     </td>
     <td>
       <h2 class="course-start-title">Class Hours</h2>
-      <div class="course-start-date">Tue - Thu, 6:00 PM - 10:00 PM</div>
-      <div class="course-start-date">Sat, 9:00 AM - 6:00 PM</div>
+      <div class="course-start-date">Tue, Wed, Thu: 6:00 PM - 10:00 PM</div>
+      <div class="course-start-date">Sat: 9:00 AM - 6:00 PM</div>
       <ul>
         <li>246 hours of instruction over 13 weeks</li>
         <li>160 hours of clinical externship over 4 weeks</li>

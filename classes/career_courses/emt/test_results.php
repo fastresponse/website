@@ -14,8 +14,10 @@
     <div><strong>Fast Response: 80%</strong></div>
     <div>National: 69%</div>
     <br />
+    <?php if (false): ?>
     <div class="yellow">2012</div>
     <div><strong>Fast Response: 68%</strong></div>
     <div>National: 70%</div>
+    <?php endif; ?>
   </div>
 </div>

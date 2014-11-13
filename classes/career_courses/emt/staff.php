@@ -17,7 +17,12 @@
       <li>cbarney@fastresponse.org</li>
     </ul>
     <br />
-    <div class="yellow">Program Administrator</div>
+    <div class="yellow">Program Administrators</div>
+    <div><strong>Jeff Johnson</strong></div>
+    <ul>
+      <li>510-809-3640</li>
+      <li>jjohnson@fastresponse.org</li>
+    </ul>
     <div><strong>Seana Edwards</strong></div>
     <ul>
       <li>510-809-3648</li>

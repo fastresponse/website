@@ -1,5 +1,13 @@
-<div id="course_description">
-<p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi ante, vulputate eu rutrum non, euismod sed lectus. Ut ac mi augue, semper molestie lectus. Nam a nulla vitae justo porta lobortis. Etiam cursus dictum auctor. Nam eu lacus ante. Ut at nibh et leo volutpat adipiscing at at diam. Sed sit amet congue enim. Fusce purus mi, accumsan ac ultrices eu, mollis in risus. Fusce ac lectus luctus lorem tincidunt tristique. Duis interdum fermentum vehicula. Phasellus dui tortor, tristique rutrum consectetur vel, molestie ut quam. Suspendisse non enim sit amet lorem eleifend facilisis.</p>
+<section id="course_description">
+<p>
+The role of today's Pharmacy Technician is both exciting and rewarding. Serving as the liaison between a patient and a pharmacist, many Pharmacy Technicians work in the retail, hospital and special areas of pharmacy services like Oncology, Pediatrics and Long Term Care.
+</p>
 
-<p class="lorem-ipsum">Nam vulputate, nulla vitae condimentum laoreet, sapien arcu convallis magna, vel euismod arcu nulla eu augue. Nam at lorem nisl. Nunc ornare neque id risus blandit quis sodales nulla suscipit. Aenean eu augue vitae dui pellentesque adipiscing. Cras a arcu ante, in laoreet nisl. Duis porta porttitor adipiscing. Morbi id dolor turpis. Suspendisse at erat vitae odio blandit auctor. Curabitur gravida leo id leo auctor nec bibendum risus dictum. Ut nec eros in quam feugiat mattis at in odio. Vivamus tincidunt lectus non purus luctus hendrerit. Aliquam pharetra, nisl sed consectetur gravida, nisl diam cursus quam, at venenatis dui mauris id justo.</p>
-</div>
+<p>
+In our course, you will learn how to work with pharmacists and patients while also learning anatomy and physiology, medication order processing, compounding (mixing) medications, pharmacy math, pharmacy law, medication safety, patient safety, drug interactions, common disease states and, pharmaceutical interventions.
+</p>
+
+<p>
+According to the United States Bureau of Labor Statistics, "Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations."
+</p>
+</section>

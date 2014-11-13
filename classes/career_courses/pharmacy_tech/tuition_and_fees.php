@@ -13,7 +13,7 @@
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
         <tr><td>Background Check</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Insurance</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
-        <tr><td>Tuition</td><td>$2,958.00</td><td class="notes-col"></td></tr>
+        <tr><td>Tuition</td><td>$3,158.00</td><td class="notes-col"></td></tr>
         <tr><td>Books</td><td>$150.00</td><td class="notes-col"></td></tr>
         <tr><td>Uniform</td><td>$30.00</td><td class="notes-col">Required for class</td></tr>
         <tr><td>Clinical Externship</td><td>$300.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>

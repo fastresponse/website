@@ -19,6 +19,12 @@ $zip_radius = 50;
 $sections['left'] = array_diff($sections['left'],
   array('Gallery Link', 'Testimonials')
 );
+$sections['center'] = array_diff($sections['center'],
+  array('Admissions Procedures')
+);
+array_splice(
+  $sections['left'], 5, 0, array('Admissions Procedures')
+);
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');
 ?>
