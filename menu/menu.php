@@ -355,7 +355,11 @@
     </li>
 
     <li>
-    <a href="http://www.facebook.com/FastResponseSchool">Visit Us On Facebook</a>
+    <a href="//www.facebook.com/FastResponseSchool">Visit us on Facebook</a>
+    </li>
+
+    <li>
+    <a href="//twitter.com/_FastResponse">Follow us on Twitter</a>
     </li>
   </ul>
   </li>

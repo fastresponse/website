@@ -28,52 +28,65 @@ include_once('../includes/header.php');
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/pht-top.jpg" alt="EMT careers">
 
-<h3>What is a Pharmacy Technician?</h3>
+<h3>What does a Pharmacy Technician do?</h3>
 
 <p>
-The role of today's Pharmacy Technician is both exciting and rewarding. Serving as the liaison between a patient and a pharmacist, many Pharmacy Technicians work in the retail, hospital and special areas of pharmacy services like Oncology, Pediatrics and Long Term Care.
+Pharmacy Technicians serve as a liaison between a patient and a pharmacist. Under the supervision of a pharmacist, they supply medicines to patients, assemble medications for prescriptions, and provide information to patients and other health care professionals. They also manage areas of medicines supply, produce medicines in hospitals and they may supervise other pharmacy staff.
+</p>
+
+<h3>Where does a Pharmacy Technician work?</h3>
+
+<p>
+Pharmacy Technicians work in the retail, hospital and special areas of pharmacy services like Oncology, Pediatrics and Geriatrics. They work in community pharmacies, hospitals, in pharmaceutical production, pharmacy sales, prisons, primary care organizations, education and training and in veterinary services.
 </p>
 
 <h3>Why become a Pharmacy Technician?</h3>
 
 <p>
-According to the United States Bureau of Labor Statistics, "Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations."
+According to the United States Bureau of Labor Statistics, <em>"Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations."</em> It is a great time to get into heath care and get a career in a field you can count on.
 </p>
 
 <h3>Why choose Fast Response?</h3>
 
 <p>
-If you want to become a highly-skilled healthcare professional, capable of competing in the job market, come experience our Pharmacy Technician Program. You will learn how to work with pharmacists and patients while also learning anatomy and physiology, medication order processing, compounding (mixing) medications, pharmacy math, pharmacy law, medication safety, patient safety, drug interactions, common disease states and, pharmaceutical interventions.
+If you want to become a highly-skilled health care professional, capable of competing in the job market, come to Fast Response.
 </p>
 
 <p>
-Our skills lab provides hands-on practice for both hospital and retail pharmacy settings. You will be in a dynamic and engaging classroom setting learning the information and skills necessary to prepare you for your clinical externship and your career. Our Instructors are highly-trained and experienced <strong>California Registered Pharmacy Technicians</strong> as well as <strong>Nationally Certified Pharmacy Technicians (CPhT)</strong>. We utilize a student-based Socratic teaching method where there is a shared dialogue between Instructor and learners, drawing knowledge from the learners and, creating an exchange of information in the classroom.
+Our Instructors are highly-trained and experienced <strong>California Registered Pharmacy Technicians</strong>. Come and learn in a dynamic and engaging classroom setting.
 </p>
 
-<h3>Clinical Externship - On-the-Job Experience</h3>
+<p>
+We utilize a student-based Socratic teaching method where there is a shared dialogue between Instructor and learners, drawing knowledge from the learners, and creating an exchange of information in the classroom.
+</p>
 
 <p>
-Working with real patients, in a wide variety of environments and, under the direct supervision of a licensed Pharmacist, you will gain hands-on experience during your 160 hours in a clinical externship. Externships often lead directly to employment and can be a great way to network.
+Our up-to-date skills lab provides hands-on practice for both hospital and retail pharmacy settings and will prepare you for your clinical externship where you will gain valuable experience on real patients.
+</p>
+
+<h3>Clinical Externship Experience</h3>
+
+<p>
+During your 160 hours in clinical setting, you will be working with a pharmacist and real patients to obtain the skills you need to get a job. Externships often lead directly to employment and can be a great way to network.
 </p>
 
 <h3>Becoming a Registered Pharmacy Technician</h3>
 
-<p>
-The California State Board of Pharmacy requires that each Pharmacy Technician applicant complete a "course that provides a minimum of 240 hours of instruction as specified in Title 16 California Code of Regulation section 1793.6(c)" (<a href="http://www.pharmacy.ca.gov">www.pharmacy.ca.gov</a>) in order to become registered as a Pharmacy Technician. 
-</p>
+<ul>
+  <li>In order to become a Pharmacy Technician, the California State Board of Pharmacy requires that each applicant complete a "course that provides a minimum of 240 hours of instruction as specified in Title 16 California Code of Regulation section 1793.6(c)" (<a href="http://www.pharmacy.ca.gov">www.pharmacy.ca.gov</a>)</li>
 
-<p>
-Our program offers a robust curriculum of 246 hours of classroom training relevant to current laws and professional standards. As a successful graduate of our Pharmacy Technician Program, you will be eligible to sit for the National Pharmacy Technician Certification Exam (PTCE).
-</p>
+  <li>Once you graduate, you will be eligible to sit for the National Pharmacy Technician Certification Exam (PTCE).</li>
+</ul>
 
 <h3>Class Schedules</h3>
 
 <p>
-Our programs are designed for busy, adult learners. Many students continue to work while attending school. This course has flexible entry dates and convenient part-time schedules with morning and evening classes.
+Our programs are designed for busy, adult learners. Many students can continue to work while attending school because we offer convenient part-time schedules.
 </p>
 
 <ul>
-	<li>Pharmacy Technician Program = <strong>13 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
+	<li>246 hours of classroom instruction over 13 weeks</li>
+  <li>160 hours of clinical externship over 4 weeks</li>
 </ul>
 
 <?php if (false): ?>
@@ -82,7 +95,7 @@ Our programs are designed for busy, adult learners. Many students continue to wo
 <h3>Get the Support You Need to Launch a Successful Career</h3>
 
 <p>
-Healthcare training isn't about getting a diploma - it's about getting a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with things like resume preparation, interview techniques and job searches.
+Health care training isn't about getting a diploma - it's about getting a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with things like resume preparation, interview techniques and job searches.
 </p>
 
 <p>Payment plans are available for those that qualify.</p>
