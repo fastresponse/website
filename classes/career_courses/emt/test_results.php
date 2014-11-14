@@ -13,8 +13,8 @@
     <div class="yellow">2013</div>
     <div><strong>Fast Response: 80%</strong></div>
     <div>National: 69%</div>
-    <br />
     <?php if (false): ?>
+    <br />
     <div class="yellow">2012</div>
     <div><strong>Fast Response: 68%</strong></div>
     <div>National: 70%</div>
