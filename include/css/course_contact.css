@@ -177,8 +177,10 @@
 
 @media handheld, (max-width: 639px) {
   #contact-form-div {
+    /*
     margin: 0 auto 5px;
     max-width: 330px;
+    */
   }
   #contact-form label {
     width: 22%;

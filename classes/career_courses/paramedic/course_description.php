@@ -13,7 +13,7 @@ Fast Response has developed strong relationships with Paramedics Plus, Kaiser Pe
 </p>
 
 <div style="text-align: center;"><img src="/images/stop.png" alt="STOP" style="height: 75px; width: 90px;" /></div>
-<p class="red bold" style="width: 70%; margin: 0 auto 1em;">
+<p id="paramedic_stop_msg" class="bold red">
 You must be a certified EMT with six months of experience before you can begin training as a paramedic. Please click <a href="/classes/career_courses/emt/">here</a> to get information about our EMT program.
 </p>
 </div>

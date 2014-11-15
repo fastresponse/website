@@ -11,6 +11,8 @@
 
   <meta name="description" content="The Bay Area's most comprehensive healthcare education including entry-level courses, certifications, and continuing education units." />
 
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
   <link type="text/css" rel="stylesheet" media="all" href="/css/buttons.css" />

@@ -6,14 +6,23 @@
   </div>
   <div class="body">
     <ul>
-      <li>Measles</li>
-      <li>Mumps</li>
-      <li>Rubella</li>
-      <li>Tuberculosis</li>
-      <li>Hepatitis B</li>
-      <li>Varicella Zoster (Chicken Pox)</li>
-      <li>Tetanus</li>
-      <li>Influenza</li>
+      <li>
+      Measles
+      </li><li>
+      Mumps
+      </li><li>
+      Rubella
+      </li><li>
+      Tuberculosis
+      </li><li>
+      Hepatitis B
+      </li><li>
+      Varicella
+      </li><li>
+      Tetanus
+      </li><li>
+      Influenza
+      </li>
     </ul>
     <hr />
     <?php

@@ -14,10 +14,13 @@ $links = array(
 
 // instead of Success Stories section,
 // have a small testimonial video
+/*
 $sections['left'] = array_diff($sections['left'],
   array('Testimonials')
 );
 $sections['left'][] = 'Testimonial Video';
+*/
+
 $sections['right'][] = 'Advanced CPT';
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');
