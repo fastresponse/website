@@ -20,7 +20,7 @@
       <div class="course-start-date">Sat: 9:00 AM - 6:00 PM</div>
       <ul>
         <li>246 hours of instruction over 13 weeks</li>
-        <li>160 hours of clinical externship over 4 weeks</li>
+        <li>160+ hours of clinical externship over 4 weeks</li>
       </ul>
     </td>
     </tr></table>

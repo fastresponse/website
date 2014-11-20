@@ -31,7 +31,7 @@ include_once('../includes/header.php');
 <h3>What does a Pharmacy Technician do?</h3>
 
 <p>
-Pharmacy Technicians serve as a liaison between a patient and a pharmacist. Under the supervision of a pharmacist, they supply medicines to patients, assemble medications for prescriptions, and provide information to patients and other health care professionals. They also manage areas of medicines supply, produce medicines in hospitals and they may supervise other pharmacy staff.
+Pharmacy Technicians (CPhT)s serve as a liaison between a patient and a pharmacist. Under the supervision of a pharmacist, they supply medicines to patients, assemble medications for prescriptions, and provide information to patients and other health care professionals. They also manage areas of medicines supply, produce medicines in hospitals and they may supervise other pharmacy staff.
 </p>
 
 <h3>Where does a Pharmacy Technician work?</h3>
@@ -43,7 +43,7 @@ Pharmacy Technicians work in the retail, hospital and special areas of pharmacy 
 <h3>Why become a Pharmacy Technician?</h3>
 
 <p>
-According to the United States Bureau of Labor Statistics, <em>"Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations."</em> It is a great time to get into heath care and get a career in a field you can count on.
+According to the United States Bureau of Labor Statistics, <em><q>Employment of pharmacy technicians is projected to grow 20 percent from 2012 to 2022, faster than the average for all occupations.</q></em> It is a great time to get into heath care and get a career in a field you can count on.
 </p>
 
 <h3>Why choose Fast Response?</h3>
@@ -53,7 +53,7 @@ If you want to become a highly-skilled health care professional, capable of comp
 </p>
 
 <p>
-Our Instructors are highly-trained and experienced <strong>California Registered Pharmacy Technicians</strong>. Come and learn in a dynamic and engaging classroom setting.
+Our Instructors are highly-trained and experienced <strong>California Registered Pharmacy Technicians</strong>. Come and learn in a dynamic and engaging classroom setting and in our up-to-date skills lab where you will train for both hospital and retail pharmacy jobs. On your clinical externship you will learn from pharmacists and gain confidence while interacting with real patients.
 </p>
 
 <p>
@@ -67,7 +67,7 @@ Our up-to-date skills lab provides hands-on practice for both hospital and retai
 <h3>Clinical Externship Experience</h3>
 
 <p>
-During your 160 hours in clinical setting, you will be working with a pharmacist and real patients to obtain the skills you need to get a job. Externships often lead directly to employment and can be a great way to network.
+During your 160+ hours in clinical setting, you will be working with a pharmacist and real patients to obtain the skills you need to get a job. Externships often lead directly to employment and can be a great way to network.
 </p>
 
 <h3>Becoming a Registered Pharmacy Technician</h3>
@@ -86,7 +86,7 @@ Our programs are designed for busy, adult learners. Many students can continue t
 
 <ul>
 	<li>246 hours of classroom instruction over 13 weeks</li>
-  <li>160 hours of clinical externship over 4 weeks</li>
+  <li>160+ hours of clinical externship over 4 weeks</li>
 </ul>
 
 <?php if (false): ?>

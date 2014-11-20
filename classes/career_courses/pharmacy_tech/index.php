@@ -22,9 +22,11 @@ $sections['left'] = array_diff($sections['left'],
 $sections['center'] = array_diff($sections['center'],
   array('Admissions Procedures')
 );
-array_splice(
-  $sections['left'], 5, 0, array('Admissions Procedures')
-);
+//array_splice(
+//  $sections['left'], 5, 0, array('Admissions Procedures')
+//);
+$sections['left'][] = 'Admissions Procedures';
+$sections['right'][] = 'Key Values';
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');
 ?>
