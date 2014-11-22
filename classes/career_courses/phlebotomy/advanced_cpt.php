@@ -23,6 +23,6 @@
       <li>Diploma or college coursework</li>
     </ul>
     <br />
-    <div class="bold red">Contact us for details.</div>
+    <div class="bold red"><a href="#contact-form">Contact us for details.</a></div>
   </div>
 </div>

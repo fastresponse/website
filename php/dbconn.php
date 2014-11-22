@@ -54,7 +54,9 @@ function db_query($dbh, $query, $params, $single = 0) {
   return $data;
 }
 
-function basic_query($dbh, $select, $table, $where, $order, $limit, $params) {
+function basic_query(
+  $dbh, $select, $table, $where, $order, $limit, $params
+) {
   if ($dbh == null) return;
 
   if (!($select && count($select) && $table)) return;
@@ -72,11 +74,19 @@ function basic_query($dbh, $select, $table, $where, $order, $limit, $params) {
   $sth = $dbh->prepare($query, array() );
   $sth->execute($params);
 
+  /*
   if ($limit == 0) {
     $data = $sth->fetchAll();
   }
   else {
     $data = $sth->fetch();
+  }
+  */
+  if ($limit == 1) {
+    $data = $sth->fetch();
+  }
+  else {
+    $data = $sth->fetchAll();
   }
 
   $data = htmlsafe($data);
@@ -397,10 +407,16 @@ function query_course_date(
     $result = array('showdate' => 'TBA', 'thedate' => 0);
   return $result;
 }
-function query_next_course_date($dbh, $course, $type, $date = null, $limit = 1) {
+
+function query_next_course_date(
+  $dbh, $course, $type, $date = null, $limit = 1
+) {
   return query_course_date($dbh, $course, $type, 'after', $date, $limit);
 }
-function query_prev_course_date($dbh, $course, $type, $date = null, $limit = 1) {
+
+function query_prev_course_date(
+  $dbh, $course, $type, $date = null, $limit = 1
+) {
   return query_course_date($dbh, $course, $type, 'before', $date, $limit);
 }
 

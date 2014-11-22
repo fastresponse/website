@@ -738,6 +738,7 @@ SLIDESOUT;
             <div class="body">
               <a href="/classes/career_courses/emt/">Emergency Medical Technician</a>
               <a href="/classes/career_courses/phlebotomy/">Certified Phlebotomy Technician</a>
+              <a href="/classes/career_courses/pharmacy_tech/">Pharmacy Technician</a>
               <a href="/classes/career_courses/medical_assistant/">Clinical Medical Assistant</a>
               <a href="/classes/career_courses/paramedic/">Paramedic</a>
               <a href="/classes/career_courses/sterile_processing_tech/">Sterile Processing Technician</a>

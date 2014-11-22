@@ -101,7 +101,7 @@
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
       <div class="basic-button glow-lightblue innerglow-lightblue">
-	      <a href="/pdfs/Fast Response Catalog 2013.pdf"><div>Course Catalog</div></a>
+	      <a href="/pdfs/Fast Response Catalog 2014.pdf"><div>Course Catalog</div></a>
       </div>
       <div class="basic-button image-button glow-lightblue">
         <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>
@@ -123,12 +123,18 @@
 	    </div>
 	    <div>
 	      <ul class="bullets">
-		<li><a href="/classes/career_courses/emt">EMT</a></li>
-		<li><a href="/classes/career_courses/phleotomy">Phlebotomy</a></li>
-		<li><a href="/classes/career_courses/medical_assistant">Medical Assistant</a></li>
-		<li><a href="/classes/career_courses/paramedic">Paramedic</a></li>
-		<li><a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a></li>
-              </ul>
+          <?php
+          $courses = array(
+            'EMT', 'Phlebotomy', 'Pharmacy Tech',
+            'Medical Assistant', 'Paramedic',
+            'Sterile Processing Tech',
+          );
+          foreach ($courses as $name):
+            $path = str_replace(' ', '_', strtolower($name));
+          ?>
+          <li><a href="/classes/career_courses/<?= $path ?>"><?= $name ?></a></li>
+          <?php endforeach; ?>
+        </ul>
 	    </div>
 	    <div>
 	      <img alt="EMT Auto Extrication" src="/images/EMT-Auto-Extrication2.png" />
@@ -142,17 +148,28 @@
 	    </div>
 	    <div>
 	      <ul class="bullets">
-		<li><a href="/classes/continuing_education/cpr">CPR</a></li>
-		<li><a href="/classes/continuing_education/acls">ACLS</a></li>
-		<li><a href="/classes/continuing_education/pals">PALS</a></li>
-		<li><a href="/classes/continuing_education/ecg_basic">ECG Basic</a></li>
-		<li><a href="/classes/continuing_education/12_lead_ecg">12-Lead ECG</a></li>
-		<li><a href="/classes/continuing_education/ecg_tech">ECG Technician</a></li>
-		<li><a href="/classes/continuing_education/acls_prep">ACLS Preparation</a></li>
-		<li><a href="/classes/continuing_education/itls">ITLS</a></li>
-		<li><a href="/classes/continuing_education/emt_r">EMT Refresher</a></li>
-		<li><a href="/classes/continuing_education/NREMT">NREMT</a></li>
-              </ul>
+          <?php
+          $courses = array(
+            'CPR', 'ACLS', 'PALS', 'ECG Basic',
+            'ECG 12-Lead' => '12_lead_ecg',
+            'ECG Technician' => 'ecg_tech',
+            'ACLS Preparation' => 'acls_prep',
+            'ITLS',
+            'EMT Refresher' => 'emt_r',
+          );
+          foreach ($courses as $key => $value):
+            if (is_numeric($key)) {
+              $name = $value;
+              $path = str_replace(' ', '_', strtolower($name));
+            }
+            else {
+              $name = $key;
+              $path = $value;
+            }
+          ?>
+          <li><a href="/classes/continuing_education/<?= $path ?>"><?= $name ?></a></li>
+          <?php endforeach; ?>
+        </ul>
 	    </div>
 	    <div>
 	      <img alt="Stethoscope" src="/images/ecg.png" style="height: 300px;"/>
@@ -166,9 +183,9 @@
 	    </div>
 	    <div>
 	      <ul class="bullets">
-		<li><a href="/community/cpr">CPR</a></li>
-		<li><a href="/community/first_aid">First Aid</a></li>
-              </ul>
+		      <li><a href="/community/cpr">CPR</a></li>
+		      <li><a href="/community/first_aid">First Aid</a></li>
+        </ul>
 	    </div>
 	    <div>
 	      <img alt="CPR" src="/images/CPR_Class.jpg" />

@@ -31,7 +31,7 @@
   $course_types = array('');
 
   $course_dates_type = 'separate';
-  $course_dates_limit = 0;
+  $course_dates_limit = 5;
 
   $zip_radius = 50;
 

@@ -57,74 +57,54 @@
     <li class="menuparent">
     <a href="/classes/#career">Career courses</a>
     <ul>
+      <?php
+      $courses = array(
+        'EMT', 'Phlebotomy', 'Pharmacy Tech',
+        'Medical Assistant', 'Paramedic',
+        'Sterile Processing Tech',
+      );
+      foreach ($courses as $name):
+        $path = str_replace(' ', '_', strtolower($name));
+      ?>
       <li>
-      <a href="/classes/career_courses/emt">EMT</a>
+      <a href="/classes/career_courses/<?= $path ?>"><?= $name ?></a>
       </li>
-
-      <li>
-      <a href="/classes/career_courses/phlebotomy">Phlebotomy</a>
-      </li>
-
-      <li>
-      <a href="/classes/career_courses/medical_assistant">Medical Assistant</a>
-      </li>
-
-      <li>
-      <a href="/classes/career_courses/paramedic">Paramedic</a>
-      </li> 
-
-      <li>
-      <a href="/classes/career_courses/sterile_processing_tech">Sterile Processing Tech</a>
-      </li>
+      <?php endforeach; ?>
     </ul>
     </li>
  
     <li class="menuparent">
     <a href="/classes/#continuing">Continuing Education Courses</a>
     <ul>
+      <?php
+      $courses = array(
+        'CPR', 'ACLS', 'PALS', 'ECG Basic',
+        'ECG 12-Lead' => '12_lead_ecg',
+        'ECG Technician' => 'ecg_tech',
+        'ACLS Preparation' => 'acls_prep',
+        'ITLS',
+        'EMT Refresher' => 'emt_r',
+      );
+      foreach ($courses as $key => $value):
+        if (is_numeric($key)) {
+          $name = $value;
+          $path = str_replace(' ', '_', strtolower($name));
+        }
+        else {
+          $name = $key;
+          $path = $value;
+        }
+      ?>
       <li>
-      <a href="/classes/continuing_education/cpr">CPR</a>
+      <a href="/classes/continuing_education/<?= $path ?>"><?= $name ?></a>
       </li>
+      <?php endforeach; ?>
 
+      <?php if (false): ?>
       <li>
-      <a href="/classes/continuing_education/acls">ACLS</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/pals">PALS</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/ecg_basic">ECG Basic</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/12_lead_ecg">ECG 12-Lead</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/ecg_tech">ECG Technician</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/acls_prep">ACLS Preparation</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/itls">ITLS</a>
-      </li>
-
-      <li>
-      <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
-      </li>
-
-      <!--<li>
-      <a href="/classes/continuing_education/NREMT/">NREMT</a>
-      </li>-->
-
-      <!--<li>
       <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>
-      </li>-->
+      </li>
+      <?php endif; ?>
     </ul>
     </li>
   </ul>
@@ -133,192 +113,50 @@
   <li class="menuparent">
   <a href="/resources/">Resources</a>
   <ul>
+    <?php
+    $courses = array(
+      'EMT', 'CPT', 'CMA', 'SPT',
+    );
+    foreach ($courses as $name):
+      $path = str_replace(' ', '_', strtolower($name));
+    ?>
     <li class="menuparent">
-    <a href="/resources/emt/">EMT</a>
+    <a href="/resources/<?= $path ?>/"><?= $name ?></a>
     <ul>
       <li>
-      <a href="/resources/emt/?section=forms">Forms</a>
+      <a href="/resources/<?= $path ?>/?section=forms">Forms</a>
       </li>
 
       <li>
-      <a href="/resources/emt/?section=carsvcs">Career Services</a>
+      <a href="/resources/<?= $path ?>/?section=carsvcs">Career Services</a>
       </li>
 
       <li>
-      <a href="/resources/emt/?section=resumes">Resumes</a>
+      <a href="/resources/<?= $path ?>/?section=resumes">Resumes</a>
       </li>
 
       <li>
-      <a href="/resources/emt/?section=interviews">Interview Skills</a>
+      <a href="/resources/<?= $path ?>/?section=interviews">Interview Skills</a>
       </li>
 
       <li>
-      <a href="/resources/emt/?section=jobsearch">Job Search</a>
+      <a href="/resources/<?= $path ?>/?section=jobsearch">Job Search</a>
       </li>
 
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/emt/externship_certification.php')): ?>
-	<li>
-	<a href="/resources/emt/?section=extcert">Externship &amp; Certification</a>
-	</li>
+      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/' . $path . '/externship_certification.php')): ?>
+	    <li>
+	    <a href="/resources/<?= $path ?>/?section=extcert">Externship &amp; Certification</a>
+	    </li>
       <?php endif; ?>
 
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/emt/videos.php')): ?>
-	<li>
-	<a href="/resources/emt/?section=videos">Videos</a>
-	</li>
+      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/' . $path . '/videos.php')): ?>
+	    <li>
+	    <a href="/resources/<?= $path ?>/?section=videos">Videos</a>
+	    </li>
       <?php endif; ?>
     </ul>
     </li>
-
-    <li class="menuparent">
-    <a href="/resources/cpt/">CPT</a>
-    <ul>
-      <li>
-      <a href="/resources/cpt/?section=forms">Forms</a>
-      </li>
-
-      <li>
-      <a href="/resources/cpt/?section=carsvcs">Career Services</a>
-      </li>
-
-      <li>
-      <a href="/resources/cpt/?section=resumes">Resumes</a>
-      </li>
-
-      <li>
-      <a href="/resources/cpt/?section=interviews">Interview Skills</a>
-      </li>
-
-      <li>
-      <a href="/resources/cpt/?section=jobsearch">Job Search</a>
-      </li>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/cpt/externship_certification.php')): ?>
-	<li>
-	<a href="/resources/cpt/?section=extcert">Externship &amp; Certification</a>
-	</li>
-      <?php endif; ?>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/cpt/videos.php')): ?>
-	<li>
-	<a href="/resources/cpt/?section=videos">Videos</a>
-	</li>
-      <?php endif; ?>
-    </ul>
-    </li>
-
-    <li class="menuparent">
-    <a href="/resources/cma/">CMA</a>
-    <ul>
-      <li>
-      <a href="/resources/cma/?section=forms">Forms</a>
-      </li>
-
-      <li>
-      <a href="/resources/cma/?section=carsvcs">Career Services</a>
-      </li>
-
-      <li>
-      <a href="/resources/cma/?section=resumes">Resumes</a>
-      </li>
-
-      <li>
-      <a href="/resources/cma/?section=interviews">Interview Skills</a>
-      </li>
-
-      <li>
-      <a href="/resources/cma/?section=jobsearch">Job Search</a>
-      </li>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/cma/externship_certification.php')): ?>
-	<li>
-	<a href="/resources/cma/?section=extcert">Externship &amp; Certification</a>
-	</li>
-      <?php endif; ?>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/cma/videos.php')): ?>
-	<li>
-	<a href="/resources/cma/?section=videos">Videos</a>
-	</li>
-      <?php endif; ?>
-    </ul>
-    </li>
-
-<?php if (false): // disabled this section?>
-    <li class="menuparent">
-    <a href="/resources/paramedic/">Paramedic</a>
-    <ul>
-      <li>
-      <a href="/resources/paramedic/?section=forms">Forms</a>
-      </li>
-
-      <li>
-      <a href="/resources/paramedic/?section=carsvcs">Career Services</a>
-      </li>
-
-      <li>
-      <a href="/resources/paramedic/?section=resumes">Resumes</a>
-      </li>
-
-      <li>
-      <a href="/resources/paramedic/?section=interviews">Interview Skills</a>
-      </li>
-
-      <li>
-      <a href="/resources/paramedic/?section=jobsearch">Job Search</a>
-      </li>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/paramedic/externship_certification.php')): ?>
-	<li>
-	<a href="/resources/paramedic/?section=extcert">Externship &amp; Certification</a>
-	</li>
-      <?php endif; ?>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/paramedic/videos.php')): ?>
-	<li>
-	<a href="/resources/paramedic/?section=videos">Videos</a>
-	</li>
-      <?php endif; ?>
-    </ul>
-    </li>
-<?php endif; // end disabled section ?>
-
-    <li class="menuparent">
-    <a href="/resources/spt/">SPT</a>
-    <ul>
-      <li>
-      <a href="/resources/spt/?section=forms">Forms</a>
-      </li>
-
-      <li>
-      <a href="/resources/spt/?section=carsvcs">Career Services</a>
-      </li>
-
-      <li>
-      <a href="/resources/spt/?section=resumes">Resumes</a>
-      </li>
-
-      <li>
-      <a href="/resources/spt/?section=interviews">Interview Skills</a>
-      </li>
-
-      <li>
-      <a href="/resources/spt/?section=jobsearch">Job Search</a>
-      </li>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/spt/externship_certification.php')): ?>
-	<li>
-	<a href="/resources/spt/?section=extcert">Externship &amp; Certification</a>
-	</li>
-      <?php endif; ?>
-
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/spt/videos.php')): ?>
-	<li>
-	<a href="/resources/spt/?section=videos">Videos</a>
-	</li>
-      <?php endif; ?>
-    </ul>
-    </li>
+    <?php endforeach; ?>
   </ul>
   </li>
 

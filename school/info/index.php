@@ -208,6 +208,11 @@
 		      <dt>Email:</dt> <dd><a href="mailto: phlebotomy@fastresponse.org">phlebotomy@fastresponse.org</a></dd> <br />
 	      </dl></dd>
 
+	      <dt>Pharmacy Technician Program</dt>
+	      <dd><dl>
+		      <dt>Email:</dt> <dd><a href="mailto: pharmacy@fastresponse.org">pharmacy@fastresponse.org</a></dd> <br />
+	      </dl></dd>
+
 	      <dt>Medical Assistant Program</dt>
 	      <dd><dl>
 		      <dt>Email:</dt> <dd><a href="mailto: ma@fastresponse.org">ma@fastresponse.org</a></dd> <br />
@@ -239,13 +244,13 @@
 	      <legend>Contact Us For More Information</legend>
 
 	      <p>
-		At Fast Response we strive to provide the highest quality education possible.
+		    At Fast Response we strive to provide the highest quality education possible.
 	      </p>
 	      <p>
-		For career courses, please call our Admissions Department, or enter your information below and one of our Admissions Representatives will contact you soon.
+		    For career courses, please call our Admissions Department, or enter your information below and one of our Admissions Representatives will contact you soon.
 	      </p>
-              <p>
-		For continuing education courses, please contact our Front Desk. We will be happy to answer all of your questions.
+        <p>
+		    For continuing education courses, please contact our Front Desk. We will be happy to answer all of your questions.
 	      </p>
 
      <!--<form id="ajax-contact-form" method="post" action="/school/info/contact.php">-->
@@ -257,6 +262,7 @@
 		  <option value="">&ndash; Select a program &ndash;</option>
 		  <option value="EMT">EMT</option>
 		  <option value="Phlebotomy">Phlebotomy</option>
+		  <option value="Pharmacy Technician">Pharmacy Technician</option>
 		  <option value="Clinical Medical Assistant">Medical Assistant</option>
 		  <option value="Sterile Processing">Sterile Processing</option>
 		  <option value="Paramedic">Paramedic</option>

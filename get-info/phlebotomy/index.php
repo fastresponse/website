@@ -10,7 +10,7 @@ $program_of_interest = 'Phlebotomy';
 $program_abbreviation = 'CPT';
 $program_career_name = 'Phlebotomy Technician';
 
-$hideExternalSites = false;
+$hideExternalSites = true;
 $hideTestimonials = false;
 
 $zip_radius = 75;
@@ -29,22 +29,22 @@ include_once('../includes/header.php');
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cpt-top.jpg" alt="Phlebotomy careers">
 
 <p>
-	Phlebotomists work directly with patients to collect and process blood specimens for laboratory testing. Professionals in this field play an important role in the clinical laboratory and contribute to the comfort, safety and care of patients.
+Phlebotomists work directly with patients to collect and process blood specimens for laboratory testing. Professionals in this field play an important role in the clinical laboratory and contribute to the comfort, safety and care of patients.
 </p>
 <p>
-	If you're a compassionate person interested in helping others and you're looking to start a rewarding healthcare career (<em>without spending years in school</em>), phlebotomy training could be an excellent opportunity.
+If you're a compassionate person interested in helping others and you're looking to start a rewarding healthcare career (<em>without spending years in school</em>), phlebotomy training could be an excellent opportunity.
 </p>
 
 <h3>Becoming a Qualified Phlebotomist</h3>
 
 <p>
-	The Certified Phlebotomy Technician Program from Fast Response School of Healthcare Education provides the <strong>hands-on training</strong>, practical clinic experience and industry support it takes to pursue a rewarding medical lab position.
+The Certified Phlebotomy Technician Program from Fast Response School of Healthcare Education provides the <strong>hands-on training</strong>, practical clinic experience and industry support it takes to pursue a rewarding medical lab position.
 </p>
 <p>
-Topics covered in this course include anatomy and physiology, laboratory safety, infection control precautions, blood-borne pathogens, specimen collection, and proper needle disposal.<!-- <strong>ECG</strong> and <strong>CPR</strong> courses are also included at no charge. -->
+Topics covered in this course include anatomy and physiology, laboratory safety, infection control precautions, blood-borne pathogens, specimen collection, and proper needle disposal. A <strong>free CPR training class</strong> is included as well.
 </p>
 <p>
-	Note: Advanced Certification is available for practicing phlebotomists who need to obtain their CPT-1 under the new CA State standards.
+Note: Advanced Certification is available for practicing phlebotomists who need to obtain their CPT-1 under the new CA State standards.
 </p>
 
 
@@ -52,17 +52,17 @@ Topics covered in this course include anatomy and physiology, laboratory safety,
 <h3>Clinical Externship - On-the-Job Experience</h3>
 
 <p>
-	Phlebotomy is a hands-on career, and at Fast Response we believe that's how it should be taught. As a student in the Phlebotomy Program you'll complete a professional clinical externship in a <strong>real medical lab environment</strong>. Externships are a great way to get a feel for different aspects of a career and make valuable industry contacts.
+Phlebotomy is a hands-on career, and at Fast Response we believe that's how it should be taught. As a student in the Phlebotomy Program you'll complete a professional clinical externship in a <strong>real medical lab environment</strong>. Externships are a great way to get a feel for different aspects of a career and make valuable industry contacts.
 </p>
 <p>
-	Graduates of this program are fully prepared and feel confident in professional lab environments after gaining so much practical, real-world experience.
+Graduates of this program are fully prepared and feel confident in professional lab environments after gaining so much practical, real-world experience.
 </p>
 
 
 <h3>Convenient Day or Evening Schedules</h3>
 
 <p>
-	Fast Response programs are designed for busy, adult learners. Many students are raising families and/or continuing working while going to school. Choose from flexible full or part-time options.
+Fast Response programs are designed for busy, adult learners. Many students are raising families and/or continuing working while going to school. Choose from flexible full or part-time options.
 </p>
 
 <ul>
@@ -76,7 +76,7 @@ Topics covered in this course include anatomy and physiology, laboratory safety,
 <h3>Get the Support You Need to Launch a Successful Career</h3>
 
 <p>
-	Healthcare training isn't about getting a diploma - it's about getting a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with things like resume preparation, interview techniques and job searches.
+Healthcare training isn't about getting a diploma - it's about getting a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with things like resume preparation, interview techniques and job searches.
 </p>
 
 <p>Payment plans are available for those that qualify.</p>

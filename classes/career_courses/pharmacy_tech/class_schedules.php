@@ -12,7 +12,7 @@
         $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
       ?>
       <h2 class="course-start-title">Class Start Dates</h2>
-      <?= $course_dates['Part-time'] ?>
+      <div class="course-start-date"><?= $course_dates['Part-time'] ?></div>
     </td>
     <td>
       <h2 class="course-start-title">Class Hours</h2>

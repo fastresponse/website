@@ -18,8 +18,7 @@ jQuery(document).ready(function() {
 <div class="module article-box">
   <div class="title">
     <div class="title-border">
-      <h1>Full-time Schedule</h1>
-      <h2>Two Week Course</h2>
+      <h1>Class Schedule</h1>
     </div>
   </div>
   <div class="body">
