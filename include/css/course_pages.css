@@ -179,6 +179,19 @@
   margin-top: 0;
 }
 
+#ceu_promotions .body a,
+#ceu_announcements .body a,
+#books .body a {
+  display: inline;
+}
+
+.dashed-box {
+  display: inline-block;
+  border: 1px dashed red;
+  padding: 0 2px;
+}
+
+
 #paramedic_stop_msg {
   width: 70%;
   margin: 0 auto 1em;

@@ -36,6 +36,11 @@
     h2 {
       margin-top: 1.5em;
     }
+    .dashed-box {
+      display: inline-block;
+      border: 1px dashed red;
+      padding: 0 2px;
+    }
   </style>
 
 </head>
@@ -94,7 +99,7 @@ $course_abbr = 'BLS';
 
 $announcement_sections[] = <<<SECT1
 <h3 style="margin-top: 0; text-align: center;"><strong class="underline">2010 AHA BLS Student Manual</strong></h3>
-<div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901038.htm" class="yellow">here</a> or purchase at Fast Response for <span style="display: inline-block; border: 1px dashed red; padding: 0 2px;">$20</span> (Monday - Friday only).</div>
+<div class="yellow">Order online <a href="http://www.emergencystuff.com/product-p/901038.htm" class="yellow">here</a> or purchase at Fast Response for <span class="dashed-box">$20</span> (Monday - Friday only).</div>
 <div style="margin-top: 1em; font-size: 90%;">* Required for class.<br />* Not included in course fees.</div>
 SECT1;
     include('../ceu_include.php');
@@ -112,6 +117,7 @@ SECT1;
 	    <li><span style="font-weight: bold;" class="green">Taken for the first time, or for those with an expired CPR card.</span></li>
 	    <li>The class is 4.5 to 5 hours in length.</li>
 	    <li>AHA Certification valid for 2 years.</li>
+      <li><span class="dashed-box">$50.00</span>, plus book.</li>
 	  </ul>
 
 	  <img alt="" src="/images/CPR_Class.jpg" style="margin-left: 50px; float: right;">
@@ -125,6 +131,7 @@ SECT1;
 	  <ul class="bullets">
 	    <li>The class is 3.5 hours in length.</li>
 	    <li>AHA Certification is valid for 2 years.</li>
+      <li><span class="dashed-box">$45.00</span>, plus book.</li>
 	  </ul>
 
 	  <h2 class="yellow"><a name="elearning">BLS eLearning (AHA)</a></h2>
@@ -136,8 +143,8 @@ SECT1;
 	  <p style="font-weight: bold;" class="orange squaredup">Students must take the skills and testing course within 60 days of completing the online course.</p>
 
 	  <ul class="bullets">
-	    <li>The online class is 1-2 hours in length.</li>
-	    <li>Skills practice and testing session is 1.5 hours in length.</li>
+	    <li>The online class is 1-2 hours in length. Cost: <span class="dashed-box">$22.00</span></li>
+	    <li>Skills practice and testing session is 1.5 hours in length. Cost: <span class="dashed-box">$35.00</span></li>
 	    <li>AHA Certification is valid for 2 years.</li>
 	    <li>System requirements listed in <a href="http://www.heart.org/idc/groups/heart-public/@wcm/@ecc/documents/downloadable/ucm_426256.pdf">this FAQ document</a> by the AHA.</li>
 	  </ul>

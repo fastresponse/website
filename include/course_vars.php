@@ -100,7 +100,6 @@
     $sections['right'] = array(
       'Course Approvals',
       'Registration',
-      'Books',
       'CEU Announcements',
       'Staff',
     );
@@ -108,6 +107,7 @@
     $sections['center'] = array(
       //'Send to a Friend',
       'Course Description',
+      'Books',
       'Class Start Dates',
       'Class Schedules',
       //'FAQs List',
