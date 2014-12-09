@@ -37,11 +37,7 @@
 
   $head_code = '';
 
-  $global_links = array(
-    'School Catalog',
-    'Wonderlic SLE Study Guide',
-    'Wonderlic SLE Sample Test',
-  );  
+  $global_links = array();
   $links = array();
   
   $global_faqs = array(
@@ -61,6 +57,10 @@
   switch ($category) {
 
   case 'ceu':
+
+    $global_links = array(
+      'View Calendar',
+    );
 
     $sections['mobile headers'] = array(
       'Page Logo',
@@ -93,14 +93,14 @@
     $sections['left'] = array(
       'Slideshow',
       'Announcements',
-      'Contact Info',
-      'CEU Promotions',
+      'Registration',
+      'CEU Announcements',
     );
 
     $sections['right'] = array(
       'Course Approvals',
-      'Registration',
-      'CEU Announcements',
+      'Contact Info',
+      'CEU Promotions',
       'Staff',
     );
 
@@ -119,6 +119,12 @@
 
   default:
   case 'postsec':
+
+    $global_links = array(
+      'School Catalog',
+      'Wonderlic SLE Study Guide',
+      'Wonderlic SLE Sample Test',
+    );  
 
     $sections['mobile headers'] = array(
       'Page Logo',
@@ -209,8 +215,15 @@
     }
   }
 
+  function url_new_tab($url) {
+    if (strpos($url, 'http://') === 0) return true;
+    if (strpos($url, 'https://') === 0) return true;
+    if (strrpos($url, '.pdf') === strlen($url)-1) return true;
+    return false;
+  }
+
   function query_links_from_db() {
-    global $handle, $global_links, $links;
+    global $handle, $global_links, $links, $category;
 
     // pre-lookup links
     // from:
@@ -218,11 +231,11 @@
     // to:
     // 'text 1' => array('link' => 'http://etc.com', 'target' => '_blank')
 
-    $query_links = function($dbh, $textarr) {
+    $query_links = function($dbh, $category, $textarr) {
       $textstr = "'" . implode("','", $textarr) . "'";
       return basic_query($dbh,
-        array('text', 'link', 'target'),
-        'buttons',
+        array('text', 'link'),
+        'links_' . $category,
         array('text in (' . $textstr . ')'),
         'FIELD(text, ' . $textstr . ')',
         0, array()
@@ -230,20 +243,14 @@
     };
 
     $new_global = array();
-    foreach ($query_links($handle, $global_links) as $link_data) {
-      $new_global[$link_data['text']] = array(
-        'link' => $link_data['link'],
-        'target' => $link_data['target']
-      );
+    foreach ($query_links($handle, $category, $global_links) as $link_data) {
+      $new_global[$link_data['text']] = $link_data['link'];
     }
     $global_links = $new_global;
 
     $new_links = array();
-    foreach ($query_links($handle, $links) as $link_data) {
-      $new_links[$link_data['text']] = array(
-        'link' => $link_data['link'],
-        'target' => $link_data['target']
-      );
+    foreach ($query_links($handle, $category, $links) as $link_data) {
+      $new_links[$link_data['text']] = $link_data['link'];
     }
     $links = $new_links;
   }

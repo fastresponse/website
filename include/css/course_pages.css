@@ -185,10 +185,12 @@
   display: inline;
 }
 
-.dashed-box {
+.price {
   display: inline-block;
-  border: 1px dashed red;
+  border: 1px dashed #DD0033;
   padding: 0 2px;
+  color: #FFFF99;
+  /*background-color: #DD0033;*/
 }
 
 
@@ -220,7 +222,7 @@
 }
 #contact_info dt {
   display: inline-block;
-  width: 20%;
+  width: 22%;
 }
 #contact_info dd {
   display: inline-block;

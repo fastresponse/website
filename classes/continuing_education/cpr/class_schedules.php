@@ -8,7 +8,7 @@
       <ul>
         <li>For first time students and anyone with an expired BLS card.</li>
         <li>Class is 5 hours in length.</li>
-        <li>Course price: <span class="dashed-box">$50.00</span>.</li>
+        <li>Course price: <span class="price">$50.00</span></li>
       </ul>
     </div><div class="col">
       <h2 class="course-start-title">Renewal</h2>
@@ -16,7 +16,7 @@
         <li>For those with a current BLS card.</li>
         <li>Card must be presented to instructor in class.</li>
         <li>Class is 3.5 hours in length.</li>
-        <li>Course price: <span class="dashed-box">$45.00</span>.</li>
+        <li>Course price: <span class="price">$45.00</span></li>
       </ul>
     </div>
     <hr />
@@ -28,8 +28,8 @@
         <li>Can be used for either initial certification or renewal.</li>
         <li>Online course (part 1) is 1-2 hours in length.</li>
         <li>Skills practice and testing (parts 2 and 3) session is 1.5 hours in length.</li>
-        <li>Online course price: <span class="dashed-box">$22.00</span>.</li>
-        <li>Skills practice and testing session price: <span class="dashed-box">$35.00</span>.</li>
+        <li>Online course price: <span class="price">$22.00</span>.</li>
+        <li>Skills practice and testing session price: <span class="price">$35.00</span>.</li>
         <li>System requirements listed in <a href="http://www.heart.org/idc/groups/heart-public/@wcm/@ecc/documents/downloadable/ucm_426256.pdf" target="_blank">this FAQ document</a> by the AHA.</li>
       </ul>
     </div>

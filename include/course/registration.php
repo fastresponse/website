@@ -6,8 +6,12 @@
   </div>
   <div class="body">
     <ul>
-      <li><a href="http://www.ssreg.com/fastresponse/calendar.asp?page=Calendar" target="_blank"><button type="button">View CEU Calendar</button></a></li>
-      <li><a href="<?= $registration_link ?>" target="_blank"><button type="button">Register for this class</button></a></li>
+      <?php foreach ($global_links as $link_text => $link_url): ?>
+      <li><a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><button type="button"><?= $link_text ?></button></a></li>
+      <?php endforeach; ?>
+      <?php foreach ($links as $link_text => $link_url): ?>
+      <li><a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><button type="button"><?= $link_text ?></button></a></li>
+      <?php endforeach; ?>
     </ul>
   </div>
 </div>

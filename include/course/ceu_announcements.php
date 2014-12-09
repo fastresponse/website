@@ -12,6 +12,6 @@
       <li>WestMed Ambulance</li>
       <li>Pro Transport-1</li>
     </ul>
-	  <p class="red">You must register by phone at <a href="tel://1-510-849-4009">510-849-4009</a>. Online registrations are not permitted.</p>
+	  <p class="red" style="font-size: 90%;">You must register by phone at <a href="tel://1-510-849-4009" style="white-space: nowrap;">510-849-4009</a>. Online registrations are not permitted.</p>
   </div>
 </div>

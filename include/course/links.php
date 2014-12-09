@@ -7,12 +7,12 @@
   <div class="body">
     <ul>
       <!--<li><a id="link_send" href="#send_to_a_friend">Send to a Friend</a></li>-->
-      <?php foreach ($global_links as $link_text => $link_data): ?>
-      <li><a href="<?= $link_data['link'] ?>" <?= ($link_data['target'] ? "target=\"{$link_data['target']}\"" : '') ?>><?= $link_text ?></a></li>
+      <?php foreach ($global_links as $link_text => $link_url): ?>
+      <li><a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><?= $link_text ?></a></li>
       <?php endforeach; ?>
       <hr />
-      <?php foreach ($links as $link_text => $link_data): ?>
-      <li><a href="<?= $link_data['link'] ?>" <?= ($link_data['target'] ? "target=\"{$link_data['target']}\"" : '') ?>><?= $link_text ?></a></li>
+      <?php foreach ($links as $link_text => $link_url): ?>
+      <li><a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><?= $link_text ?></a></li>
       <?php endforeach; ?>
     </ul>
   </div>
