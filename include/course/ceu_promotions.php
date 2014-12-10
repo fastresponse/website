@@ -49,7 +49,8 @@
 
     <hr />
 
-    <p class="yellow">In order to receive any discount, you must register by phone at <a href="tel://1-510-849-4009" class="red" style="white-space: nowrap;">510-849-4009</a>. Online registrations will <span class="underline">not</span> receive a discount.</p>
+    <p class="yellow">Please register by phone at <a href="tel://1-510-849-4009" class="red" style="white-space: nowrap;">510-849-4009</a> in order to receive a discount.</p>
+    <p class="yellow">Online registrations will <span class="underline">not</span> receive a discount.</p>
     <p class="yellow">Discounts do not apply to any required course books.</p>
     <p class="yellow" style="margin-bottom: 0;">Multiple discounts may not be combined.</p>
 

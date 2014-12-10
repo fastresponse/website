@@ -1,7 +1,7 @@
 <div id="ceu_announcements" class="module article-box">
   <div class="title">
     <div class="title-border">
-      <h1 class="red underline">Attention</h1>
+      <h1>Attention</h1>
     </div>
   </div>
   <div class="body">
@@ -12,6 +12,6 @@
       <li>WestMed Ambulance</li>
       <li>Pro Transport-1</li>
     </ul>
-	  <p class="red" style="font-size: 90%;">You must register by phone at <a href="tel://1-510-849-4009" style="white-space: nowrap;">510-849-4009</a>. Online registrations are not permitted.</p>
+	  <p class="red" style="font-size: 90%; margin-bottom: 0;">You must register by phone at <a href="tel://1-510-849-4009" style="white-space: nowrap;">510-849-4009</a>. Online registrations are not permitted.</p>
   </div>
 </div>

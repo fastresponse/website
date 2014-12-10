@@ -213,18 +213,45 @@
   text-align: center;
 }
 #registration button {
-  background-color: #dd0033;
+  color: white;
+  background-color: #DD0033;
   border: 3px solid rgba(0,0,0,0.50);
   border-top: none;
   border-radius: 10px;
-  padding: 5px 8px;
-  color: white;
+  padding: 8px 8px;
+  margin: 5px;
+  width: 85%;
 }
-#contact_info dt {
+#registration button:hover {
+  background-color: #BB0022;
+  border-color: rgba(0,0,0,0.65);
+  color: #FFFF99;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#registration a:first-child button {
+  margin-top: 0;
+}
+#registration button:active {
+  background-color: #AA0011;
+  font-weight: bold;
+}
+#registration a {
+  display: inline;
+}
+#registration dl {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  margin-top: 10px;
+}
+#contact_info dt,
+#registration dt {
   display: inline-block;
   width: 22%;
 }
-#contact_info dd {
+#contact_info dd,
+#registration dd {
   display: inline-block;
   width: 75%;
 }
@@ -506,6 +533,7 @@ div.fill {
 #class_schedules .body table td h4 {
   margin-top: 0;
 }
+/*
 #class_schedules .body div.col:first-child {
   border-right: dotted 1px rgb(90, 90, 90);
   padding-left: 5px;
@@ -517,6 +545,9 @@ div.fill {
   padding-left: 10px;
   vertical-align: top;
 }
+#class_schedules .body div.col:first-child + hr {
+}
+*/
 #tuition_and_fees .body table tbody td {
   border-bottom: dotted 1px rgb(90, 90, 90);
 }
@@ -582,6 +613,22 @@ div.highlight:hover {
 }
 
 
+@media (min-width: 1024px) {
+  #class_schedules .body div.col:first-child + hr {
+    display: none;
+  }
+  #class_schedules .body div.col:first-child {
+    border-right: dotted 1px rgb(90, 90, 90);
+    padding-left: 5px;
+  }
+  #class_schedules .body div.col {
+    display: inline-block;
+    width: 50%;
+    padding: 5px;
+    padding-left: 10px;
+    vertical-align: top;
+  }
+}
 
 @media (max-width: 1023px) and (min-width: 640px) {
   #menu {

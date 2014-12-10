@@ -74,8 +74,7 @@
       'Prerequisites',
       'Class Start Dates',
       'Class Schedules',
-      'Tuition and Fees',
-      'Contact Info',
+      'Registration',
     );
 
     $sections['head'] = array(
@@ -99,20 +98,15 @@
 
     $sections['right'] = array(
       'Course Approvals',
-      'Contact Info',
+      'Books',
       'CEU Promotions',
       'Staff',
     );
 
     $sections['center'] = array(
-      //'Send to a Friend',
       'Course Description',
-      'Books',
       'Class Start Dates',
       'Class Schedules',
-      //'FAQs List',
-      'Prerequisites',
-      'Tuition And Fees',
     );
   break;
 
