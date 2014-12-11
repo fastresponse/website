@@ -21,6 +21,7 @@ $video_numbers = array(
 );
 
 $hideTestimonials = true;
+$hideExternalSites = true;
 
 include_once('../includes/header.php');
 

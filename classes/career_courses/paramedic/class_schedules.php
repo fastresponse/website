@@ -1,4 +1,21 @@
 <div id="class_schedules" class="module article-box">
+
+<?php
+  $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
+?>
+
+<script type="text/javascript">
+jQuery.fn.sameHeight || document.write(
+  '<script src="/js/jquery.sameheight.js"><\/script>'
+);
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('.sameheight1').sameHeight();
+});
+</script>
+
   <div class="title">
     <div class="title-border">
       <h1>Full-time Schedule</h1>
@@ -6,11 +23,7 @@
     </div>
   </div>
   <div class="body">
-    <table><tr>
-    <td>
-      <?php
-        $course_dates = get_course_dates_list($handle, $course_abbr, $course_types);
-      ?>
+    <div class="col sameheight1">
       <?php if (false): ?>
       <h2 class="course-start-title">Application Deadline</h2>
       <?= $course_dates['Application Deadline'] ?>
@@ -19,8 +32,7 @@
       <?= $course_dates['Anatomy and Physiology'] ?>
       <h2 class="course-start-title">Academy Start Date</h2>
       <?= $course_dates['Academy Start'] ?>
-    </td>
-    <td>
+    </div><hr class="hide-large" /><div class="col sameheight1">
       <h2 class="course-start-title">Class Hours</h2>
       <div class="course-start-date">Mon - Wed, 9:00 AM - 6:00 PM</div>
       <ul style="margin-top: 20px;">
@@ -29,7 +41,6 @@
         <li>208+ hours of clinical internship</li>
         <li>480+ hours of field internship</li>
       </ul>
-    </td>
-    </tr></table>
+    </div>
   </div>
 </div><!-- /article-box -->

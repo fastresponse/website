@@ -22,8 +22,7 @@ jQuery(document).ready(function() {
     </div>
   </div>
   <div class="body">
-    <table><tr>
-    <td>
+    <div class="col sameheight1">
       <h2 class="course-start-title">Full-time Start Dates</h2>
       <div class="course-start-date sameheight1">
         <?= $course_dates['Full-time'] ?>
@@ -35,8 +34,7 @@ jQuery(document).ready(function() {
         <li>65 hours instruction and laboratory practice</li>
         <li>80+ hours of clinical externship</li>
       </ul>
-    </td>
-    <td>
+    </div><hr class="hide-large" /><div class="col sameheight1">
       <h2 class="course-start-title">Part-time Start Dates</h2>
       <div class="course-start-date sameheight1">
         <?= $course_dates['Part-time'] ?>
@@ -48,7 +46,6 @@ jQuery(document).ready(function() {
         <li>65 hours of instruction and laboratory practice</li>
         <li>80+ hours of clinical externship</li>
       </ul>
-    </td>
-    </tr></table>
+    </div>
   </div>
 </div><!-- /article-box -->

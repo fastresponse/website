@@ -17,7 +17,7 @@ $links = array(
 $zip_radius = 50;
 
 $sections['left'] = array_diff($sections['left'],
-  array('Gallery Link', 'Testimonials')
+  array('Externship', 'Gallery Link', 'Testimonials')
 );
 $sections['center'] = array_diff($sections['center'],
   array('Admissions Procedures')

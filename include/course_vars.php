@@ -210,9 +210,10 @@
   }
 
   function url_new_tab($url) {
+    $url = strtolower($url);
     if (strpos($url, 'http://') === 0) return true;
     if (strpos($url, 'https://') === 0) return true;
-    if (strrpos($url, '.pdf') === strlen($url)-1) return true;
+    if (substr($url, -4) == '.pdf') return true;
     return false;
   }
 
