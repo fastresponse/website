@@ -37,7 +37,7 @@ jQuery(document).ready(function() {
       <h2 class="course-start-title">Phlebotomy Part-time Hours</h2>
       <div class="course-start-date">Mon - Fri, 6:00 PM - 10:00 PM</div>
       <h2 class="course-start-title">Medical Assistant Evening Hours</h2>
-      <div class="course-start-date">Mon - Fri, 6:00 PM - 9:00PM</div>
+      <div class="course-start-date">Mon - Thu, 6:00 PM - 10:00PM</div>
     </div><hr class="hide-large" /><br class="hide-small" /><div class="col sameheight2">
       <h4><a style="color: white; text-decoration: none;" href="/classes/career_courses/phlebotomy/">Phlebotomy</a></h4>
       <p>Two week full time or four week part time courses</p>

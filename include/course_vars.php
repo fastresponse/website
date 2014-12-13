@@ -209,6 +209,42 @@
     }
   }
 
+  function module_remove($names, $part = null) {
+    global $sections;
+    if (!isset($names)) return;
+    if (!is_array($names))
+      $names = array($names);
+
+    if ($part != null) {
+      $sections[$part] = array_diff($sections[$part], $names);
+    }
+    else {
+      foreach ($sections as $part => &$modules) {
+        $modules = array_diff($modules, $names);
+      }
+    }
+  }
+  function module_add($names, $part) {
+    global $sections;
+    if (!isset($names) || !isset($part)) return;
+    if (!is_array($names))
+      $names = array($names);
+
+    $sections[$part] = array_merge($sections[$part], $names);
+  }
+  function module_insert($names, $part, $num) {
+    global $sections;
+    if (!isset($names) || !isset($part)) return;
+    if (!is_array($names))
+      $names = array($names);
+
+    array_splice($sections[$part], $num, 0, $names);
+  }
+  function module_move($names, $part, $num) {
+    module_remove($names);
+    module_insert($names, $part, $num);
+  }
+
   function url_new_tab($url) {
     $url = strtolower($url);
     if (strpos($url, 'http://') === 0) return true;
