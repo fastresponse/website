@@ -666,9 +666,19 @@ SLIDESOUT;
           -->
 
 	        <div class="banner">
+	          <a href="/classes/career_courses/pharmacy_tech/" class="btn buttontext lines-2 glow-red">
+	            <div>
+                <div style="font-size: 115%;">Pharmacy Technician classes in 2015</div>
+                <div style="font-size: 115%; margin-top: 3px;" class="red">Now Enrolling</div>
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+
+	        <div class="banner">
 	          <a href="/classes/career_courses/medical_assistant/" class="btn buttontext lines-1 glow-yellow">
 	            <div>
-                <div style="font-size: 115%;">Evening Medical Assistant classes</div>
+                Evening Medical Assistant classes
 	            </div>
 	            <span></span>
 	          </a>
@@ -754,7 +764,6 @@ SLIDESOUT;
               <a href="/resources/emt/">EMT Resources</a>
               <a href="/resources/cpt/">CPT Resources</a>
               <a href="/resources/cma/">CMA Resources</a>
-              <!--<a href="/resources/paramedic/">Paramedic Resources</a>-->
               <a href="/resources/spt/">SPT Resources</a>
             </div>
           </div><!-- /link-column --><div class="link-column cols-2">
@@ -767,15 +776,11 @@ SLIDESOUT;
             <div class="body">
               <a href="/classes/continuing_education/cpr/">Healthcare Provider CPR (BLS)</a>
               <a href="/classes/continuing_education/ecg_basic/">ECG Basic</a>
-              <a href="/classes/continuing_education/acls/">Advanced Cardiac Life Support (ACLS)</a>
-              <a href="/classes/continuing_education/12_lead_ecg">ECG 12-Lead</a>
-              <a href="/classes/continuing_education/pals/">Pediatric Advanced Life Support (PALS)</a>
+              <a href="/classes/continuing_education/acls/">Advanced Cardiovascular Life Support (ACLS)</a>
               <a href="/classes/continuing_education/ecg_tech/">ECG Technician</a>
-              <a href="/classes/continuing_education/acls_prep/">ACLS Preparation</a>
-              <a href="/classes/continuing_education/itls/">International Trauma Life Support (ITLS)</a>
+              <a href="/classes/continuing_education/pals/">Pediatric Advanced Life Support (PALS)</a>
               <a href="/classes/continuing_education/emt_r/">EMT Refresher</a>
-              <!--<a href="/classes/continuing_education/NREMT/">NREMT</a>-->
-              <!--<a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a>-->
+              <?php if (false): ?><a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Paramedic Anatomy &amp; Physiology</a><?php endif; ?>
             </div>
           </div><!-- /link-column -->
 

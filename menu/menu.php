@@ -79,10 +79,7 @@
       <?php
       $courses = array(
         'CPR', 'ACLS', 'PALS', 'ECG Basic',
-        'ECG 12-Lead' => '12_lead_ecg',
         'ECG Technician' => 'ecg_tech',
-        'ACLS Preparation' => 'acls_prep',
-        'ITLS',
         'EMT Refresher' => 'emt_r',
       );
       foreach ($courses as $key => $value):

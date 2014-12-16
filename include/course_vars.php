@@ -232,7 +232,7 @@
 
     $sections[$part] = array_merge($sections[$part], $names);
   }
-  function module_insert($names, $part, $num) {
+  function module_insert($names, $part, $num = -1) {
     global $sections;
     if (!isset($names) || !isset($part)) return;
     if (!is_array($names))
@@ -240,7 +240,7 @@
 
     array_splice($sections[$part], $num, 0, $names);
   }
-  function module_move($names, $part, $num) {
+  function module_move($names, $part, $num = -1) {
     module_remove($names);
     module_insert($names, $part, $num);
   }

@@ -21,20 +21,7 @@
   <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/fastresponse/css/ie7.css";</style><![endif]-->
   <!--[if lte IE 8]><style type="text/css" media="all">@import "/css/buttons-ie.css";</style><![endif]-->
 
-
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18170901-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-  </script>
+  <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/php/analytics_google.php'); ?>
 
   <style type="text/css">
     #class-sections .section {
@@ -151,10 +138,7 @@
           <?php
           $courses = array(
             'CPR', 'ACLS', 'PALS', 'ECG Basic',
-            'ECG 12-Lead' => '12_lead_ecg',
             'ECG Technician' => 'ecg_tech',
-            'ACLS Preparation' => 'acls_prep',
-            'ITLS',
             'EMT Refresher' => 'emt_r',
           );
           foreach ($courses as $key => $value):
