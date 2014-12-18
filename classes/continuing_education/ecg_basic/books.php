@@ -17,12 +17,12 @@ jQuery(document).ready(function() {
   </div>
   <div class="body">
     <div class="col sameheight1">
-      <p class="underline">ECGs Made Easy Pocket Reference, 4th Edition</p>
+      <p class="underline">ECGs Made Easy Book and Pocket Reference, <span style="white-space: nowrap;">5th Edition</span></p>
       <ul>
         <li><span class="bold yellow">Recommended</span></li>
         <li><dl>
-          <dt>ISBN:</dt><dd>0323069282</dd>
-          <dt>ISBN-13:</dt><dd>9780323069281</dd>
+          <dt>ISBN:</dt><dd>0323101062</dd>
+          <dt>ISBN-13:</dt><dd>9780323101066</dd>
         </dl></li>
         <li>Not available for purchase at Fast Response.</li>
       </ul>
