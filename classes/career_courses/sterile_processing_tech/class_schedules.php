@@ -20,9 +20,15 @@
       </div>
     </div><hr class="hide-large" /><div class="col">
       <ul style="margin-top: 5px;">
-        <li>Ten weeks of instruction</li>
-        <li>200 hours instruction and skills practice</li>
-        <li>200 hours of field externship</li>
+        <li>Ten weeks of instruction and skills practice</li>
+        <ul>
+          <li>Total of 200 hours</li>
+        </ul>
+        <li>Five weeks of field externship</li>
+        <ul>
+          <li>Full-time, 8 hours per day, Mon - Fri</li>
+          <li>Total of 200 hours</li>
+        </ul>
       </ul>
     </div>
   </div>

@@ -30,6 +30,8 @@
         <tr><td colspan="3"></td></tr>
       </tfoot>
       <tbody>
+        <tr><td>Scrubs</td><td>$20.00</td><td class="notes-col"></td></tr>
+        <tr><td>Drug Screen</td><td>$55.00</td><td class="notes-col"></td></tr>
         <tr><td>IAHCSMM CRCST Exam</td><td>$125.00</td><td class="notes-col">Highly recommended for all graduates.</td></tr>
         <tr><td>Immunizations</td><td>varies</td><td></td></tr>
       </tbody>
