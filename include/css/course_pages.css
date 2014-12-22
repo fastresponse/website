@@ -385,10 +385,20 @@
 .sidebar #admissions_procedures .body>ul {
   font-size: 90%;
 }
+/*
 .sidebar #admissions_procedures .body ul ul {
   margin: 0.5em 0 1em 20px;
 }
 .sidebar #admissions_procedures .body ul ul li {
+  display: list-item;
+}
+*/
+.sidebar .article-box .body ul ul {
+  list-style-type: disc;
+  line-height: 0.95em;
+  margin: 0.5em 0 1em 20px;
+}
+.sidebar .article-box .body ul ul li {
   display: list-item;
 }
 

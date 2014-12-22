@@ -18,6 +18,11 @@
     <div class="bold yellow">Requirements:</div>
     <ul style="margin-top: 0.5em; margin-left: 10px; padding-left: 0;">
       <li>1040 hours of experience</li>
+      <ul>
+        <li>Within the past 5 years</li>
+        <li>In the state of California</li>
+        <li>Documented by a Medical Doctor</li>
+      </ul>
       <li>50 venipunctures</li>
       <li>10 skin punctures</li>
       <li>Diploma or college coursework</li>

@@ -10,8 +10,6 @@
       <li>Pediatric Advanced Life Support (PALS)</li>
       <li>Advanced Cardiac Life Support (ACLS)</li>
       <li>International Trauma Life Support (ITLS)</li>
-      <li>Geriatric Education for Emergency Medical Services (GEMS)</li>
-      <li>Emergency Medical Patient Assessment, Care, and Transport (EMPACT)</li>
     </ul>
   </div>
 </div>

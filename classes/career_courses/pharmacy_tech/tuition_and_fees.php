@@ -7,7 +7,7 @@
   <div class="body">
     <table style="margin: 0 auto;" class="row-highlight">
       <tfoot>
-        <tr><td>Total</td><td>$4,260.00</td><td></td></tr>
+        <tr><td>Total</td><td>$4,290.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
@@ -15,6 +15,7 @@
         <tr><td>Insurance</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Tuition</td><td>$3,158.00</td><td class="notes-col"></td></tr>
         <tr><td>Books</td><td>$150.00</td><td class="notes-col"></td></tr>
+        <tr><td>Lab Coat</td><td>$30.00</td><td class="notes-col">Required to attend</td></tr>
         <tr><td>Clinical Externship</td><td>$300.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>
         <tr><td>STRF</td><td>$2.00</td><td class="notes-col">Non-Refundable ($0.50 for every $1000.00, rounded to the nearest $1000.00.)</td></tr>
       </tbody>
