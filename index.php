@@ -551,16 +551,28 @@ SLIDESOUT;
       }
     }
 
-    .phone-addr {
-      margin: 0 0 2em 1.25em;
+    .phone-addr,
+    .biz-hours,
+    .holiday-hours {
+      margin: 0 0 1em 1.25em;
       font-size: 92%;
       font-weight: bold;
       font-style: italic;
       line-height: 1.3em;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.1em;
     }
     .phone-addr a {
       text-decoration: none;
+    }
+    .biz-hours {
+      margin-bottom: 2em;
+    }
+    .holiday-hours {
+      border: solid 2px red;
+      border-radius: 25px;
+      padding: 10px;
+      margin: 1em;
+      text-align: center;
     }
 
   </style>
@@ -583,6 +595,7 @@ SLIDESOUT;
           <a href="http://www.google.com/maps/place/2075+Allston+Way+Berkeley+CA+94704/">2075 Allston Way<br />
           Berkeley, CA 94704</a>
         </div>
+        <p class="biz-hours">Office hours 9:00 AM to 5:00 PM</p>
       </div>
       <div class="rightcontent2">
 
@@ -620,7 +633,11 @@ SLIDESOUT;
         </div>
 	      
         <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
+
+        <div class="holiday-hours">Our office will be <span class="red">closed</span> on <span class="underline" style="white-space: nowrap;">Monday, January 19th, 2015</span> in observation of <span style="white-space: nowrap;">Martin Luther King, Jr Day</span></div>
+
       </div>
+
       <div class="clearfix"></div>
     </div> <!-- /head -->
 
