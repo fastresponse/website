@@ -10,7 +10,7 @@
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
       <tfoot>
-        <tr><td>Total</td><td>$2,475.00</td><td></td></tr>
+        <tr><td>Total</td><td>$2,573.50</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
@@ -19,8 +19,7 @@
         <tr><td>Textbooks</td><td>$225.00</td><td class="notes-col">Non-Refundable unless returned unopened</td></tr>
         <tr><td>Equipment</td><td>$50.00</td><td class="notes-col">Includes blood pressure cuff, stethoscope, penlight, and trauma shears</td></tr>
         <tr><td>Uniform Patches</td><td>$5.00</td><td class="notes-col"></td></tr>
-        <tr><td>STRF</td><td>$1.00</td><td class="notes-col">Non-Refundable ($0.50 for every $1000.00, rounded to the nearest $1000.00.)</td></tr>
-        <tr><td>Tuition</td><td>$1,544.00</td><td class="notes-col">Equivalent to $7.68 per clock hour</td></tr>
+        <tr><td>Tuition</td><td>$1,643.50</td><td class="notes-col">Equivalent to $7.68 per clock hour</td></tr>
       </tbody>
     </table>
     <table style="margin: 20px auto 0;" class="row-highlight">

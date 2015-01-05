@@ -454,6 +454,7 @@ SLIDESOUT;
     }
     .rightcontent2 {
       padding-left: 440px;
+      text-align: center;
     }
 
     @media (max-width: 1023px) and (min-width: 640px) {
@@ -573,6 +574,7 @@ SLIDESOUT;
       padding: 10px;
       margin: 1em;
       text-align: center;
+      display: inline-block;
     }
 
   </style>
@@ -595,7 +597,7 @@ SLIDESOUT;
           <a href="http://www.google.com/maps/place/2075+Allston+Way+Berkeley+CA+94704/">2075 Allston Way<br />
           Berkeley, CA 94704</a>
         </div>
-        <p class="biz-hours">Office hours 9:00 AM to 5:00 PM</p>
+        <p class="biz-hours">Office hours: 9:00 AM to 5:00 PM,<br />Monday through Friday</p>
       </div>
       <div class="rightcontent2">
 
