@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body">
-	  <h2 class="course-start-title">Postsecondary Admissions Steps</h2>
+    <h2 class="course-start-title">Postsecondary Admissions Steps</h2>
     <ul>
       <li>Provide evidence of meeting the program's minimum standards -</li>
       <ul>
@@ -17,8 +17,7 @@
       <li>Successful completion of an entrance examination (Wonderlic)</li>
       <li>Completion of an enrollment agreement</li>
       <li>Completion of a financial agreement</li>
-      <!--<li>Financial plan for funding education</li>-->
       <li>Payment either in full or of first required installment</li>
     </ul>
-	</div>
+  </div>
 </div><!-- /article-box -->

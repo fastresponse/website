@@ -145,7 +145,7 @@ For immediate questions, call <strong style="white-space: nowrap;"><?= phone_lin
 <div id="address-footer">
 	<img class="fleft" src="<?= BASE_URL; ?>img/logo.png" alt="Fast Response">
 	<address class="fleft"><strong>Fast Response School of Health Care Education</strong><br>
-	2075 Allston Way<br>
+	2075 Allston Way, Suite B<br>
 	Berkeley, CA 94704
 	</address>
 </div>

@@ -184,7 +184,7 @@
 		      <dd style="display: block; margin-left: 0.5em;">
 		      Fast Response School of<br />
 		      Health Care Education<br />
-		      2075 Allston Way<br />
+		      2075 Allston Way, Suite B<br />
 		      Berkeley, CA 94704<br />
 		      </dd>
         </dl></dd>

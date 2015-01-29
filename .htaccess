@@ -5,7 +5,12 @@ Redirect permanent /acls /classes/continuing_education/acls
 
 Redirect permanent /emt/files https://drive.google.com/folderview?id=0B7Ouhne2XskXbzhjUFBmRGVwdTg#list
 
-Redirect permanent /paramedic/files https://drive.google.com/folderview?id=0B7Ouhne2XskXNHVkemFhTDdHSlE#list
+Redirect permanent /paramedic/A03 https://drive.google.com/folderview?id=0B7Ouhne2XskXNHVkemFhTDdHSlE#list
+Redirect permanent /paramedic/a03 https://drive.google.com/folderview?id=0B7Ouhne2XskXNHVkemFhTDdHSlE#list
+
+Redirect permanent /paramedic/A04 https://drive.google.com/folderview?id=0B5xDHdGgr69UQ3RDUmpiUWVKdnM#list
+Redirect permanent /paramedic/a04 https://drive.google.com/folderview?id=0B5xDHdGgr69UQ3RDUmpiUWVKdnM#list
+Redirect permanent /paramedic/files https://drive.google.com/folderview?id=0B5xDHdGgr69UQ3RDUmpiUWVKdnM#list
 
 Redirect permanent /cma/files https://drive.google.com/folderview?id=0B4M6JLuJqJU7MzRybHZsXzJ3X3M#list
 

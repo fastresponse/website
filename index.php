@@ -594,7 +594,7 @@ SLIDESOUT;
 	      <img src="/images/headers/header_main_left.png" alt="Fast Response School Of Health Care Education" id="headimg" />
         <div class="phone-addr yellow">
           <a href="tel://510-849-4009">510-849-4009</a><br />
-          <a href="http://www.google.com/maps/place/2075+Allston+Way+Berkeley+CA+94704/">2075 Allston Way<br />
+          <a href="http://www.google.com/maps/place/2075+Allston+Way+Berkeley+CA+94704/">2075 Allston Way, Suite B<br />
           Berkeley, CA 94704</a>
         </div>
         <p class="biz-hours">Office hours: 9:00 AM to 5:00 PM,<br />Monday through Friday</p>
@@ -636,7 +636,9 @@ SLIDESOUT;
 	      
         <div id="blurb">Fast Response offers the Bay Area's most comprehensive education and resources for healthcare professionals including entry-level courses, certifications, and continuing education units.</div>
 
-        <div class="holiday-hours">Our office will be <span class="red">closed</span> on <span class="underline" style="white-space: nowrap;">Monday, January 19th, 2015</span> in observation of <span style="white-space: nowrap;">Martin Luther King, Jr Day</span></div>
+<?php if (false): ?>
+	<div class="holiday-hours">Due to a widespread power outage, our office is <span class="red">closed</span> today, <span class="underline" style="white-space: nowrap;">Tuesday, January 20th, 2015</span>. We will be open again tomorrow at 8:00 AM.</div>
+<?php endif; ?>
 
       </div>
 

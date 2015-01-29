@@ -53,7 +53,7 @@
 	  <div class="quicklinks2">
 
       <div class="basic-button innerglow-lightblue glow-lightblue">
-	      <a href="/pdfs/Fast Response Catalog 2014.pdf"><div>Course Catalog</div></a>
+	      <a href="/pdfs/Fast Response Catalog 2015.pdf"><div>Course Catalog</div></a>
       </div>
 
 	    <!--
@@ -101,12 +101,13 @@
 	  <p>Since 1989, Fast Response School of Health Care Education has been the Bay Area's premier community and professional training center, offering certifications in:</p>
 
 	  <div class="column col2">
-      <h3 class="italic">POSTSECONDARY COURSES</h3>
+	    <h3 class="italic">POSTSECONDARY COURSES</h3>
 	    <ul class="bullets">
-	      <li>Clinical Medical Assistant</li>
 	      <li>Emergency Medical Technician</li>
-	      <li>Paramedic</li>
 	      <li>Certified Phlebotomy Technician</li>
+              <li>Pharmacy Technician</li>
+	      <li>Clinical Medical Assistant</li>
+	      <li>Paramedic</li>
 	      <li>Sterile Processing Technician</li>
 	    </ul>
 	  </div>
@@ -114,18 +115,12 @@
 	  <div class="column col2">
 	    <h3 class="italic">CEU COURSES</h3>
 	    <ul class="bullets">
-	      <li>AHA Advanced Cardiac Life Support (ACLS)</li>
 	      <li>AHA Healthcare Provider CPR (BLS)</li>
+	      <li>AHA Advanced Cardiac Life Support (ACLS)</li>
 	      <li>AHA Pediatric Advanced Life Support (PALS)</li>
-	      <li>AHA HeartSaver CPR</li>
-	      <li>AHA HeartSaver First Aid</li>
-	      <li>AHA HeartSaver Pediatric First Aid</li>
-	      <li>ECG Technician</li>
 	      <li>ECG Basic Arrhythmia Recognition</li>
-	      <li>ECG Introduction to 12-Lead</li>
-	      <li>Emergency Medical Patients: Assessment, Care, and Transport (EMPACT)</li>
-	      <!--<li>International Trauma Life Support (ITLS)</li>-->
-	      <!--<li>Geriatric Education for Emergency Medical Services (GEMS)</li>-->
+	      <li>ECG Technician</li>
+	      <li>EMT Refresher</li>
 	    </ul>
 	  </div>
 
@@ -144,7 +139,6 @@
 	  <p><ul class="bullets">
 	    <li><a href="/pdfs/BPPE Annual Report 2013.pdf" target="_blank">BPPE Annual Report for 2013</a></li>
 	    <li><a href="/pdfs/BPPE Performance Fact Sheets 2013.pdf" target="_blank">Performance Fact Sheets for all courses 2013</a></li>
-      <li><a href="/pdfs/Fast Response Catalog 2013.pdf" target="_blank">Fast Response School Catalog 2013</a></li>
 	  </ul></p>
 
 	</div> <!-- /leftcontent -->
