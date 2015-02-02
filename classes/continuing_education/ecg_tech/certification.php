@@ -7,6 +7,6 @@
   <div class="body">
     <p>This course prepares you to become a Nationally Licensed ECG Technician.</p>
     <p>The cost of the NCCT ECG Technician Exam is not included in the course fees.</p>
-    <p>Current exam price: <span class="price">$90.00</span>.</p>
+    <p style="margin-bottom: 0;">Current exam price: <span class="price">$90.00</span>.</p>
   </div>
 </section>
