@@ -15,6 +15,8 @@ $links = array(
   'Register for EMT Refresher',
 );
 
+module_remove('CEU Announcements');
+module_move('CEU Promotions', 'left', 3);
 module_move('Books', 'center', 3);
 module_insert('EMT', 'right', 1);
 

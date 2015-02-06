@@ -173,11 +173,11 @@ SLIDESOUT;
         <?php endforeach; ?>
       </div> <!-- /left sidebar -->
 
-	    <div class="right sidebar">
+      <div class="right sidebar">
         <?php foreach($sections['right'] as $incl): ?>
           <?php include($incl); ?>
         <?php endforeach; ?>
-	    </div> <!-- /right sidebar -->
+      </div> <!-- /right sidebar -->
 
       <div class="content">
         <?php foreach($sections['center'] as $incl): ?>

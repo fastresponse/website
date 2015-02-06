@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="body">
-    <p>This course prepares you to become a Nationally Licensed ECG Technician.</p>
-    <p>The cost of the NCCT ECG Technician Exam is not included in the course fees.</p>
+    <p>This course prepares you to become a Nationally Certified ECG Technician (NCET).</p>
+    <p>The NCET Exam is administered by the National Center for Competency Testing (NCCT) and the cost is not included in the course fees.</p>
     <p style="margin-bottom: 0;">Current exam price: <span class="price">$90.00</span>.</p>
   </div>
 </section>

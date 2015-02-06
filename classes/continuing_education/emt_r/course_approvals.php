@@ -6,8 +6,8 @@
   </div>
   <div class="body">
     <ul>
-      <li>American Heart Association</li>
-      <li>Training Center #CA03190</li>
+      <li>Alameda County EMS</li>
+      <li>CA EMS #</li>
     </ul>
   </div>
 </div>
