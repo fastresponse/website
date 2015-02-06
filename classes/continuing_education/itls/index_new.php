@@ -12,7 +12,7 @@ $course_title = 'International Trauma Life Support';
 $course_types = array('Advanced Provider');
 
 $links = array(
-  'Register for ITLS Advanced Provider',
+  'ITLS Advanced Provider',
 );
 
 module_insert('Certification', 'right', 1);

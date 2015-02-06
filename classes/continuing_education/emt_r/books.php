@@ -10,10 +10,6 @@
 	<dt>ISBN:</dt><dd>1449609155</dd>
 	<dt>ISBN-13:</dt><dd>9781449609153</dd>
       </dl></li>
-      <li>Our price: <span class="price">$XX.XX</span>.
-    </ul>
-    <hr />
-    <ul>
       <li>Not available for purchase at Fast Response.</li>
     </ul>
   </div>

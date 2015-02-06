@@ -44,6 +44,6 @@ endforeach;
     <hr />
     <div><a href="http://www.emsa.ca.gov/emt_frequently_asked_questions">CA State Renewal Guidelines</a></div>
     <hr />
-    <div><a href="https://www.nremt.org/nremt/about/reg_basic_history.asp#EMT_Recertification">National Renewal Guidelines</a></div>
+    <div><a href="https://www.nremt.org/nremt/about/reg_basic_history.asp#EMT_Recertification">NREMT Renewal Guidelines</a></div>
   </div>
 </section>

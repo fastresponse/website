@@ -213,35 +213,40 @@
 #registration .body {
   text-align: center;
 }
-#registration button {
-  color: white;
-  background-color: #DD0033;
-  border: 3px solid rgba(0,0,0,0.50);
-  border-top: none;
+#registration .basic-button {
   border-radius: 10px;
-  padding: 8px 8px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
   margin: 5px;
   width: 85%;
+  height: auto;
+  background-color: #DD0033;
+  background-image: none;
+  text-transform: none;
 }
-#registration button:hover {
+#registration .basic-button:first-child {
+  margin-top: 0;
+}
+#registration .basic-button a {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+#registration .basic-button a:hover {
   background-color: #BB0022;
   border-color: rgba(0,0,0,0.65);
   color: #FFFF99;
   text-decoration: underline;
   cursor: pointer;
 }
-#registration a:first-child button {
-  margin-top: 0;
-}
-#registration button:active {
+#registration .basic-button a:active {
   background-color: #AA0011;
   border-color: rgba(0,0,0,0.65);
   color: #FFFF99;
   text-decoration: underline;
   cursor: pointer;
 }
-#registration a {
-  display: inline;
+#registration .basic-button a div {
 }
 #registration dl {
   display: inline-block;

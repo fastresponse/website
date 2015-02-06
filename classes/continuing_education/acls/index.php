@@ -12,8 +12,8 @@ $course_title = 'Advanced Cardiovascular Life Support';
 $course_types = array('Provider', 'Renewal');
 
 $links = array(
-  'Register for ACLS Initial Certification',
-  'Register for ACLS Renewal',
+  'ACLS Initial Certification',
+  'ACLS Renewal',
 );
 
 module_move('Books', 'center', 3);

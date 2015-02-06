@@ -6,10 +6,14 @@
   </div>
   <div class="body">
     <?php foreach ($global_links as $link_text => $link_url): ?>
-    <a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><button type="button"><?= $link_text ?></button></a>
+    <div class="basic-button">
+      <a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><div><?= $link_text ?></div></a>
+    </div>
     <?php endforeach; ?>
     <?php foreach ($links as $link_text => $link_url): ?>
-    <a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><button type="button"><?= $link_text ?></button></a>
+    <div class="basic-button">
+      <a href="<?= $link_url ?>"<?= (url_new_tab($link_url) ? ' target="_blank"' : '')  ?>><div><?= $link_text ?></div></a>
+    </div>
     <?php endforeach; ?>
     <dl>
       <dt>Phone:</dt>

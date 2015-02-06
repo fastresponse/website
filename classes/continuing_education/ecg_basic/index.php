@@ -12,7 +12,7 @@ $course_title = 'ECG Basic Rhythm Recognition';
 $course_types = array('Basic');
 
 $links = array(
-  'Register for ECG Basic',
+  'ECG Basic',
 );
 
 module_move('Books', 'center', 3);

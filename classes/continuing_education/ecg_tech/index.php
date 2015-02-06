@@ -12,7 +12,7 @@ $course_title = 'ECG Technician';
 $course_types = array('Technician');
 
 $links = array(
-  'Register for ECG Technician',
+  'ECG Technician',
 );
 
 //module_move('Books', 'center', 3);

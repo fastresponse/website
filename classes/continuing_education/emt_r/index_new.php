@@ -12,7 +12,7 @@ $course_title = 'EMT Refresher';
 $course_types = array('Refresher');
 
 $links = array(
-  'Register for EMT Refresher',
+  'EMT Refresher',
 );
 
 module_remove('CEU Announcements');

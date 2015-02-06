@@ -12,8 +12,8 @@ $course_title = 'Pediatric Advanced Life Support';
 $course_types = array('Provider', 'Renewal');
 
 $links = array(
-  'Register for PALS Initial Certification',
-  'Register for PALS Renewal',
+  'PALS Initial Certification',
+  'PALS Renewal',
 );
 
 module_move('Books', 'center', 3);

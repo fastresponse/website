@@ -11,7 +11,7 @@
           <dt>ISBN:</dt><dd>0132157241</dd>
           <dt>ISBN-13:</dt><dd>9780132157247</dd>
         </dl></li>
-        <li>Our price: <span class="price">$XX.XX</span>.
+        <li>Our price: <span class="price">TBD</span>.
       </ul>
     <!--</div>-->
     <hr />
