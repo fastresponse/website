@@ -20,10 +20,8 @@ jQuery(document).ready(function() {
       <p class="underline">ECGs Made Easy Book and Pocket Reference, <span style="white-space: nowrap;">5th Edition</span></p>
       <ul>
         <li><span class="bold yellow">Recommended</span></li>
-        <li><dl>
-          <dt>ISBN:</dt><dd>0323101062</dd>
-          <dt>ISBN-13:</dt><dd>9780323101066</dd>
-        </dl></li>
+	<li><span class="isbn-label">ISBN:</span>0323101062</li>
+	<li><span class="isbn-label">ISBN-13:</span>9780323101066</li>
         <li>Not available for purchase at Fast Response.</li>
       </ul>
     </div><hr class="hide-large" /><div class="col sameheight1">

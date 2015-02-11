@@ -15,7 +15,7 @@ $links = array(
   'ECG Technician',
 );
 
-//module_move('Books', 'center', 3);
+module_move('Books', 'center', 3);
 //module_insert('Certification', 'left', 3);
 module_insert('Certification', 'right', 1);
 module_remove(array('CEU Announcements', 'CEU Promotions'));

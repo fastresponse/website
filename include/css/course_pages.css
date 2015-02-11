@@ -164,6 +164,8 @@
 */
 .sidebar .article-box .body hr {
   width: 40%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .content .article-box .body hr {
   width: 80%;
@@ -263,6 +265,10 @@
 #registration dd {
   display: inline-block;
   width: 75%;
+}
+#books .isbn-label {
+  min-width: 75px;
+  display: inline-block;
 }
 #books dt {
   display: inline-block;

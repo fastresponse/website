@@ -6,10 +6,8 @@
     <p class="underline">Emergency Medical Technician Transition Manual</p>
     <ul>
       <li><span class="bold yellow">Recommended</span></li>
-      <li><dl>
-	<dt>ISBN:</dt><dd>1449609155</dd>
-	<dt>ISBN-13:</dt><dd>9781449609153</dd>
-      </dl></li>
+      <li><span class="isbn-label">ISBN:</span>1449609155</li>
+      <li><span class="isbn-label">ISBN-13:</span>9781449609153</li>
       <li>Not available for purchase at Fast Response.</li>
     </ul>
   </div>

@@ -9,10 +9,11 @@ $page_title = 'ITLS';
 $course_name = 'ITLS';
 $course_abbr = 'ITLS';
 $course_title = 'International Trauma Life Support';
-$course_types = array('Advanced Provider');
+$course_types = array('Provider', 'Refresher');
 
 $links = array(
-  'ITLS Advanced Provider',
+  'ITLS Provider',
+  'ITLS Refresher',
 );
 
 module_insert('Certification', 'right', 1);

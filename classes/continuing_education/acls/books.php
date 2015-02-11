@@ -20,11 +20,9 @@ jQuery(document).ready(function() {
       <p class="underline">AHA ACLS Provider Manual with Pocket Reference Card Set</p>
       <ul>
         <li><span class="bold red">Required</span></li>
-        <li><dl>
-          <dt>AHA item:</dt><dd>901014</dd>
-          <dt>ISBN:</dt><dd>1616690100</dd>
-          <dt>ISBN-13:</dt><dd>9781616690106</dd>
-        </dl></li>
+	<li><span class="isbn-label">AHA item:</span>901014</li>
+	<li><span class="isbn-label">ISBN:</span>1616690100</li>
+	<li><span class="isbn-label">ISBN-13:</span>9781616690106</li>
         <li>Our price: <span class="price">$52.75</span>.
         <li>A previously purchased book can be used as long as it meets the current (2010) AHA guidelines.</li>
         <li class="red">This book must be used <span class="bold">during class</span>, per AHA requirements. Students without a book will not receive a certification card.</li>

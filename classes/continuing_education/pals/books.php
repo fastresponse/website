@@ -20,11 +20,9 @@ jQuery(document).ready(function() {
       <p class="underline">AHA PALS Provider Manual with Pocket Reference Card</p>
       <ul>
         <li><span class="bold red">Required</span></li>
-        <li><dl>
-          <dt>AHA item:</dt><dd>901052</dd>
-          <dt>ISBN:</dt><dd>1616691123</dd>
-          <dt>ISBN-13:</dt><dd>9781616691127</dd>
-        </dl></li>
+	<li><span class="isbn-label">AHA item:</span>901052</li>
+	<li><span class="isbn-label">ISBN:</span>1616691123</li>
+	<li><span class="isbn-label">ISBN-13:</span>9781616691127</li>
         <li>Our price: <span class="price">$60.00</span>.
         <li>A previously purchased book can be used as long as it meets the current (2010) AHA guidelines.</li>
         <li class="red">This book must be used <span class="bold">during class</span>, <a href="http://www.heart.org/idc/groups/heart-public/@wcm/@ecc/documents/downloadable/ucm_433454.pdf">per AHA requirements (page 3, bottom)</a>. Students without a book will not receive a certification card.</li>
