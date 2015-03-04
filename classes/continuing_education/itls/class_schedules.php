@@ -28,13 +28,13 @@ jQuery(document).ready(function() {
       </ul>
     </div><hr class="hide-large" /><div class="col sameheight1">
       <h2 class="course-start-title">Refresher</h2>
-      <div class="course-start-date">TBD</div>
+      <div class="course-start-date">Next class date TBD</div>
       <h2 class="course-start-title">Class Schedule</h2>
       <ul>
-	<li>Required every 3 years to maintain certification.</li>
+	      <li>Used to renew ITLS certification every 3 years.</li>
         <li>One day class, 9:00 AM to 5:00 PM.</li>
         <li>Continuing Education Units: 8.00.</li>
-        <li>Course price: <span class="price">TBD</span></li>
+        <li>Course price: <span class="price">$185.00</span></li>
       </ul>
     </div>
   </div>

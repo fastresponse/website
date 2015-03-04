@@ -81,6 +81,8 @@
         'CPR', 'ACLS', 'PALS', 'ECG Basic',
         'ECG Technician' => 'ecg_tech',
         'EMT Refresher' => 'emt_r',
+        'ITLS',
+        'EMT Skills Verification' => 'emt_skills',
       );
       foreach ($courses as $key => $value):
         if (is_numeric($key)) {

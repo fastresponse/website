@@ -10,7 +10,7 @@
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
       <tfoot>
-        <tr><td>Total</td><td>$6,496.50</td><td></td></tr>
+        <tr><td>Total</td><td>$6,500.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
@@ -18,7 +18,7 @@
         <tr><td>Insurance</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Textbooks</td><td>$549.50</td><td class="notes-col"></td></tr>
         <tr><td>Lab Coat</td><td>$30.00</td><td class="notes-col">Required to attend</td></tr>
-        <tr><td>Tuition</td><td>$4,717.00</td><td class="notes-col">Equivalent to $14.08 per clock hour</td></tr>
+        <tr><td>Tuition</td><td>$4,720.50</td><td class="notes-col">Equivalent to $14.09 per clock hour</td></tr>
         <tr><td>Phlebotomy Externship</td><td>$200.00</td><td class="notes-col">Non-refundable after first day of field internship</td></tr>
         <tr><td>MA Externship</td><td>$350.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>
       </tbody>

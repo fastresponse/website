@@ -10,7 +10,7 @@
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
       <tfoot>
-        <tr><td>Total</td><td>$12,493.50</td><td></td></tr>
+        <tr><td>Total</td><td>$12,500.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
@@ -18,7 +18,7 @@
         <tr><td>Insurance</td><td>$250.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Supplies</td><td>$1,845.00</td><td class="notes-col">Textbooks, tablet, T-shirt, etc.</td></tr>
         <tr><td>Uniform Patches</td><td>$49.00</td><td class="notes-col">Required to attend</td></tr>
-        <tr><td>Tuition</td><td>$9,099.50</td><td class="notes-col">Equivalent to $13.07 per clock hour</td></tr>
+        <tr><td>Tuition</td><td>$9,106.00</td><td class="notes-col">Equivalent to $13.08 per clock hour</td></tr>
         <tr><td>Clinical Externship</td><td>$300.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>
         <tr><td>Field Internship</td><td>$500.00</td><td class="notes-col">Non-refundable after first day of field internship</td></tr>
       </tbody>

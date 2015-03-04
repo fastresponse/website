@@ -11,7 +11,7 @@
       <li>24 hours of classroom lecture and instruction.</li>
       <li>12 hours of hands-on training.</li>
       <li>4 hours of written and practical skills testing.</li>
-      <li>Course price: <span class="price">$750.00</span></li>
+      <li>Course price: <span class="price">$1300.00</span></li>
     </ul>
   </div>
 </section>

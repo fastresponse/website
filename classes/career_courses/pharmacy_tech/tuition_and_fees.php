@@ -7,13 +7,13 @@
   <div class="body">
     <table style="margin: 0 auto;" class="row-highlight">
       <tfoot>
-        <tr><td>Total</td><td>$4,288.00</td><td></td></tr>
+        <tr><td>Total</td><td>$4,290.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
         <tr><td>Background Check</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Insurance</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
-        <tr><td>Tuition</td><td>$3,188.00</td><td class="notes-col"></td></tr>
+        <tr><td>Tuition</td><td>$3,190.00</td><td class="notes-col">Equivalent to $12.97 per clock hour</td></tr>
         <tr><td>Books</td><td>$150.00</td><td class="notes-col"></td></tr>
         <tr><td>Clinical Externship</td><td>$300.00</td><td class="notes-col">Non-refundable after first day of clinical externship</td></tr>
       </tbody>

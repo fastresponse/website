@@ -8,6 +8,8 @@ $course_abbr = 'CPT';
 $course_title = 'Certified Phlebotomy Technician';
 $course_types = array('Full-time', 'Part-time');
 
+$course_college_reqs = array('and at least 24 completed credits');
+
 $links = array(
   'Immunizations',
 );

@@ -7,9 +7,9 @@
       <p class="underline">International Trauma Life Support Student Manual, <span style="white-space: nowrap;">7th Edition</span></p>
       <ul>
         <li><span class="bold red">Required</span></li>
-	<li><span class="isbn-label">ISBN:</span>0132157241</li>
-	<li><span class="isbn-label">ISBN-13:</span>9780132157247</li>
-        <li>Our price: <span class="price">TBD</span>.
+	      <li><span class="isbn-label">ISBN:</span>0132157241</li>
+	      <li><span class="isbn-label">ISBN-13:</span>9780132157247</li>
+        <li>Our price: <span class="price">$75.00</span>.
       </ul>
     <!--</div>-->
     <hr />
