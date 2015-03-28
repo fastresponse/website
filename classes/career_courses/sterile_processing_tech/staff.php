@@ -6,7 +6,7 @@
   </div>
   <div class="body">
     <div class="yellow">Program Coordinator</div>
-    <div><strong>Deke Smith</strong></div>
+    <div><strong>Rolf Hosemann</strong></div>
     <ul>
       <li>spt@fastresponse.org</li>
     </ul>

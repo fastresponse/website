@@ -24,7 +24,7 @@
 	$program_options = array();
 	$program_options['EMT'] = 'EMT';
 	$program_options['Sterile Processing'] = 'Sterile Processing';
-	$program_options['Medical Assistant'] = 'Medical Assistant';
+	$program_options['Clinical Medical Assistant'] = 'Clinical Medical Assistant';
   $program_options['Pharmacy Technician'] = 'Pharmacy Technician';
 	$program_options['Phlebotomy'] = 'Phlebotomy';
 	$program_options['Paramedic'] = 'Paramedic';

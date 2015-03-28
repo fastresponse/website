@@ -24,10 +24,10 @@
         <ul>
           <li>Total of 200 hours</li>
         </ul>
-        <li>Five weeks of field externship</li>
+        <li>Ten weeks of field externship</li>
         <ul>
           <li>Full-time, 8 hours per day, Mon - Fri</li>
-          <li>Total of 200 hours</li>
+          <li>Total of 400 hours</li>
         </ul>
       </ul>
     </div>

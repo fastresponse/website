@@ -8,7 +8,7 @@
       <li><span class="bold yellow">Recommended</span></li>
       <li><span class="isbn-label">ISBN:</span>1449609155</li>
       <li><span class="isbn-label">ISBN-13:</span>9781449609153</li>
-      <li>Not available for purchase at Fast Response.</li>
+      <li><a href="http://www.jblearning.com/cart/Default.aspx?bc=0915-3&coupon=EMS15">Purchase from JB Learning at a discounted price!</a></li>
     </ul>
   </div>
 </section>
