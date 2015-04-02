@@ -64,6 +64,11 @@
   font-weight: bold;
   font-size: xx-large;
 }
+#page_title h2 {
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 1.75em;
+}
 .course-header-image {
   width: 100%;
   min-height: 200px;

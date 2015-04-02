@@ -9,7 +9,7 @@
 		  <li>CA Certified Medical Assistant (CCMA-C)</li>
       <li>Nationally Certified Medical Assistant (CMA)</li>
       <li>Nationally Certified Phlebotomy Technician (CPT-1)</li>
-		  <li>Nationally Certified Electrocardiogram Technician (NCET)</li>
+      <?php if (false): ?><li>Nationally Certified Electrocardiogram Technician (NCET)</li><?php endif; ?>
     </ul>
   </div>
 </div>

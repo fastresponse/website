@@ -1,7 +1,7 @@
 <div id="course_description">
 <h2>Advanced Skills for EMTs</h2>
 <p>
-It is the mission of the Fast Response Paramedic Academy to produce extraordinary critical thinking paramedics who provide compassionate and proficient patient care. We do this by creating a supportive learning environment that includes the student in the learning process. We provide several opportunities for outside activities that enrich the didactic experience. The opportunities include ride alongs with local 911 EMS providers.
+It is the mission of the FRSHCE/BAS EMS Consortium Paramedic Academy to produce extraordinary critical thinking paramedics who provide compassionate and exceptional patient care. We do this by creating a supportive learning environment that includes the student in the learning process. We provide several opportunities for outside activities that enrich the didactic experience. The opportunities include ride alongs with local 911 EMS providers.
 </p>
 
 <p>
@@ -9,7 +9,7 @@ We provide our students with a tablet computer loaded with EMS software to inclu
 </p>
 
 <p>
-Fast Response has developed strong relationships with Paramedics Plus, Kaiser Permanente Regional Medical Centers, and Eden Medical Center. Through contractual agreements with these facilities, Fast Response is able to guarantee immediate access to both clinical and field internships.
+The FRSHCE/BAS EMS Consortium has developed strong relationships with Paramedics Plus, Kaiser Permanente Regional Medical Centers, and Eden Medical Center. Through contractual agreements with these facilities, the consortium is able to guarantee immediate access to both clinical and field internships.
 </p>
 
 <div style="text-align: center;"><img src="/images/stop.png" alt="STOP" style="height: 75px; width: 90px;" /></div>

@@ -1,3 +1,4 @@
+<?php if (false): ?>
 <div id="announcements" class="module article-box">
   <div class="title">
     <div class="title-border">
@@ -9,3 +10,4 @@
     <div>Contact us for details.</div>
   </div>
 </div>
+<?php endif; ?>

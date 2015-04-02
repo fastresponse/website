@@ -6,6 +6,7 @@ $page_title = 'Medical Assistant';
 $course_name = 'Medical Assistant';
 $course_abbr = 'CMA';
 $course_title = 'Clinical Medical Assistant';
+$course_subtitle = 'with Certified Phlebotomy Technician';
 $course_types = array('AM');
 
 $links = array(
@@ -15,7 +16,7 @@ $links = array(
 $zip_radius = 50;
 
 $sections['left'] = array_diff($sections['left'],
-  array('Certifications')
+  array('Certifications', 'Externship')
 );
 
 array_splice(

@@ -6,7 +6,7 @@
   </div>
   <div class="body">
     <p>
-    The purpose of the Anatomy and Physiology (A&amp;P) prerequisite course is to deliver a comprehensive theoretical foundation and medical terminology of the human body systems to the paramedic program candidate comparable to what they will encounter during their didacticportion of the Paramedic Academy.  Successful completion of this prerequisite will raise the candidate's  cognitive level to that of a better prepared beginning paramedic student, and will verify the candidate's ability to cope with the pace of the School's Paramedic Academy. All Paramedic Academy candidates who have not completed a Collegiate Level A&amp;P course must complete this course.  
+    The purpose of the Anatomy and Physiology (A&amp;P) prerequisite course is to deliver a comprehensive theoretical foundation and medical terminology of the human body systems to the paramedic program candidate comparable to what they will encounter during their didactic portion of the Paramedic Academy.  Successful completion of this prerequisite will raise the candidate's  cognitive level to that of a better prepared beginning paramedic student, and will verify the candidate's ability to cope with the pace of the School's Paramedic Academy. All Paramedic Academy candidates who have not completed a Collegiate Level A&amp;P course must complete this course.  
     </p>
 
     <p>

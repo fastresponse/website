@@ -20,33 +20,45 @@ jQuery(document).ready(function() {
   <div class="title">
     <div class="title-border">
       <h1>Class Schedule</h1>
-      <h2>All students begin with Phlebotomy</h2>
+      <h2 class="hide-nophleb">All students begin with Phlebotomy</h2>
     </div>
   </div>
   <div class="body">
     <div class="col sameheight1">
-      <h2 class="course-start-title">Phlebotomy Full-time Dates</h2>
-      <?= $course_dates['Full-time'] ?>
-      <h2 class="course-start-title">Phlebotomy Full-time Hours</h2>
-      <div class="course-start-date">Mon - Fri, 9:00 AM - 4:30 PM</div>
-      <h2 class="course-start-title">Medical Assistant Daytime Hours</h2>
+      <div class="hide-nophleb">
+        <h2 class="course-start-title">Phlebotomy Full-time Dates</h2>
+        <?= $course_dates['Full-time'] ?>
+        <h2 class="course-start-title">Phlebotomy Full-time Hours</h2>
+        <div class="course-start-date">Mon - Fri, 9:00 AM - 4:30 PM</div>
+      </div>
+      <div class="show-nophleb" style="display: none;">
+        <h2 class="course-start-title">Medical Assistant Dates</h2>
+        <div class="course-start-date">Rotating open-entry. Contact us for details.</div>
+      </div>
+      <h2 class="course-start-title">Medical Assistant Class Hours</h2>
       <div class="course-start-date">Mon - Fri, 9:00 AM - 12:00 PM</div>
-    </div><hr class="hide-large" /><div class="col sameheight1">
-      <h2 class="course-start-title">Phlebotomy Part-time Dates</h2>
-      <?= $course_dates['Part-time'] ?>
-      <h2 class="course-start-title">Phlebotomy Part-time Hours</h2>
-      <div class="course-start-date">Mon - Fri, 6:00 PM - 10:00 PM</div>
-      <h2 class="course-start-title">Medical Assistant Evening Hours</h2>
-      <div class="course-start-date">Mon - Thu, 6:00 PM - 10:00PM</div>
-    </div><hr class="hide-large" /><br class="hide-small" /><div class="col sameheight2">
+    </div><hr class="hide-large hide-nophleb" /><div class="col sameheight1">
+      <div class="hide-nophleb">
+        <h2 class="course-start-title">Phlebotomy Part-time Dates</h2>
+        <?= $course_dates['Part-time'] ?>
+        <h2 class="course-start-title">Phlebotomy Part-time Hours</h2>
+        <div class="course-start-date">Mon - Fri, 6:00 PM - 10:00 PM</div>
+      </div>
+      <div class="show-nophleb" style="display: none;">
+        <h4>Medical Assistant</h4>
+        <p>Twelve week part time course</p>
+        <div>180 hours of instruction and laboratory practice</div>
+        <div>160 hours of clinical externship</div>
+      </div>
+    </div><hr class="hide-large" /><br class="hide-small" /><div class="col sameheight2 hide-nophleb">
       <h4><a style="color: white; text-decoration: none;" href="/classes/career_courses/phlebotomy/">Phlebotomy</a></h4>
       <p>Two week full time or four week part time courses</p>
       <div>65 hours of instruction and laboratory practice</div>
-      <div>80 hours of clinical externship</div>
-    </div><hr class="hide-large" /><div class="col sameheight2">
+      <div>40 hours of clinical externship</div>
+    </div><hr class="hide-large hide-nophleb" /><div class="col sameheight2 hide-nophleb">
       <h4>Medical Assistant</h4>
-      <p>Five month course</p>
-      <div>270 hours of instruction and laboratory practice</div>
+      <p>Twelve week part time course</p>
+      <div>180 hours of instruction and laboratory practice</div>
       <div>160 hours of clinical externship</div>
     </div>
   </div>

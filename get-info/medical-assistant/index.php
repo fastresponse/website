@@ -4,30 +4,27 @@ $title		= 'Medical Assistant Training';
 $description	= null;
 
 $headline = 'Get the Skills to Become a Clinical Medical Assistant';
-$subhead = 'Phlebotomy and EKG Training - Guaranteed Externships<br>' .
-           'All included for $6,500';
+$subhead = 'Phlebotomy and EKG Basic - Guaranteed Externships<br>' .
+           'All included for $5,610';
 
 $program_of_interest = 'Clinical Medical Assistant';
 $program_abbreviation = 'CMA';
 
 $key_values = array(
-  'Eligibility for certifications in Medical Assisting, Phlebotomy, and ECG Technician',
+  'Eligibility for certifications in Medical Assisting, Phlebotomy, and Basic Life Support',
   'Our graduates are marketable because they are skilled in a variety of job functions',
 );
 
 $zip_radius = 50;
 
+$hideExternalSites = true;
 $hideTestimonials = false;
 
 include_once('../includes/header.php');
 
 ?>
 
-<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cma-top.jpg" alt="Medical Assistant careers">
-
-<?php if (true): ?>
-<h3 style="width: 80%; margin: 1em auto 2em; text-align: center; color: #2454A7;">Evening classes beginning in July! Contact us for details.</h3>
-<?php endif; ?>
+<img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cma-top.jpg" alt="Medical Assistant">
 
 <h3><em>"What does a Clinical Medical Assistant do?"</em></h3>
 
@@ -44,7 +41,7 @@ Clinical Medical Assisting is one of the fastest-growing healthcare careers in t
 <h4>Why choose Fast Response?</h4>
 
 <p>
-If you want to become a highly-skilled medical professional, capable of competing in the job market, come experience our Clinical Medical Assistant Program. You will learn patient assessment, vital signs, 12-Lead ECG, surgical tray setup, assisting with minor surgeries, immunizations and injections, preparation and administration of medications, patient rehab, lab tests, patient charting and documentation. 
+If you want to become a highly-skilled medical professional, capable of competing in the job market, come experience our Clinical Medical Assistant Program. You will learn patient assessment, vital signs, EKG basics, surgical tray setup, assisting with minor surgeries, immunizations and injections, preparation and administration of medications, patient rehab, lab tests, patient charting and documentation. 
 </p>
 
 <p>
@@ -58,7 +55,7 @@ The Clinical Medical Assisting program at Fast Response provides dynamic classro
 <h3>Clinical Externship - On-the-Job Experience</h3>
 
 <p>
-As a student in the Clinical Medical Assisting program, you will complete 160 hours of clinical externship and 80 hours for your Phlebotomy at one of our <strong>contracted medical facilities</strong>. You will be working with real patients in a wide variety of clinical settings. Externships often lead directly to employment and can be a great way to network. 
+As a student in the Clinical Medical Assisting program, you will complete 160 hours of clinical externship and 40+ hours for your Phlebotomy at one of our <strong>contracted medical facilities</strong>. You will be working with real patients in a wide variety of clinical settings. Externships often lead directly to employment and can be a great way to network. 
 </p>
 
 <h3>Class Schedules</h3>
@@ -68,8 +65,8 @@ Fast Response programs are designed for busy, adult learners. Many students cont
 </p>
 
 <ul>
-  <li>Clinical Medical Assistant program = <strong>18 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
-  <li>Phlebotomy program (included with Medical Assistant program) = <strong>2 weeks</strong> of classroom and skills training, plus <strong>80 hours</strong> of externship</li>
+  <li>Clinical Medical Assistant program = <strong>12 weeks</strong> of classroom training and <strong>160 hours</strong> of clinical externship</li>
+  <li>Phlebotomy program (included with Medical Assistant program) = <strong>2 weeks</strong> of classroom and skills training, plus <strong>40+ hours</strong> of externship</li>
 </ul>
 
 <?php if (false): ?>
@@ -81,7 +78,7 @@ Fast Response programs are designed for busy, adult learners. Many students cont
 Healthcare training isn't about getting a diploma; it's about obtaining a career you love. Fast Response is dedicated to supporting you throughout your career. Experienced Career Services professionals are happy to help with resume preparation, interview techniques and job searches.
 </p>
 
-<p>Payment plans are available for those that qualify.</p>
+<p>Payment plans are available.</p>
 
 <h3>Is Medical Assistant Training Right for You?</h3>
 <h4>Get More Information&#8230;</h4>

@@ -696,6 +696,7 @@ SLIDESOUT;
 	          </a>
 	        </div>
 
+          <?php if (false): ?>
 	        <div class="banner">
 	          <a href="/classes/career_courses/medical_assistant/" class="btn buttontext lines-1 glow-yellow">
 	            <div>
@@ -704,6 +705,7 @@ SLIDESOUT;
 	            <span></span>
 	          </a>
 	        </div>
+          <?php endif; ?>
 
           <!--
           <div class="banner">
