@@ -14,9 +14,8 @@
     </p>
 
     <h2 class="course-start-title">Class Hours</h2>
-    <div class="course-start-date">November 3rd, 2014 to December 15th, 2014</div>
+    <div class="course-start-date">August 17th, 2015 through September 14th, 2015</div>
     <div class="course-start-date">Mondays and Wednesdays, 12:00 PM - 6:00 PM</div>
-    <div class="course-start-date" style="font-size: 90%;">Due to the Thanksgiving holiday, class will take place on Tues, Nov 25th instead of Wed, Nov 26th.</div>
 
     <p>
     Cost: $450.00 - Books included.

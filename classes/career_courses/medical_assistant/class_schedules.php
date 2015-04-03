@@ -45,6 +45,7 @@ jQuery(document).ready(function() {
         <div class="course-start-date">Mon - Fri, 6:00 PM - 10:00 PM</div>
       </div>
       <div class="show-nophleb" style="display: none;">
+        <br class="hide-large" />
         <h4>Medical Assistant</h4>
         <p>Twelve week part time course</p>
         <div>180 hours of instruction and laboratory practice</div>

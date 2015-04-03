@@ -11,19 +11,14 @@
       <li>510-809-3655</li>
       <li>aboykin@fastresponse.org</li>
     </ul>
-    <br />
-    <div class="yellow">Assistant Instructor</div>
-    <div><strong>Danielle Gullo</strong></div>
-    <ul>
-      <li>510-849-4009 ext. 150</li>
-      <li>dgullo@fastresponse.org</li>
-    </ul>
-    <br />
-    <div class="yellow">Phlebotomy Coordinator</div>
-    <div><strong>Genetia Roberts</strong></div>
-    <ul>
-      <li>510-809-3642</li>
-      <li>groberts@fastresponse.org</li>
-    </ul>
+    <div class="hide-nophleb">
+      <br />
+      <div class="yellow">Phlebotomy Coordinator</div>
+      <div><strong>Genetia Roberts</strong></div>
+      <ul>
+        <li>510-809-3642</li>
+        <li>groberts@fastresponse.org</li>
+      </ul>
+    </div>
   </div>
 </div>

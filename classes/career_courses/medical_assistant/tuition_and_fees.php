@@ -20,7 +20,7 @@
         <tr class="hide-nophleb"><td>Phlebotomy Textbooks</td><td class="cost">$165.00</td><td class="notes-col"></td></tr>
         <tr class="hide-nophleb"><td>Phlebotomy Tuition</td><td class="cost">$1,620.00</td><td class="notes-col">Equivalent to $24.92 per clock hour</td></tr>
         <tr class="hide-nophleb"><td>Phlebotomy Externship</td><td class="cost">$200.00</td><td class="notes-col">Non-refundable after first day of externship</td></tr>
-        <tr><td>MA Textbooks</td><td class="cost">$200.00</td><td class="notes-col"></td></tr>
+        <tr><td>MA Textbooks</td><td class="cost">$200.00</td><td class="notes-col">Includes BP cuff and stethoscope</td></tr>
         <tr><td>MA Tuition</td><td class="cost">$2,395.00</td><td class="notes-col">Equivalent to $13.31 per clock hour</td></tr>
         <tr><td>MA Externship</td><td class="cost">$350.00</td><td class="notes-col">Non-refundable after first day of externship</td></tr>
       </tbody>

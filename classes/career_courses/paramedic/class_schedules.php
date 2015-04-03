@@ -24,10 +24,8 @@ jQuery(document).ready(function() {
   </div>
   <div class="body">
     <div class="col sameheight1">
-      <?php if (false): ?>
       <h2 class="course-start-title">Application Deadline</h2>
       <?= $course_dates['Application Deadline'] ?>
-      <?php endif; ?>
       <h2 class="course-start-title">Paramedic Anatomy &amp; Physiology</h2>
       <?= $course_dates['Anatomy and Physiology'] ?>
       <h2 class="course-start-title">Academy Start Date</h2>
