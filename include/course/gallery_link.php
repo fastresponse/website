@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body">
-    <a target="_self" href="/gallery/index.php/<?= $course_abbr ?>">
+    <a target="_self" href="/gallery/index.php/<?= $course_gallery ?>">
       <img src="/images/photostrips/<?= strtolower($course_abbr) ?>.png" alt="" />
     </a>
   </div>

@@ -7,6 +7,7 @@ $course_name = 'Sterile Processing';
 $course_abbr = 'SPT';
 $course_title = 'Sterile Processing Technician';
 $course_types = array('Part-time');
+$course_gallery = 'Sterile-Processing';
 
 $links = array(
   'Immunizations',

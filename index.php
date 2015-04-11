@@ -696,6 +696,23 @@ SLIDESOUT;
 	          </a>
 	        </div>
 
+          <?php
+            $now = new DateTime();
+            $end = new DateTime('2015-04-25');
+
+            if ($end >= $now):
+          ?>
+          <div class="banner">
+            <a href="/classes/career_courses/emt/" class="btn buttontext lines-2 glow-yellow">
+              <div>
+                <div>EMT Part-time class beginning April 25th</div>
+                <div style="margin-top: 3px;" class="yellow">Seats still available!</div>
+              </div>
+              <span></span>
+            </a>
+          </div>
+          <?php endif; ?>
+
           <?php if (false): ?>
 	        <div class="banner">
 	          <a href="/classes/career_courses/medical_assistant/" class="btn buttontext lines-1 glow-yellow">

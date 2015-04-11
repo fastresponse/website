@@ -29,6 +29,7 @@
   $course_abbr = '';
   $course_title = '';
   $course_types = array('');
+  $course_gallery = '';
 
   $course_dates_type = 'separate';
   $course_dates_limit = 5;

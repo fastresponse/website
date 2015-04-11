@@ -8,6 +8,7 @@ $course_abbr = 'CMA';
 $course_title = 'Clinical Medical Assistant';
 $course_subtitle = 'with Certified Phlebotomy Technician';
 $course_types = array('AM');
+$course_gallery = 'Medical-Assistant';
 
 $links = array(
   'Immunizations',

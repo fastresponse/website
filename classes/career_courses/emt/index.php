@@ -7,6 +7,7 @@ $course_name = 'EMT';
 $course_abbr = 'EMT';
 $course_title = 'Emergency Medical Technician';
 $course_types = array('Full-time', 'Part-time');
+$course_gallery = 'EMT';
 
 $course_college_reqs = array('and at least 12 completed credits');
 
