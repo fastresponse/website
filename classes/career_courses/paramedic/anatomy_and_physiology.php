@@ -22,7 +22,7 @@
     </p>
 
     <p>
-    <a href="http://www.ssreg.com/fastresponse/classes/results.asp?cID=78819">Online signup for A&amp;P is available.</a>
+    <a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Online signup for A&amp;P is available.</a>
     </p>
 
     <!--<p><a href="http://www.ssreg.com/fastresponse/classes/classes.asp?catID=4216">Please register for Fast Response School's Anatomy &amp; Physiology course online.</a></p>-->
