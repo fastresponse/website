@@ -32,9 +32,7 @@
     <hr />
     <p>Prior to the first day of class, all students will need to complete and submit all required immunizations and drug screening results.</p>
 
-    <?php
-    $app_link = $links['Paramedic Application Process'];
-    ?>
-    <p><a href="<?= $app_link['link'] ?>" target="<?= $app_link['target'] ?>">Full application details here.</a></p>
+    <?php $app_url = $links['Paramedic Application Process'] ?>
+    <p><a href="<?= $app_url ?>"<?= (url_new_tab($app_url) ? ' target="_blank"' : '')?>>Full application details here.</a></p>
 	</div>
 </div><!-- /article-box -->

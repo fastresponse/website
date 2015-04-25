@@ -21,18 +21,8 @@ $links = array(
 
 $zip_radius = 75;
 
-// don't include the testimonials section in left sidebar
-$sections['left'] = array_diff($sections['left'],
-  array('Testimonials')
-);
-
-// example of adding to the bottom of the right sidebar:
-//$sections['right'][] = 'Testimonials';
-
-// insert at the 4th position:
-array_splice(
-  $sections['center'], 4, 0, array('Anatomy and Physiology')
-);
+module_remove('Testimonials', 'left');
+module_insert('Anatomy and Physiology', 'center', 4);
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');
 ?>

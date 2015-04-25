@@ -25,9 +25,7 @@
       </li>
     </ul>
     <hr />
-    <?php
-    $imms = $links['Immunizations for Paramedics'];
-    ?>
-    <div><a class="underline" href="<?= $imms['link'] ?>" target="<?= $imms['target'] ?>">Full immunization details here</a></div>
+    <?php $imm_url = $links['Immunizations for Paramedics']; ?>
+    <div><a class="underline" href="<?= $imm_url ?>"<?= (url_new_tab($imm_url) ? ' target="_blank"' : '') ?>>Full immunization details here</a></div>
   </div>
 </div>
