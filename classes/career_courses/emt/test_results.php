@@ -5,22 +5,17 @@
     </div>
   </div>
   <div class="body">
-    <h3 class="red">Passed on first try</h3>
+    <h3 class="red">Passed on first try / within three attempts</h3>
+    <div class="yellow">2015</div>
+    <div><strong>Fast Response: 81% / 95%</strong></div>
+    <div>National: 72% / 79%</div>
+    <br />
     <div class="yellow">2014</div>
-    <div><strong>Fast Response: 83%</strong></div>
-    <div>National: 72%</div>
-    <div>CA State: (not available)</div>
+    <div><strong>Fast Response: 78% / 87%</strong></div>
+    <div>National: 69% / 78%</div>
     <br />
     <div class="yellow">2013</div>
-    <div><strong>Fast Response: 80%</strong></div>
-    <div>National: 70%</div>
-    <div>CA State: 70%</div>
-    <?php if (false): ?>
-    <br />
-    <div class="yellow">2012</div>
-    <div><strong>Fast Response: 68%</strong></div>
-    <div>National: 70%</div>
-    <div>CA State: 73%</div>
-    <?php endif; ?>
+    <div><strong>Fast Response: 80% / 84%</strong></div>
+    <div>National: 68% / 80%</div>
   </div>
 </div>

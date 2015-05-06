@@ -602,16 +602,16 @@ SLIDESOUT;
       <div class="rightcontent2">
 
         <div class="banner-top">
+          <div class="article-box">
+            <a href="/school/info/">
+              <div class="title">
+                <div class="title-border">
+                  <h1 style="color: #ffff99;">Former Heald students - consider our accelerated courses</h1>
+                </div>
+              </div>
+            </a>
+          </div>
           <!--
-	        <div class="banner">
-	          <a href="/gallery/index.php/Events/" class="btn buttontext lines-1 glow-orange">
-	            <div>
-	              Check out the Fast Response Events Photo Gallery here
-	            </div>
-	            <span></span>
-	          </a>
-	        </div>
-          -->
           <div class="article-box">
             <a href="/gallery/index.php/Events/">
               <div class="title">
@@ -621,6 +621,7 @@ SLIDESOUT;
               </div>
             </a>
           </div>
+          -->
           <!--
           <div class="article-box">
             <a href="https://operationindependence2014.eventbrite.com/?ref=elink" target="_blank">
