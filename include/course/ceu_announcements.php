@@ -8,7 +8,6 @@
     <h3>Employees of the following medical facilities:</h3>
     <ul>
       <li>Alta Bates Medical Center (RNs only)</li>
-      <li>Alameda County Medical Center</li>
       <li>WestMed Ambulance</li>
       <li>Pro Transport-1</li>
     </ul>

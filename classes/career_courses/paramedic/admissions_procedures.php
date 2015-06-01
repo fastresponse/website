@@ -21,7 +21,7 @@
         <li>Copy of current EMT card (CA State or NREMT)</li>
         <li>Letters of Recommendation (Optional)</li>
 	    </ul>
-      <li>Successfully pass the school entrance examination</li>
+      <li>Successfully pass the school entrance examinations</li>
     </ul>
 
 	  <h2 class="course-start-title">Phase II</h2>

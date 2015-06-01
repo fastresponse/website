@@ -145,7 +145,6 @@
       'Page Logo',
     );
     $sections['topright'] = array(
-      //'Promotions',
     );
     $sections['topcenter'] = array(
       'Page Title',
@@ -155,6 +154,7 @@
       'Slideshow',
       'Announcements',
       'Contact Form',
+      'Promotions',
       'Gallery Link',
       'Certifications',
       'Externship',

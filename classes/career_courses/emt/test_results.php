@@ -1,21 +1,11 @@
-<div id="test_results" class="module article-box">
+<div id="test_results" class="module article-box" style="margin-top: 1em;">
   <div class="title">
     <div class="title-border">
-      <h1>NREMT Test Results</h1>
+      <h3 class="underline yellow" style="margin-top: 0;">NREMT Test Results</h3>
     </div>
   </div>
-  <div class="body">
-    <h3 class="red">Passed on first try / within three attempts</h3>
-    <div class="yellow">2015</div>
-    <div><strong>Fast Response: 81% / 95%</strong></div>
-    <div>National: 72% / 79%</div>
-    <br />
-    <div class="yellow">2014</div>
-    <div><strong>Fast Response: 78% / 87%</strong></div>
-    <div>National: 69% / 78%</div>
-    <br />
-    <div class="yellow">2013</div>
-    <div><strong>Fast Response: 80% / 84%</strong></div>
-    <div>National: 68% / 80%</div>
+  <div class="body" style="text-align: center;">
+    <p style="margin: 0 auto 0.5em; font-size: 200%; font-weight: bold;" class="red"><span class="underline">100%</span> in 2015</p>
+    <div class="yellow">* As of May 21st, 2015</div>
   </div>
 </div>

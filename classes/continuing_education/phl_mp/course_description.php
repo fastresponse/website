@@ -15,12 +15,5 @@
   <li>Students will perform 5-10 venipunctures during the program. The students work in teams, drawing on one another.</li>
 </ul>
 </p>
-<p>Where can I work with this certification?
-<ul>
-  <li>You will be qualified to work in physician's office.</li>
-  <li>You will not be qualified to work in a clinical laboratory or a public agency.</li>
-  <li>Students seeking to work in a public health clinic or lab should consider enrolling in our Phlebotomy Technician (CPT-1) program.</li>
-</ul>
-</p>
 <p>Please read through our <a href="/school/policies/ceu.php">Continuing Education Policies</a> before registering.</p>
 </section>

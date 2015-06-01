@@ -16,5 +16,7 @@ $links = array(
   'EMT Skills Videos',
 );
 
+module_move('Test Results', 'topright');
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/course_template.php');
 ?>

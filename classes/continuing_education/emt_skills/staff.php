@@ -8,7 +8,7 @@
     <div class="yellow">Course Coordinator</div>
     <div><strong>Troy Vincent</strong></div>
     <ul>
-      <li>510-809-3650</li>
+      <li>510-809-3658</li>
       <li>tvincent@fastresponse.org</li>
     </ul>
   </div>

@@ -17,8 +17,9 @@
       <ul>
         <li class="red">You MUST be a licensed EMT with prior experience in the field. If you are not a licensed EMT, you can <a href="/classes/career_courses/emt/">get information about becoming an EMT here</a>.</li>
       </ul>
-      <li>Applicants must score 20 or greater on the Wonderlic Entrance Exam.</li>
       <li>Copy of current EMT Certification and Health Care Provider CPR card.</li>
+      <li>Applicants must score 20 or greater on the Wonderlic Entrance Exam.</li>
+      <li>After successfully passing the Wonderlic test, applicants will be invited to take a Paramedic Entrance Exam which measures student preparedness in the following areas: Anatomy and physiology, Reading comprehension, Math, and EMT knowledge. The exam also measure personality traits.</li>
       <li>Applicants must have completed a college level Anatomy and Physiology course within the last 2 years. All Paramedic Academy candidates who have not completed a Collegiate Level A&amp;P course must complete Fast Response School's A&amp;P course.</li>
     </ul>
   </div>

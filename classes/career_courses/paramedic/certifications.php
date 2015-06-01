@@ -2,7 +2,7 @@
   <div class="title">
     <div class="title-border">
       <h1>Certifications Included</h1>
-      <h2>80 hours of instruction</h2>
+      <h2>48 hours of instruction</h2>
     </div>
   </div>
   <div class="body">

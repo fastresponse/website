@@ -31,6 +31,7 @@
         <tr><td colspan="3"></td></tr>
       </tfoot>
       <tbody>
+        <tr><td>Entrance Exam</td><td>$24.00</td><td class="notes-col"></td></tr>
         <tr><td>Uniform</td><td>$150.00</td><td class="notes-col">approximate cost for full uniform (shirt, pants, boots, belt, nameplate)</td></tr>
         <tr><td>Drug Screen</td><td>$55.00</td><td></td></tr>
         <tr><td>Live Scan</td><td>$69.00</td><td class="notes-col"></td></tr>

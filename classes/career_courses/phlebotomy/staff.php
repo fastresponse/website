@@ -21,7 +21,6 @@
     <br />
     <div class="yellow">Instructors</div>
     <div><strong>Bonnie Fergusson</strong></div>
-    <div><strong>Salu Ribeiro</strong></div>
     <div><strong>Jazmin Tate</strong></div>
     <div><strong>Charissa Purefoy</strong></div>
   </div>
