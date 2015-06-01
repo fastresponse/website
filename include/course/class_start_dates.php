@@ -22,10 +22,19 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
     );
 
     if ($course_dates_limit == 1) {
-      $tmp = array($result['showdate']);
+      //$tmp = array($result['showdate']);
+      if ($result['showdate'] != 'TBA') {
+        $tmp = array( $result['showdate'] . ' (' . $result['status'] . ')' );
+      }
     }
     else {
-      $tmp = array_column($result, 'showdate');
+      //$tmp = array_column($result, 'showdate');
+      $tmp = array();
+      if ($result[0]['showdate'] != 'TBA') {
+        for ($i = 0; $i < count($result); $i++) {
+          $tmp[] = $result[$i]['showdate'] . ' (' . $result[$i]['status'] . ')';
+        }
+      }
     }
     $max = count($tmp);
     $types_list['all'] = $tmp;
@@ -37,10 +46,19 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
         $handle, $course_abbr, $type, 'after', $prev_date, $course_dates_limit
       );
       if ($course_dates_limit == 1) {
-        $tmp = array($result['showdate']);
+        //$tmp = array($result['showdate']);
+        if ($result['showdate'] != 'TBA') {
+          $tmp = array( $result['showdate'] . ' (' . $result['status'] . ')' );
+        }
       }
       else {
-        $tmp = array_column($result, 'showdate');
+        //$tmp = array_column($result, 'showdate');
+        $tmp = array();
+        if ($result[0]['showdate'] != 'TBA') {
+          for ($i = 0; $i < count($result); $i++) {
+            $tmp[] = $result[$i]['showdate'] . ' (' . $result[$i]['status'] . ')';
+          }
+        }
       }
       if (count($tmp) > $max) {
         $max = count($tmp);
@@ -48,8 +66,8 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
       $types_list[$type] = $tmp;
       /*   
       array(
-        'FT' => array('February 2nd, 2015', 'March 18th, 2015'),
-        'PT' => array('August 17th, 2015'),
+        'FT' => array('February 2nd, 2015 (open)', 'March 18th, 2015 (full)'),
+        'PT' => array('August 17th, 2015 (almost full)'),
       )
       */
       if ($course_dates_type == 'sequential') {

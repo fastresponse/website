@@ -391,6 +391,7 @@ function query_course_date(
     array(
       "DATE_FORMAT(thedate, '%M %D, %Y') as showdate",
       'thedate',
+      'status',
     ),
     'start_dates',
     array(
@@ -404,7 +405,7 @@ function query_course_date(
   );
 
   if (!is_array($result) || !count($result))
-    $result = array('showdate' => 'TBA', 'thedate' => 0);
+    $result = array('showdate' => 'TBA', 'thedate' => 0, 'status' => '');
   return $result;
 }
 
