@@ -16,11 +16,21 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
 
   global $course_dates_type, $course_dates_limit;
 
+  $date_and_status = function($arr) {
+    if (!isset($arr) || !is_array($arr) || !isset($arr['showdate']))
+      return '';
+    $out = '' . $arr['showdate'] . '';
+    if (isset($arr['status']) && strlen($arr['status'])) {
+      $out = $out . ' (' . $arr['status'] . ')';
+    }
+    return $out;
+  };
+
   if ($combine) {
     $result = query_course_date(
       $handle, $course_abbr, $course_types, null, null, $course_dates_limit
     );
-
+    $tmp = array();
     if ($course_dates_limit == 1) {
       //$tmp = array($result['showdate']);
       if ($result['showdate'] != 'TBA') {
@@ -29,7 +39,6 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
     }
     else {
       //$tmp = array_column($result, 'showdate');
-      $tmp = array();
       if ($result[0]['showdate'] != 'TBA') {
         for ($i = 0; $i < count($result); $i++) {
           $tmp[] = $result[$i]['showdate'] . ' (' . $result[$i]['status'] . ')';
@@ -45,18 +54,20 @@ function get_course_dates_list($handle, $course_abbr, $course_types, $combine = 
       $result = query_course_date(
         $handle, $course_abbr, $type, 'after', $prev_date, $course_dates_limit
       );
+      $tmp = array();
       if ($course_dates_limit == 1) {
         //$tmp = array($result['showdate']);
         if ($result['showdate'] != 'TBA') {
-          $tmp = array( $result['showdate'] . ' (' . $result['status'] . ')' );
+          //$tmp = array( $result['showdate'] . ' (' . $result['status'] . ')' );
+          $tmp[] = $date_and_status($result);
         }
       }
       else {
         //$tmp = array_column($result, 'showdate');
-        $tmp = array();
         if ($result[0]['showdate'] != 'TBA') {
           for ($i = 0; $i < count($result); $i++) {
-            $tmp[] = $result[$i]['showdate'] . ' (' . $result[$i]['status'] . ')';
+            //$tmp[] = $result[$i]['showdate'] . ' (' . $result[$i]['status'] . ')';
+            $tmp[] = $date_and_status($result[$i]);
           }
         }
       }
