@@ -195,6 +195,10 @@ class AutoreplyEmailer {
       $this->variable_errors[] = "Please select your course of interest.";
     }
 
+    if (!$this->variables['source']) {
+      $this->variable_errors[] = "Please select where you heard about us.";
+    }
+
     if (!$this->variables['name']) {
       $this->variable_errors[] = "Please enter your name.";
     }

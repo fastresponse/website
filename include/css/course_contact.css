@@ -185,7 +185,8 @@
   #contact-form label {
     width: 22%;
   }
-  #contact-form input {
+  #contact-form input,
+  #contact-form select {
     width: 75%;
   }
   #contact-form .form-section-program,
