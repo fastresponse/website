@@ -9,6 +9,7 @@ $subhead = 'Phlebotomy and EKG Basic - Guaranteed Externships<br>' .
 
 $program_of_interest = 'Clinical Medical Assistant';
 $program_abbreviation = 'CMA';
+$next_class_code = 'CPT';
 
 $key_values = array(
   'Eligibility for certifications in Medical Assisting, Phlebotomy, and Basic Life Support',
@@ -25,6 +26,8 @@ include_once('../includes/header.php');
 ?>
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cma-top.jpg" alt="Medical Assistant">
+
+<?php include_once('../includes/next_class_date.php'); ?>
 
 <h3><em>"What does a Clinical Medical Assistant do?"</em></h3>
 

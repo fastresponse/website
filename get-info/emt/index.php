@@ -8,10 +8,11 @@ $subhead = 'Guaranteed Externships Including Ambulance Ride-alongs';
 
 $program_of_interest = 'EMT';
 $program_abbreviation = 'EMT';
+$next_class_code = 'EMT';
 
 $key_values = array(
-  'NREMT Certification pass rate of 91% on first attempt<br />' .
-  '<span style="font-size: 90%;">(3rd quarter 2013)</span>',
+  'NREMT Certification pass rate of 100% in 2015<br />' .
+  '<span style="font-size: 90%;">(as of May 21st, 2015)</span>',
   'Day and evening classes',
 );
 
@@ -30,6 +31,8 @@ include_once('../includes/header.php');
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/emt-top.jpg" alt="EMT careers">
 
+<?php include_once('../includes/next_class_date.php'); ?>
+
 <p>
   Emergency medical technicians provide emergency medical support to injured and ill people. They may work in an ambulance, with a fire department, in a hospital emergency room or on a search and rescue team.
 </p>
@@ -39,7 +42,7 @@ include_once('../includes/header.php');
 </p>
 
 <p>
-  Fast Response students are recognized by Bay Area ambulance companies as being exceptional. During the third quarter of 2013, <strong>91%</strong> of our graduates passed their certification exams on the first attempt!
+  Fast Response students are recognized by Bay Area ambulance companies as being exceptional. During the first quarter of 2015, <strong>100%</strong> of our graduates passed their certification exams!
 </p>
 
 <h3>Becoming a Certified EMT</h3>

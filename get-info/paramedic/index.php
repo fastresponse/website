@@ -8,6 +8,9 @@ $subhead = 'Guaranteed Internships, Diverse Observation Sites';
 
 $program_of_interest = 'Paramedic';
 $program_abbreviation = 'Paramedic';
+$next_class_code = 'Paramedic';
+$next_class_type = 'Application Deadline';
+$next_class_text = 'Application Deadline:';
 
 $key_values = array(
   'NREMT-P Test Preparation',
@@ -38,6 +41,8 @@ include_once('../includes/header.php');
 ?>
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/paramedic-top.png" alt="Paramedic careers">
+
+<?php include_once('../includes/next_class_date.php'); ?>
 
 <p style="width: 90%; margin-left: auto; margin-right: auto; color: #dd0033;">
   In order to begin paramedic training, you must first be a licensed and practicing Emergency Medical Technician with at least six months experience.<br style="line-height: 1.5em;" />

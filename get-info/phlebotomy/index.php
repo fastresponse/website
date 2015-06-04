@@ -9,6 +9,7 @@ $subhead = 'Clinical Externships Start in as Little as 2 Weeks';
 $program_of_interest = 'Phlebotomy';
 $program_abbreviation = 'CPT';
 $program_career_name = 'Phlebotomy Technician';
+$next_class_code = 'CPT';
 
 $hideExternalSites = true;
 $hideTestimonials = false;
@@ -27,6 +28,8 @@ include_once('../includes/header.php');
 ?>
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/cpt-top.jpg" alt="Phlebotomy careers">
+
+<?php include_once('../includes/next_class_date.php'); ?>
 
 <p>
 Phlebotomists work directly with patients to collect and process blood specimens for laboratory testing. Professionals in this field play an important role in the clinical laboratory and contribute to the comfort, safety and care of patients.

@@ -8,6 +8,7 @@ $subhead = 'Guaranteed Externships, Convenient Schedule';
 
 $program_of_interest = 'Pharmacy Technician';
 $program_abbreviation = 'PHT';
+$next_class_code = 'PHT';
 
 $key_values = array(
   "Assistance with CA Registered Pharmacy Technician application process",
@@ -28,6 +29,8 @@ include_once('../includes/header.php');
 ?>
 
 <img class="fcenter v-spaced hero" src="<?= BASE_URL; ?>img/pht-top.jpg" alt="EMT careers">
+
+<?php include_once('../includes/next_class_date.php'); ?>
 
 <h3>What does a Pharmacy Technician do?</h3>
 
