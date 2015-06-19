@@ -15,7 +15,7 @@
       </div>
       <h2 class="course-start-title">Part-time Class Hours</h2>
       <div class="course-start-date">
-        Mon Wed Thu, 6:00 PM - 10:00 PM<br />
+        Tue Wed Thu, 6:00 PM - 10:00 PM<br />
         Sat, 9:00 AM - 6:00 PM<br />
       </div>
     </div><hr class="hide-large" /><div class="col">

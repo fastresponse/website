@@ -31,6 +31,7 @@
     // params
     array()
   );
+
   if (is_array($result) && isset($result['showdate'])):
     $out = isset($next_class_text) ? $next_class_text : 'Next class date:';
     $out.= ' ' . $result['showdate'];

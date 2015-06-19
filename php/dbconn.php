@@ -8,14 +8,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 error_reporting(E_ALL);
 
 function handleit($e) {
-  /*
-  echo '<pre>';
+  echo '<pre style="text-align: left; white-space: pre-wrap">';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
-  */
 }
 set_exception_handler('handleit');
 
@@ -39,15 +37,22 @@ function db_connect($table = '') {
 function db_query($dbh, $query, $params, $single = 0) {
   if ($dbh == null) return;
 
+  echo "Preparing query - ";
+
   $sth = $dbh->prepare($query, array() );
+
+  echo "Executing query - ";
   $sth->execute($params);
 
+  echo "Fetching results - ";
   if ($single == 0) {
     $data = $sth->fetchAll();
   }
   else {
     $data = $sth->fetch();
   }
+
+  echo "Cleaning results - ";
 
   $data = htmlsafe($data);
 
@@ -359,23 +364,41 @@ function query_next_date($dbh, $course, $type) {
 function query_course_date(
   $dbh, $course, $type, $when = 'after', $date = null, $limit = 1
 ) {
-  if (!$date) $date = '' . date('Y-m-d') . '';
-  settype($date, "string");
+
+  if (!isset($date)) {
+    $date = '' . date('Y-m-d') . '';
+  }
+  elseif (is_array($date)) {
+    if (count($date) != 2) {
+      // not sure what to do here
+    }
+  }
+  else {
+    settype($date, "string");
+  }
 
   if (!$limit || $limit < 1) $limit = 0;
 
-  $params = array(':course' => $course, ':date' => $date);
+  $params = array(':course' => $course);
 
   switch ($when) {
     default:
     case 'after':
-      $operator = '>=';
       $sort = 'ASC';
+      $whenrange = '>= :date';
+      $params[':date'] = $date;
     break;
 
     case 'before':
-      $operator = '<=';
       $sort = 'DESC';
+      $whenrange = '<= :date';
+      $params[':date'] = $date;
+    break;
+
+    case 'between':
+      $whenrange = 'BETWEEN CAST(:startdate AS DATE) AND CAST(:enddate AS DATE)';
+      $params[':startdate'] = $date[0];
+      $params[':enddate'] = $date[1];
     break;
   }
 
@@ -397,7 +420,7 @@ function query_course_date(
     array(
       'course = :course',
       $type_line,
-      'thedate ' . $operator . ' :date',
+      'thedate ' . $whenrange,
     ),
     'thedate ' . $sort,
     $limit,

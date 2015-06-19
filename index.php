@@ -658,22 +658,23 @@ SLIDESOUT;
         <div class="banners">
 
 <?php if (false): // disable this banner ?>
-<?php
-  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
-  $handle = db_connect('start_dates');
-  $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
-  if (empty($next) || empty($next['thedate'])) $next['thedate'] = '2014-01-15';
-  $date = date_create_from_format('Y-m-d', $next['thedate']);
-  $date = $date->format('M jS');
-?>
-          <div class="banner">
-            <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
-              <div>
-              Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;"><?= $date ?></div>
-              </div>
-              <span></span>
-            </a>
-          </div>
+  <?php
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+    $handle = db_connect('start_dates');
+    $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
+    if (!empty($next) && !empty($next['thedate'])):
+      $date = date_create_from_format('Y-m-d', $next['thedate']);
+      $date = $date->format('M jS');
+  ?>
+            <div class="banner">
+              <a href="/classes/career_courses/paramedic/" class="btn buttontext lines-1 glow-red">
+                <div>
+                Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;"><?= $date ?></div>
+                </div>
+                <span></span>
+              </a>
+            </div>
+  <?php endif; ?>
 <?php endif; // end disabled banner ?>
 
           <!--
@@ -692,6 +693,16 @@ SLIDESOUT;
 	            <div>
                 <div style="font-size: 115%;">Pharmacy Technician classes in 2015</div>
                 <div style="font-size: 115%; margin-top: 3px;" class="red">Now Enrolling</div>
+	            </div>
+	            <span></span>
+	          </a>
+	        </div>
+
+	        <div class="banner">
+	          <a href="/school/info/" class="btn buttontext lines-1 glow-yellow">
+	            <div>
+                <div>Discounted Prices for all</div>
+                <div style="margin-top: -5px;">Active Military Personnel and Veterans</div>
 	            </div>
 	            <span></span>
 	          </a>

@@ -8,6 +8,81 @@ if (version_compare(phpversion(), '5.5.0', '<')) {
 
 if (empty($handle)) $handle = db_connect();
 
+function new_get_course_dates_list($handle, $course_abbr, $course_types, $combine = false) {
+  $max = 0;
+  $prev_date = null;
+  $types_list = array();
+  $output = array();
+
+  global $course_dates_type, $course_dates_limit;
+
+  /*
+
+  //$previous_func = function() use($handle, $course_abbr, $course_types, $start_date) {
+  $previous_func = function($handle, $course_abbr, $course_types, $start_date) {
+    return basic_query($handle,
+      array(
+        'type',
+        "DATE_FORMAT(thedate, '%M %D, %Y') as showdate",
+        'status',
+      ),
+      'start_dates',
+      array(
+        'course = :course',
+        "type IN ('" . implode("','", $course_types) . "')",
+        'thedate BETWEEN CAST(:start as DATE) AND CURDATE()'
+      ),
+      'thedate ASC',
+      0,
+      array(':course' => $course_abbr, ':start' => $start_date)
+    );
+  }
+
+  // get all previous classes back to the start date, no matter how many
+  $results_previous = $previous_func($handle, $course_abbr, $course_types, $start_date);
+
+  $upcoming_func = function($handle, $course_abbr, $course_type, $course_dates_limit) {
+    return basic_query($handle,
+      array(
+        'type',
+        "DATE_FORMAT(thedate, '%M %D, %Y') as showdate",
+        'status',
+      ),
+      'start_dates',
+      array(
+        'course = :course',
+        'type = :type',
+        'thedate > CURDATE()'
+      ),
+      'thedate ASC',
+      $course_dates_limit,
+      array(':course' => $course_abbr, ':type' => $course_type)
+    );
+  }
+
+  // get up to $course_dates_limit of each type of upcoming classes
+  // so up to 5 part-time, up to 5 full-time, etc
+  $results_upcoming = array();
+  foreach ($type in $course_types) {
+    $results_upcoming = $results_upcoming + $upcoming_func($handle, $course_abbr, $type, $course_dates_limit);
+  }
+
+  $all_results = $results_previous + $results_upcoming;
+
+  if ($combine) {
+    foreach ($row in $all_results) {
+      $final[] = $row['showdate'] . ($row['status'] ? " ({$row['status']})" : '');
+    }
+  }
+  else {
+    foreach ($row in $all_results) {
+      $final[$row['type']][] = $row['showdate'] . ($row['status'] ? " ({$row['status']})" : '');
+    }
+  }
+
+   */
+}
+
 function get_course_dates_list($handle, $course_abbr, $course_types, $combine = false) {
   $max = 0;
   $prev_date = null;
