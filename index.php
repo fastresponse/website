@@ -602,15 +602,40 @@ SLIDESOUT;
       <div class="rightcontent2">
 
         <div class="banner-top">
+        <?php
+          include_once($_SERVER['DOCUMENT_ROOT'] . '/php/dbconn.php');
+          $handle = db_connect('start_dates');
+          $next = query_next_date($handle, 'Paramedic', 'Application Deadline');
+          if (!empty($next) && !empty($next['thedate'])):
+            $date = date_create_from_format('Y-m-d', $next['thedate']);
+            $now = new DateTime();
+            if ($date >= $now):
+              $date = $date->format('M jS');
+        ?>
           <div class="article-box">
-            <a href="/school/info/">
+            <a href="/classes/career_courses/paramedic/">
               <div class="title">
                 <div class="title-border">
-                  <h1 style="color: #ffff99;">Former Heald students - consider our accelerated courses</h1>
+                  <h1 style="color: #ffff99;">Paramedic Academy Applications due <div style="display: inline; white-space: nowrap;"><?= $date ?></div>
                 </div>
               </div>
             </a>
           </div>
+        <?php
+            endif; // if ($date >= $now)
+          endif; // if (!empty($next) && !empty($next['thedate']))
+        ?>
+          <!--
+          <div class="article-box">
+            <a href="/classes/career_courses/medical_assistant/">
+              <div class="title">
+                <div class="title-border">
+                  <h1 style="color: #ffff99;">Evening Medical Assistant classes begin Sept 21<sup>st</sup></h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          -->
           <!--
           <div class="article-box">
             <a href="/gallery/index.php/Events/">

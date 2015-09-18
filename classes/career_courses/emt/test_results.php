@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="body" style="text-align: center;">
-    <p style="margin: 0 auto 0.5em; font-size: 200%; font-weight: bold;" class="red"><span class="underline">100%</span> in 2015</p>
-    <div class="yellow">* As of May 21st, 2015</div>
+    <p style="margin: 0 auto 0.5em; font-size: 200%; font-weight: bold;" class="red"><span class="underline">96%</span> in 2015</p>
+    <div class="yellow">* As of July 9th, 2015</div>
   </div>
 </div>

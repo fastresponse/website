@@ -53,7 +53,7 @@ query_links_from_db($category);
   <script type="text/javascript">
 
     var slideshow_started = false;
-    var slide_pause_time = 10000;
+    var slide_pause_time = 12000;
     var slide_fade_time = 900;
 
   <?php
@@ -173,11 +173,11 @@ SLIDESOUT;
         <?php endforeach; ?>
       </div> <!-- /left sidebar -->
 
-      <div class="right sidebar">
+	    <div class="right sidebar">
         <?php foreach($sections['right'] as $incl): ?>
           <?php include($incl); ?>
         <?php endforeach; ?>
-      </div> <!-- /right sidebar -->
+	    </div> <!-- /right sidebar -->
 
       <div class="content">
         <?php foreach($sections['center'] as $incl): ?>

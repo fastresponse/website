@@ -5,9 +5,9 @@
     </div>
   </div>
   <div class="body">
-    <div class="yellow">2015 (as of May 29th)</div>
-    <div><strong>Fast Response: <span class="red">87%</span></strong></div>
-    <div>National: 75%</div>
+    <div class="yellow">2015 (as of July 6th)</div>
+    <div><strong>Fast Response: <span class="red">91%</span></strong></div>
+    <div>National: 78%</div>
     <br />
     <div class="yellow">2014</div>
     <div><strong>Fast Response: <span class="red">89%</span></strong></div>

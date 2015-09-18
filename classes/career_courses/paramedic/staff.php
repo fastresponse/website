@@ -13,17 +13,17 @@
     </ul>
     <br />
     <div class="yellow">Program Coordinator</div>
-    <div><strong>Troy Vincent</strong></div>
+    <div><strong>Mark Chance</strong></div>
     <ul>
       <li>510-809-3658</li>
-      <li>tvincent@fastresponse.org</li>
+      <li>mchance@fastresponse.org</li>
     </ul>
     <br />
     <div class="yellow">Program Administrator</div>
-    <div><strong>Alicia Brown</strong></div>
+    <div><strong>Amy Nordgren</strong></div>
     <ul>
       <li>510-809-3656</li>
-      <li>abrown@fastresponse.org</li>
+      <li>anordgren@fastresponse.org</li>
     </ul>
   </div>
 </div>

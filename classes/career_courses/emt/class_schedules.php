@@ -31,7 +31,7 @@ jQuery(document).ready(function() {
       <h2 class="course-start-title">Full-time Class Hours</h2>
       <div class="course-start-date sameheight2">
         Tue - Fri, 8:30 AM - 5:00 PM<br />
-        Mon, Optional Tutoring<br />
+        Mon, 1:00 PM - 5:00 PM Optional Tutoring<br />
       </div>
       <ul style="margin-top: 5px;">
         <li>Five weeks of instruction</li>
@@ -47,7 +47,7 @@ jQuery(document).ready(function() {
       <div class="course-start-date sameheight2">
         Mon Tue Thu, 6:00 PM - 10:00 PM<br />
         Sat, 8:30 AM - 5:00 PM<br />
-        Wed, Optional Tutoring<br />
+        Mon, 1:00 PM - 5:00 PM Optional Tutoring<br />
       </div>
       <ul style="margin-top: 5px;">
         <li>Nine weeks of instruction</li>

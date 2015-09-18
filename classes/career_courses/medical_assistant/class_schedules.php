@@ -14,6 +14,7 @@ jQuery.fn.sameHeight || document.write(
 jQuery(document).ready(function() {
   jQuery('.sameheight1').sameHeight();
   jQuery('.sameheight2').sameHeight();
+  jQuery('.sameheight3').sameHeight();
 });
 </script>
 
@@ -27,7 +28,7 @@ jQuery(document).ready(function() {
     <div class="col sameheight1">
       <div class="hide-nophleb">
         <h2 class="course-start-title">Phlebotomy Full-time Dates</h2>
-        <?= $course_dates['Full-time'] ?>
+        <div class="sameheight3"><?= $course_dates['Full-time'] ?></div>
         <h2 class="course-start-title">Phlebotomy Full-time Hours</h2>
         <div class="course-start-date">Mon - Fri, 9:00 AM - 4:30 PM</div>
       </div>
@@ -37,13 +38,27 @@ jQuery(document).ready(function() {
       </div>
       <h2 class="course-start-title">Medical Assistant Class Hours</h2>
       <div class="course-start-date">Mon - Fri, 9:00 AM - 12:00 PM</div>
+      <!--
+      <div class="show-nophleb" style="display: none;">
+        <div></div>
+        <h2 class="course-start-title">Medical Assistant Evening Hours</h2>
+        <div class="course-start-date">Mon - Thu, 6:00 PM - 10:00 PM</div>
+      </div>
+      -->
     </div><hr class="hide-large hide-nophleb" /><div class="col sameheight1">
       <div class="hide-nophleb">
         <h2 class="course-start-title">Phlebotomy Part-time Dates</h2>
-        <?= $course_dates['Part-time'] ?>
+        <div class="sameheight3"><?= $course_dates['Part-time'] ?></div>
         <h2 class="course-start-title">Phlebotomy Part-time Hours</h2>
-        <div class="course-start-date">Mon - Fri, 6:00 PM - 10:00 PM</div>
+        <div class="course-start-date">Mon - Thu, 6:00 PM - 10:00 PM</div>
       </div>
+      <!--
+      <div class="hide-nophleb">
+        <div></div>
+        <h2 class="course-start-title">Medical Assistant Evening Hours</h2>
+        <div class="course-start-date">Mon - Thu, 6:00 PM - 10:00 PM</div>
+      </div>
+      -->
       <div class="show-nophleb" style="display: none;">
         <br class="hide-large" />
         <h4>Medical Assistant</h4>

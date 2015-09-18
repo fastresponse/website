@@ -7,8 +7,10 @@
   <div class="body">
     <ul>
       <li>CA Bureau for Private Postsecondary Education (BPPE)</li>
+      <?php if (false): ?>
       <li>Certification Board for Sterile Processing and Distribution (CBSPD)</li>
       <li>International Association of Healthcare Central Service Materiel Management (IAHCSMM)</li>
+      <?php endif; ?>
     </ul>
   </div>
 </div>

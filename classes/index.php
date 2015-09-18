@@ -88,7 +88,7 @@
 	<div class="rightsidebar2">
 	  <div class="quicklinks2">
       <div class="basic-button glow-lightblue innerglow-lightblue">
-	      <a href="/pdfs/Fast Response Catalog 2014.pdf"><div>Course Catalog</div></a>
+	      <a href="/pdfs/Fast Response Catalog 2015.pdf"><div>Course Catalog</div></a>
       </div>
       <div class="basic-button image-button glow-lightblue">
         <a href="/school/info/"><div>Contact Us</div><img src="/images/buttons/envelope-icon.png" alt="" /></a>

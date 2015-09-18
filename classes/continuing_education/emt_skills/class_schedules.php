@@ -7,7 +7,7 @@
       <h2 class="course-start-title">Class Schedule</h2>
       <ul>
         <li>For currently licensed EMTs and those expired within the last 6 months.</li>
-        <li>Class held on Tuesdays by appointment only, from 9:00 AM to 12:00 PM.</li>
+        <li>Class held by appointment only, from 9:00 AM to 12:00 PM.</li>
         <li>No Continuing Education Units for this course.</li>
         <li>Course price: <span class="price">$90.00</span></li>
       </ul>

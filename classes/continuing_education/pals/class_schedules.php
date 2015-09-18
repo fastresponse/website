@@ -10,7 +10,7 @@
         <li>Student Manual is <span class="red underline">required</span>.</li>
         <li>Two day class, 9:00 AM to 5:00 PM.</li>
         <li>Continuing Education Units: 14.00</li>
-        <li>Course price: <span class="price">$245.00</span></li>
+        <li>Course price: <span class="price">$255.00</span></li>
       </ul>
     </div><hr class="hide-large" /><div class="col">
       <h2 class="course-start-title">Renewal</h2>
@@ -20,7 +20,7 @@
         <li>Student Manual is <span class="red underline">required</span>.</li>
         <li>One day class, 9:00 AM to 5:00 PM.</li>
         <li>Continuing Education Units: 7.00</li>
-        <li>Course price: <span class="price">$175.00</span></li>
+        <li>Course price: <span class="price">$190.00</span></li>
       </ul>
     </div>
   </div>

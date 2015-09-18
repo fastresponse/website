@@ -10,15 +10,15 @@
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
       <tfoot>
-        <tr><td>Total</td><td>$2,895.00</td><td></td></tr>
+        <tr><td>Total</td><td>$2,995.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
         <tr><td>Background Check</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Insurance</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
-        <tr><td>Textbooks</td><td>$165.00</td><td class="notes-col"></td></tr>
+        <tr><td>Textbooks</td><td>$195.00</td><td class="notes-col"></td></tr>
         <tr><td>Lab Coat</td><td>$30.00</td><td class="notes-col">Required to attend</td></tr>
-        <tr><td>Tuition</td><td>$1,850.00</td><td class="notes-col">Equivalent to $28.46 per clock hour</td></tr>
+        <tr><td>Tuition</td><td>$1,920.00</td><td class="notes-col">Equivalent to $29.54 per clock hour</td></tr>
         <tr><td>Externship</td><td>$200.00</td><td class="notes-col">Non-refundable after first day of externship</td></tr>
       </tbody>
     </table>

@@ -175,13 +175,17 @@
 
 	      <dt>Front Desk<br />Continuing Education<br />General Inquiries</dt>
 	      <dd><dl>
-		      <dt>Hours:</dt> <dd>9:00 AM - 5:00 PM, Monday - Friday</dd> <br />
+		      <dt>Hours:</dt> <br />
+          <dd style="display: block; margin-left: 1em;">
+            Mon - Thu: 8 AM - 6 PM<br />
+            Fri: 8 AM - 5 PM<br />
+          </dd>
 		      <dt>Phone:</dt> <dd>1-510-849-4009</dd> <br />
 		      <dt>Fax:</dt> <dd>1-866-290-2739</dd> <br />
 		      <dt>Email:</dt> <dd><a href="mailto: info@fastresponse.org">info@fastresponse.org</a></dd> <br />
 		      <dt>Address:</dt> <br />
 		      <!-- this needs to be block so the margin applies to every line -->
-		      <dd style="display: block; margin-left: 0.5em;">
+		      <dd style="display: block; margin-left: 1em;">
 		      Fast Response School of<br />
 		      Health Care Education<br />
 		      2075 Allston Way, Suite B<br />
@@ -191,7 +195,12 @@
 
 	      <dt>Admissions<br />Career Courses<br />Postsecondary Education</dt>
 	      <dd><dl>
-		      <dt>Hours:</dt> <dd>9:00 AM - 5:00 PM, Monday - Friday</dd> <br />
+		      <dt>Hours:</dt> <br />
+          <dd style="display: block; margin-left: 1em;">
+            Mon - Thu: 8 AM - 7 PM<br />
+            Fri: 8 AM - 5 PM<br />
+            Sat: 9 AM - 5 PM<br />
+          </dd>
 		      <dt>Phone:</dt> <dd>1-510-809-3654</dd> <br />
 		      <dt>Toll Free:</dt> <dd>1-800-637-7387</dd> <br />
 		      <dt>Fax:</dt> <dd>1-866-572-3363</dd> <br />

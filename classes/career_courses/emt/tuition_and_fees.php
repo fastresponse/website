@@ -10,16 +10,16 @@
         <tr><th colspan="3" align="center">Main Fees</th></tr>
       </thead>
       <tfoot>
-        <tr><td>Total</td><td>$2,575.00</td><td></td></tr>
+        <tr><td>Total</td><td>$2,875.00</td><td></td></tr>
       </tfoot>
       <tbody>
         <tr><td>Registration Fee</td><td>$250.00</td><td class="notes-col">Non-Refundable</td></tr>
         <tr><td>Background Check</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
         <tr><td>Insurance</td><td>$200.00</td><td class="notes-col">Non-Refundable after first day of class</td></tr>
-        <tr><td>Textbooks</td><td>$225.00</td><td class="notes-col">Non-Refundable unless returned unopened</td></tr>
+        <tr><td>Textbooks</td><td>$250.00</td><td class="notes-col">Non-Refundable unless returned unopened</td></tr>
         <tr><td>Equipment</td><td>$50.00</td><td class="notes-col">Includes blood pressure cuff, stethoscope, penlight, and trauma shears</td></tr>
         <tr><td>Uniform Patches</td><td>$5.00</td><td class="notes-col"></td></tr>
-        <tr><td>Tuition</td><td>$1,645.00</td><td class="notes-col">Equivalent to $8.27 per clock hour</td></tr>
+        <tr><td>Tuition</td><td>$1,920.00</td><td class="notes-col">Equivalent to $9.65 per clock hour</td></tr>
       </tbody>
     </table>
     <table style="margin: 20px auto 0;" class="row-highlight">

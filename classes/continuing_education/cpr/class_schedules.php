@@ -9,7 +9,7 @@
         <li>For first time students and anyone with an expired BLS card.</li>
         <li>Student Manual is <span class="red underline">required</span>.</li>
         <li>Class is 5 hours in length.</li>
-        <li>Course price: <span class="price">$50.00</span></li>
+        <li>Course price: <span class="price">$55.00</span></li>
       </ul>
     </div><hr class="hide-large" /><div class="col">
       <h2 class="course-start-title">Renewal</h2>
@@ -18,7 +18,7 @@
         <li><span class="underline red">Current card <span class="bold">must</span> be presented to instructor</span>.</li>
         <li>Student Manual is <span class="red underline">required</span>.</li>
         <li>Class is 3.5 hours in length.</li>
-        <li>Course price: <span class="price">$45.00</span></li>
+        <li>Course price: <span class="price">$50.00</span></li>
       </ul>
     </div>
     <hr />

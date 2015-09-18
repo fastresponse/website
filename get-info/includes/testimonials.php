@@ -72,7 +72,7 @@ var slideshow_started = false;
 
 function start_slideshow() {
   if (slideshow_started || jQuery(window).width() < 1024) return;
-  jQuery('#testimonial-wrapper').slideshow(10000, 900);
+  jQuery('#testimonial-wrapper').slideshow(12000, 900);
   slideshow_started = true;
 }
 

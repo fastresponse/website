@@ -8,12 +8,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/frlib.php');
 error_reporting(E_ALL);
 
 function handleit($e) {
+  /*
   echo '<pre style="text-align: left; white-space: pre-wrap">';
   print_r($e->getMessage());
   echo "\n";
   print_r($e->getTrace());
   echo "\n";
   echo '</pre>';
+  */
 }
 set_exception_handler('handleit');
 
@@ -37,22 +39,16 @@ function db_connect($table = '') {
 function db_query($dbh, $query, $params, $single = 0) {
   if ($dbh == null) return;
 
-  echo "Preparing query - ";
-
   $sth = $dbh->prepare($query, array() );
 
-  echo "Executing query - ";
   $sth->execute($params);
 
-  echo "Fetching results - ";
   if ($single == 0) {
     $data = $sth->fetchAll();
   }
   else {
     $data = $sth->fetch();
   }
-
-  echo "Cleaning results - ";
 
   $data = htmlsafe($data);
 
