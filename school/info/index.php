@@ -395,6 +395,8 @@ window.jQuery || document.write(
 
 var formid = '#ajax-contact-form';
 
+var currently_submitting = false;
+
 jQuery(document).ready(function() {
   var programid = '#form-program';
   var emtid = '#form-section-emt';
@@ -431,6 +433,10 @@ jQuery(document).ready(function() {
   form.submit(function(event) {
     event.preventDefault();
 
+    if (currently_submitting) return;
+
+    currently_submitting = true;
+
     output.show();
     output.html('');
 
@@ -452,6 +458,8 @@ jQuery(document).ready(function() {
       // data.output: html to display
 	    success: function(data, textStatus, jqxhr) {
 
+        currently_submitting = false;
+
         // jQuery docs say to do the following, but it errors because PHP's
         // json_encode() isn't quoting the names of 'name' : 'value' pairs
         //   data = jQuery.parseJSON(data);
@@ -472,6 +480,9 @@ jQuery(document).ready(function() {
 	    },
 
       error: function(jqxhr, textStatus, errorThrown) {
+
+        currently_submitting = false;
+
         displayOutput(
           "<div class=\"error\">There was a problem sending your message. " +
           "Please try again later.</div>\n"

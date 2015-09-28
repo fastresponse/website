@@ -99,3 +99,25 @@ onsubmit="return validate(this);">
   </div>
 
 </form>
+
+<script type="text/javascript">
+window.jQuery || document.write('<script src="/js/jquery-1.10.2.min.js"><\/script>');
+</script>
+
+<script type="text/javascript">
+
+var currently_submitting = false;
+
+jQuery(document).ready(function() {
+  var $form = jQuery('#sb_form');
+
+  $form.submit(function(event) {
+    if (currently_submitting) {
+      event.preventDefault();
+      return;
+    }
+    currently_submitting = true;
+  });
+});
+
+</script>
